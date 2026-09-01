@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Westbound — Flight Planner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#05161D;--ink-2:#0A2029;--ink-3:#0E2A35;
+  --rule:#194150;--rule-soft:rgba(25,65,80,.55);
+  --paper:#E2EEED;--paper-dim:#A6C2C6;--muted:#6C8F98;
+  --amber:#F2A93C;--magenta:#E7649B;--jade:#58C4A3;--red:#E05555;
+  --display:'Big Shoulders Display',Impact,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --body:'Inter',system-ui,sans-serif;
+  --gut:clamp(14px,3vw,44px);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.wrap{max-width:1400px;margin:0 auto;padding-inline:var(--gut)}
+
+header{padding-block:clamp(28px,5vw,52px) 20px;border-bottom:1px solid var(--rule)}
+h1{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(34px,6vw,68px);line-height:.88;margin:0 0 10px}
+h1 em{font-style:normal;color:var(--amber)}
+.sub{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0}
+
+.warn-box{border:1px solid var(--magenta);background:rgba(231,100,155,.07);padding:14px 18px;margin:20px 0 0;border-radius:2px}
+.warn-box b{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--magenta);display:block;margin-bottom:6px}
+.warn-box p{margin:0;font-size:13.5px;color:var(--paper-dim);line-height:1.6}
+
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:18px 0;border-bottom:1px solid var(--rule-soft)}
+.tbtn{all:unset;cursor:pointer;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  padding:8px 14px;border:1px solid var(--rule);color:var(--paper-dim);border-radius:2px;transition:.15s}
+.tbtn:hover{background:var(--ink-3);color:var(--paper)}
+.tbtn[aria-pressed="true"]{background:var(--amber);color:var(--ink);border-color:var(--amber);font-weight:600}
+.spacer{flex:1}
+.totals-mini{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--muted)}
+.totals-mini b{color:var(--amber);font-size:15px}
+
+/* table */
+.tablewrap{overflow-x:auto;margin-top:4px;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:1080px}
+thead th{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+  text-align:left;font-weight:500;padding:14px 10px 10px;border-bottom:1px solid var(--rule);white-space:nowrap;position:sticky;top:0;background:var(--ink);z-index:2}
+tbody td{padding:11px 10px;border-bottom:1px solid var(--rule-soft);vertical-align:top;font-size:13.5px}
+tbody tr:hover{background:rgba(242,169,60,.04)}
+tbody tr.hard{background:rgba(224,85,85,.06)}
+tbody tr.hard:hover{background:rgba(224,85,85,.1)}
+
+.leg{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--paper);white-space:nowrap}
+.leg .arw{color:var(--rule);margin:0 3px}
+.cities{font-size:11px;color:var(--muted);margin-top:3px;white-space:nowrap}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--paper-dim)}
+.pill{display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+  padding:3px 8px 2px;border-radius:2px;white-space:nowrap;font-weight:500}
+.pill.ns{background:rgba(88,196,163,.14);color:var(--jade);border:1px solid rgba(88,196,163,.35)}
+.pill.one{background:rgba(242,169,60,.12);color:var(--amber);border:1px solid rgba(242,169,60,.3)}
+.pill.two{background:rgba(224,85,85,.12);color:var(--red);border:1px solid rgba(224,85,85,.35)}
+.carriers{font-size:11.5px;color:var(--paper-dim);line-height:1.5;min-width:180px}
+.carriers .hub{color:var(--amber);font-family:var(--mono);font-size:10.5px}
+.est{font-family:var(--mono);font-size:12.5px;color:var(--paper-dim);white-space:nowrap}
+.est b{color:var(--paper)}
+
+input.price{width:92px;background:var(--ink-2);border:1px solid var(--rule);color:var(--amber);
+  font-family:var(--mono);font-size:13px;padding:6px 8px;border-radius:2px;text-align:right}
+input.price::placeholder{color:var(--muted);font-weight:400}
+input.price:focus{outline:2px solid var(--amber);border-color:transparent}
+.note{width:100%;min-width:150px;background:transparent;border:none;border-bottom:1px dashed var(--rule);
+  color:var(--paper-dim);font-family:var(--body);font-size:12.5px;padding:4px 2px}
+.note:focus{outline:none;border-bottom-color:var(--amber);color:var(--paper)}
+
+/* totals */
+.totals{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:var(--rule);
+  border:1px solid var(--rule);margin:26px 0}
+.tot{background:var(--ink-2);padding:16px 18px}
+.tot dt{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.tot dd{margin:0;font-family:var(--display);font-weight:700;font-size:30px;line-height:1}
+.tot.big dd{color:var(--amber)}
+.tot dd small{font-family:var(--mono);font-size:10px;font-weight:400;color:var(--paper-dim);margin-left:3px}
+
+/* analysis cards */
+h2{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(24px,3.6vw,38px);margin:36px 0 6px;line-height:1}
+.lede{color:var(--paper-dim);font-size:14px;max-width:74ch;margin:0 0 18px}
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));margin-bottom:30px}
+.card{border:1px solid var(--rule);background:var(--ink-2);padding:18px 20px}
+.card.bad{border-color:var(--red)}
+.card h3{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 4px;color:var(--paper)}
+.card .verdict{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+.card .verdict.ok{color:var(--jade)}
+.card p{margin:0 0 10px;font-size:13px;color:var(--paper-dim);line-height:1.6}
+.card p:last-child{margin-bottom:0}
+.card .opt{border-left:2px solid var(--amber);padding-left:12px;margin:10px 0;font-size:12.5px}
+.card .opt b{color:var(--amber);font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;display:block;margin-bottom:2px}
+
+footer{border-top:1px solid var(--rule);padding-block:28px 50px;margin-top:20px}
+footer p{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Flight <em>Planner</em></h1>
+  <p class="sub">28 legs · 27 stops · 15 Oct 2026 → 21 Feb 2027 · Debug &amp; pricing</p>
+  <div class="warn-box">
+    <b>Read this first</b>
+    <p>Prices here are <b>modelled estimates</b>, not live fares — this tool has no booking feed. Distances and flight times are computed exactly; non-stop availability and carriers reflect known routes but airlines drop and add these constantly, so verify every one. Use the <b>Actual</b> column to paste in real quotes as you find them — totals update live and save in your browser.</p>
+  </div>
+</header>
+
+<div class="toolbar">
+  <button class="tbtn" data-tier="0" aria-pressed="false">Budget</button>
+  <button class="tbtn" data-tier="1" aria-pressed="true">Medium</button>
+  <button class="tbtn" data-tier="2" aria-pressed="false">High</button>
+  <button class="tbtn" id="hardOnly" aria-pressed="false">Problem legs only</button>
+  <span class="spacer"></span>
+  <span class="totals-mini">Entered: <b id="miniEntered">0</b>/28 · Total <b id="miniTotal">$0</b></span>
+  <button class="tbtn" id="clearBtn">Clear inputs</button>
+</div>
+
+<div class="tablewrap">
+<table>
+<thead><tr>
+  <th>#</th><th>Leg</th><th>Distance</th><th>Time</th><th>Stops</th>
+  <th>Likely routing</th><th>Est. range</th><th>Actual</th><th>Notes</th>
+</tr></thead>
+<tbody id="rows"></tbody>
+</table>
+</div>
+
+<dl class="totals">
+  <div class="tot"><dt>Estimated total</dt><dd id="tEst"></dd></div>
+  <div class="tot"><dt>Actual entered</dt><dd id="tAct"></dd></div>
+  <div class="tot big"><dt>Best current total</dt><dd id="tBest"></dd></div>
+  <div class="tot"><dt>Total distance</dt><dd id="tKm"></dd></div>
+  <div class="tot"><dt>Time in the air</dt><dd id="tHrs"></dd></div>
+</dl>
+
+<h2>The problem legs</h2>
+<p class="lede">Eight legs carry most of the risk and cost. Africa has poor point-to-point connectivity, the Southeast Asia loop needs three connections, and two legs — Cape Town to Cape Verde, and Kathmandu to Singapore — involve flying a long way in the wrong direction.</p>
+
+<div class="cards" id="analysis"></div>
+
+<footer>
+  <p>Westbound flight planner · estimates only · verify all routings before booking</p>
+  <p>Entered prices save to this browser only</p>
+</footer>
+
+</div>
+
+<script>
+/* ---------- LEG DATA ----------
+   stops: 0 = non-stop exists, 1 = one connection, 2 = two+ connections
+   est: [budget, medium, high] one-way CAD estimate
+------------------------------------ */
+const LEGS=[
+{f:'YYZ',t:'HND',fc:'Toronto',tc:'Tokyo',km:10346,stops:0, route:'Air Canada non-stop; ANA/JAL via US hubs',est:[900,1500,4200],note:'Book 4-6 months out'},
+{f:'HND',t:'ICN',fc:'Tokyo',tc:'Seoul',km:1164,stops:0, route:'Korean, Asiana, ANA, JAL, LCCs',est:[110,200,520],note:''},
+{f:'ICN',t:'PVG',fc:'Seoul',tc:'Shanghai',km:865,stops:0, route:'Korean, China Eastern, Asiana',est:[120,210,540],note:'China visa needed first'},
+{f:'PVG',t:'TPE',fc:'Shanghai',tc:'Taipei',km:689,stops:0, route:'China Eastern, EVA, China Airlines',est:[110,190,480],note:''},
+{f:'TPE',t:'BKK',fc:'Taipei',tc:'Bangkok',km:2535,stops:0, route:'EVA, China Airlines, Thai - frequent',est:[180,300,700],note:''},
+{f:'BKK',t:'PBH',fc:'Bangkok',tc:'Paro',km:1906,stops:0,hard:true, route:'Drukair / Bhutan Airlines only - near-daily',est:[420,620,1000],note:'Often a tech stop at Guwahati or Bagdogra'},
+{f:'PBH',t:'KTM',fc:'Paro',tc:'Kathmandu',km:405,stops:0, route:'Drukair, Bhutan Airlines - 7x weekly',est:[220,330,600],note:'Sit left for the Himalaya wall'},
+{f:'KTM',t:'SIN',fc:'Kathmandu',tc:'Singapore',km:3532,stops:1,hard:true, route:'Thin direct; usually via <span class="hub">BKK</span>, <span class="hub">KUL</span> or <span class="hub">DEL</span>',est:[320,520,1100],note:'The deliberate eastward jog - see analysis'},
+{f:'SIN',t:'DPS',fc:'Singapore',tc:'Bali',km:1683,stops:0, route:'Singapore, Scoot, Jetstar, AirAsia',est:[110,200,520],note:'Very frequent'},
+{f:'DPS',t:'MNL',fc:'Bali',tc:'Manila',km:2663,stops:1,hard:true, route:'Rare seasonal direct; via <span class="hub">SIN</span>, <span class="hub">KUL</span> or <span class="hub">HKG</span>',est:[220,380,850],note:'Check Cebu Pacific seasonal'},
+{f:'MNL',t:'HKG',fc:'Manila',tc:'Hong Kong',km:1120,stops:0, route:'Cathay, Philippine, Cebu Pacific - very frequent',est:[90,170,430],note:''},
+{f:'HKG',t:'HAN',fc:'Hong Kong',tc:'Hanoi',km:871,stops:0, route:'Cathay, Vietnam Airlines, HK Express',est:[120,210,520],note:''},
+{f:'HAN',t:'LPQ',fc:'Hanoi',tc:'Luang Prabang',km:407,stops:0, route:'Vietnam Airlines, Lao Airlines',est:[110,190,380],note:'Small aircraft'},
+{f:'LPQ',t:'REP',fc:'Luang Prabang',tc:'Siem Reap',km:749,stops:1, route:'Usually via <span class="hub">VTE</span> or <span class="hub">PNH</span>',est:[140,240,480],note:'Lao Skyway seasonal direct'},
+{f:'REP',t:'KUL',fc:'Siem Reap',tc:'Kuala Lumpur',km:1161,stops:0, route:'AirAsia non-stop',est:[90,160,400],note:''},
+{f:'KUL',t:'CMB',fc:'Kuala Lumpur',tc:'Colombo',km:2455,stops:0, route:'SriLankan, AirAsia, Malaysia Airlines',est:[180,300,760],note:''},
+{f:'CMB',t:'MLE',fc:'Colombo',tc:'Malé',km:765,stops:0, route:'SriLankan non-stop, frequent',est:[130,220,520],note:''},
+{f:'MLE',t:'BOM',fc:'Malé',tc:'Mumbai',km:1658,stops:0, route:'IndiGo, SpiceJet, Air India',est:[150,260,620],note:''},
+{f:'BOM',t:'DXB',fc:'Mumbai',tc:'Dubai',km:1928,stops:0, route:'Emirates, IndiGo, Air India - very frequent',est:[130,240,620],note:''},
+{f:'DXB',t:'MCT',fc:'Dubai',tc:'Muscat',km:360,stops:0, route:'Oman Air, Emirates, flydubai',est:[80,150,420],note:'5h drive is often faster door-to-door'},
+{f:'MCT',t:'RUH',fc:'Muscat',tc:'Riyadh',km:1196,stops:0, route:'Oman Air, Saudia, flynas',est:[120,220,540],note:''},
+{f:'RUH',t:'CAI',fc:'Riyadh',tc:'Cairo',km:1634,stops:0, route:'Saudia, EgyptAir, flynas',est:[140,250,600],note:''},
+{f:'CAI',t:'ZNZ',fc:'Cairo',tc:'Zanzibar',km:4121,stops:1,hard:true, route:'No non-stop. Via <span class="hub">ADD</span> (Ethiopian), <span class="hub">NBO</span> or <span class="hub">DOH</span>',est:[380,620,1500],note:'Ethiopian via Addis usually cheapest'},
+{f:'ZNZ',t:'CPT',fc:'Zanzibar',tc:'Cape Town',km:3751,stops:1,hard:true, route:'No non-stop. Via <span class="hub">DAR</span> + <span class="hub">JNB</span>, or <span class="hub">ADD</span>',est:[420,700,1600],note:'Often 2 stops in practice - a long day'},
+{f:'CPT',t:'RAI',fc:'Cape Town',tc:'Praia',km:7014,stops:2,hard:true, route:'No African routing. Realistically <span class="hub">LIS</span> - flies past Europe and back',est:[1100,1800,3400],note:'The worst leg on the trip - see analysis'},
+{f:'RAI',t:'CMN',fc:'Praia',tc:'Casablanca',km:2619,stops:1,hard:true, route:'Royal Air Maroc seasonal; otherwise via <span class="hub">LIS</span> or <span class="hub">DKR</span>',est:[320,540,1200],note:'Verify RAM still flies this'},
+{f:'CMN',t:'LIS',fc:'Casablanca',tc:'Lisbon',km:589,stops:0, route:'TAP, Royal Air Maroc - frequent',est:[80,160,420],note:''},
+{f:'LIS',t:'YYZ',fc:'Lisbon',tc:'Toronto',km:5743,stops:0, route:'Air Canada, TAP non-stop',est:[450,800,2600],note:'Book with the outbound'}
+];
+
+const ANALYSIS=[
+{title:'CPT → RAI · Cape Town to Cape Verde',verdict:'Still the broken one',bad:true,
+ body:`<p>There is no sensible African routing between Cape Town and Praia. Cape Verde's air links run north to Lisbon, not down the African coast, so in practice you fly <b>Cape Town → Lisbon → Praia</b> — roughly 8,000&nbsp;km north, then 2,900&nbsp;km back south. About 11,000&nbsp;km of flying for a 7,000&nbsp;km gap, and Lisbon is your second-to-last stop anyway.</p>
+ <div class="opt"><b>Option A — reorder</b>Put Cape Verde between Morocco and Portugal: CPT → CMN → RAI → LIS → YYZ. Praia–Lisbon is a real, frequent route and the double-back disappears.</div>
+ <div class="opt"><b>Option B — cut it</b>Dropping Cape Verde removes the two worst legs on the itinerary and saves roughly $1,400–3,000 plus two travel days.</div>
+ <div class="opt"><b>Option C — accept it</b>Budget a full travel day and a Lisbon overnight.</div>`},
+
+{title:'KTM → SIN · Kathmandu to Singapore',verdict:'The deliberate backtrack',bad:true,
+ body:`<p>This is the 3,530&nbsp;km eastward jog created by putting Bhutan and Nepal early. Direct Kathmandu–Singapore service is thin and comes and goes; realistically you connect through <b>Bangkok</b> or <b>Kuala Lumpur</b> — which means passing back through Bangkok about ten days after leaving it.</p>
+ <p>It buys you Bhutan and Nepal in mid-November instead of December: warmer at altitude, peak trekking season, and a gentler acclimatisation ladder. That was the trade you chose deliberately.</p>
+ <p>Price it as a connection, not a hop. Budget a full travel day.</p>`},
+
+{title:'BKK → PBH · Bangkok to Paro',verdict:'Your Bhutan gateway',bad:false,
+ body:`<p>Only Drukair and Bhutan Airlines fly into Paro, and Bangkok is their busiest international route — near-daily, which is why Bangkok sits immediately before Bhutan in the route.</p>
+ <p>Two things to expect: flights from Bangkok often make a 30–45 minute technical stop at Guwahati or Bagdogra with passengers staying onboard, and Paro's approach is visual-only so weather delays are common. Book directly with the airline, and your operator will usually arrange it alongside the visa.</p>
+ <p>Returning, Paro–Kathmandu runs 7x weekly and takes about an hour — the strongest link in this part of the route.</p>`},
+
+{title:'The Southeast Asia loop',verdict:'Connections, not disasters',bad:false,
+ body:`<p>Reordering to Manila → Hong Kong → Hanoi → Luang Prabang turned three awkward connections into direct flights. Only <b>Bali → Manila</b> (via Singapore, KL or Hong Kong) and <b>Luang Prabang → Siem Reap</b> (via Vientiane or Phnom Penh) still need one.</p>
+ <p>Everything else here is a cheap LCC hop — Singapore–Bali, Siem Reap–KL and KL–Colombo are all frequent and competitively priced.</p>`},
+
+{title:'ZNZ → CPT · Zanzibar to Cape Town',verdict:'Hard but workable',bad:false,
+ body:`<p>No non-stop exists. The clean version is Zanzibar → Dar es Salaam → Johannesburg → Cape Town, or a single connection on Ethiopian via Addis. Expect 9–13 hours door to door either way.</p>
+ <p>Because Johannesburg is the natural connection point, consider whether a night there earns its place rather than transiting twice.</p>`},
+
+{title:'CAI → ZNZ · Cairo to Zanzibar',verdict:'Fine with a connection',bad:false,
+ body:`<p>Ethiopian via Addis Ababa is normally both cheapest and fastest. Kenya Airways via Nairobi also works. Gulf carriers via Doha or Dubai exist but backtrack east and cost more.</p>
+ <p>Worth noting: this is one place where adding Kenya or Ethiopia to the itinerary would cost almost nothing in airfare, since you're already connecting through one of them.</p>`}
+];
+
+/* ---------- STATE ---------- */
+let TIER=1, HARD_ONLY=false;
+const KEY='westbound-flights-v2';
+const load=()=>{try{return JSON.parse(localStorage.getItem(KEY)||'{}')}catch{return{}}};
+const save=o=>{try{localStorage.setItem(KEY,JSON.stringify(o))}catch{}};
+let ST=load();
+
+const money=n=>'$'+Math.round(n).toLocaleString('en-CA');
+const ftime=km=>{const t=km/800+0.75;const h=Math.floor(t);const m=Math.round((t-h)*60);return `${h}h ${String(m).padStart(2,'0')}`};
+
+/* ---------- RENDER ---------- */
+function render(){
+  const host=document.getElementById('rows');
+  host.innerHTML=LEGS.map((L,i)=>{
+    if(HARD_ONLY && !L.hard) return '';
+    const key=L.f+'-'+L.t;
+    const val=ST[key]?.p ?? '';
+    const note=ST[key]?.n ?? '';
+    const pill=L.stops===0?'<span class="pill ns">Non-stop</span>'
+      :L.stops===1?'<span class="pill one">1 stop</span>'
+      :'<span class="pill two">2+ stops</span>';
+    return `<tr class="${L.hard?'hard':''}">
+      <td class="num">${String(i+1).padStart(2,'0')}</td>
+      <td><div class="leg">${L.f}<span class="arw">→</span>${L.t}</div>
+          <div class="cities">${L.fc} → ${L.tc}</div></td>
+      <td class="num">${L.km.toLocaleString('en-CA')} km</td>
+      <td class="num">${ftime(L.km)}</td>
+      <td>${pill}</td>
+      <td class="carriers">${L.route}</td>
+      <td class="est"><b>${money(L.est[TIER])}</b><br><span style="font-size:10.5px;color:var(--muted)">${money(L.est[0])}–${money(L.est[2])}</span></td>
+      <td><input class="price" type="number" inputmode="numeric" placeholder="—" value="${val}" data-key="${key}"></td>
+      <td><input class="note" type="text" placeholder="${L.note||'…'}" value="${note}" data-note="${key}"></td>
+    </tr>`;
+  }).join('');
+
+  host.querySelectorAll('input.price').forEach(inp=>{
+    inp.addEventListener('input',()=>{
+      const k=inp.dataset.key;
+      ST[k]=ST[k]||{};
+      ST[k].p = inp.value===''?undefined:Number(inp.value);
+      save(ST);totals();
+    });
+  });
+  host.querySelectorAll('input.note').forEach(inp=>{
+    inp.addEventListener('input',()=>{
+      const k=inp.dataset.note;
+      ST[k]=ST[k]||{};ST[k].n=inp.value;save(ST);
+    });
+  });
+  totals();
+}
+
+function totals(){
+  let est=0,act=0,best=0,entered=0,km=0,hrs=0;
+  LEGS.forEach(L=>{
+    const k=L.f+'-'+L.t;
+    const p=ST[k]?.p;
+    est+=L.est[TIER];km+=L.km;hrs+=L.km/800+0.75;
+    if(typeof p==='number'&&!isNaN(p)){act+=p;best+=p;entered++;}
+    else best+=L.est[TIER];
+  });
+  document.getElementById('tEst').textContent=money(est);
+  document.getElementById('tAct').innerHTML=entered?money(act)+`<small>${entered} legs</small>`:'<span style="color:var(--muted);font-size:20px">—</span>';
+  document.getElementById('tBest').innerHTML=money(best)+'<small>CAD</small>';
+  document.getElementById('tKm').innerHTML=Math.round(km).toLocaleString('en-CA')+'<small>km</small>';
+  document.getElementById('tHrs').innerHTML=Math.round(hrs)+'<small>hrs</small>';
+  document.getElementById('miniEntered').textContent=entered;
+  document.getElementById('miniTotal').textContent=money(best);
+}
+
+/* ---------- ANALYSIS ---------- */
+document.getElementById('analysis').innerHTML=ANALYSIS.map(a=>
+  `<div class="card ${a.bad?'bad':''}">
+     <h3>${a.title}</h3>
+     <div class="verdict ${a.bad?'':'ok'}">${a.verdict}</div>
+     ${a.body}
+   </div>`).join('');
+
+/* ---------- CONTROLS ---------- */
+document.querySelectorAll('.tbtn[data-tier]').forEach(b=>{
+  b.addEventListener('click',()=>{
+    TIER=Number(b.dataset.tier);
+    document.querySelectorAll('.tbtn[data-tier]').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
+    render();
+  });
+});
+const hardBtn=document.getElementById('hardOnly');
+hardBtn.addEventListener('click',()=>{
+  HARD_ONLY=!HARD_ONLY;
+  hardBtn.setAttribute('aria-pressed',HARD_ONLY?'true':'false');
+  render();
+});
+document.getElementById('clearBtn').addEventListener('click',()=>{
+  if(confirm('Clear all entered prices and notes?')){ST={};save(ST);render();}
+});
+
+render();
+</script>
+</body>
+</html>
