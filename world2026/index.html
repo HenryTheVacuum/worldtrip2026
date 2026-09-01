@@ -228,8 +228,7 @@ a{color:var(--amber);text-underline-offset:3px}
 @media (max-width:620px){.map-info{right:8px;bottom:8px;min-width:0;max-width:62%;padding:8px 10px}
   .mi-title{font-size:17px}}
 .frame-wrap{border:1px solid var(--rule);background:var(--ink-2);border-radius:2px;overflow:hidden}
-#plannerframe{display:block;width:100%;height:min(78vh,900px);border:0;background:var(--ink)}
-@media (max-width:620px){#plannerframe{height:70vh}}
+#plannerframe{display:block;width:100%;height:900px;border:0;background:var(--ink);overflow:hidden}
 .map-legend{display:flex;flex-wrap:wrap;gap:10px 26px;padding:13px 18px;border-top:1px solid var(--rule-soft);font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
 .map-legend i{display:inline-block;width:22px;height:0;border-top:2px solid var(--amber);vertical-align:middle;margin-right:8px}
 .map-legend i.m{border-top-style:dashed;border-color:var(--magenta)}
@@ -415,7 +414,7 @@ footer{border-top:1px solid var(--rule);padding-block:28px 40px;color:var(--mute
     <div class="frame-wrap">
       <iframe id="plannerframe" title="Westbound flight planner" loading="lazy"></iframe>
     </div>
-    <p class="clim-note" style="margin-top:10px">Scroll inside the panel · entered prices save to this browser</p>
+    <p class="clim-note" style="margin-top:10px">Entered prices save to this browser · the table scrolls sideways on narrow screens</p>
   </div>
 </section>
 
@@ -1059,6 +1058,28 @@ const PLANNER_B64="PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KPGhlYWQ+CjxtZXRhI
     const bytes=new Uint8Array(bin.length);
     for(let i=0;i<bin.length;i++)bytes[i]=bin.charCodeAt(i);
     fr.srcdoc=new TextDecoder('utf-8').decode(bytes);
+    // grow the frame to the planner's full height so it never scrolls internally
+    const fit=()=>{
+      try{
+        const d=fr.contentDocument;
+        if(!d||!d.body)return;
+        const h=Math.max(d.body.scrollHeight,d.documentElement.scrollHeight,d.body.offsetHeight);
+        if(h>50)fr.style.height=(h+2)+'px';
+      }catch(err){}
+    };
+    fr.addEventListener('load',()=>{
+      fit();
+      try{
+        const d=fr.contentDocument;
+        d.documentElement.style.overflow='hidden';
+        if(window.ResizeObserver)new ResizeObserver(fit).observe(d.body);
+        // the tier buttons and filter re-render the table, changing height
+        d.addEventListener('click',()=>{setTimeout(fit,30);setTimeout(fit,250);});
+        d.addEventListener('input',()=>setTimeout(fit,30));
+      }catch(err){}
+      setTimeout(fit,120); setTimeout(fit,600);
+    });
+    window.addEventListener('resize',()=>setTimeout(fit,80));
   }catch(e){
     fr.outerHTML='<p style="padding:20px;color:var(--paper-dim);font-family:var(--mono);font-size:12px">Planner failed to load. Open flights.html directly.</p>';
   }
