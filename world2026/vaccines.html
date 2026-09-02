@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="darkreader-lock">
+<title>Westbound — Vaccination plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;450;600&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;
+  --ink:#05161D;--ink-2:#0A2029;--ink-3:#0E2A35;
+  --rule:#194150;--rule-soft:rgba(25,65,80,.55);
+  --paper:#E2EEED;--paper-dim:#A6C2C6;--muted:#6C8F98;
+  --amber:#F2A93C;--magenta:#E7649B;--jade:#58C4A3;--red:#E05555;
+  --display:'Big Shoulders Display',Impact,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --body:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:transparent;color:var(--paper);font-family:var(--body);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:none;margin:0;padding:0}
+
+.warn-box{border:1px solid var(--red);background:rgba(224,85,85,.08);padding:14px 18px;margin:0 0 18px;border-radius:2px}
+.warn-box b{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:6px}
+.warn-box p{margin:0 0 8px;font-size:13.5px;color:var(--paper-dim);line-height:1.6}
+.warn-box p:last-child{margin-bottom:0}
+.warn-box em{color:var(--paper);font-style:normal;font-weight:600}
+
+.toolbar{display:flex;flex-wrap:wrap;gap:9px;align-items:center;padding:0 0 16px;border-bottom:1px solid var(--rule-soft);margin-bottom:2px}
+.tbtn{all:unset;cursor:pointer;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  padding:8px 13px;border:1px solid var(--rule);color:var(--paper-dim);border-radius:2px;transition:.15s}
+.tbtn:hover{background:var(--ink-3);color:var(--paper)}
+.tbtn[aria-pressed="true"]{background:var(--amber);color:var(--ink);border-color:var(--amber);font-weight:600}
+.spacer{flex:1}
+.mini{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--muted)}
+.mini b{color:var(--amber);font-size:15px}
+
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:820px}
+thead th{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+  text-align:left;font-weight:500;padding:14px 10px 10px;border-bottom:1px solid var(--rule);white-space:nowrap}
+tbody td{padding:11px 10px;border-bottom:1px solid var(--rule-soft);vertical-align:top;font-size:13.5px}
+tbody tr:hover{background:rgba(242,169,60,.04)}
+tbody tr.req{background:rgba(224,85,85,.07)}
+tbody tr.req:hover{background:rgba(224,85,85,.11)}
+
+.vname{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--paper);white-space:nowrap}
+.vsub{font-size:11px;color:var(--muted);margin-top:3px}
+.pill{display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+  padding:3px 8px 2px;border-radius:2px;white-space:nowrap;font-weight:500}
+.pill.req{background:rgba(224,85,85,.14);color:var(--red);border:1px solid rgba(224,85,85,.4)}
+.pill.rec{background:rgba(242,169,60,.12);color:var(--amber);border:1px solid rgba(242,169,60,.32)}
+.pill.dis{background:rgba(88,196,163,.12);color:var(--jade);border:1px solid rgba(88,196,163,.32)}
+.why{font-size:12.5px;color:var(--paper-dim);line-height:1.5;min-width:230px}
+.sched{font-family:var(--mono);font-size:12px;color:var(--paper-dim);white-space:nowrap}
+.sched b{color:var(--paper)}
+.stops{font-size:11.5px;color:var(--muted);line-height:1.5}
+
+input.chk{width:16px;height:16px;accent-color:var(--amber);cursor:pointer}
+.note{width:100%;min-width:120px;background:transparent;border:none;border-bottom:1px dashed var(--rule);
+  color:var(--paper-dim);font-family:var(--body);font-size:12.5px;padding:4px 2px}
+.note:focus{outline:none;border-bottom-color:var(--amber);color:var(--paper)}
+
+.totals{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule);
+  border:1px solid var(--rule);margin:22px 0}
+.tot{background:var(--ink-2);padding:15px 17px}
+.tot dt{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.tot dd{margin:0;font-family:var(--display);font-weight:700;font-size:28px;line-height:1}
+.tot.big dd{color:var(--amber)}
+.tot dd small{font-family:var(--mono);font-size:10px;font-weight:400;color:var(--paper-dim);margin-left:3px}
+
+h3.sub{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:22px;margin:26px 0 8px;line-height:1}
+.lede2{color:var(--paper-dim);font-size:13.5px;max-width:74ch;margin:0 0 14px}
+.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.card{border:1px solid var(--rule);background:var(--ink-2);padding:16px 18px}
+.card.bad{border-color:var(--red)}
+.card h4{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 8px;color:var(--paper)}
+.card p{margin:0 0 9px;font-size:12.5px;color:var(--paper-dim);line-height:1.6}
+.card p:last-child{margin-bottom:0}
+.card b{color:var(--paper)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="warn-box">
+  <b>Not medical advice</b>
+  <p>This is a planning checklist, not a prescription. A travel-health clinician decides what you actually need based on your history, your exact dates and current outbreak data. Costs are <em>rough Canadian estimates per person</em> and vary a lot between clinics.</p>
+  <p>The one hard rule on this route: <em>yellow fever</em>. Tanzania is a risk country, and South Africa checks the certificate on arrival from one. No card can mean no entry.</p>
+</div>
+
+<div class="toolbar">
+  <button class="tbtn" data-f="all" aria-pressed="true">All</button>
+  <button class="tbtn" data-f="req" aria-pressed="false">Required</button>
+  <button class="tbtn" data-f="rec" aria-pressed="false">Recommended</button>
+  <button class="tbtn" data-f="dis" aria-pressed="false">Discuss</button>
+  <span class="spacer"></span>
+  <span class="mini">Done: <b id="miniDone">0</b>/<span id="miniTot">0</span> · Est. <b id="miniCost">$0</b></span>
+  <button class="tbtn" id="clearBtn">Reset</button>
+</div>
+
+<div class="tablewrap">
+<table>
+<thead><tr>
+  <th>✓</th><th>Vaccine</th><th>Status</th><th>Why, for this route</th><th>Schedule</th><th>Est. cost</th><th>Notes</th>
+</tr></thead>
+<tbody id="rows"></tbody>
+</table>
+</div>
+
+<dl class="totals">
+  <div class="tot"><dt>Doses to book</dt><dd id="tDoses"></dd></div>
+  <div class="tot"><dt>Longest lead time</dt><dd id="tLead"></dd></div>
+  <div class="tot big"><dt>Est. cost, two people</dt><dd id="tCost"></dd></div>
+  <div class="tot"><dt>Book clinic by</dt><dd id="tBook"></dd></div>
+</dl>
+
+<h3 class="sub">The three that need planning</h3>
+<p class="lede2">Most of this list is one appointment. These three aren't.</p>
+<div class="cards" id="analysis"></div>
+
+</div>
+
+<script>
+/* status: req = entry requirement, rec = strongly recommended, dis = discuss with clinician
+   cost: rough CAD per person, whole course */
+const VAX=[
+{name:'Yellow fever',sub:'ICVP certificate',status:'req',
+ why:'Tanzania is a risk country and <b>South Africa checks the certificate</b> on arrival from one. This is an entry requirement, not a health suggestion.',
+ sched:'1 dose · <b>≥10 days</b> before Tanzania',cost:175,
+ stops:'Tanzania → South Africa',
+ note:'Designated centres only — confirm when booking'},
+
+{name:'Routine boosters',sub:'Tdap, MMR, polio, varicella',status:'req',
+ why:'Baseline cover assumed by every travel clinic before they add anything else. Polio boosters matter for several stops on this route.',
+ sched:'Top-ups as needed',cost:60,stops:'Everywhere',note:'Bring your childhood record'},
+
+{name:'Hepatitis A',sub:'',status:'rec',
+ why:'Food and water transmission. Relevant across almost the whole route — Southeast Asia, South Asia, Egypt, Tanzania.',
+ sched:'2 doses · 0 and 6–12 months',cost:130,
+ stops:'22 of 27 countries',note:'Dose 1 gives good cover; dose 2 can wait'},
+
+{name:'Hepatitis B',sub:'',status:'rec',
+ why:'Standard for long trips. Covers medical exposure anywhere care is needed unexpectedly.',
+ sched:'3 doses · 0, 1, 6 months (accelerated available)',cost:150,
+ stops:'Whole trip',note:'Ask about the accelerated schedule'},
+
+{name:'Typhoid',sub:'',status:'rec',
+ why:'Food and water. Highest relevance in <b>India, Nepal, Sri Lanka</b> and Cambodia.',
+ sched:'1 dose · 2 weeks before',cost:90,
+ stops:'India, Nepal, Sri Lanka, Cambodia, Laos',note:'Oral or injected — ask which suits'},
+
+{name:'Rabies',sub:'Pre-exposure',status:'dis',
+ why:'Does not make you immune. It removes the need for <b>immunoglobulin</b>, which is scarce outside major cities in India and Nepal — that is the real reason to consider it.',
+ sched:'3 doses · over 21–28 days',cost:350,
+ stops:'India, Nepal, Sri Lanka, Cambodia, Laos, Bali',note:'Ask about the cheaper intradermal schedule'},
+
+{name:'Japanese encephalitis',sub:'',status:'dis',
+ why:'Usually reserved for long rural stays in monsoon season. Your Asian stops are short, urban and mostly dry-season — likely skippable.',
+ sched:'2 doses · 28 days apart',cost:400,
+ stops:'Vietnam, Laos, Cambodia, Nepal, Bali',note:'Most likely to be declined by the clinic'},
+
+{name:'Meningococcal ACWY',sub:'',status:'dis',
+ why:'Saudi Arabia requires proof for Hajj and Umrah pilgrims. Confirm whether your <b>tourist</b> e-visa triggers the same requirement.',
+ sched:'1 dose · 10 days before',cost:130,
+ stops:'Saudi Arabia',note:'Verify against current Saudi entry rules'},
+
+{name:'Malaria prophylaxis',sub:'Tablets, not a vaccine',status:'req',
+ why:'<b>Zanzibar has real transmission.</b> Also relevant in rural Cambodia, Laos and parts of India. Drug choice depends on where and how long.',
+ sched:'Start before arrival · continue after',cost:120,
+ stops:'Tanzania, Cambodia, Laos, India',note:'Doxycycline is cheapest but causes sun sensitivity'},
+
+{name:'Cholera / travellers’ diarrhoea',sub:'Dukoral',status:'dis',
+ why:'Modest benefit. Some travellers take it for long trips through South and Southeast Asia; many clinicians consider it optional.',
+ sched:'2 doses · 1–6 weeks apart',cost:100,
+ stops:'South & Southeast Asia',note:'Low priority — decide with the clinic'}
+];
+
+const ANALYSIS=[
+{title:'Yellow fever · the one that can stop you boarding',bad:true,
+ body:`<p>Tanzania sits on the WHO risk list, and <b>South Africa requires the certificate from anyone arriving from a risk country</b>. Your Zanzibar → Cape Town leg is exactly that crossing.</p>
+ <p>It must be given <b>at least 10 days before</b> you reach South Africa, and the certificate is now valid for life. Carry the physical yellow card with your passport — a photo is not always accepted.</p>
+ <p>In Canada it can only be given at a <b>designated yellow fever centre</b>, and not every travel clinic holds that designation. Ask on the phone before booking anything.</p>`},
+
+{title:'Rabies · a supply problem, not a disease risk',bad:false,
+ body:`<p>Actual traveller deaths are very rare. What is not rare is the scramble: a scratch from a street dog in Kathmandu, then two days of phone calls trying to locate immunoglobulin.</p>
+ <p>Pre-exposure does not remove the need for treatment — it removes the need for <b>immunoglobulin specifically</b>, which is the part that is hard to find. Boosters are available almost anywhere.</p>
+ <p>Worth it if you plan hiking in Nepal or will be near temple monkeys. Reasonable to skip if you stay urban and can reach a major city quickly. Ask about the intradermal schedule, which can cut the cost substantially.</p>`},
+
+{title:'Timing · why August 2026',bad:false,
+ body:`<p>Rabies is three doses over 21–28 days and Japanese encephalitis is two over 28. If you decide on either in September, you run out of runway before an October 15 departure.</p>
+ <p>Book the clinic for <b>early August 2026</b>. That leaves room for a multi-dose series, the 10-day yellow fever window, and a second appointment if something is out of stock.</p>
+ <p>Bring the full itinerary with dates. The clinician decides the list, and a short urban stop is assessed very differently from a long rural one.</p>`}
+];
+
+let FILTER='all';
+const KEY='westbound-vax-v1';
+const load=()=>{try{return JSON.parse(localStorage.getItem(KEY)||'{}')}catch{return{}}};
+const save=o=>{try{localStorage.setItem(KEY,JSON.stringify(o))}catch{}};
+let ST=load();
+const money=n=>'$'+Math.round(n).toLocaleString('en-CA');
+const label={req:'Required',rec:'Recommended',dis:'Discuss'};
+
+function render(){
+  document.getElementById('rows').innerHTML=VAX.map((v,i)=>{
+    if(FILTER!=='all'&&v.status!==FILTER)return '';
+    const st=ST[v.name]||{};
+    return `<tr class="${v.status==='req'?'req':''}">
+      <td><input class="chk" type="checkbox" data-k="${v.name}" ${st.d?'checked':''}></td>
+      <td><div class="vname">${v.name}</div>${v.sub?`<div class="vsub">${v.sub}</div>`:''}</td>
+      <td><span class="pill ${v.status}">${label[v.status]}</span></td>
+      <td class="why">${v.why}<div class="stops">${v.stops}</div></td>
+      <td class="sched">${v.sched}</td>
+      <td class="sched"><b>${money(v.cost)}</b><div class="vsub">per person</div></td>
+      <td><input class="note" type="text" placeholder="${v.note}" value="${st.n||''}" data-n="${v.name}"></td>
+    </tr>`;
+  }).join('');
+  document.querySelectorAll('.chk').forEach(c=>c.addEventListener('change',()=>{
+    const k=c.dataset.k; ST[k]=ST[k]||{}; ST[k].d=c.checked; save(ST); totals();
+  }));
+  document.querySelectorAll('.note').forEach(n=>n.addEventListener('input',()=>{
+    const k=n.dataset.n; ST[k]=ST[k]||{}; ST[k].n=n.value; save(ST);
+  }));
+  totals();
+}
+
+function totals(){
+  let done=0,cost=0,doses=0;
+  VAX.forEach(v=>{
+    if(ST[v.name]&&ST[v.name].d)done++; else cost+=v.cost;
+    const m=v.sched.match(/^(\d+)\s+doses?/); doses+=m?Number(m[1]):1;
+  });
+  document.getElementById('miniDone').textContent=done;
+  document.getElementById('miniTot').textContent=VAX.length;
+  document.getElementById('miniCost').textContent=money(cost*2);
+  document.getElementById('tDoses').innerHTML=doses+'<small>incl. boosters</small>';
+  document.getElementById('tLead').innerHTML='28<small>days</small>';
+  document.getElementById('tCost').innerHTML=money(cost*2)+'<small>CAD</small>';
+  document.getElementById('tBook').innerHTML='Aug<small>2026</small>';
+}
+
+document.getElementById('analysis').innerHTML=ANALYSIS.map(a=>
+  `<div class="card ${a.bad?'bad':''}"><h4>${a.title}</h4>${a.body}</div>`).join('');
+
+document.querySelectorAll('.tbtn[data-f]').forEach(b=>b.addEventListener('click',()=>{
+  FILTER=b.dataset.f;
+  document.querySelectorAll('.tbtn[data-f]').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
+  render();
+}));
+document.getElementById('clearBtn').addEventListener('click',()=>{
+  if(confirm('Clear all ticks and notes?')){ST={};save(ST);render();}
+});
+
+render();
+</script>
+</body>
+</html>
