@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="darkreader-lock">
+<title>Portugal</title>
+<link rel="stylesheet" href="fonts.css">
+</head>
+<body>
+<style>
+:root{color-scheme:dark;
+  --ink:#05161D;--ink-2:#0A2029;--ink-3:#0E2A35;
+  --rule:#194150;--rule-soft:rgba(25,65,80,.6);
+  --paper:#E2EEED;--paper-dim:#A6C2C6;--muted:#6C8F98;
+  --amber:#F2A93C;--magenta:#E7649B;--jade:#58C4A3;--red:#E05555;
+  --display:'Big Shoulders Display','Arial Narrow',Impact,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --body:'Inter',system-ui,sans-serif;
+  --gut:clamp(18px,4vw,64px);--maxw:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+.section{padding-block:clamp(34px,4.4vw,58px);border-top:1px solid var(--rule-soft);position:relative}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:14px;margin:0 0 18px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--rule)}
+.eyebrow .n{color:var(--amber)}
+h2.head{font-family:var(--display);font-weight:700;font-size:clamp(34px,5.6vw,66px);line-height:.92;margin:0 0 14px;text-transform:uppercase}
+.lede{max-width:66ch;color:var(--paper-dim);font-size:clamp(15px,1.5vw,17px);margin:0 0 26px}
+.lede b{color:var(--paper);font-weight:600}
+a{color:var(--amber);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+.hint{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+@media (min-width:980px){.hint.wide{display:none}}
+.scroller{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--rule) transparent}
+.scroller::-webkit-scrollbar{height:6px}
+.scroller::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}
+.scroller>svg{display:block;width:100%;height:auto}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(30px,5vw,58px) clamp(24px,4vw,40px);overflow:hidden}
+.gridbg{position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:linear-gradient(to right,var(--rule-soft) 1px,transparent 1px),linear-gradient(to bottom,var(--rule-soft) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%);-webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%)}
+.back{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:inline-block;margin-bottom:20px}
+.back:hover{color:var(--amber)}
+.strip{font-family:var(--mono);font-size:clamp(10px,1.15vw,12px);letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;border-block:1px solid var(--rule);padding-block:11px;margin-bottom:clamp(26px,4vw,44px)}
+.strip .k{color:var(--muted)}.strip .amb{color:var(--amber)}
+.title{font-family:var(--display);text-transform:uppercase;margin:0;line-height:.82;position:relative}
+.title .l1{display:block;font-weight:400;font-size:clamp(34px,7.4vw,96px);color:transparent;-webkit-text-stroke:1.2px var(--paper-dim)}
+.title .l2{display:block;font-weight:800;font-size:clamp(62px,15vw,210px);letter-spacing:-.015em;color:var(--paper)}
+.subline{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:baseline;margin-top:clamp(18px,3vw,30px);font-family:var(--mono);font-size:clamp(11px,1.25vw,13px);letter-spacing:.14em;text-transform:uppercase;color:var(--paper-dim)}
+.subline .sep{color:var(--rule)}
+
+/* instruments */
+.instr{display:grid;grid-template-columns:repeat(auto-fit,minmax(124px,1fr));border:1px solid var(--rule);background:var(--ink-2);margin:clamp(24px,3.4vw,38px) 0 0}
+.instr div{padding:15px 17px;border-right:1px solid var(--rule-soft)}
+.instr div:last-child{border-right:0}
+.instr dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.instr dd{margin:0;font-family:var(--display);font-weight:600;font-size:31px;line-height:1}
+.instr dd span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--paper-dim);margin-left:3px}
+.instr dd.hot{color:var(--amber)}
+.instr dd.warn{color:var(--magenta)}
+
+/* chart frames */
+.figcap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:9px;margin:0 0 8px}
+.figcap b{color:var(--amber);font-weight:500}
+.fignote{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.fignote i{display:inline-block;width:14px;height:9px;margin:0 5px 0 14px;vertical-align:middle;border-radius:1px}
+.fignote i:first-child{margin-left:0}
+.ax{stroke:var(--rule);stroke-width:1}
+.axs{stroke:var(--rule-soft);stroke-width:1}
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.08em;fill:var(--muted)}
+.lbl-p{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;fill:var(--paper)}
+.lbl-a{font-family:var(--mono);font-size:10px;letter-spacing:.12em;fill:var(--amber)}
+
+/* cards */
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin:0 0 6px}
+.card{border:1px solid var(--rule);background:var(--ink-2);padding:18px 20px;position:relative}
+.card.bad{border-color:var(--red)}
+.card.good{border-color:var(--jade)}
+.card h3{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 4px;color:var(--paper)}
+.card .verdict{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:11px}
+.card .verdict.bad{color:var(--red)}
+.card .verdict.ok{color:var(--jade)}
+.card p{margin:0 0 10px;font-size:13.5px;color:var(--paper-dim);line-height:1.62}
+.card p:last-child{margin-bottom:0}
+.card p b{color:var(--paper);font-weight:600}
+.fix{border-left:2px solid var(--amber);padding-left:12px;margin:12px 0 0;font-size:12.8px;color:var(--paper-dim);line-height:1.6}
+.fix b{display:block;color:var(--amber);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px;font-weight:500}
+.fix strong{color:var(--paper);font-weight:600}
+
+/* shape cards */
+.shapes{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+.shape{border:1px solid var(--rule);background:var(--ink-2);padding:0;display:flex;flex-direction:column}
+.shape.pick{border-color:var(--amber);box-shadow:inset 0 0 0 1px rgba(242,169,60,.25)}
+.shape-hd{padding:16px 20px 14px;border-bottom:1px solid var(--rule-soft)}
+.shape-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.shape.pick .shape-tag{color:var(--amber)}
+.shape-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(24px,3vw,32px);line-height:.95;margin:0}
+.chainrow{display:flex;flex-wrap:wrap;align-items:center;gap:5px 7px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--paper);padding:13px 20px;border-bottom:1px solid var(--rule-soft);background:rgba(5,22,29,.5)}
+.chainrow .a{color:var(--rule)}
+.chainrow .n{color:var(--amber);font-size:9.5px}
+.shape-body{padding:15px 20px 18px;flex:1}
+.shape-body p{margin:0 0 10px;font-size:13.3px;color:var(--paper-dim);line-height:1.6}
+.shape-body p:last-child{margin-bottom:0}
+.shape-body p b{color:var(--paper);font-weight:600}
+.shape-meta{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--rule-soft)}
+.shape-meta div{flex:1;min-width:88px;padding:11px 20px;border-right:1px solid var(--rule-soft)}
+.shape-meta div:last-child{border-right:0}
+.shape-meta dt{font-family:var(--mono);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.shape-meta dd{margin:0;font-family:var(--mono);font-size:13px;color:var(--paper)}
+.shape-meta dd.g{color:var(--jade)}
+.shape-meta dd.r{color:var(--red)}
+
+/* day accordion */
+.days{border-top:1px solid var(--rule)}
+.day{border-bottom:1px solid var(--rule)}
+.day-btn{all:unset;box-sizing:border-box;display:grid;width:100%;cursor:pointer;grid-template-columns:76px 1fr auto;gap:0 clamp(14px,2.4vw,30px);align-items:baseline;padding:clamp(13px,1.8vw,18px) 4px;transition:background .18s ease}
+.day-btn:hover{background:rgba(242,169,60,.05)}
+.day-btn:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.day-date{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.1em}
+.day-date small{display:block;color:var(--muted);font-size:9.5px;letter-spacing:.14em;margin-top:3px}
+.day-btn>span:nth-child(2){display:flex;flex-direction:column;gap:6px}
+.day-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(22px,3.2vw,34px);line-height:.95;margin:0}
+.day-sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.day-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--paper-dim);text-align:right;white-space:nowrap}
+.day-meta .chev{display:inline-block;margin-left:12px;color:var(--muted);transition:transform .25s ease}
+.day.open .day-meta .chev{transform:rotate(180deg)}
+@media (max-width:720px){.day-btn{grid-template-columns:64px 1fr;row-gap:8px}.day-meta{grid-column:2;text-align:left}}
+.day-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .34s cubic-bezier(.3,.8,.3,1)}
+.day.open .day-body{grid-template-rows:1fr}
+.day-inner{overflow:hidden}
+.day-pad{padding:2px 4px clamp(22px,3vw,32px)}
+.slots{display:grid;gap:0;border-left:1px solid var(--rule)}
+.slot{padding:0 0 16px 16px;position:relative}
+.slot:last-child{padding-bottom:2px}
+.slot::before{content:"";position:absolute;left:-4px;top:6px;width:7px;height:7px;background:var(--amber);border-radius:50%}
+.slot.move::before{background:var(--magenta)}
+.slot h4{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 5px;font-weight:500}
+.slot.move h4{color:var(--magenta)}
+.slot p{margin:0;font-size:14px;line-height:1.62;color:var(--paper-dim);max-width:72ch}
+.slot p b{color:var(--paper);font-weight:600}
+
+/* worth doing */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.fbtn{all:unset;cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border:1px solid var(--rule);color:var(--paper-dim);border-radius:2px;transition:.15s}
+.fbtn:hover{background:var(--ink-3);color:var(--paper)}
+.fbtn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.fbtn[aria-pressed="true"]{background:var(--amber);color:var(--ink);border-color:var(--amber);font-weight:600}
+.fdiv{width:1px;background:var(--rule);margin:2px 6px}
+.items{display:grid;gap:1px;background:var(--rule-soft);border:1px solid var(--rule)}
+.item{background:var(--ink-2);padding:13px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:baseline}
+.item .tier{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:3px 7px 2px;border-radius:2px;white-space:nowrap;align-self:start;margin-top:2px}
+.tier.do{background:rgba(88,196,163,.14);color:var(--jade);border:1px solid rgba(88,196,163,.35)}
+.tier.opt{background:rgba(242,169,60,.12);color:var(--amber);border:1px solid rgba(242,169,60,.3)}
+.tier.skip{background:rgba(224,85,85,.1);color:var(--red);border:1px solid rgba(224,85,85,.3)}
+.item .nm{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:20px;line-height:1.05;color:var(--paper)}
+.item .why{grid-column:2;font-size:13.3px;color:var(--paper-dim);line-height:1.55;max-width:74ch}
+.item .why b{color:var(--paper);font-weight:600}
+.item .when{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);text-align:right;white-space:nowrap;align-self:start;margin-top:4px}
+.item .when.book{color:var(--magenta)}
+@media (max-width:640px){.item{grid-template-columns:auto 1fr}.item .when{grid-column:2;text-align:left;margin-top:2px}.item .why{grid-column:1/-1}}
+.empty{background:var(--ink-2);padding:22px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* calc */
+.calc{border:1px solid var(--rule);background:var(--ink-2)}
+.calc-legs{display:grid}
+.leg-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--rule-soft);cursor:pointer}
+.leg-row:hover{background:rgba(242,169,60,.04)}
+.leg-row input{accent-color:var(--amber);width:15px;height:15px;cursor:pointer}
+.leg-row .lname{font-family:var(--mono);font-size:12.5px;color:var(--paper-dim)}
+.leg-row input:checked+.lname{color:var(--paper)}
+.leg-row .lyen{font-family:var(--mono);font-size:12.5px;color:var(--amber);font-variant-numeric:tabular-nums;white-space:nowrap}
+.leg-row.out .lyen{color:var(--magenta)}
+.leg-row .lnote{grid-column:2/-1;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--muted);margin-top:-4px}
+.calc-out{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule-soft)}
+.calc-out div{background:var(--ink-3);padding:15px 17px}
+.calc-out dt{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.calc-out dd{margin:0;font-family:var(--display);font-weight:700;font-size:27px;line-height:1;font-variant-numeric:tabular-nums}
+.calc-out dd small{font-family:var(--mono);font-size:10px;font-weight:400;color:var(--paper-dim);margin-left:4px;letter-spacing:.06em}
+#verdict{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;line-height:1.5}
+#verdict.win{color:var(--jade)}
+#verdict.lose{color:var(--red)}
+
+/* panels / tables */
+.panel{border:1px solid var(--rule);background:var(--ink-2);padding:clamp(17px,2.4vw,24px);margin-top:22px}
+.panel h3{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 12px;font-weight:500}
+.panel p{margin:0 0 12px;font-size:13.6px;color:var(--paper-dim);line-height:1.62}
+.panel p:last-child{margin-bottom:0}
+.panel p b{color:var(--paper);font-weight:600}
+table.ref{width:100%;border-collapse:collapse;font-size:13.4px}
+table.ref th{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:500;padding:0 14px 10px 0;border-bottom:1px solid var(--rule)}
+table.ref td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule-soft);color:var(--paper-dim);vertical-align:top}
+table.ref td:first-child{font-family:var(--display);font-size:17px;font-weight:600;text-transform:uppercase;color:var(--paper);white-space:nowrap;width:1%}
+table.ref td.t{font-family:var(--mono);font-size:11px;letter-spacing:.06em;white-space:nowrap;color:var(--amber)}
+table.ref tr.flag td.t{color:var(--magenta)}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.cols{display:grid;gap:16px 34px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:20px}
+.cols p{margin:0;font-size:13.6px;color:var(--paper-dim);line-height:1.6}
+.cols p b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:5px;font-weight:500}
+
+footer{border-top:1px solid var(--rule);padding-block:26px 40px;color:var(--muted)}
+.foot-grid{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:flex-end}
+.foot-grid p{margin:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase}
+.foot-mark{font-family:var(--display);font-size:clamp(34px,8vw,100px);font-weight:800;text-transform:uppercase;line-height:.8;color:transparent;-webkit-text-stroke:1px var(--rule);margin:30px 0 0}
+</style>
+
+<header class="hero">
+  <div class="gridbg"></div>
+  <div class="wrap">
+    <a class="back" href="index.html">← Westbound · the dossier</a>
+    <p class="strip">
+      <span><span class="k">Stop</span> <span class="amb">27 of 27</span></span>
+      <span><span class="k">In</span> CMN · Casablanca</span>
+      <span><span class="k">Fly Portugal</span> <span class="amb">LIS</span></span>
+      <span><span class="k">Out</span> YYZ · Toronto</span>
+      <span><span class="k">Window</span> 14–21 Feb 2027</span>
+      <span><span class="k">Clock</span> UTC+0</span>
+    </p>
+    <h1 class="title">
+      <span class="l1">Last stop</span>
+      <span class="l2">Portugal</span>
+    </h1>
+    <p class="subline">
+      <span>Lisbon base, seven nights</span><span class="sep">/</span>
+      <span>Sintra is a day, not a stop</span><span class="sep">/</span>
+      <span>One time zone left</span>
+    </p>
+
+    <dl class="instr">
+      <div><dt>Calendar days</dt><dd>7</dd></div>
+      <div><dt>Full days</dt><dd class="hot">6</dd></div>
+      <div><dt>Nights</dt><dd>7</dd></div>
+      <div><dt>Bases</dt><dd>1</dd></div>
+      <div><dt>Clock change</dt><dd class="hot">0<span>hrs</span></dd></div>
+      <div><dt>Feb rain days</dt><dd class="warn">14</dd></div>
+    </dl>
+  </div>
+</header>
+
+<section class="section" id="audit">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">01</span> The time audit</p>
+    <h2 class="head">Seven days,<br>and you get them</h2>
+    <p class="lede">For the first time in twenty-six stops, the arithmetic is on your side. Casablanca to Lisbon is <b>ninety minutes with no clock change</b> — Morocco moved permanently to GMT on 20 September 2026, so Morocco, Portugal and the UK all read the same time in February. No date line, no jet lag, no lost day. Take a morning departure and 14 February is a real half-day, not a write-off.</p>
+
+    <div class="figcap">
+      <span>Fig. 1 — What the last week actually contains</span>
+      <span><b>14–21 Feb</b> · hour by hour</span>
+    </div>
+    <div class="scroller">
+      <svg id="audit-chart" viewBox="0 0 1400 190" role="img" aria-label="Timeline of 14 to 21 February showing a short morning in transit from Morocco, an arrival half-day on the 14th, six full days from the 15th to the 20th, and a final morning before the flight home on the 21st."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--magenta);opacity:.55"></i>In transit<i style="background:rgba(242,169,60,.35)"></i>Part day<i style="background:var(--amber)"></i>Full day</p>
+
+    <div class="cols">
+      <p><b>Take the morning flight</b>Royal Air Maroc's daily CMN–LIS is AT982 at 15:20 — that hands you a 17:00 arrival and nothing else. TAP's TP1437 leaves Casablanca 10:25 on Wednesdays, Saturdays and <b>Sundays</b>, which 14 February is. Same fare bracket, four extra hours in Lisbon. If the Morocco reversal holds and you're flying out of Marrakech instead, TP1453 at 10:45 does the same job on ten weekly nonstops.</p>
+      <p><b>The one entry that counts</b>Portugal is the <b>only Schengen country on the whole trip</b>. Your 90-in-180 clock starts at zero on arrival and you use seven of them. Nothing from Japan onward touches it. The complication is not the allowance — it's the machinery at the border, which is section 02.</p>
+      <p><b>Decompression is a legitimate use of a day</b>Twenty-six countries in four months ends here. Lisbon is a city where doing nothing well is the local competence — a coffee, a miradouro, an hour watching the river go by. Build one day with nothing in it and do not feel obliged to fill it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="flags">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">02</span> Three things that don't move</p>
+    <h2 class="head">Read these<br>before you book</h2>
+    <p class="lede">Two are about getting in, and they are new since you left Toronto. The third is about a Monday, and it costs you a day if you don't see it coming.</p>
+
+    <div class="cards">
+      <div class="card bad">
+        <h3>ETIAS may be live by the time you fly</h3>
+        <div class="verdict bad">Buy it anyway — €20</div>
+        <p>ETIAS, the EU's travel authorisation for visa-exempt nationals, is scheduled to launch in the <b>last quarter of 2026</b>. It then runs a <b>six-month transitional period</b> in which travellers without one may still be admitted provided they meet all other entry conditions, followed by a six-month grace period after that.</p>
+        <p>On a Q4 2026 start, 14 February 2027 sits inside the transitional window and you are legally fine without one. But the start date has slipped repeatedly and has not been confirmed by date, only by quarter — and airlines have historically enforced new authorisations at the gate more bluntly than borders do.</p>
+        <div class="fix"><b>What to do</b>Apply the moment the portal opens, from <strong>europa.eu/etias</strong> and nowhere else. It is <strong>€20</strong>, valid three years or until your passport expires, and most applications are approved in minutes. Any site taking ETIAS applications before the official launch is fraudulent. Twenty euros against being denied boarding in Casablanca on the last leg of a four-month trip is not a close call.</div>
+      </div>
+
+      <div class="card bad">
+        <h3>Lisbon airport, EES, and your first Schengen entry</h3>
+        <div class="verdict bad">Budget 90 minutes</div>
+        <p>The EU's Entry/Exit System became fully operational on <b>10 April 2026</b> and replaced passport stamping outright. As a Canadian arriving from a non-Schengen country you get the <b>full first-time enrolment</b>: facial image plus four fingerprints, taken at the border, with your record created from scratch.</p>
+        <p>You will do this at the worst possible airport for it. Humberto Delgado topped Europe's 2026 airport stress ranking with a perfect score of 100/100 — <b>49.95% on-time departures</b>, the worst of the thirty major airports studied, roughly 20-minute security waits, and 36.1 million passengers through a terminal built for far fewer. Portugal deployed 170 extra border officers in July 2026 and the Prime Minister said in August that conditions had "improved substantially"; treat that as a direction of travel, not a guarantee.</p>
+        <div class="fix"><b>The lever</b>Portugal was the second country to adopt the <strong>EES pre-enrolment app</strong> — do the data capture on your phone before you fly and you shorten the booth time considerably. Then don't book anything before 19:00 on arrival day. On the way home, be at the airport <strong>three hours</strong> before the Toronto flight, not two.</div>
+      </div>
+
+      <div class="card">
+        <h3>Monday 15 February is a closed day</h3>
+        <div class="verdict">Reorder the week</div>
+        <p>Your first full day is a Monday, and Portugal's national monuments and state museums close on Mondays. <b>Jerónimos Monastery, the Belém Tower, the Coach Museum, the Ancient Art museum and the Gulbenkian</b> are all shut. Belém — the single densest half-day in Lisbon — is simply unavailable.</p>
+        <p>What stays open: the whole of <b>Sintra</b> (Parques de Sintra monuments and Quinta da Regaleira run daily), São Jorge Castle, the trams and funiculars, Time Out Market, LX Factory, and every viewpoint, alley and pastelaria in the city.</p>
+        <div class="fix"><b>The fix</b>Monday is the walking day — Alfama, Graça, Mouraria, the miradouros, Bairro Alto — and Belém moves to Wednesday. Don't put Sintra on Monday either: it's open, but a Monday Sintra wastes the one day Lisbon's indoor half is shut.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="shapes">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">03</span> The open question</p>
+    <h2 class="head">Porto:<br>in or out</h2>
+    <p class="lede">Seven nights is the longest single stop since Japan, and it's enough that "Lisbon and Sintra" starts to feel like it leaves room. Porto is about three hours north on the Alfa Pendular and it is a genuinely different city. The question is whether, on day 118 of a 130-day trip, you want another set of bags and another check-in.</p>
+
+    <div class="shapes">
+      <div class="shape pick">
+        <div class="shape-hd">
+          <div class="shape-tag">Recommended</div>
+          <p class="shape-name">One base, seven nights</p>
+        </div>
+        <div class="chainrow">
+          <span>Lisbon <span class="n">×7</span></span><span class="a">→</span>
+          <span>Sintra <span class="n">day</span></span><span class="a">→</span>
+          <span>Cascais <span class="n">day</span></span><span class="a">→</span>
+          <span class="n">LIS</span>
+        </div>
+        <div class="shape-body">
+          <p>You unpack once, for the first time since Tokyo. Every day trip runs out and back on a commuter train, so the bag never moves and there is no check-out morning eating a day. Sintra on Tuesday, Belém on Wednesday, the coast on Friday, and <b>two days with nothing scheduled</b> — which, at this point in the trip, is the feature.</p>
+          <p><b>The honest case:</b> Lisbon rewards depth. The city is a set of hills with different characters and you only start to feel the difference around day four. A week here is not padding.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Bases</dt><dd class="g">1</dd></div>
+          <div><dt>Check-ins</dt><dd class="g">1</dd></div>
+          <div><dt>Rail hours</dt><dd>≈4</dd></div>
+          <div><dt>Slack days</dt><dd class="g">2</dd></div>
+        </dl>
+      </div>
+
+      <div class="shape">
+        <div class="shape-hd">
+          <div class="shape-tag">If you want one more city</div>
+          <p class="shape-name">Two nights in Porto</p>
+        </div>
+        <div class="chainrow">
+          <span>Lisbon <span class="n">×4</span></span><span class="a">→</span>
+          <span>Porto <span class="n">×2</span></span><span class="a">→</span>
+          <span>Lisbon <span class="n">×1</span></span><span class="a">→</span>
+          <span class="n">LIS</span>
+        </div>
+        <div class="shape-body">
+          <p>Out Thursday morning, back Saturday afternoon, one last Lisbon night before the flight. Porto in two nights is enough for the Ribeira, a port lodge across the river in Gaia, Livraria Lello if you insist, and the Douro at dusk — which is the best of it.</p>
+          <p><b>What it costs:</b> six hours on trains, two hotel check-ins, and both of the slack days. It also collides with February — Porto is materially wetter and colder than Lisbon, and a grey two days on the Douro is a worse two days than a grey two days in Lisbon, where you can duck indoors.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Bases</dt><dd>2</dd></div>
+          <div><dt>Check-ins</dt><dd class="r">3</dd></div>
+          <div><dt>Rail hours</dt><dd class="r">≈10</dd></div>
+          <div><dt>Slack days</dt><dd class="r">0</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Why the recommendation stays put</h3>
+      <p>Every other stop on this trip has been a compromise against a clock. This one isn't, and the instinct to spend the surplus on another city is the same instinct that produced twenty-six stops in four months. <b>The marginal value of Porto is high on a two-week Portugal trip and low as the 28th city in a row.</b> You will not remember it well. You will remember the week you stopped moving.</p>
+      <p>If Porto is a real want rather than a reflex, the better version is to cut it loose entirely and come back for the Douro in autumn, when the valley is worth the journey and the weather cooperates.</p>
+    </div>
+
+    <div class="panel">
+      <h3>What's cut either way</h3>
+      <p><b>The Algarve.</b> Three hours south for beaches at 15°C in a sea at 15°C. February is the wrong month and you have been warm since October.</p>
+      <p><b>Évora and the Alentejo.</b> Roman temple, bone chapel, cork oaks, very good food, and best with a car — which is one more thing to rent, park and return on the last week of a long trip.</p>
+      <p><b>Madeira and the Azores.</b> Separate flights, separate trips. Madeira in particular deserves a week of its own.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="run">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">04</span> Day by day</p>
+    <h2 class="head">The last<br>seven days</h2>
+    <p class="lede">Built around one fixed point — <b>Sintra goes on Tuesday</b>, early — and one hard constraint, the Monday closures. Everything else can slide. Times are indicative; the trick in Lisbon is starting before the tour buses, which in February means about 09:00 rather than 07:00.</p>
+    <div class="filters" id="dayToggle" style="margin-bottom:6px">
+      <button class="fbtn" data-plan="lisbon" aria-pressed="true">One base</button>
+      <button class="fbtn" data-plan="porto" aria-pressed="false">With Porto</button>
+    </div>
+    <div class="days" id="days"></div>
+    <p class="fignote" style="margin-top:16px">Amber = on foot · <span style="color:var(--magenta)">Magenta = a train, a plane or a base change</span></p>
+  </div>
+</section>
+
+<section class="section" id="worth">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">05</span> What's actually worth doing</p>
+    <h2 class="head">Do, maybe,<br>don't bother</h2>
+    <p class="lede">Sorted by area, then by whether it earns a slot. As everywhere on this trip, the <b>don't bother</b> entries are mostly fine things that lose to something better in the same hour. February thins the crowds everywhere except Sintra, which is busy in any month.</p>
+
+    <div class="filters" id="filters">
+      <button class="fbtn" data-city="all" aria-pressed="true">All</button>
+      <button class="fbtn" data-city="Lisbon" aria-pressed="false">Lisbon</button>
+      <button class="fbtn" data-city="Belem" aria-pressed="false">Belém</button>
+      <button class="fbtn" data-city="Sintra" aria-pressed="false">Sintra</button>
+      <button class="fbtn" data-city="Coast" aria-pressed="false">Coast &amp; beyond</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-tier="do" aria-pressed="false">Do</button>
+      <button class="fbtn" data-tier="opt" aria-pressed="false">Maybe</button>
+      <button class="fbtn" data-tier="skip" aria-pressed="false">Don't bother</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-book="1" aria-pressed="false">Needs booking</button>
+    </div>
+    <div class="items" id="items"></div>
+  </div>
+</section>
+
+<section class="section" id="february">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">06</span> The month</p>
+    <h2 class="head">Wet, mild,<br>and empty</h2>
+    <p class="lede">February is the last of Lisbon's wet season and the quietest month of its year. Expect <b>16°C by day and 9°C at night</b>, about <b>85mm of rain across fourteen rainy days</b>, five hours of sunshine a day and eleven hours of daylight. That sounds worse than it is: Atlantic rain here arrives in fronts, not drizzle — a hard hour, then blue sky and wet limestone, which is when the city looks best.</p>
+
+    <div class="figcap">
+      <span>Fig. 2 — Lisbon by month</span>
+      <span><b>Rain against warmth</b> · your window marked</span>
+    </div>
+    <div class="scroller">
+      <svg id="clim-chart" viewBox="0 0 1400 330" role="img" aria-label="Chart of Lisbon's average monthly rainfall as bars with average daily high temperature as a line, showing February as one of the wetter months at about 85 millimetres with a mild 16 degree high, against a bone-dry summer."></svg>
+    </div>
+    <p class="fignote"><i style="background:rgba(242,169,60,.5)"></i>Rainfall, mm<i style="background:var(--jade)"></i>Average daily high, °C · indicative climate normals; February figures verified against current averages</p>
+
+    <div class="cols">
+      <p><b>What to pack out of the Sahara</b>You will arrive from a desert with nothing waterproof. A light rain shell and shoes with grip are the two things worth buying in Marrakech or at Lisbon's first Decathlon. Lisbon's pavement is <b>calçada portuguesa</b> — polished limestone cobbles, laid on hills, lethal when wet. This is the single most common way visitors hurt themselves here.</p>
+      <p><b>Carnival is five days early</b>Shrove Tuesday 2027 falls on <b>9 February</b>, which you spend in Morocco. It isn't a statutory holiday in Portugal anyway — an optional one that some businesses take — but the Loulé and Torres Vedras parades, the interesting ones, will be over before you land. You arrive into Lent, which mostly means the city is quiet.</p>
+      <p><b>The upside of the month</b>No queue at Jerónimos. A table at any restaurant you want. Room rates at their annual floor, on the one stop where you're paying for seven nights. Sintra without July's crush — still busy, but navigable. And sunset at around 18:15, so the evenings are long enough to be worth something.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="sintra">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">07</span> The day trip</p>
+    <h2 class="head">Sintra,<br>done properly</h2>
+    <p class="lede">Sintra is a mountain covered in nineteenth-century follies, forty minutes from Rossio station, and it defeats more day-trippers than anywhere else in Portugal. The failure mode is always the same: arrive at 11:00, queue for the bus, queue for Pena, run out of daylight, see two things badly. <b>Catch a train before nine and the whole day changes.</b></p>
+
+    <div class="figcap">
+      <span>Fig. 3 — What Sintra costs at the gate</span>
+      <span><b>Adult admission</b> · 2026 rates</span>
+    </div>
+    <div class="scroller">
+      <svg id="sintra-chart" viewBox="0 0 1400 320" role="img" aria-label="Bar chart of adult admission prices for Sintra monuments, from the twelve euro park-only and Moorish Castle tickets up to the forty-five euro full Pena tour."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--amber)"></i>Parques de Sintra<i style="background:var(--magenta)"></i>Independent · Pena's €45 "Full Tour" adds interiors the €20 "Essential Visit" omits</p>
+
+    <div class="panel">
+      <h3>The order of operations</h3>
+      <p><b>07:50 Rossio.</b> €2.55 single, or €2.05 on zapping with a Navegante card (€0.50, bought once at any metro machine). Forty minutes. Rossio queues badly between 10:00 and noon — before nine there is no queue at all. Oriente also works and is seven minutes longer.</p>
+      <p><b>09:00 straight up to Pena.</b> Bus <b>434</b>, the Circuito da Pena, runs a one-way 10km loop — station, Moorish Castle, Pena, Sintra Vila, station. Low season it runs 09:30–18:20 with four departures an hour between 10:00 and 17:00. The 24-hour ticket is <b>€13.50</b> and covers all Sintra buses including the 435 to Monserrate; a €4.55 single exists on paper and is routinely withdrawn from sale at busy times.</p>
+      <p><b>Book Pena and Regaleira before you leave Lisbon.</b> Pena's <b>Essential Visit is €20</b> and the <b>Full Tour €45</b>; park-only is €12 and, on a clear day, is a defensible choice — the exterior is the point and the interiors are crowded. Quinta da Regaleira now runs <b>timed entry at €20</b>, with split hours of 10:00–12:00 and 13:00–17:30 and a hard midday clear-out; its own site has been known to sell out roughly 48 hours ahead.</p>
+      <p><b>Do not drive.</b> The historic centre is permanently closed to traffic, the upper Estrada da Pena closes to cars at busy times, and parking fills before 09:00. A car turns Sintra into a day of gridlock.</p>
+    </div>
+
+    <div class="panel">
+      <h3>What's under scaffolding</h3>
+      <p>Parques de Sintra publishes an "Open for Works" page and several things on it run into your window. <b>Monserrate's roof restoration runs through March 2027</b>; the <b>Moorish Castle visitor centre</b> is being rebuilt until January 2027; and the <b>Royal Chapel at the Sintra National Palace is closed for full restoration until February 2028</b>. Pena's park is still repairing damage from Storm Martinho in March 2025, with the Fern Garden and greenhouses affected indefinitely.</p>
+      <p>None of this closes a monument outright, but it changes what you get for €12. Check the works page the week you book — it is updated and specific.</p>
+    </div>
+
+    <div class="panel">
+      <h3>The three-monument day, and why two is better</h3>
+      <p>The standard Sintra circuit is Pena, the Moorish Castle and Quinta da Regaleira. It is achievable before dark in February only if you are on the 07:50 train and ruthless about lunch. <b>Two done well beats three done at a jog</b> — and if you cut one, cut the Moorish Castle: it is a ruined wall on a ridge with a superb view, and the view is free from the Pena park anyway.</p>
+      <p>The connoisseur's swap is <b>Monserrate</b> for the Moorish Castle — a Moorish-revival fantasy in a subtropical garden, ten minutes out on the 435, and reliably the emptiest of the major houses. Roof works notwithstanding, its interior plasterwork is the finest thing in Sintra.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="money">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">08</span> The card maths</p>
+    <h2 class="head">Lisboa Card:<br>maybe</h2>
+    <p class="lede">The Lisboa Card bundles unlimited city transport with free entry to fifty-odd sites, at <b>€31 / €51 / €62</b> for 24, 48 and 72 hours. It can genuinely win — but only if you compress the covered museums into its window, and it does <b>almost nothing for Sintra</b>, where your biggest tickets are. Tick what you'll actually do.</p>
+
+    <div class="calc">
+      <div class="calc-legs" id="legs"></div>
+      <dl class="calc-out">
+        <div><dt>Covered, at the gate</dt><dd id="ptp"></dd></div>
+        <div><dt>72-hour card</dt><dd id="pass">€62<small>adult</small></dd></div>
+        <div><dt>Difference</dt><dd id="diff"></dd></div>
+        <div><dt>Verdict</dt><dd><span id="verdict"></span></dd></div>
+      </dl>
+    </div>
+    <p class="fignote">Magenta rows are <span style="color:var(--magenta)">not covered</span> by the card and are excluded from the sum · gate prices are 2026 adult rates and move — verify before buying · €1 ≈ C$1.50</p>
+
+    <div class="panel">
+      <h3>What the card doesn't cover</h3>
+      <p><b>Pena Palace is not included</b> — the card gets you roughly 10% off, €20 down to €18. Quinta da Regaleira is independent and not included at all. The Sintra 434 bus is Scotturb, not Carris. So the two most expensive tickets of your week and the transport that reaches them all sit outside the card.</p>
+      <p>The other catch is the clock. Seven nights against a 72-hour maximum means the card only pays if you stack Belém, the castle and the museums into three consecutive days — which collides with the Monday closures and with Sintra wanting Tuesday. Run the numbers above honestly before buying; for a slow week, <b>pay-as-you-go plus a €7.25 day pass on the heavy days usually wins.</b></p>
+    </div>
+
+    <div class="panel">
+      <h3>Everyday transport, without the card</h3>
+      <p>Buy a <b>Navegante occasional card for €0.50</b> at any metro machine and load it with zapping credit. That gives you about €1.66 a ride on metro, bus, tram and the funiculars, against €1.80–€2.20 for a paper single, and it also pays for the Sintra and Cascais trains. A 24-hour unlimited pass is €7.25, or about €10.35 with the ferries.</p>
+      <p>The lifts are priced separately and steeply: <b>Santa Justa €5.15 return, Glória, Bica and Lavra €3.70 each</b>. The Glória is worth it once. Santa Justa is not — the same view is free from the Carmo ruins terrace at the top, reached on foot in four minutes.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="admin">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">09</span> Ground rules</p>
+    <h2 class="head">Before you land</h2>
+
+    <div class="tablewrap">
+    <table class="ref">
+      <thead><tr><th>Item</th><th>What to do</th><th>When</th></tr></thead>
+      <tbody>
+        <tr><td>Entry</td><td>Visa-free for Canadians, 90 days in any 180. Portugal is the only Schengen country on this itinerary, so you arrive with the full allowance and spend seven of it. Passport must be valid three months beyond departure and issued within the last ten years.</td><td class="t">Check passport dates</td></tr>
+        <tr class="flag"><td>ETIAS</td><td>Launching Q4 2026, €20, valid three years. A six-month transitional period follows launch in which you may enter without one. Apply as soon as the portal opens — <b>europa.eu/etias only</b>.</td><td class="t">The day it opens</td></tr>
+        <tr class="flag"><td>EES</td><td>Fully operational since 10 April 2026; it has replaced passport stamps. First entry means facial image plus four fingerprints at the booth. Use Portugal's EES pre-enrolment app before you fly.</td><td class="t">Before departure</td></tr>
+        <tr><td>Clocks</td><td>Portugal runs WET, UTC+0, in February — same as Morocco since 20 September 2026, so no change on the way in. Toronto is five hours behind you, the smallest gap since you left.</td><td class="t">Nothing to do</td></tr>
+        <tr class="flag"><td>Lisbon city tax</td><td>€4 per person per night, <b>capped at 7 consecutive nights</b> — so exactly €28 for this stay, the maximum. Charged at the property, usually on arrival. Under-13s exempt.</td><td class="t">Budget €28</td></tr>
+        <tr><td>Sintra city tax</td><td>€2 per person per night, capped at 3 nights, since 29 March 2023. Only bites if you sleep in Sintra, which this plan doesn't.</td><td class="t">N/A on a day trip</td></tr>
+        <tr class="flag"><td>Airport buffer</td><td>Lisbon ranked Europe's most stressful airport in 2026 — under 50% on-time departures and 20-minute security waits. Portugal has also seen repeated ground-handling and general-strike disruption through the year. Three hours for the Toronto flight.</td><td class="t">Departure day</td></tr>
+        <tr><td>Getting in from LIS</td><td>Metro red line from inside the terminal, about 20 minutes to Alameda then change; the airport is genuinely in the city. Taxi or Bolt to the centre is short and cheap. Skip the Aerobus.</td><td class="t">On arrival</td></tr>
+        <tr><td>Flying home</td><td>Sunday 21 February. TAP runs LIS–YYZ Mon/Wed/Fri/Sun year-round — TP257 late morning, TP261 at 17:30 arriving Toronto 22:15 in the winter schedule. Air Canada's AC811 also runs a reduced winter pattern. <b>Confirm the operated day, not the day grid.</b></td><td class="t">Verify at booking</td></tr>
+        <tr><td>Money</td><td>Euro. Cards are accepted almost everywhere including buses; Multibanco ATMs are ubiquitous. Always decline the machine's offer to charge you in dollars. Tipping is light — round up, or 5–10% for a real meal.</td><td class="t">On arrival</td></tr>
+        <tr class="flag"><td>Pickpockets</td><td>Tram 28, the 15E to Belém, Santa Justa's queue and Rossio are the known spots, and Lisbon is genuinely bad for this by western European standards. Nothing in a back pocket, bag in front on the tram.</td><td class="t">Every day</td></tr>
+        <tr><td>Booking window</td><td>February is low season and most of the city needs no advance booking. The exceptions: <b>Pena, Quinta da Regaleira</b>, a fado house worth going to, and any restaurant you've actually read about.</td><td class="t">A week or two out</td></tr>
+        <tr><td>Public holidays</td><td>Carnival falls on 9 February 2027, five days before you arrive, and isn't a statutory holiday anyway. Nothing lands inside 14–21 February.</td><td class="t">Clear</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="cols">
+      <p><b>Eating</b>Lunch is the bargain — a <b>prato do dia</b> with soup, wine and coffee runs €10–15 in any tasca that hasn't been discovered. Order the fish of the day whole and grilled. Bread, olives and cheese put on your table at the start are the <b>couvert</b> and you are charged for what you touch; wave it away without embarrassment if you don't want it.</p>
+      <p><b>Coffee</b>A <b>bica</b> is an espresso and costs around a euro standing at the counter, more at a table, most on a terrace. Three prices for one coffee is the national system, not a scam. <b>Galão</b> is the milky one, in a glass.</p>
+      <p><b>Fado</b>Worth one night, and the difference between a good and bad fado house is total. Avoid anywhere with a photograph of a fado singer outside. Alfama and Mouraria have the real ones; they take reservations, they expect you to be silent while someone sings, and the minimum spend is the price of admission.</p>
+      <p><b>The pastel</b>Pastéis de Belém, in Belém, is the original 1837 recipe and worth the queue once — the takeaway line moves far faster than it looks. <b>Manteigaria</b>, with branches across the city, is the better everyday one. Cinnamon goes on at the table, not in the kitchen.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <p>Westbound · stop 27 · Portugal</p>
+      <p>14–21 Feb 2027 · LIS in, YYZ out</p>
+      <p>Fares, taxes and schedules verified Sept 2026 — recheck before booking</p>
+    </div>
+    <p class="foot-mark">Lisbon → Toronto</p>
+  </div>
+</footer>
+
+<script>
+/* ============ DAY-BY-DAY ============ */
+const ARRIVE={d:'Sun 14',w:'Arrive',name:'Lisbon',sub:'Casablanca → Lisbon · 1h30',meta:'Night 1',
+ slots:[
+  {m:1,h:'10:25 · CMN',p:'TAP TP1437 if the Sunday holds, landing around 11:55 — no clock change, Morocco having moved to GMT in September 2026. The RAM alternative at 15:20 costs you the afternoon. If you reversed Morocco and are leaving from Marrakech, TP1453 at 10:45 does the same thing.'},
+  {m:1,h:'12:30 · The border',p:'Full EES enrolment — face and four fingerprints — on your first and only Schengen entry of the trip. Pre-enrol on Portugal’s EES app before you fly. Budget an hour and a half and expect to beat it.'},
+  {h:'15:00 · Drop the bag',p:'Metro red line from inside the terminal. Then do nothing ambitious: walk down to the river, find a miradouro, let the city be a city.'},
+  {h:'18:15 · Sunset, then dinner',p:'Miradouro de Santa Catarina or São Pedro de Alcântara for the light, then a tasca within walking distance. You have six more days; tonight is not the night to plan.'}
+]};
+
+const DAYS_LISBON=[ARRIVE,
+{d:'Mon 15',w:'Full',name:'Old Lisbon',sub:'The closed-museum day, spent outdoors',meta:'Night 2',
+ slots:[
+  {h:'08:30 · Tram 28, eastbound',p:'Board at Martim Moniz at the start of the line and you get a seat; board anywhere else and you get an armpit. Ride it up through Graça and get off before the return leg. Bag in front, nothing in back pockets.'},
+  {h:'10:00 · Castelo de São Jorge',p:'Open on Mondays, unlike almost everything else today. Moorish walls, peacocks, and the whole city laid out below with the river behind it. Go early — it’s the one place in Lisbon with a real February queue.'},
+  {h:'12:00 · Down through Alfama',p:'No route, no list. Alfama is a medieval street plan on a hillside that the 1755 earthquake mostly spared, and the correct method is to lose yourself in it. Sé cathedral, the Miradouro das Portas do Sol, washing lines, someone’s radio.'},
+  {h:'15:00 · Mouraria and Graça',p:'The other half of the old city, less photographed and more lived in. Miradouro da Senhora do Monte is the highest of them and the least crowded.'},
+  {h:'19:00 · Bairro Alto',p:'Dead until nine, then the whole quarter is outside with a drink in a plastic cup. Eat first, in Príncipe Real or Bica, then wander into it.'}
+]},
+{d:'Tue 16',w:'Full',name:'Sintra',sub:'Out at 07:50, back after dark',meta:'Night 3',
+ slots:[
+  {m:1,h:'07:50 · Rossio → Sintra',p:'Forty minutes, €2.55 or €2.05 on zapping. Before nine there is no queue; after ten there is one at the station, one at the bus and one at the palace.'},
+  {h:'09:00 · Pena first',p:'Bus 434, 24-hour ticket €13.50. Essential Visit €20, Full Tour €45, park only €12 — and on a clear morning the park alone is a serious argument. Book the slot before you leave Lisbon.'},
+  {h:'11:30 · Moorish Castle or Monserrate',p:'The castle is a ruined wall on a ridge with a superb view, ten minutes from Pena. Monserrate is twenty minutes the other way on the 435 and is the better building — Moorish-revival plasterwork in a subtropical garden, and nearly empty. Roof works run to March 2027.'},
+  {h:'14:00 · Quinta da Regaleira',p:'Timed entry, €20, and it shuts 12:00–13:00 with a full clear-out, so aim for the afternoon session. The Initiation Well is the thing — go straight to it on entry rather than doing the house first.'},
+  {m:1,h:'18:00 · Back to Lisbon',p:'Trains every 20 minutes until late. Eat in Sintra Vila only if you missed lunch; the food in Lisbon is better and the train is short.'}
+]},
+{d:'Wed 17',w:'Full',name:'Belém',sub:'Everything that was shut on Monday',meta:'Night 4',
+ slots:[
+  {h:'09:45 · Jerónimos Monastery',p:'€19.50, winter hours 10:00–17:30, last entry 17:00. Be at the door at opening. The cloister is the reason — late Gothic Manueline stonework carved with rope, coral and navigational instruments, and in February you may have it nearly to yourself.'},
+  {h:'11:30 · Belém Tower',p:'€8, same winter hours, closed Mondays. A 93-step spiral staircase run on red and green lights because two people cannot pass. Small, strange, and quick.'},
+  {h:'13:00 · Pastéis de Belém',p:'The 1837 original, and the takeaway queue moves much faster than the sit-down one. Cinnamon at the table.'},
+  {h:'14:30 · MAAT and the Coach Museum',p:'The art-and-technology museum on the river with the walkable roof, and — genuinely better than it sounds — the National Coach Museum, which is a hangar of absurd gilded eighteenth-century carriages.'},
+  {h:'18:00 · Back along the river',p:'The 15E tram or a walk east along the waterfront past the Padrão dos Descobrimentos. Dinner in Alcântara or at LX Factory, a printworks turned into bookshops and restaurants under the bridge.'}
+]},
+{d:'Thu 18',w:'Full',name:'Slow day',sub:'The one with nothing in it',meta:'Night 5',
+ slots:[
+  {h:'10:00 · Gulbenkian',p:'A private collection of startling quality — Egyptian, Islamic, Lalique, a Rembrandt — in a modernist building set in the best garden in the city. Closed Mondays, which is why it’s here.'},
+  {h:'13:00 · Príncipe Real',p:'Lunch under the cedar in the square, then the antique shops and the concept stores down Rua da Escola Politécnica. The Botanical Garden behind it is overgrown and almost empty.'},
+  {h:'15:30 · Whatever you skipped',p:'Carmo convent, roofless since the earthquake and left that way on purpose. The Ancient Art museum. The Tile Museum out east, which is better than it sounds. Or nothing at all — this day is allowed to be nothing.'},
+  {h:'20:00 · Fado, properly',p:'One night, in Alfama or Mouraria, somewhere that takes a reservation and expects silence. Avoid anywhere with a photo of a singer outside.'}
+]},
+{d:'Fri 19',w:'Full',name:'The coast',sub:'Cascais, Cabo da Roca, the Atlantic',meta:'Night 6',
+ slots:[
+  {m:1,h:'09:00 · Cais do Sodré → Cascais',p:'Forty minutes on the Linha de Cascais, the whole way along the water. Zapping fare. Sit on the right.'},
+  {h:'10:00 · Cascais and the Boca do Inferno',p:'A fishing town that became a royal resort and then a commuter suburb, with a good small museum and a sea-cave arch twenty minutes’ walk west. February means an empty seafront and an Atlantic doing something dramatic.'},
+  {h:'13:00 · Guincho or Cabo da Roca',p:'Bus 403 runs the clifftop road to Cabo da Roca, the westernmost point of continental Europe — a lighthouse, a stone marker and a great deal of wind. It genuinely feels like an ending.'},
+  {h:'17:30 · Back for sunset',p:'Return along the coast with the light behind you. Dinner in Cais do Sodré; the Time Out Market is there and is fine, but the small places on the streets behind it are better.'}
+]},
+{d:'Sat 20',w:'Full',name:'Last day',sub:'Feira da Ladra, and nothing else fixed',meta:'Night 7',
+ slots:[
+  {h:'09:30 · Feira da Ladra',p:'Tuesdays and Saturdays only, in Campo de Santa Clara behind the Panteão. Genuine junk, occasional treasure, azulejo tiles prised off buildings that probably shouldn’t have been. This is the last market of twenty-seven countries — buy the thing.'},
+  {h:'12:00 · The National Pantheon',p:'Next door. A 17th-century church that took 284 years to finish, now full of Portuguese dead, with a dome terrace that gives you the best view of Alfama from above.'},
+  {h:'15:00 · Repeat your favourite thing',p:'You have been moving for four months. The correct use of the last afternoon is to go back to whichever hill you liked best and sit on it.'},
+  {h:'19:30 · The last dinner',p:'Book something. Twenty-seven countries deserves a table you chose on purpose rather than one you found at 21:00.'}
+]},
+{d:'Sun 21',w:'Depart',name:'Home',sub:'Lisbon → Toronto',meta:'Fly out',
+ slots:[
+  {h:'08:00 · One last bica',p:'Standing at a counter, one euro, in whatever place you ended up going to twice. Then pack.'},
+  {m:1,h:'11:00 · To the airport',p:'Metro red line, twenty minutes. Be there three hours out: Lisbon’s departure punctuality is the worst of Europe’s major airports and the security queue is the reason.'},
+  {m:1,h:'· Toronto',p:'TAP TP257 late morning or TP261 at 17:30, arriving YYZ 22:15 on the winter schedule; Air Canada AC811 also runs Sundays in its reduced winter pattern. Roughly 7h45 westbound, five hours back on the clock. Twenty-seven countries, one direction, and the last flight is the short one.'}
+]}
+];
+
+const DAYS_PORTO=[ARRIVE,
+{d:'Mon 15',w:'Full',name:'Old Lisbon',sub:'The closed-museum day, spent outdoors',meta:'Night 2',
+ slots:[
+  {h:'08:30 · Tram 28, eastbound',p:'Board at Martim Moniz for a seat. Up through Graça, off before the return leg.'},
+  {h:'10:00 · Castelo de São Jorge',p:'Open on Mondays, unlike almost everything else today. The whole city below with the river behind it.'},
+  {h:'12:00 · Alfama and Mouraria',p:'The medieval street plan the earthquake spared. No route — just the Portas do Sol, the Sé, and whichever alley goes down.'},
+  {h:'19:00 · Bairro Alto',p:'Eat in Bica or Príncipe Real first, then wander into it after nine.'}
+]},
+{d:'Tue 16',w:'Full',name:'Sintra',sub:'Out at 07:50, back after dark',meta:'Night 3',
+ slots:[
+  {m:1,h:'07:50 · Rossio → Sintra',p:'Before nine there is no queue. €2.55, forty minutes.'},
+  {h:'09:00 · Pena, then Regaleira',p:'Bus 434, €13.50 for 24 hours. Pena Essential €20 or park-only €12; Regaleira timed entry €20 with a hard midday close. Book both from Lisbon.'},
+  {m:1,h:'18:00 · Back to Lisbon',p:'Trains every 20 minutes until late.'}
+]},
+{d:'Wed 17',w:'Full',name:'Belém',sub:'Everything that was shut on Monday',meta:'Night 4',
+ slots:[
+  {h:'09:45 · Jerónimos',p:'€19.50, at the door for opening. The Manueline cloister is the reason to come.'},
+  {h:'11:30 · Belém Tower & the pastéis',p:'€8 and a 93-step spiral run on traffic lights, then the 1837 original bakery.'},
+  {h:'15:00 · Coach Museum or MAAT',p:'One of the two, then the river walk east. Dinner at LX Factory.'}
+]},
+{d:'Thu 18',w:'Move',name:'Porto',sub:'Lisbon → Porto · ≈3h',meta:'Night 5',
+ slots:[
+  {m:1,h:'08:00 · Alfa Pendular north',p:'Santa Apolónia or Oriente to Porto Campanhã, around three hours. Book on cp.pt — fares are cheapest well ahead and the Alfa sells out on Fridays. Leave the big bag in Lisbon if the hotel will hold it.'},
+  {h:'12:00 · The Ribeira',p:'Drop the bag, then down through the old town to the river. São Bento station’s tiled hall on the way — twenty thousand azulejos, free, and you walk through it anyway.'},
+  {h:'16:00 · Across to Gaia',p:'Over the Dom Luís I bridge on the upper deck, which is a metro line and a footpath at once and frankly alarming. Port lodges on the far bank; one tasting is plenty.'},
+  {h:'19:00 · Dinner in Porto',p:'Francesinha if you want the local monstrosity, which is a sandwich under melted cheese and beer sauce. Otherwise the fish is as good as Lisbon’s and cheaper.'}
+]},
+{d:'Fri 19',w:'Full',name:'Porto',sub:'One full day, and it is enough',meta:'Night 6',
+ slots:[
+  {h:'09:30 · Livraria Lello',p:'Ticketed, crowded, and genuinely beautiful for about ten minutes. Go at opening or skip it entirely — in February the queue is survivable.'},
+  {h:'11:00 · Clérigos and the Sé',p:'The bell tower for the view over the terracotta, then the cathedral and the old streets below it.'},
+  {h:'14:00 · Serralves or the river',p:'Modern art in a pink Art Deco villa and a large garden, out west. Or stay low and walk the Douro downstream to Foz, where it meets the Atlantic.'},
+  {h:'18:00 · Last night north',p:'The Ribeira at dusk from the Gaia side is the shot. Then eat.'}
+]},
+{d:'Sat 20',w:'Move',name:'Back to Lisbon',sub:'Porto → Lisbon · ≈3h',meta:'Night 7',
+ slots:[
+  {h:'09:00 · One last hour',p:'Bolhão market, or the bookshop you skipped, or nothing.'},
+  {m:1,h:'12:00 · Alfa Pendular south',p:'Three hours, back in Lisbon mid-afternoon. Book the return at the same time as the outbound.'},
+  {h:'16:00 · Repeat your favourite thing',p:'You have half a day and four months behind you. Go back to whichever hill you liked best and sit on it.'},
+  {h:'19:30 · The last dinner',p:'Book something. Twenty-seven countries deserves a table you chose on purpose.'}
+]},
+{d:'Sun 21',w:'Depart',name:'Home',sub:'Lisbon → Toronto',meta:'Fly out',
+ slots:[
+  {h:'08:00 · One last bica',p:'Standing at a counter, one euro. Then pack.'},
+  {m:1,h:'11:00 · To the airport',p:'Metro red line, twenty minutes. Three hours out, not two — Lisbon’s punctuality is the worst of Europe’s majors.'},
+  {m:1,h:'· Toronto',p:'TAP TP257 or TP261; Air Canada AC811 also runs Sundays in winter. Roughly 7h45 westbound and five hours back on the clock. The last flight is the short one.'}
+]}
+];
+
+let CURRENT_PLAN='lisbon';
+function renderDays(){
+  const DAYS = CURRENT_PLAN==='lisbon' ? DAYS_LISBON : DAYS_PORTO;
+  document.getElementById('days').innerHTML=DAYS.map((D)=>`
+  <div class="day">
+    <button class="day-btn" aria-expanded="false">
+      <span class="day-date">${D.d}<small>${D.w}</small></span>
+      <span><span class="day-name">${D.name}</span><span class="day-sub">${D.sub}</span></span>
+      <span class="day-meta">${D.meta}<span class="chev">▾</span></span>
+    </button>
+    <div class="day-body"><div class="day-inner"><div class="day-pad"><div class="slots">
+      ${D.slots.map(s=>`<div class="slot${s.m?' move':''}"><h4>${s.h}</h4><p>${s.p}</p></div>`).join('')}
+    </div></div></div></div>
+  </div>`).join('');
+
+  document.querySelectorAll('.day-btn').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const d=b.parentElement, open=d.classList.toggle('open');
+      b.setAttribute('aria-expanded',open?'true':'false');
+    });
+  });
+  document.querySelector('.day').classList.add('open');
+  document.querySelector('.day-btn').setAttribute('aria-expanded','true');
+}
+renderDays();
+
+document.getElementById('dayToggle').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  CURRENT_PLAN=b.dataset.plan;
+  document.querySelectorAll('#dayToggle .fbtn').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
+  renderDays();
+});
+
+/* ============ WORTH DOING ============ */
+const ITEMS=[
+/* LISBON */
+{c:'Lisbon',t:'do',n:'Alfama, without a map',w:'The medieval quarter the 1755 earthquake spared, and the one part of Lisbon that rewards having no plan at all. Portas do Sol and Santa Luzia are the viewpoints; the alleys between them are the point.',when:'Any morning'},
+{c:'Lisbon',t:'do',n:'Castelo de São Jorge',w:'Moorish walls on the highest hill, peacocks, and the whole city stacked below. Crucially, it is <b>open on Mondays</b> when the museums are not.',when:'At opening'},
+{c:'Lisbon',t:'do',n:'Tram 28',w:'A genuine 1930s Remodelado grinding up gradients no bus could manage. Board at Martim Moniz at the start of the line for a seat, go early, and watch your pockets — this is the city’s worst tram for theft.',when:'Before 09:00'},
+{c:'Lisbon',t:'do',n:'The miradouros',w:'Senhora do Monte is highest and quietest, Graça has the bar, Santa Catarina has the sunset and the teenagers, São Pedro de Alcântara has the geometry. Free, and the whole city is built around them.',when:'Late afternoon'},
+{c:'Lisbon',t:'do',n:'Gulbenkian Museum',w:'One oil magnate’s private collection, and startling — Egyptian, Islamic, a Rembrandt, a room of Lalique — in a modernist building in the best garden in Lisbon. Closed Mondays.',when:'Closed Mon'},
+{c:'Lisbon',t:'do',n:'Fado, in a real house',w:'Worth exactly one night. Alfama and Mouraria have the serious ones; they take reservations, they expect silence, and the minimum spend is the ticket. Skip anywhere advertising with a photograph outside.',when:'Book ahead',b:1},
+{c:'Lisbon',t:'do',n:'Carmo Convent',w:'Roofless since the earthquake and deliberately left that way — Gothic arches open to the sky in the middle of the Chiado. The terrace beside it gives you the Santa Justa view without the €5.15 lift.',when:'Closed Sun'},
+{c:'Lisbon',t:'do',n:'Feira da Ladra',w:'Tuesday and Saturday only, behind the Panteão. Junk, tiles, records, occasional treasure. Your last market of the whole trip.',when:'Tue & Sat, 09:00'},
+{c:'Lisbon',t:'opt',n:'Time Out Market',w:'Two dozen good chefs in a food hall in the old Ribeira market. Genuinely good and genuinely expensive for Lisbon; the small places on the streets behind it do the same food for half.',when:'Daily'},
+{c:'Lisbon',t:'opt',n:'LX Factory',w:'A 19th-century printworks under the bridge, now bookshops, restaurants and a Sunday market. Touristed, still likeable, and a decent wet-afternoon plan.',when:'Wet afternoon'},
+{c:'Lisbon',t:'opt',n:'Museu Nacional do Azulejo',w:'Five centuries of tile in a former convent out east, including a 23-metre panorama of pre-earthquake Lisbon. Far better than "a museum about tiles" suggests. Closed Mondays.',when:'Half day'},
+{c:'Lisbon',t:'opt',n:'National Pantheon',w:'A church that took 284 years to build, now full of Portuguese dead, with a dome terrace over Alfama. Pairs with the Feira da Ladra next door.',when:'With the market'},
+{c:'Lisbon',t:'opt',n:'Museu Nacional de Arte Antiga',w:'Portugal’s best collection of old painting, including the Bosch Temptation of St Anthony. A quiet, serious museum that most visitors never reach.',when:'Closed Mon'},
+{c:'Lisbon',t:'opt',n:'Elevador da Glória',w:'€3.70 up the hill to São Pedro de Alcântara, covered in layered graffiti. Worth doing once for the mechanism; the walk is five minutes.',when:'Once'},
+{c:'Lisbon',t:'skip',n:'Elevador de Santa Justa',w:'€5.15 return to queue for a viewing platform you can reach on foot in four minutes from the Carmo terrace, for free. The most reliably disappointing ticket in Lisbon.',when:''},
+{c:'Lisbon',t:'skip',n:'Pink Street',w:'One painted street of bars in Cais do Sodré that Instagram turned into a destination. Fine at 01:00 if you are drinking; nothing at all by day.',when:''},
+{c:'Lisbon',t:'skip',n:'Tuk-tuks',w:'They are everywhere, they cost many times the tram, and they cannot go anywhere the 28 and your legs cannot. Exception: the climb up to the castle with luggage.',when:''},
+{c:'Lisbon',t:'skip',n:'Oceanário',w:'Genuinely one of the world’s better aquariums, and an odd thing to spend a February afternoon on when you have six days and a city outside.',when:''},
+/* BELEM */
+{c:'Belem',t:'do',n:'Jerónimos Monastery',w:'€19.50, closed Mondays, winter hours to 17:30. The cloister is one of the great rooms in Europe — Manueline stone carved with rope, coral and astrolabes. Be there at opening; in February you may nearly have it.',when:'10:00 · closed Mon'},
+{c:'Belem',t:'do',n:'Pastéis de Belém',w:'The 1837 original, still made to the monastery recipe behind a closed door. The takeaway queue moves far faster than it looks. Cinnamon goes on at the table.',when:'Any time'},
+{c:'Belem',t:'do',n:'Belém Tower',w:'€8, closed Mondays. A small Manueline fort in the river with a 93-step spiral staircase run on red and green lights because two people can’t pass. Quick, strange, essential.',when:'Closed Mon'},
+{c:'Belem',t:'opt',n:'National Coach Museum',w:'A hangar full of preposterous gilded 18th-century carriages, which is much better than it sounds and almost always empty. Closed Mondays.',when:'1 hour'},
+{c:'Belem',t:'opt',n:'MAAT',w:'Art, architecture and technology in a white wave of a building you can walk over. The old power station next door is part of the ticket and is the better half.',when:'Closed Tue'},
+{c:'Belem',t:'skip',n:'Padrão dos Descobrimentos',w:'The 1960 monument to the navigators, built by the dictatorship, with a lift to a viewing deck. Look at it from outside — which is free — and keep walking.',when:''},
+/* SINTRA */
+{c:'Sintra',t:'do',n:'Pena Palace',w:'A Bavarian-Portuguese romantic fantasy painted red and yellow on top of a mountain. <b>Essential Visit €20, Full Tour €45, park only €12</b> — and on a clear day the park-only ticket is a serious option, since the exterior is the whole point.',when:'Book ahead',b:1},
+{c:'Sintra',t:'do',n:'Quinta da Regaleira',w:'€20, <b>timed entry</b>, and it clears everyone out 12:00–13:00. A Masonic folly garden with grottoes, waterfalls and the Initiation Well — a 27m inverted spiral stair into the ground. Go to the well first.',when:'Book ahead',b:1},
+{c:'Sintra',t:'do',n:'The 07:50 train',w:'Not a sight, the single most important decision of the day. €2.55 from Rossio, forty minutes. Before nine you skip three separate queues; after ten you stand in all of them.',when:'07:50'},
+{c:'Sintra',t:'opt',n:'Monserrate',w:'The connoisseur’s Sintra — Moorish-revival plasterwork in a subtropical garden, twenty minutes out on the 435, and reliably the emptiest of the major houses. €12. Roof restoration runs to March 2027.',when:'Half day'},
+{c:'Sintra',t:'opt',n:'Moorish Castle',w:'€12 for a ruined 9th-century wall along a ridge with a genuinely superb view. Cut it first if the day is tight — the same view is free from Pena’s park. Visitor centre rebuilt until January 2027.',when:'1 hour'},
+{c:'Sintra',t:'opt',n:'Sintra National Palace',w:'€13, the twin conical chimneys in the centre of town, and the oldest surviving royal palace in Portugal. The Royal Chapel is closed for restoration until February 2028.',when:'1 hour'},
+{c:'Sintra',t:'skip',n:'Driving to Sintra',w:'The historic centre is permanently closed to traffic, the upper Pena road closes at busy times, and parking fills before 09:00. A car converts the day into gridlock.',when:''},
+{c:'Sintra',t:'skip',n:'Three palaces in one day',w:'Achievable in February only on the early train and at a jog. Two done properly is a better day than three done badly, and Sintra is not somewhere to hurry.',when:''},
+/* COAST */
+{c:'Coast',t:'do',n:'Cabo da Roca',w:'The westernmost point of continental Europe — a lighthouse, a stone marker, a cliff and a great deal of wind. After four months going west, it is a genuinely good place to stop.',when:'Bus 403'},
+{c:'Coast',t:'do',n:'The Cascais line',w:'Forty minutes from Cais do Sodré with the Atlantic out of the right-hand window the entire way, on zapping fare. The journey is half the reason to go.',when:'Any day'},
+{c:'Coast',t:'opt',n:'Cascais',w:'A fishing town turned royal resort turned commuter suburb. Good small museums, an empty February seafront, and the Boca do Inferno sea arch twenty minutes west on foot.',when:'Half day'},
+{c:'Coast',t:'opt',n:'Porto',w:'Three hours north on the Alfa Pendular. A real city and a genuinely different one — but two nights and six rail hours at the end of a 27-country trip is a lot to ask of yourself.',when:'2 nights',b:1},
+{c:'Coast',t:'skip',n:'The Algarve',w:'Three hours south for beaches at 15°C and a sea at 15°C. The wrong month, and you have been warm since October.',when:''},
+{c:'Coast',t:'skip',n:'Évora',w:'Roman temple, bone chapel, cork oaks, excellent food — and much better with a car, which is one more thing to rent and return in your last week.',when:''}
+];
+
+const TIERLBL={do:'Do',opt:'Maybe',skip:'Skip'};
+let FC='all', FT=null, FB=false;
+
+function renderItems(){
+  const list=ITEMS.filter(x=>
+    (FC==='all'||x.c===FC) && (!FT||x.t===FT) && (!FB||x.b));
+  const host=document.getElementById('items');
+  if(!list.length){host.innerHTML='<div class="empty">No entries match those filters.</div>';return}
+  host.innerHTML=list.map(x=>`
+    <div class="item">
+      <span class="tier ${x.t}">${TIERLBL[x.t]}</span>
+      <span class="nm">${x.n}</span>
+      <span class="when${x.b?' book':''}">${x.when||'&nbsp;'}</span>
+      <span class="why">${x.w}</span>
+    </div>`).join('');
+}
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  if(b.dataset.city){FC=b.dataset.city}
+  else if(b.dataset.tier){FT = FT===b.dataset.tier?null:b.dataset.tier}
+  else if(b.dataset.book){FB=!FB}
+  document.querySelectorAll('#filters .fbtn').forEach(x=>{
+    let on=false;
+    if(x.dataset.city) on = x.dataset.city===FC;
+    if(x.dataset.tier) on = x.dataset.tier===FT;
+    if(x.dataset.book) on = FB;
+    x.setAttribute('aria-pressed',on?'true':'false');
+  });
+  renderItems();
+});
+renderItems();
+
+/* ============ FIG 1: TIME AUDIT ============ */
+(function(){
+  const svg=document.getElementById('audit-chart');
+  const W=1400,H=190,pad=40,barY=70,barH=54;
+  const totalH=192;
+  const x=h=>pad+(h/totalH)*(W-2*pad);
+  const segs=[
+    {a:0,b:12,cls:'t2'},
+    {a:12,b:24,cls:'p'},
+    {a:24,b:48,cls:'f'},
+    {a:48,b:72,cls:'f'},
+    {a:72,b:96,cls:'f'},
+    {a:96,b:120,cls:'f'},
+    {a:120,b:144,cls:'f'},
+    {a:144,b:168,cls:'f'},
+    {a:168,b:180,cls:'p'},
+    {a:180,b:192,cls:'t'}
+  ];
+  const colors={t:'var(--magenta)',t2:'rgba(231,100,155,.55)',p:'rgba(242,169,60,.35)',f:'var(--amber)'};
+  let s=`<rect x="0" y="0" width="${W}" height="${H}" fill="none"/>`;
+  segs.forEach(sg=>{
+    const x1=x(sg.a),x2=x(sg.b);
+    s+=`<rect x="${x1}" y="${barY}" width="${x2-x1-1}" height="${barH}" fill="${colors[sg.cls]}"/>`;
+  });
+  const start=new Date(2027,1,14);
+  for(let d=0;d<=8;d++){
+    const hh=d*24, xx=x(hh);
+    const dt=new Date(start.getTime()+hh*36e5);
+    s+=`<line x1="${xx}" y1="${barY-6}" x2="${xx}" y2="${barY+barH+6}" class="axs"/>`;
+    s+=`<text x="${xx}" y="${barY-14}" class="lbl" text-anchor="${d===0?'start':d===8?'end':'middle'}">${dt.toLocaleDateString('en-CA',{day:'2-digit',month:'short'})}</text>`;
+  }
+  s+=`<line x1="${pad}" y1="${barY+barH+0.5}" x2="${W-pad}" y2="${barY+barH+0.5}" class="ax"/>`;
+  s+=`<text x="${x(24)}" y="${barY+barH+34}" class="lbl-a">6 full days — 15→20 Feb</text>`;
+  s+=`<text x="${x(0)}" y="${barY+barH+34}" class="lbl">↙ half a morning in Morocco</text>`;
+  s+=`<text x="${W-pad}" y="${barY+barH+34}" class="lbl" text-anchor="end">home ↘</text>`;
+  svg.innerHTML=s;
+})();
+
+/* ============ FIG 2: CLIMATE ============ */
+(function(){
+  const svg=document.getElementById('clim-chart');
+  const W=1400,H=330,padL=54,padR=54,padT=26,padB=52;
+  const MO=[
+    {n:'Jan',r:100,t:15.2},{n:'Feb',r:85,t:16.2},{n:'Mar',r:56,t:18.2},{n:'Apr',r:59,t:19.1},
+    {n:'May',r:44,t:21.5},{n:'Jun',r:16,t:25.2},{n:'Jul',r:5,t:27.8},{n:'Aug',r:5,t:28.2},
+    {n:'Sep',r:30,t:26.3},{n:'Oct',r:94,t:22.2},{n:'Nov',r:114,t:18.1},{n:'Dec',r:109,t:15.5}
+  ];
+  const maxR=125, maxT=30;
+  const bw=(W-padL-padR)/MO.length;
+  const yR=v=>padT+(1-v/maxR)*(H-padT-padB);
+  const yT=v=>padT+(1-v/maxT)*(H-padT-padB);
+  let s='';
+  [0,25,50,75,100,125].forEach(v=>{
+    s+=`<line x1="${padL}" y1="${yR(v)}" x2="${W-padR}" y2="${yR(v)}" class="axs"/>`;
+    s+=`<text x="${padL-10}" y="${yR(v)+4}" class="lbl" text-anchor="end">${v}</text>`;
+  });
+  MO.forEach((m,i)=>{
+    const x0=padL+i*bw+bw*0.2, bwid=bw*0.6;
+    const isFeb=m.n==='Feb';
+    s+=`<rect x="${x0}" y="${yR(m.r)}" width="${bwid}" height="${H-padB-yR(m.r)}" fill="${isFeb?'var(--amber)':'rgba(242,169,60,.3)'}" rx="1"/>`;
+    s+=`<text x="${x0+bwid/2}" y="${H-padB+18}" class="lbl" text-anchor="middle" ${isFeb?'fill="var(--amber)"':''}>${m.n}</text>`;
+    if(isFeb) s+=`<text x="${x0+bwid/2}" y="${yR(m.r)-10}" class="lbl-a" text-anchor="middle">85mm · 14 wet days</text>`;
+  });
+  let path='';
+  MO.forEach((m,i)=>{
+    const cx=padL+i*bw+bw*0.5, cy=yT(m.t);
+    path+=(i?'L':'M')+cx+' '+cy+' ';
+  });
+  s+=`<path d="${path}" fill="none" stroke="var(--jade)" stroke-width="2"/>`;
+  MO.forEach((m,i)=>{
+    const cx=padL+i*bw+bw*0.5, cy=yT(m.t);
+    s+=`<circle cx="${cx}" cy="${cy}" r="${m.n==='Feb'?4.5:3}" fill="${m.n==='Feb'?'var(--jade)':'var(--ink)'}" stroke="var(--jade)" stroke-width="2"/>`;
+  });
+  [0,10,20,30].forEach(v=>{
+    s+=`<text x="${W-padR+10}" y="${yT(v)+4}" class="lbl">${v}°</text>`;
+  });
+  s+=`<line x1="${padL}" y1="${H-padB}" x2="${W-padR}" y2="${H-padB}" class="ax"/>`;
+  s+=`<text x="${padL}" y="${padT-10}" class="lbl">mm</text>`;
+  s+=`<text x="${W-padR+10}" y="${padT-10}" class="lbl">°C</text>`;
+  svg.innerHTML=s;
+})();
+
+/* ============ FIG 3: SINTRA PRICES ============ */
+(function(){
+  const svg=document.getElementById('sintra-chart');
+  const W=1400,H=320,padL=250,padR=70,padT=18,rowH=32;
+  const P=[
+    {n:'Pena — Full Tour',v:45,ind:0},
+    {n:'Pena — Essential Visit',v:20,ind:0},
+    {n:'Quinta da Regaleira',v:20,ind:1},
+    {n:'Sintra National Palace',v:13,ind:0},
+    {n:'Bus 434/435 — 24 hours',v:13.5,ind:1},
+    {n:'Pena — park only',v:12,ind:0},
+    {n:'Moorish Castle',v:12,ind:0},
+    {n:'Monserrate',v:12,ind:0},
+    {n:'Train from Rossio, return',v:5.1,ind:1}
+  ];
+  const maxV=48;
+  const x=v=>padL+(v/maxV)*(W-padL-padR);
+  let s='';
+  [0,10,20,30,40].forEach(v=>{
+    s+=`<line x1="${x(v)}" y1="${padT}" x2="${x(v)}" y2="${padT+P.length*rowH+6}" class="axs"/>`;
+    s+=`<text x="${x(v)}" y="${padT+P.length*rowH+26}" class="lbl" text-anchor="middle">€${v}</text>`;
+  });
+  s+=`<line x1="${padL}" y1="${padT}" x2="${W-padR}" y2="${padT}" class="ax"/>`;
+  P.forEach((p,i)=>{
+    const y=padT+16+i*rowH;
+    s+=`<text x="${padL-14}" y="${y+4}" class="lbl-p" text-anchor="end">${p.n}</text>`;
+    s+=`<rect x="${padL}" y="${y-9}" width="${x(p.v)-padL}" height="18" rx="2" fill="${p.ind?'rgba(231,100,155,.6)':'rgba(242,169,60,.62)'}"/>`;
+    s+=`<text x="${x(p.v)+9}" y="${y+4}" class="${p.ind?'lbl':'lbl-a'}">€${p.v.toFixed(2).replace('.00','')}</text>`;
+  });
+  svg.innerHTML=s;
+})();
+
+/* ============ LISBOA CARD CALCULATOR ============ */
+const SITES=[
+  {n:'Jerónimos Monastery',e:19.50,cov:true,def:true,note:'Closed Mondays · winter hours to 17:30'},
+  {n:'Belém Tower',e:8.00,cov:true,def:true,note:'Closed Mondays'},
+  {n:'Castelo de São Jorge',e:20.00,cov:true,def:true,note:'Open Mondays — the exception'},
+  {n:'National Coach Museum',e:8.00,cov:true,note:'Closed Mondays'},
+  {n:'National Pantheon',e:8.00,cov:true,note:'Pairs with the Feira da Ladra'},
+  {n:'Museu Nacional de Arte Antiga',e:10.00,cov:true,note:'Closed Mondays'},
+  {n:'City transport, per day × 3',e:21.75,cov:true,def:true,note:'Three 24-hour Carris/Metro passes at €7.25'},
+  {n:'Pena Palace — Essential Visit',e:20.00,cov:false,note:'Not covered — card gives about 10% off'},
+  {n:'Quinta da Regaleira',e:20.00,cov:false,note:'Not covered — independent, timed entry'},
+  {n:'Sintra bus 434, 24 hours',e:13.50,cov:false,note:'Not covered — Scotturb, not Carris'},
+  {n:'Sintra train, return',e:5.10,cov:false,note:'Not covered by the card'}
+];
+function renderLegs(){
+  document.getElementById('legs').innerHTML=SITES.map((l,i)=>`
+    <label class="leg-row${l.cov?'':' out'}">
+      <input type="checkbox" data-i="${i}" ${l.def?'checked':''}>
+      <span class="lname">${l.n}</span>
+      <span class="lyen">€${l.e.toFixed(2)}</span>
+      ${l.note?`<span class="lnote">${l.note}</span>`:''}
+    </label>`).join('');
+}
+function calcTotals(){
+  let covTotal=0, outTotal=0;
+  document.querySelectorAll('#legs input[type="checkbox"]').forEach(cb=>{
+    const l=SITES[Number(cb.dataset.i)];
+    if(cb.checked){ if(l.cov) covTotal+=l.e; else outTotal+=l.e; }
+  });
+  const card=62;
+  const diff=card-covTotal;
+  document.getElementById('ptp').innerHTML=`€${covTotal.toFixed(2)}<small>card-covered only</small>`;
+  const dEl=document.getElementById('diff');
+  const vEl=document.getElementById('verdict');
+  if(covTotal===0){
+    dEl.innerHTML='—'; vEl.textContent='Select covered items above'; vEl.className='';
+  } else if(diff>0){
+    dEl.innerHTML=`€${diff.toFixed(2)}<small>card costs more</small>`;
+    vEl.innerHTML='Pay as you go'+(outTotal?`<br><span style="color:var(--muted)">plus €${outTotal.toFixed(2)} uncovered</span>`:'');
+    vEl.className='lose';
+  } else {
+    dEl.innerHTML=`€${Math.abs(diff).toFixed(2)}<small>card saves you</small>`;
+    vEl.innerHTML='Card wins — if it fits 72h'+(outTotal?`<br><span style="color:var(--muted)">plus €${outTotal.toFixed(2)} uncovered</span>`:'');
+    vEl.className='win';
+  }
+}
+renderLegs();
+document.getElementById('legs').addEventListener('change',calcTotals);
+calcTotals();
+</script>
+
+</body>
+</html>

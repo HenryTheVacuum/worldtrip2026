@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="darkreader-lock">
+<title>Oman</title>
+<link rel="stylesheet" href="fonts.css">
+</head>
+<body>
+<style>
+:root{color-scheme:dark;
+  --ink:#05161D;--ink-2:#0A2029;--ink-3:#0E2A35;
+  --rule:#194150;--rule-soft:rgba(25,65,80,.6);
+  --paper:#E2EEED;--paper-dim:#A6C2C6;--muted:#6C8F98;
+  --amber:#F2A93C;--magenta:#E7649B;--jade:#58C4A3;--red:#E05555;
+  --display:'Big Shoulders Display','Arial Narrow',Impact,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --body:'Inter',system-ui,sans-serif;
+  --gut:clamp(18px,4vw,64px);--maxw:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+.section{padding-block:clamp(34px,4.4vw,58px);border-top:1px solid var(--rule-soft);position:relative}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:14px;margin:0 0 18px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--rule)}
+.eyebrow .n{color:var(--amber)}
+h2.head{font-family:var(--display);font-weight:700;font-size:clamp(34px,5.6vw,66px);line-height:.92;margin:0 0 14px;text-transform:uppercase}
+.lede{max-width:66ch;color:var(--paper-dim);font-size:clamp(15px,1.5vw,17px);margin:0 0 26px}
+.lede b{color:var(--paper);font-weight:600}
+a{color:var(--amber);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+.hint{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+@media (min-width:980px){.hint.wide{display:none}}
+.scroller{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--rule) transparent}
+.scroller::-webkit-scrollbar{height:6px}
+.scroller::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}
+.scroller>svg{display:block;width:100%;height:auto}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(30px,5vw,58px) clamp(24px,4vw,40px);overflow:hidden}
+.gridbg{position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:linear-gradient(to right,var(--rule-soft) 1px,transparent 1px),linear-gradient(to bottom,var(--rule-soft) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%);-webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%)}
+.back{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:inline-block;margin-bottom:20px}
+.back:hover{color:var(--amber)}
+.strip{font-family:var(--mono);font-size:clamp(10px,1.15vw,12px);letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;border-block:1px solid var(--rule);padding-block:11px;margin-bottom:clamp(26px,4vw,44px)}
+.strip .k{color:var(--muted)}.strip .amb{color:var(--amber)}
+.title{font-family:var(--display);text-transform:uppercase;margin:0;line-height:.82;position:relative}
+.title .l1{display:block;font-weight:400;font-size:clamp(34px,7.4vw,96px);color:transparent;-webkit-text-stroke:1.2px var(--paper-dim)}
+.title .l2{display:block;font-weight:800;font-size:clamp(72px,17vw,232px);letter-spacing:-.015em;color:var(--paper)}
+.subline{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:baseline;margin-top:clamp(18px,3vw,30px);font-family:var(--mono);font-size:clamp(11px,1.25vw,13px);letter-spacing:.14em;text-transform:uppercase;color:var(--paper-dim)}
+.subline .sep{color:var(--rule)}
+
+/* instruments */
+.instr{display:grid;grid-template-columns:repeat(auto-fit,minmax(124px,1fr));border:1px solid var(--rule);background:var(--ink-2);margin:clamp(24px,3.4vw,38px) 0 0}
+.instr div{padding:15px 17px;border-right:1px solid var(--rule-soft)}
+.instr div:last-child{border-right:0}
+.instr dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.instr dd{margin:0;font-family:var(--display);font-weight:600;font-size:31px;line-height:1}
+.instr dd span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--paper-dim);margin-left:3px}
+.instr dd.hot{color:var(--amber)}
+.instr dd.warn{color:var(--magenta)}
+
+/* chart frames */
+.figcap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:9px;margin:0 0 8px}
+.figcap b{color:var(--amber);font-weight:500}
+.fignote{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.fignote i{display:inline-block;width:14px;height:9px;margin:0 5px 0 14px;vertical-align:middle;border-radius:1px}
+.fignote i:first-child{margin-left:0}
+.ax{stroke:var(--rule);stroke-width:1}
+.axs{stroke:var(--rule-soft);stroke-width:1}
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.08em;fill:var(--muted)}
+.lbl-p{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;fill:var(--paper)}
+.lbl-a{font-family:var(--mono);font-size:10px;letter-spacing:.12em;fill:var(--amber)}
+
+/* cards */
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin:0 0 6px}
+.card{border:1px solid var(--rule);background:var(--ink-2);padding:18px 20px;position:relative}
+.card.bad{border-color:var(--red)}
+.card.good{border-color:var(--jade)}
+.card h3{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 4px;color:var(--paper)}
+.card .verdict{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:11px}
+.card .verdict.bad{color:var(--red)}
+.card .verdict.ok{color:var(--jade)}
+.card p{margin:0 0 10px;font-size:13.5px;color:var(--paper-dim);line-height:1.62}
+.card p:last-child{margin-bottom:0}
+.card p b{color:var(--paper);font-weight:600}
+.fix{border-left:2px solid var(--amber);padding-left:12px;margin:12px 0 0;font-size:12.8px;color:var(--paper-dim);line-height:1.6}
+.fix b{display:block;color:var(--amber);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px;font-weight:500}
+.fix strong{color:var(--paper);font-weight:600}
+
+/* shape cards */
+.shapes{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+.shape{border:1px solid var(--rule);background:var(--ink-2);padding:0;display:flex;flex-direction:column}
+.shape.pick{border-color:var(--amber);box-shadow:inset 0 0 0 1px rgba(242,169,60,.25)}
+.shape-hd{padding:16px 20px 14px;border-bottom:1px solid var(--rule-soft)}
+.shape-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.shape.pick .shape-tag{color:var(--amber)}
+.shape-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(24px,3vw,32px);line-height:.95;margin:0}
+.chainrow{display:flex;flex-wrap:wrap;align-items:center;gap:5px 7px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--paper);padding:13px 20px;border-bottom:1px solid var(--rule-soft);background:rgba(5,22,29,.5)}
+.chainrow .a{color:var(--rule)}
+.chainrow .n{color:var(--amber);font-size:9.5px}
+.shape-body{padding:15px 20px 18px;flex:1}
+.shape-body p{margin:0 0 10px;font-size:13.3px;color:var(--paper-dim);line-height:1.6}
+.shape-body p:last-child{margin-bottom:0}
+.shape-body p b{color:var(--paper);font-weight:600}
+.shape-meta{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--rule-soft)}
+.shape-meta div{flex:1;min-width:88px;padding:11px 20px;border-right:1px solid var(--rule-soft)}
+.shape-meta div:last-child{border-right:0}
+.shape-meta dt{font-family:var(--mono);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.shape-meta dd{margin:0;font-family:var(--mono);font-size:13px;color:var(--paper)}
+.shape-meta dd.g{color:var(--jade)}
+.shape-meta dd.r{color:var(--red)}
+
+/* day accordion */
+.days{border-top:1px solid var(--rule)}
+.day{border-bottom:1px solid var(--rule)}
+.day-btn{all:unset;box-sizing:border-box;display:grid;width:100%;cursor:pointer;grid-template-columns:76px 1fr auto;gap:0 clamp(14px,2.4vw,30px);align-items:baseline;padding:clamp(13px,1.8vw,18px) 4px;transition:background .18s ease}
+.day-btn:hover{background:rgba(242,169,60,.05)}
+.day-btn:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.day-date{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.1em}
+.day-date small{display:block;color:var(--muted);font-size:9.5px;letter-spacing:.14em;margin-top:3px}
+.day-btn>span:nth-child(2){display:flex;flex-direction:column;gap:6px}
+.day-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(22px,3.2vw,34px);line-height:.95;margin:0}
+.day-sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.day-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--paper-dim);text-align:right;white-space:nowrap}
+.day-meta .chev{display:inline-block;margin-left:12px;color:var(--muted);transition:transform .25s ease}
+.day.open .day-meta .chev{transform:rotate(180deg)}
+@media (max-width:720px){.day-btn{grid-template-columns:64px 1fr;row-gap:8px}.day-meta{grid-column:2;text-align:left}}
+.day-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .34s cubic-bezier(.3,.8,.3,1)}
+.day.open .day-body{grid-template-rows:1fr}
+.day-inner{overflow:hidden}
+.day-pad{padding:2px 4px clamp(22px,3vw,32px)}
+.slots{display:grid;gap:0;border-left:1px solid var(--rule)}
+.slot{padding:0 0 16px 16px;position:relative}
+.slot:last-child{padding-bottom:2px}
+.slot::before{content:"";position:absolute;left:-4px;top:6px;width:7px;height:7px;background:var(--amber);border-radius:50%}
+.slot.move::before{background:var(--magenta)}
+.slot h4{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 5px;font-weight:500}
+.slot.move h4{color:var(--magenta)}
+.slot p{margin:0;font-size:14px;line-height:1.62;color:var(--paper-dim);max-width:72ch}
+.slot p b{color:var(--paper);font-weight:600}
+
+/* worth doing */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.fbtn{all:unset;cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border:1px solid var(--rule);color:var(--paper-dim);border-radius:2px;transition:.15s}
+.fbtn:hover{background:var(--ink-3);color:var(--paper)}
+.fbtn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.fbtn[aria-pressed="true"]{background:var(--amber);color:var(--ink);border-color:var(--amber);font-weight:600}
+.fdiv{width:1px;background:var(--rule);margin:2px 6px}
+.items{display:grid;gap:1px;background:var(--rule-soft);border:1px solid var(--rule)}
+.item{background:var(--ink-2);padding:13px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:baseline}
+.item .tier{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:3px 7px 2px;border-radius:2px;white-space:nowrap;align-self:start;margin-top:2px}
+.tier.do{background:rgba(88,196,163,.14);color:var(--jade);border:1px solid rgba(88,196,163,.35)}
+.tier.opt{background:rgba(242,169,60,.12);color:var(--amber);border:1px solid rgba(242,169,60,.3)}
+.tier.skip{background:rgba(224,85,85,.1);color:var(--red);border:1px solid rgba(224,85,85,.3)}
+.item .nm{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:20px;line-height:1.05;color:var(--paper)}
+.item .why{grid-column:2;font-size:13.3px;color:var(--paper-dim);line-height:1.55;max-width:74ch}
+.item .why b{color:var(--paper);font-weight:600}
+.item .when{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);text-align:right;white-space:nowrap;align-self:start;margin-top:4px}
+.item .when.book{color:var(--magenta)}
+@media (max-width:640px){.item{grid-template-columns:auto 1fr}.item .when{grid-column:2;text-align:left;margin-top:2px}.item .why{grid-column:1/-1}}
+.empty{background:var(--ink-2);padding:22px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* rail calc */
+.calc{border:1px solid var(--rule);background:var(--ink-2)}
+.calc-legs{display:grid}
+.leg-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--rule-soft);cursor:pointer}
+.leg-row:hover{background:rgba(242,169,60,.04)}
+.leg-row input{accent-color:var(--amber);width:15px;height:15px;cursor:pointer}
+.leg-row .lname{font-family:var(--mono);font-size:12.5px;color:var(--paper-dim)}
+.leg-row input:checked+.lname{color:var(--paper)}
+.leg-row .lyen{font-family:var(--mono);font-size:12.5px;color:var(--amber);font-variant-numeric:tabular-nums;white-space:nowrap}
+.leg-row .lnote{grid-column:2/-1;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--muted);margin-top:-4px}
+.calc-out{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule-soft)}
+.calc-out div{background:var(--ink-3);padding:15px 17px}
+.calc-out dt{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.calc-out dd{margin:0;font-family:var(--display);font-weight:700;font-size:27px;line-height:1;font-variant-numeric:tabular-nums}
+.calc-out dd small{font-family:var(--mono);font-size:10px;font-weight:400;color:var(--paper-dim);margin-left:4px;letter-spacing:.06em}
+#verdict{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;line-height:1.5}
+#verdict.win{color:var(--jade)}
+#verdict.lose{color:var(--red)}
+
+/* panels / tables */
+.panel{border:1px solid var(--rule);background:var(--ink-2);padding:clamp(17px,2.4vw,24px);margin-top:22px}
+.panel h3{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 12px;font-weight:500}
+.panel p{margin:0 0 12px;font-size:13.6px;color:var(--paper-dim);line-height:1.62}
+.panel p:last-child{margin-bottom:0}
+.panel p b{color:var(--paper);font-weight:600}
+table.ref{width:100%;border-collapse:collapse;font-size:13.4px}
+table.ref th{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:500;padding:0 14px 10px 0;border-bottom:1px solid var(--rule)}
+table.ref td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule-soft);color:var(--paper-dim);vertical-align:top}
+table.ref td:first-child{font-family:var(--display);font-size:17px;font-weight:600;text-transform:uppercase;color:var(--paper);white-space:nowrap;width:1%}
+table.ref td.t{font-family:var(--mono);font-size:11px;letter-spacing:.06em;white-space:nowrap;color:var(--amber)}
+table.ref tr.flag td.t{color:var(--magenta)}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.cols{display:grid;gap:16px 34px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:20px}
+.cols p{margin:0;font-size:13.6px;color:var(--paper-dim);line-height:1.6}
+.cols p b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:5px;font-weight:500}
+
+footer{border-top:1px solid var(--rule);padding-block:26px 40px;color:var(--muted)}
+.foot-grid{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:flex-end}
+.foot-grid p{margin:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase}
+.foot-mark{font-family:var(--display);font-size:clamp(40px,9vw,110px);font-weight:800;text-transform:uppercase;line-height:.8;color:transparent;-webkit-text-stroke:1px var(--rule);margin:30px 0 0}
+</style>
+
+<header class="hero">
+  <div class="gridbg"></div>
+  <div class="wrap">
+    <a class="back" href="index.html">← Westbound · the dossier</a>
+    <p class="strip">
+      <span><span class="k">Stop</span> <span class="amb">20 of 27</span></span>
+      <span><span class="k">In</span> DXB · Dubai</span>
+      <span><span class="k">Fly Oman</span> <span class="amb">MCT</span></span>
+      <span><span class="k">Out</span> RUH · Riyadh</span>
+      <span><span class="k">Window</span> 7–10 Jan 2027</span>
+      <span><span class="k">Clock</span> UTC+4</span>
+    </p>
+    <h1 class="title">
+      <span class="l1">Three nights</span>
+      <span class="l2">Oman</span>
+    </h1>
+    <p class="subline">
+      <span>Friday lands on market day</span><span class="sep">/</span>
+      <span>The rim camp is the pinch</span><span class="sep">/</span>
+      <span>Fix the insurance before you fly</span>
+    </p>
+
+    <dl class="instr">
+      <div><dt>Calendar days</dt><dd>4</dd></div>
+      <div><dt>Full days</dt><dd class="hot">2</dd></div>
+      <div><dt>Nights</dt><dd>3</dd></div>
+      <div><dt>Time change</dt><dd class="hot">0<span>hrs</span></dd></div>
+      <div><dt>Driving</dt><dd>≈600<span>km</span></dd></div>
+      <div><dt>Rim, 3am</dt><dd class="warn">−1<span>°C</span></dd></div>
+    </dl>
+  </div>
+</header>
+
+<section class="section" id="audit">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">01</span> The time audit</p>
+    <h2 class="head">Four days<br>is two days</h2>
+    <p class="lede">Dubai to Muscat is seventy-five minutes and <b>no time change at all</b> — both sit on UTC+4, so for the first time since Toronto you arrive already adjusted. That's the good news. The bad news is arithmetic: land Thursday afternoon, fly out Sunday, and what's left is <b>two full days and two fragments</b>, with roughly 600 km of driving threaded through them.</p>
+
+    <div class="figcap">
+      <span>Fig. 1 — What the stop really contains</span>
+      <span><b>7–10 Jan</b> · hour by hour</span>
+    </div>
+    <div class="scroller">
+      <svg id="audit-chart" viewBox="0 0 1400 190" role="img" aria-label="Timeline of 7 to 10 January showing Thursday morning lost to the Dubai flight, a part-day Thursday afternoon, two usable full days on Friday and Saturday, and Sunday morning before the flight to Riyadh."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--magenta);opacity:.55"></i>In transit<i style="background:rgba(242,169,60,.35)"></i>Part day<i style="background:var(--amber)"></i>Full day</p>
+
+    <div class="cols">
+      <p><b>The Friday gift</b>Your one Friday is 8 January, and Friday is the single most consequential day of the Omani week. The Nizwa livestock auction only happens on Friday mornings. The Grand Mosque is the one day it's <em>shut</em> to non-Muslims. The calendar has quietly sorted your itinerary for you: spend Friday inland, save Muscat for Sunday morning.</p>
+      <p><b>No public transport worth the name</b>Mwasalat runs a decent coach between Muscat and Nizwa — about two hours, OMR 3, four to six a day. It will not take you to a wadi, a mud village, or a canyon rim. Everything you actually came for is at the end of a road with no bus on it. Budget for a car.</p>
+      <p><b>The nights are the constraint</b>Three nights, and Jebel Shams eats one of them. That leaves one for Nizwa and one for Muscat — which is exactly enough if you accept you're seeing Muscat in a single evening and a single morning, and not one minute more.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="flags">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">02</span> Two things that don't move</p>
+    <h2 class="head">Sort one now,<br>pack for the other</h2>
+    <p class="lede">The first is a paperwork problem that has to be solved weeks before you fly and quietly affects four consecutive stops. The second is a temperature problem you solve with a credit card in Muscat.</p>
+
+    <div class="cards">
+      <div class="card bad">
+        <h3>Your travel insurance may not cover you here</h3>
+        <div class="verdict bad">Fix before departure</div>
+        <p>Three facts that only bite when you put them together. <b>One:</b> Oman's 14-day visa-free entry for Canadians is conditional — the Ministry of Foreign Affairs lists a six-month passport, a return ticket, a confirmed hotel booking, sufficient funds and <b>valid health insurance</b>.</p>
+        <p><b>Two:</b> Global Affairs Canada has Oman at <b>"Avoid non-essential travel"</b> — last updated 9 September 2026, citing the volatile regional security situation. The UAE carries the identical wording; Saudi Arabia is the same with named higher-risk areas.</p>
+        <p><b>Three:</b> most Canadian travel-medical policies exclude claims arising in a country under a Level 3 or Level 4 Canadian advisory <b>when that advisory was already in force before you left</b>. It has been in force for months. So the default outcome is a policy you paid for that pays nothing — and, on paper, an unmet entry condition.</p>
+        <div class="fix"><b>What to do</b>Buy a policy that <strong>names Level 3 destinations as covered, in writing</strong>, before you leave Canada — specialist expedition and expat-style insurers write this; mass-market and credit-card policies generally don't. Get the confirmation in an email you can show at a desk. One decision covers <strong>stops 19 through 22</strong> — UAE, Oman, Saudi and Egypt — so price it as a four-country problem, not an Oman one. Nobody at Muscat immigration is likely to ask for the certificate; the hospital in Nizwa absolutely will.</div>
+      </div>
+
+      <div class="card">
+        <h3>The rim camp is a winter camp</h3>
+        <div class="verdict">Rent the gear, don't skip the night</div>
+        <p>Camping on the Jebel Shams rim is still free, still legal, still the best thing in the country — none of that has changed. What January changes is the temperature. The rim sits at <b>3,000 m</b>, and the met station there recorded <b>−1.1°C on 8 January 2024</b> and <b>−3.6°C in January 2023</b>. The all-time low since monitoring began in 2003 is −9.7°C, also a January.</p>
+        <p>Daytime is glorious — 5 to 15°C, bone-dry, huge light. It's the eight hours after sunset that matter, and you will be arriving from Colombo and Malé with a bag full of tropical kit and no sleeping bag.</p>
+        <div class="fix"><b>What to do</b>Rent in Muscat on the way through. Several outfits hire full camping sets — tent, mat, sub-zero bag, stove — for roughly <strong>OMR 10–20 a day</strong>, and some will fit a rooftop tent to a 4WD. Book it when you book the car, not when you arrive. <strong>The no-tent fallback:</strong> Jebel Shams Resort, on the mountain, from about OMR 40 a room — you lose the stars and keep the sunrise.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="shapes">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">03</span> The open question</p>
+    <h2 class="head">Canyon<br>or coast</h2>
+    <p class="lede">Nizwa on Friday and Muscat on Sunday are fixed by the opening hours — nothing you decide changes those. The live question is what Saturday is for, and it comes down to whether you spend a night at 3,000 m. Both shapes fit the same 7–10 Jan window and the same one rental car.</p>
+
+    <div class="shapes">
+      <div class="shape pick">
+        <div class="shape-hd">
+          <div class="shape-tag">Recommended — it's why you came</div>
+          <p class="shape-name">The mountain night</p>
+        </div>
+        <div class="chainrow">
+          <span>Nizwa <span class="n">×1</span></span><span class="a">→</span>
+          <span>Jebel Shams <span class="n">×1</span></span><span class="a">→</span>
+          <span>Muscat <span class="n">×1</span></span><span class="a">→</span>
+          <span class="n">MCT</span>
+        </div>
+        <div class="shape-body">
+          <p>Friday runs from the goat market at dawn through Bahla, Jabreen and Misfat al Abriyyin, then climbs to the rim in the late afternoon and camps. Saturday opens with the <b>Balcony Walk at first light</b> — 6 km out and back along a ledge above a 1,000 m drop, with the abandoned village of As Sab at the far end — and then three hours of descent to Muscat.</p>
+          <p><b>What it costs:</b> a 4WD instead of a saloon, a gear rental, and a cold night. What it buys is the one thing on this itinerary that has no equivalent anywhere else on the trip.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Bases</dt><dd>3</dd></div>
+          <div><dt>Driving</dt><dd class="r">≈600 km</dd></div>
+          <div><dt>Car</dt><dd class="r">4WD</dd></div>
+          <div><dt>Coldest</dt><dd class="r">−1°C</dd></div>
+        </dl>
+      </div>
+
+      <div class="shape">
+        <div class="shape-hd">
+          <div class="shape-tag">If the gear problem doesn't solve</div>
+          <p class="shape-name">Coast instead</p>
+        </div>
+        <div class="chainrow">
+          <span>Nizwa <span class="n">×1</span></span><span class="a">→</span>
+          <span>Muscat <span class="n">×2</span></span><span class="a">→</span>
+          <span class="n">MCT</span>
+        </div>
+        <div class="shape-body">
+          <p>Friday still starts at the goat market, then turns uphill to <b>Jebel Akhdar</b> instead — the Saiq plateau at 2,000 m, terraced rose villages stacked on the cliff face, back down to Muscat by evening. Saturday becomes a coast day: <b>Wadi Shab</b>, two hours south on the Sur road, a 500-baisa boat across the mouth and a 45-minute walk up to pools you swim through into a cave, with the Bimmah Sinkhole 9 km back up the highway.</p>
+          <p><b>The trade:</b> warmer, simpler, two bases instead of three, no gear to source — and you swap Arabia's deepest canyon for a very good swim. There's a checkpoint at the bottom of the Jebel Akhdar road that turns back anything that isn't a 4WD, so this shape doesn't even save you the car.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Bases</dt><dd class="g">2</dd></div>
+          <div><dt>Driving</dt><dd>≈650 km</dd></div>
+          <div><dt>Car</dt><dd class="r">4WD</dd></div>
+          <div><dt>Coldest</dt><dd class="g">13°C</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Why the recommendation keeps the camp</h3>
+      <p>Wadi Shab is excellent and it is also the fourth-best swimming hole of the last two months — you have come through Kuang Si, El Nido and the Maldives to get here. <b>Jebel Shams has no competition on this itinerary at all.</b> Nothing else between Kathmandu and Cape Town is a 1,000-metre canyon you can sleep on the edge of for nothing.</p>
+      <p>And the camp is the cheap part. The 4WD is required either way, the Friday is identical either way, and the difference between the two shapes is a OMR 15 gear rental and a night's hotel you don't pay for. If you rent the bag and the night turns out to be miserable, the resort is twenty minutes from the rim.</p>
+    </div>
+
+    <div class="panel">
+      <h3>What's cut in both shapes</h3>
+      <p><b>The Wahiba Sands.</b> Oman's dune sea, and a proper desert camp. It's the wrong direction from everything else here and needs its own night. You have a Sahara camel night booked in Morocco at stop 26 — let that one carry the dunes.</p>
+      <p><b>Sur and the Ras al Jinz turtles.</b> Green turtles nesting on a beach at midnight, three hours-plus each way. It needs a night in Sur and you don't have one.</p>
+      <p><b>The Daymaniyat Islands.</b> The best snorkelling in the Gulf of Oman, 42 km offshore, and a full day with a boat. Zanzibar at stop 23 covers this ground better.</p>
+      <p><b>Salalah and the Dhofar coast.</b> A different country, effectively — a two-hour flight or ten hours of driving south, and it's at its best in the khareef monsoon between July and September. Not this trip, not this month.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="open">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">04</span> The Friday rhythm</p>
+    <h2 class="head">What's open<br>when</h2>
+    <p class="lede">Oman's weekend is Friday and Saturday, and the Friday pattern is the reason this stop schedules itself. Two facts carry the whole plan: <b>the Grand Mosque is closed to visitors on Friday</b>, and <b>the Nizwa auction only exists on Friday</b>. Put those side by side and the days fall into place.</p>
+
+    <div class="figcap">
+      <span>Fig. 2 — Opening hours across your four days</span>
+      <span><b>Thu 7 — Sun 10 Jan</b></span>
+    </div>
+    <div class="scroller">
+      <svg id="open-chart" viewBox="0 0 1400 330" role="img" aria-label="Grid of opening hours for six sights across Thursday to Sunday, showing the Sultan Qaboos Grand Mosque closed on Friday and the Nizwa goat market running on Friday only."></svg>
+    </div>
+    <p class="fignote"><i style="background:rgba(88,196,163,.5)"></i>Open<i style="background:rgba(242,169,60,.4)"></i>Limited hours<i style="background:rgba(224,85,85,.35)"></i>Closed to you</p>
+
+    <div class="cols">
+      <p><b>The mosque window is three hours wide</b>Saturday to Thursday, 08:00 to 11:00, and that is the whole of it. It is free — an OMR 8.400 admission appeared in January 2025 and was withdrawn after a backlash, so carry OMR 10 in case it comes back. Women need a headscarf and covered arms and legs; men need long trousers and sleeves. Allow 90 minutes inside.</p>
+      <p><b>The auction is over by half nine</b>Sellers start walking goats into the ring around 06:00, the trading proper runs from about 07:00, and by 09:30 the ring is empty and the fort is where everyone goes next. Free, no ticket, and still overwhelmingly a local event rather than a show. It is the single best argument for sleeping in Nizwa on Thursday night rather than driving out from Muscat at 4am.</p>
+      <p><b>Friday afternoon reopens</b>Almost everything shuts for midday prayers and comes back around 13:30 to 16:00 — Nizwa Fort at 13:30, Mutrah Souq at 16:00. Plan the middle of Friday as driving time and you'll never notice.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="run">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">05</span> Day by day</p>
+    <h2 class="head">Both versions,<br>laid out</h2>
+    <p class="lede">Sunrise in Muscat in early January is about 06:50 and sunset about 17:30 — a short day for this much driving, so the early starts aren't optional. Times are indicative; treat the first slot of each day as the one that matters.</p>
+    <div class="filters" id="dayToggle" style="margin-bottom:6px">
+      <button class="fbtn" data-plan="mountain" aria-pressed="true">The mountain night</button>
+      <button class="fbtn" data-plan="coast" aria-pressed="false">Coast instead</button>
+    </div>
+    <div class="days" id="days"></div>
+    <p class="fignote" style="margin-top:16px">Amber = on foot · <span style="color:var(--magenta)">Magenta = a drive or a flight</span></p>
+  </div>
+</section>
+
+<section class="section" id="worth">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">06</span> What's actually worth doing</p>
+    <h2 class="head">Do, maybe,<br>don't bother</h2>
+    <p class="lede">Sorted by area, then by whether it earns its place in three nights. The <b>don't bother</b> entries are mostly fine things that lose their slot to something better — or that you have already done, better, somewhere earlier on this trip.</p>
+
+    <div class="filters" id="filters">
+      <button class="fbtn" data-city="all" aria-pressed="true">All</button>
+      <button class="fbtn" data-city="Muscat" aria-pressed="false">Muscat</button>
+      <button class="fbtn" data-city="Nizwa" aria-pressed="false">Nizwa &amp; the forts</button>
+      <button class="fbtn" data-city="Mountains" aria-pressed="false">Mountains</button>
+      <button class="fbtn" data-city="Coast" aria-pressed="false">Coast</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-tier="do" aria-pressed="false">Do</button>
+      <button class="fbtn" data-tier="opt" aria-pressed="false">Maybe</button>
+      <button class="fbtn" data-tier="skip" aria-pressed="false">Don't bother</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-book="1" aria-pressed="false">Needs booking</button>
+    </div>
+    <div class="items" id="items"></div>
+  </div>
+</section>
+
+<section class="section" id="mountain">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">07</span> The mountain</p>
+    <h2 class="head">Three thousand<br>metres of swing</h2>
+    <p class="lede">Muscat in January is a pleasant 25°C and barely moves overnight. Jebel Shams is the same country and a different planet: a twenty-degree spread between mid-afternoon and the hour before dawn, and the cold arrives fast once the sun drops behind the western rim.</p>
+
+    <div class="figcap">
+      <span>Fig. 3 — A typical January day, hour by hour</span>
+      <span><b>Sea level to 3,000 m</b></span>
+    </div>
+    <div class="scroller">
+      <svg id="temp-chart" viewBox="0 0 1400 380" role="img" aria-label="Line chart of typical January temperatures through 24 hours for Muscat, Nizwa and the Jebel Shams rim, showing the rim dipping below freezing before dawn while Muscat stays near 18 degrees."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--jade)"></i>Muscat, sea level<i style="background:var(--amber)"></i>Nizwa, 500 m<i style="background:var(--magenta)"></i>Jebel Shams rim, 3,000 m · indicative January profiles, not measured averages</p>
+
+    <div class="panel">
+      <h3>The road up</h3>
+      <p>Tarmac from Nizwa through Al Hamra and most of the way up the mountain — the climb is steep and switchbacked but sealed, and only the <b>last stretch near the rim viewpoints is graded gravel</b>. People do get saloons up on a dry day. Do not be one of them: the rental contract voids off-tarmac, the gravel is loose on a gradient, and recovery from 3,000 m is not a phone call you want to make on a three-night stop.</p>
+      <p>Nizwa to the rim is about <b>90 minutes</b>; Muscat to the rim about <b>2.5 to 3 hours</b>. There is no fuel, no water, no shop and no toilet on the mountain. Fill the tank in Al Hamra and carry everything, including more water than feels sensible — dry cold dehydrates you without telling you.</p>
+    </div>
+
+    <div class="panel">
+      <h3>The Balcony Walk (W6)</h3>
+      <p>The reason to wake up there. From the trailhead at Al Khitaym the path runs along a ledge cut into the canyon wall, about <b>6 km out and back, three to four hours</b>, ending at the abandoned cliff village of As Sab with its terraces and falaj channel still visible. It is not technical and it is not a scramble — it is a well-trodden path with <b>a thousand metres of air immediately to one side</b> and no railing anywhere. If exposure bothers you, you will know within the first ten minutes, and turning back is a perfectly good outcome.</p>
+      <p>Start at first light. In January that means leaving the tent around 07:00 — the canyon is in shadow and cold until the sun clears the far rim, and you want to be walking out, not in, when it gets warm.</p>
+    </div>
+
+    <div class="panel">
+      <h3>Camping, practically</h3>
+      <p>Wild camping is legal across Oman and the rim is the classic spot — flat ground with stone windbreaks already built near the viewpoints, free, no permit, no booking. The convention is to camp away from the road and out of sight of houses, take everything out with you, and not to expect solitude: it's popular and the flat pitches go early on a weekend, which 8 January is.</p>
+      <p>Pack for a desert night, not a mountain expedition — a three-season bag with a liner, a mat that insulates from the rock, a windproof layer and a hat. The wind matters more than the number on the thermometer. And note the wrinkle: visa-free entry technically wants a <b>confirmed hotel booking</b>, and a tent isn't one. Have the Nizwa and Muscat reservations on your phone and don't volunteer the middle night.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="driving">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">08</span> The driving maths</p>
+    <h2 class="head">Rent the<br>4WD</h2>
+    <p class="lede">Oman is the one country on this trip where the rental car isn't a convenience, it's the whole mechanism. Fuel is roughly <b>OMR 0.20 a litre</b> — about 27 Canadian cents — which makes distance almost free and the daily rate the only number that matters. Tick what you'd actually drive.</p>
+
+    <div class="calc">
+      <div class="calc-legs" id="legs"></div>
+      <dl class="calc-out">
+        <div><dt>Distance</dt><dd id="ptp"></dd></div>
+        <div><dt>Fuel</dt><dd id="fuel"></dd></div>
+        <div><dt>Car, 3 days</dt><dd id="carcost"></dd></div>
+        <div><dt>Verdict</dt><dd><span id="verdict"></span></dd></div>
+      </dl>
+    </div>
+    <p class="fignote">Rates: 2WD saloon OMR 12–18/day, compact 4WD OMR 30–45/day · fuel at 9.5 L per 100 km · guided day tours run OMR 35–45 per person per day · CAD at roughly OMR 0.28 to the dollar</p>
+
+    <div class="panel">
+      <h3>Where the 4WD is actually enforced</h3>
+      <p><b>Jebel Akhdar.</b> There is a police checkpoint at the foot of the Saiq plateau road and it turns back anything that isn't four-wheel drive. This is a rule, not a recommendation — you will not talk your way past it in a Yaris.</p>
+      <p><b>Jebel Shams.</b> No checkpoint, but the final gravel section and your rental agreement both say the same thing. Everywhere else on this itinerary — Muscat, Highway 15 to Nizwa, Bahla, Jabreen, the Sur coast road to Wadi Shab — is fast, empty, beautifully surfaced tarmac that any car handles.</p>
+    </div>
+
+    <div class="panel">
+      <h3>Driving notes</h3>
+      <p><b>Licence:</b> the Royal Oman Police allow visitors on a tourist entry to drive on a home-country licence for up to three months, and international permits are accepted for the same period. Canada's own travel advice still says to carry an IDP — it costs $25 from CAA, it removes an argument at a rental desk, and one of the two authorities is going to be the one standing in front of you.</p>
+      <p><b>Speed:</b> enforcement is by camera and it is relentless. Fines follow the rental company and then follow you. Highway limits are 120 km/h and the cameras are set tight.</p>
+      <p><b>Wadis:</b> January brings occasional Mediterranean fronts and wadis flood fast and without much warning. If water is crossing a road, wait or turn around — this is the single most common way visitors die in Oman.</p>
+      <p><b>Petrol:</b> stations are frequent on the highways and sparse in the mountains. Fill up in Nizwa or Al Hamra before going up, and again before the run back to Muscat.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="admin">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">09</span> Ground rules</p>
+    <h2 class="head">Before you land</h2>
+
+    <div class="tablewrap">
+    <table class="ref">
+      <thead><tr><th>Item</th><th>What to do</th><th>When</th></tr></thead>
+      <tbody>
+        <tr><td>Entry</td><td>Visa-free for Canadians, 14 days, no application and no fee — Canada joined the exemption list from 1 January 2026 and the list was widened again in August 2026. Not extendable and not convertible.</td><td class="t">Nothing to file</td></tr>
+        <tr class="flag"><td>Conditions</td><td>The exemption is conditional: passport valid six months beyond arrival, onward ticket, confirmed hotel booking, sufficient funds and <b>valid health insurance</b>. Have all five reachable on your phone.</td><td class="t">Before you fly</td></tr>
+        <tr class="flag"><td>Insurance</td><td>See the card at the top. Canada's advisory has Oman at "Avoid non-essential travel" as of 9 Sept 2026; most Canadian policies exclude Level 3 destinations. Buy coverage that names Level 3 in writing.</td><td class="t">Weeks ahead</td></tr>
+        <tr><td>Passport stamps</td><td>Canadians have been refused entry over Israeli stamps, or Egyptian and Jordanian land-border stamps implying transit through Israel. Nothing on this route creates that problem — but it's worth knowing before Cairo at stop 22.</td><td class="t">Check your book</td></tr>
+        <tr class="flag"><td>Hotel taxes</td><td>Budget about <b>14% on top</b> of the quoted room rate: 5% VAT, 5% municipality tax and 4% tourism tax. Often excluded from the headline price on booking sites.</td><td class="t">Budget for it</td></tr>
+        <tr><td>Car</td><td>Compact 4WD, picked up at MCT, dropped at MCT. Book ahead — early January is Oman's peak season and 4WDs go first. Confirm the policy on unsealed roads in writing.</td><td class="t">Book now</td></tr>
+        <tr class="flag"><td>Camping gear</td><td>Rent in Muscat with the car if you're doing the rim night. Full sets run roughly OMR 10–20 a day; some operators fit a rooftop tent to the 4WD instead.</td><td class="t">With the car</td></tr>
+        <tr><td>Cash</td><td>Cards work in Muscat hotels and malls and nowhere else that matters. Carry OMR 40–60 in small notes for fort entries (OMR 0.5 each), the Wadi Shab boat (500 baisa), fuel in villages and souq purchases.</td><td class="t">On arrival</td></tr>
+        <tr><td>Alcohol</td><td>Legal only in licensed hotels and restaurants. No shops, none in Nizwa to speak of, and public intoxication is an offence. Three dry-ish days.</td><td class="t">Adjust expectations</td></tr>
+        <tr class="flag"><td>Drones</td><td>Import, possession and use are strictly controlled and require prior authorisation. Penalties include confiscation, fines and imprisonment. If you're carrying one, leave it in the bag.</td><td class="t">Don't</td></tr>
+        <tr><td>Dress</td><td>Shoulders and knees covered for everyone in towns, souqs and villages; Muscat's hotel beaches are relaxed. Nizwa is a conservative town and the market is not a tourist attraction to its participants — ask before photographing anyone.</td><td class="t">Throughout</td></tr>
+        <tr><td>Public holidays</td><td>Isra' wal Mi'raj falls on Tuesday 5 January 2027, two days before you arrive. Nothing else lands in the window — but Islamic-calendar dates shift and Oman confirms them late, so recheck in December.</td><td class="t">Clear, probably</td></tr>
+        <tr><td>Onward flight</td><td>MCT→RUH is comfortable: Oman Air runs three a day including a 13:55 and an 18:50, SalamAir adds a Thursday-to-Sunday midday service, and Saudia returned to the route from 27 Oct 2026. About 2h35.</td><td class="t">Flexible</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="cols">
+      <p><b>Weather</b>Muscat 24–27°C by day and around 18°C overnight, humidity gone, sea still swimmable at 22–25°C. Nizwa a few degrees warmer by day and noticeably colder at night. January is Oman's peak season for exactly this reason, and it prices accordingly — book rooms well ahead.</p>
+      <p><b>Getting in from DXB</b>Around forty-two flights a week: Oman Air, flydubai and Emirates all run it, 75 minutes gate to gate, no time change. An Oman Air late-morning departure puts you on Highway 15 by early afternoon with Nizwa Fort still open at the far end.</p>
+      <p><b>Phone and data</b>Omantel and Ooredoo sell tourist SIMs at MCT arrivals for a few rial. Worth it — you will be navigating unmarked turnings to a mud village, and there is no mobile signal at all on large parts of the Jebel Shams road.</p>
+      <p><b>Eating</b>Shuwa, camel or goat slow-cooked underground for a day, is the national dish and mostly a celebration food — you'll more realistically eat majboos, grilled kingfish, and very good Indian and Zanzibari food in Muscat. Halwa and cardamom coffee are offered constantly and refusing the second cup is done by wobbling the cup side to side.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <p>Westbound · stop 20 · Oman</p>
+      <p>7–10 Jan 2027 · MCT in, RUH out</p>
+      <p>Fares, taxes and rules verified Sept 2026 — recheck before booking</p>
+    </div>
+    <p class="foot-mark">Muscat → Jebel Shams</p>
+  </div>
+</footer>
+
+<script>
+/* ============ DAY-BY-DAY ============ */
+const DAYS_MOUNTAIN=[
+{d:'Thu 7',w:'Arrive',name:'Nizwa',sub:'Land, drive, one fort',meta:'Night 1',
+ slots:[
+  {m:1,h:'11:00 · DXB → MCT',p:'Oman Air or flydubai, 75 minutes, no time change. Pick up the 4WD and the camping gear at the airport — confirm the gear hire when you book the car, not on the day.'},
+  {m:1,h:'14:00 · Highway 15 to Nizwa',p:'165 km, about 1h45 on fast empty dual carriageway. Fill the tank on the way out of Muscat; fuel is roughly OMR 0.20 a litre and the whole stop costs less than one Toronto tank.'},
+  {h:'16:30 · Nizwa Fort and souq',p:'OMR 0.5. The great round tower is 34 metres across, the largest of any fort in Arabia, and the roof at the end of the afternoon is the picture. Closes at 18:00 — this is why you leave Dubai in the morning.'},
+  {h:'19:00 · Sleep in Nizwa',p:'Non-negotiable. The auction starts at first light and Muscat is 90 minutes away. A mid-range room runs USD 100–140, budget places about USD 35.'}
+]},
+{d:'Fri 8',w:'Full',name:'Goats, forts, rim',sub:'The big day',meta:'Night 2',
+ slots:[
+  {h:'06:30 · The goat market',p:'Sellers walk livestock in a slow circle around the ring while buyers call from the edge and deals close on a handshake. Free, no ticket, over by 09:30. Ask before you photograph anyone — this is a working auction, not a display.'},
+  {m:1,h:'09:30 · Bahla and Jabreen',p:'Bahla Fort is UNESCO-listed and enormous, 40 km west, OMR 0.5. Jabreen Castle another 10 minutes on, same price, and the better of the two inside — painted ceilings and a horse ramp built into the staircase.'},
+  {h:'12:30 · Misfat al Abriyyin',p:'A mud-brick village built into the cliff above date terraces, with a falaj channel still running through it. Park at the top and walk down; the lanes are too narrow to drive and it is the prettiest 45 minutes in the region.'},
+  {m:1,h:'15:00 · Up to the rim',p:'Al Hamra to Jebel Shams, about 40 km and an hour, sealed all the way except the last stretch of graded gravel. Fill up in Al Hamra — no fuel, water or shop above it.'},
+  {h:'17:00 · Pitch before dark',p:'Sunset is around 17:30 and the temperature drops the moment the sun goes behind the far rim. Find a flat pitch with a stone windbreak already built, away from the road. Then the sky — you are at 3,000 m in a desert with no light for 80 km.'}
+]},
+{d:'Sat 9',w:'Full',name:'Balcony Walk',sub:'Canyon at dawn, then Muscat',meta:'Night 3',
+ slots:[
+  {h:'07:00 · The Balcony Walk (W6)',p:'6 km return, three to four hours, along a ledge to the abandoned village of As Sab. Not technical, but a thousand metres of air to one side and no railing. Carry two litres each. Back at the car by 11:00.'},
+  {m:1,h:'11:30 · Down to Muscat',p:'About 240 km and three hours via Nizwa. Drop the camping gear back on the way in if the hire company is near the airport road.'},
+  {h:'16:00 · Mutrah',p:'Park on the Corniche and walk. The souq reopens at 16:00 — frankincense, silver, textiles, and a genuine labyrinth rather than a themed one. Mutrah Fort above it is thirty minutes and the best view of the harbour.'},
+  {h:'18:30 · The Corniche at dusk',p:'Dhows on the water, the incense burner lit on the hill at Riyam, and Al Alam Palace a short drive round the headland — exterior only, ten minutes, but the blue and gold colonnade is worth the detour. Dinner on the waterfront.'}
+]},
+{d:'Sun 10',w:'Depart',name:'To Riyadh',sub:'One mosque, then out',meta:'Fly out',
+ slots:[
+  {h:'08:00 · Sultan Qaboos Grand Mosque',p:'Open to visitors 08:00–11:00 and Sunday is inside that window — the only reason Muscat works at all on this schedule. Free, though carry OMR 10 in case the 2025 admission fee returns. Headscarf and covered arms and legs for women, long trousers and sleeves for men. Allow 90 minutes.'},
+  {m:1,h:'11:00 · Drop the car, MCT',p:'The airport is 30 km west of Mutrah, 25–40 minutes. Settle any camera fines with the rental desk before you hand back the keys.'},
+  {m:1,h:'· Riyadh',p:'Stop 21. Oman Air WY683 at 13:55 or WY685 at 18:50, 2h35 non-stop. SalamAir also runs a midday service Thursday to Sunday. Verify against operated dates, not a schedule-site day label.'}
+]}
+];
+
+const DAYS_COAST=[
+{d:'Thu 7',w:'Arrive',name:'Nizwa',sub:'Land, drive, one fort',meta:'Night 1',
+ slots:[
+  {m:1,h:'11:00 · DXB → MCT',p:'Oman Air or flydubai, 75 minutes, no time change. Pick up the 4WD at the airport — you still need it for the Jebel Akhdar checkpoint tomorrow.'},
+  {m:1,h:'14:00 · Highway 15 to Nizwa',p:'165 km, about 1h45. Fast, empty and beautifully surfaced the whole way.'},
+  {h:'16:30 · Nizwa Fort and souq',p:'OMR 0.5, closes at 18:00. The largest round tower of any fort in Arabia, and the roof at golden hour.'},
+  {h:'19:00 · Sleep in Nizwa',p:'Same rule as the other plan — the auction starts at first light and you cannot do it from Muscat.'}
+]},
+{d:'Fri 8',w:'Full',name:'Goats and Jebel Akhdar',sub:'Up the green mountain',meta:'Night 2',
+ slots:[
+  {h:'06:30 · The goat market',p:'Livestock walked in a slow circle, bids called from the edge, done by 09:30. Free. The most purely local hour of the whole stop.'},
+  {m:1,h:'10:00 · Up to the Saiq plateau',p:'The checkpoint at the bottom of the Jebel Akhdar road turns back anything without four-wheel drive, so have the right car. An hour of steep switchbacks to 2,000 m.'},
+  {h:'11:30 · The terrace villages',p:'Al Ayn, Ash Shirayjah and Al Aqr sit stacked on the cliff with rose and pomegranate terraces below them, linked by a walking path along the falaj. Two hours on foot and the best thing on the plateau. Diana’s Point is the famous viewpoint and the least of it.'},
+  {m:1,h:'15:30 · Down to Muscat',p:'About 180 km and two hours. You arrive with the Mutrah souq reopening at 16:00.'},
+  {h:'18:30 · Mutrah Corniche',p:'Souq, fort, dhows, dinner on the waterfront.'}
+]},
+{d:'Sat 9',w:'Full',name:'Wadi Shab',sub:'The coast road south',meta:'Night 3',
+ slots:[
+  {m:1,h:'07:30 · Road to Sur',p:'140 km, about two hours, and one of the better drives in the country — sea on one side, Hajar foothills on the other. Bimmah Sinkhole is a 15-minute stop 9 km before the wadi; do it on the way out or back.'},
+  {h:'09:30 · Wadi Shab',p:'A 500-baisa boat each way across the mouth, then 45 minutes of walking up the gorge on a rough path. Water shoes matter. The pools are 20–24°C year round — cool, not cold.'},
+  {h:'11:00 · Swim to the cave',p:'The far end is the point: you swim through a narrow slot into a chamber with a waterfall and a shaft of light. Waterproof bag for the phone, or leave it. Four to five hours for the whole round trip.'},
+  {m:1,h:'15:30 · Back to Muscat',p:'Two hours. Rinse the salt off and eat on the Corniche.'}
+]},
+{d:'Sun 10',w:'Depart',name:'To Riyadh',sub:'One mosque, then out',meta:'Fly out',
+ slots:[
+  {h:'08:00 · Sultan Qaboos Grand Mosque',p:'08:00–11:00, Saturday to Thursday plus Sunday — free, dress covered, allow 90 minutes. The chandelier is eight metres across and the carpet took 600 weavers four years.'},
+  {m:1,h:'11:00 · Drop the car, MCT',p:'30 km west of Mutrah, 25–40 minutes.'},
+  {m:1,h:'· Riyadh',p:'Stop 21. Oman Air WY683 13:55 or WY685 18:50, 2h35 non-stop. Verify against operated dates.'}
+]}
+];
+
+let CURRENT_PLAN='mountain';
+function renderDays(){
+  const DAYS = CURRENT_PLAN==='mountain' ? DAYS_MOUNTAIN : DAYS_COAST;
+  document.getElementById('days').innerHTML=DAYS.map((D,i)=>`
+  <div class="day">
+    <button class="day-btn" aria-expanded="false">
+      <span class="day-date">${D.d}<small>${D.w}</small></span>
+      <span><span class="day-name">${D.name}</span><span class="day-sub">${D.sub}</span></span>
+      <span class="day-meta">${D.meta}<span class="chev">▾</span></span>
+    </button>
+    <div class="day-body"><div class="day-inner"><div class="day-pad"><div class="slots">
+      ${D.slots.map(s=>`<div class="slot${s.m?' move':''}"><h4>${s.h}</h4><p>${s.p}</p></div>`).join('')}
+    </div></div></div></div>
+  </div>`).join('');
+
+  document.querySelectorAll('.day-btn').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const d=b.parentElement, open=d.classList.toggle('open');
+      b.setAttribute('aria-expanded',open?'true':'false');
+    });
+  });
+  document.querySelector('.day').classList.add('open');
+  document.querySelector('.day-btn').setAttribute('aria-expanded','true');
+}
+renderDays();
+
+document.getElementById('dayToggle').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  CURRENT_PLAN=b.dataset.plan;
+  document.querySelectorAll('#dayToggle .fbtn').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
+  renderDays();
+});
+
+/* ============ WORTH DOING ============ */
+const ITEMS=[
+/* MUSCAT */
+{c:'Muscat',t:'do',n:'Sultan Qaboos Grand Mosque',w:'The finest building in the country and open to visitors for three hours a day. Persian carpet woven by 600 people over four years, an eight-metre Swarovski chandelier, and courtyards that are somehow quiet. Free — an OMR 8.400 fee appeared in Jan 2025 and was withdrawn.',when:'Sat–Thu 08:00–11:00'},
+{c:'Muscat',t:'do',n:'Mutrah Souq after dark',w:'Frankincense, silver, textiles and halwa in a genuine covered labyrinth rather than a restored one. Reopens at 16:00 and runs to 23:00; the evening is when locals shop it.',when:'After 16:00'},
+{c:'Muscat',t:'do',n:'Mutrah Corniche at dusk',w:'Dhows on the water, whitewashed merchant houses under bare rock, the lit incense burner at Riyam on the hill. Walk it end to end — it is the reason Muscat looks like nowhere else in the Gulf.',when:'17:00–19:00'},
+{c:'Muscat',t:'do',n:'Mutrah Fort',w:'A 1580s Portuguese fort above the souq, thirty minutes and a few hundred steps, and the only place you see the harbour, the corniche and the mountains in one frame.',when:'08:00–23:00'},
+{c:'Muscat',t:'opt',n:'Al Alam Palace',w:'The Sultan’s ceremonial palace — blue and gold flared columns between two Portuguese forts on the headland. Exterior only, ten minutes, and worth the short drive round from Mutrah.',when:'Any daylight'},
+{c:'Muscat',t:'opt',n:'National Museum of Oman',w:'Opposite the palace, fourteen galleries and genuinely well made — the maritime and frankincense-trade rooms especially. Costs you an hour you probably don’t have on this schedule.',when:'Sat–Thu 10:00–17:00'},
+{c:'Muscat',t:'opt',n:'Royal Opera House',w:'Muscat’s architectural showpiece and a real programme — if the January calendar has something on the Saturday you’re in town, book it early. Otherwise the daytime tour covers the building.',when:'Book ahead',b:1},
+{c:'Muscat',t:'opt',n:'Bait Al Zubair',w:'A private family museum of Omani dress, khanjars, jewellery and household life. Small, well curated, and the best single explanation of what you’ve been looking at all week.',when:'1 hour'},
+{c:'Muscat',t:'skip',n:'Daymaniyat Islands',w:'Turtles, reef and clear water 42 km offshore, and a full day with a boat. You have Zanzibar at stop 23 and you do not have the day.',when:''},
+{c:'Muscat',t:'skip',n:'Qurum Beach',w:'Perfectly nice four-kilometre city beach. You have come from the Maldives and you are going to Nungwi.',when:''},
+{c:'Muscat',t:'skip',n:'Snow Oman & the Oman Aquarium',w:'An indoor snow park and a large aquarium, both in malls. Fine with children, absurd with three nights.',when:''},
+/* NIZWA */
+{c:'Nizwa',t:'do',n:'The Friday goat market',w:'Livestock walked in a slow circle while buyers call from the rim of the ring. Free, no ticket, and still overwhelmingly a local trade rather than a performance. <b>Friday only</b>, and finished by 09:30.',when:'Fri 06:30–09:30'},
+{c:'Nizwa',t:'do',n:'Nizwa Fort',w:'The largest round tower of any fort in Arabia — 34 metres across, filled with rubble so cannon fire wouldn’t crack it, with the old date-honey murder holes still above the entry passage. OMR 0.5.',when:'Sat–Thu 08:00–18:00'},
+{c:'Nizwa',t:'do',n:'Nizwa Souq',w:'Silver, dates, frankincense and pottery under the fort walls. Hojari frankincense runs OMR 2–5 a bag; a tourist khanjar OMR 15–30 and a handmade one ten times that.',when:'Mornings'},
+{c:'Nizwa',t:'do',n:'Misfat al Abriyyin',w:'A mud village terraced into a cliff above date palms with the falaj still running through the lanes. Park above and walk down. Forty-five minutes, no ticket, and the best-looking place in the interior.',when:'Any time'},
+{c:'Nizwa',t:'opt',n:'Bahla Fort',w:'UNESCO-listed, vast, 40 km west of Nizwa, and surrounded by twelve kilometres of mud wall. Impressive from outside, slightly empty within. OMR 0.5.',when:'09:00–16:00'},
+{c:'Nizwa',t:'opt',n:'Jabreen Castle',w:'Ten minutes past Bahla and the better interior of the two — painted ceilings, a falaj running through the building, and a ramp built into the stairs so a horse could be ridden up. OMR 0.5.',when:'09:00–16:00'},
+{c:'Nizwa',t:'opt',n:'Oman Across Ages Museum',w:'A huge, expensive, modern museum at Manah just south of Nizwa. Excellent if you want the national story properly told; a big time commitment on a three-night stop.',when:'Half day'},
+{c:'Nizwa',t:'opt',n:'Al Hoota Cave',w:'A show cave under Jebel Shams with a little electric train and a blind cave fish. Timed entry and it sells out — book ahead or don’t plan on it.',when:'Book ahead',b:1},
+{c:'Nizwa',t:'skip',n:'Wahiba Sands',w:'Oman’s dune sea and a proper desert camp — genuinely great, wrong direction, and it needs its own night. You have the Erg Chebbi in Morocco at stop 26.',when:''},
+/* MOUNTAINS */
+{c:'Mountains',t:'do',n:'Camping on the Jebel Shams rim',w:'Free, legal, no permit, flat pitches with stone windbreaks already built. Three thousand metres, no light pollution, and <b>sub-zero before dawn in January</b> — rent a proper bag in Muscat.',when:'Bring everything'},
+{c:'Mountains',t:'do',n:'The Balcony Walk (W6)',w:'6 km return along a ledge above a thousand-metre drop to the abandoned village of As Sab. Three to four hours, not technical, entirely unrailed. Start at first light.',when:'From 07:00'},
+{c:'Mountains',t:'do',n:'Sunrise on the rim',w:'The canyon fills with light from the top down over about twenty minutes. This is the payoff for the cold night and it is not a close call.',when:'≈06:50'},
+{c:'Mountains',t:'opt',n:'Jebel Akhdar / Saiq plateau',w:'2,000 m, terraced rose and pomegranate villages stacked on the cliff, linked by a walking path along the falaj. <b>A police checkpoint enforces 4WD</b> at the bottom of the road. The alternative mountain if the camp doesn’t happen.',when:'Half day'},
+{c:'Mountains',t:'opt',n:'Jebel Shams Resort',w:'From about OMR 40 a room, twenty minutes from the rim. The no-tent version — you keep the sunrise and the Balcony Walk and lose the stars.',when:'Book ahead',b:1},
+{c:'Mountains',t:'opt',n:'Wadi Ghul',w:'The dry canyon floor below the rim, with the ruined village of Ghul clinging to the side. Worth a twenty-minute stop on the way up if you’re early.',when:'En route'},
+{c:'Mountains',t:'skip',n:'Driving the rim in a saloon',w:'People do it on dry days. Your rental contract voids off-tarmac, the last gravel section is loose on a gradient, and recovery from 3,000 m is not a three-night-stop phone call.',when:''},
+/* COAST */
+{c:'Coast',t:'do',n:'Wadi Shab',w:'Two hours south, a 500-baisa boat across the mouth, 45 minutes up a rough gorge path, then pools you swim through into a cave with a waterfall in it. Water shoes and a dry bag. 20–24°C water year round.',when:'4–5 hours'},
+{c:'Coast',t:'opt',n:'Bimmah Sinkhole',w:'A limestone collapse full of startlingly blue water, 9 km up the highway from Wadi Shab and fifteen minutes of your life. Steps down, swimmable, free.',when:'15 min stop'},
+{c:'Coast',t:'skip',n:'Ras al Jinz turtle reserve',w:'Green turtles nesting at midnight on a beach past Sur. Superb, and three hours-plus each way with a night in Sur attached. Not in three nights.',when:''},
+{c:'Coast',t:'skip',n:'Salalah and Dhofar',w:'Effectively a different country — ten hours south or a two-hour flight, and at its best in the khareef monsoon between July and September. Wrong month, wrong trip.',when:''}
+];
+
+const TIERLBL={do:'Do',opt:'Maybe',skip:'Skip'};
+let FC='all', FT=null, FB=false;
+
+function renderItems(){
+  const list=ITEMS.filter(x=>
+    (FC==='all'||x.c===FC) && (!FT||x.t===FT) && (!FB||x.b));
+  const host=document.getElementById('items');
+  if(!list.length){host.innerHTML='<div class="empty">No entries match those filters.</div>';return}
+  host.innerHTML=list.map(x=>`
+    <div class="item">
+      <span class="tier ${x.t}">${TIERLBL[x.t]}</span>
+      <span class="nm">${x.n}</span>
+      <span class="when${x.b?' book':''}">${x.when||'&nbsp;'}</span>
+      <span class="why">${x.w}</span>
+    </div>`).join('');
+}
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  if(b.dataset.city){FC=b.dataset.city}
+  else if(b.dataset.tier){FT = FT===b.dataset.tier?null:b.dataset.tier}
+  else if(b.dataset.book){FB=!FB}
+  document.querySelectorAll('#filters .fbtn').forEach(x=>{
+    let on=false;
+    if(x.dataset.city) on = x.dataset.city===FC;
+    if(x.dataset.tier) on = x.dataset.tier===FT;
+    if(x.dataset.book) on = FB;
+    x.setAttribute('aria-pressed',on?'true':'false');
+  });
+  renderItems();
+});
+renderItems();
+
+/* ============ FIG 1: TIME AUDIT ============ */
+(function(){
+  const svg=document.getElementById('audit-chart');
+  const W=1400,H=190,pad=40,barY=70,barH=54;
+  const totalH=96; // 7 Jan 00:00 → 11 Jan 00:00
+  const x=h=>pad+(h/totalH)*(W-2*pad);
+  const segs=[
+    {a:0,b:13,cls:'t'},    // Thu morning, Dubai + flight
+    {a:13,b:24,cls:'p'},   // Thu afternoon/evening — drive + Nizwa fort
+    {a:24,b:48,cls:'f'},   // Fri — full
+    {a:48,b:72,cls:'f'},   // Sat — full
+    {a:72,b:83,cls:'p'},   // Sun morning — mosque
+    {a:83,b:96,cls:'t2'}   // Sun — airport + flight
+  ];
+  const colors={t:'var(--magenta)',t2:'rgba(231,100,155,.55)',p:'rgba(242,169,60,.35)',f:'var(--amber)'};
+  let s=`<rect x="0" y="0" width="${W}" height="${H}" fill="none"/>`;
+  segs.forEach(sg=>{
+    const x1=x(sg.a),x2=x(sg.b);
+    s+=`<rect x="${x1}" y="${barY}" width="${x2-x1-1}" height="${barH}" fill="${colors[sg.cls]}"/>`;
+  });
+  const names=['07 Jan','08 Jan','09 Jan','10 Jan','11 Jan'];
+  for(let d=0;d<=4;d++){
+    const hh=d*24, xx=x(hh);
+    s+=`<line x1="${xx}" y1="${barY-6}" x2="${xx}" y2="${barY+barH+6}" class="axs"/>`;
+    s+=`<text x="${xx}" y="${barY-14}" class="lbl" text-anchor="${d===0?'start':d===4?'end':'middle'}">${names[d]}</text>`;
+  }
+  s+=`<line x1="${pad}" y1="${barY+barH+0.5}" x2="${W-pad}" y2="${barY+barH+0.5}" class="ax"/>`;
+  s+=`<text x="${x(24)}" y="${barY+barH+34}" class="lbl-a">2 full days — Fri 8 and Sat 9</text>`;
+  s+=`<text x="${x(0)}" y="${barY+barH+34}" class="lbl">↙ Dubai + the flight</text>`;
+  s+=`<text x="${x(96)}" y="${barY+barH+34}" class="lbl" text-anchor="end">to Riyadh ↘</text>`;
+  svg.innerHTML=s;
+})();
+
+/* ============ FIG 2: WHAT'S OPEN WHEN ============ */
+(function(){
+  const svg=document.getElementById('open-chart');
+  const W=1400,H=330,padL=330,padR=30,padT=44,rowH=42;
+  const DAYS=['Thu 7','Fri 8','Sat 9','Sun 10'];
+  // st: 2 = open, 1 = limited, 0 = closed to you
+  const ROWS=[
+    {n:'Sultan Qaboos Grand Mosque',c:[[2,'08–11'],[0,'CLOSED'],[2,'08–11'],[2,'08–11']]},
+    {n:'Nizwa goat market',c:[[0,'—'],[2,'06:30–09:30'],[0,'—'],[0,'—']]},
+    {n:'Nizwa Fort & souq',c:[[2,'08–18'],[1,'08–11 · 13:30–18'],[2,'08–18'],[2,'08–18']]},
+    {n:'Mutrah Souq',c:[[2,'09–13 · 16–23'],[1,'09–11 · 16–23'],[2,'09–13 · 16–23'],[2,'09–13 · 16–23']]},
+    {n:'National Museum of Oman',c:[[2,'10–17'],[1,'14–18'],[2,'10–17'],[2,'10–17']]},
+    {n:'Bahla Fort & Jabreen Castle',c:[[2,'09–16'],[1,'reduced'],[2,'09–16'],[2,'09–16']]}
+  ];
+  const colw=(W-padL-padR)/DAYS.length;
+  const fills=['rgba(224,85,85,.30)','rgba(242,169,60,.34)','rgba(88,196,163,.34)'];
+  const strokes=['var(--red)','var(--amber)','var(--jade)'];
+  let s='';
+  DAYS.forEach((d,i)=>{
+    const cx=padL+i*colw+colw/2;
+    s+=`<text x="${cx}" y="${padT-16}" class="lbl-a" text-anchor="middle">${d}</text>`;
+  });
+  s+=`<line x1="${padL-2}" y1="${padT-6}" x2="${W-padR}" y2="${padT-6}" class="ax"/>`;
+  // highlight the Friday column
+  s+=`<rect x="${padL+colw}" y="${padT-34}" width="${colw}" height="${ROWS.length*rowH+38}" fill="rgba(231,100,155,.07)" stroke="var(--magenta)" stroke-width="1"/>`;
+  ROWS.forEach((r,ri)=>{
+    const y=padT+ri*rowH;
+    s+=`<text x="${padL-16}" y="${y+rowH/2+4}" class="lbl-p" text-anchor="end">${r.n}</text>`;
+    r.c.forEach((cell,ci)=>{
+      const cx=padL+ci*colw+5, cw=colw-10;
+      s+=`<rect x="${cx}" y="${y+5}" width="${cw}" height="${rowH-12}" rx="2" fill="${fills[cell[0]]}" stroke="${strokes[cell[0]]}" stroke-width="1"/>`;
+      s+=`<text x="${cx+cw/2}" y="${y+rowH/2+4}" class="lbl" text-anchor="middle" fill="${cell[0]===0?'var(--red)':'var(--paper)'}">${cell[1]}</text>`;
+    });
+  });
+  svg.innerHTML=s;
+})();
+
+/* ============ FIG 3: TEMPERATURE BY ALTITUDE ============ */
+(function(){
+  const svg=document.getElementById('temp-chart');
+  const W=1400,H=380,padL=60,padR=150,padT=24,padB=52;
+  const SERIES=[
+    {n:'Muscat · sea level',col:'var(--jade)',v:[20,19.5,19,18.5,18,18,18,19,21,23,24.5,25.5,26,26.5,26.5,26,25,23.5,22.5,22,21.5,21,20.5,20]},
+    {n:'Nizwa · 500 m',col:'var(--amber)',v:[15,14.5,14,13.5,13,13,13,14,17,20,22,24,25,25.5,25.5,25,23,21,19,18,17,16.5,16,15.5]},
+    {n:'Jebel Shams rim · 3,000 m',col:'var(--magenta)',v:[2,1.5,1,0.5,0,-0.5,-1,0,3,6,8,10,11,12,12,11,9,6,4,3.5,3,2.5,2,2]}
+  ];
+  const yMin=-4,yMax=28;
+  const x=h=>padL+(h/23)*(W-padL-padR);
+  const y=t=>padT+(1-(t-yMin)/(yMax-yMin))*(H-padT-padB);
+  let s='';
+  [-4,0,5,10,15,20,25].forEach(t=>{
+    s+=`<line x1="${padL}" y1="${y(t)}" x2="${W-padR}" y2="${y(t)}" class="axs"/>`;
+    s+=`<text x="${padL-10}" y="${y(t)+4}" class="lbl" text-anchor="end">${t}°</text>`;
+  });
+  // freezing line
+  s+=`<line x1="${padL}" y1="${y(0)}" x2="${W-padR}" y2="${y(0)}" stroke="var(--red)" stroke-width="1" stroke-dasharray="5 4" opacity=".8"/>`;
+  s+=`<text x="${W-padR-6}" y="${y(0)-8}" class="lbl" text-anchor="end" fill="var(--red)">Freezing</text>`;
+  // night shading (before 07:00 and after 17:30)
+  s+=`<rect x="${x(0)}" y="${padT}" width="${x(6.9)-x(0)}" height="${H-padT-padB}" fill="rgba(5,22,29,.55)"/>`;
+  s+=`<rect x="${x(17.5)}" y="${padT}" width="${x(23)-x(17.5)}" height="${H-padT-padB}" fill="rgba(5,22,29,.55)"/>`;
+  s+=`<text x="${x(3.4)}" y="${padT+16}" class="lbl" text-anchor="middle">Dark</text>`;
+  s+=`<text x="${x(20.2)}" y="${padT+16}" class="lbl" text-anchor="middle">Dark</text>`;
+  [0,4,8,12,16,20,23].forEach(h=>{
+    s+=`<text x="${x(h)}" y="${H-padB+20}" class="lbl" text-anchor="middle">${String(h).padStart(2,'0')}:00</text>`;
+  });
+  s+=`<line x1="${padL}" y1="${H-padB}" x2="${W-padR}" y2="${H-padB}" class="ax"/>`;
+  SERIES.forEach(se=>{
+    const d=se.v.map((t,h)=>`${h===0?'M':'L'}${x(h).toFixed(1)},${y(t).toFixed(1)}`).join(' ');
+    s+=`<path d="${d}" fill="none" stroke="${se.col}" stroke-width="2.2" stroke-linejoin="round"/>`;
+    const last=se.v[23];
+    s+=`<circle cx="${x(23)}" cy="${y(last)}" r="3.5" fill="${se.col}"/>`;
+    s+=`<text x="${x(23)+10}" y="${y(last)+4}" class="lbl" fill="${se.col}">${se.n}</text>`;
+  });
+  // annotate the low
+  s+=`<circle cx="${x(6)}" cy="${y(-1)}" r="4" fill="none" stroke="var(--magenta)" stroke-width="1.5"/>`;
+  s+=`<text x="${x(6)+12}" y="${y(-1)+18}" class="lbl-a">−1.1°C recorded here, 8 Jan 2024</text>`;
+  svg.innerHTML=s;
+})();
+
+/* ============ DRIVING CALCULATOR ============ */
+const LEGS=[
+  {n:'MCT → Nizwa on Highway 15',km:165,fwd:false,def:true,note:'Fast sealed dual carriageway — any car'},
+  {n:'Nizwa → Bahla → Jabreen and back',km:90,fwd:false,def:true,note:'Sealed — any car'},
+  {n:'Nizwa → Al Hamra & Misfat al Abriyyin',km:45,fwd:false,def:true,note:'Sealed to the village car park'},
+  {n:'Al Hamra → Jebel Shams rim and back down',km:80,fwd:true,def:true,note:'Sealed except the last graded gravel — 4WD'},
+  {n:'Nizwa → Jebel Akhdar / Saiq plateau, return',km:120,fwd:true,note:'Police checkpoint enforces 4WD'},
+  {n:'Jebel Shams → Muscat',km:240,fwd:false,def:true,note:'Sealed the whole way'},
+  {n:'Muscat → Wadi Shab & Bimmah, return',km:280,fwd:false,note:'Coast road to Sur — sealed'},
+  {n:'Muscat city driving over the stop',km:60,fwd:false,def:true,note:'Airport, Mutrah, the mosque'}
+];
+function renderLegs(){
+  document.getElementById('legs').innerHTML=LEGS.map((l,i)=>`
+    <label class="leg-row">
+      <input type="checkbox" data-i="${i}" ${l.def?'checked':''}>
+      <span class="lname">${l.n}</span>
+      <span class="lyen">${l.km} km</span>
+      ${l.note?`<span class="lnote">${l.note}</span>`:''}
+    </label>`).join('');
+}
+function calcTotals(){
+  let km=0, needs4wd=false;
+  document.querySelectorAll('#legs input[type="checkbox"]').forEach(cb=>{
+    const l=LEGS[Number(cb.dataset.i)];
+    if(cb.checked){ km+=l.km; if(l.fwd) needs4wd=true; }
+  });
+  const fuel = km/100*9.5*0.20;
+  const rate = needs4wd?35:15;
+  const car  = rate*3;
+  const tours = 40*3;
+  document.getElementById('ptp').innerHTML=`${km.toLocaleString('en-CA')}<small>km</small>`;
+  document.getElementById('fuel').innerHTML=`OMR ${fuel.toFixed(1)}<small>≈ C$${(fuel/0.28).toFixed(0)}</small>`;
+  document.getElementById('carcost').innerHTML=`OMR ${car}<small>${needs4wd?'4WD':'saloon'}</small>`;
+  const v=document.getElementById('verdict');
+  if(km===0){
+    v.textContent='Tick some legs above'; v.className='';
+  } else if(needs4wd){
+    v.innerHTML=`4WD required — OMR ${(car+fuel).toFixed(0)} all in, against ~OMR ${tours} of day tours that can’t camp`;
+    v.className='win';
+  } else {
+    v.innerHTML=`A saloon does this — OMR ${(car+fuel).toFixed(0)} all in, and you skip the mountains`;
+    v.className='lose';
+  }
+}
+renderLegs();
+document.getElementById('legs').addEventListener('change',calcTotals);
+calcTotals();
+</script>
+
+</body>
+</html>

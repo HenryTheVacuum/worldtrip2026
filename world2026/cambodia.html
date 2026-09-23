@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="darkreader-lock">
+<title>Cambodia</title>
+<link rel="stylesheet" href="fonts.css">
+</head>
+<body>
+<style>
+:root{color-scheme:dark;
+  --ink:#05161D;--ink-2:#0A2029;--ink-3:#0E2A35;
+  --rule:#194150;--rule-soft:rgba(25,65,80,.6);
+  --paper:#E2EEED;--paper-dim:#A6C2C6;--muted:#6C8F98;
+  --amber:#F2A93C;--magenta:#E7649B;--jade:#58C4A3;--red:#E05555;
+  --display:'Big Shoulders Display','Arial Narrow',Impact,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --body:'Inter',system-ui,sans-serif;
+  --gut:clamp(18px,4vw,64px);--maxw:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+.section{padding-block:clamp(34px,4.4vw,58px);border-top:1px solid var(--rule-soft);position:relative}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:14px;margin:0 0 18px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--rule)}
+.eyebrow .n{color:var(--amber)}
+h2.head{font-family:var(--display);font-weight:700;font-size:clamp(34px,5.6vw,66px);line-height:.92;margin:0 0 14px;text-transform:uppercase}
+.lede{max-width:66ch;color:var(--paper-dim);font-size:clamp(15px,1.5vw,17px);margin:0 0 26px}
+.lede b{color:var(--paper);font-weight:600}
+a{color:var(--amber);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+.hint{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+@media (min-width:980px){.hint.wide{display:none}}
+.scroller{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--rule) transparent}
+.scroller::-webkit-scrollbar{height:6px}
+.scroller::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}
+.scroller>svg{display:block;width:100%;height:auto}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(30px,5vw,58px) clamp(24px,4vw,40px);overflow:hidden}
+.gridbg{position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:linear-gradient(to right,var(--rule-soft) 1px,transparent 1px),linear-gradient(to bottom,var(--rule-soft) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%);-webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%)}
+.back{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:inline-block;margin-bottom:20px}
+.back:hover{color:var(--amber)}
+.strip{font-family:var(--mono);font-size:clamp(10px,1.15vw,12px);letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;border-block:1px solid var(--rule);padding-block:11px;margin-bottom:clamp(26px,4vw,44px)}
+.strip .k{color:var(--muted)}.strip .amb{color:var(--amber)}
+.title{font-family:var(--display);text-transform:uppercase;margin:0;line-height:.82;position:relative}
+.title .l1{display:block;font-weight:400;font-size:clamp(34px,7.4vw,96px);color:transparent;-webkit-text-stroke:1.2px var(--paper-dim)}
+.title .l2{display:block;font-weight:800;font-size:clamp(72px,17vw,232px);letter-spacing:-.015em;color:var(--paper)}
+.subline{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:baseline;margin-top:clamp(18px,3vw,30px);font-family:var(--mono);font-size:clamp(11px,1.25vw,13px);letter-spacing:.14em;text-transform:uppercase;color:var(--paper-dim)}
+.subline .sep{color:var(--rule)}
+
+/* instruments */
+.instr{display:grid;grid-template-columns:repeat(auto-fit,minmax(124px,1fr));border:1px solid var(--rule);background:var(--ink-2);margin:clamp(24px,3.4vw,38px) 0 0}
+.instr div{padding:15px 17px;border-right:1px solid var(--rule-soft)}
+.instr div:last-child{border-right:0}
+.instr dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.instr dd{margin:0;font-family:var(--display);font-weight:600;font-size:31px;line-height:1}
+.instr dd span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--paper-dim);margin-left:3px}
+.instr dd.hot{color:var(--amber)}
+.instr dd.warn{color:var(--magenta)}
+
+/* chart frames */
+.figcap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:9px;margin:0 0 8px}
+.figcap b{color:var(--amber);font-weight:500}
+.fignote{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.fignote i{display:inline-block;width:14px;height:9px;margin:0 5px 0 14px;vertical-align:middle;border-radius:1px}
+.fignote i:first-child{margin-left:0}
+.ax{stroke:var(--rule);stroke-width:1}
+.axs{stroke:var(--rule-soft);stroke-width:1}
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.08em;fill:var(--muted)}
+.lbl-p{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;fill:var(--paper)}
+.lbl-a{font-family:var(--mono);font-size:10px;letter-spacing:.12em;fill:var(--amber)}
+
+/* cards */
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin:0 0 6px}
+.card{border:1px solid var(--rule);background:var(--ink-2);padding:18px 20px;position:relative}
+.card.bad{border-color:var(--red)}
+.card.good{border-color:var(--jade)}
+.card h3{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 4px;color:var(--paper)}
+.card .verdict{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:11px}
+.card .verdict.bad{color:var(--red)}
+.card .verdict.ok{color:var(--jade)}
+.card p{margin:0 0 10px;font-size:13.5px;color:var(--paper-dim);line-height:1.62}
+.card p:last-child{margin-bottom:0}
+.card p b{color:var(--paper);font-weight:600}
+.fix{border-left:2px solid var(--amber);padding-left:12px;margin:12px 0 0;font-size:12.8px;color:var(--paper-dim);line-height:1.6}
+.fix b{display:block;color:var(--amber);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px;font-weight:500}
+.fix strong{color:var(--paper);font-weight:600}
+
+/* shape cards */
+.shapes{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+.shape{border:1px solid var(--rule);background:var(--ink-2);padding:0;display:flex;flex-direction:column}
+.shape.pick{border-color:var(--amber);box-shadow:inset 0 0 0 1px rgba(242,169,60,.25)}
+.shape-hd{padding:16px 20px 14px;border-bottom:1px solid var(--rule-soft)}
+.shape-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.shape.pick .shape-tag{color:var(--amber)}
+.shape-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(24px,3vw,32px);line-height:.95;margin:0}
+.chainrow{display:flex;flex-wrap:wrap;align-items:center;gap:5px 7px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--paper);padding:13px 20px;border-bottom:1px solid var(--rule-soft);background:rgba(5,22,29,.5)}
+.chainrow .a{color:var(--rule)}
+.chainrow .n{color:var(--amber);font-size:9.5px}
+.shape-body{padding:15px 20px 18px;flex:1}
+.shape-body p{margin:0 0 10px;font-size:13.3px;color:var(--paper-dim);line-height:1.6}
+.shape-body p:last-child{margin-bottom:0}
+.shape-body p b{color:var(--paper);font-weight:600}
+.shape-meta{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--rule-soft)}
+.shape-meta div{flex:1;min-width:88px;padding:11px 20px;border-right:1px solid var(--rule-soft)}
+.shape-meta div:last-child{border-right:0}
+.shape-meta dt{font-family:var(--mono);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.shape-meta dd{margin:0;font-family:var(--mono);font-size:13px;color:var(--paper)}
+.shape-meta dd.g{color:var(--jade)}
+.shape-meta dd.r{color:var(--red)}
+
+/* day accordion */
+.days{border-top:1px solid var(--rule)}
+.day{border-bottom:1px solid var(--rule)}
+.day-btn{all:unset;box-sizing:border-box;display:grid;width:100%;cursor:pointer;grid-template-columns:76px 1fr auto;gap:0 clamp(14px,2.4vw,30px);align-items:baseline;padding:clamp(13px,1.8vw,18px) 4px;transition:background .18s ease}
+.day-btn:hover{background:rgba(242,169,60,.05)}
+.day-btn:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.day-date{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.1em}
+.day-date small{display:block;color:var(--muted);font-size:9.5px;letter-spacing:.14em;margin-top:3px}
+.day-btn>span:nth-child(2){display:flex;flex-direction:column;gap:6px}
+.day-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(22px,3.2vw,34px);line-height:.95;margin:0}
+.day-sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.day-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--paper-dim);text-align:right;white-space:nowrap}
+.day-meta .chev{display:inline-block;margin-left:12px;color:var(--muted);transition:transform .25s ease}
+.day.open .day-meta .chev{transform:rotate(180deg)}
+@media (max-width:720px){.day-btn{grid-template-columns:64px 1fr;row-gap:8px}.day-meta{grid-column:2;text-align:left}}
+.day-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .34s cubic-bezier(.3,.8,.3,1)}
+.day.open .day-body{grid-template-rows:1fr}
+.day-inner{overflow:hidden}
+.day-pad{padding:2px 4px clamp(22px,3vw,32px)}
+.slots{display:grid;gap:0;border-left:1px solid var(--rule)}
+.slot{padding:0 0 16px 16px;position:relative}
+.slot:last-child{padding-bottom:2px}
+.slot::before{content:"";position:absolute;left:-4px;top:6px;width:7px;height:7px;background:var(--amber);border-radius:50%}
+.slot.move::before{background:var(--magenta)}
+.slot h4{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 5px;font-weight:500}
+.slot.move h4{color:var(--magenta)}
+.slot p{margin:0;font-size:14px;line-height:1.62;color:var(--paper-dim);max-width:72ch}
+.slot p b{color:var(--paper);font-weight:600}
+
+/* worth doing */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.fbtn{all:unset;cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border:1px solid var(--rule);color:var(--paper-dim);border-radius:2px;transition:.15s}
+.fbtn:hover{background:var(--ink-3);color:var(--paper)}
+.fbtn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.fbtn[aria-pressed="true"]{background:var(--amber);color:var(--ink);border-color:var(--amber);font-weight:600}
+.fdiv{width:1px;background:var(--rule);margin:2px 6px}
+.items{display:grid;gap:1px;background:var(--rule-soft);border:1px solid var(--rule)}
+.item{background:var(--ink-2);padding:13px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:baseline}
+.item .tier{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:3px 7px 2px;border-radius:2px;white-space:nowrap;align-self:start;margin-top:2px}
+.tier.do{background:rgba(88,196,163,.14);color:var(--jade);border:1px solid rgba(88,196,163,.35)}
+.tier.opt{background:rgba(242,169,60,.12);color:var(--amber);border:1px solid rgba(242,169,60,.3)}
+.tier.skip{background:rgba(224,85,85,.1);color:var(--red);border:1px solid rgba(224,85,85,.3)}
+.item .nm{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:20px;line-height:1.05;color:var(--paper)}
+.item .why{grid-column:2;font-size:13.3px;color:var(--paper-dim);line-height:1.55;max-width:74ch}
+.item .why b{color:var(--paper);font-weight:600}
+.item .when{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);text-align:right;white-space:nowrap;align-self:start;margin-top:4px}
+.item .when.book{color:var(--magenta)}
+@media (max-width:640px){.item{grid-template-columns:auto 1fr}.item .when{grid-column:2;text-align:left;margin-top:2px}.item .why{grid-column:1/-1}}
+.empty{background:var(--ink-2);padding:22px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* rail calc */
+.calc{border:1px solid var(--rule);background:var(--ink-2)}
+.calc-legs{display:grid}
+.leg-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--rule-soft);cursor:pointer}
+.leg-row:hover{background:rgba(242,169,60,.04)}
+.leg-row input{accent-color:var(--amber);width:15px;height:15px;cursor:pointer}
+.leg-row .lname{font-family:var(--mono);font-size:12.5px;color:var(--paper-dim)}
+.leg-row input:checked+.lname{color:var(--paper)}
+.leg-row .lyen{font-family:var(--mono);font-size:12.5px;color:var(--amber);font-variant-numeric:tabular-nums;white-space:nowrap}
+.leg-row .lnote{grid-column:2/-1;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--muted);margin-top:-4px}
+.calc-out{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule-soft)}
+.calc-out div{background:var(--ink-3);padding:15px 17px}
+.calc-out dt{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.calc-out dd{margin:0;font-family:var(--display);font-weight:700;font-size:27px;line-height:1;font-variant-numeric:tabular-nums}
+.calc-out dd small{font-family:var(--mono);font-size:10px;font-weight:400;color:var(--paper-dim);margin-left:4px;letter-spacing:.06em}
+#verdict{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;line-height:1.5}
+#verdict.win{color:var(--jade)}
+#verdict.lose{color:var(--red)}
+
+/* panels / tables */
+.panel{border:1px solid var(--rule);background:var(--ink-2);padding:clamp(17px,2.4vw,24px);margin-top:22px}
+.panel h3{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 12px;font-weight:500}
+.panel p{margin:0 0 12px;font-size:13.6px;color:var(--paper-dim);line-height:1.62}
+.panel p:last-child{margin-bottom:0}
+.panel p b{color:var(--paper);font-weight:600}
+table.ref{width:100%;border-collapse:collapse;font-size:13.4px}
+table.ref th{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:500;padding:0 14px 10px 0;border-bottom:1px solid var(--rule)}
+table.ref td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule-soft);color:var(--paper-dim);vertical-align:top}
+table.ref td:first-child{font-family:var(--display);font-size:17px;font-weight:600;text-transform:uppercase;color:var(--paper);white-space:nowrap;width:1%}
+table.ref td.t{font-family:var(--mono);font-size:11px;letter-spacing:.06em;white-space:nowrap;color:var(--amber)}
+table.ref tr.flag td.t{color:var(--magenta)}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.cols{display:grid;gap:16px 34px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:20px}
+.cols p{margin:0;font-size:13.6px;color:var(--paper-dim);line-height:1.6}
+.cols p b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:5px;font-weight:500}
+
+footer{border-top:1px solid var(--rule);padding-block:26px 40px;color:var(--muted)}
+.foot-grid{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:flex-end}
+.foot-grid p{margin:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase}
+.foot-mark{font-family:var(--display);font-size:clamp(40px,9vw,110px);font-weight:800;text-transform:uppercase;line-height:.8;color:transparent;-webkit-text-stroke:1px var(--rule);margin:30px 0 0}
+</style>
+<header class="hero">
+  <div class="gridbg"></div>
+  <div class="wrap">
+    <a class="back" href="index.html">← Westbound · the dossier</a>
+    <p class="strip">
+      <span><span class="k">Stop</span> <span class="amb">14 of 27</span></span>
+      <span><span class="k">In</span> LPQ · Luang Prabang</span>
+      <span><span class="k">Fly Cambodia</span> <span class="amb">SAI</span></span>
+      <span><span class="k">Out</span> KUL · Kuala Lumpur</span>
+      <span><span class="k">Window</span> 11–16 Dec 2026</span>
+      <span><span class="k">Clock</span> UTC+7</span>
+    </p>
+    <h1 class="title">
+      <span class="l1">Fourteenth stop</span>
+      <span class="l2">Cambodia</span>
+    </h1>
+    <p class="subline">
+      <span>Angkor is the point</span><span class="sep">/</span>
+      <span>Phnom Penh is the question</span><span class="sep">/</span>
+      <span>REP no longer exists</span>
+    </p>
+
+    <dl class="instr">
+      <div><dt>Calendar days</dt><dd>6</dd></div>
+      <div><dt>Full days</dt><dd class="hot">4</dd></div>
+      <div><dt>Nights</dt><dd>5</dd></div>
+      <div><dt>3-day Angkor pass</dt><dd>$62</dd></div>
+      <div><dt>Rain days, Dec</dt><dd>≈1</dd></div>
+      <div><dt>Angkor arrivals YoY</dt><dd class="warn">−32<span>%</span></dd></div>
+    </dl>
+  </div>
+</header>
+
+<section class="section" id="audit">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">01</span> The time audit</p>
+    <h2 class="head">Six days<br>is four days</h2>
+    <p class="lede">You arrive from Luang Prabang on an afternoon flight — the direct LPQ–SAI service leaves around 14:45 and runs about 1h25 — then lose an hour on the road, because <b>the new Siem Reap airport is 40 km out of town</b>. Departure day goes to the airport run at the other end. What's left is <b>four full days and two fragments</b>, and every plan below is built against four.</p>
+
+    <div class="figcap">
+      <span>Fig. 1 — What the week really contains</span>
+      <span><b>11–16 Dec</b> · hour by hour</span>
+    </div>
+    <div class="scroller">
+      <svg id="audit-chart" viewBox="0 0 1400 190" role="img" aria-label="Timeline of 11 to 16 December showing the 11th consumed by the flight from Luang Prabang and the transfer, four usable full days from the 12th to the 15th, and a part-morning on the 16th before the flight to Kuala Lumpur."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--magenta);opacity:.55"></i>In transit<i style="background:rgba(242,169,60,.35)"></i>Part day<i style="background:var(--amber)"></i>Full day</p>
+
+    <div class="cols">
+      <p><b>No jet lag at all</b>Laos and Cambodia are both UTC+7. You land on the same body clock you left with, which is the first time on this trip that's been true. Bank it: the 5am starts that Angkor rewards will cost you nothing but willpower.</p>
+      <p><b>The airport is the tax</b>Siem Reap–Angkor International sits 40 km southeast of town — 45 to 55 minutes each way. Fixed-price taxi is $35–40, Grab runs $25–35, and most hotels will send a car for somewhere between free and $25. Arrange the pickup before you fly; the tuk-tuks that used to meet the old airport are not a realistic option over that distance.</p>
+      <p><b>Sunrise is 06:18</b>Mid-December sunrise in Siem Reap lands between 06:12 and 06:27, sunset between 17:35 and 17:48. Eleven and a half hours of daylight, and the good half is the first three. Park gates open at 05:00.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="flags">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">02</span> Three things that changed</p>
+    <h2 class="head">Your guidebook<br>is out of date</h2>
+    <p class="lede">Cambodia has moved further in three years than anywhere else on this itinerary — two of its airports were replaced, its land border with Thailand shut, and its visitor numbers fell off a cliff. All three matter to this leg, and two of them are good news.</p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>REP and PNH are both gone</h3>
+        <div class="verdict">Check your bookings</div>
+        <p>Siem Reap–Angkor International <b>(SAI)</b> opened on 16 October 2023 and the old REP airport closed. Phnom Penh's Techo International <b>(KTI)</b> began operating 9 September 2025 and took over as the capital's hub; the old PNH is now a military field with a little domestic traffic.</p>
+        <p>Both new airports are much further out than the ones they replaced — SAI is 40 km from Siem Reap, KTI is 19 km south of Phnom Penh. Old blog posts, older guidebooks and some booking engines still show the retired codes.</p>
+        <div class="fix"><b>Do this</b>When you book the LPQ inbound and the KUL outbound, <strong>confirm the codes read SAI and KTI</strong>, not REP and PNH. Then budget an hour each way for the transfer instead of the twenty minutes the old airports needed.</div>
+      </div>
+
+      <div class="card bad">
+        <h3>The Thai land border is closed</h3>
+        <div class="verdict bad">Doesn't touch you — but know it</div>
+        <p>Thailand shut its Cambodian crossings in late June 2025 after armed clashes over disputed border temples. Two ceasefires — July and December 2025 — did not hold; the December agreement broke down in early January 2026, and <b>Poipet–Aranyaprathet, Cham Yeam–Hat Lek and O'Smach–Chong Jom have stayed closed to travellers through 2026</b> with no reopening date announced.</p>
+        <p>Canada's advisory currently says <b>avoid all travel within 50 km of the Thai border</b>, and Cambodia overall sits at "exercise a high degree of caution." Flights between the two countries run normally.</p>
+        <div class="fix"><b>What it rules out</b>Preah Vihear, Banteay Chhmar and the overland hop to Bangkok. None of these were in your plan — you fly in from Laos and out to Malaysia — but if anyone suggests a "quick trip up to the border temple," the answer is no.</div>
+      </div>
+
+      <div class="card good">
+        <h3>Angkor is a third emptier</h3>
+        <div class="verdict ok">Unambiguously good for you</div>
+        <p>Angkor drew <b>359,471 international visitors in the first five months of 2026, down 31.8% year on year</b>, with ticket revenue of US$17.2 million, off 30%. Cambodian analysts blame the Thai border conflict, the regional scam-centre reputation and a broader economic slowdown.</p>
+        <p>December is still the busiest month of the Cambodian year — school holidays plus the best weather — and daily ticket sales in peak season have historically run 5,000 to 7,000. You will not have Angkor Wat to yourself at sunrise. You will have noticeably more of it than someone who came in December 2024.</p>
+        <div class="fix"><b>The lever is still the clock</b>Crowd density at Angkor is driven far more by hour than by month. See the crowd clock in section 06 — the difference between 07:30 and 11:30 is bigger than the difference between December and August.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="shapes">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">03</span> The open question</p>
+    <h2 class="head">Phnom Penh:<br>in or out</h2>
+    <p class="lede">Angkor is fixed and it is why this stop exists. Phnom Penh is 320 km away down a two-lane national highway — <b>there is no expressway; the Phnom Penh–Siem Reap route is still only at feasibility study</b> — so putting the capital in costs you either half a day on a bus or a short flight on an airline with a reputation for schedule changes. Three shapes fit the same 11–16 Dec window.</p>
+
+    <div class="shapes">
+      <div class="shape pick">
+        <div class="shape-hd">
+          <div class="shape-tag">Recommended</div>
+          <p class="shape-name">Both, by air</p>
+        </div>
+        <div class="chainrow">
+          <span>Siem Reap <span class="n">×3</span></span><span class="a">→</span>
+          <span class="n">✈ 50min</span><span class="a">→</span>
+          <span>Phnom Penh <span class="n">×2</span></span><span class="a">→</span>
+          <span class="n">KTI</span>
+        </div>
+        <div class="shape-body">
+          <p>Two and a half temple days, then a midday hop south on the 14th. Air Cambodia flies SAI–KTI twice daily, about 50 minutes, <b>$80–200 one way</b>. Door to door it is still three to four hours once you count two long airport transfers, but it saves you roughly half a day against the bus.</p>
+          <p><b>Why the capital earns its two nights:</b> Tuol Sleng and Choeung Ek are not a sightseeing stop, they are the reason the rest of Cambodia looks the way it does. Doing them on a rushed morning before a flight is the wrong way to do them. Two nights also means the outbound to Kuala Lumpur leaves from KTI, which has far more KUL service than Siem Reap does.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Bases</dt><dd>2</dd></div>
+          <div><dt>Transit</dt><dd class="g">≈4h</dd></div>
+          <div><dt>Temple days</dt><dd>2½</dd></div>
+          <div><dt>Fly out</dt><dd>KTI</dd></div>
+        </dl>
+      </div>
+
+      <div class="shape">
+        <div class="shape-hd">
+          <div class="shape-tag">Same shape, cheaper</div>
+          <p class="shape-name">Both, by road</p>
+        </div>
+        <div class="chainrow">
+          <span>Siem Reap <span class="n">×3</span></span><span class="a">→</span>
+          <span class="n">🚌 6h</span><span class="a">→</span>
+          <span>Phnom Penh <span class="n">×2</span></span><span class="a">→</span>
+          <span class="n">KTI</span>
+        </div>
+        <div class="shape-body">
+          <p>Giant Ibis is the one to book — full-size VIP coach, toilet on board, <b>$17–25</b>, roughly 5½ to 6 hours, morning departures from 07:45. Larryta Express runs 15-seat vans at $15.50 all day; Seila Angkor's minibuses go every half hour for $15. A private car is $80–100 and takes 4–6 hours.</p>
+          <p><b>What it costs you</b> is the whole of the 14th rather than half of it — so this version has two temple days, not two and a half. What it buys is money, certainty, and not being at the mercy of a domestic carrier known for cancelling. On a 27-country trip that reliability is worth something.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Bases</dt><dd>2</dd></div>
+          <div><dt>Transit</dt><dd class="r">≈7h</dd></div>
+          <div><dt>Temple days</dt><dd>2</dd></div>
+          <div><dt>Fly out</dt><dd>KTI</dd></div>
+        </dl>
+      </div>
+
+      <div class="shape">
+        <div class="shape-hd">
+          <div class="shape-tag">If temples are the whole point</div>
+          <p class="shape-name">Siem Reap only</p>
+        </div>
+        <div class="chainrow">
+          <span>Siem Reap <span class="n">×5</span></span><span class="a">→</span>
+          <span class="n">SAI</span>
+        </div>
+        <div class="shape-body">
+          <p>Five nights in one bed, no packing, and Angkor at a pace nobody manages: three temple days spread across a 3-day pass, a day out at Beng Mealea or Koh Ker, and an afternoon on the Tonlé Sap. AirAsia and others fly SAI–KUL direct, so the exit still works.</p>
+          <p><b>The honest cost.</b> You skip the single most important site in modern Cambodian history, and you skip the only city where Cambodians outnumber visitors. Siem Reap is a wonderful town that has been substantially rebuilt around tourism; Phnom Penh has not.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Bases</dt><dd class="g">1</dd></div>
+          <div><dt>Transit</dt><dd class="g">0</dd></div>
+          <div><dt>Temple days</dt><dd class="g">3+</dd></div>
+          <div><dt>Fly out</dt><dd>SAI</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>The one thing all three have in common</h3>
+      <p>Whichever shape you pick, <b>the 3-day Angkor pass is the right ticket</b> — even if you only end up using two of its days. At $62 it undercuts two separate $37 day passes by $12, and it is valid on any three days inside a ten-day window, so the days need not be consecutive. Section 07 has the arithmetic if you want to see it move.</p>
+    </div>
+
+    <div class="panel">
+      <h3>What's cut in every version</h3>
+      <p><b>Preah Vihear.</b> The cliff-top temple on the Thai frontier is the disputed site the 2025 fighting was about, and it sits inside the 50 km avoid-all-travel zone. Not this trip, and not soon.</p>
+      <p><b>Sihanoukville and the islands.</b> Six hours south of Phnom Penh, and the town has been hollowed out by the casino-and-compound economy. You have the Philippines and Malaysia for beaches.</p>
+      <p><b>Battambang.</b> Colonial shophouses, the bamboo train, genuinely good food, and three hours out of Siem Reap in the wrong direction. It needs an overnight you don't have.</p>
+      <p><b>Kampot and Kep.</b> Pepper farms, river sunsets, crab. Lovely, and a full day each way from anywhere you'll be.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="run">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">04</span> Day by day</p>
+    <h2 class="head">Two versions,<br>laid out</h2>
+    <p class="lede">Every temple day starts before six. This is not enthusiasm, it is arithmetic: the tour buses arrive between 09:00 and 11:00 and the stone gets brutally hot by ten. Times are indicative — treat the first slot of each day as the one that matters.</p>
+    <div class="filters" id="dayToggle" style="margin-bottom:6px">
+      <button class="fbtn" data-plan="both" aria-pressed="true">Both cities</button>
+      <button class="fbtn" data-plan="solo" aria-pressed="false">Siem Reap only</button>
+    </div>
+    <div class="days" id="days"></div>
+    <p class="fignote" style="margin-top:16px">Amber = on foot or by tuk-tuk · <span style="color:var(--magenta)">Magenta = a flight, a bus or a base change</span></p>
+  </div>
+</section>
+
+<section class="section" id="worth">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">05</span> What's actually worth doing</p>
+    <h2 class="head">Do, maybe,<br>don't bother</h2>
+    <p class="lede">Sorted by area, then by whether it earns a slot in four days. The <b>don't bother</b> entries are mostly not bad — several are famous — they're here because something else beats them for the same hours, or because they've quietly become a trap.</p>
+
+    <div class="filters" id="filters">
+      <button class="fbtn" data-city="all" aria-pressed="true">All</button>
+      <button class="fbtn" data-city="Angkor" aria-pressed="false">Angkor park</button>
+      <button class="fbtn" data-city="Siem Reap" aria-pressed="false">Siem Reap</button>
+      <button class="fbtn" data-city="Phnom Penh" aria-pressed="false">Phnom Penh</button>
+      <button class="fbtn" data-city="Further" aria-pressed="false">Further out</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-tier="do" aria-pressed="false">Do</button>
+      <button class="fbtn" data-tier="opt" aria-pressed="false">Maybe</button>
+      <button class="fbtn" data-tier="skip" aria-pressed="false">Don't bother</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-book="1" aria-pressed="false">Needs booking</button>
+    </div>
+    <div class="items" id="items"></div>
+  </div>
+</section>
+
+<section class="section" id="clock">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">06</span> The crowd clock</p>
+    <h2 class="head">Hour beats<br>month</h2>
+    <p class="lede">December is Angkor's busiest month and it barely matters, because the crowd at any given temple is a function of the coach timetable. Buses load after hotel breakfast and unload between nine and eleven; they go back for lunch and return for sunset. There are <b>two quiet windows a day</b> and they are enormous.</p>
+
+    <div class="figcap">
+      <span>Fig. 2 — Where everyone is, hour by hour</span>
+      <span><b>Angkor park</b> · peak-season shape</span>
+    </div>
+    <div class="scroller">
+      <svg id="clock-chart" viewBox="0 0 1400 330" role="img" aria-label="Chart of relative crowd density across the day at Angkor, with a sharp spike at sunrise around 6am, a peak from 9am to 2pm driven by tour coaches, and a deep quiet trough from about 3pm to 5:30pm before a small sunset bump."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--jade)"></i>Quiet windows — go now<i style="background:rgba(242,169,60,.4)"></i>Building<i style="background:var(--red);opacity:.7"></i>Coach hours · indicative shape, not measured counts</p>
+
+    <div class="cols">
+      <p><b>Window one: 06:45–08:30</b>The sunrise crowd is a specific crowd. It comes for the reflecting pool, it photographs the sun clearing the towers, and then a very large fraction of it goes back to a hotel for breakfast. If you stay in the park through that exodus you get the best ninety minutes of the day — Angkor Wat's interior galleries almost to yourself, in low gold light, before the coaches land.</p>
+      <p><b>Window two: 15:30–17:30</b>The genuinely underrated one. The heat has broken, the coaches have done their morning circuit, and the light going into sunset is better than the light coming out of it. Ta Prohm and Preah Khan in late afternoon are a different experience from Ta Prohm at eleven.</p>
+      <p><b>The one to avoid</b>11:00 to 14:00 is peak coach traffic and peak heat simultaneously. Do not spend it at a temple. Spend it eating, sleeping, or at the Angkor National Museum, which is air-conditioned and largely empty at exactly that hour.</p>
+    </div>
+
+    <div class="panel">
+      <h3>Sunrise: the reflecting pool, or not</h3>
+      <p>The standard shot is from the <b>north reflecting pool</b>, and in peak season several thousand people want it. Two alternatives are worth knowing. The <b>south pool</b> gives the same reflection with a fraction of the crowd. And staying <b>outside the moat</b>, on the western causeway approach, lets you watch the whole temple go from silhouette to gold with nobody in front of you — a better experience, a worse photograph.</p>
+      <p>If you would rather skip the scrum entirely: <b>Srah Srang</b>, the royal bathing pool three kilometres east, has water, sky, a laterite terrace and almost nobody. <b>Pre Rup</b>, five kilometres east, gives you a 360° temple-mountain view over the forest. Both are inside the park and covered by your pass.</p>
+    </div>
+
+    <div class="panel">
+      <h3>Dress code, enforced</h3>
+      <p>Shoulders and knees covered is the rule across the park and it is <b>checked at the stairs to Angkor Wat's upper level (the Bakan)</b>, where guards turn people away. Vests, short shorts and see-through fabric will fail. Lightweight long trousers and a light long-sleeved layer are also the right call for the sun regardless.</p>
+      <p>The Bakan has a daily visitor cap and closes on Buddhist holy days; Phnom Bakheng caps sunset at 300 people. Neither is bookable in advance — you queue or you go early.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="tickets">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">07</span> The ticket maths</p>
+    <h2 class="head">Buy the<br>three-day</h2>
+    <p class="lede">Angkor passes come in three sizes and only one of them makes sense for a stop this length. Tick what you actually plan to do and watch the numbers move. <b>Prices are set by Angkor Enterprise and are the same everywhere</b> — the official ticket office on Apsara Road, the online portal, the Heritage Walk kiosks and the counter at SAI arrivals all charge identical amounts.</p>
+
+    <div class="calc">
+      <div class="calc-legs" id="legs"></div>
+      <dl class="calc-out">
+        <div><dt>Day passes</dt><dd id="ptp"></dd></div>
+        <div><dt>Best pass</dt><dd id="pass"></dd></div>
+        <div><dt>Difference</dt><dd id="diff"></dd></div>
+        <div><dt>Verdict</dt><dd><span id="verdict"></span></dd></div>
+      </dl>
+    </div>
+    <p class="fignote">1-day $37 · 3-day $62 (any 3 days within 10) · 7-day $72 (any 7 within 30) · every pass carries your photo and is non-transferable · verified Sept 2026, recheck at ticket.angkorenterprise.gov.kh</p>
+
+    <div class="panel">
+      <h3>Three rules that save money or time</h3>
+      <p><b>A 1-day pass bought after 17:00 is valid the following day.</b> Historically this also let you into the park that same evening for sunset — treat the free sunset as a bonus that may or may not still be honoured, and buy on the strength of the next-day validity alone.</p>
+      <p><b>Not every temple is on the pass.</b> Angkor Wat, Bayon, Ta Prohm, Preah Khan, Banteay Srei and Beng Mealea are included. <b>Phnom Kulen ($20) and Koh Ker ($15) are separate tickets</b>, as are Preah Vihear and Banteay Chhmar — the last two being in the border zone you're avoiding anyway.</p>
+      <p><b>Buy online the night before.</b> The portal runs 24 hours; the physical office opens at 04:30 for sunrise buyers and the queue at 05:00 in December is real. Children under 12 are free on a passport, no pass issued.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="season">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">08</span> Why this window</p>
+    <h2 class="head">The best six<br>days of the year</h2>
+    <p class="lede">Mid-December is not a compromise here — it is Cambodia at its objective best. The northeast monsoon has cleared the sky, the wet-season heat has broken, and the ground is dry enough that the unpaved temple approaches don't turn to red soup. Expect <b>29–30°C by day, 22°C at night, 65% humidity and roughly one rainy day in the month</b>.</p>
+
+    <div class="figcap">
+      <span>Fig. 3 — Rain and heat, month by month</span>
+      <span><b>Siem Reap</b> · climate averages</span>
+    </div>
+    <div class="scroller">
+      <svg id="clim-chart" viewBox="0 0 1400 340" role="img" aria-label="Chart of Siem Reap monthly rainfall and average daily high temperature, showing a wet season from May to October peaking in September, and December with almost no rain and the lowest daytime temperatures of the year."></svg>
+    </div>
+    <p class="fignote"><i style="background:rgba(88,196,163,.5)"></i>Rainfall, mm<i style="background:var(--amber)"></i>Average daily high, °C — December is both the driest and the coolest month</p>
+
+    <div class="cols">
+      <p><b>The one trade-off</b>Dry season means the Tonlé Sap is falling. From roughly August to November the lake floods to several times its dry-season area and the stilt villages sit in open water with paddleable flooded forest; by mid-December the water is receding and the houses stand tall on their poles above mud channels. It's still worth seeing — it just isn't the postcard version.</p>
+      <p><b>No holiday clashes</b>Water Festival, Cambodia's biggest, fell on 23 November 2026 — three weeks before you land. Independence Day is 9 November, Peace Day is 29 December. Nothing between 11 and 16 December 2026 is a public holiday, so museums, offices and the ticket portal all run normal hours.</p>
+      <p><b>Peak season pricing</b>December is high season for accommodation in both cities, and the good boutique places in Siem Reap's Wat Bo and Kandal Village areas fill. Book rooms now; almost nothing else here needs advance purchase.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="admin">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">09</span> Ground rules</p>
+    <h2 class="head">Before you land</h2>
+
+    <div class="tablewrap">
+    <table class="ref">
+      <thead><tr><th>Item</th><th>What to do</th><th>When</th></tr></thead>
+      <tbody>
+        <tr class="flag"><td>Visa</td><td>Canadians need one. The e-Visa at <b>evisa.gov.kh</b> costs US$30 plus a US$6 processing fee, single entry, 30 days, and takes about three business days. Visa on arrival at SAI and KTI is US$30 cash plus a passport photo.</td><td class="t">2 weeks ahead</td></tr>
+        <tr class="flag"><td>e-Arrival card</td><td>Compulsory. Submit at <b>arrival.gov.kh</b> within seven days of arrival — it covers immigration, customs and health in one form. It is free.</td><td class="t">Week before</td></tr>
+        <tr><td>Visa scams</td><td>Fake portals charge US$70–90 for the e-Visa and try to charge for the free e-Arrival card. If the domain doesn't end in <b>.gov.kh</b>, close the tab.</td><td class="t">Always</td></tr>
+        <tr><td>Passport</td><td>Six months' validity beyond arrival plus a blank page. Onward ticket and proof of funds can be asked for.</td><td class="t">Check now</td></tr>
+        <tr><td>Angkor pass</td><td>$37 / $62 / $72 for 1, 3 and 7 days. Buy at ticket.angkorenterprise.gov.kh the night before, or at the SAI arrivals counter on the way in. Photo taken at purchase; non-transferable.</td><td class="t">Night before</td></tr>
+        <tr class="flag"><td>Thai border</td><td>Canada advises <b>avoid all travel within 50 km of the Thai border</b>. All land crossings closed since June 2025, no reopening date. Rules out Preah Vihear and any overland move to Thailand.</td><td class="t">Standing</td></tr>
+        <tr><td>Landmines</td><td>Still present in Preah Vihear, parts of Phnom Kulen and the border provinces. Stay on marked paths and cleared ground; never walk into unmarked scrub.</td><td class="t">Standing</td></tr>
+        <tr><td>Cash</td><td>Dual currency: US dollars above about $10, riel as small change at a flat ≈4,000 to the dollar. ATMs charge $4–6 and dispense $100 bills — BRED is the cheapest. Bring $300–500 in clean, post-2006 notes.</td><td class="t">Before you fly</td></tr>
+        <tr><td>Small notes</td><td>The National Bank is phasing out $1 and $5 bills, so merchants increasingly won't take them and give riel change instead. Don't hoard singles.</td><td class="t">On the ground</td></tr>
+        <tr><td>Digital payment</td><td>KHQR is everywhere. The <b>Bakong Tourist</b> app lets a foreigner scan and pay without a Cambodian bank account — worth installing before you land. Cards work in hotels and mid-range restaurants.</td><td class="t">Before departure</td></tr>
+        <tr><td>Getting around</td><td>Tuk-tuk with a driver for a full temple day is $20–25; an air-conditioned car $35–50. Grab and PassApp both work in Siem Reap and Phnom Penh. A licensed guide adds roughly $40–50 a day.</td><td class="t">Day of</td></tr>
+        <tr><td>Health</td><td>No mandatory vaccinations. Hep A and B and typhoid are standard advice; dengue is present year-round. Medical facilities are limited and serious cases get evacuated to Bangkok or Singapore — check your policy covers that.</td><td class="t">Before you fly</td></tr>
+        <tr><td>Petty crime</td><td>Bag and phone snatching from passing motorbikes is common in Phnom Penh and Siem Reap. Bag across the body on the away side, phone away while walking, and don't argue with a snatcher.</td><td class="t">Standing</td></tr>
+        <tr><td>Public holidays</td><td>None between 11 and 16 December 2026. Water Festival was 23 November; Peace Day is 29 December.</td><td class="t">Clear</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="cols">
+      <p><b>Where to stay in Siem Reap</b>Wat Bo, across the river, and Kandal Village to the west of the old French quarter are both quiet, walkable and full of good small hotels. Pub Street is loud until two in the morning and you are getting up at five. Anywhere in town is 20–30 minutes from the park gate by tuk-tuk.</p>
+      <p><b>Where to stay in Phnom Penh</b>Riverside near Sisowath Quay is the obvious choice and works fine; BKK1 is greener, calmer and has the better restaurants. Both are 30–40 minutes from Techo airport by road, longer in traffic — the airport express bus runs 05:30 to 23:30.</p>
+      <p><b>Eating</b>Amok trey, fish steamed in banana leaf with kroeung; num banh chok, the rice-noodle breakfast soup sold from carts before eight; kuy teav noodle soup; Kampot pepper on everything. Cambodian food is quieter than Thai and more herbal than Vietnamese, and it is badly underrated. The best of it is street-side and costs a couple of dollars.</p>
+      <p><b>Scam-centre country</b>Cambodia's reputation for online fraud compounds is real and has drawn US sanctions, but it is an industry that preys on people recruited into it, not on tourists at temples. It affects you in one way only: be sceptical of anything that arrives unsolicited offering work, romance or investment, and give Bavet and the Sihanoukville casino strip a miss.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <p>Westbound · stop 14 · Cambodia</p>
+      <p>11–16 Dec 2026 · SAI in, KTI out</p>
+      <p>Fares, fees and advisories verified Sept 2026 — recheck before booking</p>
+    </div>
+    <p class="foot-mark">Angkor → Phnom Penh</p>
+  </div>
+</footer>
+<script>
+/* ============ DAY-BY-DAY ============ */
+const DAYS_BOTH=[
+{d:'Fri 11',w:'Arrive',name:'Siem Reap',sub:'Land 16:15 · the long transfer',meta:'Night 1',
+ slots:[
+  {m:1,h:'16:15 · SAI',p:'Vietnam Airlines direct from Luang Prabang, about 1h25, no time change. Visa on arrival if you didn’t do the e-Visa, then the pre-arranged car — <b>40 km and 45–55 minutes</b> into town. Buy your Angkor pass at the arrivals counter while you’re here and skip tomorrow’s 05:00 queue.'},
+  {h:'18:30 · Dinner and an early night',p:'Something walkable near the hotel. Amok trey if the place looks like it cares, a bowl of kuy teav if it doesn’t. Set the alarm for 04:45 and do not go near Pub Street.'}
+]},
+{d:'Sat 12',w:'Full',name:'Angkor, day one',sub:'The greatest hits, in the right order',meta:'Night 2',
+ slots:[
+  {h:'05:15 · Angkor Wat sunrise',p:'Gates open at 05:00, sun clears the towers around 06:18. Take the <b>south reflecting pool</b> or the causeway outside the moat — same sunrise, a fraction of the people.'},
+  {h:'06:45 · Stay put',p:'The single best decision of the day. Most of the sunrise crowd leaves for hotel breakfast. Walk the galleries, find the Churning of the Sea of Milk bas-relief, and climb the Bakan upper level before the queue forms. Shoulders and knees covered or you don’t get up the stairs.'},
+  {h:'09:00 · Angkor Thom',p:'South gate with its causeway of gods and demons, then Bayon and its 200-odd faces, then the Baphuon, the Terrace of the Elephants and the Leper King. Bayon is at its best in slanting light, which by now it isn’t — accept it and move.'},
+  {h:'11:30 · Stop',p:'Coach peak and heat peak arrive together. Lunch, a shower, a nap. If you must be somewhere, the Angkor National Museum is air-conditioned and empty at this hour.'},
+  {h:'15:30 · Ta Prohm',p:'The strangler figs, and the reason to come in the afternoon rather than at eleven with everyone else. Then Banteay Kdei next door and <b>Srah Srang</b> for the last of the light.'},
+  {h:'20:00 · Phare',p:'The Cambodian Circus — an hour of acrobatics and storytelling by graduates of an arts school set up for kids out of the refugee camps. From $18, one show a night at 20:00, book the day before.'}
+]},
+{d:'Sun 13',w:'Full',name:'Angkor, day two',sub:'Out to the pink temple',meta:'Night 3',
+ slots:[
+  {h:'06:00 · Banteay Srei',p:'Thirty-seven kilometres north, an hour by tuk-tuk, and worth every minute of it. Tenth-century pink sandstone carved so finely it doesn’t look like stonework. Get there for opening — it’s small, and forty people fill it.'},
+  {h:'08:30 · Banteay Samré',p:'On the way back and almost always empty. A complete, tightly walled Angkor Wat-style temple with nobody in it.'},
+  {h:'10:00 · Preah Khan',p:'Vast, half-collapsed, tree-grown, and a fraction of Ta Prohm’s crowd. The long axial corridor of diminishing doorways is the best photograph in the park.'},
+  {h:'12:00 · Stop',p:'Again. The middle of the day is not negotiable in December sun.'},
+  {h:'15:30 · Neak Pean and Ta Som',p:'Neak Pean is an island shrine in a square baray, reached on a boardwalk over water; Ta Som is a small east-gate ruin with a fig growing through it and hardly anyone there.'},
+  {h:'17:00 · Pre Rup',p:'Temple-mountain, 360° over the forest, and the sunset spot that isn’t Phnom Bakheng — which caps entry at 300 people and is a scrum. Then dinner in Kandal Village.'}
+]},
+{d:'Mon 14',w:'Move',name:'Phnom Penh',sub:'Half a temple morning, then south',meta:'Night 4',
+ slots:[
+  {h:'05:30 · Srah Srang at dawn',p:'The third day on the pass, used lightly. Royal bathing pool, laterite terrace, sunrise on water, almost nobody. Then the Roluos group — Bakong and Preah Ko, the ninth-century temples that came before Angkor — if the flight time allows.'},
+  {m:1,h:'12:00 · SAI → KTI',p:'Air Cambodia, about 50 minutes, <b>$80–200 one way</b>, twice daily. Allow an hour to the airport and know that this carrier changes schedules — reconfirm 24 hours out and have the Giant Ibis bus as a fallback.'},
+  {m:1,h:'15:30 · Into Phnom Penh',p:'Techo is 19 km south of the city; the airport express bus runs 05:30–23:30, or take a Grab. Check in around Riverside or BKK1.'},
+  {h:'17:00 · Sisowath Quay',p:'Walk the river promenade at the confluence of the Mekong and the Tonlé Sap as the light goes. The <b>National Museum</b> closes at 17:00, so leave it for tomorrow. Dinner in BKK1.'}
+]},
+{d:'Tue 15',w:'Full',name:'Phnom Penh',sub:'The hard day, and then the city',meta:'Night 5',
+ slots:[
+  {h:'08:00 · Tuol Sleng',p:'S-21, the school the Khmer Rouge turned into an interrogation centre. Take the audio guide — it is one of the best made anywhere and it is narrated by survivors. Two hours, and they are difficult ones.'},
+  {m:1,h:'11:00 · Choeung Ek',p:'Fifteen kilometres out, the killing field the S-21 prisoners were taken to. Also audio-guided, also essential, and the two sites are designed to be done in that order. Back in the city by mid-afternoon.'},
+  {h:'15:00 · Something else entirely',p:'You will need it. The <b>Royal Palace and Silver Pagoda</b> — covered shoulders and knees again — or the <b>National Museum of Cambodia</b>, whose Angkorian sculpture collection is the finest anywhere and puts faces to the temples you just walked through.'},
+  {h:'18:30 · Last dinner',p:'Phnom Penh eats better than Siem Reap and charges less for it. Street-side kuy teav, a proper Khmer restaurant in BKK1, or the night market by the river.'}
+]},
+{d:'Wed 16',w:'Depart',name:'To Kuala Lumpur',sub:'Half a morning',meta:'Fly out',
+ slots:[
+  {h:'07:00 · Central Market or Wat Phnom',p:'Psar Thmey’s art-deco dome is worth twenty minutes even if you buy nothing. Wat Phnom, the hill the city is named after, is a short walk and a quiet start. Num banh chok from a cart before eight is the correct breakfast.'},
+  {m:1,h:'11:00 · To Techo (KTI)',p:'Thirty to forty minutes without traffic, longer with. Build a real buffer — this is a busy new airport and the road in is one corridor.'},
+  {m:1,h:'· Kuala Lumpur',p:'Stop 15. Cambodia Airways, AirAsia Cambodia and Malaysia Airlines all fly KTI–KUL, around 2 hours. Verify the code reads KTI and not PNH on the ticket.'}
+]}
+];
+
+const DAYS_SOLO=[
+{d:'Fri 11',w:'Arrive',name:'Siem Reap',sub:'Land 16:15 · the long transfer',meta:'Night 1',
+ slots:[
+  {m:1,h:'16:15 · SAI',p:'Direct from Luang Prabang, no time change. Pre-arranged car for the 40 km into town, and buy the 3-day Angkor pass at the arrivals counter on the way through.'},
+  {h:'18:30 · Dinner and an early night',p:'Walkable, cheap, early. The alarm is going at 04:45.'}
+]},
+{d:'Sat 12',w:'Full',name:'Angkor, day one',sub:'Angkor Wat, Angkor Thom, Ta Prohm',meta:'Night 2',
+ slots:[
+  {h:'05:15 · Angkor Wat sunrise',p:'South pool or the causeway outside the moat, then <b>stay in the temple through the 06:45 breakfast exodus</b> — the best ninety minutes of the week. Bakan upper level, dress code enforced.'},
+  {h:'09:00 · Angkor Thom',p:'South gate, Bayon, Baphuon, the Terraces. Out by 11:30.'},
+  {h:'15:30 · Ta Prohm and Srah Srang',p:'Afternoon light, half the crowd, and the trees at their best. Finish at the bathing pool.'},
+  {h:'20:00 · Phare',p:'The Cambodian Circus, from $18, one show at 20:00. Book the day before.'}
+]},
+{d:'Sun 13',w:'Full',name:'Angkor, day two',sub:'Banteay Srei and the grand circuit',meta:'Night 3',
+ slots:[
+  {h:'06:00 · Banteay Srei',p:'An hour north, tenth-century pink sandstone, the finest carving in Cambodia. Be there at opening.'},
+  {h:'08:30 · Banteay Samré',p:'On the road back, complete, walled and usually empty.'},
+  {h:'10:00 · Preah Khan',p:'Vast and tree-grown, with a corridor of diminishing doorways and none of Ta Prohm’s traffic.'},
+  {h:'15:30 · Neak Pean, Ta Som, Pre Rup',p:'The northeast corner of the grand circuit, finishing on a temple-mountain at sunset.'}
+]},
+{d:'Mon 14',w:'Full',name:'Beng Mealea or Koh Ker',sub:'The day out',meta:'Night 4',
+ slots:[
+  {h:'07:30 · East, into the forest',p:'<b>Beng Mealea</b> is 65 km east — an unrestored Angkor Wat-scale temple collapsed into the jungle, with boardwalks over the rubble, and it is <b>covered by your Angkor pass</b>. Two hours out by car, and by far the best value day trip from Siem Reap.'},
+  {h:'11:00 · Or push on to Koh Ker',p:'Another 60 km north: a seven-tiered sandstone pyramid in the forest, a tenth-century capital, and a <b>separate $15 ticket</b>. Combining both makes a long, hot, excellent day — leave at 07:00 and take an air-conditioned car, not a tuk-tuk.'},
+  {h:'17:00 · Back in town',p:'Dinner in Kandal Village or Wat Bo, and a foot massage you will have earned.'}
+]},
+{d:'Tue 15',w:'Full',name:'Lake and last temples',sub:'Tonlé Sap, and day three on the pass',meta:'Night 5',
+ slots:[
+  {h:'05:30 · Roluos group',p:'Bakong, Preah Ko and Lolei — the ninth-century temples that predate Angkor proper, twenty minutes east of town, and almost never busy. The third day on your pass, used well.'},
+  {h:'14:00 · Kampong Phluk',p:'Stilt village on the Tonlé Sap, 30 km out, roughly <b>$20 a head for the boat plus a $2 community fee</b>. By mid-December the water is well down, so the houses stand tall on their poles rather than floating — a different picture, still a real place. Avoid Chong Kneas, which is closer and much worse.'},
+  {h:'17:30 · Sunset on the lake',p:'The boats time the return for it. Then a last dinner in town.'}
+]},
+{d:'Wed 16',w:'Depart',name:'To Kuala Lumpur',sub:'Half a morning',meta:'Fly out',
+ slots:[
+  {h:'07:00 · Old Market and the river',p:'Psar Chas early, before the heat and the tour groups, and the riverside for a coffee. Or one more hour at Angkor Wat if the pass has a day left on it.'},
+  {m:1,h:'10:30 · To SAI',p:'Forty km, 45–55 minutes, and the road is the one variable you cannot control. Leave earlier than feels necessary.'},
+  {m:1,h:'· Kuala Lumpur',p:'Stop 15. AirAsia and others fly SAI–KUL direct, around 2h20. Fewer frequencies than from Phnom Penh — check the day of the week before committing to this shape.'}
+]}
+];
+
+let CURRENT_PLAN='both';
+function renderDays(){
+  const DAYS = CURRENT_PLAN==='both' ? DAYS_BOTH : DAYS_SOLO;
+  document.getElementById('days').innerHTML=DAYS.map(D=>`
+  <div class="day">
+    <button class="day-btn" aria-expanded="false">
+      <span class="day-date">${D.d}<small>${D.w}</small></span>
+      <span><span class="day-name">${D.name}</span><span class="day-sub">${D.sub}</span></span>
+      <span class="day-meta">${D.meta}<span class="chev">▾</span></span>
+    </button>
+    <div class="day-body"><div class="day-inner"><div class="day-pad"><div class="slots">
+      ${D.slots.map(s=>`<div class="slot${s.m?' move':''}"><h4>${s.h}</h4><p>${s.p}</p></div>`).join('')}
+    </div></div></div></div>
+  </div>`).join('');
+
+  document.querySelectorAll('.day-btn').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const d=b.parentElement, open=d.classList.toggle('open');
+      b.setAttribute('aria-expanded',open?'true':'false');
+    });
+  });
+  document.querySelector('.day').classList.add('open');
+  document.querySelector('.day-btn').setAttribute('aria-expanded','true');
+}
+renderDays();
+
+document.getElementById('dayToggle').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  CURRENT_PLAN=b.dataset.plan;
+  document.querySelectorAll('#dayToggle .fbtn').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
+  renderDays();
+});
+
+/* ============ WORTH DOING ============ */
+const ITEMS=[
+/* ANGKOR */
+{c:'Angkor',t:'do',n:'Angkor Wat at sunrise',w:'The largest religious monument on earth, and the reason this stop exists. South pool or outside the moat beats the north pool scrum. Gates 05:00, sun up 06:18 in December.',when:'05:15'},
+{c:'Angkor',t:'do',n:'Angkor Wat after the crowd leaves',w:'The move almost nobody makes: <b>stay in the temple from 06:45 to 08:30</b> while the sunrise crowd goes back for breakfast. Galleries, bas-reliefs and the Bakan upper level in gold light.',when:'06:45–08:30'},
+{c:'Angkor',t:'do',n:'Bayon',w:'Two hundred-odd serene stone faces on 54 towers, plus bas-reliefs of ordinary 12th-century life — markets, cockfights, childbirth — that no other temple bothers with.',when:'Early or late'},
+{c:'Angkor',t:'do',n:'Ta Prohm',w:'The strangler figs. Go at 15:30, not 11:00; the difference in crowd and light is the difference between a queue and a place.',when:'15:30'},
+{c:'Angkor',t:'do',n:'Banteay Srei',w:'Thirty-seven kilometres north and the finest carving in the country — pink sandstone worked like ivory. Small, so be there at opening or share it.',when:'Opening'},
+{c:'Angkor',t:'do',n:'Preah Khan',w:'Ta Prohm’s size and trees without Ta Prohm’s traffic. The axial corridor of shrinking doorways is the shot everyone else missed.',when:'Morning'},
+{c:'Angkor',t:'do',n:'Srah Srang at dawn',w:'Royal bathing pool, laterite terrace, water, sky, nobody. The sunrise alternative if you cannot face the reflecting pool.',when:'05:45'},
+{c:'Angkor',t:'do',n:'Pre Rup at sunset',w:'Tenth-century temple-mountain with 360° views over the forest canopy. The sunset spot that isn’t capped, queued or mobbed.',when:'17:00'},
+{c:'Angkor',t:'opt',n:'Banteay Samré',w:'Complete, walled, Angkor Wat in miniature, and reliably empty because it is five minutes off the main circuit.',when:'On the way back'},
+{c:'Angkor',t:'opt',n:'Neak Pean',w:'An island shrine in an artificial lake, reached along a boardwalk over water. Quick, odd, and unlike anything else in the park.',when:'Afternoon'},
+{c:'Angkor',t:'opt',n:'Roluos group',w:'Bakong, Preah Ko and Lolei — ninth century, pre-Angkorian, twenty minutes east of town and almost always deserted. A gentle third day on the pass.',when:'Early'},
+{c:'Angkor',t:'opt',n:'Ta Som',w:'Small east-gate ruin with a fig tree growing straight through the doorway. Two minutes’ walk, thirty seconds’ photograph, worth both.',when:'Late afternoon'},
+{c:'Angkor',t:'skip',n:'Phnom Bakheng sunset',w:'Capped at 300 people, queued from mid-afternoon, and the view is of haze and a distant Angkor Wat. Pre Rup does the same job with none of the misery.',when:''},
+{c:'Angkor',t:'skip',n:'Angkor Wat sunset',w:'You are facing the wrong way — the temple opens west, so the sun sets behind it and you get a silhouette. Come at dawn.',when:''},
+{c:'Angkor',t:'skip',n:'Riding an elephant',w:'Ended in the park in 2020 after an elephant died on the Bakheng climb. Anyone still offering it is not operating inside Angkor.',when:''},
+/* SIEM REAP */
+{c:'Siem Reap',t:'do',n:'Phare, The Cambodian Circus',w:'Acrobatics and storytelling from an arts school founded for children out of the border refugee camps. One show nightly at 20:00, about an hour, from $18.',when:'Book a day ahead',b:1},
+{c:'Siem Reap',t:'do',n:'Angkor National Museum',w:'Go at midday when the park is unbearable and this is air-conditioned and empty. The thousand-buddha gallery and the Khmer sculpture make the temples legible.',when:'11:00–14:00'},
+{c:'Siem Reap',t:'do',n:'Num banh chok for breakfast',w:'Rice noodles under a green fish-and-lemongrass gravy, piled with raw herbs, sold from carts and gone by eight. The national breakfast and about a dollar.',when:'Before 08:00'},
+{c:'Siem Reap',t:'do',n:'Kandal Village and Wat Bo',w:'Where Siem Reap is pleasant rather than loud — small hotels, good coffee, proper Khmer restaurants, and a river walk between them.',when:'Evening'},
+{c:'Siem Reap',t:'opt',n:'Kampong Phluk',w:'Stilt village on the Tonlé Sap, ~$20 boat plus a $2 community fee. Genuinely a working village. By mid-December the water is dropping, so no flooded-forest paddling.',when:'Afternoon'},
+{c:'Siem Reap',t:'opt',n:'Kampong Khleang',w:'Fifty kilometres out and the least touristed of the lake villages — bigger, quieter, more real. Takes a full half-day more than Kampong Phluk.',when:'Half day'},
+{c:'Siem Reap',t:'opt',n:'Cambodia Landmine Museum',w:'Near Banteay Srei, founded by a former child soldier who has cleared tens of thousands of mines. Small, sobering, and directly relevant to the advisory in section 09.',when:'With Banteay Srei'},
+{c:'Siem Reap',t:'opt',n:'Artisans Angkor',w:'Working silk and stone-carving workshops in town, free to walk through, and the one souvenir shop where you see the thing being made.',when:'1 hour'},
+{c:'Siem Reap',t:'skip',n:'Chong Kneas floating village',w:'The closest lake village and the one every cheap tour uses. Long-standing reputation for pressure selling and rigged boat pricing. Kampong Phluk is 15 minutes further.',when:''},
+{c:'Siem Reap',t:'skip',n:'Pub Street',w:'Fine for one drink if you are curious. You are getting up at 04:45 every day, and the whole street is engineered for people who aren’t.',when:''},
+{c:'Siem Reap',t:'skip',n:'Buffet apsara dinner shows',w:'Industrial-scale, indifferent food, dance as wallpaper. If you want apsara, the classical performances at small venues in town are the real thing; if you want a show, Phare is better than both.',when:''},
+/* PHNOM PENH */
+{c:'Phnom Penh',t:'do',n:'Tuol Sleng (S-21)',w:'The school turned interrogation centre. The audio guide, narrated in part by survivors, is among the best at any memorial site anywhere. Two hours, and hard ones.',when:'Morning'},
+{c:'Phnom Penh',t:'do',n:'Choeung Ek',w:'The killing field 15 km out that S-21 fed. Audio-guided, quiet, and built to be visited after Tuol Sleng rather than before. Do not split them across two days.',when:'Same day'},
+{c:'Phnom Penh',t:'do',n:'National Museum of Cambodia',w:'The best collection of Angkorian sculpture in the world, in a terracotta pavilion around a courtyard. Do it after the temples, not before — it puts faces to what you walked through.',when:'Closes 17:00'},
+{c:'Phnom Penh',t:'do',n:'Riverside at dusk',w:'Sisowath Quay at the Mekong–Tonlé Sap confluence, when the whole city comes out to walk. Free, and the truest hour of the day here.',when:'17:00–19:00'},
+{c:'Phnom Penh',t:'opt',n:'Royal Palace & Silver Pagoda',w:'Working royal residence, so parts close without notice. The Silver Pagoda’s five thousand silver floor tiles are the draw. Shoulders and knees covered, no exceptions.',when:'Morning'},
+{c:'Phnom Penh',t:'opt',n:'Central Market (Psar Thmey)',w:'A 1937 art-deco dome the size of a cathedral. Twenty minutes even if you buy nothing, and it is on the way to almost everything.',when:'Early'},
+{c:'Phnom Penh',t:'opt',n:'Wat Phnom',w:'The small hill the city is named for, with a working temple on top. Fifteen minutes, and pleasant at seven in the morning.',when:'07:00'},
+{c:'Phnom Penh',t:'opt',n:'Eating in BKK1',w:'Phnom Penh eats better and cheaper than Siem Reap. BKK1 has the range — proper Khmer kitchens, Vietnamese, and the best coffee in the country.',when:'Evening'},
+{c:'Phnom Penh',t:'skip',n:'Firing ranges',w:'Advertised to tourists on the edge of town. Unregulated, ugly, and occasionally lethal.',when:''},
+{c:'Phnom Penh',t:'skip',n:'Casino and riverfront nightlife strips',w:'The corner of Cambodia that the international fraud sanctions are actually about. Nothing there for you.',when:''},
+/* FURTHER OUT */
+{c:'Further',t:'do',n:'Beng Mealea',w:'Angkor Wat’s scale, collapsed into the jungle and left there, with boardwalks over the rubble. Sixty-five kilometres east, and <b>included on the Angkor pass</b> — the best-value day out from Siem Reap.',when:'Half day'},
+{c:'Further',t:'opt',n:'Koh Ker',w:'A seven-tiered sandstone pyramid in the forest, capital of the empire for two decades in the tenth century. <b>Separate $15 ticket</b>, 120 km north, and best combined with Beng Mealea in one long day by car.',when:'Full day'},
+{c:'Further',t:'opt',n:'Phnom Kulen',w:'The sandstone plateau the temples were quarried from, with a river carved with lingas and a waterfall. <b>Separate $20 ticket</b>, and mined areas persist off the marked paths — go with a driver who knows it.',when:'Full day'},
+{c:'Further',t:'skip',n:'Preah Vihear',w:'The cliff-top temple on the Thai frontier — and the disputed site the 2025 fighting was over. Inside Canada’s avoid-all-travel zone. Not this trip.',when:''},
+{c:'Further',t:'skip',n:'Banteay Chhmar',w:'A superb, barely visited temple complex, and it sits in the same closed border region. Same answer.',when:''},
+{c:'Further',t:'skip',n:'Battambang',w:'Colonial shophouses, the bamboo train, excellent food, three hours the wrong way. It needs an overnight this stop does not have.',when:''},
+{c:'Further',t:'skip',n:'Sihanoukville and the islands',w:'Six hours south, hollowed out by the casino economy, and you have Palawan and Penang on this trip already.',when:''}
+];
+
+const TIERLBL={do:'Do',opt:'Maybe',skip:'Skip'};
+let FC='all', FT=null, FB=false;
+
+function renderItems(){
+  const list=ITEMS.filter(x=>
+    (FC==='all'||x.c===FC) && (!FT||x.t===FT) && (!FB||x.b));
+  const host=document.getElementById('items');
+  if(!list.length){host.innerHTML='<div class="empty">No entries match those filters.</div>';return}
+  host.innerHTML=list.map(x=>`
+    <div class="item">
+      <span class="tier ${x.t}">${TIERLBL[x.t]}</span>
+      <span class="nm">${x.n}</span>
+      <span class="when${x.b?' book':''}">${x.when||'&nbsp;'}</span>
+      <span class="why">${x.w}</span>
+    </div>`).join('');
+}
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  if(b.dataset.city){FC=b.dataset.city}
+  else if(b.dataset.tier){FT = FT===b.dataset.tier?null:b.dataset.tier}
+  else if(b.dataset.book){FB=!FB}
+  document.querySelectorAll('#filters .fbtn').forEach(x=>{
+    let on=false;
+    if(x.dataset.city) on = x.dataset.city===FC;
+    if(x.dataset.tier) on = x.dataset.tier===FT;
+    if(x.dataset.book) on = FB;
+    x.setAttribute('aria-pressed',on?'true':'false');
+  });
+  renderItems();
+});
+renderItems();
+
+/* ============ FIG 1: TIME AUDIT ============ */
+(function(){
+  const svg=document.getElementById('audit-chart');
+  const W=1400,H=190,pad=40,barY=70,barH=54;
+  const totalH=144; // 11 Dec 00:00 -> 17 Dec 00:00
+  const start=new Date(2026,11,11);
+  const x=h=>pad+(h/totalH)*(W-2*pad);
+  const segs=[
+    {a:0,b:16,cls:'t'},
+    {a:16,b:24,cls:'p'},
+    {a:24,b:48,cls:'f'},
+    {a:48,b:72,cls:'f'},
+    {a:72,b:96,cls:'f'},
+    {a:96,b:120,cls:'f'},
+    {a:120,b:131,cls:'p'},
+    {a:131,b:144,cls:'t2'}
+  ];
+  const colors={t:'var(--magenta)',t2:'rgba(231,100,155,.55)',p:'rgba(242,169,60,.35)',f:'var(--amber)'};
+  let s='';
+  segs.forEach(sg=>{
+    const x1=x(sg.a),x2=x(sg.b);
+    s+=`<rect x="${x1}" y="${barY}" width="${Math.max(1,x2-x1-1)}" height="${barH}" fill="${colors[sg.cls]}"/>`;
+  });
+  for(let d=0;d<=6;d++){
+    const hh=d*24, xx=x(hh);
+    const dt=new Date(start.getTime()+hh*36e5);
+    s+=`<line x1="${xx}" y1="${barY-6}" x2="${xx}" y2="${barY+barH+6}" class="axs"/>`;
+    s+=`<text x="${xx}" y="${barY-14}" class="lbl" text-anchor="${d===0?'start':d===6?'end':'middle'}">${dt.toLocaleDateString('en-CA',{day:'2-digit',month:'short'})}</text>`;
+  }
+  s+=`<line x1="${pad}" y1="${barY+barH+0.5}" x2="${W-pad}" y2="${barY+barH+0.5}" class="ax"/>`;
+  s+=`<text x="${x(24)}" y="${barY+barH+34}" class="lbl-a">4 full days — 12→15 Dec</text>`;
+  s+=`<text x="${x(0)}" y="${barY+barH+34}" class="lbl">↙ flight + 40km transfer</text>`;
+  s+=`<text x="${W-pad}" y="${barY+barH+34}" class="lbl" text-anchor="end">airport run ↘</text>`;
+  svg.innerHTML=s;
+})();
+
+/* ============ FIG 2: CROWD CLOCK ============ */
+(function(){
+  const svg=document.getElementById('clock-chart');
+  const W=1400,H=330,padL=54,padR=30,padT=26,padB=64;
+  const D=[
+    [5,40],[5.5,74],[6,100],[6.5,86],[7,54],[7.5,34],[8,29],[8.5,37],
+    [9,58],[9.5,77],[10,89],[10.5,95],[11,97],[11.5,92],[12,80],[12.5,73],
+    [13,81],[13.5,88],[14,79],[14.5,61],[15,44],[15.5,31],[16,25],[16.5,23],
+    [17,29],[17.5,47],[18,24]
+  ];
+  const x=h=>padL+((h-5)/13.2)*(W-padL-padR);
+  const y=v=>padT+(1-v/100)*(H-padT-padB);
+  const quiet=h=>(h>=6.75&&h<8.75)||(h>=15.4&&h<17.4);
+  const coach=h=>(h>=9.4&&h<14.6);
+  let s='';
+  [0,25,50,75,100].forEach(v=>{
+    s+=`<line x1="${padL}" y1="${y(v)}" x2="${W-padR}" y2="${y(v)}" class="axs"/>`;
+  });
+  const bw=(x(5.5)-x(5))*0.82;
+  D.forEach(([h,v])=>{
+    const fill = quiet(h) ? 'var(--jade)' : coach(h) ? 'rgba(224,85,85,.72)' : 'rgba(242,169,60,.4)';
+    s+=`<rect x="${x(h)}" y="${y(v)}" width="${bw}" height="${H-padB-y(v)}" fill="${fill}" rx="1"/>`;
+  });
+  for(let h=5;h<=18;h++){
+    s+=`<text x="${x(h)+bw/2}" y="${H-padB+20}" class="lbl" text-anchor="middle">${String(h).padStart(2,'0')}:00</text>`;
+  }
+  s+=`<line x1="${padL}" y1="${H-padB}" x2="${W-padR}" y2="${H-padB}" class="ax"/>`;
+  s+=`<text x="${x(6)+bw/2}" y="${y(100)-10}" class="lbl-a" text-anchor="middle">sunrise 06:18</text>`;
+  s+=`<text x="${(x(6.75)+x(8.75))/2}" y="${H-padB+42}" text-anchor="middle" class="lbl" fill="#58C4A3">quiet window one</text>`;
+  s+=`<text x="${(x(15.4)+x(17.4))/2}" y="${H-padB+42}" text-anchor="middle" class="lbl" fill="#58C4A3">quiet window two</text>`;
+  s+=`<text x="${(x(9.4)+x(14.6))/2}" y="${H-padB+42}" text-anchor="middle" class="lbl" fill="#E05555">coaches + peak heat — be elsewhere</text>`;
+  svg.innerHTML=s;
+})();
+
+/* ============ FIG 3: CLIMATE ============ */
+(function(){
+  const svg=document.getElementById('clim-chart');
+  const W=1400,H=340,padL=58,padR=58,padT=26,padB=56;
+  const M=[
+    {n:'Jan',r:1,t:32},{n:'Feb',r:5,t:34},{n:'Mar',r:25,t:36},{n:'Apr',r:60,t:37},
+    {n:'May',r:160,t:36},{n:'Jun',r:175,t:34},{n:'Jul',r:190,t:33},{n:'Aug',r:200,t:33},
+    {n:'Sep',r:260,t:32},{n:'Oct',r:230,t:31},{n:'Nov',r:60,t:31},{n:'Dec',r:11,t:30}
+  ];
+  const bw=(W-padL-padR)/M.length;
+  const yr=v=>padT+(1-v/280)*(H-padT-padB);
+  const yt=v=>padT+(1-(v-26)/13)*(H-padT-padB);
+  let s='';
+  [0,70,140,210,280].forEach(v=>{
+    s+=`<line x1="${padL}" y1="${yr(v)}" x2="${W-padR}" y2="${yr(v)}" class="axs"/>`;
+    s+=`<text x="${padL-10}" y="${yr(v)+4}" class="lbl" text-anchor="end">${v}</text>`;
+  });
+  [28,32,36].forEach(v=>{
+    s+=`<text x="${W-padR+10}" y="${yt(v)+4}" class="lbl-a" text-anchor="start">${v}°</text>`;
+  });
+  M.forEach((m,i)=>{
+    const x0=padL+i*bw+bw*0.2, w=bw*0.6;
+    const isDec=m.n==='Dec';
+    s+=`<rect x="${x0}" y="${yr(m.r)}" width="${w}" height="${H-padB-yr(m.r)}" fill="${isDec?'rgba(88,196,163,.85)':'rgba(88,196,163,.38)'}" rx="1"/>`;
+    s+=`<text x="${x0+w/2}" y="${H-padB+20}" class="lbl" text-anchor="middle" ${isDec?'fill="#58C4A3"':''}>${m.n}</text>`;
+    if(isDec){
+      s+=`<text x="${x0+w/2}" y="${yr(m.r)-10}" class="lbl" text-anchor="middle" fill="#58C4A3">11mm</text>`;
+    }
+  });
+  const pts=M.map((m,i)=>`${padL+i*bw+bw/2},${yt(m.t)}`).join(' ');
+  s+=`<polyline points="${pts}" fill="none" stroke="var(--amber)" stroke-width="2"/>`;
+  M.forEach((m,i)=>{
+    const cx=padL+i*bw+bw/2;
+    s+=`<circle cx="${cx}" cy="${yt(m.t)}" r="${m.n==='Dec'?5:3}" fill="var(--amber)"/>`;
+  });
+  const decX=padL+11*bw+bw/2;
+  s+=`<text x="${decX}" y="${yt(30)+22}" class="lbl-a" text-anchor="end">30°C high, 22°C night</text>`;
+  s+=`<line x1="${padL}" y1="${H-padB}" x2="${W-padR}" y2="${H-padB}" class="ax"/>`;
+  s+=`<text x="${padL-10}" y="${padT-8}" class="lbl" text-anchor="end">mm</text>`;
+  svg.innerHTML=s;
+})();
+
+/* ============ ANGKOR TICKET CALCULATOR ============ */
+const ROWS=[
+  {n:'Temple day 1 — Angkor Wat sunrise, Angkor Thom, Ta Prohm',p:37,park:true,def:true,note:'Counts as one day on any pass'},
+  {n:'Temple day 2 — Banteay Srei, Preah Khan, the grand circuit',p:37,park:true,def:true,note:'Counts as one day on any pass'},
+  {n:'Temple day 3 — Srah Srang dawn, Roluos, or Beng Mealea',p:37,park:true,note:'Beng Mealea is inside the pass — no extra ticket'},
+  {n:'Temple day 4 — only in the Siem Reap-only shape',p:37,park:true,note:'Pushes you to the 7-day pass'},
+  {n:'Koh Ker — separate ticket',p:15,park:false,note:'Never covered by the Angkor pass'},
+  {n:'Phnom Kulen — separate ticket',p:20,park:false,note:'Never covered by the Angkor pass'}
+];
+function renderLegs(){
+  document.getElementById('legs').innerHTML=ROWS.map((l,i)=>`
+    <label class="leg-row">
+      <input type="checkbox" data-i="${i}" ${l.def?'checked':''}>
+      <span class="lname">${l.n}</span>
+      <span class="lyen">$${l.p}</span>
+      ${l.note?`<span class="lnote">${l.note}</span>`:''}
+    </label>`).join('');
+}
+function bestPass(d){ if(d===0) return {c:0,l:'—'}; if(d===1) return {c:37,l:'1-day'}; if(d<=3) return {c:62,l:'3-day'}; return {c:72,l:'7-day'}; }
+function calcTotals(){
+  let days=0, add=0;
+  document.querySelectorAll('#legs input[type="checkbox"]').forEach(cb=>{
+    const l=ROWS[Number(cb.dataset.i)];
+    if(!cb.checked) return;
+    if(l.park) days++; else add+=l.p;
+  });
+  const naive=days*37+add;
+  const bp=bestPass(days);
+  const best=bp.c+add;
+  const diff=naive-best;
+  document.getElementById('ptp').innerHTML=`$${naive}<small>${days} × $37${add?' + extras':''}</small>`;
+  document.getElementById('pass').innerHTML=`$${best}<small>${bp.l}${add?' + extras':''}</small>`;
+  const dEl=document.getElementById('diff'), vEl=document.getElementById('verdict');
+  if(days===0){
+    dEl.innerHTML='—'; vEl.textContent='Pick your temple days'; vEl.className='';
+  } else if(diff>0){
+    dEl.innerHTML=`$${diff}<small>saved</small>`;
+    vEl.textContent=`Buy the ${bp.l} pass`; vEl.className='win';
+  } else {
+    dEl.innerHTML='$0<small>same either way</small>';
+    vEl.textContent='One day — just buy the day pass'; vEl.className='';
+  }
+}
+renderLegs();
+document.getElementById('legs').addEventListener('change',calcTotals);
+calcTotals();
+</script>
+
+</body>
+</html>

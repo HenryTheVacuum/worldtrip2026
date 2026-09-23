@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="darkreader-lock">
+<title>Tanzania</title>
+<link rel="stylesheet" href="fonts.css">
+</head>
+<body>
+<style>
+:root{color-scheme:dark;
+  --ink:#05161D;--ink-2:#0A2029;--ink-3:#0E2A35;
+  --rule:#194150;--rule-soft:rgba(25,65,80,.6);
+  --paper:#E2EEED;--paper-dim:#A6C2C6;--muted:#6C8F98;
+  --amber:#F2A93C;--magenta:#E7649B;--jade:#58C4A3;--red:#E05555;
+  --display:'Big Shoulders Display','Arial Narrow',Impact,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --body:'Inter',system-ui,sans-serif;
+  --gut:clamp(18px,4vw,64px);--maxw:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+.section{padding-block:clamp(34px,4.4vw,58px);border-top:1px solid var(--rule-soft);position:relative}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:14px;margin:0 0 18px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--rule)}
+.eyebrow .n{color:var(--amber)}
+h2.head{font-family:var(--display);font-weight:700;font-size:clamp(34px,5.6vw,66px);line-height:.92;margin:0 0 14px;text-transform:uppercase}
+.lede{max-width:66ch;color:var(--paper-dim);font-size:clamp(15px,1.5vw,17px);margin:0 0 26px}
+.lede b{color:var(--paper);font-weight:600}
+a{color:var(--amber);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+.hint{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+@media (min-width:980px){.hint.wide{display:none}}
+.scroller{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--rule) transparent}
+.scroller::-webkit-scrollbar{height:6px}
+.scroller::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}
+.scroller>svg{display:block;width:100%;height:auto}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(30px,5vw,58px) clamp(24px,4vw,40px);overflow:hidden}
+.gridbg{position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:linear-gradient(to right,var(--rule-soft) 1px,transparent 1px),linear-gradient(to bottom,var(--rule-soft) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%);-webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%)}
+.back{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:inline-block;margin-bottom:20px}
+.back:hover{color:var(--amber)}
+.strip{font-family:var(--mono);font-size:clamp(10px,1.15vw,12px);letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;border-block:1px solid var(--rule);padding-block:11px;margin-bottom:clamp(26px,4vw,44px)}
+.strip .k{color:var(--muted)}.strip .amb{color:var(--amber)}
+.title{font-family:var(--display);text-transform:uppercase;margin:0;line-height:.82;position:relative}
+.title .l1{display:block;font-weight:400;font-size:clamp(34px,7.4vw,96px);color:transparent;-webkit-text-stroke:1.2px var(--paper-dim)}
+.title .l2{display:block;font-weight:800;font-size:clamp(64px,15vw,210px);letter-spacing:-.015em;color:var(--paper)}
+.subline{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:baseline;margin-top:clamp(18px,3vw,30px);font-family:var(--mono);font-size:clamp(11px,1.25vw,13px);letter-spacing:.14em;text-transform:uppercase;color:var(--paper-dim)}
+.subline .sep{color:var(--rule)}
+
+/* instruments */
+.instr{display:grid;grid-template-columns:repeat(auto-fit,minmax(124px,1fr));border:1px solid var(--rule);background:var(--ink-2);margin:clamp(24px,3.4vw,38px) 0 0}
+.instr div{padding:15px 17px;border-right:1px solid var(--rule-soft)}
+.instr div:last-child{border-right:0}
+.instr dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.instr dd{margin:0;font-family:var(--display);font-weight:600;font-size:31px;line-height:1}
+.instr dd span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--paper-dim);margin-left:3px}
+.instr dd.hot{color:var(--amber)}
+.instr dd.warn{color:var(--magenta)}
+
+/* chart frames */
+.figcap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:9px;margin:0 0 8px}
+.figcap b{color:var(--amber);font-weight:500}
+.fignote{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.fignote i{display:inline-block;width:14px;height:9px;margin:0 5px 0 14px;vertical-align:middle;border-radius:1px}
+.fignote i:first-child{margin-left:0}
+.ax{stroke:var(--rule);stroke-width:1}
+.axs{stroke:var(--rule-soft);stroke-width:1}
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.08em;fill:var(--muted)}
+.lbl-p{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;fill:var(--paper)}
+.lbl-a{font-family:var(--mono);font-size:10px;letter-spacing:.12em;fill:var(--amber)}
+
+/* cards */
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin:0 0 6px}
+.card{border:1px solid var(--rule);background:var(--ink-2);padding:18px 20px;position:relative}
+.card.bad{border-color:var(--red)}
+.card.good{border-color:var(--jade)}
+.card h3{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 4px;color:var(--paper)}
+.card .verdict{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:11px}
+.card .verdict.bad{color:var(--red)}
+.card .verdict.ok{color:var(--jade)}
+.card p{margin:0 0 10px;font-size:13.5px;color:var(--paper-dim);line-height:1.62}
+.card p:last-child{margin-bottom:0}
+.card p b{color:var(--paper);font-weight:600}
+.fix{border-left:2px solid var(--amber);padding-left:12px;margin:12px 0 0;font-size:12.8px;color:var(--paper-dim);line-height:1.6}
+.fix b{display:block;color:var(--amber);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px;font-weight:500}
+.fix strong{color:var(--paper);font-weight:600}
+
+/* shape cards */
+.shapes{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+.shape{border:1px solid var(--rule);background:var(--ink-2);padding:0;display:flex;flex-direction:column}
+.shape.pick{border-color:var(--amber);box-shadow:inset 0 0 0 1px rgba(242,169,60,.25)}
+.shape-hd{padding:16px 20px 14px;border-bottom:1px solid var(--rule-soft)}
+.shape-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.shape.pick .shape-tag{color:var(--amber)}
+.shape-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(24px,3vw,32px);line-height:.95;margin:0}
+.chainrow{display:flex;flex-wrap:wrap;align-items:center;gap:5px 7px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--paper);padding:13px 20px;border-bottom:1px solid var(--rule-soft);background:rgba(5,22,29,.5)}
+.chainrow .a{color:var(--rule)}
+.chainrow .n{color:var(--amber);font-size:9.5px}
+.shape-body{padding:15px 20px 18px;flex:1}
+.shape-body p{margin:0 0 10px;font-size:13.3px;color:var(--paper-dim);line-height:1.6}
+.shape-body p:last-child{margin-bottom:0}
+.shape-body p b{color:var(--paper);font-weight:600}
+.shape-meta{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--rule-soft)}
+.shape-meta div{flex:1;min-width:88px;padding:11px 20px;border-right:1px solid var(--rule-soft)}
+.shape-meta div:last-child{border-right:0}
+.shape-meta dt{font-family:var(--mono);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.shape-meta dd{margin:0;font-family:var(--mono);font-size:13px;color:var(--paper)}
+.shape-meta dd.g{color:var(--jade)}
+.shape-meta dd.r{color:var(--red)}
+
+/* day accordion */
+.days{border-top:1px solid var(--rule)}
+.day{border-bottom:1px solid var(--rule)}
+.day-btn{all:unset;box-sizing:border-box;display:grid;width:100%;cursor:pointer;grid-template-columns:76px 1fr auto;gap:0 clamp(14px,2.4vw,30px);align-items:baseline;padding:clamp(13px,1.8vw,18px) 4px;transition:background .18s ease}
+.day-btn:hover{background:rgba(242,169,60,.05)}
+.day-btn:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.day-date{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.1em}
+.day-date small{display:block;color:var(--muted);font-size:9.5px;letter-spacing:.14em;margin-top:3px}
+.day-btn>span:nth-child(2){display:flex;flex-direction:column;gap:6px}
+.day-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(22px,3.2vw,34px);line-height:.95;margin:0}
+.day-sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.day-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--paper-dim);text-align:right;white-space:nowrap}
+.day-meta .chev{display:inline-block;margin-left:12px;color:var(--muted);transition:transform .25s ease}
+.day.open .day-meta .chev{transform:rotate(180deg)}
+@media (max-width:720px){.day-btn{grid-template-columns:64px 1fr;row-gap:8px}.day-meta{grid-column:2;text-align:left}}
+.day-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .34s cubic-bezier(.3,.8,.3,1)}
+.day.open .day-body{grid-template-rows:1fr}
+.day-inner{overflow:hidden}
+.day-pad{padding:2px 4px clamp(22px,3vw,32px)}
+.slots{display:grid;gap:0;border-left:1px solid var(--rule)}
+.slot{padding:0 0 16px 16px;position:relative}
+.slot:last-child{padding-bottom:2px}
+.slot::before{content:"";position:absolute;left:-4px;top:6px;width:7px;height:7px;background:var(--amber);border-radius:50%}
+.slot.move::before{background:var(--magenta)}
+.slot h4{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 5px;font-weight:500}
+.slot.move h4{color:var(--magenta)}
+.slot p{margin:0;font-size:14px;line-height:1.62;color:var(--paper-dim);max-width:72ch}
+.slot p b{color:var(--paper);font-weight:600}
+
+/* worth doing */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.fbtn{all:unset;cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border:1px solid var(--rule);color:var(--paper-dim);border-radius:2px;transition:.15s}
+.fbtn:hover{background:var(--ink-3);color:var(--paper)}
+.fbtn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.fbtn[aria-pressed="true"]{background:var(--amber);color:var(--ink);border-color:var(--amber);font-weight:600}
+.fdiv{width:1px;background:var(--rule);margin:2px 6px}
+.items{display:grid;gap:1px;background:var(--rule-soft);border:1px solid var(--rule)}
+.item{background:var(--ink-2);padding:13px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:baseline}
+.item .tier{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:3px 7px 2px;border-radius:2px;white-space:nowrap;align-self:start;margin-top:2px}
+.tier.do{background:rgba(88,196,163,.14);color:var(--jade);border:1px solid rgba(88,196,163,.35)}
+.tier.opt{background:rgba(242,169,60,.12);color:var(--amber);border:1px solid rgba(242,169,60,.3)}
+.tier.skip{background:rgba(224,85,85,.1);color:var(--red);border:1px solid rgba(224,85,85,.3)}
+.item .nm{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:20px;line-height:1.05;color:var(--paper)}
+.item .why{grid-column:2;font-size:13.3px;color:var(--paper-dim);line-height:1.55;max-width:74ch}
+.item .why b{color:var(--paper);font-weight:600}
+.item .when{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);text-align:right;white-space:nowrap;align-self:start;margin-top:4px}
+.item .when.book{color:var(--magenta)}
+@media (max-width:640px){.item{grid-template-columns:auto 1fr}.item .when{grid-column:2;text-align:left;margin-top:2px}.item .why{grid-column:1/-1}}
+.empty{background:var(--ink-2);padding:22px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* cost calc */
+.calc{border:1px solid var(--rule);background:var(--ink-2)}
+.calc-legs{display:grid}
+.leg-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--rule-soft);cursor:pointer}
+.leg-row:hover{background:rgba(242,169,60,.04)}
+.leg-row input{accent-color:var(--amber);width:15px;height:15px;cursor:pointer}
+.leg-row input:disabled{cursor:not-allowed;opacity:.85}
+.leg-row .lname{font-family:var(--mono);font-size:12.5px;color:var(--paper-dim)}
+.leg-row input:checked+.lname{color:var(--paper)}
+.leg-row .lyen{font-family:var(--mono);font-size:12.5px;color:var(--amber);font-variant-numeric:tabular-nums;white-space:nowrap}
+.leg-row .lnote{grid-column:2/-1;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--muted);margin-top:-4px}
+.calc-out{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule-soft)}
+.calc-out div{background:var(--ink-3);padding:15px 17px}
+.calc-out dt{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.calc-out dd{margin:0;font-family:var(--display);font-weight:700;font-size:27px;line-height:1;font-variant-numeric:tabular-nums}
+.calc-out dd small{font-family:var(--mono);font-size:10px;font-weight:400;color:var(--paper-dim);margin-left:4px;letter-spacing:.06em}
+#verdict{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;line-height:1.5}
+#verdict.win{color:var(--jade)}
+#verdict.lose{color:var(--red)}
+
+/* panels / tables */
+.panel{border:1px solid var(--rule);background:var(--ink-2);padding:clamp(17px,2.4vw,24px);margin-top:22px}
+.panel h3{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 12px;font-weight:500}
+.panel p{margin:0 0 12px;font-size:13.6px;color:var(--paper-dim);line-height:1.62}
+.panel p:last-child{margin-bottom:0}
+.panel p b{color:var(--paper);font-weight:600}
+table.ref{width:100%;border-collapse:collapse;font-size:13.4px}
+table.ref th{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:500;padding:0 14px 10px 0;border-bottom:1px solid var(--rule)}
+table.ref td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule-soft);color:var(--paper-dim);vertical-align:top}
+table.ref td:first-child{font-family:var(--display);font-size:17px;font-weight:600;text-transform:uppercase;color:var(--paper);white-space:nowrap;width:1%}
+table.ref td.t{font-family:var(--mono);font-size:11px;letter-spacing:.06em;white-space:nowrap;color:var(--amber)}
+table.ref tr.flag td.t{color:var(--magenta)}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.cols{display:grid;gap:16px 34px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:20px}
+.cols p{margin:0;font-size:13.6px;color:var(--paper-dim);line-height:1.6}
+.cols p b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:5px;font-weight:500}
+
+footer{border-top:1px solid var(--rule);padding-block:26px 40px;color:var(--muted)}
+.foot-grid{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:flex-end}
+.foot-grid p{margin:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase}
+.foot-mark{font-family:var(--display);font-size:clamp(34px,8vw,100px);font-weight:800;text-transform:uppercase;line-height:.8;color:transparent;-webkit-text-stroke:1px var(--rule);margin:30px 0 0}
+</style>
+
+<header class="hero">
+  <div class="gridbg"></div>
+  <div class="wrap">
+    <a class="back" href="index.html">← Westbound · the dossier</a>
+    <p class="strip">
+      <span><span class="k">Stop</span> <span class="amb">23 of 27</span></span>
+      <span><span class="k">In</span> CAI · Cairo</span>
+      <span><span class="k">Fly Tanzania</span> <span class="amb">ZNZ</span></span>
+      <span><span class="k">Out</span> CPT · Cape Town</span>
+      <span><span class="k">Window</span> 21–28 Jan 2027</span>
+      <span><span class="k">Clock</span> UTC+3</span>
+    </p>
+    <h1 class="title">
+      <span class="l1">Twenty-third stop</span>
+      <span class="l2">Tanzania</span>
+    </h1>
+    <p class="subline">
+      <span>Zanzibar confirmed</span><span class="sep">/</span>
+      <span>Both flights need rebooking</span><span class="sep">/</span>
+      <span>Mainland: your call, see below</span>
+    </p>
+
+    <dl class="instr">
+      <div><dt>Calendar days</dt><dd>8</dd></div>
+      <div><dt>Full days</dt><dd class="hot">7</dd></div>
+      <div><dt>Nights</dt><dd>7</dd></div>
+      <div><dt>Time shift from Cairo</dt><dd>+1<span>hr</span></dd></div>
+      <div><dt>Sea temp</dt><dd>28<span>°C</span></dd></div>
+      <div><dt>Rain days, Jan avg</dt><dd class="warn">10</dd></div>
+    </dl>
+  </div>
+</header>
+
+<section class="section" id="flags">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">01</span> Three things that need fixing</p>
+    <h2 class="head">Both ends<br>of this stop<br>are broken</h2>
+    <p class="lede">Zanzibar is the easiest week on the whole itinerary once you are standing on it. Getting on and off the island as written does not work: <b>the flight in doesn't fly on the day you arrive, and the flight out doesn't fly on the day you leave.</b> Both are fixable without moving a single date. The third card is a correction to the reason this stop was scheduled here at all.</p>
+
+    <div class="cards">
+      <div class="card bad">
+        <h3>The exit flight is Saturdays only</h3>
+        <div class="verdict bad">Breaks the handoff to Cape Town</div>
+        <p>Airlink opened the first-ever nonstop Cape Town–Zanzibar on <b>3 October 2026</b> — 4Z356/4Z357 on an Embraer E195-E2, roughly six hours, no Johannesburg. It is a beautiful piece of timing for this trip and it is <b>once a week, on a Saturday</b>.</p>
+        <p>Your handoff to stop 24 is <b>Thursday 28 January 2027</b>. The nonstop does not operate. The next one is Saturday 30 January, which costs two of Cape Town's seven days to save four hours of transit — a bad trade on the stop that needs settled weather more than this one does.</p>
+        <div class="fix"><b>The fix — same day, same airline</b>Airlink also flies <strong>ZNZ→JNB as 4Z11, Mondays and Thursdays, 12:00→14:55</strong>. Thursday 28 January is a scheduled day. Clear South African immigration at Johannesburg, re-check onto any of the hourly JNB→CPT departures, and you are in Cape Town by mid-evening on the correct date, with a Zanzibar morning still in hand. Roughly 9½ hours door to door against the nonstop's 6.</p>
+      </div>
+
+      <div class="card bad">
+        <h3>No Thursday flight out of Cairo either</h3>
+        <div class="verdict bad">Already flagged on the Egypt page</div>
+        <p>EgyptAir's nonstop CAI–ZNZ (MS819) runs <b>Wednesday, Friday and Sunday</b> — the third weekly frequency was added from 16 December 2026. Thursday 21 January, the day this stop is meant to start, has no departure.</p>
+        <p>The recommended fix there is the <b>Wednesday-night MS819, dep Cairo 22:35, arr Zanzibar 05:15 on Thursday 21 January</b>. Tanzania's arrival date is unchanged; Egypt loses only its final evening.</p>
+        <div class="fix"><b>What it buys you here</b>A dawn arrival instead of an afternoon one. Landing at 05:15 with a one-hour time shift from Cairo means <strong>day one is a real day</strong>, not a write-off — which is why the instrument panel above says seven full days out of eight calendar days. That is the best day-yield of any stop on this trip.</div>
+      </div>
+
+      <div class="card">
+        <h3>January is the hot season, not the dry one</h3>
+        <div class="verdict">A correction, not a problem</div>
+        <p>The plan says "hot, dry and clear before the long rains arrive in March." Two of three. January averages <b>53 mm across about 10 rain days at 75% humidity</b>, with highs near 30°C and lows near 26°C. Zanzibar's genuinely dry season is June–October, when the same station records 32–34 mm.</p>
+        <p>What January actually is: the short hot gap between the <b>vuli</b> short rains that end in December and the <b>masika</b> long rains that start in March, when April alone takes 204 mm. Rain here arrives as a violent half-hour and then leaves. It is not a season that cancels days.</p>
+        <div class="fix"><b>What you actually get</b>Sea at <strong>28°C</strong> — the warmest of the year — and the <strong>kaskazi</strong> north-east monsoon, which is what makes January the kitesurfing season on the east coast. Pack for heat and one soaking, not for weather.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="exit">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">02</span> Getting off the island</p>
+    <h2 class="head">Which days<br>fly where</h2>
+    <p class="lede">The whole problem in one picture. Five weekly nonstops leave Zanzibar for South Africa and <b>only one of them is on a Thursday</b>. Everything else routes through a hub. Two of those hubs carry a yellow-fever consequence — see the ground rules below.</p>
+
+    <div class="figcap">
+      <span>Fig. 1 — Southbound departures from ZNZ, by weekday</span>
+      <span><b>Thu 28 Jan</b> · your handoff day</span>
+    </div>
+    <div class="scroller">
+      <svg id="exit-chart" viewBox="0 0 1400 330" role="img" aria-label="Grid of southbound departure options from Zanzibar by day of week. Airlink's Cape Town nonstop runs Saturdays only. Airlink's Johannesburg flight runs Mondays and Thursdays. FlySafair runs Tuesday, Friday and Saturday to Johannesburg. Connections via Nairobi and Dar es Salaam run most days. Thursday is highlighted as the handoff day."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--jade)"></i>Operates Thursday<i style="background:rgba(242,169,60,.45)"></i>Operates, wrong day<i style="background:rgba(231,100,155,.22);border:1px solid var(--magenta)"></i>Your handoff</p>
+
+    <div class="panel">
+      <h3>Why Johannesburg and not Nairobi</h3>
+      <p>Kenya Airways will sell you ZNZ→NBO→CPT on a Thursday in about 9h55, and Ethiopian will do it via Addis. Both hubs sit on <b>South Africa's yellow-fever risk list</b>, and South Africa applies the IHR rule that an airport transit of more than 12 hours in a risk country triggers the certificate requirement. A short connection is fine; a delayed one that pushes you past twelve hours in Nairobi is a problem at Cape Town immigration that you cannot solve from inside the terminal.</p>
+      <p>Johannesburg is South African soil, so the question never arises. It is also the densest domestic air corridor in Africa — Airlink, FlySafair, SAA and Lift all fly JNB–CPT many times a day, so a misconnection costs you an hour, not a night. <b>Book the ZNZ–JNB and JNB–CPT legs on one ticket if Airlink will sell it that way</b>, so the connection is their problem rather than yours.</p>
+    </div>
+
+    <div class="panel">
+      <h3>Still to confirm at booking</h3>
+      <p><b>1. Airlink 4Z11's operating days for late January 2027.</b> Mon/Thu is the published year-round pattern, and a peak-season Tuesday/Wednesday extra ran 15 Dec 2026 – 13 Jan 2027 — which ends before your window, so you are back on the base schedule. Verify against actually-operated dates rather than a schedule-site day grid.</p>
+      <p><b>2. The Cape Town nonstop's timing.</b> Airlink's own release gives 4Z357 as ZNZ 15:30 → CPT 20:50; one aggregator lists 15:15 → 19:45. Immaterial unless you switch to the Saturday, but worth knowing the sources disagree.</p>
+      <p><b>3. Minimum connection at JNB.</b> You arrive international and depart domestic, which means immigration, baggage reclaim and re-check. Two hours is the floor; three is comfortable.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="shapes">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">03</span> The open question</p>
+    <h2 class="head">Seven days<br>of island,<br>or five</h2>
+    <p class="lede">This is the only stop on a 27-country itinerary that lands inside a world-class wildlife event. <b>Late January is the peak of the wildebeest calving season</b> on the southern Serengeti's short-grass plains around Ndutu — roughly half a million calves born in a three-week window, with every predator on the ecosystem following them. You are 700 km and one light aircraft away from it, on the right dates, by accident.</p>
+
+    <div class="shapes">
+      <div class="shape pick">
+        <div class="shape-hd">
+          <div class="shape-tag">Recommended</div>
+          <p class="shape-name">Zanzibar entire</p>
+        </div>
+        <div class="chainrow">
+          <span>Stone Town <span class="n">×2</span></span><span class="a">→</span>
+          <span>North coast <span class="n">×4</span></span><span class="a">→</span>
+          <span>Stone Town <span class="n">×1</span></span><span class="a">→</span>
+          <span class="n">ZNZ</span>
+        </div>
+        <div class="shape-body">
+          <p>Two nights inside the Stone Town labyrinth at the start, four on the north coast where the tide doesn't take the sea away, and a last night back in town so the 12:00 departure is a fifteen-minute taxi rather than an hour and a half.</p>
+          <p><b>The case for it:</b> you are twenty-two stops into a world trip. Zanzibar is the first place on the route where doing nothing is the correct use of a day, and seven days is exactly enough to stop moving. It is also the cheap shape — the island runs on roughly <b>$120–250 a day mid-range</b>, against a safari's daily park fees alone.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Bases</dt><dd class="g">2</dd></div>
+          <div><dt>Moves</dt><dd class="g">2</dd></div>
+          <div><dt>Extra cost</dt><dd class="g">$0</dd></div>
+          <div><dt>Flights</dt><dd class="g">0</dd></div>
+        </dl>
+      </div>
+
+      <div class="shape">
+        <div class="shape-hd">
+          <div class="shape-tag">If the calving is worth $2,000</div>
+          <p class="shape-name">Ndutu split</p>
+        </div>
+        <div class="chainrow">
+          <span>Stone Town <span class="n">×2</span></span><span class="a">→</span>
+          <span>Ndutu <span class="n">×2</span></span><span class="a">→</span>
+          <span>North coast <span class="n">×2</span></span><span class="a">→</span>
+          <span>Stone Town <span class="n">×1</span></span><span class="a">→</span>
+          <span class="n">ZNZ</span>
+        </div>
+        <div class="shape-body">
+          <p>Coastal Aviation and the other bush carriers fly <b>ZNZ direct to the Ndutu airstrip</b> — around 2h40 with a hop en route, from roughly <b>$350 each way</b>. Two nights at a Ndutu camp puts you on the plains for two full dawns, which is the minimum that justifies the airfare.</p>
+          <p><b>The real cost isn't the flight.</b> Serengeti conservation fees run <b>$82.60 per adult per 24 hours</b>, plus a <b>$59 per night</b> concession fee at any lodge or camp inside the park, before the camp's own rate. Two nights all-in, flights included, lands somewhere around <b>$1,800–2,500 per person</b> — more than this entire week costs otherwise.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Bases</dt><dd>3</dd></div>
+          <div><dt>Moves</dt><dd class="r">4</dd></div>
+          <div><dt>Extra cost</dt><dd class="r">≈$2k</dd></div>
+          <div><dt>Flights</dt><dd class="r">2</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Why the recommendation stays on the island, and the honest counter-argument</h3>
+      <p>The case for Zanzibar-entire is arithmetic and fatigue. Two thousand dollars is a meaningful fraction of what several later stops cost in total, and the split turns a seven-day rest into a four-day one with two airport days inside it. Stop 24 is Cape Town, which is a walking, climbing, driving week — arriving at it already tired is a real cost.</p>
+      <p>The counter-argument is that <b>this doesn't come round again.</b> The calving is a fixed three-week annual event and you are inside it without having planned to be; the rest of the itinerary contains no other large-mammal window at all. If there is one place on Westbound to break the budget, the argument that it is this one is not a weak argument. <b>The deciding question is whether the money is there — not whether it is worth it.</b></p>
+      <p>If you do go: the calving concentrates on the short-grass plains around <b>Ndutu</b>, which straddle the Serengeti boundary and the Ngorongoro Conservation Area, not on the central Seronera plains most itineraries default to. Book a camp that is actually at Ndutu, and confirm which side of the boundary it sits on, because the fee regime differs.</p>
+    </div>
+
+    <div class="panel">
+      <h3>What's cut in both shapes</h3>
+      <p><b>Kilimanjaro.</b> Five to nine days on the mountain. Not a question this trip can ask.</p>
+      <p><b>Pemba.</b> Zanzibar's quieter northern sister, better diving, almost no tourism. A 20-minute flight and a completely different island — but it needs three nights of its own to be worth the transfer, and those three nights come out of Unguja.</p>
+      <p><b>Dar es Salaam.</b> Two hours by ferry, and there is little reason to spend a day of this window on it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="run">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">04</span> Day by day</p>
+    <h2 class="head">Both versions,<br>laid out</h2>
+    <p class="lede">Built on the corrected flights: <b>in on Wednesday night's MS819 landing 05:15 Thursday 21st, out on Thursday 28th's 4Z11 at noon.</b> Stone Town wants mornings and evenings and is punishing at 2pm; the coast wants the middle of the day. The shape of every day below follows that.</p>
+    <div class="filters" id="dayToggle" style="margin-bottom:6px">
+      <button class="fbtn" data-plan="island" aria-pressed="true">Zanzibar entire</button>
+      <button class="fbtn" data-plan="ndutu" aria-pressed="false">Ndutu split</button>
+    </div>
+    <div class="days" id="days"></div>
+    <p class="fignote" style="margin-top:16px">Amber = on foot or on the water · <span style="color:var(--magenta)">Magenta = a vehicle, a boat or a base change</span></p>
+  </div>
+</section>
+
+<section class="section" id="worth">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">05</span> What's actually worth doing</p>
+    <h2 class="head">Do, maybe,<br>don't bother</h2>
+    <p class="lede">Sorted by where it is, then by whether it earns a slot. Zanzibar has an unusually high ratio of <b>heavily sold things that are mediocre</b> to genuinely good things — the don't-bother list here is longer and more emphatic than on most pages in this dossier, and that is deliberate.</p>
+
+    <div class="filters" id="filters">
+      <button class="fbtn" data-city="all" aria-pressed="true">All</button>
+      <button class="fbtn" data-city="Stone" aria-pressed="false">Stone Town</button>
+      <button class="fbtn" data-city="North" aria-pressed="false">North coast</button>
+      <button class="fbtn" data-city="East" aria-pressed="false">East &amp; south</button>
+      <button class="fbtn" data-city="Water" aria-pressed="false">On the water</button>
+      <button class="fbtn" data-city="Main" aria-pressed="false">Mainland</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-tier="do" aria-pressed="false">Do</button>
+      <button class="fbtn" data-tier="opt" aria-pressed="false">Maybe</button>
+      <button class="fbtn" data-tier="skip" aria-pressed="false">Don't bother</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-book="1" aria-pressed="false">Needs booking</button>
+    </div>
+    <div class="items" id="items"></div>
+  </div>
+</section>
+
+<section class="section" id="coast">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">06</span> The coast question</p>
+    <h2 class="head">North, because<br>of the tide</h2>
+    <p class="lede">Zanzibar's single most consequential practical fact, and the one most people learn on arrival: <b>on the east coast the sea leaves.</b> Twice a day, for hours, the water withdraws a kilometre or more across the reef flat, and swimming stops being possible. The north-west coast sits outside that and stays deep all day.</p>
+
+    <div class="cols">
+      <p><b>Nungwi &amp; Kendwa — the north</b>Deep water at any hour, no tidal exposure worth planning around, sunsets that face west over open sea. This is where the dhow-at-sunset picture comes from and it is the correct base for a stop that has four coastal nights and no interest in rearranging them around a tide table. The trade is atmosphere: Nungwi is built up, busy and resort-heavy, with a strip of bars behind the beach.</p>
+      <p><b>Paje &amp; Jambiani — the east</b>A different and in some ways better place: seaweed farmers working the flats at low water, kitesurfers filling the lagoon when the kaskazi blows, a long thin ribbon of guesthouses and reggae bars, and far more of a sense that people live here. January is peak kite season. But you swim when the tide says so, and if you are not kiting, half your days have a hole in them.</p>
+      <p><b>Matemwe — the compromise</b>North-east, opposite Mnemba, quieter than both, with the island's best snorkelling on the doorstep. Still tidal, though less brutally than Paje. The right answer if the water is the reason you came and you do not want Nungwi's noise.</p>
+    </div>
+
+    <div class="figcap">
+      <span>Fig. 2 — Rainfall by month, Zanzibar Town</span>
+      <span><b>Jan</b> · 53 mm, ~10 rain days</span>
+    </div>
+    <div class="scroller">
+      <svg id="rain-chart" viewBox="0 0 1400 300" role="img" aria-label="Bar chart of average monthly rainfall in Zanzibar. January is 53 millimetres. April peaks above 200 millimetres during the long rains, and July and August are the driest at around 32 to 34 millimetres."></svg>
+    </div>
+    <p class="fignote">Monthly normals, climate-data.org · January and the April peak verified; intervening months are indicative and the shape is the point</p>
+
+    <div class="panel">
+      <h3>Check the tide table before you book a boat, not after</h3>
+      <p>Everything on the water here is tide-locked, not clock-locked. Mnemba snorkelling boats leave when there is water over the reef. Safari Blue's sandbank only exists at low tide. The Nakupenda sandbank west of Stone Town is the same. A dhow sunset cruise out of Nungwi is the one thing that runs regardless, which is another argument for the north.</p>
+      <p>Spring tides — around the new and full moon — swing hardest. <b>The full moon falls on 22 January 2027</b>, right at the start of your week, so expect the biggest tidal range of the month in the first few days and a gentler one by the 27th. Any Zanzibar tide chart will give you the actual times; the useful habit is to look at tomorrow's before you commit to anything tomorrow.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="money">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">07</span> The government's cut</p>
+    <h2 class="head">What's owed<br>before you<br>buy anything</h2>
+    <p class="lede">Zanzibar has assembled an unusual stack of compulsory per-head charges, three of which did not exist five years ago and two of which must be paid online before you board. None is large; together they are not nothing, and <b>the insurance one will stop you at the airport</b> if it isn't done. Tick what applies.</p>
+
+    <div class="calc">
+      <div class="calc-legs" id="legs"></div>
+      <dl class="calc-out">
+        <div><dt>Pay before you fly</dt><dd id="pre"></dd></div>
+        <div><dt>Pay on the ground</dt><dd id="ground"></dd></div>
+        <div><dt>Total, per person</dt><dd id="tot"></dd></div>
+        <div><dt>Verdict</dt><dd><span id="verdict"></span></dd></div>
+      </dl>
+    </div>
+    <p class="fignote">USD · rates verified Sept 2026 — the insurance and infrastructure tax have both changed since 2023, recheck before booking</p>
+
+    <div class="panel">
+      <h3>The two that will actually stop you</h3>
+      <p><b>The Zanzibar insurance is not optional and your own policy does not substitute.</b> Since 1 October 2024 every non-resident entering Zanzibar must hold a Zanzibar Insurance Corporation inbound policy — <b>$44 for adults, covering up to 92 consecutive days</b> — bought through the government portal at visitzanzibar.go.tz. Immigration scans the QR code at the gate. A private travel-insurance certificate, however comprehensive, is not accepted in its place. Buy it in the same sitting as the visa and keep the QR offline on your phone.</p>
+      <p><b>Canadians cannot get a Tanzanian visa on arrival.</b> Canada is on the referral list alongside the UK, Australia, New Zealand, India, Nigeria and Pakistan — the eVisa must be applied for in advance at visa.immigration.go.tz. The ordinary tourist visa is <b>$50 for 90 days</b> and official processing is quoted at up to <b>10 days</b>. Canada's own advisory still describes visa-on-arrival as available; the Tanzanian immigration portal is the one that governs at the desk. Apply a month out.</p>
+    </div>
+
+    <div class="panel">
+      <h3>Pay in shillings</h3>
+      <p>Tanzania banned foreign currency for domestic transactions — the Bank of Tanzania regulations came into force in 2024 and quoting or accepting USD for local goods and services is now an offence. In practice hotels and tour operators still <b>quote</b> in dollars, and government fees like the visa, the insurance and park entry are still <b>paid</b> in dollars online, but a restaurant bill, a taxi, a spice tour or a market stall should be settled in <b>Tanzanian shillings</b>.</p>
+      <p>Carry a working float in TZS from an ATM in Stone Town, keep a few clean post-2009 USD notes for anything official, and expect the enforcement to be uneven and occasionally confidently wrong in both directions. Cards work in hotels and better restaurants and almost nowhere else.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="admin">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">08</span> Ground rules</p>
+    <h2 class="head">Before you land</h2>
+
+    <div class="tablewrap">
+    <table class="ref">
+      <thead><tr><th>Item</th><th>What to do</th><th>When</th></tr></thead>
+      <tbody>
+        <tr class="flag"><td>Visa</td><td>eVisa mandatory for Canadians — no visa on arrival. Ordinary tourist visa $50, 90 days, single entry, quoted at up to 10 days' processing. Passport valid six months beyond departure, and they ask for proof of onward travel.</td><td class="t">Apply 1 month out</td></tr>
+        <tr class="flag"><td>ZIC insurance</td><td>$44 per adult, compulsory since 1 Oct 2024, bought only at visitzanzibar.go.tz. Covers up to 92 days. Enforced by QR scan at immigration; your own policy is not a substitute.</td><td class="t">Before you fly</td></tr>
+        <tr><td>Yellow fever</td><td>Not required arriving direct from Egypt — Egypt is not a risk country. It <b>becomes</b> required if you reroute through Nairobi or Addis with a transit over 12 hours.</td><td class="t">Route-dependent</td></tr>
+        <tr class="flag"><td>Yellow fever, onward</td><td>Sources conflict on whether South Africa still requires a certificate from Tanzania. DIRCO's own list says Tanzania was removed; South African Tourism's page still lists it. Carrying a valid certificate costs nothing and settles the argument at the gate.</td><td class="t">Get it anyway</td></tr>
+        <tr><td>Infrastructure tax</td><td>$2–5 per person per night by hotel star rating, collected at checkout, rarely included in the room rate you booked. $10 a night if you somehow end up in an underwater room.</td><td class="t">At checkout</td></tr>
+        <tr><td>Malaria</td><td>Zanzibar has very low transmission but is not malaria-free, and the mainland plains are a different risk entirely. Prophylaxis is the standard advice for both; talk to a travel clinic well before, since some regimens start ahead of arrival.</td><td class="t">6 weeks out</td></tr>
+        <tr><td>Currency</td><td>Tanzanian shilling for everything local — foreign cash for domestic transactions has been banned since 2024. ATMs in Stone Town and at the airport. Cards are hotel-and-restaurant only.</td><td class="t">On arrival</td></tr>
+        <tr><td>Dress</td><td>Zanzibar is overwhelmingly Muslim and Stone Town is a living city, not a resort. Shoulders and knees covered away from the beach; swimwear stays on the beach. Nobody will confront you about it and everyone notices.</td><td class="t">Every day</td></tr>
+        <tr><td>Ramadan</td><td>Begins around <b>8 February 2027</b> — two weeks after you leave. Your window is clear, and the island is at full normal operation.</td><td class="t">Clear</td></tr>
+        <tr class="flag"><td>Booking window</td><td>Late January is high season on the island and the Ndutu camps are at their annual peak. Coastal rooms, the calving camps and the ZNZ–Ndutu flights all want months, not weeks.</td><td class="t">Now</td></tr>
+        <tr><td>Safety</td><td>Canada rates Tanzania "exercise a high degree of caution", with specific mention of petty crime in Stone Town, Nungwi, Paje and Jambiani, and phone-snatching from passing motorbikes. Nothing on your route touches the Mozambique border advisory in the far south-west.</td><td class="t">Normal caution</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="cols">
+      <p><b>The airport</b>Abeid Amani Karume International's Terminal 3 is new, air-conditioned and a considerable improvement on what preceded it, and it is still a small airport that gets overwhelmed when three widebodies land together. Reviews swing violently. For the noon departure on the 28th, be there at 09:00 and treat anything faster as a bonus.</p>
+      <p><b>Getting around</b>There is no useful public transport for visitors beyond the dala-dala minibuses, which are an experience rather than a plan. Hotels arrange transfers: roughly $10–20 airport to Stone Town, $40–60 to the north coast, $35–50 to the east. Agree the price before the car moves, in shillings.</p>
+      <p><b>Heat</b>Thirty degrees at 75% humidity with almost no wind inside Stone Town's alleys is more punishing than the number suggests. The local rhythm exists for a reason — out early, inside from noon to four, out again at five. Fight it and you will lose two days to a headache.</p>
+      <p><b>Water and power</b>Bottled or filtered water only, including for teeth. Power cuts are routine across the island and most decent places have a generator; ask, because a room without one at 29°C overnight is a long night.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <p>Westbound · stop 23 · Tanzania</p>
+      <p>21–28 Jan 2027 · ZNZ in, ZNZ out</p>
+      <p>Fares, fees and schedules verified Sept 2026 — recheck before booking</p>
+    </div>
+    <p class="foot-mark">Stone Town → Nungwi</p>
+  </div>
+</footer>
+
+<script>
+/* ============ DAY-BY-DAY ============ */
+const DAYS_ISLAND=[
+{d:'Thu 21',w:'Arrive',name:'Stone Town',sub:'Land 05:15 · a free day',meta:'Night 1',
+ slots:[
+  {m:1,h:'05:15 · ZNZ',p:'Off the overnight MS819 from Cairo in the dark. One hour forward from Egypt, so no jet lag worth the name. Immigration will scan the insurance QR — have it offline. Fifteen minutes into Stone Town.'},
+  {h:'07:00 · Breakfast on a roof',p:'Most Stone Town guesthouses put breakfast on the top floor because that is where the air is. Eat, then sleep for two hours if the flight was bad — you have the whole day and the heat arrives at eleven anyway.'},
+  {h:'16:00 · Forodhani Gardens',p:'The seafront park fills with food grills at dusk. It is touristed and the seafood platters are a hustle; go for the <b>urojo</b> soup, the sugarcane juice pressed in front of you, and the local boys throwing themselves off the sea wall. Watch the change you get back.'},
+  {h:'18:30 · Sunset from a roof bar',p:'Emerson on Hurumzi or the Africa House terrace. The dhows come back across the channel with the light behind them and this is the first evening of the trip with nothing scheduled after it.'}
+]},
+{d:'Fri 22',w:'Full',name:'Stone Town',sub:'The labyrinth, early',meta:'Night 2',
+ slots:[
+  {h:'07:00 · Get lost on purpose',p:'The old town is about a square kilometre of alleys too narrow for cars, and no map survives contact with it. Go before the heat. Look up: the carved doors are the point — Indian ones with brass spikes, Omani ones with square frames, and every one dated.'},
+  {h:'08:30 · Darajani Market',p:'The working market, at its most alive before nine. Fish laid on concrete, spices by the sack, and a meat hall you can smell from the street and may not want to enter. This is the unperformed version of the spice-island story.'},
+  {h:'10:00 · The former slave market',p:'The Anglican cathedral was built deliberately on the site of the whipping post, with the altar where it stood. The underground holding chambers beneath the site and Clara Sornas’s memorial sculpture are the reason to come. Take a guide; unguided it is a room.'},
+  {h:'12:00 · Out of the sun',p:'Lunch and then stop. Stone Town between noon and four in January is genuinely hard work and there is nothing you need to see badly enough.'},
+  {h:'16:30 · The Old Fort & Palace Museum',p:'The fort is an easy hour and often has something on in the amphitheatre. The <b>House of Wonders next door partly collapsed in December 2020</b> and has been under scaffolding and slow restoration ever since — check on arrival, but plan for it to be shut.'},
+  {h:'20:00 · Dinner',p:'The old town eats well: Swahili curries, coconut and tamarind, grilled kingfish. The upmarket rooftops are good and worth booking; the small places on the back alleys are better value and cash only.'}
+]},
+{d:'Sat 23',w:'Move',name:'To the north',sub:'Spices and forest en route',meta:'Night 3',
+ slots:[
+  {m:1,h:'08:30 · Spice farm',p:'Do it as a stop on the transfer rather than a day of its own. The good tours are working farms where you crush and smell everything — cloves, nutmeg, cardamom, ylang-ylang — and the history is the actual point: this island was the world’s clove supply, on slave labour, and the farms are what that was for.'},
+  {m:1,h:'11:00 · Jozani Forest',p:'The last stand of the endemic <b>Zanzibar red colobus</b>, roughly $10 with a guide included, open 07:30–17:00, an hour and a half end to end. They come down to head height and are entirely unbothered. Cross the road for the mangrove boardwalk, which most people skip.'},
+  {m:1,h:'14:00 · North coast',p:'On to Nungwi, Kendwa or Matemwe — see the coast section for which. Roughly an hour and a half from Jozani. Check in, get in the sea, and that is the day.'},
+  {h:'17:30 · The first sunset',p:'The north-west coast faces open water, which is the entire reason to be there. Kendwa’s beach is the wider and quieter of the two.'}
+]},
+{d:'Sun 24',w:'Full',name:'Mnemba',sub:'The best water on the island',meta:'Night 4',
+ slots:[
+  {m:1,h:'07:30 · Boat out',p:'Mnemba atoll is a private island with a public reef, and the snorkelling around it is the best easily-reached water in Zanzibar. Go on the first boat: the water is clearest and you get an hour before the fleet arrives. <b>$10 marine conservation fee</b> since 1 Sept 2025, on top of the boat.'},
+  {h:'12:00 · Back and horizontal',p:'Lunch, shade, nothing. Seven days is enough to have days like this and this is the one to spend it on.'},
+  {h:'16:00 · Walk the beach north',p:'From Nungwi round the point at low water you can walk a long way past the boatyards where they still build dhows by eye, no plans, the same way they have for centuries.'}
+]},
+{d:'Mon 25',w:'Full',name:'North coast',sub:'A day with nothing in it',meta:'Night 5',
+ slots:[
+  {h:'· Deliberately empty',p:'Stop twenty-three of twenty-seven. If the trip has been working, this is the day that makes the rest of it survivable. Swim, read, sleep in the afternoon.'},
+  {h:'11:00 · If you want something',p:'The Mnarani turtle sanctuary at Nungwi is a genuine conservation operation with a tidal lagoon, unlike several things sold alongside it. An hour, cheap, and they release hatchlings.'},
+  {h:'17:00 · Dhow at sunset',p:'The one on the list. A traditional rigged dhow out of Nungwi or Kendwa for two hours as the light goes. Runs regardless of tide, unlike almost everything else here. Book the day before through the hotel, not on the beach.'}
+]},
+{d:'Tue 26',w:'Full',name:'On the water',sub:'Sandbank and reef',meta:'Night 6',
+ slots:[
+  {m:1,h:'08:30 · Safari Blue, or the east',p:'<b>Safari Blue</b> from Fumba in the south-west — dhow, reef snorkelling, a lagoon, and a seafood lunch on a sandbank that only exists at low tide. It is the island’s best-run day trip and it is a full day. Alternative: drive across to <b>Paje</b> and watch the kitesurfers, which in January is a genuine spectacle.'},
+  {h:'17:00 · Back north',p:'Long day. Eat at the hotel.'}
+]},
+{d:'Wed 27',w:'Move',name:'Stone Town',sub:'Back to town for the exit',meta:'Night 7',
+ slots:[
+  {m:1,h:'10:00 · South to town',p:'An hour and a half. Sleeping in Stone Town the night before a noon flight turns tomorrow’s transfer from ninety minutes into fifteen, which matters at an airport that can queue.'},
+  {h:'14:00 · The things you missed',p:'Whichever of the Old Fort, the Palace Museum, Freddie Mercury’s house (a small paid room, entirely skippable) or a second run at the alleys you didn’t get to on Friday.'},
+  {h:'16:00 · Buy the spices properly',p:'Not at the airport. Darajani or a decent shop in the old town, vacuum-packed cloves, cardamom and black pepper — light, flat, and the one souvenir from this stop that survives four more countries in a bag.'},
+  {h:'19:00 · Last dinner',p:'Rooftop, the call to prayer over the town, and the last Indian Ocean evening of the trip.'}
+]},
+{d:'Thu 28',w:'Depart',name:'To Cape Town',sub:'Noon flight, via Johannesburg',meta:'Fly out',
+ slots:[
+  {h:'07:00 · A last hour',p:'Coffee on the seafront and one more lap of the alleys before the heat. Nothing ambitious — bags need to be in the car by 08:45.'},
+  {m:1,h:'09:00 · ZNZ, Terminal 3',p:'Three hours before a noon departure is not over-cautious here. Small airport, variable queues, and nothing to gain by cutting it fine.'},
+  {m:1,h:'12:00 · 4Z11 to Johannesburg',p:'Airlink, Embraer E195-E2, arriving JNB 14:55. <b>This is the Thursday flight that makes the handoff work</b> — the Cape Town nonstop is Saturdays only.'},
+  {m:1,h:'· Cape Town',p:'Stop 24. Clear South African immigration at JNB, re-check, and take any of the hourly JNB→CPT departures — roughly two hours, into Cape Town mid-evening on the 28th as planned.'}
+]}
+];
+
+const DAYS_NDUTU=[
+{d:'Thu 21',w:'Arrive',name:'Stone Town',sub:'Land 05:15 · a free day',meta:'Night 1',
+ slots:[
+  {m:1,h:'05:15 · ZNZ',p:'Off the overnight MS819 from Cairo. One hour forward from Cairo, no jet lag worth the name. Insurance QR scanned at immigration.'},
+  {h:'16:00 · Forodhani Gardens',p:'The seafront food grills at dusk. Urojo soup and sugarcane juice; skip the seafood platters.'},
+  {h:'18:30 · Sunset from a roof bar',p:'Emerson on Hurumzi or Africa House. Dhows coming back across the channel.'}
+]},
+{d:'Fri 22',w:'Full',name:'Stone Town',sub:'The whole town in one day',meta:'Night 2',
+ slots:[
+  {h:'07:00 · The alleys and Darajani',p:'Before nine for both. Carved doors, then the working market at its most alive.'},
+  {h:'10:00 · The former slave market',p:'The Anglican cathedral on the site of the whipping post, the holding chambers, the memorial. Take a guide.'},
+  {h:'16:30 · Old Fort & Palace Museum',p:'An easy hour. The House of Wonders partly collapsed in 2020 and is still under restoration — expect it shut.'},
+  {h:'20:00 · Pack light for tomorrow',p:'Bush flights cap soft bags at around 15 kg, usually strictly. Leave the main bag with the Stone Town hotel — every one of them does this — and go up with two days of clothes.'}
+]},
+{d:'Sat 23',w:'Move',name:'Ndutu',sub:'Zanzibar → the short-grass plains',meta:'Night 3',
+ slots:[
+  {m:1,h:'07:30 · ZNZ → Ndutu airstrip',p:'Coastal Aviation and the other bush carriers, around 2h40 with a hop en route, from roughly $350 each way. Twelve-seat Caravans, no seat allocation, low and slow across the whole country.'},
+  {m:1,h:'11:00 · Land and drive',p:'Straight into a game drive from the strip — camps meet the plane. <b>$82.60 per adult per 24 hours</b> in conservation fees plus <b>$59 per night</b> concession starts ticking here.'},
+  {h:'16:00 · First evening drive',p:'Late January on these plains is wall-to-wall wildebeest and calves, with cheetah, hyena and lion working the edges. Cheetah in particular hunt these short grasslands in daylight, which is why Ndutu is the one place they are reliably seen.'}
+]},
+{d:'Sun 24',w:'Full',name:'Ndutu',sub:'The whole reason to come',meta:'Night 4',
+ slots:[
+  {h:'05:30 · Dawn drive',p:'Out before light. The calving concentrates in the early morning and so does every predator that follows it. This one dawn is what the two thousand dollars bought.'},
+  {h:'12:00 · Camp through the heat',p:'Everything lies down between eleven and four, animals included.'},
+  {h:'16:00 · Second drive',p:'The lakes — Ndutu and Masek — and the acacia woodland between them, which is where the leopards are.'}
+]},
+{d:'Mon 25',w:'Move',name:'Back to the coast',sub:'Last dawn, then east',meta:'Night 5',
+ slots:[
+  {h:'05:30 · Final drive',p:'One more, then breakfast in camp and to the airstrip.'},
+  {m:1,h:'11:00 · Ndutu → ZNZ',p:'Back across the country. Land early afternoon and transfer straight to the north coast — roughly an hour and a half from the airport.'},
+  {h:'17:30 · Into the sea',p:'From the plains to the Indian Ocean in one day, which is a strange and very good feeling.'}
+]},
+{d:'Tue 26',w:'Full',name:'Mnemba',sub:'The best water on the island',meta:'Night 6',
+ slots:[
+  {m:1,h:'07:30 · Boat out',p:'Mnemba atoll on the first boat, before the fleet. $10 marine conservation fee plus the boat. The best easily-reached snorkelling in Zanzibar.'},
+  {h:'14:00 · Nothing',p:'Shade. You have earned it twice over by now.'},
+  {h:'17:00 · Dhow at sunset',p:'Out of Nungwi or Kendwa, two hours, runs regardless of tide. Book through the hotel the day before.'}
+]},
+{d:'Wed 27',w:'Move',name:'Stone Town',sub:'Back to town for the exit',meta:'Night 7',
+ slots:[
+  {m:1,h:'10:00 · South to town',p:'An hour and a half. Collect the stored bag. Sleeping in town turns tomorrow’s transfer from ninety minutes into fifteen.'},
+  {h:'16:00 · Buy the spices properly',p:'Darajani or a decent old-town shop, vacuum-packed. Light, flat, and it survives four more countries.'},
+  {h:'19:00 · Last dinner',p:'Rooftop, call to prayer over the town, last Indian Ocean evening of the trip.'}
+]},
+{d:'Thu 28',w:'Depart',name:'To Cape Town',sub:'Noon flight, via Johannesburg',meta:'Fly out',
+ slots:[
+  {m:1,h:'09:00 · ZNZ, Terminal 3',p:'Three hours before a noon departure. Small airport, variable queues.'},
+  {m:1,h:'12:00 · 4Z11 to Johannesburg',p:'Airlink E195-E2, arriving JNB 14:55. The Cape Town nonstop is Saturdays only, so this is the Thursday routing.'},
+  {m:1,h:'· Cape Town',p:'Stop 24. Immigration at JNB, re-check, hourly JNB→CPT, into Cape Town mid-evening on the 28th.'}
+]}
+];
+
+let CURRENT_PLAN='island';
+function renderDays(){
+  const DAYS = CURRENT_PLAN==='island' ? DAYS_ISLAND : DAYS_NDUTU;
+  document.getElementById('days').innerHTML=DAYS.map((D,i)=>`
+  <div class="day">
+    <button class="day-btn" aria-expanded="false">
+      <span class="day-date">${D.d}<small>${D.w}</small></span>
+      <span><span class="day-name">${D.name}</span><span class="day-sub">${D.sub}</span></span>
+      <span class="day-meta">${D.meta}<span class="chev">▾</span></span>
+    </button>
+    <div class="day-body"><div class="day-inner"><div class="day-pad"><div class="slots">
+      ${D.slots.map(s=>`<div class="slot${s.m?' move':''}"><h4>${s.h}</h4><p>${s.p}</p></div>`).join('')}
+    </div></div></div></div>
+  </div>`).join('');
+
+  document.querySelectorAll('.day-btn').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const d=b.parentElement, open=d.classList.toggle('open');
+      b.setAttribute('aria-expanded',open?'true':'false');
+    });
+  });
+  document.querySelector('.day').classList.add('open');
+  document.querySelector('.day-btn').setAttribute('aria-expanded','true');
+}
+renderDays();
+
+document.getElementById('dayToggle').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  CURRENT_PLAN=b.dataset.plan;
+  document.querySelectorAll('#dayToggle .fbtn').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
+  renderDays();
+});
+
+/* ============ WORTH DOING ============ */
+const ITEMS=[
+/* STONE TOWN */
+{c:'Stone',t:'do',n:'The alleys before 09:00',w:'A square kilometre of lanes too narrow for cars and no map that survives them. The carved doors are the point — Omani square frames, Indian brass spikes, most of them dated. After ten it is heat and hawkers.',when:'07:00–09:00'},
+{c:'Stone',t:'do',n:'The former slave market',w:'The Anglican cathedral was built on the site of the whipping post with the altar where it stood. The underground holding chambers and Clara Sornas’s memorial are why you come. <b>Take the guide</b> — unguided it is just a room.',when:'Morning'},
+{c:'Stone',t:'do',n:'Darajani Market',w:'The working market, best before nine. Fish on concrete, spices by the sack, a meat hall you can smell from the street. The unperformed version of the spice-island story.',when:'Before 09:00'},
+{c:'Stone',t:'do',n:'Forodhani night grills',w:'The seafront park turns into a food market at dusk. Go for urojo soup and pressed sugarcane, not the seafood platters, which are a tourist-price hustle. Count your change.',when:'From 18:00'},
+{c:'Stone',t:'do',n:'A rooftop at sunset',w:'Emerson on Hurumzi or the Africa House terrace. Dhows coming back across the channel, the call to prayer going up from four directions at once, and the whole town below the parapet.',when:'18:15'},
+{c:'Stone',t:'opt',n:'The Old Fort',w:'Sixteenth-century Omani walls with an amphitheatre inside that often has something on. An easy hour, cheap, and it is fifty metres from Forodhani.',when:'1 hour'},
+{c:'Stone',t:'opt',n:'Palace Museum',w:'The Sultan’s residence, faded and patchy, but it carries the Omani-sultanate story that explains everything else in town. Confirm it is open — Stone Town museums close without much warning.',when:'1 hour'},
+{c:'Stone',t:'opt',n:'Spice farm tour',w:'Better as a stop on the transfer north than a day of its own. The good ones are working farms where you crush and smell everything, and the honest ones explain what the clove economy was built on.',when:'Half day'},
+{c:'Stone',t:'skip',n:'House of Wonders',w:'The island’s great landmark <b>partly collapsed in December 2020</b> and has been under scaffolding and slow restoration since. Look at the outside; do not build a morning around it.',when:'Closed'},
+{c:'Stone',t:'skip',n:'Freddie Mercury House',w:'A small paid room of photocopied photographs in the building he was born in. The connection is real and the museum is not worth the ticket.',when:''},
+/* NORTH COAST */
+{c:'North',t:'do',n:'A dhow at sunset',w:'Traditional rig, two hours, out of Nungwi or Kendwa into open water with the light going. <b>The one water activity that runs regardless of tide.</b> Book through the hotel the day before, not from the beach.',when:'17:00'},
+{c:'North',t:'do',n:'Kendwa beach',w:'Wider, quieter and less built-up than Nungwi twenty minutes away, and — critically — swimmable at any state of tide. This is why the north coast is the recommended base.',when:'All day'},
+{c:'North',t:'do',n:'The Nungwi boatyards',w:'Walk north round the point at low water and you reach the yards where dhows are still built by eye with no plans. Free, unsold, and the best half-hour in Nungwi.',when:'Low tide'},
+{c:'North',t:'opt',n:'Mnarani turtle sanctuary',w:'A genuine conservation operation with a tidal lagoon at Nungwi, unlike several things sold next to it. An hour, cheap, and they do release hatchlings.',when:'1 hour'},
+{c:'North',t:'opt',n:'Matemwe instead',w:'North-east rather than north-west: quieter than Nungwi, directly opposite Mnemba, better snorkelling on the doorstep. Still tidal, though far less brutally than Paje.',when:'Base option'},
+{c:'North',t:'skip',n:'Nungwi’s beach-bar strip',w:'Loud, expensive and interchangeable with the same strip in a dozen other countries. Kendwa’s full-moon party is the same observation with more people.',when:''},
+/* EAST & SOUTH */
+{c:'East',t:'do',n:'Jozani Forest',w:'The last stand of the endemic <b>Zanzibar red colobus</b>, about $10 with a guide included, open 07:30–17:00. They come down to head height. Cross the road for the mangrove boardwalk, which almost everyone skips.',when:'Before 09:00'},
+{c:'East',t:'opt',n:'Paje for the kitesurfing',w:'January is peak <b>kaskazi</b> season and the lagoon fills with kites. Genuinely worth a day to watch even if you never get on a board, and lessons are cheap here by world standards.',when:'Windy days'},
+{c:'East',t:'opt',n:'Jambiani seaweed flats',w:'At low water the village women work the seaweed lines a kilometre out across the reef flat. It is the island’s real economy and a striking thing to walk out into.',when:'Low tide'},
+{c:'East',t:'opt',n:'The Rock restaurant',w:'A restaurant on a rock in the sea off Michamvi. The picture is famous, the food is ordinary and the price is not. Go for a drink at high tide, book weeks ahead, and do not make it dinner.',when:'Book ahead',b:1},
+{c:'East',t:'skip',n:'Basing on the east coast',w:'Paje and Jambiani are more interesting places than Nungwi. They are also unswimmable for hours twice a day. On four coastal nights with no interest in a tide table, that is the wrong trade.',when:''},
+{c:'East',t:'skip',n:'Kizimkazi dolphin tours',w:'Boats chase and surround wild dolphins so people can jump in on top of them. Widely and correctly criticised. A handful of operators market an ethical version; the default product is not it.',when:''},
+/* ON THE WATER */
+{c:'Water',t:'do',n:'Mnemba atoll snorkelling',w:'The best easily-reached water in Zanzibar. Go on the <b>first boat of the morning</b> — clearest water, and an hour before the fleet. $10 marine conservation fee since 1 Sept 2025, plus the boat.',when:'07:30'},
+{c:'Water',t:'do',n:'Safari Blue',w:'Dhow out of Fumba, reef snorkelling, a mangrove lagoon and a seafood lunch on a sandbank that only exists at low tide. The island’s best-run day trip and a genuinely full day.',when:'Book ahead',b:1},
+{c:'Water',t:'opt',n:'Nakupenda sandbank',w:'A bar of white sand off Stone Town that appears and disappears with the tide. Half a day, and it is the same idea as Safari Blue at a third of the scale — good if you only have a morning.',when:'Tide-dependent'},
+{c:'Water',t:'opt',n:'Prison Island (Changuu)',w:'Twenty minutes off Stone Town. A prison that never held prisoners, a quarantine station that did, and a colony of giant Aldabra tortoises, the oldest around 190. Covered by the $10 marine fee plus the boat.',when:'Half day'},
+{c:'Water',t:'opt',n:'Diving off Mnemba',w:'Better than the snorkelling if you are certified — wall dives, turtles, and January’s flat seas give some of the year’s best visibility. Pemba is better again, and a different trip.',when:'Half day'},
+{c:'Water',t:'skip',n:'Swimming with captive turtles',w:'Several paid pools around Nungwi hold turtles for tourists to swim with. The sanctuary above is not one of these; check what you are buying.',when:''},
+/* MAINLAND */
+{c:'Main',t:'do',n:'Ndutu calving season',w:'Late January is the annual peak: half a million wildebeest calves on the southern short-grass plains with every predator in the ecosystem behind them. <b>The only large-mammal window on the entire itinerary.</b> Two nights minimum to justify the airfare.',when:'Book months out',b:1},
+{c:'Main',t:'opt',n:'Ngorongoro Crater',w:'Extraordinary, and a $295-per-vehicle descent fee on top of $82.60 per person per day. If you are already at Ndutu it is close; as a standalone from Zanzibar it is not worth the day.',when:'Add-on'},
+{c:'Main',t:'skip',n:'Central Serengeti (Seronera)',w:'Where most itineraries default. In late January the animals are not there — the migration is south on the Ndutu plains. Book the season, not the brand name.',when:''},
+{c:'Main',t:'skip',n:'Pemba',w:'Zanzibar’s quieter sister: better diving, almost no tourism, twenty minutes by air. It needs three nights of its own to repay the transfer, and those come straight out of Unguja.',when:''},
+{c:'Main',t:'skip',n:'Kilimanjaro',w:'Five to nine days on the mountain. Not a question this trip can ask.',when:''}
+];
+
+const TIERLBL={do:'Do',opt:'Maybe',skip:'Skip'};
+let FC='all', FT=null, FB=false;
+
+function renderItems(){
+  const list=ITEMS.filter(x=>
+    (FC==='all'||x.c===FC) && (!FT||x.t===FT) && (!FB||x.b));
+  const host=document.getElementById('items');
+  if(!list.length){host.innerHTML='<div class="empty">No entries match those filters.</div>';return}
+  host.innerHTML=list.map(x=>`
+    <div class="item">
+      <span class="tier ${x.t}">${TIERLBL[x.t]}</span>
+      <span class="nm">${x.n}</span>
+      <span class="when${x.b?' book':''}">${x.when||'&nbsp;'}</span>
+      <span class="why">${x.w}</span>
+    </div>`).join('');
+}
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  if(b.dataset.city){FC=b.dataset.city}
+  else if(b.dataset.tier){FT = FT===b.dataset.tier?null:b.dataset.tier}
+  else if(b.dataset.book){FB=!FB}
+  document.querySelectorAll('#filters .fbtn').forEach(x=>{
+    let on=false;
+    if(x.dataset.city) on = x.dataset.city===FC;
+    if(x.dataset.tier) on = x.dataset.tier===FT;
+    if(x.dataset.book) on = FB;
+    x.setAttribute('aria-pressed',on?'true':'false');
+  });
+  renderItems();
+});
+renderItems();
+
+/* ============ FIG 1: OUTBOUND DAY GRID ============ */
+(function(){
+  const svg=document.getElementById('exit-chart');
+  const W=1400,H=330,padL=330,padR=30,padT=52,rowH=40;
+  const DOW=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+  const OPTS=[
+    {n:'4Z357  ZNZ → CPT  nonstop',s:'Airlink · 6h10',d:[0,0,0,0,0,1,0]},
+    {n:'4Z11  ZNZ → JNB  → CPT',s:'Airlink · dep 12:00 · ≈9h30',d:[1,0,0,1,0,0,0]},
+    {n:'FA821/823  ZNZ → JNB  → CPT',s:'FlySafair · ≈9h25',d:[0,1,0,0,1,1,0]},
+    {n:'ZNZ → NBO → CPT',s:'Kenya Airways · ≈9h55 · YF hub',d:[1,1,1,1,1,1,1]},
+    {n:'ZNZ → DAR → JNB → CPT',s:'Air Tanzania · ≈9h55',d:[1,1,1,1,1,1,1]}
+  ];
+  const colW=(W-padL-padR)/7;
+  let s='';
+  // Thursday highlight band
+  const thuX=padL+3*colW;
+  s+=`<rect x="${thuX}" y="${padT-30}" width="${colW}" height="${OPTS.length*rowH+34}" fill="rgba(231,100,155,.10)" stroke="var(--magenta)" stroke-width="1"/>`;
+  s+=`<text x="${thuX+colW/2}" y="${padT-38}" class="lbl-a" text-anchor="middle" fill="var(--magenta)">Thu 28 Jan</text>`;
+  DOW.forEach((d,i)=>{
+    s+=`<text x="${padL+i*colW+colW/2}" y="${padT-12}" class="lbl" text-anchor="middle" ${i===3?'fill="var(--magenta)"':''}>${d}</text>`;
+  });
+  s+=`<line x1="${padL-10}" y1="${padT-4}" x2="${W-padR}" y2="${padT-4}" class="ax"/>`;
+  OPTS.forEach((o,r)=>{
+    const y=padT+r*rowH+rowH/2;
+    s+=`<text x="${padL-20}" y="${y-2}" class="lbl-p" text-anchor="end">${o.n}</text>`;
+    s+=`<text x="${padL-20}" y="${y+12}" class="lbl" text-anchor="end">${o.s}</text>`;
+    s+=`<line x1="${padL-10}" y1="${padT+r*rowH+rowH-2}" x2="${W-padR}" y2="${padT+r*rowH+rowH-2}" class="axs"/>`;
+    o.d.forEach((on,i)=>{
+      if(!on) return;
+      const isThu = i===3;
+      const cx=padL+i*colW+colW/2;
+      s+=`<rect x="${cx-26}" y="${y-11}" width="52" height="16" rx="2" fill="${isThu?'var(--jade)':'rgba(242,169,60,.45)'}"/>`;
+    });
+  });
+  svg.innerHTML=s;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+})();
+
+/* ============ FIG 2: RAINFALL ============ */
+(function(){
+  const svg=document.getElementById('rain-chart');
+  const W=1400,H=300,padL=60,padR=30,padT=24,padB=50;
+  const MO=[
+    {n:'Jan',v:53},{n:'Feb',v:47},{n:'Mar',v:116},{n:'Apr',v:204},
+    {n:'May',v:168},{n:'Jun',v:60},{n:'Jul',v:34},{n:'Aug',v:32},
+    {n:'Sep',v:43},{n:'Oct',v:78},{n:'Nov',v:147},{n:'Dec',v:109}
+  ];
+  const bw=(W-padL-padR)/MO.length;
+  const y=v=>padT+(1-v/220)*(H-padT-padB);
+  let s='';
+  [0,50,100,150,200].forEach(v=>{
+    s+=`<line x1="${padL}" y1="${y(v)}" x2="${W-padR}" y2="${y(v)}" class="axs"/>`;
+    s+=`<text x="${padL-10}" y="${y(v)+4}" class="lbl" text-anchor="end">${v}mm</text>`;
+  });
+  MO.forEach((m,i)=>{
+    const x0=padL+i*bw+bw*0.18, bwid=bw*0.64;
+    const isJan=m.n==='Jan';
+    s+=`<rect x="${x0}" y="${y(m.v)}" width="${bwid}" height="${H-padB-y(m.v)}" fill="${isJan?'var(--amber)':'rgba(242,169,60,.3)'}" rx="1"/>`;
+    s+=`<text x="${x0+bwid/2}" y="${H-padB+18}" class="lbl" text-anchor="middle" ${isJan?'fill="var(--amber)"':''}>${m.n}</text>`;
+    s+=`<text x="${x0+bwid/2}" y="${y(m.v)-8}" class="${isJan?'lbl-a':'lbl'}" text-anchor="middle">${m.v}</text>`;
+  });
+  s+=`<line x1="${padL}" y1="${H-padB}" x2="${W-padR}" y2="${H-padB}" class="ax"/>`;
+  s+=`<text x="${padL+3.4*bw}" y="${padT+14}" class="lbl">◀ masika, the long rains ▶</text>`;
+  svg.innerHTML=s;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+})();
+
+/* ============ THE GOVERNMENT'S CUT ============ */
+const FEES=[
+  {n:'Tanzania ordinary tourist eVisa, 90 days',v:50,pre:true,req:true,note:'Mandatory — Canadians cannot get this on arrival'},
+  {n:'Zanzibar ZIC inbound insurance, ≤92 days',v:44,pre:true,req:true,note:'Mandatory since 1 Oct 2024 — QR scanned at immigration'},
+  {n:'Infrastructure tax — 7 nights at a 3-star, $4/night',v:28,def:true,note:'$2 unclassified / $4 mid-range / $5 four- and five-star'},
+  {n:'Marine conservation fee — Mnemba or Changuu',v:10,def:true,note:'Revised 1 Sept 2025, per entry, per conservation area'},
+  {n:'Jozani-Chwaka Bay National Park',v:10,def:true,note:'Guide included in the fee'},
+  {n:'Safari Blue day trip, boat and lunch',v:60,note:'Indicative — not a government fee, included for scale'},
+  {n:'Airport transfer, ZNZ ↔ north coast, each way',v:50,note:'Agree the price in shillings before the car moves'},
+  {n:'Ndutu detour — flights, park and concession fees, 2 nights',v:1900,note:'Excludes the camp’s own nightly rate — see section 03'}
+];
+function renderFees(){
+  document.getElementById('legs').innerHTML=FEES.map((l,i)=>`
+    <label class="leg-row">
+      <input type="checkbox" data-i="${i}" ${(l.def||l.req)?'checked':''} ${l.req?'disabled':''}>
+      <span class="lname">${l.n}</span>
+      <span class="lyen">$${l.v.toLocaleString('en-CA')}</span>
+      ${l.note?`<span class="lnote">${l.note}</span>`:''}
+    </label>`).join('');
+}
+function calcFees(){
+  let pre=0, ground=0;
+  document.querySelectorAll('#legs input[type="checkbox"]').forEach(cb=>{
+    const l=FEES[Number(cb.dataset.i)];
+    if(!cb.checked && !l.req) return;
+    if(l.pre) pre+=l.v; else ground+=l.v;
+  });
+  const tot=pre+ground;
+  document.getElementById('pre').innerHTML=`$${pre.toLocaleString('en-CA')}<small>online, in advance</small>`;
+  document.getElementById('ground').innerHTML=`$${ground.toLocaleString('en-CA')}<small>on the island</small>`;
+  document.getElementById('tot').innerHTML=`$${tot.toLocaleString('en-CA')}<small>per person</small>`;
+  const v=document.getElementById('verdict');
+  if(tot>1000){
+    v.textContent='Safari money, not island money'; v.className='lose';
+  } else if(tot>200){
+    v.textContent=`≈$${Math.round(tot/7)} a day in fees alone`; v.className='';
+  } else {
+    v.textContent='The unavoidable floor'; v.className='win';
+  }
+}
+renderFees();
+document.getElementById('legs').addEventListener('change',calcFees);
+calcFees();
+</script>
+
+</body>
+</html>

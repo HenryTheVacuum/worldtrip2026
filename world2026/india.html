@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="darkreader-lock">
+<title>India</title>
+<link rel="stylesheet" href="fonts.css">
+</head>
+<body>
+<style>
+:root{color-scheme:dark;
+  --ink:#05161D;--ink-2:#0A2029;--ink-3:#0E2A35;
+  --rule:#194150;--rule-soft:rgba(25,65,80,.6);
+  --paper:#E2EEED;--paper-dim:#A6C2C6;--muted:#6C8F98;
+  --amber:#F2A93C;--magenta:#E7649B;--jade:#58C4A3;--red:#E05555;
+  --display:'Big Shoulders Display','Arial Narrow',Impact,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --body:'Inter',system-ui,sans-serif;
+  --gut:clamp(18px,4vw,64px);--maxw:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+.section{padding-block:clamp(34px,4.4vw,58px);border-top:1px solid var(--rule-soft);position:relative}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:14px;margin:0 0 18px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--rule)}
+.eyebrow .n{color:var(--amber)}
+h2.head{font-family:var(--display);font-weight:700;font-size:clamp(34px,5.6vw,66px);line-height:.92;margin:0 0 14px;text-transform:uppercase}
+.lede{max-width:66ch;color:var(--paper-dim);font-size:clamp(15px,1.5vw,17px);margin:0 0 26px}
+.lede b{color:var(--paper);font-weight:600}
+a{color:var(--amber);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+.hint{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+@media (min-width:980px){.hint.wide{display:none}}
+.scroller{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--rule) transparent}
+.scroller::-webkit-scrollbar{height:6px}
+.scroller::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}
+.scroller>svg{display:block;width:100%;height:auto}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(30px,5vw,58px) clamp(24px,4vw,40px);overflow:hidden}
+.gridbg{position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:linear-gradient(to right,var(--rule-soft) 1px,transparent 1px),linear-gradient(to bottom,var(--rule-soft) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%);-webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%)}
+.back{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:inline-block;margin-bottom:20px}
+.back:hover{color:var(--amber)}
+.strip{font-family:var(--mono);font-size:clamp(10px,1.15vw,12px);letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;border-block:1px solid var(--rule);padding-block:11px;margin-bottom:clamp(26px,4vw,44px)}
+.strip .k{color:var(--muted)}.strip .amb{color:var(--amber)}
+.title{font-family:var(--display);text-transform:uppercase;margin:0;line-height:.82;position:relative}
+.title .l1{display:block;font-weight:400;font-size:clamp(34px,7.4vw,96px);color:transparent;-webkit-text-stroke:1.2px var(--paper-dim)}
+.title .l2{display:block;font-weight:800;font-size:clamp(72px,17vw,232px);letter-spacing:-.015em;color:var(--paper)}
+.subline{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:baseline;margin-top:clamp(18px,3vw,30px);font-family:var(--mono);font-size:clamp(11px,1.25vw,13px);letter-spacing:.14em;text-transform:uppercase;color:var(--paper-dim)}
+.subline .sep{color:var(--rule)}
+
+/* instruments */
+.instr{display:grid;grid-template-columns:repeat(auto-fit,minmax(124px,1fr));border:1px solid var(--rule);background:var(--ink-2);margin:clamp(24px,3.4vw,38px) 0 0}
+.instr div{padding:15px 17px;border-right:1px solid var(--rule-soft)}
+.instr div:last-child{border-right:0}
+.instr dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.instr dd{margin:0;font-family:var(--display);font-weight:600;font-size:31px;line-height:1}
+.instr dd span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--paper-dim);margin-left:3px}
+.instr dd.hot{color:var(--amber)}
+.instr dd.warn{color:var(--magenta)}
+
+/* chart frames */
+.figcap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:9px;margin:0 0 8px}
+.figcap b{color:var(--amber);font-weight:500}
+.fignote{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.fignote i{display:inline-block;width:14px;height:9px;margin:0 5px 0 14px;vertical-align:middle;border-radius:1px}
+.fignote i:first-child{margin-left:0}
+.ax{stroke:var(--rule);stroke-width:1}
+.axs{stroke:var(--rule-soft);stroke-width:1}
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.08em;fill:var(--muted)}
+.lbl-p{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;fill:var(--paper)}
+.lbl-a{font-family:var(--mono);font-size:10px;letter-spacing:.12em;fill:var(--amber)}
+
+/* cards */
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin:0 0 6px}
+.card{border:1px solid var(--rule);background:var(--ink-2);padding:18px 20px;position:relative}
+.card.bad{border-color:var(--red)}
+.card.good{border-color:var(--jade)}
+.card h3{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 4px;color:var(--paper)}
+.card .verdict{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:11px}
+.card .verdict.bad{color:var(--red)}
+.card .verdict.ok{color:var(--jade)}
+.card p{margin:0 0 10px;font-size:13.5px;color:var(--paper-dim);line-height:1.62}
+.card p:last-child{margin-bottom:0}
+.card p b{color:var(--paper);font-weight:600}
+.fix{border-left:2px solid var(--amber);padding-left:12px;margin:12px 0 0;font-size:12.8px;color:var(--paper-dim);line-height:1.6}
+.fix b{display:block;color:var(--amber);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px;font-weight:500}
+.fix strong{color:var(--paper);font-weight:600}
+
+/* shape cards */
+.shapes{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+.shape{border:1px solid var(--rule);background:var(--ink-2);padding:0;display:flex;flex-direction:column}
+.shape.pick{border-color:var(--amber);box-shadow:inset 0 0 0 1px rgba(242,169,60,.25)}
+.shape-hd{padding:16px 20px 14px;border-bottom:1px solid var(--rule-soft)}
+.shape-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.shape.pick .shape-tag{color:var(--amber)}
+.shape-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(24px,3vw,32px);line-height:.95;margin:0}
+.chainrow{display:flex;flex-wrap:wrap;align-items:center;gap:5px 7px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--paper);padding:13px 20px;border-bottom:1px solid var(--rule-soft);background:rgba(5,22,29,.5)}
+.chainrow .a{color:var(--rule)}
+.chainrow .n{color:var(--amber);font-size:9.5px}
+.shape-body{padding:15px 20px 18px;flex:1}
+.shape-body p{margin:0 0 10px;font-size:13.3px;color:var(--paper-dim);line-height:1.6}
+.shape-body p:last-child{margin-bottom:0}
+.shape-body p b{color:var(--paper);font-weight:600}
+.shape-meta{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--rule-soft)}
+.shape-meta div{flex:1;min-width:88px;padding:11px 20px;border-right:1px solid var(--rule-soft)}
+.shape-meta div:last-child{border-right:0}
+.shape-meta dt{font-family:var(--mono);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.shape-meta dd{margin:0;font-family:var(--mono);font-size:13px;color:var(--paper)}
+.shape-meta dd.g{color:var(--jade)}
+.shape-meta dd.r{color:var(--red)}
+
+/* day accordion */
+.days{border-top:1px solid var(--rule)}
+.day{border-bottom:1px solid var(--rule)}
+.day-btn{all:unset;box-sizing:border-box;display:grid;width:100%;cursor:pointer;grid-template-columns:76px 1fr auto;gap:0 clamp(14px,2.4vw,30px);align-items:baseline;padding:clamp(13px,1.8vw,18px) 4px;transition:background .18s ease}
+.day-btn:hover{background:rgba(242,169,60,.05)}
+.day-btn:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.day-date{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.1em}
+.day-date small{display:block;color:var(--muted);font-size:9.5px;letter-spacing:.14em;margin-top:3px}
+.day-btn>span:nth-child(2){display:flex;flex-direction:column;gap:6px}
+.day-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(22px,3.2vw,34px);line-height:.95;margin:0}
+.day-sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.day-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--paper-dim);text-align:right;white-space:nowrap}
+.day-meta .chev{display:inline-block;margin-left:12px;color:var(--muted);transition:transform .25s ease}
+.day.open .day-meta .chev{transform:rotate(180deg)}
+@media (max-width:720px){.day-btn{grid-template-columns:64px 1fr;row-gap:8px}.day-meta{grid-column:2;text-align:left}}
+.day-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .34s cubic-bezier(.3,.8,.3,1)}
+.day.open .day-body{grid-template-rows:1fr}
+.day-inner{overflow:hidden}
+.day-pad{padding:2px 4px clamp(22px,3vw,32px)}
+.slots{display:grid;gap:0;border-left:1px solid var(--rule)}
+.slot{padding:0 0 16px 16px;position:relative}
+.slot:last-child{padding-bottom:2px}
+.slot::before{content:"";position:absolute;left:-4px;top:6px;width:7px;height:7px;background:var(--amber);border-radius:50%}
+.slot.move::before{background:var(--magenta)}
+.slot h4{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 5px;font-weight:500}
+.slot.move h4{color:var(--magenta)}
+.slot p{margin:0;font-size:14px;line-height:1.62;color:var(--paper-dim);max-width:72ch}
+.slot p b{color:var(--paper);font-weight:600}
+
+/* worth doing */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.fbtn{all:unset;cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border:1px solid var(--rule);color:var(--paper-dim);border-radius:2px;transition:.15s}
+.fbtn:hover{background:var(--ink-3);color:var(--paper)}
+.fbtn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.fbtn[aria-pressed="true"]{background:var(--amber);color:var(--ink);border-color:var(--amber);font-weight:600}
+.fdiv{width:1px;background:var(--rule);margin:2px 6px}
+.items{display:grid;gap:1px;background:var(--rule-soft);border:1px solid var(--rule)}
+.item{background:var(--ink-2);padding:13px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:baseline}
+.item .tier{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:3px 7px 2px;border-radius:2px;white-space:nowrap;align-self:start;margin-top:2px}
+.tier.do{background:rgba(88,196,163,.14);color:var(--jade);border:1px solid rgba(88,196,163,.35)}
+.tier.opt{background:rgba(242,169,60,.12);color:var(--amber);border:1px solid rgba(242,169,60,.3)}
+.tier.skip{background:rgba(224,85,85,.1);color:var(--red);border:1px solid rgba(224,85,85,.3)}
+.item .nm{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:20px;line-height:1.05;color:var(--paper)}
+.item .why{grid-column:2;font-size:13.3px;color:var(--paper-dim);line-height:1.55;max-width:74ch}
+.item .why b{color:var(--paper);font-weight:600}
+.item .when{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);text-align:right;white-space:nowrap;align-self:start;margin-top:4px}
+.item .when.book{color:var(--magenta)}
+@media (max-width:640px){.item{grid-template-columns:auto 1fr}.item .when{grid-column:2;text-align:left;margin-top:2px}.item .why{grid-column:1/-1}}
+.empty{background:var(--ink-2);padding:22px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* rail calc */
+.calc{border:1px solid var(--rule);background:var(--ink-2)}
+.calc-legs{display:grid}
+.leg-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--rule-soft);cursor:pointer}
+.leg-row:hover{background:rgba(242,169,60,.04)}
+.leg-row input{accent-color:var(--amber);width:15px;height:15px;cursor:pointer}
+.leg-row .lname{font-family:var(--mono);font-size:12.5px;color:var(--paper-dim)}
+.leg-row input:checked+.lname{color:var(--paper)}
+.leg-row .lyen{font-family:var(--mono);font-size:12.5px;color:var(--amber);font-variant-numeric:tabular-nums;white-space:nowrap}
+.leg-row .lnote{grid-column:2/-1;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--muted);margin-top:-4px}
+.calc-out{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule-soft)}
+.calc-out div{background:var(--ink-3);padding:15px 17px}
+.calc-out dt{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.calc-out dd{margin:0;font-family:var(--display);font-weight:700;font-size:27px;line-height:1;font-variant-numeric:tabular-nums}
+.calc-out dd small{font-family:var(--mono);font-size:10px;font-weight:400;color:var(--paper-dim);margin-left:4px;letter-spacing:.06em}
+#verdict{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;line-height:1.5}
+#verdict.win{color:var(--jade)}
+#verdict.lose{color:var(--red)}
+
+/* panels / tables */
+.panel{border:1px solid var(--rule);background:var(--ink-2);padding:clamp(17px,2.4vw,24px);margin-top:22px}
+.panel h3{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 12px;font-weight:500}
+.panel p{margin:0 0 12px;font-size:13.6px;color:var(--paper-dim);line-height:1.62}
+.panel p:last-child{margin-bottom:0}
+.panel p b{color:var(--paper);font-weight:600}
+table.ref{width:100%;border-collapse:collapse;font-size:13.4px}
+table.ref th{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:500;padding:0 14px 10px 0;border-bottom:1px solid var(--rule)}
+table.ref td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule-soft);color:var(--paper-dim);vertical-align:top}
+table.ref td:first-child{font-family:var(--display);font-size:17px;font-weight:600;text-transform:uppercase;color:var(--paper);white-space:nowrap;width:1%}
+table.ref td.t{font-family:var(--mono);font-size:11px;letter-spacing:.06em;white-space:nowrap;color:var(--amber)}
+table.ref tr.flag td.t{color:var(--magenta)}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.cols{display:grid;gap:16px 34px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:20px}
+.cols p{margin:0;font-size:13.6px;color:var(--paper-dim);line-height:1.6}
+.cols p b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:5px;font-weight:500}
+
+footer{border-top:1px solid var(--rule);padding-block:26px 40px;color:var(--muted)}
+.foot-grid{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:flex-end}
+.foot-grid p{margin:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase}
+.foot-mark{font-family:var(--display);font-size:clamp(40px,9vw,110px);font-weight:800;text-transform:uppercase;line-height:.8;color:transparent;-webkit-text-stroke:1px var(--rule);margin:30px 0 0}
+</style>
+
+<header class="hero">
+  <div class="gridbg"></div>
+  <div class="wrap">
+    <a class="back" href="index.html">← Westbound · the dossier</a>
+    <p class="strip">
+      <span><span class="k">Stop</span> <span class="amb">18 of 27</span></span>
+      <span><span class="k">In</span> MLE · Malé</span>
+      <span><span class="k">Fly India</span> <span class="amb">BOM</span></span>
+      <span><span class="k">Out</span> DXB · Dubai</span>
+      <span><span class="k">Window</span> 29 Dec 2026 – 3 Jan 2027</span>
+      <span><span class="k">Clock</span> UTC+5:30</span>
+    </p>
+    <h1 class="title">
+      <span class="l1">Stop eighteen</span>
+      <span class="l2">India</span>
+    </h1>
+    <p class="subline">
+      <span>Mumbai fixed</span><span class="sep">/</span>
+      <span>Elephanta fixed</span><span class="sep">/</span>
+      <span>The caves cost New Year's Eve</span>
+    </p>
+
+    <dl class="instr">
+      <div><dt>Calendar days</dt><dd>6</dd></div>
+      <div><dt>Full days</dt><dd class="hot">4</dd></div>
+      <div><dt>Nights</dt><dd>5</dd></div>
+      <div><dt>Mumbai airports</dt><dd class="warn">2</dd></div>
+      <div><dt>Flights a day inland</dt><dd class="warn">1</dd></div>
+      <div><dt>Rain expected</dt><dd>≈0<span>mm</span></dd></div>
+    </dl>
+  </div>
+</header>
+
+<section class="section" id="audit">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">01</span> The time audit</p>
+    <h2 class="head">Six days<br>is four days</h2>
+    <p class="lede">IndiGo is the only carrier flying Malé to Mumbai non-stop — daily, out at <b>14:10</b> Maldives time, about three hours in the air, on the ground in Mumbai around <b>17:40 IST</b>. So the 29th is an arrival evening, not a day. The 3rd is a departure. What you actually hold is <b>four full days: 30, 31, 1 and 2</b> — and one of them is New Year's Eve, which is the whole argument on this page.</p>
+
+    <div class="figcap">
+      <span>Fig. 1 — What the week really contains</span>
+      <span><b>29 Dec – 3 Jan</b> · hour by hour</span>
+    </div>
+    <div class="scroller">
+      <svg id="audit-chart" viewBox="0 0 1400 190" role="img" aria-label="Timeline of 29 December to 3 January showing the 29th consumed by the flight from Male, four usable full days from the 30th to the 2nd, and a departure morning on the 3rd."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--magenta);opacity:.55"></i>In transit<i style="background:rgba(242,169,60,.35)"></i>Part day<i style="background:var(--amber)"></i>Full day</p>
+
+    <div class="cols">
+      <p><b>No jet lag to spend</b>Malé is UTC+5, Mumbai is UTC+5:30. You land thirty minutes out of sync, which is the smallest clock change on this entire trip. Unlike Japan, nothing hands you a free 6am — if you want Mumbai before it wakes up, you have to set an alarm like an adult.</p>
+      <p><b>The arrival evening is genuinely usable</b>Land 17:40, clear immigration on the e-Visa lane, and south Mumbai is 40–60 minutes away. That puts you on Marine Drive by around 20:00 on the 29th with the Queen's Necklace already lit. It is the one arrival evening on this trip worth planning something for.</p>
+      <p><b>1 January is a normal working day</b>New Year's Day is not a gazetted national holiday in India. Monuments, trains, the ferry and the shops all run. Nothing in this window closes for the calendar — only for its own weekly closed day, which the next sections handle.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="flags">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">02</span> Two things to settle before you book</p>
+    <h2 class="head">Two airports<br>and four days</h2>
+    <p class="lede">Mumbai is in the middle of the biggest airport reshuffle in its history, and this stop's headline sight sits 350 km inland behind exactly one flight a day. Both of these change what you book, not just what you pack.</p>
+
+    <div class="cards">
+      <div class="card bad">
+        <h3>Mumbai is two airports now, and nobody has published the list</h3>
+        <div class="verdict bad">Verify the airport code on every leg</div>
+        <p>Navi Mumbai International (<b>NMI</b>) opened commercially on 25 December 2025. From <b>1 October 2026</b> — ten weeks before you fly — roughly <b>30% of the international movements</b> currently handled at CSMIA Terminal 2 begin shifting there in phases, to free capacity while Terminal 1 is redeveloped. A second shuffle moves about a third of T1's domestic traffic into T2 from around 23–25 October.</p>
+        <p>As of September 2026 <b>there is still no public flight-by-flight allocation</b>. Airlines are negotiating individually and the assignment can move as schedules are finalised. Your inbound is IndiGo — which is already NMI's dominant carrier with roughly 1,110 flights a month there — so it is precisely the airline most likely to be moved.</p>
+        <p>The cost if it catches you: NMI sits about <b>43 km from Colaba</b> across the Atal Setu, 50–65 minutes off-peak and 80–110 in traffic, against roughly 25 km from CSMIA. There is <b>no inter-airport shuttle</b>, and the Metro line that will join them isn't due until 2029. A stop that lands at one airport and leaves from the other quietly loses half a day and gains two long taxi fares.</p>
+        <div class="fix"><b>What to do</b>Book the Malé and Dubai legs last, and read the airport <strong>code</strong> on the ticket rather than the word "Mumbai" — BOM and NMI are different places. If they split, base yourself for the last night by the airport you leave from. <strong>The good news:</strong> Navi Mumbai was added to India's e-Visa entry points in the 10 August 2026 expansion to 85 designated points, so an e-Visa is valid at either airport. That was the version of this problem that would have ended the stop at the immigration desk.</div>
+      </div>
+
+      <div class="card bad">
+        <h3>Ajanta and Ellora cost you New Year's Eve</h3>
+        <div class="verdict bad">Straight trade — you can't have both</div>
+        <p>The caves are near Chhatrapati Sambhajinagar (the city formerly called Aurangabad, airport code still <b>IXU</b>). Ellora is 30 km out; Ajanta is another 102 km beyond it, two and a half hours each way. The air link is <b>one IndiGo flight a day in each direction</b>: out of Mumbai at <b>05:35</b> from Terminal 1, back from IXU at <b>07:15</b> into Terminal 2. There is no evening flight to soften it.</p>
+        <p>That schedule fixes the arithmetic. Both caves properly means two nights inland and two of your four full days. With the window running Tue 29 to Sun 3, the only way to fit it is to fly out on the 31st — which puts <b>midnight on 31 December in Chhatrapati Sambhajinagar</b>, not on Marine Drive.</p>
+        <p>The weekly closures are the one thing that cooperates. <b>Ajanta closes Mondays, Ellora closes Tuesdays</b>, and your window contains no Monday and only one Tuesday — arrival day, when you're in the air anyway. Every day you could actually use, both sites are open.</p>
+        <div class="fix"><b>The middle option</b>Ellora alone is <strong>one night and one morning</strong>: out 05:35 on the 30th, Kailasa and the Ellora groups all day, back on the 07:15 and in Mumbai by 08:15 on the 31st with New Year's Eve intact. Cave 16 — a full temple cut downward out of one piece of basalt — is the single most astonishing object on this stop, and Ajanta is the part that costs the extra day. <strong>Section 03 lays out all three shapes.</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="shapes">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">03</span> The open question</p>
+    <h2 class="head">How much<br>inland</h2>
+    <p class="lede">Mumbai and Elephanta are fixed. Everything else on this stop is a decision about how many of your four full days go 350 km inland, and what midnight on the 31st looks like. All three shapes fit the same 29 Dec – 3 Jan window and the same single daily flight.</p>
+
+    <div class="shapes">
+      <div class="shape">
+        <div class="shape-hd">
+          <div class="shape-tag">Maximum caves</div>
+          <p class="shape-name">Both caves</p>
+        </div>
+        <div class="chainrow">
+          <span>Mumbai <span class="n">×2</span></span><span class="a">→</span>
+          <span>Sambhajinagar <span class="n">×2</span></span><span class="a">→</span>
+          <span>Mumbai <span class="n">×1</span></span><span class="a">→</span>
+          <span class="n">DXB</span>
+        </div>
+        <div class="shape-body">
+          <p>Out on the 05:35 on <b>31 December</b>, Ellora that day, Ajanta on <b>1 January</b>, back on the 07:15 on the 2nd. Both UNESCO sites at full length, Ajanta's paintings included — the oldest surviving painting in India and the reason the caves are on the itinerary at all.</p>
+          <p><b>The cost is the whole New Year.</b> Midnight happens in a hotel in Chhatrapati Sambhajinagar, and Mumbai is reduced to one full day plus a recovery morning. Elephanta has to go on the 30th and cannot slip.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Mumbai days</dt><dd class="r">1½</dd></div>
+          <div><dt>Cave days</dt><dd class="g">2</dd></div>
+          <div><dt>05:35 alarms</dt><dd>1</dd></div>
+          <div><dt>NYE</dt><dd class="r">Inland</dd></div>
+        </dl>
+      </div>
+
+      <div class="shape pick">
+        <div class="shape-hd">
+          <div class="shape-tag">Recommended</div>
+          <p class="shape-name">Ellora only</p>
+        </div>
+        <div class="chainrow">
+          <span>Mumbai <span class="n">×1</span></span><span class="a">→</span>
+          <span>Sambhajinagar <span class="n">×1</span></span><span class="a">→</span>
+          <span>Mumbai <span class="n">×3</span></span><span class="a">→</span>
+          <span class="n">DXB</span>
+        </div>
+        <div class="shape-body">
+          <p>Out on the 05:35 on <b>30 December</b>, the full Ellora day — Kailasa, the Buddhist and Jain groups, Daulatabad fort on the way back — then the 07:15 on the 31st, feet on Marine Drive by nine. One night inland buys the best single object on the stop.</p>
+          <p><b>What you keep:</b> New Year's Eve in Mumbai, Elephanta on the 1st or 2nd, and two unhurried city days. <b>What you give up:</b> Ajanta, honestly and completely — not a rushed version of it.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Mumbai days</dt><dd class="g">3</dd></div>
+          <div><dt>Cave days</dt><dd>1</dd></div>
+          <div><dt>05:35 alarms</dt><dd>1</dd></div>
+          <div><dt>NYE</dt><dd class="g">Marine Dr</dd></div>
+        </dl>
+      </div>
+
+      <div class="shape">
+        <div class="shape-hd">
+          <div class="shape-tag">If the inland flight worries you</div>
+          <p class="shape-name">Mumbai only</p>
+        </div>
+        <div class="chainrow">
+          <span>Mumbai <span class="n">×5</span></span><span class="a">→</span>
+          <span class="n">DXB</span>
+        </div>
+        <div class="shape-body">
+          <p>No 05:35 alarm, no inland hotel, no exposure to a one-a-day flight in the middle of an airport reshuffle. Four full days on one of the densest cities on earth, with <b>Elephanta</b> and <b>Kanheri</b> — 109 Buddhist caves cut into a basalt ridge inside Sanjay Gandhi National Park, within the city limits — carrying the rock-cut thread instead.</p>
+          <p><b>Be honest about the substitution.</b> Kanheri and Elephanta are genuinely good and Elephanta's Trimurti is a masterpiece. Neither is Kailasa. This shape is the right call only if the logistics risk is what's bothering you.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Mumbai days</dt><dd class="g">4</dd></div>
+          <div><dt>Cave days</dt><dd class="r">0</dd></div>
+          <div><dt>05:35 alarms</dt><dd class="g">0</dd></div>
+          <div><dt>NYE</dt><dd class="g">Marine Dr</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="figcap" style="margin-top:28px">
+      <span>Fig. 2 — The three shapes on the same calendar</span>
+      <span><b>29 Dec – 3 Jan</b> · where each night is spent</span>
+    </div>
+    <div class="scroller">
+      <svg id="shapes-chart" viewBox="0 0 1400 300" role="img" aria-label="Three horizontal bars comparing the both-caves, Ellora-only and Mumbai-only shapes across 29 December to 3 January, showing which days are spent in Mumbai, in transit, or at the caves, with New Year's Eve marked."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--amber)"></i>Mumbai<i style="background:var(--jade)"></i>Caves &amp; Sambhajinagar<i style="background:var(--magenta);opacity:.55"></i>In transit</p>
+
+    <div class="panel">
+      <h3>Why the recommendation keeps Ellora and drops Ajanta</h3>
+      <p>They are not equivalent sites and they do not cost the same. Ellora is <b>45 minutes from the airport</b> and its Cave 16, the Kailasa temple, was quarried downward out of a single hillside — roughly 200,000 tonnes of rock removed to leave a complete multi-storey temple standing in a pit. It is the kind of thing you fly across a subcontinent for, and you can be standing in it by 08:00 on the morning you land.</p>
+      <p>Ajanta is <b>two and a half hours further</b>, opens at 09:00, and needs three unhurried hours inside because what's there is paint, not architecture — and paint in low light, since flash is prohibited. That is a ten-hour day, and it is the day that turns one night inland into two, and one night into New Year's Eve.</p>
+      <p>The argument for taking Ajanta anyway is real and you should hear it plainly: the murals in Caves 1, 2, 16 and 17 are the oldest surviving paintings in India and there is nothing comparable anywhere. If they are why India is on this itinerary, take the <b>Both caves</b> shape and let the fireworks go. Do not take a shape that visits Ajanta in a hurry.</p>
+    </div>
+
+    <div class="panel">
+      <h3>The overnight train, and why it isn't the answer</h3>
+      <p>The <b>Devagiri Express (17057)</b> leaves Mumbai CSMT at 21:10 and reaches Chhatrapati Sambhajinagar at about <b>04:05</b>; the 17058 comes back through at 23:20 and gets into CSMT at 07:10. It saves a hotel night and it is a good ride. It also arrives four hours before anything opens, and the return leg means a full extra evening inland — so it trades one early alarm for one wasted night. Take it if the flight is sold out or if the airport split has made the 05:35 impossible to reach.</p>
+      <p>Book under both names. The city was renamed <b>Chhatrapati Sambhajinagar</b> in 2023; the airport is still <b>IXU</b> and the station code is still <b>AWB</b>, and half the booking sites still say Aurangabad.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="run">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">04</span> Day by day</p>
+    <h2 class="head">All three,<br>laid out</h2>
+    <p class="lede">Mumbai rewards early and late and punishes the middle of the day — the light is flat, the traffic is solid and December's 30°C is still 30°C. Times are indicative; treat the first slot of each day as the fixed one and let the rest drift.</p>
+    <div class="filters" id="dayToggle" style="margin-bottom:6px">
+      <button class="fbtn" data-plan="ellora" aria-pressed="true">Ellora only</button>
+      <button class="fbtn" data-plan="both" aria-pressed="false">Both caves</button>
+      <button class="fbtn" data-plan="city" aria-pressed="false">Mumbai only</button>
+    </div>
+    <div class="days" id="days"></div>
+    <p class="fignote" style="margin-top:16px">Amber = on foot · <span style="color:var(--magenta)">Magenta = a flight, a ferry or a base change</span></p>
+  </div>
+</section>
+
+<section class="section" id="worth">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">05</span> What's actually worth doing</p>
+    <h2 class="head">Do, maybe,<br>don't bother</h2>
+    <p class="lede">Sorted by area, then by whether it earns a slot in four days. The <b>don't bother</b> entries are mostly not bad — they're here because something else on the list beats them for the same hours.</p>
+
+    <div class="filters" id="filters">
+      <button class="fbtn" data-city="all" aria-pressed="true">All</button>
+      <button class="fbtn" data-city="South" aria-pressed="false">South Mumbai</button>
+      <button class="fbtn" data-city="North" aria-pressed="false">North &amp; the suburbs</button>
+      <button class="fbtn" data-city="Island" aria-pressed="false">Elephanta</button>
+      <button class="fbtn" data-city="Caves" aria-pressed="false">Ellora &amp; Ajanta</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-tier="do" aria-pressed="false">Do</button>
+      <button class="fbtn" data-tier="opt" aria-pressed="false">Maybe</button>
+      <button class="fbtn" data-tier="skip" aria-pressed="false">Don't bother</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-book="1" aria-pressed="false">Needs booking</button>
+    </div>
+    <div class="items" id="items"></div>
+  </div>
+</section>
+
+<section class="section" id="caves">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">06</span> The rock-cut question</p>
+    <h2 class="head">Three sets<br>of caves</h2>
+    <p class="lede">This stop is, whether or not you planned it that way, a rock-cut architecture trip. Three sites, twelve centuries of chisel work, and a clean split in what each one is <b>for</b> — which is the useful way to choose between them when you only have room for some.</p>
+
+    <div class="tablewrap">
+    <table class="ref">
+      <thead><tr><th>Site</th><th>What it is · what to see</th><th>Closed</th></tr></thead>
+      <tbody>
+        <tr><td>Elephanta</td><td>6th-century Shaiva caves on an island an hour off the Gateway of India. Cave 1 is the whole visit: a 6-metre <b>Trimurti Sadashiva</b> cut into the back wall, three faces of Shiva, damaged by Portuguese target practice and still one of the great sculptures of the world. Ninety minutes on the island is enough; two hours is generous. ₹600 for foreign nationals, plus ₹270 return on the ferry.</td><td class="t">Mondays</td></tr>
+        <tr><td>Ellora</td><td>34 caves over 2 km of basalt scarp — Buddhist, Hindu and Jain side by side, 6th to 10th century, which is the point of the place. <b>Cave 16, Kailasa</b>, was excavated top-down from solid rock into a complete free-standing temple; start there, before the tour buses, then work north to the Jain group at 30–34. ₹600 foreign nationals, ₹22 for the inter-group shuttle. Allow three to four hours. Sunrise to sunset.</td><td class="t">Tuesdays</td></tr>
+        <tr class="flag"><td>Ajanta</td><td>30 Buddhist caves in a horseshoe gorge, 2nd century BCE to 5th century CE, abandoned and forgotten until a British hunting party found them in 1819. The architecture is secondary — you go for the <b>murals</b> in Caves 1, 2, 16 and 17, the oldest surviving painting in India. Flash is prohibited and the light is deliberately low. A mandatory shuttle covers the last 4 km from the T-junction: ₹16 non-AC, ₹26 AC. 09:00–17:30. Three hours minimum, plus five hours of driving.</td><td class="t">Mondays</td></tr>
+        <tr><td>Kanheri</td><td>The consolation prize inside the city: 109 Buddhist caves cut into a ridge in Sanjay Gandhi National Park, 1st to 10th century, with an 7-metre standing Buddha and rock-cut water cisterns still working. Forty minutes from Borivali station, two hours on site, and it costs you a morning rather than a night.</td><td class="t">Open daily</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="panel">
+      <h3>The one arithmetic that decides it</h3>
+      <p>Ellora is <b>30 km / 45 minutes</b> from the IXU terminal. Land at 06:40 on the 05:35 flight, be at the gate by 07:45, and you have the Kailasa courtyard more or less to yourself before the first coach from Mumbai arrives. Ajanta is <b>102 km / 2h 30m</b> further and doesn't open until 09:00, so the earliest useful start is 06:30 from the city — and you are back after dark.</p>
+      <p>That is the entire difference between one night inland and two, and therefore between keeping New Year's Eve and losing it. Everything else about the two sites is a matter of taste.</p>
+    </div>
+
+    <div class="panel">
+      <h3>Practicalities at the gates</h3>
+      <p><b>Carry cash.</b> ASI ticket counters and the shuttle buses at both cave sites take rupees and the card machines are frequently down. ₹3,000–5,000 in small notes covers tickets, shuttles, guides and lunch for the whole inland trip.</p>
+      <p><b>Hire the car, not the tour.</b> A car and driver for a full Ellora day runs roughly ₹3,000–4,000 and for the longer Ajanta day around ₹4,500 — book through the hotel the night before. Group coach tours leave late and leave the caves at the worst hour.</p>
+      <p><b>Shoes off, repeatedly.</b> Both sites are live-enough religious spaces that you will remove footwear many times. Slip-ons, and socks you don't mind on warm stone.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="weather">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">07</span> Why this window works</p>
+    <h2 class="head">The dry<br>half</h2>
+    <p class="lede">Mumbai's year is not divided into seasons so much as into <b>monsoon and not-monsoon</b>. June through September delivers over two metres of rain onto the city; late December delivers, on an average year, essentially none. The itinerary's reason for putting India here is sound and the chart is the proof.</p>
+
+    <div class="figcap">
+      <span>Fig. 3 — Mumbai rainfall by month</span>
+      <span><b>Typical monthly totals</b> · your window marked</span>
+    </div>
+    <div class="scroller">
+      <svg id="rain-chart" viewBox="0 0 1400 320" role="img" aria-label="Bar chart of typical monthly rainfall in Mumbai showing an enormous June to September monsoon peaking above 800 millimetres in July and near-zero rainfall from November through May, with December and January highlighted."></svg>
+    </div>
+    <p class="fignote">Indicative long-term monthly normals · individual years vary widely, particularly at the monsoon's edges</p>
+
+    <div class="cols">
+      <p><b>What it actually feels like</b>28–32°C by day, 18–22°C after dark, humidity down around 55–65% from the summer's 85–95%. That is warm rather than oppressive, and the sea breeze along Marine Drive after sunset is the reason half the city walks there in the evening. Cotton, one layer for the late evening, and shoes you can do twenty kilometres a day in.</p>
+      <p><b>The catch is the air</b>Mumbai's winter AQI typically runs 80–150 — moderate to unhealthy for sensitive groups. It is nothing like the winter smog inland, but the same still air that keeps the rain away also keeps the particulates in. If you're sensitive, carry an N95 and check the reading before committing to a long walking day.</p>
+      <p><b>Crowds and prices</b>Late December is Mumbai's peak. Hotel rates run 30–50% above baseline across your window and worst on the 31st itself; mid-November is roughly the last sensible time to book. Bandra's Christmas lights on Chapel Road and Hill Road stay up into early January, which is a free and genuinely lovely thing that only this window gets you.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="money">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">08</span> The ticket maths</p>
+    <h2 class="head">What the<br>stop costs</h2>
+    <p class="lede">India is the cheapest country on this entire itinerary and it is not close — the expensive item here is the visa, which costs more than every monument ticket combined. Tick what you'll actually do. Flights and car hire are indicative and rise over New Year; everything with a fixed gate price is exact.</p>
+
+    <div class="calc">
+      <div class="calc-legs" id="legs"></div>
+      <dl class="calc-out">
+        <div><dt>Selected total</dt><dd id="ptp"></dd></div>
+        <div><dt>In Canadian dollars</dt><dd id="cad"></dd></div>
+        <div><dt>Per full day</dt><dd id="perday"></dd></div>
+        <div><dt>Shape</dt><dd><span id="verdict"></span></dd></div>
+      </dl>
+    </div>
+    <p class="fignote">Excludes beds and food · CAD at roughly ₹62 to the dollar — check the rate before you go · gate prices are the ASI 2018 schedule and still current, fares and car hire are indicative</p>
+
+    <div class="panel">
+      <h3>How to actually pay for things</h3>
+      <p><b>UPI is how India pays.</b> Foreign visitors can now get a <b>UPI One World</b> prepaid wallet — KYC with your passport and visa through a partner app, load it in rupees, and then scan the QR code stuck to the counter like everyone else. It covers the auto-rickshaw, the chai stall and the kirana shop, none of which want your Visa card.</p>
+      <p><b>But carry cash anyway.</b> ASI gates, cave shuttles, ferry counters and temple donation boxes are cash-first and their card terminals fail often. ₹3,000–5,000 in small notes. ATMs are everywhere in Mumbai and sparse at the caves.</p>
+      <p><b>Cards work in the places you'd expect</b> — hotels, restaurants, malls, Uber. Nowhere else reliably.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="admin">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">09</span> Ground rules</p>
+    <h2 class="head">Before you land</h2>
+
+    <div class="tablewrap">
+    <table class="ref">
+      <thead><tr><th>Item</th><th>What to do</th><th>When</th></tr></thead>
+      <tbody>
+        <tr><td>e-Visa</td><td>Canadians are eligible. The e-Tourist visa costs <b>USD $80</b> flat for Canadian citizens plus a 2.5% bank charge — well above the $25/$40 tiers most nationalities pay — and is valid <b>one year from the date of grant, multiple entry</b>. Applications open 120 days out, minimum four days before travel, average processing four days. Entirely online at indianvisaonline.gov.in; the High Commission in Ottawa does not handle it.</td><td class="t">3–4 weeks out</td></tr>
+        <tr class="flag"><td>Entry point</td><td>An e-Visa is only valid for <b>entry</b> at designated points — 85 of them since the 10 August 2026 expansion, covering 36 airports. <b>Both Mumbai and Navi Mumbai are on the list.</b> You may exit through any authorised immigration post, so the Dubai leg is unconstrained.</td><td class="t">Check at booking</td></tr>
+        <tr class="flag"><td>Which airport</td><td>BOM and NMI are 43 km apart with no shuttle. Read the three-letter code on every ticket — inbound from Malé, the IXU hop if you take it, and outbound to Dubai. See the card in section 02.</td><td class="t">At booking</td></tr>
+        <tr><td>Visa history</td><td>India suspended visa services for Canadians in September 2023 and resumed e-Visas about two months later. Service has been normal since, but this is the one bilateral relationship on the trip that has moved before. Confirm eligibility the week you book rather than assuming.</td><td class="t">Before booking</td></tr>
+        <tr><td>Getting around</td><td>Metro <b>Line 3, the Aqua Line</b>, has run end to end since 8 October 2025 — Cuffe Parade to Aarey, 27 stations, and it stops at both <b>CSIA Terminal 1 and Terminal 2</b>. Fares ₹10–50. It does not reach Navi Mumbai; that link isn't due until 2029. Uber and Ola work everywhere; black-and-yellow taxis and autos are cheaper and more fun.</td><td class="t">On arrival</td></tr>
+        <tr><td>Payments</td><td>UPI One World wallet for QR payments, plus ₹3,000–5,000 cash for gates, shuttles and rickshaws. Cards for hotels and restaurants only.</td><td class="t">Set up before</td></tr>
+        <tr><td>Connectivity</td><td>An Indian prepaid SIM needs passport, visa and a physical address and can take hours to activate. An international eSIM bought before you fly is faster and works from the jet bridge. Airport wifi needs an Indian number, which is the trap.</td><td class="t">Before departure</td></tr>
+        <tr class="flag"><td>Liquor permit</td><td>Maharashtra legally requires a <b>personal liquor permit</b> to buy or consume alcohol, and drinking without one is an offence under state excise law. A one-day permit costs <b>₹5</b> through the state excise portal, and most hotels will arrange one. Enforcement against tourists is rare; the law is nonetheless the law, and New Year's Eve is when it gets noticed.</td><td class="t">Day of</td></tr>
+        <tr><td>Closed days</td><td>Elephanta <b>Monday</b>. Ajanta <b>Monday</b>. Ellora <b>Tuesday</b>. Bhau Daji Lad museum <b>Wednesday</b>. Chor Bazaar <b>Friday</b>. Your window has no Monday and its only Tuesday is a flying day, so nothing on the main list is blocked.</td><td class="t">Clear</td></tr>
+        <tr class="flag"><td>New Year's Eve</td><td>Mumbai Police put 11,000+ personnel and 100+ checkpoints on the ground, with mobile breathalyser stops all night — do not drive. Terrace parties must end by 00:30, restaurants 01:30, indoor venues and pubs may run to 05:00. Marine Drive is free, open and enormous; hotel galas run ₹8,000–30,000 a head and rooftop covers ₹3,000–8,000, both booked out by mid-December.</td><td class="t">Book by mid-Dec</td></tr>
+        <tr><td>Monument tickets</td><td>₹600 per foreign national at Elephanta, Ellora and Ajanta — the ASI World Heritage rate, unchanged since 16 August 2018. Online booking exists for most ASI sites; the gate is fine too if you have cash.</td><td class="t">At the gate</td></tr>
+        <tr><td>Beds</td><td>30–50% peak markup across the window, worst on the 31st. Colaba or Fort puts you walking distance from the Gateway ferry, CSMT and Marine Drive, which is what you want with four days. Book by mid-November.</td><td class="t">Now</td></tr>
+        <tr><td>Holidays</td><td>1 January is a restricted, not gazetted, holiday in India — monuments, trains, ferries and shops all operate normally. Nothing else falls inside the window.</td><td class="t">Clear</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="cols">
+      <p><b>The ferry queue</b>Elephanta tickets are sold at the Gateway, not online, and the counter queue runs 30–45 minutes on weekends and holidays — which your whole window is. Be there for the 09:00 boat and you skip most of it; arrive at 11:00 and you'll spend the wait standing in the sun.</p>
+      <p><b>Tipping</b>Round up for autos and taxis, 5–10% at restaurants that haven't already added a service charge, ₹100–200 for a cave guide who was actually good. Nothing at all is expected at ASI gates or on the ferry.</p>
+      <p><b>The Dharavi question</b>Dharavi tours are genuinely contested. The better operators are Dharavi-run, put most of the fee back into local programmes and ban photography of residents; the worse ones are voyeurism with a minibus. If you go, choose on those three criteria or don't go.</p>
+      <p><b>Onward</b>Stop 19 is Dubai, 3h15 non-stop, served many times daily by Emirates, Air India, IndiGo, flydubai and Air India Express. Plenty of choice — the only thing to check is which Mumbai airport the ticket actually departs from — BOM and NMI are 43 km apart.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <p>Westbound · stop 18 · India</p>
+      <p>29 Dec 2026 – 3 Jan 2027 · BOM in, DXB out</p>
+      <p>Fares, fees and schedules verified Sept 2026 — recheck before booking</p>
+    </div>
+    <p class="foot-mark">Mumbai → Ellora</p>
+  </div>
+</footer>
+
+<script>
+/* ============ DAY-BY-DAY ============ */
+const D_ARRIVE={d:'Tue 29',w:'Arrive',name:'Mumbai',sub:'Land 17:40 · one good evening',meta:'Night 1',
+ slots:[
+  {m:1,h:'17:40 · BOM (or NMI — check)',p:'IndiGo from Malé, 14:10 departure, about three hours. Immigration on the e-Visa lane, then 40–60 minutes into town — longer if the airport shuffle has put you in Navi Mumbai. Aqua Line metro runs from both CSIA terminals.'},
+  {h:'20:00 · Marine Drive',p:'Drop the bag and walk out onto the seawall. Three and a half kilometres of curved promenade with the streetlights strung along it — the Queen’s Necklace — and half of Mumbai out walking. Best free thing in the city and it costs you nothing on a night you can’t use anyway.'},
+  {h:'21:30 · First dinner',p:'Bademiya behind the Taj for seekh rolls eaten standing up, or an Irani café if anything is still open. Keep it walkable; the real eating starts tomorrow.'}
+]};
+
+const D_DEPART={d:'Sun 3',w:'Depart',name:'To Dubai',sub:'Half a morning',meta:'Fly out',
+ slots:[
+  {h:'07:00 · Last walk',p:'Marine Drive at sunrise is a different place from Marine Drive at night — joggers, laughter clubs, the light coming off the water from the wrong side. Or Sassoon Dock if you want the fish market before the heat.'},
+  {m:1,h:'· To the airport',p:'Aqua Line from Cuffe Parade or Churchgate straight to CSIA, roughly 45 minutes and ₹50 — unless your Dubai flight leaves from Navi Mumbai, in which case allow 90 minutes by road across the Atal Setu and no metro at all.'},
+  {m:1,h:'· Dubai',p:'Stop 19. Non-stop, about 3h15, many times daily on Emirates, Air India, IndiGo, flydubai and Air India Express. Verify the departure airport code before you book the rest of the day around it.'}
+]};
+
+const DAYS_ELLORA=[D_ARRIVE,
+{d:'Wed 30',w:'Move',name:'Ellora',sub:'05:35 out · Kailasa by eight',meta:'Night 2',
+ slots:[
+  {m:1,h:'05:35 · BOM T1 → IXU',p:'IndiGo, the only flight of the day, about 65 minutes. Airport by 04:30. Leave the big bag at the Mumbai hotel and travel up with one night’s worth — you’re back in 26 hours.'},
+  {h:'07:45 · Ellora, Cave 16',p:'Straight from the airport, 45 minutes, and through the gate before the Mumbai coaches. Kailasa first: a complete temple quarried downward out of one hillside, courtyard, gopuram, elephants and all. Climb the path on the north rim to look down into it.'},
+  {h:'10:00 · The rest of the scarp',p:'Two kilometres of basalt with Buddhist caves at one end, Hindu in the middle and the Jain group at 30–34 at the far north. The ₹22 shuttle runs between groups. Three to four hours all in.'},
+  {h:'14:30 · Daulatabad',p:'A 12th-century hill fort on the road back, with a spiral tunnel defence you climb in the dark. Steep, and worth it if the legs are willing. Otherwise Bibi ka Maqbara, the small Taj copy on the city edge.'},
+  {h:'19:00 · Sambhajinagar',p:'Dinner and an early night. Naan qalia is the local dish. Tomorrow starts at 05:45.'}
+]},
+{d:'Thu 31',w:'Move',name:'New Year’s Eve',sub:'Back by nine · Mumbai all day',meta:'Night 3',
+ slots:[
+  {m:1,h:'07:15 · IXU → BOM T2',p:'One hour, and you’re in Mumbai for breakfast. Note the asymmetry: out of Terminal 1, back into Terminal 2.'},
+  {h:'10:30 · Fort and Kala Ghoda',p:'The Victorian Gothic quarter on foot — the Asiatic Society steps, David Sassoon Library, Elphinstone College, the Kala Ghoda galleries, and CSMT station, which is the single best building in the city and a UNESCO site in its own right.'},
+  {h:'14:00 · CSMVS',p:'The old Prince of Wales Museum, Indo-Saracenic dome, Indian miniatures and Gandharan sculpture. Air-conditioned, which by two in the afternoon is the actual argument.'},
+  {h:'17:30 · Chowpatty and the walk north',p:'Girgaon Chowpatty for bhelpuri at sunset, then walk the length of Marine Drive as the lights come on. Eat properly early — everywhere good is booked tonight.'},
+  {h:'22:30 · Midnight',p:'Marine Drive is free, open and packed — tens of thousands out from around 21:00, a serious police presence, and no restriction on simply being there. Rooftop bars want ₹3,000–8,000 cover; hotel galas ₹8,000–30,000. Do not drive: breathalyser checkpoints are everywhere and mobile.'}
+]},
+{d:'Fri 1',w:'Full',name:'Elephanta',sub:'The island, then Bandra',meta:'Night 4',
+ slots:[
+  {m:1,h:'09:00 · First ferry',p:'From Apollo Bandar beside the Gateway of India, tickets at the counter — ₹260 return plus ₹10 for the upper deck, which is worth it. An hour each way. Be on the 09:00 and skip the queue; the last boat back is 17:30.'},
+  {h:'10:15 · Cave 1',p:'Up 120 steps past the monkeys and the souvenir stalls. The Trimurti Sadashiva is six metres of Shiva’s three faces cut into the back wall, and it does not photograph — stand in front of it for longer than feels necessary. ₹600. Ninety minutes on the island covers it.'},
+  {h:'14:30 · Colaba',p:'Back at the Gateway by two. Lunch at Leopold or Café Mondegar if you want the cliché, Bademiya if you want the food, then Colaba Causeway for the browsing.'},
+  {h:'17:30 · Bandra',p:'Over the Sea Link at golden hour. Mount Mary, Bandstand, and Chapel Road’s Christmas lights, which stay up into January. Dinner in Bandra is better than dinner in Colaba and everyone knows it.'}
+]},
+{d:'Sat 2',w:'Full',name:'The other Mumbai',sub:'Dawn to dark',meta:'Night 5',
+ slots:[
+  {h:'06:00 · Sassoon Dock',p:'The fishing fleet unloading, the Koli community’s market, and a smell you will remember. Over by eight. Go now or don’t go.'},
+  {h:'09:00 · Banganga & Malabar Hill',p:'A stone tank from 1127 surrounded by temples and dharamshalas, tucked behind the most expensive real estate in India and almost entirely unvisited. Then Khotachiwadi, a surviving pocket of East Indian Portuguese-style cottages off Girgaon.'},
+  {h:'12:00 · Crawford Market & Mohammed Ali Road',p:'Wholesale fruit, spice and cage-bird chaos under a Victorian roof, then north into Bhendi Bazaar for the best street eating in the city — kebabs, malpua, and whatever is coming off the grill.'},
+  {h:'15:00 · Dhobi Ghat & Mahalaxmi',p:'The open-air laundry from the bridge at Mahalaxmi station, then Haji Ali if the tide allows the causeway — check before you go, it floods twice a day.'},
+  {h:'19:00 · Last dinner',p:'Book something. Bombay Canteen, Trishna, or an Irani café for berry pulao at Britannia if it’s open. This is the night for the one proper meal.'}
+]},
+D_DEPART];
+
+const DAYS_BOTH=[D_ARRIVE,
+{d:'Wed 30',w:'Full',name:'Elephanta',sub:'Island first, it cannot slip',meta:'Night 2',
+ slots:[
+  {m:1,h:'09:00 · First ferry',p:'From Apollo Bandar by the Gateway. ₹260 return plus ₹10 upper deck, an hour each way. In this shape Elephanta has exactly one possible day, so do not sleep in.'},
+  {h:'10:15 · Cave 1',p:'120 steps up, then the six-metre Trimurti Sadashiva. ₹600. Ninety minutes on the island is enough.'},
+  {h:'14:30 · Fort and Kala Ghoda',p:'Back by two. The Victorian Gothic walk — Asiatic Society steps, David Sassoon Library, Kala Ghoda, and CSMT, which is worth going inside for.'},
+  {h:'17:30 · Chowpatty and Marine Drive',p:'Bhelpuri at sunset, then the seawall. Early night: the alarm is 04:00.'}
+]},
+{d:'Thu 31',w:'Move',name:'Ellora',sub:'05:35 out · New Year inland',meta:'Night 3',
+ slots:[
+  {m:1,h:'05:35 · BOM T1 → IXU',p:'The only flight of the day, 65 minutes. Two nights’ luggage; leave the rest in Mumbai.'},
+  {h:'07:45 · Kailasa',p:'Through the Ellora gate before the coaches. Cave 16 first — a whole temple cut downward out of one hillside — then climb the north rim path to look into it from above.'},
+  {h:'10:00 · The full scarp',p:'Buddhist, Hindu and Jain groups across two kilometres, ₹22 shuttle between them. Three to four hours.'},
+  {h:'14:30 · Daulatabad',p:'Hill fort on the way back, spiral tunnel defence, steep. Or Bibi ka Maqbara if the legs have gone.'},
+  {h:'20:00 · Midnight, inland',p:'New Year in Chhatrapati Sambhajinagar is a hotel dinner and fireworks over a small city. Not Marine Drive — this is the price of Ajanta, paid in full. Sleep early: tomorrow is a ten-hour day.'}
+]},
+{d:'Fri 1',w:'Full',name:'Ajanta',sub:'The long day',meta:'Night 4',
+ slots:[
+  {m:1,h:'06:30 · Depart',p:'102 km, two and a half hours, arranged with the hotel the night before. ₹4,000–5,000 for the car. Breakfast in the car.'},
+  {h:'09:00 · Through the gate',p:'Opens at nine. Park, then the mandatory shuttle covers the last 4 km — ₹16 non-AC, ₹26 AC. The caves are cut into a horseshoe gorge above a river bend, which you see properly from the viewpoint on the far side.'},
+  {h:'09:30 · Caves 1, 2, 16, 17',p:'The paintings. Two thousand years old, lit deliberately low, flash prohibited. Bring the fastest lens you have or accept that your eyes will do better than your phone. Cave 26’s reclining Buddha for the sculpture.'},
+  {m:1,h:'14:00 · Back',p:'Two and a half hours again. You will be back in the city after dark and you will have earned dinner.'}
+]},
+{d:'Sat 2',w:'Move',name:'Back to Mumbai',sub:'07:15 in · one city day',meta:'Night 5',
+ slots:[
+  {m:1,h:'07:15 · IXU → BOM T2',p:'One hour. In Mumbai for breakfast, with a full day still in front of you.'},
+  {h:'10:00 · Banganga & Malabar Hill',p:'The 1127 stone tank behind the city’s most expensive addresses, then Khotachiwadi’s Portuguese-style cottages.'},
+  {h:'12:30 · Crawford Market & Mohammed Ali Road',p:'Victorian market hall, then north into Bhendi Bazaar to eat. The best street food in the city and the reason to skip a sit-down lunch.'},
+  {h:'16:00 · Dhobi Ghat, then Bandra',p:'The laundry from the Mahalaxmi bridge, then over the Sea Link at golden hour for Bandstand and Chapel Road’s Christmas lights.'},
+  {h:'20:00 · Last dinner',p:'Book it. Bombay Canteen or Trishna. One good meal to close the stop.'}
+]},
+D_DEPART];
+
+const DAYS_CITY=[D_ARRIVE,
+{d:'Wed 30',w:'Full',name:'Elephanta',sub:'Island, then the Gothic quarter',meta:'Night 2',
+ slots:[
+  {m:1,h:'09:00 · First ferry',p:'Apollo Bandar beside the Gateway, ₹260 return plus ₹10 upper deck, an hour each way. First boat beats the counter queue, which runs 30–45 minutes at holiday weekends.'},
+  {h:'10:15 · Cave 1',p:'The Trimurti Sadashiva — six metres of Shiva’s three faces, 6th century, Portuguese musket damage and all. ₹600, ninety minutes on the island.'},
+  {h:'14:30 · Fort and Kala Ghoda',p:'Asiatic Society steps, David Sassoon Library, Elphinstone College, the galleries, and CSMT station — the best building in Mumbai and a UNESCO site.'},
+  {h:'17:30 · Chowpatty',p:'Bhelpuri at sunset, then the long walk up Marine Drive as the necklace lights.'}
+]},
+{d:'Thu 31',w:'Full',name:'Kanheri',sub:'Caves without the flight',meta:'Night 3',
+ slots:[
+  {m:1,h:'07:30 · To Borivali',p:'Train or Uber north to Sanjay Gandhi National Park. Go early — it’s a two-hour round trip from Colaba and the park gets busy by mid-morning.'},
+  {h:'09:00 · Kanheri Caves',p:'109 Buddhist caves cut into a basalt ridge between the 1st and 10th centuries, inside the city limits. A seven-metre standing Buddha, rock-cut cisterns still holding water, and a great hall with ribbed stone ceiling imitating timber. Two hours, and hardly any tourists.'},
+  {h:'13:30 · Back south',p:'Lunch somewhere in the suburbs on the way down. Rest the afternoon — tonight is long.'},
+  {h:'17:30 · Marine Drive',p:'Get there early for a position on the seawall. Tens of thousands out from 21:00, police everywhere, no restrictions on being there. Rooftop covers ₹3,000–8,000 if you want a seat instead. Don’t drive.'}
+]},
+{d:'Fri 1',w:'Full',name:'Old Mumbai',sub:'Dawn markets to Bandra',meta:'Night 4',
+ slots:[
+  {h:'06:00 · Sassoon Dock',p:'The fishing fleet unloading at dawn. Over by eight, and worth the alarm on a morning after.'},
+  {h:'09:30 · Banganga & Khotachiwadi',p:'The 1127 tank on Malabar Hill, almost unvisited, then the Portuguese-style cottage lanes off Girgaon.'},
+  {h:'12:00 · Crawford Market & Mohammed Ali Road',p:'Market hall, spice lanes, then Bhendi Bazaar for kebabs and malpua.'},
+  {h:'16:00 · Dhobi Ghat & Haji Ali',p:'Laundry from the bridge at Mahalaxmi, then the causeway mosque if the tide is out. Check the tide — it floods twice a day.'},
+  {h:'19:00 · Bandra',p:'Over the Sea Link. Bandstand, Mount Mary, Chapel Road lights still up from Christmas, and the better half of the city’s restaurants.'}
+]},
+{d:'Sat 2',w:'Full',name:'Slow day',sub:'Museums and the water',meta:'Night 5',
+ slots:[
+  {h:'09:00 · CSMVS',p:'Indian miniatures, Gandharan sculpture, natural history, all under an Indo-Saracenic dome. Two to three hours and blessedly air-conditioned.'},
+  {h:'13:00 · Bhau Daji Lad',p:'The city museum in Byculla — a restored Victorian interior and a decorative-arts collection about Mumbai itself rather than about India. Closed Wednesdays, open today.'},
+  {h:'16:00 · Worli and the Coastal Road',p:'The new promenade along the western seafront, Worli Fort and the fishing village below it, and the Sea Link from underneath. Sunset from the Bandra side.'},
+  {h:'19:30 · Last dinner',p:'Book something good. Bombay Canteen, Trishna, or berry pulao at Britannia. The last proper meal before four days of the Gulf.'}
+]},
+D_DEPART];
+
+const PLANS={ellora:DAYS_ELLORA,both:DAYS_BOTH,city:DAYS_CITY};
+let CURRENT_PLAN='ellora';
+function renderDays(){
+  const DAYS=PLANS[CURRENT_PLAN];
+  document.getElementById('days').innerHTML=DAYS.map(D=>`
+  <div class="day">
+    <button class="day-btn" aria-expanded="false">
+      <span class="day-date">${D.d}<small>${D.w}</small></span>
+      <span><span class="day-name">${D.name}</span><span class="day-sub">${D.sub}</span></span>
+      <span class="day-meta">${D.meta}<span class="chev">▾</span></span>
+    </button>
+    <div class="day-body"><div class="day-inner"><div class="day-pad"><div class="slots">
+      ${D.slots.map(s=>`<div class="slot${s.m?' move':''}"><h4>${s.h}</h4><p>${s.p}</p></div>`).join('')}
+    </div></div></div></div>
+  </div>`).join('');
+  document.querySelectorAll('.day-btn').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const d=b.parentElement, open=d.classList.toggle('open');
+      b.setAttribute('aria-expanded',open?'true':'false');
+    });
+  });
+  document.querySelector('.day').classList.add('open');
+  document.querySelector('.day-btn').setAttribute('aria-expanded','true');
+}
+renderDays();
+
+document.getElementById('dayToggle').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  CURRENT_PLAN=b.dataset.plan;
+  document.querySelectorAll('#dayToggle .fbtn').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
+  renderDays();
+});
+
+/* ============ WORTH DOING ============ */
+const ITEMS=[
+/* SOUTH MUMBAI */
+{c:'South',t:'do',n:'Marine Drive after dark',w:'Three and a half kilometres of curved seawall with the streetlights strung along it — the Queen’s Necklace. Free, open all night, and the single most Mumbai thing there is. Walk it more than once.',when:'Any evening'},
+{c:'South',t:'do',n:'CSMT station',w:'Victorian Gothic crossed with Indian palace architecture, a UNESCO site, and still a working terminus moving three million people a day. Go inside, then look at it from across the road at night when it’s lit.',when:'Any time'},
+{c:'South',t:'do',n:'The Fort walk',w:'Asiatic Society steps, David Sassoon Library, Elphinstone College, Horniman Circle, the Kala Ghoda galleries. An hour and a half on foot through the best-preserved 19th-century commercial quarter in Asia.',when:'Morning'},
+{c:'South',t:'do',n:'Sassoon Dock at dawn',w:'The Koli fishing fleet unloading from about 05:30. Chaotic, pungent, entirely unstaged, and finished by eight. The one early alarm in Mumbai worth setting.',when:'05:30–08:00'},
+{c:'South',t:'do',n:'Banganga Tank',w:'A stone tank from 1127 with temple steps and dharamshalas on four sides, hidden behind the most expensive real estate in India, and almost nobody goes. The best-kept thing in south Mumbai.',when:'Morning'},
+{c:'South',t:'do',n:'Mohammed Ali Road eating',w:'Bhendi Bazaar after dark — seekh kebabs, baida roti, malpua, sugarcane juice. Cheap, superb, and the food you’ll still be thinking about in Dubai.',when:'After 19:00'},
+{c:'South',t:'do',n:'CSMVS museum',w:'The old Prince of Wales. Indian miniatures, Gandharan Buddhas and a Indo-Saracenic dome, plus air conditioning at the hour when that matters most. Two to three hours.',when:'Afternoon'},
+{c:'South',t:'opt',n:'Crawford Market',w:'Wholesale fruit, spice and cage-bird chaos under a Victorian roof with Lockwood Kipling’s friezes over the door. Intense; go with a clear exit plan and a loose grip on your wallet.',when:'Late morning'},
+{c:'South',t:'opt',n:'Khotachiwadi',w:'A few surviving lanes of East Indian Portuguese-style cottages off Girgaon, shrinking every year to redevelopment. Twenty minutes and a reminder of a city that mostly isn’t there any more.',when:'30 min'},
+{c:'South',t:'opt',n:'Chor Bazaar',w:'The thieves’ market — brass, film posters, colonial junk, and a certain amount of freshly aged antiquity. Closed Fridays. Good if you like rummaging, pointless if you don’t.',when:'Not Fridays'},
+{c:'South',t:'opt',n:'Mani Bhavan',w:'Gandhi’s Mumbai base from 1917 to 1934, kept as a small house museum with his room preserved. Forty-five minutes, quiet, and more affecting than it sounds.',when:'1 hour'},
+{c:'South',t:'opt',n:'Irani cafés',w:'Britannia for berry pulao, Kyani for bun maska, Yazdani for the bakery. A Parsi institution in visible decline — there were hundreds, now dozens. Check opening days; several close erratically.',when:'Breakfast'},
+{c:'South',t:'opt',n:'Dhobi Ghat',w:'The open-air laundry, best seen from the bridge at Mahalaxmi station rather than from inside, which is somebody’s workplace. Ten minutes, and it’s on the way to Haji Ali.',when:'10 min'},
+{c:'South',t:'skip',n:'Gateway of India, as a sight',w:'You will pass it going to Elephanta and that is the right amount of Gateway. It’s an arch, it’s surrounded by hawkers and a security cordon, and the Taj opposite is the better building.',when:''},
+{c:'South',t:'skip',n:'Hanging Gardens',w:'A municipal park on Malabar Hill with topiary animals. Banganga is four minutes away and a thousand times better.',when:''},
+{c:'South',t:'skip',n:'Haji Ali at high tide',w:'The causeway floods twice a day and the mosque becomes unreachable. Worth checking the tide before you commit the trip; not worth building a day around.',when:''},
+/* NORTH */
+{c:'North',t:'do',n:'Bandra: Bandstand & Chapel Road',w:'Sea-facing promenade, Mount Mary basilica, and Chapel Road’s Christmas lights and murals — still up into January, which only this window gets you. Also where the city actually eats and drinks.',when:'Evening'},
+{c:'North',t:'do',n:'Kanheri Caves',w:'109 Buddhist caves cut into a ridge inside Sanjay Gandhi National Park, 1st to 10th century, with a seven-metre standing Buddha and working rock-cut cisterns. Inside the city limits, and nearly empty.',when:'Half day'},
+{c:'North',t:'opt',n:'Bhau Daji Lad Museum',w:'Byculla. A restored Victorian interior housing a collection about Mumbai itself — models, maps, decorative arts. Small, excellent, closed Wednesdays.',when:'Closed Wed'},
+{c:'North',t:'opt',n:'The Coastal Road promenade',w:'Mumbai’s newest public space along the western seafront, with Worli Fort and the Koli fishing village underneath the Sea Link. Sunset walk, no ticket.',when:'Sunset'},
+{c:'North',t:'opt',n:'A Dharavi tour',w:'Contested, and rightly. Go only with a Dharavi-run operator that returns most of the fee locally and bans photographing residents. On those terms it’s a serious look at a working industrial economy; on any other terms, don’t.',when:'Half day',b:1},
+{c:'North',t:'opt',n:'Global Vipassana Pagoda',w:'A vast gold-domed hall at Gorai holding the world’s largest stone dome without pillars. A long trip north plus a ferry for essentially one room — good if Kanheri has you in the north anyway.',when:'Half day'},
+{c:'North',t:'skip',n:'Juhu Beach',w:'The sand is grey, the water is not for swimming, and the chaat is better at Chowpatty. Go for a Bollywood-adjacent people-watch only if you have a spare evening, which you do not.',when:''},
+{c:'North',t:'skip',n:'Bollywood studio tours',w:'Mostly a staged set visit with a dance lesson. Charming if that’s your thing, four hours of your four days if it isn’t.',when:''},
+/* ELEPHANTA */
+{c:'Island',t:'do',n:'Cave 1 and the Trimurti',w:'Six metres of Shiva’s three faces cut into the rear wall of a 6th-century cave, damaged by Portuguese gunfire and still overwhelming. This is the visit; everything else on the island is context.',when:'Morning'},
+{c:'Island',t:'do',n:'The 09:00 ferry',w:'From Apollo Bandar beside the Gateway. ₹260 return, ₹10 more for the upper deck, an hour each way. The counter queue runs 30–45 minutes on holidays — the first boat is how you avoid it.',when:'09:00 sharp'},
+{c:'Island',t:'opt',n:'The upper deck',w:'Ten rupees for open air, the harbour, the container terminal and the receding skyline instead of a hot cabin. The easiest good decision of the trip.',when:'+₹10'},
+{c:'Island',t:'opt',n:'Caves 2–5 and the cannon hill',w:'Less complete and much quieter than Cave 1, plus a pair of British cannon on the ridge with a harbour view. Forty minutes if you have them.',when:'40 min'},
+{c:'Island',t:'skip',n:'The toy train',w:'Ten rupees for 600 metres from the jetty to the steps. Walk it; you’re about to climb 120 steps anyway.',when:''},
+{c:'Island',t:'skip',n:'Lunch on the island',w:'Overpriced, indifferent, and you’re an hour from Colaba. Eat before or after.',when:''},
+/* CAVES */
+{c:'Caves',t:'do',n:'Ellora Cave 16 — Kailasa',w:'A complete temple quarried downward out of a single hillside in the 8th century, courtyard, tower, elephants and all. Arguably the most ambitious single piece of rock-cutting on earth. Be there at opening.',when:'From sunrise'},
+{c:'Caves',t:'do',n:'The Ellora Jain group, 30–34',w:'At the far north end and usually deserted because the coaches don’t bother. Indra Sabha’s carving is finer than anything in the Hindu caves and you’ll have it to yourself.',when:'Late morning'},
+{c:'Caves',t:'do',n:'Ajanta Caves 1, 2, 16, 17',w:'The murals — the oldest surviving painting in India, deliberately dim, flash prohibited. Cave 1’s Padmapani bodhisattva is the image everyone knows. Give them three unhurried hours or don’t come.',when:'From 09:00'},
+{c:'Caves',t:'opt',n:'Ellora Buddhist group, 1–12',w:'Cave 10’s Vishvakarma has a vaulted stone ceiling cut to imitate timber ribs, which is a very strange thing to do to a cliff. Worth the walk south.',when:'Morning'},
+{c:'Caves',t:'opt',n:'Ajanta viewpoint',w:'Across the gorge from the caves, looking down on the whole horseshoe and the river bend. The photograph that explains the site’s geography. Ask the driver to stop on the way in.',when:'15 min'},
+{c:'Caves',t:'opt',n:'Daulatabad Fort',w:'On the Ellora road. A 12th-century hill fort with a spiral tunnel defence you climb in the dark and 750 steps to the top. An hour and a half, steep, genuinely fun.',when:'On the way'},
+{c:'Caves',t:'opt',n:'Bibi ka Maqbara',w:'Aurangzeb’s son’s tomb for his mother, built as a smaller Taj Mahal and unfairly mocked for it. Thirty minutes on the city edge, and it works well as a filler before an evening flight.',when:'30 min'},
+{c:'Caves',t:'skip',n:'A group coach tour',w:'They leave the city late and arrive at the caves at the worst hour for both light and crowds. A car and driver costs ₹3,000–4,500 for the day and lets you be at the gate at opening.',when:''},
+{c:'Caves',t:'skip',n:'Ajanta in a day from Mumbai',w:'Roughly 350 km each way. It does not work, and every operator selling it is selling you fourteen hours in a vehicle for two at the caves.',when:''},
+{c:'Caves',t:'skip',n:'Aurangabad Caves',w:'A third set, 12 caves on a hill north of the city. Perfectly decent and completely outclassed by the two you came for.',when:''}
+];
+
+const TIERLBL={do:'Do',opt:'Maybe',skip:'Skip'};
+let FC='all', FT=null, FB=false;
+
+function renderItems(){
+  const list=ITEMS.filter(x=>
+    (FC==='all'||x.c===FC) && (!FT||x.t===FT) && (!FB||x.b));
+  const host=document.getElementById('items');
+  if(!list.length){host.innerHTML='<div class="empty">No entries match those filters.</div>';return}
+  host.innerHTML=list.map(x=>`
+    <div class="item">
+      <span class="tier ${x.t}">${TIERLBL[x.t]}</span>
+      <span class="nm">${x.n}</span>
+      <span class="when${x.b?' book':''}">${x.when||'&nbsp;'}</span>
+      <span class="why">${x.w}</span>
+    </div>`).join('');
+}
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  if(b.dataset.city){FC=b.dataset.city}
+  else if(b.dataset.tier){FT = FT===b.dataset.tier?null:b.dataset.tier}
+  else if(b.dataset.book){FB=!FB}
+  document.querySelectorAll('#filters .fbtn').forEach(x=>{
+    let on=false;
+    if(x.dataset.city) on = x.dataset.city===FC;
+    if(x.dataset.tier) on = x.dataset.tier===FT;
+    if(x.dataset.book) on = FB;
+    x.setAttribute('aria-pressed',on?'true':'false');
+  });
+  renderItems();
+});
+renderItems();
+
+/* ============ FIG 1: TIME AUDIT ============ */
+(function(){
+  const svg=document.getElementById('audit-chart');
+  const W=1400,H=190,pad=40,barY=70,barH=54;
+  const totalH=6*24; // 29 Dec 00:00 → 4 Jan 00:00
+  const x=h=>pad+(h/totalH)*(W-2*pad);
+  const segs=[
+    {a:0,b:18,cls:'t2'},   // 29 Dec, in transit / flying
+    {a:18,b:24,cls:'p'},   // 29 Dec evening
+    {a:24,b:48,cls:'f'},   // 30 Dec
+    {a:48,b:72,cls:'f'},   // 31 Dec
+    {a:72,b:96,cls:'f'},   // 1 Jan
+    {a:96,b:120,cls:'f'},  // 2 Jan
+    {a:120,b:130,cls:'p'}, // 3 Jan morning
+    {a:130,b:144,cls:'t2'} // 3 Jan, flight to Dubai
+  ];
+  const colors={t2:'rgba(231,100,155,.55)',p:'rgba(242,169,60,.35)',f:'var(--amber)'};
+  let s='';
+  segs.forEach(sg=>{
+    const x1=x(sg.a),x2=x(sg.b);
+    s+=`<rect x="${x1}" y="${barY}" width="${Math.max(1,x2-x1-1)}" height="${barH}" fill="${colors[sg.cls]}"/>`;
+  });
+  const start=new Date(2026,11,29);
+  for(let d=0;d<=6;d++){
+    const hh=d*24, xx=x(hh);
+    const dt=new Date(start.getTime()+hh*36e5);
+    s+=`<line x1="${xx}" y1="${barY-6}" x2="${xx}" y2="${barY+barH+6}" class="axs"/>`;
+    s+=`<text x="${xx}" y="${barY-14}" class="lbl" text-anchor="${d===0?'start':d===6?'end':'middle'}">${dt.toLocaleDateString('en-CA',{day:'2-digit',month:'short'})}</text>`;
+  }
+  s+=`<line x1="${pad}" y1="${barY+barH+0.5}" x2="${W-pad}" y2="${barY+barH+0.5}" class="ax"/>`;
+  // NYE marker
+  const nye=x(72);
+  s+=`<line x1="${nye}" y1="${barY-26}" x2="${nye}" y2="${barY+barH+12}" stroke="var(--magenta)" stroke-width="1" stroke-dasharray="3 3"/>`;
+  s+=`<text x="${nye}" y="${barY-32}" class="lbl-a" text-anchor="middle" fill="var(--magenta)">midnight, 31 Dec</text>`;
+  s+=`<text x="${x(24)}" y="${barY+barH+34}" class="lbl-a">4 full days — 30 Dec → 2 Jan</text>`;
+  s+=`<text x="${x(0)}" y="${barY+barH+34}" class="lbl">↙ lost to transit</text>`;
+  svg.innerHTML=s;
+})();
+
+/* ============ FIG 2: THE THREE SHAPES ============ */
+(function(){
+  const svg=document.getElementById('shapes-chart');
+  const W=1400,H=300,padL=210,padR=40,padT=44,rowH=58,barH=30;
+  const days=6;
+  const x=d=>padL+(d/days)*(W-padL-padR);
+  const C={m:'var(--amber)',c:'var(--jade)',t:'rgba(231,100,155,.55)'};
+  // each plan: array of {a,b,k} in day units from 29 Dec 00:00
+  const PLANS=[
+    {n:'Both caves',rows:[{a:0,b:.75,k:'t'},{a:.75,b:2,k:'m'},{a:2,b:2.3,k:'t'},{a:2.3,b:4,k:'c'},{a:4,b:4.3,k:'t'},{a:4.3,b:5.4,k:'m'},{a:5.4,b:6,k:'t'}]},
+    {n:'Ellora only  ◆',rows:[{a:0,b:.75,k:'t'},{a:.75,b:1,k:'m'},{a:1,b:1.3,k:'t'},{a:1.3,b:2,k:'c'},{a:2,b:2.3,k:'t'},{a:2.3,b:5.4,k:'m'},{a:5.4,b:6,k:'t'}]},
+    {n:'Mumbai only',rows:[{a:0,b:.75,k:'t'},{a:.75,b:5.4,k:'m'},{a:5.4,b:6,k:'t'}]}
+  ];
+  let s='';
+  // day gridlines + labels
+  const labels=['29 Dec','30 Dec','31 Dec','1 Jan','2 Jan','3 Jan'];
+  for(let d=0;d<=days;d++){
+    const xx=x(d);
+    s+=`<line x1="${xx}" y1="${padT-12}" x2="${xx}" y2="${padT+PLANS.length*rowH}" class="axs"/>`;
+    if(d<days) s+=`<text x="${(x(d)+x(d+1))/2}" y="${padT-20}" class="lbl" text-anchor="middle">${labels[d]}</text>`;
+  }
+  // NYE marker
+  const nye=x(3);
+  s+=`<line x1="${nye}" y1="${padT-34}" x2="${nye}" y2="${padT+PLANS.length*rowH+6}" stroke="var(--magenta)" stroke-width="1" stroke-dasharray="3 3"/>`;
+  s+=`<text x="${nye}" y="${padT+PLANS.length*rowH+24}" class="lbl-a" text-anchor="middle" fill="var(--magenta)">midnight</text>`;
+  PLANS.forEach((p,i)=>{
+    const y=padT+i*rowH+8;
+    s+=`<text x="${padL-16}" y="${y+barH/2+4}" class="lbl-p" text-anchor="end">${p.n}</text>`;
+    p.rows.forEach(r=>{
+      s+=`<rect x="${x(r.a)}" y="${y}" width="${Math.max(2,x(r.b)-x(r.a)-1)}" height="${barH}" fill="${C[r.k]}" rx="1"/>`;
+    });
+  });
+  svg.innerHTML=s;
+})();
+
+/* ============ FIG 3: MUMBAI RAINFALL ============ */
+(function(){
+  const svg=document.getElementById('rain-chart');
+  const W=1400,H=320,padL=64,padR=30,padT=24,padB=52;
+  const MO=[
+    {n:'Jan',v:1},{n:'Feb',v:1},{n:'Mar',v:0},{n:'Apr',v:1},
+    {n:'May',v:12},{n:'Jun',v:505},{n:'Jul',v:840},{n:'Aug',v:585},
+    {n:'Sep',v:335},{n:'Oct',v:90},{n:'Nov',v:17},{n:'Dec',v:5}
+  ];
+  const max=900;
+  const bw=(W-padL-padR)/MO.length;
+  const y=v=>padT+(1-v/max)*(H-padT-padB);
+  let s='';
+  [0,200,400,600,800].forEach(v=>{
+    s+=`<line x1="${padL}" y1="${y(v)}" x2="${W-padR}" y2="${y(v)}" class="axs"/>`;
+    s+=`<text x="${padL-10}" y="${y(v)+4}" class="lbl" text-anchor="end">${v}mm</text>`;
+  });
+  MO.forEach((m,i)=>{
+    const x0=padL+i*bw+bw*0.18, bwid=bw*0.64;
+    const hot=(m.n==='Dec'||m.n==='Jan');
+    const hgt=Math.max(2,(H-padB)-y(m.v));
+    s+=`<rect x="${x0}" y="${y(m.v)}" width="${bwid}" height="${hgt}" fill="${hot?'var(--amber)':'rgba(242,169,60,.32)'}" rx="1"/>`;
+    s+=`<text x="${x0+bwid/2}" y="${H-padB+18}" class="lbl" text-anchor="middle" ${hot?'fill="var(--amber)"':''}>${m.n}</text>`;
+    s+=`<text x="${x0+bwid/2}" y="${y(m.v)-8}" class="${hot?'lbl-a':'lbl'}" text-anchor="middle">${m.v}</text>`;
+  });
+  s+=`<line x1="${padL}" y1="${H-padB}" x2="${W-padR}" y2="${H-padB}" class="ax"/>`;
+  s+=`<text x="${W-padR}" y="${H-10}" class="lbl" text-anchor="end">Your window sits in the driest fortnight of the year</text>`;
+  svg.innerHTML=s;
+})();
+
+/* ============ TICKET MATHS ============ */
+const COSTS=[
+  {n:'e-Visa — USD 80 + 2.5% bank charge, per person',r:7300,k:'base',def:true,note:'Canadians pay a flat $80; most nationalities pay $25–40'},
+  {n:'Elephanta — ferry ₹270 + ASI ₹600 + island fees',r:890,k:'base',def:true,note:'Cash at the Gateway counter; no online booking'},
+  {n:'Mumbai → Sambhajinagar, IndiGo one way',r:4000,k:'cave',note:'Indicative — New Year pricing runs higher'},
+  {n:'Sambhajinagar → Mumbai, IndiGo one way',r:4000,k:'cave',note:'Indicative — the 07:15, the only flight back'},
+  {n:'Ellora — ASI ₹600 + inter-group shuttle ₹22',r:622,k:'cave',note:'Foreign-national rate, unchanged since Aug 2018'},
+  {n:'Car and driver, full Ellora day',r:3500,k:'cave',note:'Book through the hotel the night before'},
+  {n:'Ajanta — ASI ₹600 + mandatory shuttle ₹26 AC',r:626,k:'ajanta',note:'Adds a second night inland'},
+  {n:'Car and driver, full Ajanta day',r:4500,k:'ajanta',note:'Ten hours, five of them driving'},
+  {n:'Devagiri Express overnight, 2AC — alternative to the flight',r:1200,k:'alt',note:'Indicative; arrives 04:05, four hours before anything opens'},
+  {n:'Kanheri Caves — park entry and caves',r:700,k:'city',note:'The no-flight substitute, inside the city'},
+  {n:'New Year rooftop cover, per person',r:5000,k:'city',note:'Range is ₹3,000–8,000; Marine Drive is free'},
+  {n:'Aqua Line metro, a few days of riding',r:300,k:'base',def:true,note:'₹10–50 a trip, Cuffe Parade to both airport terminals'},
+  {n:'Maharashtra one-day liquor permit',r:5,k:'base',note:'Legally required in the state; ₹5 online'}
+];
+function renderLegs(){
+  document.getElementById('legs').innerHTML=COSTS.map((l,i)=>`
+    <label class="leg-row">
+      <input type="checkbox" data-i="${i}" ${l.def?'checked':''}>
+      <span class="lname">${l.n}</span>
+      <span class="lyen">₹${l.r.toLocaleString('en-CA')}</span>
+      ${l.note?`<span class="lnote">${l.note}</span>`:''}
+    </label>`).join('');
+}
+function calcTotals(){
+  let total=0, cave=false, ajanta=false;
+  document.querySelectorAll('#legs input[type="checkbox"]').forEach(cb=>{
+    const l=COSTS[Number(cb.dataset.i)];
+    if(cb.checked){ total+=l.r; if(l.k==='cave'||l.k==='alt') cave=true; if(l.k==='ajanta') ajanta=true; }
+  });
+  document.getElementById('ptp').innerHTML=`₹${total.toLocaleString('en-CA')}`;
+  document.getElementById('cad').innerHTML=`$${Math.round(total/62).toLocaleString('en-CA')}<small>CAD</small>`;
+  document.getElementById('perday').innerHTML=`$${Math.round(total/62/4).toLocaleString('en-CA')}<small>per full day</small>`;
+  const v=document.getElementById('verdict');
+  if(ajanta){ v.textContent='Both caves — New Year inland'; v.className='lose'; }
+  else if(cave){ v.textContent='Ellora only — the pick'; v.className='win'; }
+  else { v.textContent='Mumbai only — no inland flight'; v.className=''; }
+}
+renderLegs();
+document.getElementById('legs').addEventListener('change',calcTotals);
+calcTotals();
+</script>
+
+</body>
+</html>

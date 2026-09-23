@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="darkreader-lock">
+<title>Vietnam</title>
+<link rel="stylesheet" href="fonts.css">
+</head>
+<body>
+<style>
+:root{color-scheme:dark;
+  --ink:#05161D;--ink-2:#0A2029;--ink-3:#0E2A35;
+  --rule:#194150;--rule-soft:rgba(25,65,80,.6);
+  --paper:#E2EEED;--paper-dim:#A6C2C6;--muted:#6C8F98;
+  --amber:#F2A93C;--magenta:#E7649B;--jade:#58C4A3;--red:#E05555;
+  --display:'Big Shoulders Display','Arial Narrow',Impact,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --body:'Inter',system-ui,sans-serif;
+  --gut:clamp(18px,4vw,64px);--maxw:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+.section{padding-block:clamp(34px,4.4vw,58px);border-top:1px solid var(--rule-soft);position:relative}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:14px;margin:0 0 18px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--rule)}
+.eyebrow .n{color:var(--amber)}
+h2.head{font-family:var(--display);font-weight:700;font-size:clamp(34px,5.6vw,66px);line-height:.92;margin:0 0 14px;text-transform:uppercase}
+.lede{max-width:66ch;color:var(--paper-dim);font-size:clamp(15px,1.5vw,17px);margin:0 0 26px}
+.lede b{color:var(--paper);font-weight:600}
+a{color:var(--amber);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+.hint{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+@media (min-width:980px){.hint.wide{display:none}}
+.scroller{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--rule) transparent}
+.scroller::-webkit-scrollbar{height:6px}
+.scroller::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}
+.scroller>svg{display:block;width:100%;height:auto}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(30px,5vw,58px) clamp(24px,4vw,40px);overflow:hidden}
+.gridbg{position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:linear-gradient(to right,var(--rule-soft) 1px,transparent 1px),linear-gradient(to bottom,var(--rule-soft) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%);-webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%)}
+.back{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:inline-block;margin-bottom:20px}
+.back:hover{color:var(--amber)}
+.strip{font-family:var(--mono);font-size:clamp(10px,1.15vw,12px);letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;border-block:1px solid var(--rule);padding-block:11px;margin-bottom:clamp(26px,4vw,44px)}
+.strip .k{color:var(--muted)}.strip .amb{color:var(--amber)}
+.title{font-family:var(--display);text-transform:uppercase;margin:0;line-height:.82;position:relative}
+.title .l1{display:block;font-weight:400;font-size:clamp(34px,7.4vw,96px);color:transparent;-webkit-text-stroke:1.2px var(--paper-dim)}
+.title .l2{display:block;font-weight:800;font-size:clamp(72px,17vw,232px);letter-spacing:-.015em;color:var(--paper)}
+.subline{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:baseline;margin-top:clamp(18px,3vw,30px);font-family:var(--mono);font-size:clamp(11px,1.25vw,13px);letter-spacing:.14em;text-transform:uppercase;color:var(--paper-dim)}
+.subline .sep{color:var(--rule)}
+
+/* instruments */
+.instr{display:grid;grid-template-columns:repeat(auto-fit,minmax(124px,1fr));border:1px solid var(--rule);background:var(--ink-2);margin:clamp(24px,3.4vw,38px) 0 0}
+.instr div{padding:15px 17px;border-right:1px solid var(--rule-soft)}
+.instr div:last-child{border-right:0}
+.instr dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.instr dd{margin:0;font-family:var(--display);font-weight:600;font-size:31px;line-height:1}
+.instr dd span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--paper-dim);margin-left:3px}
+.instr dd.hot{color:var(--amber)}
+.instr dd.warn{color:var(--magenta)}
+
+/* chart frames */
+.figcap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:9px;margin:0 0 8px}
+.figcap b{color:var(--amber);font-weight:500}
+.fignote{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.fignote i{display:inline-block;width:14px;height:9px;margin:0 5px 0 14px;vertical-align:middle;border-radius:1px}
+.fignote i:first-child{margin-left:0}
+.ax{stroke:var(--rule);stroke-width:1}
+.axs{stroke:var(--rule-soft);stroke-width:1}
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.08em;fill:var(--muted)}
+.lbl-p{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;fill:var(--paper)}
+.lbl-a{font-family:var(--mono);font-size:10px;letter-spacing:.12em;fill:var(--amber)}
+
+/* cards */
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin:0 0 6px}
+.card{border:1px solid var(--rule);background:var(--ink-2);padding:18px 20px;position:relative}
+.card.bad{border-color:var(--red)}
+.card.good{border-color:var(--jade)}
+.card h3{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 4px;color:var(--paper)}
+.card .verdict{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:11px}
+.card .verdict.bad{color:var(--red)}
+.card .verdict.ok{color:var(--jade)}
+.card p{margin:0 0 10px;font-size:13.5px;color:var(--paper-dim);line-height:1.62}
+.card p:last-child{margin-bottom:0}
+.card p b{color:var(--paper);font-weight:600}
+.fix{border-left:2px solid var(--amber);padding-left:12px;margin:12px 0 0;font-size:12.8px;color:var(--paper-dim);line-height:1.6}
+.fix b{display:block;color:var(--amber);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px;font-weight:500}
+.fix strong{color:var(--paper);font-weight:600}
+
+/* shape cards */
+.shapes{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+.shape{border:1px solid var(--rule);background:var(--ink-2);padding:0;display:flex;flex-direction:column}
+.shape.pick{border-color:var(--amber);box-shadow:inset 0 0 0 1px rgba(242,169,60,.25)}
+.shape-hd{padding:16px 20px 14px;border-bottom:1px solid var(--rule-soft)}
+.shape-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.shape.pick .shape-tag{color:var(--amber)}
+.shape-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(24px,3vw,32px);line-height:.95;margin:0}
+.chainrow{display:flex;flex-wrap:wrap;align-items:center;gap:5px 7px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--paper);padding:13px 20px;border-bottom:1px solid var(--rule-soft);background:rgba(5,22,29,.5)}
+.chainrow .a{color:var(--rule)}
+.chainrow .n{color:var(--amber);font-size:9.5px}
+.shape-body{padding:15px 20px 18px;flex:1}
+.shape-body p{margin:0 0 10px;font-size:13.3px;color:var(--paper-dim);line-height:1.6}
+.shape-body p:last-child{margin-bottom:0}
+.shape-body p b{color:var(--paper);font-weight:600}
+.shape-meta{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--rule-soft)}
+.shape-meta div{flex:1;min-width:88px;padding:11px 20px;border-right:1px solid var(--rule-soft)}
+.shape-meta div:last-child{border-right:0}
+.shape-meta dt{font-family:var(--mono);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.shape-meta dd{margin:0;font-family:var(--mono);font-size:13px;color:var(--paper)}
+.shape-meta dd.g{color:var(--jade)}
+.shape-meta dd.r{color:var(--red)}
+
+/* day accordion */
+.days{border-top:1px solid var(--rule)}
+.day{border-bottom:1px solid var(--rule)}
+.day-btn{all:unset;box-sizing:border-box;display:grid;width:100%;cursor:pointer;grid-template-columns:76px 1fr auto;gap:0 clamp(14px,2.4vw,30px);align-items:baseline;padding:clamp(13px,1.8vw,18px) 4px;transition:background .18s ease}
+.day-btn:hover{background:rgba(242,169,60,.05)}
+.day-btn:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.day-date{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.1em}
+.day-date small{display:block;color:var(--muted);font-size:9.5px;letter-spacing:.14em;margin-top:3px}
+.day-btn>span:nth-child(2){display:flex;flex-direction:column;gap:6px}
+.day-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(22px,3.2vw,34px);line-height:.95;margin:0}
+.day-sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.day-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--paper-dim);text-align:right;white-space:nowrap}
+.day-meta .chev{display:inline-block;margin-left:12px;color:var(--muted);transition:transform .25s ease}
+.day.open .day-meta .chev{transform:rotate(180deg)}
+@media (max-width:720px){.day-btn{grid-template-columns:64px 1fr;row-gap:8px}.day-meta{grid-column:2;text-align:left}}
+.day-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .34s cubic-bezier(.3,.8,.3,1)}
+.day.open .day-body{grid-template-rows:1fr}
+.day-inner{overflow:hidden}
+.day-pad{padding:2px 4px clamp(22px,3vw,32px)}
+.slots{display:grid;gap:0;border-left:1px solid var(--rule)}
+.slot{padding:0 0 16px 16px;position:relative}
+.slot:last-child{padding-bottom:2px}
+.slot::before{content:"";position:absolute;left:-4px;top:6px;width:7px;height:7px;background:var(--amber);border-radius:50%}
+.slot.move::before{background:var(--magenta)}
+.slot h4{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 5px;font-weight:500}
+.slot.move h4{color:var(--magenta)}
+.slot p{margin:0;font-size:14px;line-height:1.62;color:var(--paper-dim);max-width:72ch}
+.slot p b{color:var(--paper);font-weight:600}
+
+/* worth doing */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.fbtn{all:unset;cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border:1px solid var(--rule);color:var(--paper-dim);border-radius:2px;transition:.15s}
+.fbtn:hover{background:var(--ink-3);color:var(--paper)}
+.fbtn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.fbtn[aria-pressed="true"]{background:var(--amber);color:var(--ink);border-color:var(--amber);font-weight:600}
+.fdiv{width:1px;background:var(--rule);margin:2px 6px}
+.items{display:grid;gap:1px;background:var(--rule-soft);border:1px solid var(--rule)}
+.item{background:var(--ink-2);padding:13px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:baseline}
+.item .tier{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:3px 7px 2px;border-radius:2px;white-space:nowrap;align-self:start;margin-top:2px}
+.tier.do{background:rgba(88,196,163,.14);color:var(--jade);border:1px solid rgba(88,196,163,.35)}
+.tier.opt{background:rgba(242,169,60,.12);color:var(--amber);border:1px solid rgba(242,169,60,.3)}
+.tier.skip{background:rgba(224,85,85,.1);color:var(--red);border:1px solid rgba(224,85,85,.3)}
+.item .nm{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:20px;line-height:1.05;color:var(--paper)}
+.item .why{grid-column:2;font-size:13.3px;color:var(--paper-dim);line-height:1.55;max-width:74ch}
+.item .why b{color:var(--paper);font-weight:600}
+.item .when{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);text-align:right;white-space:nowrap;align-self:start;margin-top:4px}
+.item .when.book{color:var(--magenta)}
+@media (max-width:640px){.item{grid-template-columns:auto 1fr}.item .when{grid-column:2;text-align:left;margin-top:2px}.item .why{grid-column:1/-1}}
+.empty{background:var(--ink-2);padding:22px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* cost calc */
+.calc{border:1px solid var(--rule);background:var(--ink-2)}
+.calc-legs{display:grid}
+.leg-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--rule-soft);cursor:pointer}
+.leg-row:hover{background:rgba(242,169,60,.04)}
+.leg-row input{accent-color:var(--amber);width:15px;height:15px;cursor:pointer}
+.leg-row .lname{font-family:var(--mono);font-size:12.5px;color:var(--paper-dim)}
+.leg-row input:checked+.lname{color:var(--paper)}
+.leg-row .lyen{font-family:var(--mono);font-size:12.5px;color:var(--amber);font-variant-numeric:tabular-nums;white-space:nowrap}
+.leg-row .lnote{grid-column:2/-1;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--muted);margin-top:-4px}
+.calc-out{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule-soft)}
+.calc-out div{background:var(--ink-3);padding:15px 17px}
+.calc-out dt{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.calc-out dd{margin:0;font-family:var(--display);font-weight:700;font-size:27px;line-height:1;font-variant-numeric:tabular-nums}
+.calc-out dd small{font-family:var(--mono);font-size:10px;font-weight:400;color:var(--paper-dim);margin-left:4px;letter-spacing:.06em}
+#verdict{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;line-height:1.5}
+#verdict.win{color:var(--jade)}
+#verdict.lose{color:var(--red)}
+
+/* panels / tables */
+.panel{border:1px solid var(--rule);background:var(--ink-2);padding:clamp(17px,2.4vw,24px);margin-top:22px}
+.panel h3{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 12px;font-weight:500}
+.panel p{margin:0 0 12px;font-size:13.6px;color:var(--paper-dim);line-height:1.62}
+.panel p:last-child{margin-bottom:0}
+.panel p b{color:var(--paper);font-weight:600}
+table.ref{width:100%;border-collapse:collapse;font-size:13.4px}
+table.ref th{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:500;padding:0 14px 10px 0;border-bottom:1px solid var(--rule)}
+table.ref td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule-soft);color:var(--paper-dim);vertical-align:top}
+table.ref td:first-child{font-family:var(--display);font-size:17px;font-weight:600;text-transform:uppercase;color:var(--paper);white-space:nowrap;width:1%}
+table.ref td.t{font-family:var(--mono);font-size:11px;letter-spacing:.06em;white-space:nowrap;color:var(--amber)}
+table.ref tr.flag td.t{color:var(--magenta)}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.cols{display:grid;gap:16px 34px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:20px}
+.cols p{margin:0;font-size:13.6px;color:var(--paper-dim);line-height:1.6}
+.cols p b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:5px;font-weight:500}
+
+footer{border-top:1px solid var(--rule);padding-block:26px 40px;color:var(--muted)}
+.foot-grid{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:flex-end}
+.foot-grid p{margin:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase}
+.foot-mark{font-family:var(--display);font-size:clamp(40px,9vw,110px);font-weight:800;text-transform:uppercase;line-height:.8;color:transparent;-webkit-text-stroke:1px var(--rule);margin:30px 0 0}
+</style>
+
+<header class="hero">
+  <div class="gridbg"></div>
+  <div class="wrap">
+    <a class="back" href="index.html">← Westbound · the dossier</a>
+    <p class="strip">
+      <span><span class="k">Stop</span> <span class="amb">12 of 27</span></span>
+      <span><span class="k">In</span> HKG · Hong Kong</span>
+      <span><span class="k">Fly Vietnam</span> <span class="amb">HAN</span></span>
+      <span><span class="k">Out</span> LPQ · Luang Prabang</span>
+      <span><span class="k">Window</span> 3–8 Dec 2026</span>
+      <span><span class="k">Clock</span> UTC+7</span>
+    </p>
+    <h1 class="title">
+      <span class="l1">Twelfth stop</span>
+      <span class="l2">Vietnam</span>
+    </h1>
+    <p class="subline">
+      <span>Hanoi fixed</span><span class="sep">/</span>
+      <span>One night on the water</span><span class="sep">/</span>
+      <span>Ninh Bình: overnight or day trip, see below</span>
+    </p>
+
+    <dl class="instr">
+      <div><dt>Calendar days</dt><dd>6</dd></div>
+      <div><dt>Full days</dt><dd class="hot">4</dd></div>
+      <div><dt>Nights</dt><dd>5</dd></div>
+      <div><dt>Bases</dt><dd>3</dd></div>
+      <div><dt>E-visa</dt><dd>25<span>USD</span></dd></div>
+      <div><dt>Dec rain, Hanoi</dt><dd class="warn">≈21<span>mm</span></dd></div>
+    </dl>
+  </div>
+</header>
+
+<section class="section" id="audit">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">01</span> The time audit</p>
+    <h2 class="head">Six days<br>is four days</h2>
+    <p class="lede">This is the first Asian leg where the flight barely costs you anything. Hong Kong to Hanoi is under two hours and you gain an hour crossing into UTC+7, so a morning departure has you in the Old Quarter for lunch. What eats the week instead is at the other end: <b>the overnight cruise consumes a day and a half</b>, and the flight out on Tuesday 8 December sits on a route whose schedule is thin. Four full days, two workable fragments.</p>
+
+    <div class="figcap">
+      <span>Fig. 1 — What the week really contains</span>
+      <span><b>3–8 Dec</b> · hour by hour</span>
+    </div>
+    <div class="scroller">
+      <svg id="audit-chart" viewBox="0 0 1400 190" role="img" aria-label="Timeline of 3 to 8 December showing a short morning flight from Hong Kong, a usable arrival afternoon, four full days from the 4th to the 7th, and a last morning before the flight to Luang Prabang."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--magenta);opacity:.55"></i>In transit<i style="background:rgba(242,169,60,.35)"></i>Part day<i style="background:var(--amber)"></i>Full day</p>
+
+    <div class="cols">
+      <p><b>Take the morning flight out of Hong Kong</b>Cathay, Vietnam Airlines and Vietjet all run HKG–HAN in about 1h55, and you gain an hour on the clock. An 08:30 departure puts you on the ground at Nội Bài around 10:20 and in the Old Quarter by noon — a whole extra half-day for no money. An afternoon flight throws that away.</p>
+      <p><b>No jet lag left to exploit</b>Hong Kong is UTC+8, Hanoi UTC+7. After eight weeks of eastward-to-westward grinding, this is the first stop where you arrive already on local time. That's a relief, but it also means you don't get Japan's free 6am — if you want Hàng Múa or Hoàn Kiếm at dawn, you'll have to set an alarm like everyone else.</p>
+      <p><b>The boat is a day and a half</b>A 2-day/1-night cruise picks you up from your hotel around 08:00 and drops you back in Hanoi around 15:30 the next day. That is the correct trade — the day trip version is four hours in a van for four hours on the water — but budget it honestly as a day and a half, not a night.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="flags">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">02</span> Two things to settle first</p>
+    <h2 class="head">Before you<br>book anything</h2>
+    <p class="lede">One is a scheduling problem with a real chance of biting, and it's cheap to fix now and expensive to fix in December. The other is an expectation correction — the window is right, but not for the reason the brief says.</p>
+
+    <div class="cards">
+      <div class="card bad">
+        <h3>The flight out lands on a Tuesday</h3>
+        <div class="verdict bad">Verify this first</div>
+        <p>Hanoi–Luang Prabang is a thin route: <b>Vietnam Airlines VN931 and Lao Airlines QV314</b> are the only non-stops, about 1h10 in an A321 or an ATR. Schedule aggregators currently disagree about frequency — one shows both carriers running <b>Monday, Wednesday and Friday only</b>, another shows VN931 daily. Your departure, 8 December, is a Tuesday, which is exactly the day at risk.</p>
+        <p>This is not a reason to panic; it is a reason to check the airline's own booking engine for that specific date before the rest of the leg is locked. Seasonal schedules on Southeast Asian regional routes move constantly.</p>
+        <div class="fix"><b>If Tuesday isn't served</b><strong>Option one:</strong> fly Monday 7 Dec and give Laos the extra day — Luang Prabang absorbs it easily. <strong>Option two:</strong> route via Vientiane. HAN–VTE has about fourteen flights a week on Vietnam Airlines and Lao Airlines, roughly an hour, then a short hop north to LPQ. Costs you most of a day. <strong>Option three:</strong> shift the whole Vietnam window a day earlier.</div>
+      </div>
+
+      <div class="card">
+        <h3>Dry, yes. Sunny, not necessarily.</h3>
+        <div class="verdict">Adjust the expectation</div>
+        <p>December is northern Vietnam's driest month and that part is solidly true — Hanoi averages roughly <b>21 mm of rain across about one wet day</b>, against 300-plus in August. Days run about <b>21°C with lows near 15°C</b>, and the summer humidity is finally gone. Ha Long sits at 16–22°C with calm, stable seas; operators describe December as one of the most reliable months of the year for sailing.</p>
+        <p>What you don't get is blue sky on demand. The northern winter brings low overcast and a fine drizzle the Vietnamese call <i>phùn</i>, and Ha Long mornings are often <b>misty rather than clear</b>. That mist is genuinely beautiful between the karsts and genuinely ruinous for long-range views. Both things are true; pack for the second.</p>
+        <div class="fix"><b>Two consequences worth planning around</b>The water is 18–20°C, so <strong>you kayak, you don't swim</strong> — bring a layer you don't mind getting wet. And you're in the quiet band: cruises run roughly <strong>US$130–180 per person</strong> in the first half of December against US$180–250 over Christmas and New Year. 3–8 December is the cheap, empty fortnight of the good season.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="shapes">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">03</span> The open question</p>
+    <h2 class="head">Which bay</h2>
+    <p class="lede">"Hạ Long Bay" as a booking category covers three adjacent waters that share the same drowned limestone landscape. The scenery differences are marginal; the differences in <b>boat count, transfer length and how much of the day you spend moving</b> are not. All three are one night from Hanoi.</p>
+
+    <div class="shapes">
+      <div class="shape pick">
+        <div class="shape-hd">
+          <div class="shape-tag">Recommended</div>
+          <p class="shape-name">Bái Tử Long</p>
+        </div>
+        <div class="chainrow">
+          <span>Hanoi</span><span class="a">→</span>
+          <span>CT06 expressway <span class="n">2h30</span></span><span class="a">→</span>
+          <span>Hòn Gai</span><span class="a">→</span>
+          <span class="n">Bái Tử Long</span>
+        </div>
+        <div class="shape-body">
+          <p>The north-eastern half of the same bay, reached on the same expressway from the same pier area — but <b>far fewer boats are permitted on the route</b>. Same karsts, same caves, a fraction of the traffic, and no ferry to add to the day.</p>
+          <p>What you give up is the postcard set: Sửng Sốt cave and the Ti Tốp viewpoint sit in Hạ Long proper, and the Bái Tử Long routes visit smaller, quieter caves and a floating village instead. On a five-night leg where the whole point is a night on the water rather than a checklist, that's the right trade.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Transfer</dt><dd class="g">2h30</dd></div>
+          <div><dt>Other boats</dt><dd class="g">Few</dd></div>
+          <div><dt>Ferry</dt><dd class="g">None</dd></div>
+          <div><dt>Famous caves</dt><dd>No</dd></div>
+        </dl>
+      </div>
+
+      <div class="shape">
+        <div class="shape-hd">
+          <div class="shape-tag">The famous one</div>
+          <p class="shape-name">Hạ Long proper</p>
+        </div>
+        <div class="chainrow">
+          <span>Hanoi</span><span class="a">→</span>
+          <span>CT06 <span class="n">2h30</span></span><span class="a">→</span>
+          <span>Tuần Châu</span><span class="a">→</span>
+          <span class="n">Sửng Sốt · Ti Tốp</span>
+        </div>
+        <div class="shape-body">
+          <p>The UNESCO core, the one on the money, and the one every boat sails. You get the two great set-pieces — Sửng Sốt's cathedral-scale cave chambers and the climb up Ti Tốp for the view everyone has seen — and you share them.</p>
+          <p><b>Choose it if this is the version you came for.</b> In early December the crowding is real but survivable; over Christmas it isn't. Sightseeing fees are charged by route and run roughly 240,000–290,000 VND per person, normally bundled into the cruise price.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Transfer</dt><dd class="g">2h30</dd></div>
+          <div><dt>Other boats</dt><dd class="r">Many</dd></div>
+          <div><dt>Ferry</dt><dd class="g">None</dd></div>
+          <div><dt>Famous caves</dt><dd class="g">Yes</dd></div>
+        </dl>
+      </div>
+
+      <div class="shape">
+        <div class="shape-hd">
+          <div class="shape-tag">If you want cliffs and beaches</div>
+          <p class="shape-name">Lan Hạ, via Cát Bà</p>
+        </div>
+        <div class="chainrow">
+          <span>Hanoi</span><span class="a">→</span>
+          <span>Hải Phòng <span class="n">2h</span></span><span class="a">→</span>
+          <span>ferry</span><span class="a">→</span>
+          <span>Cát Bà</span><span class="a">→</span>
+          <span class="n">Lan Hạ</span>
+        </div>
+        <div class="shape-body">
+          <p>South of Cát Bà island: more small beaches, better kayaking among close-set cliffs, smaller boats and a more sociable, ten-to-twenty-passenger kind of trip. Several operators now sail Hạ Long guests through here specifically for the quiet.</p>
+          <p><b>The cost is the ferry.</b> Roughly an extra hour each way and a transfer that can go wrong in weather. On a leg with four full days, an hour each way is meaningful — worth it only if the island and the beaches are actually what you want.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Transfer</dt><dd class="r">≈3h30</dd></div>
+          <div><dt>Other boats</dt><dd class="g">Fewer</dd></div>
+          <div><dt>Ferry</dt><dd class="r">Yes</dd></div>
+          <div><dt>Beaches</dt><dd class="g">Yes</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Choose the boat, not the bay</h3>
+      <p>Almost every honest comparison lands in the same place: the three waters look near-identical from a top deck, and what actually determines whether the night is good is <b>the vessel and the operator</b>. A 60–100 passenger ship with a pool and private balconies is a different holiday from an 18-berth boat where everyone eats at one table, and they cost roughly the same.</p>
+      <p>What to check on a listing, in order: how many cabins (fewer is quieter and gets into smaller channels); whether the Hanoi transfer is included or an add-on; which route the boat is permitted on; whether the "kayaking" is real kayaks or a rowed bamboo boat; and what time it actually returns to the pier on day two, because that number decides your onward afternoon.</p>
+    </div>
+
+    <div class="panel">
+      <h3>On safety, plainly</h3>
+      <p>On <b>19 July 2025 the tourist boat <i>Wonder Sea</i> capsized in Hạ Long Bay in a sudden thunderstorm, killing 39 people.</b> The vessel had passed its January 2025 inspection and met the requirements then in force; investigators described a rare, localised squall that neither major forecast model had flagged for that time and place. It was the worst incident of its kind in the bay's tourism history and it prompted a hard national look at inspection and rescue practice.</p>
+      <p>The relevant fact for your window is seasonal: that storm belonged to the summer convective season. <b>December is the opposite regime</b> — a stable north-east monsoon, calm seas, and the months operators themselves describe as the most reliable for sailing. The port authority suspends sailings outright when a storm warning is issued, which is rare in December but does happen; if it happens to you, take the refund or the reschedule and don't argue for going out.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="run">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">04</span> Day by day</p>
+    <h2 class="head">Two shapes,<br>same five nights</h2>
+    <p class="lede">The real decision isn't which sights — it's whether Ninh Bình gets a night or gets squeezed into one long day trip. Both versions fit 3–8 December and both put the boat in the middle of the week rather than at the end, so a weather cancellation still has somewhere to go.</p>
+    <div class="filters" id="dayToggle" style="margin-bottom:6px">
+      <button class="fbtn" data-plan="twobase" aria-pressed="true">Ninh Bình overnight</button>
+      <button class="fbtn" data-plan="hanoibase" aria-pressed="false">Ninh Bình day trip</button>
+    </div>
+    <div class="days" id="days"></div>
+    <p class="fignote" style="margin-top:16px">Amber = on foot · <span style="color:var(--magenta)">Magenta = a vehicle, a boat or a base change</span></p>
+  </div>
+</section>
+
+<section class="section" id="worth">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">05</span> What's actually worth doing</p>
+    <h2 class="head">Do, maybe,<br>don't bother</h2>
+    <p class="lede">Sorted by place, then by whether it earns a slot in a week this short. The <b>don't bother</b> entries mostly aren't bad — several are excellent, and would make a two-week trip easily. They lose here because something else beats them for the same hours, or because December specifically takes the point off them.</p>
+
+    <div class="filters" id="filters">
+      <button class="fbtn" data-city="all" aria-pressed="true">All</button>
+      <button class="fbtn" data-city="Hanoi" aria-pressed="false">Hanoi</button>
+      <button class="fbtn" data-city="Bay" aria-pressed="false">The bay</button>
+      <button class="fbtn" data-city="Ninh" aria-pressed="false">Ninh Bình</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-tier="do" aria-pressed="false">Do</button>
+      <button class="fbtn" data-tier="opt" aria-pressed="false">Maybe</button>
+      <button class="fbtn" data-tier="skip" aria-pressed="false">Don't bother</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-book="1" aria-pressed="false">Needs booking</button>
+    </div>
+    <div class="items" id="items"></div>
+  </div>
+</section>
+
+<section class="section" id="fields">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">06</span> The fields question</p>
+    <h2 class="head">The rice is<br>long gone</h2>
+    <p class="lede">The trip brief has this leg down as "rice terraces just harvested." That's the one line in it worth correcting before you build the days around it. Ninh Bình runs <b>two crops, not one</b>: the spring crop turns gold from about 20 May to 10 June, and the autumn crop from about 20 September to 10 October. Each golden stage lasts ten to fourteen days. By 3 December the second harvest is roughly eight weeks behind you and the paddies are bare or flooded.</p>
+
+    <div class="figcap">
+      <span>Fig. 2 — The northern year, and where you land in it</span>
+      <span><b>Ninh Bình &amp; Hạ Long</b> · your window marked</span>
+    </div>
+    <div class="scroller">
+      <svg id="rice-chart" viewBox="0 0 1400 430" role="img" aria-label="Annual calendar for northern Vietnam showing Tam Coc's two golden rice windows in late May to early June and late September to early October, the fallow flooded paddies from November to January, migratory birds at Van Long in winter, Trang An's water landscape unaffected year round, the calm dry sea season from November to March, and typhoon risk from June to September. The 3 to 8 December window falls in the fallow period and the calm season."></svg>
+    </div>
+    <p class="fignote"><i style="background:rgba(242,169,60,.7)"></i>Peak / in season<i style="background:rgba(88,196,163,.5)"></i>Good but not peak<i style="background:rgba(224,85,85,.35)"></i>Risk<i style="background:rgba(231,100,155,.22);border:1px solid var(--magenta)"></i>Your window · indicative averages, seasons shift a week or two each year</p>
+
+    <div class="panel">
+      <h3>Which is why Tràng An beats Tam Cốc in December</h3>
+      <p>These are the two rowed-boat trips in Ninh Bình and in most months the choice is close. In your window it isn't. <b>Tam Cốc's whole case is the rice</b> — the boat threads between paddies, and the famous photograph is the river cutting a gold field. In December that field is stubble and brown water, and you've paid for the same three hours of rowing without the reason.</p>
+      <p><b>Tràng An is water and limestone and doesn't care what month it is.</b> 250,000 VND per person, roughly three hours, nine caves and three temples on route 1 — several of them long, low tunnels you duck through in the dark. Four passengers to a boat plus a rower, life jackets provided, 07:00 to 17:00 daily, first come first served with online booking sensible in peak weeks. Route 3 adds the <i>Kong: Skull Island</i> set; route 2 is shorter at about two and a half hours.</p>
+    </div>
+
+    <div class="panel">
+      <h3>What December gives you instead</h3>
+      <p><b>Water and mist rather than colour.</b> The flooded fallow paddies mirror the karsts, the mornings are soft, and the light is flat and cool rather than the hazy glare of harvest season. It photographs differently, not worse.</p>
+      <p><b>Migratory birds at Vân Long.</b> The wetland reserve fills with wintering birds from November, which is the one thing this window has that late May doesn't. It's a quiet, flat, punted hour rather than a spectacle — worth it if you like that sort of thing, skippable if you don't.</p>
+      <p><b>Empty staircases.</b> Hàng Múa in June is a queue on 500 steps in 34°C. In December, at 06:00 when the gate opens, it's cool, quiet and about twenty-five minutes up.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="weather">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">07</span> The weather case</p>
+    <h2 class="head">The driest<br>month there is</h2>
+    <p class="lede">Northern Vietnam's year is lopsided in a way that makes this window easy to defend. The summer monsoon dumps ten to fifteen times December's rainfall, typhoons run June to September, and the shoulder months in between are the trade-off. You've landed on the floor of the curve.</p>
+
+    <div class="figcap">
+      <span>Fig. 3 — Hanoi rainfall by month</span>
+      <span><b>Indicative monthly normals</b> · mm</span>
+    </div>
+    <div class="scroller">
+      <svg id="rain-chart" viewBox="0 0 1400 300" role="img" aria-label="Bar chart of Hanoi's average monthly rainfall, peaking near 320 millimetres in August and falling to about 21 millimetres in December, the lowest month of the year alongside January."></svg>
+    </div>
+    <p class="fignote">Indicative long-run normals, rounded · a single December can still deliver a wet week</p>
+
+    <div class="cols">
+      <p><b>What to pack for</b>21°C days and 15°C nights in Hanoi, a few degrees cooler and windier on the water. A light insulating layer and a shell, not a coat. Ha Long boats are draughty at night and several are not properly heated — the December complaint in reviews is almost always cold cabins, never rain.</p>
+      <p><b>The mist trade</b>Low cloud and fine drizzle are the northern winter's default. On the bay this reads as atmosphere; from the top of Hàng Múa it reads as a white wall. Neither is predictable more than a couple of days out, so put the flexible things — the viewpoint climbs — where you can move them.</p>
+      <p><b>Crowds and price</b>1–15 December is the quiet fortnight: good weather, no holiday, cruise rates roughly US$130–180 per person against US$180–250 from Christmas onward. You are inside it by five days, which is worth actual money.</p>
+      <p><b>The one thing you can't have</b>Sa Pa and the northern terraces. Five to six hours each way, and in December the terraces are bare and the summit sits in fog below 10°C. It is a September or a May destination and it is not this trip.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="cost">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">08</span> What the leg costs</p>
+    <h2 class="head">The boat is<br>the budget</h2>
+    <p class="lede">Vietnam is the cheapest country on this itinerary since leaving Nepal, with one exception that dominates everything else. Tick what you'll actually do. Entry fees are in dong; the cruise, e-visa and eSIM are quoted in dollars because that's how they're sold. <b>Everything below is per person and excludes the flights in and out.</b></p>
+
+    <div class="calc">
+      <div class="calc-legs" id="legs"></div>
+      <dl class="calc-out">
+        <div><dt>Total, in dong</dt><dd id="tot"></dd></div>
+        <div><dt>Roughly, in CAD</dt><dd id="cad"></dd></div>
+        <div><dt>The cruise is</dt><dd id="share"></dd></div>
+        <div><dt>Verdict</dt><dd><span id="verdict"></span></dd></div>
+      </dl>
+    </div>
+    <p class="fignote">Prices verified Sept 2026 and rounded · CAD at roughly 19,000 VND to the dollar, which moves · the cruise figure is the single biggest variable and ranges US$130 to US$450</p>
+
+    <div class="panel">
+      <h3>Where the money actually goes</h3>
+      <p><b>Entry fees are trivial.</b> Temple of Literature 70,000 VND, Hỏa Lò Prison 50,000, the Vietnamese Women's Museum 40,000, Thăng Long Citadel 70,000, water puppets 100,000–200,000, Hàng Múa 100,000, Tràng An 250,000. The entire cultural programme of this leg costs less than one dinner in Tokyo.</p>
+      <p><b>Transfers are where it leaks.</b> The Hòn Gai to Ninh Bình private car is the expensive move on the two-base plan — arrange it through the cruise operator before you sail, because it is not a route Grab covers well. Hanoi to Ninh Bình by limousine minibus is from 150,000 VND door to door, or about 100,000–150,000 by train plus a Grab at each end, since Ninh Bình station sits roughly 6 km from the sights.</p>
+      <p><b>Bus 86 from the airport is 45,000 VND and takes contactless cards.</b> Grab is 300,000–400,000 for the same trip in 45–60 minutes. With one bag and a midday arrival, the bus is genuinely fine.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="admin">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">09</span> Ground rules</p>
+    <h2 class="head">Before you land</h2>
+
+    <div class="tablewrap">
+    <table class="ref">
+      <thead><tr><th>Item</th><th>What to do</th><th>When</th></tr></thead>
+      <tbody>
+        <tr class="flag"><td>Entry</td><td><b>Canada is not on Vietnam's visa-exemption list</b> — you need an e-visa. 90 days, single entry US$25 or multiple entry US$50, applied for at <b>evisa.gov.vn</b> and nowhere else. Passport valid 6+ months with two blank pages.</td><td class="t">3–5 working days</td></tr>
+        <tr class="flag"><td>Scam portals</td><td>Dozens of lookalike sites charge US$60–100 for the same US$25 government e-visa, and some are outright fraudulent. Type the official address by hand; don't arrive there through a search ad.</td><td class="t">Every time</td></tr>
+        <tr><td>Entry port</td><td>The e-visa is tied to the port of entry you name on the form. Put <b>Nội Bài (HAN)</b>. Naming the wrong one can get you refused at the counter.</td><td class="t">On the form</td></tr>
+        <tr><td>Print it</td><td>Carry a printed copy of the approval letter. Airlines at check-in and immigration on arrival both ask, and you don't want to be hunting an email on airport wifi.</td><td class="t">Before you fly</td></tr>
+        <tr class="flag"><td>Pre-arrival declaration</td><td>A free mandatory online declaration went live at Tân Sơn Nhất (Ho Chi Minh City) on <b>21 April 2026</b>, submitted within three days of arrival, and a broader health declaration requirement took effect nationally on 1 July 2026. Whether it applies at Nội Bài by December is not confirmed. <b>Check the week before you fly</b>, and don't assume.</td><td class="t">Verify in Nov</td></tr>
+        <tr><td>Cash</td><td>Dong, and Vietnam is still cash-first at street level. Carry 2–3 million VND. Watch the 20,000 and 500,000 notes — both blue polymer, and mixing them up is the classic tourist error. ATMs are everywhere; small notes for boats, entries and coffee.</td><td class="t">On arrival</td></tr>
+        <tr><td>Grab</td><td>Install it and link a card before you land. It removes the entire taxi-negotiation problem, works for cars and motorbikes, and is what you'll use for everything inside Hanoi. Do not follow drivers who approach you in the terminal.</td><td class="t">Before departure</td></tr>
+        <tr><td>Data</td><td>An eSIM bought before you fly is around US$8 for a week and saves you the arrivals-hall queue. Airport wifi exists but is not something to depend on with a printed visa and a hotel address to find.</td><td class="t">Before departure</td></tr>
+        <tr><td>Metro</td><td>Two lines run — 2A (Cát Linh–Hà Đông) and the elevated section of Line 3 (Nhổn–Hanoi station). 8,000–15,000 VND a trip, 30,000 for a day pass, 05:30 to 22:00. <b>Neither serves the Old Quarter and there is no airport line.</b> Interesting, not useful.</td><td class="t">Skip it</td></tr>
+        <tr class="flag"><td>Cruise booking</td><td>The one thing on this leg that needs weeks of notice. Book the boat, confirm the pickup time, confirm the return-to-Hanoi time, and confirm the onward car if you're going straight to Ninh Bình.</td><td class="t">Now</td></tr>
+        <tr><td>Addresses</td><td>Since <b>1 July 2025</b> Vietnam abolished the district level and merged 63 provinces into 34 — Ninh Bình absorbed Hà Nam and Nam Định; Hanoi and Quảng Ninh were untouched. Booking sites still show old district names. Navigate by map pin and street name, not by district.</td><td class="t">Good to know</td></tr>
+        <tr><td>Holidays</td><td>Christmas is not a public holiday in Vietnam and nothing else falls in your window. Tết is mid-February 2027, long after you've gone. Clear.</td><td class="t">Clear</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="cols">
+      <p><b>Crossing the road</b>Hanoi traffic does not stop for you; it flows around you. Step off the kerb at a steady walking pace, do not stop, do not run, do not reverse. Motorbikes read your trajectory and adjust. This feels insane for about a day and then becomes normal.</p>
+      <p><b>Eating</b>The best food on this leg costs 40,000–60,000 VND and is eaten on a plastic stool eighteen inches off the pavement. Bún chả is a lunch dish and disappears by early afternoon. Phở is breakfast. Egg coffee is at Cafe Giang, run by the family of the man who invented it.</p>
+      <p><b>Tipping</b>Not traditionally expected and increasingly common in tourist-facing places. Round up a restaurant bill, tip a Tràng An rower 50,000–100,000 VND for three hours of work, and tip the cruise crew at the end — most boats have a shared envelope.</p>
+      <p><b>Train Street</b>The famous Phùng Hưng stretch is police-guarded and formally off-limits; in practice cafés that have signed safety commitments with the authorities escort their customers past the barrier. The Lê Duẩn stretch further south is unguarded and free, with fewer lanterns. Weekday trains pass around 19:00 and later; the schedule changes, so ask locally.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <p>Westbound · stop 12 · Vietnam</p>
+      <p>3–8 Dec 2026 · HAN in, LPQ out</p>
+      <p>Fares, fees and rules verified Sept 2026 — recheck before booking</p>
+    </div>
+    <p class="foot-mark">Hanoi → the bay</p>
+  </div>
+</footer>
+
+<script>
+/* ============ DAY-BY-DAY ============ */
+const ARRIVE_SLOTS=[
+  {m:1,h:'08:30 · HKG → HAN',p:'Under two hours, and you gain an hour crossing into UTC+7. Take the morning departure — it turns a wasted afternoon into a usable one. Printed e-visa in hand at the counter.'},
+  {m:1,h:'11:00 · Into town',p:'Bus 86 is <b>45,000 VND</b>, takes contactless cards and runs 45–90 minutes to the Old Quarter. Grab is 300,000–400,000 and 45–60 minutes. With one bag, the bus is fine.'},
+  {h:'13:00 · Bún chả',p:'Grilled pork patties in a bowl of sweet-sour broth with cold noodles and herbs. A <b>lunch dish only</b> — most places have sold out by two. This is the correct first meal in Hanoi.'},
+  {h:'15:00 · Hỏa Lò Prison',p:'50,000 VND, an hour and a half. French colonial jail first, American POW camp second, and the museum is unflinching about the first and pointed about the second. An evening "Sacred Night" tour runs if you’d rather book that.'},
+  {h:'18:00 · Hoàn Kiếm and the Old Quarter',p:'The lake at dusk, the red bridge to Ngọc Sơn temple, then egg coffee at <b>Cafe Giang</b> — the family of the man who invented it still runs it. Finish on a bia hơi stool at a street corner.'}
+];
+const DEPART_SLOTS=[
+  {h:'08:00 · One last morning',p:'Phở at a counter, a last coffee, and the Vietnamese Women’s Museum (40,000 VND, an hour) if it didn’t fit earlier — the street-vendor and wartime sections are the good ones.'},
+  {m:1,h:'11:00 · To Nội Bài',p:'45–60 minutes by Grab, more in rain. Bus 86 works too if you’re travelling light and have the buffer.'},
+  {m:1,h:'· Luang Prabang',p:'Stop 13. Non-stop is <b>1h10</b> on VN931 or QV314. <b>Check the day of week</b> — some schedules show this route running Mon/Wed/Fri only, which would leave your Tuesday uncovered. Fallback is HAN→VTE (about fourteen a week) and a connection north.'}
+];
+const BAY_DAY1={d:'Sat 5',w:'Move',name:'The bay',sub:'Hanoi → Bái Tử Long',meta:'Night 3 · afloat',
+ slots:[
+  {m:1,h:'08:00 · Pickup',p:'Most cruises collect from Old Quarter hotels between 08:00 and 08:30, then 2h30 on the CT06 expressway to the pier. Confirm the pickup window when you book, not the night before.'},
+  {h:'12:00 · Aboard',p:'Lunch as you sail out. Within an hour of the pier the boats thin out and the karsts start closing in — this is the part that justifies the whole day.'},
+  {h:'15:00 · Kayak or bamboo boat',p:'Water is <b>18–20°C</b>, so you paddle, you don’t swim. Bring a layer you don’t mind soaking. Check whether your boat’s "kayaking" is real kayaks or a rowed bamboo boat — they are advertised identically and are not the same thing.'},
+  {h:'17:30 · Top deck',p:'Sunset behind the limestone, then squid fishing off the stern, then an early night. December cabins run cold and several boats are underheated — ask for an extra blanket before you need it.'}
+]};
+
+const DAYS_TWOBASE=[
+{d:'Thu 3',w:'Arrive',name:'Hanoi',sub:'Land midday · the Old Quarter',meta:'Night 1',slots:ARRIVE_SLOTS},
+{d:'Fri 4',w:'Full',name:'Hanoi',sub:'The one proper city day',meta:'Night 2',
+ slots:[
+  {h:'06:30 · Hoàn Kiếm at dawn',p:'Tai chi, badminton, ballroom dancing and running clubs, all before seven, all around one small lake. The single most likeable thing Hanoi does and it costs nothing.'},
+  {h:'08:00 · Temple of Literature',p:'70,000 VND, an hour. Vietnam’s first university, founded 1070 — five walled courtyards and the doctors’ names carved on stone stelae carried by stone turtles.'},
+  {h:'10:00 · Citadel or Women’s Museum',p:'<b>Pick one.</b> Thăng Long Imperial Citadel is 70,000 VND and mostly archaeology that needs a guide to come alive. The Vietnamese Women’s Museum is 40,000 VND, an hour, and the better hour if you only have one.'},
+  {h:'14:00 · West Lake',p:'Trấn Quốc pagoda on its causeway, the quiet peninsula streets behind it, and a coffee looking at water instead of motorbikes. The counterweight to the Old Quarter.'},
+  {h:'19:00 · Train Street',p:'The Phùng Hưng stretch is police-guarded; a café that has signed a safety commitment walks its customers past the barrier. The Lê Duẩn stretch to the south is unguarded and free. Weekday trains around 19:00 — <b>the Mausoleum is closed today</b> in any case, so nothing is lost.'}
+]},
+BAY_DAY1,
+{d:'Sun 6',w:'Move',name:'Ninh Bình',sub:'Off the boat, straight south',meta:'Night 4',
+ slots:[
+  {h:'06:15 · Sunrise on deck',p:'December mist sits between the islands and burns off slowly. This is the photograph, and it happens whether or not you are awake for it.'},
+  {h:'09:00 · Cave, village, brunch',p:'A cave visit or a floating village, then food as you sail back. Most boats are alongside by 11:30.'},
+  {m:1,h:'12:00 · Hòn Gai → Ninh Bình',p:'About 3 hours by private car on the coastal expressway, roughly <b>1,800,000–2,500,000 VND for the vehicle</b>. Arrange it with the cruise operator before you sail — this is not a route Grab covers reliably.'},
+  {h:'16:00 · Bích Động and Thung Nham',p:'A cliff-face pagoda in three tiers and a bird garden, both low-effort, both quiet in December. Check in around Tam Cốc and eat goat — <b>dê núi</b> is the local thing and it is genuinely good.'}
+]},
+{d:'Mon 7',w:'Move',name:'Back north',sub:'Dawn on the steps, then Hanoi',meta:'Night 5',
+ slots:[
+  {h:'06:00 · Hàng Múa',p:'100,000 VND, gates from 06:00, about <b>500 steps</b> and 20–30 minutes up. Go at opening: by nine it is a queue on a staircase. Use the official car park at the gate and ignore everyone who tries to flag you down before it.'},
+  {h:'08:30 · Tràng An',p:'250,000 VND, route 1, roughly three hours rowed through nine caves and three temples. Four to a boat plus the rower, life jackets provided, 07:00–17:00. <b>The one Ninh Bình attraction that doesn’t care what month it is.</b>'},
+  {m:1,h:'13:30 · Ninh Bình → Hanoi',p:'Limousine minibus from 150,000 VND, about two hours door to door from Tam Cốc to the Old Quarter. Or the train, 100,000–150,000 and 2–2.5 hours, plus a Grab at each end since the station sits about 6 km out.'},
+  {h:'18:30 · Last night',p:'One proper sit-down dinner, then repack. Anything you meant to buy — coffee, silk, a lacquer thing — buy it tonight; tomorrow is a travel day.'}
+]},
+{d:'Tue 8',w:'Depart',name:'To Laos',sub:'Check the flight twice',meta:'Fly out',slots:DEPART_SLOTS}
+];
+
+const DAYS_HANOIBASE=[
+{d:'Thu 3',w:'Arrive',name:'Hanoi',sub:'Land midday · the Old Quarter',meta:'Night 1',slots:ARRIVE_SLOTS},
+{d:'Fri 4',w:'Full',name:'Ninh Bình',sub:'One long day trip',meta:'Night 2',
+ slots:[
+  {m:1,h:'06:30 · South by car',p:'About 1h30 each way on the expressway. A private car is US$25–55 one way, or book it for the full day and keep the driver — that is the version that makes this work. Motorbikes are banned from the expressway, so self-driving is not the shortcut it looks like.'},
+  {h:'08:30 · Hàng Múa',p:'100,000 VND and 500 steps, before the coach parties. Twenty-five minutes up, and the view down over the Tam Cốc river is the reason the place is famous.'},
+  {h:'10:30 · Tràng An',p:'250,000 VND, route 1, three hours rowed through nine caves. Route 2 is shorter at 2–2.5 hours if the day is running late; route 3 adds the <i>Kong: Skull Island</i> set.'},
+  {h:'14:30 · Hoa Lư',p:'Vietnam’s 10th-century capital, twenty minutes away, an hour is plenty. Two small temples on the site of a vanished citadel — modest, and the right size for what’s left of the day.'},
+  {m:1,h:'19:30 · Back in Hanoi',p:'A long day and about three hours of it in a car. What you buy for that is <b>not moving hotels all week</b> — no packing, no check-outs, and your bag stays in one room.'}
+]},
+BAY_DAY1,
+{d:'Sun 6',w:'Move',name:'Back to Hanoi',sub:'Off the boat, north',meta:'Night 3',
+ slots:[
+  {h:'06:15 · Sunrise on deck',p:'The mist between the islands. Worth the alarm even after a cold night in an underheated cabin.'},
+  {h:'09:00 · Cave, village, brunch',p:'Cave or floating village, food as you sail back, alongside by 11:30.'},
+  {m:1,h:'12:30 · Hòn Gai → Hanoi',p:'2h30 back on the expressway, included in almost every cruise package. In the Old Quarter around 15:30 with the afternoon still usable.'},
+  {h:'17:00 · West Lake',p:'Trấn Quốc pagoda at dusk on its causeway, then the quiet streets behind it. A gentle re-entry after a day and a half on a boat.'},
+  {h:'19:00 · Train Street',p:'Weekday trains around 19:00. Café escort past the barrier on the Phùng Hưng stretch, or the unguarded Lê Duẩn stretch to the south.'}
+]},
+{d:'Mon 7',w:'Full',name:'Hanoi',sub:'The city, properly',meta:'Night 4',
+ slots:[
+  {h:'06:30 · Hoàn Kiếm at dawn',p:'Tai chi, badminton and running clubs around the lake before seven. Free, and the most likeable half-hour in the city.'},
+  {h:'08:00 · Temple of Literature',p:'70,000 VND, an hour. Founded 1070, five courtyards, the doctors’ stelae on their stone turtles.'},
+  {h:'10:00 · Hỏa Lò Prison',p:'50,000 VND, 1–1.5 hours. Then the Vietnamese Women’s Museum at 40,000 VND if you want a second, which is a better hour than the Citadel.'},
+  {h:'14:00 · Old Quarter on foot',p:'The 36 guild streets still sort roughly by trade — tin, silk, bamboo, votive paper. No sight, no ticket, and the best two hours available. <b>Note the Mausoleum is closed today</b>; it shuts Mondays and Fridays and only opens mornings, which means it never really fits this window.'},
+  {h:'19:00 · Last dinner',p:'Chả cá, or a food walk through the Old Quarter, then repack. Buy tonight anything you meant to buy.'}
+]},
+{d:'Tue 8',w:'Depart',name:'To Laos',sub:'Check the flight twice',meta:'Fly out',slots:DEPART_SLOTS}
+];
+
+let PLAN='twobase';
+function renderDays(){
+  const data = PLAN==='twobase'?DAYS_TWOBASE:DAYS_HANOIBASE;
+  const host=document.getElementById('days');
+  host.innerHTML=data.map((d,i)=>`
+    <div class="day${i===0?' open':''}">
+      <button class="day-btn" aria-expanded="${i===0?'true':'false'}">
+        <span class="day-date">${d.d}<small>${d.w}</small></span>
+        <span><span class="day-name">${d.name}</span><span class="day-sub">${d.sub}</span></span>
+        <span class="day-meta">${d.meta}<span class="chev">▾</span></span>
+      </button>
+      <div class="day-body"><div class="day-inner"><div class="day-pad"><div class="slots">
+        ${d.slots.map(s=>`<div class="slot${s.m?' move':''}"><h4>${s.h}</h4><p>${s.p}</p></div>`).join('')}
+      </div></div></div></div>
+    </div>`).join('');
+  host.querySelectorAll('.day-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const day=btn.closest('.day');
+      const open=day.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open?'true':'false');
+    });
+  });
+}
+document.getElementById('dayToggle').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  PLAN=b.dataset.plan;
+  document.querySelectorAll('#dayToggle .fbtn').forEach(x=>x.setAttribute('aria-pressed',x.dataset.plan===PLAN?'true':'false'));
+  renderDays();
+});
+renderDays();
+
+/* ============ WORTH DOING ============ */
+const ITEMS=[
+/* HANOI */
+{c:'Hanoi',t:'do',n:'The Old Quarter on foot',w:'Thirty-six guild streets that still sort roughly by trade — tin, silk, bamboo, votive paper, herbs. No ticket, no queue, and the best two hours in the city.',when:'Any time'},
+{c:'Hanoi',t:'do',n:'Bún chả',w:'Grilled pork in sweet-sour broth with cold noodles and a fistful of herbs. A <b>lunch dish</b> — gone by early afternoon. 40,000–60,000 VND on a plastic stool.',when:'Lunch only'},
+{c:'Hanoi',t:'do',n:'Egg coffee at Cafe Giang',w:'Whipped egg yolk and condensed milk over strong coffee, invented here in 1946 during a milk shortage. The inventor’s family still runs the place on Nguyễn Hữu Huân.',when:'30 min'},
+{c:'Hanoi',t:'do',n:'Hỏa Lò Prison',w:'50,000 VND. French colonial jail first, American POW camp second. Unflinching about the first, pointed about the second, and worth an hour and a half either way.',when:'1.5 hours'},
+{c:'Hanoi',t:'do',n:'Hoàn Kiếm at dawn',w:'Tai chi, badminton, ballroom dancing and running clubs, all before seven, all around one lake. Free, and the most likeable thing the city does.',when:'06:30'},
+{c:'Hanoi',t:'do',n:'Temple of Literature',w:'70,000 VND. Vietnam’s first university, 1070 — five walled courtyards and the doctors’ names cut into stelae carried by stone turtles.',when:'1 hour'},
+{c:'Hanoi',t:'opt',n:'Vietnamese Women’s Museum',w:'40,000 VND, an hour, near Hoàn Kiếm. Street vendors and wartime roles are the strong sections. Better value than the Citadel if you only have one slot.',when:'1 hour'},
+{c:'Hanoi',t:'opt',n:'Thăng Long Imperial Citadel',w:'70,000 VND. UNESCO-listed, and mostly foundations and an excavation trench. Rewarding with a guide, thin without one.',when:'1 hour'},
+{c:'Hanoi',t:'opt',n:'Train Street',w:'Phùng Hưng is police-guarded and formally off-limits; cafés that signed safety commitments escort customers past. The Lê Duẩn stretch south is unguarded and free. Weekday trains around 19:00 — <b>ask locally, the schedule moves</b>.',when:'Evening'},
+{c:'Hanoi',t:'opt',n:'Water puppet theatre',w:'100,000–200,000 VND, an hour by Hoàn Kiếm. Wooden puppets worked from behind a screen in waist-deep water, with a live band. No English, and it doesn’t need any.',when:'1 hour',b:1},
+{c:'Hanoi',t:'opt',n:'Hoàn Kiếm walking street',w:'Friday to Sunday evenings the streets round the lake close to traffic and fill with games, music and food stalls. You are there for two of those evenings.',when:'Fri–Sun eve'},
+{c:'Hanoi',t:'opt',n:'West Lake and Trấn Quốc',w:'Vietnam’s oldest pagoda on a causeway, with quiet peninsula streets behind it. The counterweight to the Old Quarter’s noise.',when:'Half day'},
+{c:'Hanoi',t:'skip',n:'Hồ Chí Minh Mausoleum',w:'Mornings only, and <b>closed Mondays and Fridays</b>. Across 3–8 December that leaves your arrival afternoon and your departure morning — neither works. Walk the Ba Đình square exterior and the Presidential Palace grounds instead.',when:''},
+{c:'Hanoi',t:'skip',n:'Sa Pa',w:'Five to six hours each way, and in December the terraces are bare and Fansipan sits in fog under 10°C. A September or a May destination, not this one.',when:''},
+{c:'Hanoi',t:'skip',n:'Perfume Pagoda',w:'A full day out of four, and its whole character is the spring pilgrimage crowd from February to March. Out of season it is a long boat ride to a cave.',when:''},
+/* THE BAY */
+{c:'Bay',t:'do',n:'An overnight, not a day trip',w:'The day-trip version is roughly five hours in a van for four on the water. The overnight is the only version where the bay empties out and the morning happens at all.',when:'2D1N',b:1},
+{c:'Bay',t:'do',n:'Sunrise from the top deck',w:'December mist sitting between the karsts, burning off slowly. It is the reason to be on a boat rather than a bus, and it is over by eight.',when:'06:15'},
+{c:'Bay',t:'do',n:'Kayaking',w:'Through the arches and into the enclosed lagoons where the big boats can’t follow. Water is 18–20°C — cold hands, no swimming. Confirm your boat means kayaks, not a rowed bamboo boat.',when:'Afternoon'},
+{c:'Bay',t:'opt',n:'Sửng Sốt cave and Ti Tốp',w:'The two great set-pieces of Hạ Long proper: cathedral-scale cave chambers and the island staircase to the postcard view. Also where every other boat goes.',when:'Hạ Long only'},
+{c:'Bay',t:'opt',n:'Bái Tử Long instead',w:'Same expressway, same pier area, far fewer permitted boats, a floating village and smaller caves. Quiet bought at the cost of the famous names.',when:'Same transfer'},
+{c:'Bay',t:'opt',n:'Lan Hạ via Cát Bà',w:'Small beaches, close-set cliffs and the best kayaking of the three, on smaller and more sociable boats. Costs you a ferry and about an hour each way.',when:'+1h each way'},
+{c:'Bay',t:'skip',n:'Swimming',w:'18–20°C water in December. The boats still advertise it. Bring a book and a warm layer instead.',when:''},
+{c:'Bay',t:'skip',n:'Hạ Long City itself',w:'A cable car, a Ferris wheel and a strip of resort hotels on the mainland. You are here for the water; the town is somewhere you pass through at 08:00 and again at 11:30.',when:''},
+/* NINH BINH */
+{c:'Ninh',t:'do',n:'Tràng An boat, route 1',w:'250,000 VND, about three hours, nine caves and three temples, rowed. Long low tunnels you duck through in the dark. <b>Water and limestone — the one thing here that December can’t spoil.</b>',when:'3 hours'},
+{c:'Ninh',t:'do',n:'Hàng Múa at opening',w:'100,000 VND, gates from 06:00, roughly 500 steps and 25 minutes up to a dragon on a ridge. Empty and cool in December; a queue in a heatwave in June.',when:'06:00'},
+{c:'Ninh',t:'opt',n:'Bích Động pagoda',w:'A three-tier pagoda built into a cliff face, ten minutes from Tam Cốc, twenty minutes to see. Low effort, genuinely pretty, almost nobody there in winter.',when:'30 min'},
+{c:'Ninh',t:'opt',n:'Hoa Lư',w:'The 10th-century capital before Hanoi. Two small temples on the site of a vanished citadel — modest, and about an hour.',when:'1 hour'},
+{c:'Ninh',t:'opt',n:'Vân Long wetland',w:'A flat, punted hour through reed beds. December is when the wintering migratory birds arrive, which is the one thing this window has that harvest season doesn’t.',when:'1 hour'},
+{c:'Ninh',t:'opt',n:'Dê núi',w:'Mountain goat, grilled or steamed with lemon leaf, the regional dish. Every restaurant around Tam Cốc does a version and it is better than it sounds.',when:'Dinner'},
+{c:'Ninh',t:'skip',n:'Tam Cốc boat',w:'The same three hours of rowing as Tràng An, and its entire case is the rice — the river cutting through a gold field. <b>In December that field is stubble.</b> Do Tràng An instead.',when:''},
+{c:'Ninh',t:'skip',n:'Bái Đính',w:'The largest temple complex in Vietnam, mostly built in the 2000s, sized for coach parties and electric shuttle buses. Impressive scale, very little soul.',when:''}
+];
+
+const TIERLBL={do:'Do',opt:'Maybe',skip:'Skip'};
+let FC='all', FT=null, FB=false;
+
+function renderItems(){
+  const list=ITEMS.filter(x=>
+    (FC==='all'||x.c===FC) && (!FT||x.t===FT) && (!FB||x.b));
+  const host=document.getElementById('items');
+  if(!list.length){host.innerHTML='<div class="empty">No entries match those filters.</div>';return}
+  host.innerHTML=list.map(x=>`
+    <div class="item">
+      <span class="tier ${x.t}">${TIERLBL[x.t]}</span>
+      <span class="nm">${x.n}</span>
+      <span class="when${x.b?' book':''}">${x.when||'&nbsp;'}</span>
+      <span class="why">${x.w}</span>
+    </div>`).join('');
+}
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  if(b.dataset.city){FC=b.dataset.city}
+  else if(b.dataset.tier){FT = FT===b.dataset.tier?null:b.dataset.tier}
+  else if(b.dataset.book){FB=!FB}
+  document.querySelectorAll('#filters .fbtn').forEach(x=>{
+    let on=false;
+    if(x.dataset.city) on = x.dataset.city===FC;
+    if(x.dataset.tier) on = x.dataset.tier===FT;
+    if(x.dataset.book) on = FB;
+    x.setAttribute('aria-pressed',on?'true':'false');
+  });
+  renderItems();
+});
+renderItems();
+
+/* ============ FIG 1: TIME AUDIT ============ */
+(function(){
+  const svg=document.getElementById('audit-chart');
+  const W=1400,H=190,pad=40,barY=70,barH=54;
+  const start=new Date(2026,11,3), end=new Date(2026,11,9);
+  const totalH=(end-start)/36e5;
+  const x=h=>pad+(h/totalH)*(W-2*pad);
+  const segs=[
+    {a:0,b:10,cls:'t2'},
+    {a:10,b:24,cls:'p'},
+    {a:24,b:48,cls:'f'},
+    {a:48,b:72,cls:'f'},
+    {a:72,b:96,cls:'f'},
+    {a:96,b:120,cls:'f'},
+    {a:120,b:132,cls:'p'},
+    {a:132,b:144,cls:'t'}
+  ];
+  const colors={t:'var(--magenta)',t2:'rgba(231,100,155,.55)',p:'rgba(242,169,60,.35)',f:'var(--amber)'};
+  let s='';
+  segs.forEach(sg=>{
+    const x1=x(sg.a),x2=x(sg.b);
+    s+=`<rect x="${x1}" y="${barY}" width="${Math.max(1,x2-x1-1)}" height="${barH}" fill="${colors[sg.cls]}"/>`;
+  });
+  for(let d=0;d<=6;d++){
+    const hh=d*24, xx=x(hh);
+    const dt=new Date(start.getTime()+hh*36e5);
+    s+=`<line x1="${xx}" y1="${barY-6}" x2="${xx}" y2="${barY+barH+6}" class="axs"/>`;
+    s+=`<text x="${xx}" y="${barY-14}" class="lbl" text-anchor="${d===0?'start':d===6?'end':'middle'}">${dt.toLocaleDateString('en-CA',{day:'2-digit',month:'short'})}</text>`;
+  }
+  s+=`<line x1="${pad}" y1="${barY+barH+0.5}" x2="${W-pad}" y2="${barY+barH+0.5}" class="ax"/>`;
+  s+=`<text x="${x(24)}" y="${barY+barH+34}" class="lbl-a">4 full days — 4→7 Dec</text>`;
+  s+=`<text x="${x(0)}" y="${barY+barH+34}" class="lbl">↙ short hop from HKG</text>`;
+  s+=`<text x="${W-pad}" y="${barY+barH+34}" class="lbl" text-anchor="end">flight to LPQ ↘</text>`;
+  svg.innerHTML=s;
+})();
+
+/* ============ FIG 2: THE NORTHERN YEAR ============ */
+(function(){
+  const svg=document.getElementById('rice-chart');
+  const W=1400,H=430,padL=270,padR=40,padT=26,rowH=44;
+  const y0=new Date(2027,0,1), yStart=new Date(2026,0,1);
+  const totalD=(y0-yStart)/864e5;
+  const x=d=>padL+((d-yStart)/864e5/totalD)*(W-padL-padR);
+  const D=(m,dd)=>new Date(2026,m-1,dd);
+  const ROWS=[
+    {n:'Tam Cốc — spring rice, gold',       spans:[[D(5,20),D(6,10)]], k:'peak'},
+    {n:'Tam Cốc — autumn rice, gold',       spans:[[D(9,20),D(10,10)]], k:'peak'},
+    {n:'Paddies bare or flooded',           spans:[[D(1,1),D(1,31)],[D(11,1),D(12,31)]], k:'ok'},
+    {n:'Vân Long — wintering birds',        spans:[[D(1,1),D(2,28)],[D(11,1),D(12,31)]], k:'peak'},
+    {n:'Tràng An — water & limestone',      spans:[[D(1,1),D(12,31)]], k:'ok'},
+    {n:'Hạ Long — calm sea, dry air',       spans:[[D(1,1),D(3,31)],[D(11,1),D(12,31)]], k:'peak'},
+    {n:'Northern typhoon risk',             spans:[[D(6,1),D(9,30)]], k:'risk'}
+  ];
+  const FILL={peak:'rgba(242,169,60,.7)',ok:'rgba(88,196,163,.5)',risk:'rgba(224,85,85,.35)'};
+  const wx1=x(D(12,3)), wx2=x(D(12,9));
+  let s=`<rect x="${wx1}" y="${padT}" width="${Math.max(6,wx2-wx1)}" height="${ROWS.length*rowH+8}" fill="rgba(231,100,155,.12)" stroke="var(--magenta)" stroke-width="1"/>`;
+  s+=`<text x="${wx1-6}" y="${padT-8}" class="lbl-a" text-anchor="end">Your window: 3–8 Dec ▸</text>`;
+  for(let m=1;m<=12;m++){
+    const xx=x(D(m,1));
+    s+=`<line x1="${xx}" y1="${padT}" x2="${xx}" y2="${padT+ROWS.length*rowH+8}" class="axs"/>`;
+    s+=`<text x="${xx+4}" y="${padT+ROWS.length*rowH+28}" class="lbl">${D(m,1).toLocaleDateString('en-CA',{month:'short'})}</text>`;
+  }
+  s+=`<line x1="${padL}" y1="${padT}" x2="${x(D(12,31))}" y2="${padT}" class="ax"/>`;
+  ROWS.forEach((r,i)=>{
+    const y=padT+20+i*rowH;
+    s+=`<text x="${padL-14}" y="${y+4}" class="lbl-p" text-anchor="end">${r.n}</text>`;
+    r.spans.forEach(([a,b])=>{
+      const x1=x(a),x2=x(b);
+      s+=`<rect x="${x1}" y="${y-10}" width="${Math.max(3,x2-x1)}" height="20" rx="2" fill="${FILL[r.k]}"/>`;
+    });
+  });
+  svg.innerHTML=s;
+})();
+
+/* ============ FIG 3: HANOI RAINFALL ============ */
+(function(){
+  const svg=document.getElementById('rain-chart');
+  const W=1400,H=300,padL=56,padR=30,padT=20,padB=50;
+  const MO=[
+    {n:'Jan',v:19},{n:'Feb',v:26},{n:'Mar',v:44},{n:'Apr',v:90},
+    {n:'May',v:189},{n:'Jun',v:240},{n:'Jul',v:288},{n:'Aug',v:318},
+    {n:'Sep',v:265},{n:'Oct',v:131},{n:'Nov',v:44},{n:'Dec',v:21}
+  ];
+  const bw=(W-padL-padR)/MO.length;
+  const max=340;
+  const y=v=>padT+(1-v/max)*(H-padT-padB);
+  let s='';
+  [0,100,200,300].forEach(v=>{
+    s+=`<line x1="${padL}" y1="${y(v)}" x2="${W-padR}" y2="${y(v)}" class="axs"/>`;
+    s+=`<text x="${padL-10}" y="${y(v)+4}" class="lbl" text-anchor="end">${v}</text>`;
+  });
+  MO.forEach((m,i)=>{
+    const x0=padL+i*bw+bw*0.18, bwid=bw*0.64;
+    const hot=m.n==='Dec';
+    s+=`<rect x="${x0}" y="${y(m.v)}" width="${bwid}" height="${H-padB-y(m.v)}" fill="${hot?'var(--amber)':'rgba(242,169,60,.32)'}" rx="1"/>`;
+    s+=`<text x="${x0+bwid/2}" y="${H-padB+18}" class="lbl" text-anchor="middle" ${hot?'fill="var(--amber)"':''}>${m.n}</text>`;
+    s+=`<text x="${x0+bwid/2}" y="${y(m.v)-8}" class="${hot?'lbl-a':'lbl'}" text-anchor="middle">${m.v}</text>`;
+  });
+  s+=`<line x1="${padL}" y1="${H-padB}" x2="${W-padR}" y2="${H-padB}" class="ax"/>`;
+  s+=`<text x="${padL-10}" y="${padT-4}" class="lbl" text-anchor="end">mm</text>`;
+  svg.innerHTML=s;
+})();
+
+/* ============ COST CALCULATOR ============ */
+const RATE=19000; /* VND per CAD, approximate */
+const COSTS=[
+  {n:'E-visa, single entry (US$25)',v:660000,def:true,note:'evisa.gov.vn only — lookalike sites charge 60–100'},
+  {n:'eSIM, 7 days (about US$8)',v:210000,def:true,note:'Bought before you fly'},
+  {n:'Nội Bài → Old Quarter, bus 86',v:45000,def:true,note:'Takes contactless cards · 45–90 min'},
+  {n:'Nội Bài → Old Quarter, Grab instead',v:350000,note:'45–60 min door to door'},
+  {n:'Overnight cruise, mid-range 2D1N (US$165)',v:4350000,def:true,cruise:true,note:'Includes Hanoi transfer, meals, route fees'},
+  {n:'Overnight cruise, budget 2D1N (US$130) instead',v:3430000,cruise:true,note:'Early-December rate · Christmas is 180–250'},
+  {n:'Private car, Hòn Gai → Ninh Bình',v:2000000,def:true,note:'Two-base plan only · book via the cruise operator'},
+  {n:'Ninh Bình → Hanoi, limousine minibus',v:150000,def:true,note:'Door to door, about 2 hours'},
+  {n:'Tràng An boat, route 1',v:250000,def:true,note:'Three hours, rowed, nine caves'},
+  {n:'Hàng Múa entry',v:100000,def:true,note:'Gates from 06:00 · 500 steps'},
+  {n:'Temple of Literature',v:70000,def:true},
+  {n:'Hỏa Lò Prison',v:50000,def:true},
+  {n:'Vietnamese Women’s Museum',v:40000},
+  {n:'Thăng Long Imperial Citadel',v:70000},
+  {n:'Water puppet theatre',v:150000,note:'100,000–200,000 by seat'},
+  {n:'Hanoi hotel, mid-range × 3 nights',v:2100000,def:true,note:'About 700,000 a night'},
+  {n:'Tam Cốc homestay × 1 night',v:600000,def:true,note:'Two-base plan only'},
+  {n:'Food, coffee and beer × 5 days',v:2500000,def:true,note:'About 500,000 a day, eating well on the street'}
+];
+function renderCosts(){
+  document.getElementById('legs').innerHTML=COSTS.map((c,i)=>`
+    <label class="leg-row">
+      <input type="checkbox" data-i="${i}" ${c.def?'checked':''}>
+      <span class="lname">${c.n}</span>
+      <span class="lyen">₫${c.v.toLocaleString('en-CA')}</span>
+      ${c.note?`<span class="lnote">${c.note}</span>`:''}
+    </label>`).join('');
+}
+function calcCosts(){
+  let total=0, cruise=0;
+  document.querySelectorAll('#legs input[type="checkbox"]').forEach(cb=>{
+    const c=COSTS[Number(cb.dataset.i)];
+    if(cb.checked){ total+=c.v; if(c.cruise) cruise+=c.v; }
+  });
+  const cad=Math.round(total/RATE);
+  const pct=total?Math.round(cruise/total*100):0;
+  document.getElementById('tot').innerHTML=`₫${total.toLocaleString('en-CA')}`;
+  document.getElementById('cad').innerHTML=`$${cad.toLocaleString('en-CA')}<small>per person</small>`;
+  document.getElementById('share').innerHTML=`${pct}<small>% of it</small>`;
+  const v=document.getElementById('verdict');
+  if(!total){ v.textContent='Tick something above'; v.className=''; }
+  else if(pct>=40){ v.textContent='The boat is the budget'; v.className='win'; }
+  else if(pct===0){ v.textContent='No cruise selected'; v.className='lose'; }
+  else { v.textContent='Spread fairly evenly'; v.className=''; }
+}
+renderCosts();
+document.getElementById('legs').addEventListener('change',calcCosts);
+calcCosts();
+</script>
+
+</body>
+</html>

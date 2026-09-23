@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="darkreader-lock">
+<title>Westbound · 03 China — 29 Oct–5 Nov 2026</title>
+<link rel="stylesheet" href="fonts.css">
+</head>
+<body>
+<style>
+:root{color-scheme:dark;
+  --ink:#05161D;--ink-2:#0A2029;--ink-3:#0E2A35;
+  --rule:#194150;--rule-soft:rgba(25,65,80,.6);
+  --paper:#E2EEED;--paper-dim:#A6C2C6;--muted:#6C8F98;
+  --amber:#F2A93C;--magenta:#E7649B;--jade:#58C4A3;--red:#E05555;
+  --display:'Big Shoulders Display','Arial Narrow',Impact,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --body:'Inter',system-ui,sans-serif;
+  --gut:clamp(18px,4vw,64px);--maxw:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+.section{padding-block:clamp(34px,4.4vw,58px);border-top:1px solid var(--rule-soft);position:relative}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:14px;margin:0 0 18px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--rule)}
+.eyebrow .n{color:var(--amber)}
+h2.head{font-family:var(--display);font-weight:700;font-size:clamp(34px,5.6vw,66px);line-height:.92;margin:0 0 14px;text-transform:uppercase}
+.lede{max-width:66ch;color:var(--paper-dim);font-size:clamp(15px,1.5vw,17px);margin:0 0 26px}
+.lede b{color:var(--paper);font-weight:600}
+a{color:var(--amber);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+.hint{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+@media (min-width:980px){.hint.wide{display:none}}
+.scroller{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--rule) transparent}
+.scroller::-webkit-scrollbar{height:6px}
+.scroller::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}
+.scroller>svg{display:block;width:100%;height:auto}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(30px,5vw,58px) clamp(24px,4vw,40px);overflow:hidden}
+.gridbg{position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:linear-gradient(to right,var(--rule-soft) 1px,transparent 1px),linear-gradient(to bottom,var(--rule-soft) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%);-webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%)}
+.back{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:inline-block;margin-bottom:20px}
+.back:hover{color:var(--amber)}
+.strip{font-family:var(--mono);font-size:clamp(10px,1.15vw,12px);letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;border-block:1px solid var(--rule);padding-block:11px;margin-bottom:clamp(26px,4vw,44px)}
+.strip .k{color:var(--muted)}.strip .amb{color:var(--amber)}
+.title{font-family:var(--display);text-transform:uppercase;margin:0;line-height:.82;position:relative}
+.title .l1{display:block;font-weight:400;font-size:clamp(34px,7.4vw,96px);color:transparent;-webkit-text-stroke:1.2px var(--paper-dim)}
+.title .l2{display:block;font-weight:800;font-size:clamp(72px,17vw,232px);letter-spacing:-.015em;color:var(--paper)}
+.subline{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:baseline;margin-top:clamp(18px,3vw,30px);font-family:var(--mono);font-size:clamp(11px,1.25vw,13px);letter-spacing:.14em;text-transform:uppercase;color:var(--paper-dim)}
+.subline .sep{color:var(--rule)}
+
+/* instruments */
+.instr{display:grid;grid-template-columns:repeat(auto-fit,minmax(124px,1fr));border:1px solid var(--rule);background:var(--ink-2);margin:clamp(24px,3.4vw,38px) 0 0}
+.instr div{padding:15px 17px;border-right:1px solid var(--rule-soft)}
+.instr div:last-child{border-right:0}
+.instr dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.instr dd{margin:0;font-family:var(--display);font-weight:600;font-size:31px;line-height:1}
+.instr dd span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--paper-dim);margin-left:3px}
+.instr dd.hot{color:var(--amber)}
+.instr dd.warn{color:var(--magenta)}
+
+/* chart frames */
+.figcap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:9px;margin:0 0 8px}
+.figcap b{color:var(--amber);font-weight:500}
+.fignote{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.fignote i{display:inline-block;width:14px;height:9px;margin:0 5px 0 14px;vertical-align:middle;border-radius:1px}
+.fignote i:first-child{margin-left:0}
+.ax{stroke:var(--rule);stroke-width:1}
+.axs{stroke:var(--rule-soft);stroke-width:1}
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.08em;fill:var(--muted)}
+.lbl-p{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;fill:var(--paper)}
+.lbl-a{font-family:var(--mono);font-size:10px;letter-spacing:.12em;fill:var(--amber)}
+
+/* cards */
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin:0 0 6px}
+.card{border:1px solid var(--rule);background:var(--ink-2);padding:18px 20px;position:relative}
+.card.bad{border-color:var(--red)}
+.card.good{border-color:var(--jade)}
+.card h3{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 4px;color:var(--paper)}
+.card .verdict{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:11px}
+.card .verdict.bad{color:var(--red)}
+.card .verdict.ok{color:var(--jade)}
+.card p{margin:0 0 10px;font-size:13.5px;color:var(--paper-dim);line-height:1.62}
+.card p:last-child{margin-bottom:0}
+.card p b{color:var(--paper);font-weight:600}
+.fix{border-left:2px solid var(--amber);padding-left:12px;margin:12px 0 0;font-size:12.8px;color:var(--paper-dim);line-height:1.6}
+.fix b{display:block;color:var(--amber);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px;font-weight:500}
+.fix strong{color:var(--paper);font-weight:600}
+
+/* shape cards */
+.shapes{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+.shape{border:1px solid var(--rule);background:var(--ink-2);padding:0;display:flex;flex-direction:column}
+.shape.pick{border-color:var(--amber);box-shadow:inset 0 0 0 1px rgba(242,169,60,.25)}
+.shape-hd{padding:16px 20px 14px;border-bottom:1px solid var(--rule-soft)}
+.shape-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.shape.pick .shape-tag{color:var(--amber)}
+.shape-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(24px,3vw,32px);line-height:.95;margin:0}
+.chainrow{display:flex;flex-wrap:wrap;align-items:center;gap:5px 7px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--paper);padding:13px 20px;border-bottom:1px solid var(--rule-soft);background:rgba(5,22,29,.5)}
+.chainrow .a{color:var(--rule)}
+.chainrow .n{color:var(--amber);font-size:9.5px}
+.shape-body{padding:15px 20px 18px;flex:1}
+.shape-body p{margin:0 0 10px;font-size:13.3px;color:var(--paper-dim);line-height:1.6}
+.shape-body p:last-child{margin-bottom:0}
+.shape-body p b{color:var(--paper);font-weight:600}
+.shape-meta{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--rule-soft)}
+.shape-meta div{flex:1;min-width:88px;padding:11px 20px;border-right:1px solid var(--rule-soft)}
+.shape-meta div:last-child{border-right:0}
+.shape-meta dt{font-family:var(--mono);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.shape-meta dd{margin:0;font-family:var(--mono);font-size:13px;color:var(--paper)}
+.shape-meta dd.g{color:var(--jade)}
+.shape-meta dd.r{color:var(--red)}
+
+/* day accordion */
+.days{border-top:1px solid var(--rule)}
+.day{border-bottom:1px solid var(--rule)}
+.day-btn{all:unset;box-sizing:border-box;display:grid;width:100%;cursor:pointer;grid-template-columns:76px 1fr auto;gap:0 clamp(14px,2.4vw,30px);align-items:baseline;padding:clamp(13px,1.8vw,18px) 4px;transition:background .18s ease}
+.day-btn:hover{background:rgba(242,169,60,.05)}
+.day-btn:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.day-date{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.1em}
+.day-date small{display:block;color:var(--muted);font-size:9.5px;letter-spacing:.14em;margin-top:3px}
+.day-btn>span:nth-child(2){display:flex;flex-direction:column;gap:6px}
+.day-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(22px,3.2vw,34px);line-height:.95;margin:0}
+.day-sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.day-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--paper-dim);text-align:right;white-space:nowrap}
+.day-meta .chev{display:inline-block;margin-left:12px;color:var(--muted);transition:transform .25s ease}
+.day.open .day-meta .chev{transform:rotate(180deg)}
+@media (max-width:720px){.day-btn{grid-template-columns:64px 1fr;row-gap:8px}.day-meta{grid-column:2;text-align:left}}
+.day-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .34s cubic-bezier(.3,.8,.3,1)}
+.day.open .day-body{grid-template-rows:1fr}
+.day-inner{overflow:hidden}
+.day-pad{padding:2px 4px clamp(22px,3vw,32px)}
+.slots{display:grid;gap:0;border-left:1px solid var(--rule)}
+.slot{padding:0 0 16px 16px;position:relative}
+.slot:last-child{padding-bottom:2px}
+.slot::before{content:"";position:absolute;left:-4px;top:6px;width:7px;height:7px;background:var(--amber);border-radius:50%}
+.slot.move::before{background:var(--magenta)}
+.slot h4{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 5px;font-weight:500}
+.slot.move h4{color:var(--magenta)}
+.slot p{margin:0;font-size:14px;line-height:1.62;color:var(--paper-dim);max-width:72ch}
+.slot p b{color:var(--paper);font-weight:600}
+
+/* worth doing */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.fbtn{all:unset;cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border:1px solid var(--rule);color:var(--paper-dim);border-radius:2px;transition:.15s}
+.fbtn:hover{background:var(--ink-3);color:var(--paper)}
+.fbtn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.fbtn[aria-pressed="true"]{background:var(--amber);color:var(--ink);border-color:var(--amber);font-weight:600}
+.fdiv{width:1px;background:var(--rule);margin:2px 6px}
+.items{display:grid;gap:1px;background:var(--rule-soft);border:1px solid var(--rule)}
+.item{background:var(--ink-2);padding:13px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:baseline}
+.item .tier{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:3px 7px 2px;border-radius:2px;white-space:nowrap;align-self:start;margin-top:2px}
+.tier.do{background:rgba(88,196,163,.14);color:var(--jade);border:1px solid rgba(88,196,163,.35)}
+.tier.opt{background:rgba(242,169,60,.12);color:var(--amber);border:1px solid rgba(242,169,60,.3)}
+.tier.skip{background:rgba(224,85,85,.1);color:var(--red);border:1px solid rgba(224,85,85,.3)}
+.item .nm{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:20px;line-height:1.05;color:var(--paper)}
+.item .why{grid-column:2;font-size:13.3px;color:var(--paper-dim);line-height:1.55;max-width:74ch}
+.item .why b{color:var(--paper);font-weight:600}
+.item .when{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);text-align:right;white-space:nowrap;align-self:start;margin-top:4px}
+.item .when.book{color:var(--magenta)}
+@media (max-width:640px){.item{grid-template-columns:auto 1fr}.item .when{grid-column:2;text-align:left;margin-top:2px}.item .why{grid-column:1/-1}}
+.empty{background:var(--ink-2);padding:22px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* rail calc */
+.calc{border:1px solid var(--rule);background:var(--ink-2)}
+.calc-legs{display:grid}
+.leg-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--rule-soft);cursor:pointer}
+.leg-row:hover{background:rgba(242,169,60,.04)}
+.leg-row input{accent-color:var(--amber);width:15px;height:15px;cursor:pointer}
+.leg-row .lname{font-family:var(--mono);font-size:12.5px;color:var(--paper-dim)}
+.leg-row input:checked+.lname{color:var(--paper)}
+.leg-row .lyen{font-family:var(--mono);font-size:12.5px;color:var(--amber);font-variant-numeric:tabular-nums;white-space:nowrap}
+.leg-row .lnote{grid-column:2/-1;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--muted);margin-top:-4px}
+.calc-out{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule-soft)}
+.calc-out div{background:var(--ink-3);padding:15px 17px}
+.calc-out dt{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.calc-out dd{margin:0;font-family:var(--display);font-weight:700;font-size:27px;line-height:1;font-variant-numeric:tabular-nums}
+.calc-out dd small{font-family:var(--mono);font-size:10px;font-weight:400;color:var(--paper-dim);margin-left:4px;letter-spacing:.06em}
+#verdict{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;line-height:1.5}
+#verdict.win{color:var(--jade)}
+#verdict.lose{color:var(--red)}
+
+/* panels / tables */
+.panel{border:1px solid var(--rule);background:var(--ink-2);padding:clamp(17px,2.4vw,24px);margin-top:22px}
+.panel h3{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 12px;font-weight:500}
+.panel p{margin:0 0 12px;font-size:13.6px;color:var(--paper-dim);line-height:1.62}
+.panel p:last-child{margin-bottom:0}
+.panel p b{color:var(--paper);font-weight:600}
+table.ref{width:100%;border-collapse:collapse;font-size:13.4px}
+table.ref th{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:500;padding:0 14px 10px 0;border-bottom:1px solid var(--rule)}
+table.ref td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule-soft);color:var(--paper-dim);vertical-align:top}
+table.ref td:first-child{font-family:var(--display);font-size:17px;font-weight:600;text-transform:uppercase;color:var(--paper);white-space:nowrap;width:1%}
+table.ref td.t{font-family:var(--mono);font-size:11px;letter-spacing:.06em;white-space:nowrap;color:var(--amber)}
+table.ref tr.flag td.t{color:var(--magenta)}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.cols{display:grid;gap:16px 34px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:20px}
+.cols p{margin:0;font-size:13.6px;color:var(--paper-dim);line-height:1.6}
+.cols p b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:5px;font-weight:500}
+
+footer{border-top:1px solid var(--rule);padding-block:26px 40px;color:var(--muted)}
+.foot-grid{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:flex-end}
+.foot-grid p{margin:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase}
+.foot-mark{font-family:var(--display);font-size:clamp(40px,9vw,110px);font-weight:800;text-transform:uppercase;line-height:.8;color:transparent;-webkit-text-stroke:1px var(--rule);margin:30px 0 0}
+</style>
+
+
+<header class="hero">
+  <div class="gridbg"></div>
+  <div class="wrap">
+    <a class="back" href="index.html">← Westbound · the dossier</a>
+    <p class="strip">
+      <span><span class="k">Stop</span> <span class="amb">03 of 27</span></span>
+      <span><span class="k">In</span> PEK · Seoul</span>
+      <span><span class="k">Fly out</span> <span class="amb">TFU</span></span>
+      <span><span class="k">Out</span> Chengdu</span>
+      <span><span class="k">Window</span> 29 Oct–5 Nov 2026</span>
+      <span><span class="k">Clock</span> UTC+8</span>
+    </p>
+    <h1 class="title">
+      <span class="l1">Third stop</span>
+      <span class="l2">China</span>
+    </h1>
+    <p class="subline">
+      <span>Visa-free, for now</span><span class="sep">/</span>
+      <span>Nothing books more than a week out</span><span class="sep">/</span>
+      <span>Third city: your call, see below</span>
+    </p>
+
+    <dl class="instr">
+      <div><dt>Calendar days</dt><dd>8</dd></div>
+      <div><dt>Full days</dt><dd class="hot">6</dd></div>
+      <div><dt>Nights</dt><dd>7</dd></div>
+      <div><dt>Bases</dt><dd>3</dd></div>
+      <div><dt>Rail, one way</dt><dd id="rail-km">≈1,760<span>km</span></dd></div>
+      <div><dt>Colour overlap</dt><dd class="hot">100<span>%</span></dd></div>
+    </dl>
+  </div>
+</header>
+
+<section class="section" id="audit">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">01</span> The time audit</p>
+    <h2 class="head">Eight days<br>is six</h2>
+    <p class="lede">This is the first stop of the trip where the calendar doesn't lie to you. Seoul to Beijing is a two-hour hop and you gain an hour crossing into UTC+8, so nothing disappears into a date line. Land mid-afternoon on the 29th, fly out mid-morning on the 5th, and you keep <b>six clean days and two useful fragments</b>. After Japan's five, that feels like a windfall. It isn't quite — China spends the difference in other currencies, and the sections below are mostly about those.</p>
+
+    <div class="figcap">
+      <span>Fig. 1 — What the week really contains</span>
+      <span><b>29 Oct–5 Nov</b> · hour by hour</span>
+    </div>
+    <div class="scroller">
+      <svg id="audit-chart" viewBox="0 0 1400 190" role="img" aria-label="Timeline of 29 October to 5 November showing a short afternoon flight from Seoul, six usable full days from the 30th to the 4th plus most of the arrival day, and a part morning on the 5th before the onward flight."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--magenta);opacity:.55"></i>In transit<i style="background:rgba(242,169,60,.35)"></i>Part day<i style="background:var(--amber)"></i>Full day</p>
+
+    <div class="cols">
+      <p><b>No jet lag, no free dawns</b>Japan handed you 6am for a week. Korea and China are one hour apart, so this time you get nothing — you will have to set an alarm like an adult. That matters more here than it sounds, because China's best hours are still early and its sites are enormous. The Forbidden City is a four-kilometre walk on stone. The Summer Palace is bigger. Budget by distance, not by ticket count.</p>
+      <p><b>The two hours you actually lose</b>Not to flying — to friction. Setting up payments, working out that your phone has stopped reaching half the internet, real-name ID checks at every station gate and museum door, and security scanners on the metro. None of it is hard. All of it is slower than Japan, and it lands entirely on day one if you haven't done the prep in Seoul.</p>
+      <p><b>Arrival evening is half a day here</b>You land around 15:00 with the sun up until nearly 17:30 and no body-clock damage. Unlike Tokyo, you can actually use this evening: get to the hotel, then walk Qianmen and the south end of the central axis in the dark. Don't book anything ticketed — just walk.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="flags">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">02</span> Three things that don't move</p>
+    <h2 class="head">Fixed before<br>you choose</h2>
+    <p class="lede">These hold whichever third city you pick, and two of them need action from you before you leave Korea. The first one is the single biggest structural difference between planning China and planning Japan.</p>
+
+    <div class="cards">
+      <div class="card bad">
+        <h3>Nothing books more than a week out</h3>
+        <div class="verdict bad">Plan from Seoul, not from home</div>
+        <p>Japan wanted months of notice. China won't take it. The Forbidden City releases tickets <b>exactly seven days ahead, around 20:00 Beijing time</b>, real-name against your passport, no same-day sales, and popular dates go in minutes. The Terracotta Warriors run the same seven-day window against a daily cap. Rail tickets open <b>15 days out at 08:00 Beijing time</b> and not a minute earlier.</p>
+        <p>So the trip cannot be locked in before you fly. Your Forbidden City slot for Fri 30 Oct opens on <b>Fri 23 Oct</b> — when you'll be in Seoul. Your Beijing→Xi'an train opens 18 October, mid-Japan.</p>
+        <div class="fix"><b>The fix</b>Put two alarms in your phone now, on Korea time, and treat them as appointments. Everything else on this trip is improvisable; these two are not. Hotels and flights are the only pieces you can genuinely settle in advance.</div>
+      </div>
+
+      <div class="card good">
+        <h3>You don't need a visa</h3>
+        <div class="verdict ok">New since February, and temporary</div>
+        <p>China extended visa-free entry to ordinary Canadian passports on <b>17 February 2026</b>, for stays up to 30 days, covering tourism and transit. No application, no fee, no appointment — a genuine change, and most travel advice written before last February still says otherwise.</p>
+        <p>The catch is the expiry. The waiver is declared only <b>to 31 December 2026</b> and is described as a pilot that could be extended, altered or withdrawn. You land seven weeks before it lapses, which is comfortable but not unlimited — this is a live policy, so re-check it the month you fly.</p>
+        <div class="fix"><b>Still required</b>The free digital arrival card, filed 24–72 hours before you land at the National Immigration Administration portal. Visa-free status does not exempt you. Screenshot the QR code. Any site charging a fee for it is not the government.</div>
+      </div>
+
+      <div class="card bad">
+        <h3>Half your phone stops working</h3>
+        <div class="verdict bad">Solve it before you land</div>
+        <p>Google, Gmail, Maps, WhatsApp, Instagram and most Western news sit behind the firewall, and the block lives in the network, not your handset — a local SIM or hotel wi-fi changes nothing. The old answer was a VPN. Through 2026 that stopped being reliable: carriers began cutting VPN-signature traffic on detection, and providers have been degrading or withdrawing their China service.</p>
+        <p>The answer that currently works is structural rather than clever: a <b>roaming travel eSIM</b> issued outside the mainland routes your data out through its home carrier, so it never meets the filter. Everything simply loads.</p>
+        <div class="fix"><b>Install in Seoul</b>An eSIM, Alipay with a card bound and passport verified, and Amap or Apple Maps for navigation. All three are materially harder to set up from inside China, which is the trap — the tools you'd use to fix the problem are the ones that are blocked.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="shapes">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">03</span> The open question</p>
+    <h2 class="head">Shanghai:<br>in or out</h2>
+    <p class="lede">Beijing and Xi'an pick themselves — the imperial capital and the army, five hours apart on the fastest railway in the world. The third slot is the argument. The default answer is Shanghai, and on a westbound trip the default answer is probably wrong.</p>
+
+    <div class="shapes">
+      <div class="shape pick">
+        <div class="shape-hd">
+          <div class="shape-tag">Recommended</div>
+          <p class="shape-name">Chengdu third</p>
+        </div>
+        <div class="chainrow">
+          <span>Beijing <span class="n">×4</span></span><span class="a">→</span>
+          <span>Xi'an <span class="n">×2</span></span><span class="a">→</span>
+          <span>Chengdu <span class="n">×1</span></span><span class="a">→</span>
+          <span class="n">TFU</span>
+        </div>
+        <div class="shape-body">
+          <p>The whole week runs one direction — north-east to south-west, Beijing to Xi'an to Chengdu, each leg shorter than the last, and you finish <b>1,500 km closer to wherever stop 04 is</b>. Beijing keeps four nights, which is what a city with the Wall attached to it actually needs.</p>
+          <p><b>What Chengdu adds:</b> the third distinct China of the week. Beijing is imperial and monumental, Xi'an is archaeological, Chengdu is the one where people are sitting in a park drinking tea at two in the afternoon on a Wednesday. Pandas at opening time, and the best food on the route.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Bases</dt><dd class="g">3</dd></div>
+          <div><dt>Moves</dt><dd class="g">2</dd></div>
+          <div><dt>Rail hours</dt><dd>≈8</dd></div>
+          <div><dt>Flights</dt><dd class="g">0</dd></div>
+        </dl>
+      </div>
+
+      <div class="shape">
+        <div class="shape-hd">
+          <div class="shape-tag">If Shanghai is non-negotiable</div>
+          <p class="shape-name">Shanghai third</p>
+        </div>
+        <div class="chainrow">
+          <span>Beijing <span class="n">×3</span></span><span class="a">→</span>
+          <span>Xi'an <span class="n">×2</span></span><span class="a">→</span>
+          <span>Shanghai <span class="n">×2</span></span><span class="a">→</span>
+          <span class="n">PVG</span>
+        </div>
+        <div class="shape-body">
+          <p>Shanghai gets two nights, which is the minimum that makes it worth the detour — the Bund at night, one full day, a morning. It is a genuinely great city and nothing here says otherwise.</p>
+          <p><b>The cost is paid three times.</b> Beijing drops to three nights and loses the Summer Palace day. Xi'an→Shanghai is six hours by rail, so you end up flying it. And you finish 1,900 km east of Xi'an, on the wrong coast, having bought a westbound trip.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Bases</dt><dd>3</dd></div>
+          <div><dt>Moves</dt><dd>2</dd></div>
+          <div><dt>Rail hours</dt><dd class="r">≈5 + flight</dd></div>
+          <div><dt>Flights</dt><dd class="r">1</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Why the recommendation cuts Shanghai rather than Xi'an</h3>
+      <p>Xi'an has a hard floor and a unique object. There is one Terracotta Army, it is two hours round trip from the city plus three hours on site, and the day it sits in cannot be compressed. Beijing at three nights is survivable but it means either the Wall or the Summer Palace goes, and both are load-bearing.</p>
+      <p>Shanghai, by contrast, is the one city on the list with a <b>strong zero-night case</b>. It is the easiest Chinese city to reach on a future trip, the one most legible without preparation, and the one whose appeal — skyline, colonial architecture, restaurants, galleries — you will meet versions of repeatedly across the remaining 24 stops. Chengdu you will not.</p>
+      <p>If Shanghai is the trip you want, take it. The two-night version below is real and it works. Just be clear that you're buying it with a Beijing day and a westbound flight.</p>
+    </div>
+
+    <div class="panel">
+      <h3>What's cut either way</h3>
+      <p><b>Guilin and Yangshuo.</b> The karst river landscape is the most photographed scenery in China and it deserves three days plus a flight in each direction. Not this week.</p>
+      <p><b>Suzhou and Hangzhou.</b> Thirty minutes and fifty minutes from Shanghai by train, and Suzhou's classical gardens hit late-autumn peak in exactly your window. They only exist as an option in the Shanghai shape, and only by giving up the Shanghai day itself.</p>
+      <p><b>Mount Hua.</b> Ninety minutes from Xi'an, with the plank walk everyone has seen. A full day and a hard one — it would eat the Terracotta day.</p>
+      <p><b>Hong Kong.</b> Separate immigration, separate currency, separate trip. It's also the obvious pairing for a future Shanghai visit.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="run">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">04</span> Day by day</p>
+    <h2 class="head">Both versions,<br>laid out</h2>
+    <p class="lede">No jet lag means the early starts are a choice rather than a gift, and they still matter — Fragrant Hills before nine, the Terracotta pits at opening, the pandas while they're awake. Times are indicative; the first slot of each day is the one that's load-bearing.</p>
+    <div class="filters" id="dayToggle" style="margin-bottom:6px">
+      <button class="fbtn" data-plan="chengdu" aria-pressed="true">Chengdu third</button>
+      <button class="fbtn" data-plan="shanghai" aria-pressed="false">Shanghai third</button>
+    </div>
+    <div class="days" id="days"></div>
+    <p class="fignote" style="margin-top:16px">Amber = on foot · <span style="color:var(--magenta)">Magenta = a train, a flight or a base change</span></p>
+  </div>
+</section>
+
+<section class="section" id="worth">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">05</span> What's actually worth doing</p>
+    <h2 class="head">Do, maybe,<br>don't bother</h2>
+    <p class="lede">Sorted by city, then by whether it earns a slot in a week this short. The <b>don't bother</b> entries mostly aren't bad — several are famous and some are excellent. They're here because something else beats them for the same hours.</p>
+
+    <div class="filters" id="filters">
+      <button class="fbtn" data-city="all" aria-pressed="true">All</button>
+      <button class="fbtn" data-city="Beijing" aria-pressed="false">Beijing</button>
+      <button class="fbtn" data-city="Wall" aria-pressed="false">The Wall</button>
+      <button class="fbtn" data-city="Xian" aria-pressed="false">Xi’an</button>
+      <button class="fbtn" data-city="Chengdu" aria-pressed="false">Chengdu</button>
+      <button class="fbtn" data-city="Shanghai" aria-pressed="false">Shanghai</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-tier="do" aria-pressed="false">Do</button>
+      <button class="fbtn" data-tier="opt" aria-pressed="false">Maybe</button>
+      <button class="fbtn" data-tier="skip" aria-pressed="false">Don't bother</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-book="1" aria-pressed="false">Needs booking</button>
+    </div>
+    <div class="items" id="items"></div>
+  </div>
+</section>
+
+<section class="section" id="colour">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">06</span> The colour question</p>
+    <h2 class="head">This time<br>you're on time</h2>
+    <p class="lede">Japan's gardens were going to be entirely green three weeks early. North China runs on a different clock, and your window lands almost exactly on it. Beijing's colour arrives from the mountains inward through late October and reaches the city parks in early November — <b>Fragrant Hills peaks in the days you are there</b>, and the ginkgo avenues turn as you leave. This is the compensation for missing koyo, and it is a real one.</p>
+
+    <div class="figcap">
+      <span>Fig. 2 — When the leaves actually turn</span>
+      <span><b>Typical peak</b> · your window marked</span>
+    </div>
+    <div class="scroller">
+      <svg id="koyo-chart" viewBox="0 0 1400 460" role="img" aria-label="Chart of typical autumn colour windows from mid-October to mid-December across ten places in China. The 29 October to 5 November travel window overlaps Fragrant Hills, the Ming Tombs, Beijing's ginkgo avenues and the Xi'an hills, and sits ahead of Suzhou and Shanghai."></svg>
+    </div>
+    <p class="fignote"><i style="background:rgba(242,169,60,.55)"></i>Peak colour<i style="background:rgba(231,100,155,.22);border:1px solid var(--magenta)"></i>Your window · indicative averages, colour shifts a week either way each year</p>
+
+    <div class="panel">
+      <h3>The one thing to time precisely</h3>
+      <p><b>Fragrant Hills, before nine, on a weekday.</b> Xiangshan is an 800-year-old imperial hunting park with something over a hundred thousand sumac and maple on the hillside, and it is the definitive Beijing autumn image. It is also mobbed — the Red Leaf Festival has drawn well over 800,000 people in a season, concentrated into about three weekends, which are your weekends.</p>
+      <p>Go on <b>Friday 30 October at opening</b>. Take the south trails from the east gate rather than fighting up Incense Burner Peak with everybody else; the colour is concentrated on the southern slopes anyway, the views are wider, and the crowd thins within twenty minutes of walking. Be off the hill by early afternoon — the east-facing slopes lose their light after two.</p>
+    </div>
+
+    <div class="panel">
+      <h3>And the air, which is the other seasonal variable</h3>
+      <p>Beijing's air is at its best in autumn and its worst in deep winter, and the hinge is the municipal heating season, which conventionally starts around <b>15 November</b>. You are ten days ahead of it. Late October and early November also get reliable north-westerly winds that scour the basin clear, which is why the classic long-lens shots of the Forbidden City against the Western Hills are autumn photographs.</p>
+      <p>This is odds, not a guarantee — a still, warm week can go grey regardless. But you have picked the right fortnight, and the practical advice is simply to keep the Wall day and the Fragrant Hills day flexible by a day if you can, and spend the clearest morning on whichever of them is outstanding.</p>
+    </div>
+
+    <div class="figcap" style="margin-top:26px">
+      <span>Fig. 3 — Chance of a clear day, by month</span>
+      <span><b>Beijing</b> · heating season marked</span>
+    </div>
+    <div class="scroller">
+      <svg id="air-chart" viewBox="0 0 1400 300" role="img" aria-label="Bar chart of the approximate chance of a clear-air day in Beijing by month, peaking around 78 percent in September, still high at 74 percent in October and 62 percent in early November, then falling through the winter heating season to about 45 percent in January."></svg>
+    </div>
+    <p class="fignote">Indicative only · November splits sharply either side of the 15th, when heating starts</p>
+  </div>
+</section>
+
+<section class="section" id="wall">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">07</span> The Wall</p>
+    <h2 class="head">Go further<br>than you think</h2>
+    <p class="lede">There are a dozen visitable sections within a few hours of Beijing and they are not interchangeable. The standard advice is Mutianyu, and on a weekday the standard advice is right. Your only available Wall day is <b>Saturday 31 October</b>, in the middle of Beijing's peak leaf-viewing fortnight, which changes the answer.</p>
+
+    <div class="cards">
+      <div class="card bad">
+        <h3>Badaling</h3>
+        <div class="verdict bad">No</div>
+        <p>The closest section, thirty minutes from Beijing North by high-speed train, fully restored, wide enough to walk ten abreast — and around <b>ten million visitors a year</b>, with peak days approaching eighty thousand people at once. Coach parties arrive in waves from nine.</p>
+        <p>It is the right choice for exactly one person: someone with mobility limits or half a day, who needs the Wall to be easy. That isn't you.</p>
+      </div>
+
+      <div class="card">
+        <h3>Mutianyu</h3>
+        <div class="verdict">The weekday answer</div>
+        <p>Seventy kilometres out, 90 minutes to two hours by road, well-restored Ming wall along a forested ridge with 23 towers, a cable car up and a metal toboggan down. Entry is modest; the chairlift-plus-toboggan combination runs a couple of hundred yuan and is worth it.</p>
+        <p>Footfall runs well under half of Badaling's. On a Tuesday it is close to ideal. <b>On a Saturday in leaf season it is a queue</b>, and the cable car is where the queue forms.</p>
+        <div class="fix"><b>If you take it anyway</b>Leave central Beijing by 07:00, walk up rather than queueing for the lift, and head left towards the steeper western towers where the crowd thins fast.</div>
+      </div>
+
+      <div class="card good">
+        <h3>Jinshanling</h3>
+        <div class="verdict ok">The Saturday answer</div>
+        <p>130 km out, two to two and a half hours, and the reason to make the drive: ten kilometres of ridgeline wall running through partly-restored and partly-wild towers, which is the version in every photograph you actually admire. Crowds are a fraction of Mutianyu's, and the extra hour of travel is what buys that.</p>
+        <p>It's a real walk — three to four hours on uneven stone with genuine ascent — and there's a cable car if you'd rather start high. Late October leaves it in brown-and-gold hill country with the towers stepping away to the horizon.</p>
+        <div class="fix"><b>The trade</b>You spend five hours in a car to buy solitude on a Saturday. On this particular Saturday that is the right trade, and it's the recommendation in the day-by-day above.</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Two others, for completeness</h3>
+      <p><b>Simatai and Gubei Water Town</b> — the only section with a regular night programme, illuminated, with numbers capped and advance booking required. It works as an overnight rather than a day trip, and the water town beneath it is a modern reconstruction that people either enjoy or resent. Not on a seven-night week.</p>
+      <p><b>Jiankou</b> — unrestored, collapsing, spectacular, and genuinely dangerous in places. For experienced hikers with a guide, and its colour peaks in mid-October, a fortnight before you arrive.</p>
+      <p>Whichever you choose, book the car or the tour a few days out rather than on the morning. Transport to the non-Badaling sections is the part that sells out, not the Wall.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="rail">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">08</span> The rail maths</p>
+    <h2 class="head">Take the<br>train</h2>
+    <p class="lede">The opposite verdict to Japan's. There is no pass to evaluate here — China has no tourist rail pass and doesn't need one, because point-to-point fares are low. The only real question on each leg is train versus plane, and the honest comparison is door to door: stations sit in city centres, airports do not. Tick the legs you'll ride.</p>
+
+    <div class="calc">
+      <div class="calc-legs" id="legs"></div>
+      <dl class="calc-out">
+        <div><dt>By rail</dt><dd id="ptp"></dd></div>
+        <div><dt>By air</dt><dd id="pass"></dd></div>
+        <div><dt>Door to door</dt><dd id="diff"></dd></div>
+        <div><dt>Verdict</dt><dd><span id="verdict"></span></dd></div>
+      </dl>
+    </div>
+    <p class="fignote">Second-class rail fares and typical economy airfares, both approximate and both moving · air times include 2h airport margin each end · CAD at roughly ¥5.2 to the dollar</p>
+
+    <div class="panel">
+      <h3>How to actually buy them</h3>
+      <p>Tickets go on sale <b>15 days before departure at 08:00 Beijing time</b> and there is no way to buy earlier. Use the official Railway 12306 app, which has an English interface, accepts registration on a foreign passport with no Chinese phone number, and charges no booking fee. Trip.com is easier to set up and adds a small fee; it's the sensible fallback if 12306's payment step rejects your card.</p>
+      <p>Everything is real-name and e-ticketed. <b>Your passport is the ticket</b> — lay it on the reader at the gate and walk through. Nothing to print. If a smaller station's automatic lane doesn't list foreign passports, the staffed lane beside it does the same job by hand.</p>
+      <p>Arrive 30 minutes early at ordinary stations and 45 at the giants — Beijing West and Shanghai Hongqiao are airport-sized, with airport-sized security queues. Confirm which station you're leaving from when you book; Beijing has several and they are not near each other.</p>
+    </div>
+
+    <div class="panel">
+      <h3>Which class</h3>
+      <p>Second class on a G-train is comfortable, quiet, has a power socket and is what almost everyone rides. First class buys a slightly wider seat in a slightly calmer carriage for roughly sixty percent more. On a five-hour Beijing→Xi'an run it's a reasonable indulgence; on the three-hour Xi'an→Chengdu leg it isn't. Business class is a flat-bed product at close to airfare and makes no sense on these distances.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="admin">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">09</span> Ground rules</p>
+    <h2 class="head">Before you land</h2>
+
+    <div class="tablewrap">
+    <table class="ref">
+      <thead><tr><th>Item</th><th>What to do</th><th>When</th></tr></thead>
+      <tbody>
+        <tr class="flag"><td>Entry</td><td>Visa-free for Canadians up to 30 days since 17 February 2026 — no application, no fee. Declared only to 31 December 2026 and treated as a pilot, so re-check the month you fly. Passport valid six months beyond entry.</td><td class="t">Re-check in Oct</td></tr>
+        <tr class="flag"><td>Arrival card</td><td>Free digital arrival card through the National Immigration Administration portal, 24–72 hours before landing. Visa-free travellers are not exempt. Screenshot the QR. Any site charging for it is a scam.</td><td class="t">Day before</td></tr>
+        <tr><td>Onward proof</td><td>Border officers generally want to see you leaving inside 30 days. Have the stop-04 booking on your phone; airlines may ask at check-in in Seoul too.</td><td class="t">On arrival</td></tr>
+        <tr class="flag"><td>Connectivity</td><td>Buy a roaming travel eSIM and install it in Seoul. VPNs became unreliable through 2026 as carriers began cutting VPN traffic on detection; a foreign-routed eSIM sidesteps the firewall entirely rather than tunnelling through it.</td><td class="t">Before you fly</td></tr>
+        <tr class="flag"><td>Payments</td><td>Alipay first, WeChat Pay as backup — bind a Visa or Mastercard and complete the passport check <b>at home</b>, not on airport wi-fi. Transactions under ¥200 avoid the platform fee; above that expect around 3%. Limits have been raised repeatedly and no longer bite at tourist scale.</td><td class="t">Before you fly</td></tr>
+        <tr><td>Cash</td><td>Carry ¥500–1,000 as insurance. You will likely spend none of it. Some small vendors use personal QR codes that reject foreign cards, and that's the only time it matters.</td><td class="t">On arrival</td></tr>
+        <tr class="flag"><td>Forbidden City</td><td>Book seven days ahead at about 20:00 Beijing time, real-name to your passport, morning or afternoon slot, one-way route, closed Mondays. Bring the physical passport you booked with. ¥60 to 31 October, ¥40 from 1 November.</td><td class="t">Fri 23 Oct</td></tr>
+        <tr class="flag"><td>Terracotta Warriors</td><td>Same seven-day window against a daily cap. Book for Tue 3 Nov on Tue 27 Oct. Go at opening or after 14:30; the pits are humid and the middle of the day is a scrum.</td><td class="t">Tue 27 Oct</td></tr>
+        <tr><td>Rail tickets</td><td>On sale 15 days out at 08:00 Beijing time on the 12306 app. Beijing→Xi'an opens 18 Oct, Xi'an→Chengdu opens 20 Oct. Passport is the ticket.</td><td class="t">18 &amp; 20 Oct</td></tr>
+        <tr><td>Museums</td><td>Nearly everything free is also reserved — the National Museum of China and the Shaanxi History Museum both need a real-name booking days ahead, and both sell out. Free does not mean walk-in.</td><td class="t">Week before</td></tr>
+        <tr><td>Public holidays</td><td>Golden Week is 1–7 October; you miss it by three weeks, which is the single luckiest thing about this window. Nothing else falls inside it.</td><td class="t">Clear</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="cols">
+      <p><b>Weather</b>Beijing runs about 14–17°C by day and 3–6°C at night in your window, dry and often bright, with the first genuinely cold mornings arriving in early November. Xi'an is a degree or two milder, Chengdu warmer, greyer and damper — the Sichuan basin sits under cloud most of the year. Pack a real jacket for Beijing dawns; you'll be outdoors before sunrise twice.</p>
+      <p><b>Navigation</b>Google Maps does not work. Amap has an English mode and is the one locals use; Apple Maps works and is adequate. Screenshot your hotel's name and address <b>in Chinese characters</b> before you need it — taxi drivers won't read pinyin, and DiDi's English app is the easier route anyway.</p>
+      <p><b>ID checks</b>Carry your passport at all times, not a copy. It's your train ticket, your museum ticket, your hotel check-in and your metro-security fallback. Hotels register you with the local police automatically; that's routine, not a problem.</p>
+      <p><b>Eating</b>As in Japan, the best meals will be cheap and fast — Xi'an's roujiamo and biangbiang noodles, Chengdu's breakfast noodles, a Beijing hutong dumpling counter. Reserve one Peking duck dinner and one Chengdu hotpot and improvise the rest. Point at what other people are eating; it works.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <p>Westbound · stop 03 · China</p>
+      <p>29 Oct–5 Nov 2026 · PEK in, TFU out</p>
+      <p>Entry rules, fares and booking windows verified Sept 2026 — recheck before booking</p>
+    </div>
+    <p class="foot-mark">Beijing → Chengdu</p>
+  </div>
+</footer>
+<script>
+/* ============ DAY-BY-DAY ============ */
+const DAYS_CHENGDU=[
+{d:'Thu 29',w:'Arrive',name:'Beijing',sub:'Land 15:00 · walk, don\u2019t plan',meta:'Night 1',
+ slots:[
+  {m:1,h:'15:00 · PEK',p:'Two hours from Seoul and an hour back on the clock, so you arrive intact. Airport Express or the Daxing line depending which airport your flight uses \u2014 check, they are on opposite sides of the city. Have the arrival-card QR ready.'},
+  {h:'17:30 · The central axis after dark',p:'Drop bags and walk south from your hotel through Qianmen and the old outer-city lanes. Tiananmen and the Meridian Gate are lit and you can see them from outside without a ticket or a queue. This is the one evening with no admin attached to it.'},
+  {h:'19:30 · Dinner nearby',p:'A hutong dumpling counter or a noodle shop. Test that Alipay actually works on a small transaction tonight, while it\u2019s low-stakes, rather than discovering a problem at a station gate on Monday.'}
+]},
+{d:'Fri 30',w:'Full',name:'Colour, then the palace',sub:'Xiangshan at dawn · Forbidden City PM',meta:'Night 2',
+ slots:[
+  {h:'07:00 · Fragrant Hills',p:'The one appointment in the week with the calendar rather than a booking system. Weekday, at opening, before the coaches. Take the southern trails from the east gate instead of the summit \u2014 the colour is concentrated there and the crowd is not. Two to three hours.'},
+  {h:'11:30 · Across the city',p:'Line 16 south then east. It is a long transit \u2014 Xiangshan is properly out in Haidian \u2014 so eat on the way rather than planning a sit-down lunch.'},
+  {h:'13:00 · Forbidden City',p:'Your afternoon slot, booked seven days ago against your passport. One-way route north through the Outer Court to the Inner Court, four and a half kilometres if you do the galleries. The Treasure Gallery is worth the extra ten yuan; the Clocks are skippable.'},
+  {h:'16:30 · Jingshan Park',p:'Straight out of the north gate and up the artificial hill. This is the only place the Forbidden City resolves into a plan rather than a series of courtyards, and at sunset the roofs go orange. Small entry fee, ten-minute climb, non-negotiable.'},
+  {h:'19:00 · Peking duck',p:'Siji Minfu or Dadong. Book the same day; the queues are for people who didn\u2019t. Carved at the table, thin pancakes, and order the duck-bone soup they make from the carcass.'}
+]},
+{d:'Sat 31',w:'Full',name:'The Wall',sub:'Jinshanling \u00b7 the long drive out',meta:'Night 3',
+ slots:[
+  {m:1,h:'06:30 · Leave Beijing',p:'Two to two and a half hours by car to Jinshanling. Book the vehicle or the tour a few days ahead \u2014 the transport is what sells out, not the wall. Bring water; there is very little on the ridge.'},
+  {h:'09:00 · The ridgeline',p:'Three to four hours of stepped, uneven stone through towers that shade from restored into wild. This is the Great Wall of the photographs. Cable car up if you\u2019d rather not climb the first section, then walk east.'},
+  {h:'14:00 · Back down',p:'Eat what you brought, or at the village at the base. Leave by mid-afternoon \u2014 the return road into Beijing thickens badly after four.'},
+  {h:'18:30 · Nothing',p:'You will have walked twelve kilometres on stone steps. Hotel, a bowl of noodles, early night. Everything below assumes you did not try to add an evening to this day.'}
+]},
+{d:'Sun 1',w:'Full',name:'Beijing',sub:'The civic city',meta:'Night 4',
+ slots:[
+  {h:'06:30 · Temple of Heaven',p:'The park opens before the monument and Sunday is peak. Hundreds of people singing, dancing, playing cards, doing tai chi and practising instruments under the cypresses. It is the best hour of the week for understanding the city, and the Hall of Prayer itself is almost incidental.'},
+  {h:'10:00 · Summer Palace',p:'Out in the north-west, and enormous. Do the Long Corridor along Kunming Lake, up Longevity Hill, and stop. Trying to see all of it is how people lose an afternoon and their temper.'},
+  {h:'14:30 · Lama Temple and the hutongs',p:'Yonghegong is a working Tibetan-Buddhist monastery with an eighteen-metre Buddha carved from a single sandalwood trunk. Then walk Guozijian Street and Wudaoying \u2014 the quiet, grey-brick version of old Beijing rather than the souvenir version.'},
+  {h:'18:00 · Drum and Bell towers',p:'The square between them at dusk, then dinner somewhere around Houhai. Avoid the lakeside bar strip itself; one street back is better in every respect.'}
+]},
+{d:'Mon 2',w:'Move',name:'Xi\u2019an',sub:'Beijing \u2192 the old capital',meta:'Night 5',
+ slots:[
+  {m:1,h:'09:00 · Beijing West \u2192 Xi\u2019an North',p:'Roughly four and a half to five and a half hours on a G-train, 1,100 km. Beijing West is airport-sized; be there 45 minutes early. Passport on the gate reader, second class, power socket at the seat.'},
+  {h:'15:00 · The city wall by bike',p:'Fourteen kilometres of intact Ming rampart, wide enough to cycle, right around the old city. Rent at the South Gate. Ninety minutes to go all the way round, and the light in the last hour before sunset is the reason to do it now rather than tomorrow.'},
+  {h:'18:30 · The Muslim Quarter',p:'Beiyuanmen after dark. Roujiamo, hand-pulled biangbiang noodles, lamb skewers, persimmon cakes. Deeply touristed and still genuinely good \u2014 walk to the far end where the side lanes are, and eat standing up.'}
+]},
+{d:'Tue 3',w:'Full',name:'The army',sub:'Terracotta Warriors · booked 27 Oct',meta:'Night 6',
+ slots:[
+  {h:'08:00 · Terracotta Warriors',p:'Be at the gate for opening. An hour out from the city, a daily visitor cap, and a booking made seven days ago against your passport. Do Pit 1 last, not first \u2014 start with Pit 3 and the bronze chariots so the big hangar lands properly.'},
+  {h:'13:30 · Shaanxi History Museum',p:'Back in the city, free but reserved days in advance, and the best museum on this route by a distance. It is what makes the warriors make sense \u2014 Zhou bronzes through Han to the Tang, all from within a hundred kilometres of where you\u2019re standing.'},
+  {h:'17:00 · Big Wild Goose Pagoda',p:'Seventh-century, built to house sutras carried back from India, and still leaning slightly. The square in front does a fountain show in the evening that is either charming or unbearable depending on your mood.'},
+  {h:'19:30 · Dinner',p:'Anything with wheat in it. Xi\u2019an is the noodle end of China and this is your last night of it before Sichuan changes the subject entirely.'}
+]},
+{d:'Wed 4',w:'Move',name:'Chengdu',sub:'Xi\u2019an \u2192 through the Qinling',meta:'Night 7',
+ slots:[
+  {m:1,h:'09:30 · Xi\u2019an North \u2192 Chengdu East',p:'Three hours, 660 km, and the best rail journey of the week \u2014 the line goes straight through the Qinling mountains in a near-continuous sequence of tunnels and high viaducts. Sit on the right for the valley sections.'},
+  {h:'13:30 · People\u2019s Park',p:'The Heming teahouse: bamboo chairs under the trees, bottomless jasmine, card games, and the itinerant ear-cleaners with their tuning forks. Sit for two hours. This is the entire argument for Chengdu over Shanghai and it takes about twenty minutes to become convincing.'},
+  {h:'16:30 · Kuanzhai or Wenshu',p:'The Wide and Narrow Alleys are a handsome reconstruction and busy; Wenshu Monastery is a working Chan temple with a vegetarian canteen and far fewer people. Pick by mood.'},
+  {h:'19:00 · Hotpot',p:'The mala broth, numbing and red. Order a yin-yang pot if you want an exit. This is the meal of the week \u2014 do not have a light dinner because of the early start tomorrow.'}
+]},
+{d:'Thu 5',w:'Depart',name:'Pandas, then out',sub:'Half a morning',meta:'Fly out',
+ slots:[
+  {h:'07:30 · Panda base',p:'At opening, and this genuinely matters \u2014 pandas eat at breakfast and then sleep for the rest of the day. Two hours is enough. Go straight to the far enclosures first and work back against the flow.'},
+  {m:1,h:'11:30 · To the airport',p:'Tianfu is about an hour from the panda base, Shuangliu rather less \u2014 confirm which one your onward flight leaves from, they are on opposite sides of Chengdu.'},
+  {m:1,h:'\u00b7 Stop 04',p:'Chengdu is deliberately the exit: it flies west and south-west far better than Beijing or Shanghai do. Whatever comes next, you\u2019re starting it 1,500 km further along than you would have been.'}
+]}
+];
+
+const DAYS_SHANGHAI=[
+{d:'Thu 29',w:'Arrive',name:'Beijing',sub:'Land 15:00 · walk, don\u2019t plan',meta:'Night 1',
+ slots:[
+  {m:1,h:'15:00 · PEK',p:'Two hours from Seoul, an hour back on the clock. Airport Express or the Daxing line depending which airport you land at. Arrival-card QR ready.'},
+  {h:'17:30 · The central axis after dark',p:'Walk south through Qianmen. Tiananmen and the Meridian Gate are lit and free from outside. No tickets, no queues, no plan.'},
+  {h:'19:30 · Dinner nearby',p:'Hutong dumplings or noodles. Test Alipay tonight on something small.'}
+]},
+{d:'Fri 30',w:'Full',name:'Colour, then the palace',sub:'Xiangshan at dawn · Forbidden City PM',meta:'Night 2',
+ slots:[
+  {h:'07:00 · Fragrant Hills',p:'Weekday, at opening, southern trails from the east gate. Peak colour and the only day of the week it isn\u2019t a weekend scrum. Two to three hours.'},
+  {h:'13:00 · Forbidden City',p:'Afternoon slot, booked seven days ahead against your passport. One-way north through the courts; the Treasure Gallery is worth the extra ten yuan.'},
+  {h:'16:30 · Jingshan Park',p:'Out of the north gate and up the hill for the only view that makes the palace legible. Sunset over the roofs.'},
+  {h:'19:00 · Peking duck',p:'Siji Minfu or Dadong, booked that morning. This is Beijing\u2019s one unmissable meal and this shape gives you only one shot at it.'}
+]},
+{d:'Sat 31',w:'Full',name:'The Wall',sub:'Jinshanling · the long drive out',meta:'Night 3',
+ slots:[
+  {m:1,h:'06:30 · Leave Beijing',p:'Two to two and a half hours to Jinshanling. Book the car days ahead. Saturday in leaf season is exactly why you\u2019re driving past Mutianyu.'},
+  {h:'09:00 · The ridgeline',p:'Three to four hours along ten kilometres of half-wild wall. Cable car up if you want to skip the first climb.'},
+  {h:'14:00 · Back',p:'Leave by mid-afternoon before the return road thickens.'},
+  {h:'18:30 · Nothing',p:'Twelve kilometres of stone steps. Noodles and an early night \u2014 tomorrow is a travel day and it starts at dawn.'}
+]},
+{d:'Sun 1',w:'Move',name:'Xi\u2019an',sub:'One Beijing dawn, then west',meta:'Night 4',
+ slots:[
+  {h:'06:30 · Temple of Heaven',p:'The single Beijing morning this shape can afford, and Sunday is the right day for it \u2014 the park fills with singers, dancers and card players before the monument opens. Ninety minutes, then back for your bag.'},
+  {m:1,h:'11:00 · Beijing West \u2192 Xi\u2019an North',p:'Four and a half to five and a half hours. This is what Shanghai costs Beijing: no Summer Palace, no Lama Temple, no hutong afternoon.'},
+  {h:'17:00 · The city wall at dusk',p:'Rent a bike at the South Gate and ride the fourteen-kilometre circuit in the last of the light. Ninety minutes.'},
+  {h:'19:30 · The Muslim Quarter',p:'Beiyuanmen after dark \u2014 roujiamo, biangbiang noodles, lamb skewers. Walk to the far end for the side lanes.'}
+]},
+{d:'Mon 2',w:'Full',name:'The army',sub:'Terracotta Warriors · booked 26 Oct',meta:'Night 5',
+ slots:[
+  {h:'08:00 · Terracotta Warriors',p:'At the gate for opening. An hour out of the city, daily cap, seven-day booking. Pit 3 and the bronze chariots first, Pit 1 last.'},
+  {h:'13:30 · Shaanxi History Museum',p:'Free, reserved days ahead, and the thing that makes the warriors legible. Zhou bronzes through Han to Tang.'},
+  {h:'17:00 · Big Wild Goose Pagoda',p:'Seventh-century, built for sutras brought back from India. Evening fountain show in the square if you want it.'}
+]},
+{d:'Tue 3',w:'Move',name:'Shanghai',sub:'Xi\u2019an \u2192 the coast · by air',meta:'Night 6',
+ slots:[
+  {m:1,h:'09:00 · Fly XIY \u2192 SHA',p:'Two and a quarter hours in the air against six by rail. This is the leg where the train stops winning, and it\u2019s also the leg that undoes the westbound logic of the whole trip \u2014 1,300 km back east.'},
+  {h:'14:00 · The former French Concession',p:'Wukang Road, Anfu Road, the plane trees. The best walking in the city and no tickets involved. The plane trees themselves won\u2019t turn until mid-November.'},
+  {h:'18:30 · The Bund at night',p:'Walk the Bund north to south with Pudong lit across the water, then up into the lanes behind for dinner. Cliché, and correct.'}
+]},
+{d:'Wed 4',w:'Full',name:'Shanghai',sub:'The one full day',meta:'Night 7',
+ slots:[
+  {h:'08:30 · Yu Garden at opening',p:'A sixteenth-century Ming garden in the middle of the old town, and the only hour it isn\u2019t shoulder-to-shoulder. The bazaar around it is a reconstruction \u2014 the garden itself is real.'},
+  {h:'11:00 · Shanghai Museum East',p:'The new Pudong building, and one of the great museums in Asia. Book ahead; free entry, timed slots. Bronzes and ceramics if you have to choose.'},
+  {h:'15:00 · West Bund or Power Station of Art',p:'A run of contemporary galleries along the river in a converted power station and its neighbours. The counterweight to a week of dynastic China.'},
+  {h:'19:00 · Dinner in the lanes',p:'Xiaolongbao done properly, or a Jiangnan restaurant in the Concession. Shanghai eats sweeter and lighter than anywhere else on this route.'}
+]},
+{d:'Thu 5',w:'Depart',name:'To stop 04',sub:'Half a morning',meta:'Fly out',
+ slots:[
+  {h:'08:00 · One last walk',p:'Fuxing Park at breakfast time for the tai chi and ballroom dancing, or the Propaganda Poster Art Centre in a residential basement in the Concession \u2014 small, strange and genuinely good.'},
+  {m:1,h:'11:00 · Maglev to PVG',p:'From Longyang Road, eight minutes at 300 km/h. Slightly ridiculous, entirely worth it, and it saves you the hour that Pudong normally costs.'},
+  {m:1,h:'\u00b7 Stop 04',p:'You leave from the wrong coast. Whatever comes next is now 1,900 km further away than it would have been from Chengdu \u2014 that is the real price of this version.'}
+]}
+];
+
+let CURRENT_PLAN='chengdu';
+function renderDays(){
+  const DAYS = CURRENT_PLAN==='chengdu' ? DAYS_CHENGDU : DAYS_SHANGHAI;
+  document.getElementById('days').innerHTML=DAYS.map((D,i)=>`
+  <div class="day">
+    <button class="day-btn" aria-expanded="false">
+      <span class="day-date">${D.d}<small>${D.w}</small></span>
+      <span><span class="day-name">${D.name}</span><span class="day-sub">${D.sub}</span></span>
+      <span class="day-meta">${D.meta}<span class="chev">▾</span></span>
+    </button>
+    <div class="day-body"><div class="day-inner"><div class="day-pad"><div class="slots">
+      ${D.slots.map(s=>`<div class="slot${s.m?' move':''}"><h4>${s.h}</h4><p>${s.p}</p></div>`).join('')}
+    </div></div></div></div>
+  </div>`).join('');
+
+  document.querySelectorAll('.day-btn').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const d=b.parentElement, open=d.classList.toggle('open');
+      b.setAttribute('aria-expanded',open?'true':'false');
+    });
+  });
+  document.querySelector('.day').classList.add('open');
+  document.querySelector('.day-btn').setAttribute('aria-expanded','true');
+}
+renderDays();
+
+document.getElementById('dayToggle').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  CURRENT_PLAN=b.dataset.plan;
+  document.querySelectorAll('#dayToggle .fbtn').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
+  const kmEl=document.getElementById('rail-km');
+  if(kmEl) kmEl.innerHTML = CURRENT_PLAN==='chengdu' ? '≈1,760<span>km</span>' : '≈1,100<span>km</span>';
+  renderDays();
+});
+
+/* ============ WORTH DOING ============ */
+const ITEMS=[
+/* BEIJING */
+{c:'Beijing',t:'do',n:'Forbidden City',w:'Nine hundred surviving buildings on a single axis, and a one-way route that funnels you north through it. Book seven days ahead at 20:00 Beijing time against your passport \u2014 there is no other way in. Closed Mondays.',when:'Book 7 days',b:1},
+{c:'Beijing',t:'do',n:'Jingshan Park at sunset',w:'The artificial hill directly north of the palace, built from the earth dug out of its moat. Ten minutes up, and the only vantage from which the Forbidden City reads as a single object rather than a sequence of yards.',when:'16:30'},
+{c:'Beijing',t:'do',n:'Temple of Heaven at 06:30',w:'Go for the park, not the hall. Before opening hours proper it fills with several hundred people singing opera, dancing, playing cards and swinging swords under the cypresses. The best hour in Beijing and it costs almost nothing.',when:'06:30'},
+{c:'Beijing',t:'do',n:'Fragrant Hills before 09:00',w:'Peak colour lands inside your window and so does the crowd \u2014 the leaf festival pulls hundreds of thousands over a handful of weekends. Weekday, at opening, southern trails rather than the summit.',when:'Fri 30, early'},
+{c:'Beijing',t:'do',n:'The hutongs north of the lakes',w:'Guozijian Street, Wudaoying, the lanes around the Drum and Bell towers. Grey brick, plane trees, courtyard doors. The version of old Beijing that still has people living in it.',when:'Any afternoon'},
+{c:'Beijing',t:'do',n:'Peking duck',w:'Siji Minfu or Dadong for the reliable version. Book the same morning. Order the soup they make from the carcass afterwards \u2014 it comes free and it is half the point.',when:'Same-day booking',b:1},
+{c:'Beijing',t:'opt',n:'Summer Palace',w:'Imperial lakeside estate at enormous scale. Do the Long Corridor and Longevity Hill and then leave; attempting the whole thing is a four-hour mistake. Better in early November as the lakeside colour turns.',when:'Half day'},
+{c:'Beijing',t:'opt',n:'Lama Temple',w:'Yonghegong \u2014 a working Tibetan-Buddhist monastery with an eighteen-metre Maitreya carved from one sandalwood trunk. Busy with worshippers rather than tourists, which changes the atmosphere completely.',when:'2 hours'},
+{c:'Beijing',t:'opt',n:'Temple of Confucius',w:'Next door to the Lama Temple and almost always empty. Stone stelae listing every imperial exam graduate for six centuries, under thousand-year-old cypresses.',when:'1 hour'},
+{c:'Beijing',t:'opt',n:'National Museum of China',w:'Free, vast, and requires a real-name reservation days ahead that regularly sells out. The Ancient China galleries in the basement are the reason to go; ignore the upper floors.',when:'Book ahead',b:1},
+{c:'Beijing',t:'opt',n:'798 Art District',w:'Bauhaus-planned East German factory complex turned gallery quarter. Half serious contemporary art, half coffee and merchandise. Good on a grey afternoon, unnecessary otherwise.',when:'Half day'},
+{c:'Beijing',t:'opt',n:'Beihai Park',w:'Imperial lake and white dagoba, immediately north-west of the palace. Early November is when its colour arrives. Easy to fold into a Forbidden City afternoon.',when:'1\u20132 hours'},
+{c:'Beijing',t:'opt',n:'The Sacred Way, Ming Tombs',w:'The stone approach avenue with its paired animals, an hour out. Under-visited in autumn and it pairs with a Wall day if you have a car \u2014 but it will lengthen an already long one.',when:'Add to Wall day'},
+{c:'Beijing',t:'skip',n:'Tiananmen Square itself',w:'Advance reservation, ID check and a security queue to stand on a large empty rectangle. You will see it perfectly well from the outside walking to the palace.',when:''},
+{c:'Beijing',t:'skip',n:'Wangfujing snack street',w:'The scorpions-on-sticks street. Theatre aimed squarely at visitors, and nobody local eats there. The Muslim Quarter in Xi\u2019an does the same job for real.',when:''},
+{c:'Beijing',t:'skip',n:'Olympic Park',w:'The Bird\u2019s Nest and Water Cube, eighteen years on, marooned in a very large concrete plaza. Impressive in 2008.',when:''},
+{c:'Beijing',t:'skip',n:'Silk Street market',w:'Six floors of counterfeit goods and aggressive haggling. Exhausting, and you are carrying everything you own for another 24 countries.',when:''},
+/* THE WALL */
+{c:'Wall',t:'do',n:'Jinshanling',w:'Ten kilometres of ridgeline running from restored into wild, two and a half hours from Beijing, and a fraction of the crowds anywhere closer. The right answer specifically because your Wall day is a Saturday.',when:'Full day'},
+{c:'Wall',t:'opt',n:'Mutianyu',w:'The standard recommendation and correct on a weekday \u2014 restored Ming wall, forested ridge, cable car up and a toboggan down. On a Saturday in leaf season the lift queue is the whole problem.',when:'Full day'},
+{c:'Wall',t:'opt',n:'Huanghuacheng',w:'The lakeside wall, 65 km out, where a reservoir has partly submerged the ramparts. Strange and closer than Jinshanling, but the walkable stretch is short.',when:'Half day'},
+{c:'Wall',t:'opt',n:'Simatai & Gubei Water Town',w:'The only section with a regular illuminated night programme, capped and booked ahead. Works as an overnight, not as a day trip, and the water town below is a modern build.',when:'Overnight',b:1},
+{c:'Wall',t:'skip',n:'Badaling',w:'Around ten million visitors a year and peak days near eighty thousand at once. Half an hour by high-speed train, which is its only argument. Right for someone with limited mobility or half a day; wrong for you.',when:''},
+{c:'Wall',t:'skip',n:'Jiankou',w:'Unrestored, collapsing and genuinely dangerous without a guide. Its colour also peaks in mid-October, a fortnight before you land.',when:''},
+/* XI'AN */
+{c:'Xian',t:'do',n:'Terracotta Warriors',w:'Eight thousand figures, no two faces alike, still being excavated. Seven-day booking against a daily cap. Go at opening or after 14:30, and save Pit 1 for last so the scale lands.',when:'Book 7 days',b:1},
+{c:'Xian',t:'do',n:'The Ming city wall by bike',w:'Fourteen kilometres of intact rampart, wide enough to cycle, right around the old city. Rent at the South Gate; ninety minutes for the circuit. Do it in the hour before sunset.',when:'Late afternoon'},
+{c:'Xian',t:'do',n:'Shaanxi History Museum',w:'Free, reserved days in advance, and the best museum on the route. It supplies the context the warriors don\u2019t \u2014 Zhou bronzes, Han jade, Tang gold, all excavated within a hundred kilometres of the building.',when:'Book ahead',b:1},
+{c:'Xian',t:'do',n:'The Muslim Quarter after dark',w:'Beiyuanmen and the lanes off it. Roujiamo, hand-torn biangbiang noodles, cumin lamb, persimmon cakes. Heavily touristed and still the best eating of the week.',when:'From 18:00'},
+{c:'Xian',t:'opt',n:'Great Mosque',w:'Hidden in the lanes behind the market and nothing like what the word suggests \u2014 a Ming courtyard complex of pavilions and gardens with a minaret shaped like a pagoda.',when:'1 hour'},
+{c:'Xian',t:'opt',n:'Han Yangling',w:'A Han emperor\u2019s tomb complex north of the city, viewed from glass walkways directly over the excavated pits. Miniature figures rather than life-size, and almost nobody there.',when:'Half day'},
+{c:'Xian',t:'opt',n:'Big Wild Goose Pagoda',w:'Seventh-century, built to house sutras carried back from India by the monk Xuanzang, and visibly leaning. The fountain show in the square is a matter of taste.',when:'1\u20132 hours'},
+{c:'Xian',t:'skip',n:'Mount Hua',w:'Ninety minutes away, with the plank walk everyone has seen photographed. A full hard day, and it would take the Terracotta day. A genuine loss \u2014 come back for it.',when:''},
+{c:'Xian',t:'skip',n:'Datang Everbright City',w:'A vast reconstructed Tang-themed boulevard, floodlit and enormously popular. Impressive as spectacle, hollow as history, and it eats an evening.',when:''},
+/* CHENGDU */
+{c:'Chengdu',t:'do',n:'Panda base at opening',w:'Go at 07:30 and this works; go at 11:00 and you will watch sleeping animals in the middle distance. They feed at breakfast and then stop. Two hours, walking outward first and back against the flow.',when:'07:30'},
+{c:'Chengdu',t:'do',n:'Heming teahouse, People\u2019s Park',w:'Bamboo chairs under the trees, bottomless jasmine, mahjong, and ear-cleaners working with tuning forks and feathers. Sit for two hours and do nothing. This is what Chengdu is for.',when:'Afternoon'},
+{c:'Chengdu',t:'do',n:'Hotpot',w:'Mala broth \u2014 chilli heat and the numbing tingle of Sichuan pepper together. Order a divided pot if you want an escape route. The best meal on the route and not a close call.',when:'Dinner'},
+{c:'Chengdu',t:'opt',n:'Wenshu Monastery',w:'A working Chan monastery with a tea garden and a vegetarian canteen, and far quieter than the rebuilt alley districts. The best free hour in the city.',when:'2 hours'},
+{c:'Chengdu',t:'opt',n:'Jinsha Site Museum',w:'A three-thousand-year-old ritual site found during construction in 2001, with the gold sun-bird disc that became the city\u2019s emblem. A completely different ancient China from Xi\u2019an\u2019s.',when:'Half day'},
+{c:'Chengdu',t:'opt',n:'Sichuan opera face-changing',w:'Bian lian \u2014 masks switched faster than the eye follows, in a variety show with fire-breathing and shadow puppetry. Touristy, short, and the trick is genuinely astonishing.',when:'Evening'},
+{c:'Chengdu',t:'opt',n:'Leshan Giant Buddha',w:'A 71-metre Tang Buddha carved into a river cliff, an hour away by train. It needs the full day this shape doesn\u2019t have unless you drop the pandas.',when:'Full day'},
+{c:'Chengdu',t:'skip',n:'Panda holding photos',w:'Where offered at all, it\u2019s expensive, ethically murky and increasingly restricted. Watch them eat bamboo instead.',when:''},
+{c:'Chengdu',t:'skip',n:'Jinli at peak hours',w:'A handsome reconstructed Qing street that is essentially a food-and-souvenir corridor after four in the afternoon. Fine at nine in the morning, unbearable at seven at night.',when:''},
+/* SHANGHAI */
+{c:'Shanghai',t:'do',n:'The Bund after dark',w:'A kilometre of 1920s banking architecture facing a skyline that did not exist in 1990. Walk it north to south with Pudong lit across the water. Obvious and completely justified.',when:'After 19:00'},
+{c:'Shanghai',t:'do',n:'The former French Concession',w:'Wukang Road, Anfu Road, the lanes off Fuxing. Plane trees, shikumen houses, coffee. The best walking in the city and it needs no tickets \u2014 though the trees don\u2019t turn until mid-November.',when:'Half day'},
+{c:'Shanghai',t:'do',n:'Shanghai Museum East',w:'The new Pudong building and one of the finest museums in Asia. Free with a timed booking that goes fast. Bronzes and ceramics if you only have two hours.',when:'Book ahead',b:1},
+{c:'Shanghai',t:'do',n:'Yu Garden at opening',w:'A Ming scholar garden of rockeries and covered walks in the middle of the old town, at the only hour it isn\u2019t shoulder-to-shoulder. The bazaar wrapped around it is a modern reconstruction.',when:'08:30'},
+{c:'Shanghai',t:'opt',n:'Power Station of Art',w:'A converted riverside power station and China\u2019s first state-run contemporary art museum. Enormous, free, and a useful corrective after a week of dynasties.',when:'2\u20133 hours'},
+{c:'Shanghai',t:'opt',n:'Propaganda Poster Art Centre',w:'In the basement of a residential block in the Concession, and you need the guard to point you to it. A few thousand posters from 1949 onward, privately assembled. Small and excellent.',when:'1 hour'},
+{c:'Shanghai',t:'opt',n:'Suzhou day trip',w:'Thirty minutes by high-speed train, and its classical gardens hit late-autumn peak in exactly your window. It is a genuinely better use of a day than most of Shanghai \u2014 but it costs you the Shanghai day.',when:'Full day'},
+{c:'Shanghai',t:'opt',n:'Maglev to the airport',w:'Eight minutes at 300 km/h from Longyang Road to Pudong. Absurd, cheap, and it removes the one genuinely annoying transfer in the city.',when:'On departure'},
+{c:'Shanghai',t:'skip',n:'Oriental Pearl Tower',w:'The 1994 concrete-and-spheres tower. The Shanghai Tower observation deck is higher, newer and looks at a better view \u2014 which is the one containing the Pearl.',when:''},
+{c:'Shanghai',t:'skip',n:'Nanjing Road pedestrian street',w:'A very long, very bright shopping street with the same chains as everywhere else. The Bund is at the end of it, which is the only reason to walk it.',when:''},
+{c:'Shanghai',t:'skip',n:'Tianzifang',w:'A lane network of craft stalls and bars that was charming around 2009. Now dense, commercial and largely indistinguishable from similar districts in six other cities on this trip.',when:''}
+];
+
+const TIERLBL={do:'Do',opt:'Maybe',skip:'Skip'};
+let FC='all', FT=null, FB=false;
+
+function renderItems(){
+  const list=ITEMS.filter(x=>
+    (FC==='all'||x.c===FC) && (!FT||x.t===FT) && (!FB||x.b));
+  const host=document.getElementById('items');
+  if(!list.length){host.innerHTML='<div class="empty">No entries match those filters.</div>';return}
+  host.innerHTML=list.map(x=>`
+    <div class="item">
+      <span class="tier ${x.t}">${TIERLBL[x.t]}</span>
+      <span class="nm">${x.n}</span>
+      <span class="when${x.b?' book':''}">${x.when||'&nbsp;'}</span>
+      <span class="why">${x.w}</span>
+    </div>`).join('');
+}
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  if(b.dataset.city){FC=b.dataset.city}
+  else if(b.dataset.tier){FT = FT===b.dataset.tier?null:b.dataset.tier}
+  else if(b.dataset.book){FB=!FB}
+  document.querySelectorAll('#filters .fbtn').forEach(x=>{
+    let on=false;
+    if(x.dataset.city) on = x.dataset.city===FC;
+    if(x.dataset.tier) on = x.dataset.tier===FT;
+    if(x.dataset.book) on = FB;
+    x.setAttribute('aria-pressed',on?'true':'false');
+  });
+  renderItems();
+});
+renderItems();
+
+/* ============ FIG 1: TIME AUDIT ============ */
+(function(){
+  const svg=document.getElementById('audit-chart');
+  const W=1400,H=190,pad=40,barY=70,barH=54;
+  const start=new Date(2026,9,29), end=new Date(2026,10,6);
+  const totalH=(end-start)/36e5;
+  const x=h=>pad+(h/totalH)*(W-2*pad);
+  const segs=[
+    {a:0,b:15,cls:'t2'},   // 29th to landing 15:00
+    {a:15,b:24,cls:'p'},   // 29th evening - usable part day
+    {a:24,b:48,cls:'f'},   // 30 Oct
+    {a:48,b:72,cls:'f'},   // 31 Oct
+    {a:72,b:96,cls:'f'},   // 1 Nov
+    {a:96,b:120,cls:'f'},  // 2 Nov
+    {a:120,b:144,cls:'f'}, // 3 Nov
+    {a:144,b:168,cls:'f'}, // 4 Nov
+    {a:168,b:180,cls:'p'}, // 5 Nov morning
+    {a:180,b:192,cls:'t2'} // 5 Nov flight out
+  ];
+  const colors={t:'var(--magenta)',t2:'rgba(231,100,155,.55)',p:'rgba(242,169,60,.35)',f:'var(--amber)'};
+  let s=`<rect x="0" y="0" width="${W}" height="${H}" fill="none"/>`;
+  segs.forEach(sg=>{
+    const x1=x(sg.a),x2=x(sg.b);
+    s+=`<rect x="${x1}" y="${barY}" width="${x2-x1-1}" height="${barH}" fill="${colors[sg.cls]}"/>`;
+  });
+  for(let d=0;d<=8;d++){
+    const hh=d*24, xx=x(hh);
+    const dt=new Date(start.getTime()+hh*36e5);
+    s+=`<line x1="${xx}" y1="${barY-6}" x2="${xx}" y2="${barY+barH+6}" class="axs"/>`;
+    s+=`<text x="${xx}" y="${barY-14}" class="lbl" text-anchor="${d===0?'start':d===8?'end':'middle'}">${dt.toLocaleDateString('en-CA',{day:'2-digit',month:'short'})}</text>`;
+  }
+  s+=`<line x1="${pad}" y1="${barY+barH+0.5}" x2="${W-pad}" y2="${barY+barH+0.5}" class="ax"/>`;
+  s+=`<text x="${x(24)}" y="${barY+barH+34}" class="lbl-a">6 full days — 30 Oct → 4 Nov</text>`;
+  s+=`<text x="${x(0)}" y="${barY+barH+34}" class="lbl">↙ 2h from Seoul, no date line</text>`;
+  svg.innerHTML=s;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+})();
+
+/* ============ FIG 2: COLOUR WINDOW ============ */
+(function(){
+  const svg=document.getElementById('koyo-chart');
+  const W=1400,H=460,padL=250,padR=40,padT=20,rowH=38;
+  const monthStart=new Date(2026,9,10), monthEnd=new Date(2026,11,10);
+  const totalD=(monthEnd-monthStart)/864e5;
+  const x=d=>padL+((d-monthStart)/864e5/totalD)*(W-padL-padR);
+  const PLACES=[
+    {n:'Jiankou & Mutianyu, the Wall',a:'15 Oct',b:'28 Oct',hi:0},
+    {n:'Badaling Forest Park (900m)',a:'15 Oct',b:'1 Nov',hi:0},
+    {n:'Ming Tombs & the Sacred Way',a:'20 Oct',b:'5 Nov',hi:1},
+    {n:'Fragrant Hills, Beijing',a:'25 Oct',b:'8 Nov',hi:1},
+    {n:'Zhongnanshan, Xi\u2019an',a:'20 Oct',b:'10 Nov',hi:1},
+    {n:'Beihai & palace ginkgo, Beijing',a:'1 Nov',b:'15 Nov',hi:1},
+    {n:'Summer Palace lakeside',a:'1 Nov',b:'15 Nov',hi:1},
+    {n:'Xi\u2019an, city parks',a:'5 Nov',b:'20 Nov',hi:0},
+    {n:'Suzhou classical gardens',a:'25 Oct',b:'20 Nov',hi:1},
+    {n:'Shanghai plane trees',a:'15 Nov',b:'5 Dec',hi:0}
+  ];
+  const d2x=s=>{const[dd,mo]=s.split(' ');const months={Oct:9,Nov:10,Dec:11};return x(new Date(2026,months[mo],parseInt(dd)))};
+  const wA=x(new Date(2026,9,29)), wB=x(new Date(2026,10,5));
+  let s=`<rect x="${wA}" y="${padT}" width="${wB-wA}" height="${PLACES.length*rowH+8}" fill="rgba(231,100,155,.10)" stroke="var(--magenta)" stroke-width="1"/>`;
+  s+=`<text x="${(wA+wB)/2}" y="${padT-6}" class="lbl-a" text-anchor="middle">Your window: 29 Oct–5 Nov</text>`;
+  [10,11,12].forEach(mo=>{
+    const dt=new Date(2026,mo-1,1);
+    if(dt<monthStart||dt>monthEnd) return;
+    const xx=x(dt);
+    s+=`<line x1="${xx}" y1="${padT}" x2="${xx}" y2="${padT+PLACES.length*rowH+8}" class="axs"/>`;
+    s+=`<text x="${xx}" y="${padT+PLACES.length*rowH+28}" class="lbl">${dt.toLocaleDateString('en-CA',{month:'short'})}</text>`;
+  });
+  s+=`<line x1="${padL-2}" y1="${padT}" x2="${x(monthEnd)}" y2="${padT}" class="ax"/>`;
+  PLACES.forEach((p,i)=>{
+    const y=padT+16+i*rowH;
+    s+=`<text x="${padL-14}" y="${y+4}" class="lbl-p" text-anchor="end">${p.n}</text>`;
+    const x1=d2x(p.a), x2=d2x(p.b);
+    s+=`<rect x="${x1}" y="${y-9}" width="${x2-x1}" height="18" rx="2" fill="${p.hi?'rgba(242,169,60,.7)':'rgba(242,169,60,.35)'}"/>`;
+  });
+  svg.innerHTML=s;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+})();
+
+/* ============ FIG 3: BEIJING CLEAR-DAY ODDS ============ */
+(function(){
+  const svg=document.getElementById('air-chart');
+  const W=1400,H=300,padL=50,padR=30,padT=20,padB=50;
+  const MO=[
+    {n:'Jan',v:45},{n:'Feb',v:50},{n:'Mar',v:54},{n:'Apr',v:62},
+    {n:'May',v:64},{n:'Jun',v:58},{n:'Jul',v:60},{n:'Aug',v:72},
+    {n:'Sep',v:78},{n:'Oct',v:74},{n:'Nov',v:60},{n:'Dec',v:46}
+  ];
+  const bw=(W-padL-padR)/MO.length;
+  const y=v=>padT+(1-v/100)*(H-padT-padB);
+  let s='';
+  [0,25,50,75,100].forEach(v=>{
+    s+=`<line x1="${padL}" y1="${y(v)}" x2="${W-padR}" y2="${y(v)}" class="axs"/>`;
+    s+=`<text x="${padL-10}" y="${y(v)+4}" class="lbl" text-anchor="end">${v}%</text>`;
+  });
+  MO.forEach((m,i)=>{
+    const x0=padL+i*bw+bw*0.18, bwid=bw*0.64;
+    const on=(m.n==='Oct'||m.n==='Nov');
+    s+=`<rect x="${x0}" y="${y(m.v)}" width="${bwid}" height="${H-padB-y(m.v)}" fill="${on?'var(--amber)':'rgba(242,169,60,.32)'}" rx="1"/>`;
+    s+=`<text x="${x0+bwid/2}" y="${H-padB+18}" class="lbl" text-anchor="middle" ${on?'fill="var(--amber)"':''}>${m.n}</text>`;
+    s+=`<text x="${x0+bwid/2}" y="${y(m.v)-8}" class="${on?'lbl-a':'lbl'}" text-anchor="middle">${m.v}%</text>`;
+  });
+  // heating season marker between Nov and Dec
+  const hx=padL+10.62*bw;
+  s+=`<line x1="${hx}" y1="${padT}" x2="${hx}" y2="${H-padB}" stroke="var(--magenta)" stroke-width="1" stroke-dasharray="4 4"/>`;
+  s+=`<text x="${hx-8}" y="${padT+12}" class="lbl-a" text-anchor="end" fill="var(--magenta)">heating season from ~15 Nov →</text>`;
+  s+=`<line x1="${padL}" y1="${H-padB}" x2="${W-padR}" y2="${H-padB}" class="ax"/>`;
+  svg.innerHTML=s;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+})();
+
+/* ============ RAIL vs AIR ============ */
+const RAIL_LEGS=[
+  {n:'Beijing West → Xi\u2019an North',y:515,h:5.6,fy:900,fh:5.5,def:true,note:'1,100 km · G-train ~4h40 + 45min station margin'},
+  {n:'Xi\u2019an North → Chengdu East',y:263,h:3.9,fy:750,fh:5.2,def:true,note:'660 km · through the Qinling tunnels, the best ride of the week'},
+  {n:'Xi\u2019an North → Shanghai Hongqiao',y:670,h:6.9,fy:850,fh:5.3,note:'Shanghai plan · the one leg where flying wins'},
+  {n:'Beijing South → Shanghai Hongqiao',y:553,h:5.5,fy:900,fh:5.5,note:'For reference — not on either shape here'},
+  {n:'Chengdu East → Chongqing North',y:154,h:2.2,fy:600,fh:4.5,note:'Optional side trip, a train every 15 minutes'}
+];
+function renderLegs(){
+  document.getElementById('legs').innerHTML=RAIL_LEGS.map((l,i)=>`
+    <label class="leg-row">
+      <input type="checkbox" data-i="${i}" ${l.def?'checked':''}>
+      <span class="lname">${l.n}</span>
+      <span class="lyen">¥${l.y.toLocaleString('en-CA')} · ${l.h}h</span>
+      ${l.note?`<span class="lnote">${l.note}</span>`:''}
+    </label>`).join('');
+}
+function calcTotals(){
+  let ry=0,rh=0,fy=0,fh=0,n=0;
+  document.querySelectorAll('#legs input[type="checkbox"]').forEach(cb=>{
+    const l=RAIL_LEGS[Number(cb.dataset.i)];
+    if(cb.checked){ry+=l.y;rh+=l.h;fy+=l.fy;fh+=l.fh;n++}
+  });
+  const dEl=document.getElementById('diff'), vEl=document.getElementById('verdict');
+  if(!n){
+    document.getElementById('ptp').innerHTML='—';
+    document.getElementById('pass').innerHTML='—';
+    dEl.innerHTML='—'; vEl.textContent='Select legs above'; vEl.className='';
+    return;
+  }
+  document.getElementById('ptp').innerHTML=`¥${ry.toLocaleString('en-CA')}<small>${rh.toFixed(1)}h · ${n} leg${n>1?'s':''}</small>`;
+  document.getElementById('pass').innerHTML=`¥${fy.toLocaleString('en-CA')}<small>${fh.toFixed(1)}h door to door</small>`;
+  const dh=rh-fh, dy=fy-ry;
+  const level=Math.abs(dh)<0.25;
+  const faster = level ? 'line ball on time' : (dh<0 ? 'rail is faster' : `rail costs ${dh.toFixed(1)}h more`);
+  const hd = level ? 'even' : `${dh>0?'+':'−'}${Math.abs(dh).toFixed(1)}h`;
+  dEl.innerHTML=`${hd}<small>${faster} · saves ¥${dy.toLocaleString('en-CA')}</small>`;
+  if(dh<=0.25){ vEl.textContent='Rail wins outright'; vEl.className='win' }
+  else if(dh<=1){ vEl.textContent='Rail — cheaper, and city centre to city centre'; vEl.className='win' }
+  else { vEl.textContent='Fly this one'; vEl.className='lose' }
+}
+renderLegs();
+document.getElementById('legs').addEventListener('change',calcTotals);
+calcTotals();
+</script>
+
+</body>
+</html>

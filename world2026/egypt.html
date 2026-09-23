@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="darkreader-lock">
+<title>Egypt</title>
+<link rel="stylesheet" href="fonts.css">
+</head>
+<body>
+<style>
+:root{color-scheme:dark;
+  --ink:#05161D;--ink-2:#0A2029;--ink-3:#0E2A35;
+  --rule:#194150;--rule-soft:rgba(25,65,80,.6);
+  --paper:#E2EEED;--paper-dim:#A6C2C6;--muted:#6C8F98;
+  --amber:#F2A93C;--magenta:#E7649B;--jade:#58C4A3;--red:#E05555;
+  --display:'Big Shoulders Display','Arial Narrow',Impact,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --body:'Inter',system-ui,sans-serif;
+  --gut:clamp(18px,4vw,64px);--maxw:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+.section{padding-block:clamp(34px,4.4vw,58px);border-top:1px solid var(--rule-soft);position:relative}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:14px;margin:0 0 18px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--rule)}
+.eyebrow .n{color:var(--amber)}
+h2.head{font-family:var(--display);font-weight:700;font-size:clamp(34px,5.6vw,66px);line-height:.92;margin:0 0 14px;text-transform:uppercase}
+.lede{max-width:66ch;color:var(--paper-dim);font-size:clamp(15px,1.5vw,17px);margin:0 0 26px}
+.lede b{color:var(--paper);font-weight:600}
+a{color:var(--amber);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+.hint{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+@media (min-width:980px){.hint.wide{display:none}}
+.scroller{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--rule) transparent}
+.scroller::-webkit-scrollbar{height:6px}
+.scroller::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}
+.scroller>svg{display:block;width:100%;height:auto}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(30px,5vw,58px) clamp(24px,4vw,40px);overflow:hidden}
+.gridbg{position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:linear-gradient(to right,var(--rule-soft) 1px,transparent 1px),linear-gradient(to bottom,var(--rule-soft) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%);-webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%)}
+.back{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:inline-block;margin-bottom:20px}
+.back:hover{color:var(--amber)}
+.strip{font-family:var(--mono);font-size:clamp(10px,1.15vw,12px);letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;border-block:1px solid var(--rule);padding-block:11px;margin-bottom:clamp(26px,4vw,44px)}
+.strip .k{color:var(--muted)}.strip .amb{color:var(--amber)}
+.title{font-family:var(--display);text-transform:uppercase;margin:0;line-height:.82;position:relative}
+.title .l1{display:block;font-weight:400;font-size:clamp(34px,7.4vw,96px);color:transparent;-webkit-text-stroke:1.2px var(--paper-dim)}
+.title .l2{display:block;font-weight:800;font-size:clamp(72px,17vw,232px);letter-spacing:-.015em;color:var(--paper)}
+.subline{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:baseline;margin-top:clamp(18px,3vw,30px);font-family:var(--mono);font-size:clamp(11px,1.25vw,13px);letter-spacing:.14em;text-transform:uppercase;color:var(--paper-dim)}
+.subline .sep{color:var(--rule)}
+
+/* instruments */
+.instr{display:grid;grid-template-columns:repeat(auto-fit,minmax(124px,1fr));border:1px solid var(--rule);background:var(--ink-2);margin:clamp(24px,3.4vw,38px) 0 0}
+.instr div{padding:15px 17px;border-right:1px solid var(--rule-soft)}
+.instr div:last-child{border-right:0}
+.instr dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.instr dd{margin:0;font-family:var(--display);font-weight:600;font-size:31px;line-height:1}
+.instr dd span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--paper-dim);margin-left:3px}
+.instr dd.hot{color:var(--amber)}
+.instr dd.warn{color:var(--magenta)}
+
+/* chart frames */
+.figcap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:9px;margin:0 0 8px}
+.figcap b{color:var(--amber);font-weight:500}
+.fignote{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.fignote i{display:inline-block;width:14px;height:9px;margin:0 5px 0 14px;vertical-align:middle;border-radius:1px}
+.fignote i:first-child{margin-left:0}
+.ax{stroke:var(--rule);stroke-width:1}
+.axs{stroke:var(--rule-soft);stroke-width:1}
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.08em;fill:var(--muted)}
+.lbl-p{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;fill:var(--paper)}
+.lbl-a{font-family:var(--mono);font-size:10px;letter-spacing:.12em;fill:var(--amber)}
+.lbl-r{font-family:var(--mono);font-size:10px;letter-spacing:.12em;fill:var(--red)}
+
+/* cards */
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin:0 0 6px}
+.card{border:1px solid var(--rule);background:var(--ink-2);padding:18px 20px;position:relative}
+.card.bad{border-color:var(--red)}
+.card.good{border-color:var(--jade)}
+.card h3{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 4px;color:var(--paper)}
+.card .verdict{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:11px}
+.card .verdict.bad{color:var(--red)}
+.card .verdict.ok{color:var(--jade)}
+.card p{margin:0 0 10px;font-size:13.5px;color:var(--paper-dim);line-height:1.62}
+.card p:last-child{margin-bottom:0}
+.card p b{color:var(--paper);font-weight:600}
+.fix{border-left:2px solid var(--amber);padding-left:12px;margin:12px 0 0;font-size:12.8px;color:var(--paper-dim);line-height:1.6}
+.fix b{display:block;color:var(--amber);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px;font-weight:500}
+.fix strong{color:var(--paper);font-weight:600}
+
+/* shape cards */
+.shapes{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+.shape{border:1px solid var(--rule);background:var(--ink-2);padding:0;display:flex;flex-direction:column}
+.shape.pick{border-color:var(--amber);box-shadow:inset 0 0 0 1px rgba(242,169,60,.25)}
+.shape-hd{padding:16px 20px 14px;border-bottom:1px solid var(--rule-soft)}
+.shape-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.shape.pick .shape-tag{color:var(--amber)}
+.shape-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(24px,3vw,32px);line-height:.95;margin:0}
+.chainrow{display:flex;flex-wrap:wrap;align-items:center;gap:5px 7px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--paper);padding:13px 20px;border-bottom:1px solid var(--rule-soft);background:rgba(5,22,29,.5)}
+.chainrow .a{color:var(--rule)}
+.chainrow .n{color:var(--amber);font-size:9.5px}
+.shape-body{padding:15px 20px 18px;flex:1}
+.shape-body p{margin:0 0 10px;font-size:13.3px;color:var(--paper-dim);line-height:1.6}
+.shape-body p:last-child{margin-bottom:0}
+.shape-body p b{color:var(--paper);font-weight:600}
+.shape-meta{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--rule-soft)}
+.shape-meta div{flex:1;min-width:88px;padding:11px 20px;border-right:1px solid var(--rule-soft)}
+.shape-meta div:last-child{border-right:0}
+.shape-meta dt{font-family:var(--mono);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.shape-meta dd{margin:0;font-family:var(--mono);font-size:13px;color:var(--paper)}
+.shape-meta dd.g{color:var(--jade)}
+.shape-meta dd.r{color:var(--red)}
+
+/* day accordion */
+.days{border-top:1px solid var(--rule)}
+.day{border-bottom:1px solid var(--rule)}
+.day-btn{all:unset;box-sizing:border-box;display:grid;width:100%;cursor:pointer;grid-template-columns:76px 1fr auto;gap:0 clamp(14px,2.4vw,30px);align-items:baseline;padding:clamp(13px,1.8vw,18px) 4px;transition:background .18s ease}
+.day-btn:hover{background:rgba(242,169,60,.05)}
+.day-btn:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.day-date{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.1em}
+.day-date small{display:block;color:var(--muted);font-size:9.5px;letter-spacing:.14em;margin-top:3px}
+.day-btn>span:nth-child(2){display:flex;flex-direction:column;gap:6px}
+.day-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(22px,3.2vw,34px);line-height:.95;margin:0}
+.day-sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.day-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--paper-dim);text-align:right;white-space:nowrap}
+.day-meta .chev{display:inline-block;margin-left:12px;color:var(--muted);transition:transform .25s ease}
+.day.open .day-meta .chev{transform:rotate(180deg)}
+@media (max-width:720px){.day-btn{grid-template-columns:64px 1fr;row-gap:8px}.day-meta{grid-column:2;text-align:left}}
+.day-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .34s cubic-bezier(.3,.8,.3,1)}
+.day.open .day-body{grid-template-rows:1fr}
+.day-inner{overflow:hidden}
+.day-pad{padding:2px 4px clamp(22px,3vw,32px)}
+.slots{display:grid;gap:0;border-left:1px solid var(--rule)}
+.slot{padding:0 0 16px 16px;position:relative}
+.slot:last-child{padding-bottom:2px}
+.slot::before{content:"";position:absolute;left:-4px;top:6px;width:7px;height:7px;background:var(--amber);border-radius:50%}
+.slot.move::before{background:var(--magenta)}
+.slot h4{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 5px;font-weight:500}
+.slot.move h4{color:var(--magenta)}
+.slot p{margin:0;font-size:14px;line-height:1.62;color:var(--paper-dim);max-width:72ch}
+.slot p b{color:var(--paper);font-weight:600}
+
+/* worth doing */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.fbtn{all:unset;cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border:1px solid var(--rule);color:var(--paper-dim);border-radius:2px;transition:.15s}
+.fbtn:hover{background:var(--ink-3);color:var(--paper)}
+.fbtn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.fbtn[aria-pressed="true"]{background:var(--amber);color:var(--ink);border-color:var(--amber);font-weight:600}
+.fdiv{width:1px;background:var(--rule);margin:2px 6px}
+.items{display:grid;gap:1px;background:var(--rule-soft);border:1px solid var(--rule)}
+.item{background:var(--ink-2);padding:13px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:baseline}
+.item .tier{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:3px 7px 2px;border-radius:2px;white-space:nowrap;align-self:start;margin-top:2px}
+.tier.do{background:rgba(88,196,163,.14);color:var(--jade);border:1px solid rgba(88,196,163,.35)}
+.tier.opt{background:rgba(242,169,60,.12);color:var(--amber);border:1px solid rgba(242,169,60,.3)}
+.tier.skip{background:rgba(224,85,85,.1);color:var(--red);border:1px solid rgba(224,85,85,.3)}
+.item .nm{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:20px;line-height:1.05;color:var(--paper)}
+.item .why{grid-column:2;font-size:13.3px;color:var(--paper-dim);line-height:1.55;max-width:74ch}
+.item .why b{color:var(--paper);font-weight:600}
+.item .when{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);text-align:right;white-space:nowrap;align-self:start;margin-top:4px}
+.item .when.book{color:var(--magenta)}
+@media (max-width:640px){.item{grid-template-columns:auto 1fr}.item .when{grid-column:2;text-align:left;margin-top:2px}.item .why{grid-column:1/-1}}
+.empty{background:var(--ink-2);padding:22px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* ticket calc */
+.calc{border:1px solid var(--rule);background:var(--ink-2)}
+.calc-legs{display:grid}
+.leg-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--rule-soft);cursor:pointer}
+.leg-row:hover{background:rgba(242,169,60,.04)}
+.leg-row input{accent-color:var(--amber);width:15px;height:15px;cursor:pointer}
+.leg-row .lname{font-family:var(--mono);font-size:12.5px;color:var(--paper-dim)}
+.leg-row input:checked+.lname{color:var(--paper)}
+.leg-row .lyen{font-family:var(--mono);font-size:12.5px;color:var(--amber);font-variant-numeric:tabular-nums;white-space:nowrap}
+.leg-row .lnote{grid-column:2/-1;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--muted);margin-top:-4px}
+.calc-out{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule-soft)}
+.calc-out div{background:var(--ink-3);padding:15px 17px}
+.calc-out dt{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.calc-out dd{margin:0;font-family:var(--display);font-weight:700;font-size:27px;line-height:1;font-variant-numeric:tabular-nums}
+.calc-out dd small{font-family:var(--mono);font-size:10px;font-weight:400;color:var(--paper-dim);margin-left:4px;letter-spacing:.06em}
+#verdict{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;line-height:1.5}
+#verdict.win{color:var(--jade)}
+#verdict.lose{color:var(--red)}
+
+/* panels / tables */
+.panel{border:1px solid var(--rule);background:var(--ink-2);padding:clamp(17px,2.4vw,24px);margin-top:22px}
+.panel h3{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 12px;font-weight:500}
+.panel p{margin:0 0 12px;font-size:13.6px;color:var(--paper-dim);line-height:1.62}
+.panel p:last-child{margin-bottom:0}
+.panel p b{color:var(--paper);font-weight:600}
+table.ref{width:100%;border-collapse:collapse;font-size:13.4px}
+table.ref th{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:500;padding:0 14px 10px 0;border-bottom:1px solid var(--rule)}
+table.ref td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule-soft);color:var(--paper-dim);vertical-align:top}
+table.ref td:first-child{font-family:var(--display);font-size:17px;font-weight:600;text-transform:uppercase;color:var(--paper);white-space:nowrap;width:1%}
+table.ref td.t{font-family:var(--mono);font-size:11px;letter-spacing:.06em;white-space:nowrap;color:var(--amber)}
+table.ref tr.flag td.t{color:var(--magenta)}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.cols{display:grid;gap:16px 34px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:20px}
+.cols p{margin:0;font-size:13.6px;color:var(--paper-dim);line-height:1.6}
+.cols p b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:5px;font-weight:500}
+
+footer{border-top:1px solid var(--rule);padding-block:26px 40px;color:var(--muted)}
+.foot-grid{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:flex-end}
+.foot-grid p{margin:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase}
+.foot-mark{font-family:var(--display);font-size:clamp(40px,9vw,110px);font-weight:800;text-transform:uppercase;line-height:.8;color:transparent;-webkit-text-stroke:1px var(--rule);margin:30px 0 0}
+</style>
+
+<header class="hero">
+  <div class="gridbg"></div>
+  <div class="wrap">
+    <a class="back" href="index.html">← Westbound · the dossier</a>
+    <p class="strip">
+      <span><span class="k">Stop</span> <span class="amb">22 of 27</span></span>
+      <span><span class="k">In</span> RUH · Riyadh</span>
+      <span><span class="k">Fly Egypt</span> <span class="amb">CAI</span></span>
+      <span><span class="k">Out</span> ZNZ · Zanzibar</span>
+      <span><span class="k">Window</span> 14–21 Jan 2027</span>
+      <span><span class="k">Clock</span> UTC+2</span>
+    </p>
+    <h1 class="title">
+      <span class="l1">Stop twenty-two</span>
+      <span class="l2">Egypt</span>
+    </h1>
+    <p class="subline">
+      <span>Cairo, Luxor, Aswan</span><span class="sep">/</span>
+      <span>Exit moves to Wed 20 — see below</span><span class="sep">/</span>
+      <span>Abu Simbel at opening</span>
+    </p>
+
+    <dl class="instr">
+      <div><dt>Calendar days</dt><dd>8</dd></div>
+      <div><dt>Full days</dt><dd class="hot">6</dd></div>
+      <div><dt>Nights on ground</dt><dd>6</dd></div>
+      <div><dt>Bases</dt><dd>3</dd></div>
+      <div><dt>Exit flights / week</dt><dd class="warn">3</dd></div>
+      <div><dt>Luxor, Jan high</dt><dd>23<span>°C</span></dd></div>
+    </dl>
+  </div>
+</header>
+
+<section class="section" id="audit">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">01</span> The time audit</p>
+    <h2 class="head">Eight days,<br>and it ends<br>on the 20th</h2>
+    <p class="lede">The itinerary says 14–21 January. Riyadh to Cairo is a four-hour hop with about twenty departures a day, so the 14th is a genuine arrival evening rather than a lost day. The problem is the other end: the nonstop to Zanzibar doesn't fly on the 21st, and the one that gets you there on the right date leaves <b>Cairo at 22:35 on Wednesday the 20th</b>. Everything below is built against six full days, not eight.</p>
+
+    <div class="figcap">
+      <span>Fig. 1 — What the week really contains</span>
+      <span><b>14–21 Jan</b> · hour by hour</span>
+    </div>
+    <div class="scroller">
+      <svg id="audit-chart" viewBox="0 0 1400 190" role="img" aria-label="Timeline of 14 to 21 January showing an arrival afternoon on the 14th, six usable full days from the 15th to the 20th, and a night flight out of Cairo at 22:35 on the 20th arriving Zanzibar early on the 21st."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--magenta);opacity:.55"></i>In transit<i style="background:rgba(242,169,60,.35)"></i>Part day<i style="background:var(--amber)"></i>Full day</p>
+
+    <div class="cols">
+      <p><b>No jet lag to spend</b>Riyadh is UTC+3, Cairo UTC+2. You arrive one hour behind, which is nothing. Unlike Japan, Egypt will not hand you 6am for free — and Egypt is a country where the whole game is being at the gate when it opens. Set alarms. Every site on this route is transformed by arriving first, and by 10:30 the coach groups have landed on all of them.</p>
+      <p><b>The night train is a free night</b>Cairo to Aswan overnight on the Abela/Watania sleeper leaves you a hotel night and a travel day ahead. It is not a luxury train and the food is airline food, but it converts dead time into distance. Booking opens four to five months out.</p>
+      <p><b>Late January is peak</b>This is the best weather Egypt has, which means it is also the most expensive and most crowded week of the year outside Christmas. Cruise cabins, the good Luxor hotels and Grand Egyptian Museum slots all want booking now, not in December.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="flags">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">02</span> Two things that don't move</p>
+    <h2 class="head">One breaks<br>the itinerary</h2>
+    <p class="lede">The first of these changes the shape of the stop and needs deciding before anything else is booked. The second is the reason this window was chosen in the first place, and it holds up.</p>
+
+    <div class="cards">
+      <div class="card bad">
+        <h3>There is no Thursday flight to Zanzibar</h3>
+        <div class="verdict bad">Breaks the plan as written — fix below</div>
+        <p>The handoff to Tanzania is <b>Thursday 21 January</b>. The only nonstop Cairo–Zanzibar service is EgyptAir's, launched 5 September 2026 as a twice-weekly <b>Friday and Sunday</b> operation. AeroRoutes shows a third weekly frequency added <b>from 16 December 2026</b> — a Wednesday — and the aggregators now list the route as Wednesday, Friday and Sunday.</p>
+        <p>Published winter timings: <b>MS819 departs Cairo 22:35, lands Zanzibar 05:15 the next morning</b> on a 737-800. Northbound MS820 leaves Zanzibar 06:15. Cairo is UTC+2 and Zanzibar UTC+3, so that's about 5h40 in the air. On Thursday the 21st, nothing.</p>
+        <div class="fix"><b>The fix</b>Take <strong>Wednesday night's MS819</strong> — depart Cairo 22:35 on the 20th, land Zanzibar 05:15 on the 21st. The Tanzania arrival date is unchanged and you gain a Zanzibar morning; Egypt loses only the evening of the 20th. This means <strong>ending in Luxor, not Aswan</strong> — Luxor has 4–6 daily flights to Cairo against Aswan's 2–3. If you'd rather keep Thursday as the travel day, Ethiopian via Addis is about 7h40 and Kenya Airways via Nairobi about 9h30.</div>
+      </div>
+
+      <div class="card good">
+        <h3>January is the right month, emphatically</h3>
+        <div class="verdict ok">The window is the best part of the plan</div>
+        <p>Luxor averages a <b>23°C</b> daytime high in January against 41°C in July; Aswan 24°C against 42°C. Cairo sits around 19°C. This is the difference between walking the Valley of the Kings and enduring it — the valley is a stone bowl with no shade and it bakes.</p>
+        <p>Nights are cold in the south — Luxor drops to about 6°C before dawn, and the Abu Simbel road at 04:30 is genuinely chilly. Pack one warm layer you won't otherwise use on this trip. Rain is effectively zero everywhere on this route.</p>
+        <div class="fix"><b>Bonus timing</b>Ramadan 2027 is expected to begin around <strong>8 February</strong>, more than two weeks after you leave, so opening hours are normal throughout. Coptic Christmas falls on 7 January, a week before you land. Nothing in the window closes.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="exitwindow">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">03</span> The exit window</p>
+    <h2 class="head">Three doors<br>out per week</h2>
+    <p class="lede">Worth seeing laid out, because it determines the whole itinerary. The nonstop runs on three days and your planned departure day is not one of them. Wednesday's late departure is the only option that preserves the 21 January arrival date in Zanzibar without a connection.</p>
+
+    <div class="figcap">
+      <span>Fig. 2 — Cairo → Zanzibar, week of 18 Jan 2027</span>
+      <span><b>MS819</b> · nonstop, 737-800</span>
+    </div>
+    <div class="scroller">
+      <svg id="exit-chart" viewBox="0 0 1400 260" role="img" aria-label="Week grid for 18 to 24 January 2027 showing EgyptAir nonstop Cairo to Zanzibar departures on Wednesday, Friday and Sunday at 22:35, with Thursday the 21st — the originally planned departure day — marked as having no flight."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--amber)"></i>Nonstop departs 22:35<i style="background:rgba(224,85,85,.25);border:1px solid var(--red)"></i>Planned day, no service · pattern inferred from the 16 Dec 2026 frequency add — verify against operated dates</p>
+
+    <div class="panel">
+      <h3>What still needs confirming</h3>
+      <p>No source publishes a full day-of-week grid for January 2027. The Wednesday/Friday/Sunday pattern is inferred from EgyptAir's announced third weekly frequency starting 16 December 2026 — which is a Wednesday — plus an aggregator listing. <b>Pull the actual operated history for MS819 for a few weeks either side before you book</b>, rather than trusting a schedule-site day label; that has been wrong more than once on this trip.</p>
+      <p>Also worth asking EgyptAir: whether Luxor → Cairo → Zanzibar sells as a <b>single ticket</b>. If it does, a missed domestic connection becomes their problem rather than yours. If it doesn't, leave at least four hours at Cairo, re-check your bag, and confirm whether the domestic and international terminals need a landside transfer.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="shapes">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">04</span> The open question</p>
+    <h2 class="head">Cruise,<br>or don't</h2>
+    <p class="lede">Six days between Cairo and a Wednesday-night flight. The classic Egypt trip puts a Nile cruise in the middle; the problem is that cruises sail on fixed weekly departure days — <b>Luxor on Monday or Saturday, Aswan on Wednesday or Friday</b> — and only one of those slots fits at all. Both shapes below end at Cairo in time for MS819.</p>
+
+    <div class="shapes">
+      <div class="shape pick">
+        <div class="shape-hd">
+          <div class="shape-tag">Recommended</div>
+          <p class="shape-name">Fly and base</p>
+        </div>
+        <div class="chainrow">
+          <span>Cairo <span class="n">×2</span></span><span class="a">→</span>
+          <span>night train</span><span class="a">→</span>
+          <span>Aswan <span class="n">×2</span></span><span class="a">→</span>
+          <span>Luxor <span class="n">×2</span></span><span class="a">→</span>
+          <span class="n">CAI</span>
+        </div>
+        <div class="shape-body">
+          <p>South first, north second. Two Cairo days for Giza and the Grand Egyptian Museum, an overnight train that buys back a day, two Aswan days with <b>Abu Simbel at opening</b>, then the road north through Kom Ombo and Edfu into Luxor for the west and east banks.</p>
+          <p><b>Why it ends in Luxor:</b> the exit flight is unforgiving and Luxor has 4–6 daily flights to Cairo against Aswan's 2–3. Ending north also means the last morning is Karnak at opening rather than a dash to an airport.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Bases</dt><dd class="g">3</dd></div>
+          <div><dt>Abu Simbel</dt><dd class="g">Yes</dd></div>
+          <div><dt>Slack</dt><dd class="g">Half a day</dd></div>
+          <div><dt>Out of</dt><dd>LXR → CAI</dd></div>
+        </dl>
+      </div>
+
+      <div class="shape">
+        <div class="shape-hd">
+          <div class="shape-tag">If the boat is the point</div>
+          <p class="shape-name">Nile cruise</p>
+        </div>
+        <div class="chainrow">
+          <span>Cairo <span class="n">×2</span></span><span class="a">→</span>
+          <span>fly LXR</span><span class="a">→</span>
+          <span>4-night cruise <span class="n">Sat</span></span><span class="a">→</span>
+          <span>Aswan <span class="n">Wed</span></span><span class="a">→</span>
+          <span class="n">CAI</span>
+        </div>
+        <div class="shape-body">
+          <p>Exactly one sailing fits: fly Cairo→Luxor early on <b>Saturday 16</b>, board a 4-night Luxor→Aswan boat, dock in Aswan on the morning of <b>Wednesday 20</b>, fly Aswan→Cairo that afternoon and straight onto MS819. You see Esna, Edfu and Kom Ombo from the water, which the road version only glances at.</p>
+          <p><b>What it costs:</b> Abu Simbel, entirely — the boat docks too late on the only free morning. And every hour of slack. One delayed Aswan departure and you miss a flight that doesn't run again for two days.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Bases</dt><dd>2 + boat</dd></div>
+          <div><dt>Abu Simbel</dt><dd class="r">No</dd></div>
+          <div><dt>Slack</dt><dd class="r">None</dd></div>
+          <div><dt>Out of</dt><dd>ASW → CAI</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Why the recommendation drops the boat</h3>
+      <p>A Nile cruise is a lovely thing and this is the wrong week for it. The sailing calendar and the flight calendar disagree by about a day, and the only overlap leaves you making a same-day domestic connection into an international departure that operates three times a week. That is the kind of arrangement that ruins the next stop rather than this one.</p>
+      <p>The trade is also lopsided on content. What the cruise uniquely gives you is <b>Edfu and Kom Ombo</b> — and both sit directly on the Aswan–Luxor road, where they are a three-hour stop rather than four nights. What it takes is Abu Simbel, which is not substitutable by anything.</p>
+    </div>
+
+    <div class="panel">
+      <h3>What's cut in both shapes</h3>
+      <p><b>Alexandria.</b> Three hours each way from Cairo for a Graeco-Roman city that mostly isn't there any more. The library is a modern building and the catacombs are a half-hour. Not against Abu Simbel.</p>
+      <p><b>The Red Sea and Sinai.</b> Dahab and the Blue Hole are superb and in completely the wrong direction. Note also that Canada advises against all travel to North Sinai and non-essential travel to the northern part of South Sinai.</p>
+      <p><b>The White Desert and Siwa.</b> Canada's advisory covers the Western Desert west of the Giza–Luxor–Aswan–Abu Simbel road. Your entire route sits inside the recommended corridor; keep it that way.</p>
+      <p><b>Dendera and Abydos.</b> The best-preserved ceiling in Egypt and one of the great temples, both a long day trip north from Luxor. They need a seventh day you no longer have.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="run">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">05</span> Day by day</p>
+    <h2 class="head">Both versions,<br>laid out</h2>
+    <p class="lede">Every day starts at the gate before it opens. That is not a stylistic preference — Egyptian sites are hard surfaces with no shade and they fill with coaches between 09:30 and 10:30. Times are indicative; treat the first slot of each day as the one that matters.</p>
+    <div class="filters" id="dayToggle" style="margin-bottom:6px">
+      <button class="fbtn" data-plan="base" aria-pressed="true">Fly and base</button>
+      <button class="fbtn" data-plan="cruise" aria-pressed="false">Nile cruise</button>
+    </div>
+    <div class="days" id="days"></div>
+    <p class="fignote" style="margin-top:16px">Amber = on foot · <span style="color:var(--magenta)">Magenta = a flight, a train or a base change</span></p>
+  </div>
+</section>
+
+<section class="section" id="worth">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">06</span> What's actually worth doing</p>
+    <h2 class="head">Do, maybe,<br>don't bother</h2>
+    <p class="lede">Sorted by city, then by whether it earns its place in six days. The <b>don't bother</b> entries are mostly not bad — several are famous — they're here because something else beats them for the same slot, or because the price has outrun the experience.</p>
+
+    <div class="filters" id="filters">
+      <button class="fbtn" data-city="all" aria-pressed="true">All</button>
+      <button class="fbtn" data-city="Cairo" aria-pressed="false">Cairo &amp; Giza</button>
+      <button class="fbtn" data-city="Luxor" aria-pressed="false">Luxor</button>
+      <button class="fbtn" data-city="Aswan" aria-pressed="false">Aswan &amp; Abu Simbel</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-tier="do" aria-pressed="false">Do</button>
+      <button class="fbtn" data-tier="opt" aria-pressed="false">Maybe</button>
+      <button class="fbtn" data-tier="skip" aria-pressed="false">Don't bother</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-book="1" aria-pressed="false">Needs booking</button>
+    </div>
+    <div class="items" id="items"></div>
+  </div>
+</section>
+
+<section class="section" id="heat">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">07</span> Why this window</p>
+    <h2 class="head">Twenty-three,<br>not forty-one</h2>
+    <p class="lede">Egypt's calendar is written by the sun, and Upper Egypt is the part that decides it. Luxor and Aswan are Saharan — bone dry, no moderating water, and in summer they run above 40°C by lunchtime. January is the floor, and the floor is the only time the Valley of the Kings, Karnak and Abu Simbel are pleasant rather than survivable.</p>
+
+    <div class="figcap">
+      <span>Fig. 3 — Average daily high, by month</span>
+      <span><b>Luxor</b> vs <b>Cairo</b> · your window marked</span>
+    </div>
+    <div class="scroller">
+      <svg id="heat-chart" viewBox="0 0 1400 320" role="img" aria-label="Grouped bar chart of average monthly high temperatures for Luxor and Cairo. Luxor peaks near 41 degrees Celsius from June to August and falls to 23 in January; Cairo peaks near 35 and falls to 19. January is highlighted as the coolest month."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--amber)"></i>Luxor<i style="background:var(--jade)"></i>Cairo · indicative monthly averages · Aswan runs about 1°C above Luxor year-round</p>
+
+    <div class="cols">
+      <p><b>The cold end</b>Nights in Upper Egypt are genuinely cold — Luxor drops to about 6°C before dawn, Aswan to 9°C. The dawn balloon flight, the 04:30 Abu Simbel road and a felucca after sunset all need a layer you will otherwise carry unused from Tokyo to Lisbon. Bring one.</p>
+      <p><b>The wind</b>January is also when the Nile Valley gets a steady northerly. It makes feluccas sail beautifully and balloons cancel occasionally. Book the balloon for your <b>first</b> Luxor morning so a scrub has somewhere to go.</p>
+      <p><b>What January costs you</b>Peak season pricing and peak season crowds. Every itinerary in Egypt runs the same clockwise loop at the same hours, so the difference between a 06:00 start and an 09:00 start is roughly the difference between forty people and four hundred.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="tickets">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">08</span> The ticket maths</p>
+    <h2 class="head">Skip the<br>passes</h2>
+    <p class="lede">Egypt sells a <b>Cairo Pass</b> and a <b>Luxor Pass</b>, both around <b>US$130</b>, and both are sold as the obvious purchase. On a six-day trip they generally aren't. Tick the sites you'll actually enter and watch the point-to-point total fall short of the pass price. Note the standing irony: almost every site is now <b>card-only</b>, while the passes can only be bought with physical US dollars or euros.</p>
+
+    <div class="calc">
+      <div class="calc-legs" id="legs"></div>
+      <dl class="calc-out">
+        <div><dt>Point-to-point</dt><dd id="ptp"></dd></div>
+        <div><dt>Pass-covered value</dt><dd id="covered"></dd></div>
+        <div><dt>Passes you'd need</dt><dd id="passcost"></dd></div>
+        <div><dt>Verdict</dt><dd><span id="verdict"></span></dd></div>
+      </dl>
+    </div>
+    <p class="fignote">Foreign-adult prices as published for 2026 and they move — Egypt raises them without much notice · EGP converted at roughly 51 to the US dollar, 37 to the Canadian</p>
+
+    <div class="panel">
+      <h3>What the passes don't cover</h3>
+      <p>The <b>Cairo Pass</b> (US$130, five consecutive days) covers the Giza plateau including the Great Pyramid interior, Saqqara, Dahshur, the Citadel and the old Egyptian Museum at Tahrir. It does <b>not</b> cover the Grand Egyptian Museum or the National Museum of Egyptian Civilization — which, post-2025, are the two you most want. That exclusion is most of the argument against it.</p>
+      <p>The <b>Luxor Pass</b> comes in two grades: US$130 standard, or US$250 premium adding the tombs of <b>Seti I and Nefertari</b>. Buying a Cairo Pass first halves the Luxor price, which is the one arrangement where the maths can tip — a Cairo Pass plus a discounted premium Luxor Pass is $255 for a great deal of access, if you intend to enter genuinely everything.</p>
+      <p>Both need a passport photocopy and two passport photos, and are bought in person — at the Giza ticket office, the Egyptian Museum or the Citadel for Cairo. <b>Cash only, USD or EUR.</b> Do not arrive at Giza planning to buy one with a card.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="admin">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">09</span> Ground rules</p>
+    <h2 class="head">Before you land</h2>
+
+    <div class="tablewrap">
+    <table class="ref">
+      <thead><tr><th>Item</th><th>What to do</th><th>When</th></tr></thead>
+      <tbody>
+        <tr class="flag"><td>Visa</td><td>Canadians need one. The e-Visa rose from <b>US$25 to US$30</b> on 27 April 2026 (single entry, 3-month validity, 30-day stay); multiple entry went $60 to $65. Apply at visa2egypt.gov.eg — the official portal, not one of the many lookalikes.</td><td class="t">2–3 weeks out</td></tr>
+        <tr><td>Visa on arrival</td><td>Also available at Cairo for <b>US$30</b> since 1 March 2026, paid in cash at a bank window before immigration. Works fine, but it's a queue after a four-hour flight. Carry crisp USD as backup regardless.</td><td class="t">Backup only</td></tr>
+        <tr><td>Passport</td><td>Six months' validity beyond departure. <b>Keep proof of your entry stamp</b> — Canada's advisory is explicit that without it you cannot get an exit stamp and will be refused departure.</td><td class="t">Check now</td></tr>
+        <tr class="flag"><td>Grand Egyptian Museum</td><td>Advance timed booking is <b>mandatory</b> — the on-site ticket office closed on 1 December 2025 and sales run only through visit-gem.com. Six two-hour slots daily from 09:00; the 09:00 is the calm one. Entry for foreigners rose from US$30 to <b>US$35 on 1 November 2026</b>.</td><td class="t">Book now</td></tr>
+        <tr class="flag"><td>Cashless sites</td><td>Major sites — Giza, Karnak, the museums — are now <b>card only</b>. Cash is not accepted at the window. Bring two cards from different networks and tell your bank you'll be in Egypt.</td><td class="t">Before departure</td></tr>
+        <tr><td>Cash anyway</td><td>Everything that isn't a ticket is cash: taxis, feluccas, tips, the Abu Simbel driver, the balloon crew, tea. The pound has sat near <b>51 to the US dollar</b> through 2026. Withdraw at bank ATMs, not exchange desks, and keep small notes for baksheesh.</td><td class="t">On arrival</td></tr>
+        <tr class="flag"><td>Sleeper train</td><td>The Cairo–Aswan overnight is run by a private operator (Abela/Watania), booked at abelatrains.com or at the Ramses station office. <b>Booking opens four to five months ahead.</b> Paid in USD, EUR or GBP. Take the Elite cabins if offered.</td><td class="t">Book by Oct</td></tr>
+        <tr class="flag"><td>The exit flight</td><td>EgyptAir MS819, Cairo 22:35 → Zanzibar 05:15+1, Wed/Fri/Sun. <b>Take Wednesday 20 January.</b> Verify the operating days against actually-flown dates before booking, and leave four hours at Cairo if the Luxor leg is on a separate ticket.</td><td class="t">Book first</td></tr>
+        <tr><td>Advisory</td><td>Canada: <b>exercise a high degree of caution</b> (updated 9 Sept 2026). Avoid all travel to North Sinai and the Western Desert beyond the Nile road; avoid non-essential travel to northern South Sinai. Cairo–Luxor–Aswan–Abu Simbel is entirely inside the recommended corridor. Register as a Canadian abroad.</td><td class="t">Before departure</td></tr>
+        <tr><td>Abu Simbel</td><td>No mandatory convoy since 2019, but checkpoints every 60–80km want your passport. Leave Aswan 04:30–05:00 for an 08:15 arrival; or EgyptAir flies Aswan 06:30, back 12:00, around £150 return. Site opens 05:00, closes 17:00 in winter.</td><td class="t">Arrange in Aswan</td></tr>
+        <tr><td>Dress</td><td>Modest at mosques and in Islamic Cairo — covered shoulders and knees, a scarf for women entering mosques. Nobody minds at the pharaonic sites. Closed shoes with real soles; the west bank is broken limestone.</td><td class="t">Packing</td></tr>
+        <tr><td>Holidays</td><td>Coptic Christmas is 7 January, a week before you land. Ramadan 2027 is expected around <b>8 February</b>, well after you leave. Revolution Day, 25 January, falls four days after departure. The window is clear.</td><td class="t">Clear</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="cols">
+      <p><b>Guides</b>Egypt is one of the few places on this trip where a licensed guide materially changes what you see — the reliefs are text, and unread they're decoration. Hire per-site or per-day rather than buying a packaged tour: roughly US$40–60 a day for a good English-speaking Egyptologist, arranged through your hotel.</p>
+      <p><b>Touts</b>Giza and Luxor west bank have the most persistent hustle you'll meet between Tokyo and Marrakech — camel rides, "the site is closed", unsolicited photos then a fee. A flat, friendly "la, shukran" and continuing to walk works. Never hand over your ticket or passport to anyone who isn't at a window.</p>
+      <p><b>Photography</b>Ordinary cameras and phones are fine almost everywhere; some tombs charge a separate photo ticket and a few — Tutankhamun's among them — forbid it outright. Tripods generally require a permit. The rule is posted at each gate and enforced unevenly.</p>
+      <p><b>Stomach</b>Bottled water only, including for teeth, and be careful with salads and ice outside good restaurants. Six days is exactly long enough for a bad day to cost you Abu Simbel. Carry rehydration salts; they weigh nothing.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <p>Westbound · stop 22 · Egypt</p>
+      <p>14–21 Jan 2027 · CAI in, ZNZ out</p>
+      <p>Fares, fees and schedules verified Sept 2026 — recheck before booking</p>
+    </div>
+    <p class="foot-mark">Cairo → Abu Simbel</p>
+  </div>
+</footer>
+
+<script>
+/* ============ DAY-BY-DAY ============ */
+const DAYS_BASE=[
+{d:'Thu 14',w:'Arrive',name:'Cairo',sub:'In from Riyadh · do little',meta:'Night 1',
+ slots:[
+  {m:1,h:'· RUH → CAI',p:'About four hours, and roughly twenty nonstops a day across EgyptAir, Saudia, flynas, flyadeal, Nile Air and Air Cairo — the easiest connection of the whole trip. Cairo is an hour behind Riyadh, so you land with the day mostly intact.'},
+  {h:'Evening · Get oriented',p:'Base in Giza if the priority is the plateau at dawn, or downtown/Zamalek if you want to eat and walk. Both work; pick one and don’t split. Dinner within walking distance, then sleep — tomorrow starts at 06:30.'}
+]},
+{d:'Fri 15',w:'Full',name:'Giza',sub:'The plateau, then the museum',meta:'Night 2',
+ slots:[
+  {h:'07:00 · Pyramids at opening',p:'The site opens at 07:00 and this is the entire trick — the first ninety minutes are cool, low-lit and comparatively empty. General entry is around <b>700 EGP</b>, card only. The shuttle system introduced with the new visitor centre is the easy way around the loop.'},
+  {h:'09:00 · The Sphinx and the panorama',p:'Do the Sphinx enclosure before it fills, then the panorama point for the classic three-pyramid line. Entering the Great Pyramid is another ~1,500 EGP for a hot crawl up a ramp to an empty granite room — genuinely optional.'},
+  {h:'12:00 · Grand Egyptian Museum',p:'Fifteen minutes from the plateau and the reason Cairo now needs two days rather than one. <b>Timed slots must be booked in advance at visit-gem.com</b> — the on-site office closed in December 2025. The full Tutankhamun collection is here, in one place, for the first time.'},
+  {h:'18:00 · Dinner',p:'Eat in Zamalek or Dokki rather than in the tourist strip below the plateau. Koshari, if you have only one Egyptian dish in you — lentils, rice, pasta, fried onion, and better than it sounds.'}
+]},
+{d:'Sat 16',w:'Move',name:'Old Cairo',sub:'Mummies, minarets, night train',meta:'On the train',
+ slots:[
+  {h:'09:00 · Royal mummies',p:'The National Museum of Egyptian Civilization in Fustat, around <b>550 EGP</b>, open 09:00–16:00. Twenty-odd pharaohs in a deliberately dim, quiet basement gallery — Ramses II, Hatshepsut, Seti I. The best hour in Cairo and far less crowded than the GEM.'},
+  {h:'12:00 · Islamic Cairo',p:'Ibn Tulun’s ninth-century mosque with its spiral minaret — climb it — then the medieval spine of al-Muizz street past Qalawun and Barquq. This is the densest concentration of medieval Islamic architecture anywhere on earth and almost nobody walks it.'},
+  {h:'16:00 · Khan el-Khalili',p:'Touristy and still worth an hour. Mint tea at El Fishawy, which has been open more or less continuously since the 1770s. Buy nothing on the main lanes; the side alleys are where Cairenes shop.'},
+  {m:1,h:'20:00 · Sleeper to Aswan',p:'Abela/Watania overnight from Giza or Ramses. Not luxurious — a two-berth cabin, a tray dinner, a fold-down sink — but it converts a night and a travel day into distance and saves a hotel. Book four to five months ahead; pay in USD, EUR or GBP.'}
+]},
+{d:'Sun 17',w:'Full',name:'Aswan',sub:'The gentlest city in Egypt',meta:'Night 3',
+ slots:[
+  {h:'08:00 · Arrive and drop bags',p:'The train gets in mid-morning. Aswan is small, warm and slow, and the Nile here is the prettiest it gets — granite islands, dunes on the west bank, sails.'},
+  {h:'10:00 · Philae Temple',p:'A short motorboat to Agilkia island, around <b>550 EGP</b>. Ptolemaic, dismantled and moved stone by stone when the High Dam flooded its original island. The last temple in Egypt where the old religion was still practised, into the sixth century.'},
+  {h:'15:00 · Felucca at golden hour',p:'Negotiate a boat and a couple of hours around Elephantine and Kitchener’s Island. Cash, negotiated up front, and the wind in January is reliably good. This is the single best-value thing you will do in Egypt.'},
+  {h:'18:00 · Nubian Aswan',p:'Dinner in Gharb Soheil on the west bank, or the terrace of the Old Cataract if you want the Agatha Christie version with a view of the dunes. Early night — tomorrow is a 04:30 alarm.'}
+]},
+{d:'Mon 18',w:'Move',name:'Abu Simbel',sub:'Dawn on the lake, then north',meta:'Night 4',
+ slots:[
+  {h:'04:45 · The road south',p:'Three and a half hours across the desert, checkpoints every 60–80km wanting your passport. No mandatory convoy since 2019. Or fly: EgyptAir leaves Aswan 06:30 and is back by noon, roughly £150 return, and it costs you the drive but buys the afternoon.'},
+  {h:'08:15 · Abu Simbel',p:'Four seated colossi of Ramses II cut into a cliff, and a second temple for Nefertari beside it — both sawn into blocks and lifted 65 metres up the hillside in the 1960s ahead of the rising lake. Entry around <b>750 EGP</b>. Be there before 09:00; the coaches arrive at 10:00 and the façades are in shade by afternoon.'},
+  {m:1,h:'13:00 · North to Luxor',p:'Back to Aswan, then the road north — about three hours, with <b>Kom Ombo</b> (a double temple to Sobek and Horus, crocodile mummies next door) and <b>Edfu</b> (the most completely preserved temple in Egypt) as stops. This is the stretch the cruise does from the water.'},
+  {h:'19:30 · Arrive Luxor',p:'Check in on the east bank near the Corniche. Luxor Temple is floodlit and open into the evening — a ten-minute walk and a very good first impression of the city.'}
+]},
+{d:'Tue 19',w:'Full',name:'West Bank',sub:'Balloon, tombs, mortuary temples',meta:'Night 5',
+ slots:[
+  {h:'05:30 · Hot air balloon',p:'Launch before sunrise over the Theban necropolis — the Valley of the Kings, Hatshepsut’s terraces and the green strip against the desert as the light comes up. Book this for your first Luxor morning so a wind cancellation has somewhere to go.'},
+  {h:'08:00 · Valley of the Kings',p:'Around <b>750 EGP</b> for three tombs of your choosing. Go for the less-famous and better-preserved: Ramses VI, Ramses III, Merneptah. <b>Seti I</b> is a separate ~2,000 EGP and it is the finest painted tomb in Egypt — if you enter one premium tomb, enter that one.'},
+  {h:'11:00 · Hatshepsut and Medinet Habu',p:'Deir el-Bahari’s three terraces against the cliff, then — and this is the one people skip — <b>Medinet Habu</b>, Ramses III’s mortuary temple, where the original paint survives on the columns and there is often nobody there at all.'},
+  {h:'16:00 · Colossi of Memnon',p:'Two shattered seventy-foot statues in a field, all that remains above ground of the largest temple ever built in Egypt. Five minutes, no ticket, on the way back to the ferry.'}
+]},
+{d:'Wed 20',w:'Depart',name:'Karnak, then out',meta:'Fly tonight',sub:'East bank, then the night flight',
+ slots:[
+  {h:'06:00 · Karnak at opening',p:'Two thousand years of pharaohs each adding a courtyard to the same temple. The Hypostyle Hall — 134 columns, the tallest 21 metres — at first light with the dust in the beams is the image you will keep from Egypt. Around <b>600 EGP</b>.'},
+  {h:'09:30 · Luxor Museum',p:'Small, superbly lit, and a complete antidote to museum fatigue — a hundred good objects instead of ten thousand. An hour. Around <b>400 EGP</b>.'},
+  {m:1,h:'14:00 · LXR → CAI',p:'One hour forty-five, 4–6 daily. Take an early-afternoon departure, not the last one — the whole plan rests on making tonight’s flight, and it does not run again for two days.'},
+  {m:1,h:'22:35 · MS819 to Zanzibar',p:'Nonstop, 737-800, landing 05:15. Confirm the operating day when you book and leave four hours at Cairo if the Luxor leg is on a separate ticket.'}
+]},
+{d:'Thu 21',w:'Arrive',name:'Zanzibar',sub:'Land 05:15',meta:'Stop 23',
+ slots:[
+  {m:1,h:'05:15 · ZNZ',p:'Stop 23. You arrive with a whole day in hand instead of an afternoon — the one genuine upside of the Wednesday departure. Tanzania issues a visa on arrival to Canadians; have USD cash and your onward ticket ready.'}
+]}
+];
+
+const DAYS_CRUISE=[
+{d:'Thu 14',w:'Arrive',name:'Cairo',sub:'In from Riyadh · do little',meta:'Night 1',
+ slots:[
+  {m:1,h:'· RUH → CAI',p:'Four hours, twenty-odd nonstops a day. Cairo is an hour behind Riyadh.'},
+  {h:'Evening · Get oriented',p:'Base in Giza for the dawn plateau start. Dinner nearby, early night.'}
+]},
+{d:'Fri 15',w:'Full',name:'Giza',sub:'Plateau and Grand Egyptian Museum',meta:'Night 2',
+ slots:[
+  {h:'07:00 · Pyramids at opening',p:'~700 EGP, card only, shuttle around the loop. The first ninety minutes are the whole point.'},
+  {h:'12:00 · Grand Egyptian Museum',p:'Book the timed slot at visit-gem.com well ahead. The complete Tutankhamun collection in one building.'},
+  {h:'18:00 · One evening in Cairo',p:'This shape gives Cairo a single working day, so pick: Islamic Cairo at dusk, or the royal mummies at NMEC compressed into a late afternoon. You cannot have both.'}
+]},
+{d:'Sat 16',w:'Move',name:'Board at Luxor',sub:'Fly south, embark',meta:'Boat night 1',
+ slots:[
+  {m:1,h:'07:00 · CAI → LXR',p:'First flight of the day, 1h45. The Saturday sailing is the only departure in the week that fits — a Monday boat docks in Aswan on Friday 22, two days after your flight.'},
+  {h:'11:00 · Embark',p:'Boats generally board late morning and sail in the afternoon or overnight. Lunch aboard.'},
+  {h:'15:00 · Karnak and Luxor Temple',p:'The standard first-afternoon excursion. Karnak’s Hypostyle Hall, then Luxor Temple floodlit after dark.'}
+]},
+{d:'Sun 17',w:'Full',name:'West Bank',sub:'Tombs, then sail to Esna',meta:'Boat night 2',
+ slots:[
+  {h:'06:00 · Valley of the Kings',p:'Three tombs on the standard ticket; Seti I is a separate premium entry and worth it. Then Hatshepsut and the Colossi of Memnon.'},
+  {h:'13:00 · Sail south',p:'Afternoon on the sun deck as the valley narrows. The Esna lock in the evening — a slow, strange bit of theatre with rowboats selling tablecloths hurled up at the rail.'}
+]},
+{d:'Mon 18',w:'Full',name:'Edfu',sub:'The complete temple',meta:'Boat night 3',
+ slots:[
+  {h:'07:00 · Temple of Horus',p:'The most completely preserved temple in Egypt — roof on, pylons intact, the cult statue’s sanctuary still standing. Reached by caleche from the mooring, which is half the fun.'},
+  {h:'13:00 · Sail to Kom Ombo',p:'The best stretch of river on the whole route. Do nothing.'}
+]},
+{d:'Tue 19',w:'Full',name:'Kom Ombo',sub:'Then into Aswan',meta:'Boat night 4',
+ slots:[
+  {h:'08:00 · The double temple',p:'Duplicated everything — two sanctuaries, two axes, Sobek on one side and Horus the Elder on the other. The crocodile museum next door is small and excellent.'},
+  {h:'14:00 · Aswan',p:'Moor at Aswan. Philae in the late afternoon if the boat’s schedule allows, otherwise it is tomorrow’s problem and tomorrow has no room.'},
+  {h:'17:00 · Felucca',p:'Elephantine and Kitchener’s Island at golden hour. Negotiate in cash.'}
+]},
+{d:'Wed 20',w:'Depart',name:'Aswan, then out',sub:'Disembark and run',meta:'Fly tonight',
+ slots:[
+  {h:'07:00 · Disembark',p:'Boats normally put you ashore after breakfast. If Philae did not happen yesterday, this morning is your only chance and it is tight.'},
+  {m:1,h:'13:00 · ASW → CAI',p:'Two hours ten, and only 2–3 flights a day — this is the fragile link in the cruise shape. Take the earliest afternoon departure available and accept the wait at Cairo.'},
+  {m:1,h:'22:35 · MS819 to Zanzibar',p:'Nonstop, landing 05:15. No same-day fallback if the Aswan leg goes wrong; the next nonstop is Friday.'}
+]},
+{d:'Thu 21',w:'Arrive',name:'Zanzibar',sub:'Land 05:15',meta:'Stop 23',
+ slots:[
+  {m:1,h:'05:15 · ZNZ',p:'Stop 23. Visa on arrival for Canadians — USD cash and an onward ticket.'}
+]}
+];
+
+let CURRENT_PLAN='base';
+function renderDays(){
+  const DAYS = CURRENT_PLAN==='base' ? DAYS_BASE : DAYS_CRUISE;
+  document.getElementById('days').innerHTML=DAYS.map((D,i)=>`
+  <div class="day">
+    <button class="day-btn" aria-expanded="false">
+      <span class="day-date">${D.d}<small>${D.w}</small></span>
+      <span><span class="day-name">${D.name}</span><span class="day-sub">${D.sub}</span></span>
+      <span class="day-meta">${D.meta}<span class="chev">▾</span></span>
+    </button>
+    <div class="day-body"><div class="day-inner"><div class="day-pad"><div class="slots">
+      ${D.slots.map(s=>`<div class="slot${s.m?' move':''}"><h4>${s.h}</h4><p>${s.p}</p></div>`).join('')}
+    </div></div></div></div>
+  </div>`).join('');
+
+  document.querySelectorAll('.day-btn').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const d=b.parentElement, open=d.classList.toggle('open');
+      b.setAttribute('aria-expanded',open?'true':'false');
+    });
+  });
+  document.querySelector('.day').classList.add('open');
+  document.querySelector('.day-btn').setAttribute('aria-expanded','true');
+}
+renderDays();
+
+document.getElementById('dayToggle').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  CURRENT_PLAN=b.dataset.plan;
+  document.querySelectorAll('#dayToggle .fbtn').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
+  renderDays();
+});
+
+/* ============ WORTH DOING ============ */
+const ITEMS=[
+/* CAIRO & GIZA */
+{c:'Cairo',t:'do',n:'Giza at opening',w:'The gates open at 07:00 and the difference between 07:00 and 10:00 is the difference between a wonder and a car park. General entry ~700 EGP, <b>card only</b>. The new shuttle loop makes the plateau walkable without a camel negotiation.',when:'07:00'},
+{c:'Cairo',t:'do',n:'Grand Egyptian Museum',w:'The complete Tutankhamun collection under one roof for the first time, at the foot of the plateau. <b>Advance timed booking is mandatory</b> — the on-site office closed on 1 Dec 2025. Entry rose to US$35 on 1 Nov 2026.',when:'Book ahead',b:1},
+{c:'Cairo',t:'do',n:'Royal mummies at NMEC',w:'Twenty-two pharaohs in a dim, hushed basement gallery in Fustat — Ramses II, Seti I, Hatshepsut. ~550 EGP including the hall, 09:00–16:00. Quieter and more affecting than the GEM.',when:'09:00–16:00'},
+{c:'Cairo',t:'do',n:'Ibn Tulun & al-Muizz street',w:'The ninth-century mosque with the spiral minaret you can climb, then the medieval spine of Islamic Cairo past Qalawun and Barquq. The densest surviving medieval Islamic city anywhere, and almost nobody walks it.',when:'Afternoon'},
+{c:'Cairo',t:'do',n:'Khan el-Khalili & El Fishawy',w:'A tourist bazaar with a genuinely old café at its heart, more or less continuously open since the 1770s. One hour, mint tea, buy nothing on the main lanes.',when:'Late afternoon'},
+{c:'Cairo',t:'opt',n:'Saqqara & Dahshur',w:'Djoser’s Step Pyramid — the first monumental stone building on earth — plus the Bent and Red pyramids. The Red Pyramid’s interior is the better one to enter: emptier, cooler and more interesting than Khufu’s. ~600 EGP.',when:'Half day'},
+{c:'Cairo',t:'opt',n:'Great Pyramid interior',w:'~1,500 EGP on top of entry for a hot, stooped climb up the Grand Gallery to an empty granite box. Worth it once if you have never done it, and completely skippable if you have a bad back or a queue.',when:'Extra ticket'},
+{c:'Cairo',t:'opt',n:'Egyptian Museum, Tahrir',w:'Half its collection has moved to Giza and Fustat, and what is left is dustily charming in a 1902 building. Good if you love old museums; redundant if you have two days.',when:'~550 EGP'},
+{c:'Cairo',t:'opt',n:'Coptic Cairo',w:'The Hanging Church, Ben Ezra synagogue and St Sergius packed into a few Roman-walled lanes, five minutes from NMEC. Thirty minutes, free, and it pairs naturally with the mummies.',when:'With NMEC'},
+{c:'Cairo',t:'opt',n:'Al-Azhar Park at sunset',w:'A park built on 500 years of accumulated rubbish, looking across the Ayyubid wall to the Citadel and a thousand minarets. The best free view in Cairo.',when:'Sunset'},
+{c:'Cairo',t:'skip',n:'Giza sound & light show',w:'Coloured floodlights, a portentous narration and a recorded Sphinx. You will have seen the plateau properly at dawn; do not go back at night for this.',when:''},
+{c:'Cairo',t:'skip',n:'Camel and horse rides at Giza',w:'The core of the plateau hustle, frequently with animals in poor condition. The shuttle covers the same ground and the panorama point is a walk.',when:''},
+{c:'Cairo',t:'skip',n:'Cairo Tower',w:'A 1961 concrete tower with a revolving restaurant. Al-Azhar Park is a better view and costs nothing.',when:''},
+{c:'Cairo',t:'skip',n:'Alexandria day trip',w:'Three hours each way for a Graeco-Roman city that is mostly under the modern one. It is a real place worth two days, not a day trip that costs you Abu Simbel.',when:''},
+/* LUXOR */
+{c:'Luxor',t:'do',n:'Karnak at opening',w:'Two millennia of pharaohs each adding to the same temple. The Hypostyle Hall — 134 columns, the tallest 21 metres — with dust in the early beams is the image you keep from Egypt. ~600 EGP.',when:'06:00'},
+{c:'Luxor',t:'do',n:'Valley of the Kings',w:'~750 EGP for three tombs. Skip the queue-magnets and choose Ramses VI, Ramses III and Merneptah — deeper, better-painted and emptier than the famous ones.',when:'From 06:00'},
+{c:'Luxor',t:'do',n:'Tomb of Seti I',w:'A separate ~2,000 EGP and the finest painted tomb in Egypt — 137 metres of near-perfect astronomical ceilings and reliefs. If you enter one premium tomb anywhere in Egypt, this is it.',when:'Extra ticket'},
+{c:'Luxor',t:'do',n:'Hot air balloon at dawn',w:'Over the Theban necropolis as the sun comes up behind the eastern cliff. Book it for your <b>first</b> Luxor morning — January wind cancels flights occasionally and you want a spare day to move it to.',when:'Book ahead',b:1},
+{c:'Luxor',t:'do',n:'Medinet Habu',w:'Ramses III’s mortuary temple, where the original paint survives on the columns and the battle reliefs are cut inches deep. Frequently empty. The best-value site in Luxor at ~220 EGP.',when:'Late morning'},
+{c:'Luxor',t:'do',n:'Luxor Temple after dark',w:'Floodlit, open into the evening, and in the middle of town so you can walk to it after dinner. The avenue of sphinxes to Karnak has been fully excavated and is spectacular at night. ~500 EGP.',when:'After 18:00'},
+{c:'Luxor',t:'opt',n:'Hatshepsut / Deir el-Bahari',w:'Three colonnaded terraces driven into a 300-metre cliff, and architecturally the most modern-looking thing in ancient Egypt. Heavily reconstructed and heavily visited. ~440 EGP.',when:'Morning'},
+{c:'Luxor',t:'opt',n:'Tomb of Nefertari',w:'Widely called the most beautiful tomb in Egypt, with entry capped and priced accordingly. Only on the premium Luxor Pass or a separate steep ticket — a real choice against Seti I rather than an addition.',when:'Extra ticket',b:1},
+{c:'Luxor',t:'opt',n:'Luxor Museum',w:'A hundred superb objects, beautifully lit, instead of ten thousand in cases. One hour and the cure for museum fatigue. ~400 EGP.',when:'1 hour'},
+{c:'Luxor',t:'opt',n:'Tombs of the Nobles',w:'Not pharaohs — officials — which means scenes of farming, hunting, banquets and cats instead of funerary texts. Livelier than the royal tombs and almost deserted.',when:'West bank'},
+{c:'Luxor',t:'opt',n:'Dendera',w:'An hour north, and the Hathor temple has the finest painted ceiling in Egypt after its cleaning. A half-day that this itinerary does not have, unless you cut Aswan.',when:'Half day'},
+{c:'Luxor',t:'skip',n:'Tutankhamun’s tomb',w:'~700 EGP extra for one of the smallest tombs in the valley, hastily decorated, with the mummy in a case. Everything that made it famous is now in Giza. Spend it on Seti I.',when:''},
+{c:'Luxor',t:'skip',n:'Karnak sound & light',w:'Same objection as Giza’s, in a place where dawn is genuinely transcendent. Go at 06:00 instead.',when:''},
+/* ASWAN */
+{c:'Aswan',t:'do',n:'Abu Simbel at opening',w:'Four seated colossi of Ramses II cut into a cliff, sawn into blocks and lifted 65 metres in the 1960s ahead of the rising lake. ~750 EGP. Be there before 09:00 — the façades face east and are in shade by afternoon.',when:'08:15'},
+{c:'Aswan',t:'do',n:'Philae Temple',w:'Ptolemaic, on an island, reached by motorboat, and moved stone by stone when the High Dam flooded its original site. The last place in Egypt where the old religion was practised, into the sixth century. ~550 EGP.',when:'Morning'},
+{c:'Aswan',t:'do',n:'Felucca at golden hour',w:'Two hours under sail around Elephantine and Kitchener’s Island, negotiated in cash on the Corniche. January wind is reliable. The best-value experience in Egypt by a distance.',when:'Sunset'},
+{c:'Aswan',t:'opt',n:'Kom Ombo & Edfu',w:'A double temple to Sobek and Horus with crocodile mummies next door, and the most completely preserved temple in Egypt. Both sit on the Aswan–Luxor road — a three-hour stop, or four nights on a boat.',when:'En route'},
+{c:'Aswan',t:'opt',n:'Nubian village, Gharb Soheil',w:'Painted houses on the west bank, Nubian food, and a culture that the High Dam displaced wholesale. Touristed now, still worth an evening.',when:'Evening'},
+{c:'Aswan',t:'opt',n:'Old Cataract terrace',w:'Tea on the terrace where Agatha Christie wrote, looking at granite islands and the west-bank dunes. Costs the price of a drink and buys you the view.',when:'Afternoon'},
+{c:'Aswan',t:'opt',n:'Unfinished Obelisk',w:'A 1,000-tonne obelisk still attached to the bedrock, abandoned when it cracked. Twenty minutes, ~220 EGP, and it explains more about how any of this was built than any museum.',when:'20 min'},
+{c:'Aswan',t:'skip',n:'High Dam',w:'A large embankment with a viewing platform and a monument. Historically enormous, visually a road across a lake. Usually bundled into Philae trips; ask to skip it.',when:''},
+{c:'Aswan',t:'skip',n:'Abu Simbel sound & light',w:'Only worth it if you are staying overnight at Abu Simbel, which costs you the Luxor leg. The solar alignment on 22 Feb and 22 Oct is the reason to come back, not this.',when:''},
+{c:'Aswan',t:'skip',n:'Camel to St Simeon',w:'A pleasant ruined monastery reached by a short, hot camel ride with the usual welfare questions. The felucca does the same job better.',when:''}
+];
+
+const TIERLBL={do:'Do',opt:'Maybe',skip:'Skip'};
+let FC='all', FT=null, FB=false;
+
+function renderItems(){
+  const list=ITEMS.filter(x=>
+    (FC==='all'||x.c===FC) && (!FT||x.t===FT) && (!FB||x.b));
+  const host=document.getElementById('items');
+  if(!list.length){host.innerHTML='<div class="empty">No entries match those filters.</div>';return}
+  host.innerHTML=list.map(x=>`
+    <div class="item">
+      <span class="tier ${x.t}">${TIERLBL[x.t]}</span>
+      <span class="nm">${x.n}</span>
+      <span class="when${x.b?' book':''}">${x.when||'&nbsp;'}</span>
+      <span class="why">${x.w}</span>
+    </div>`).join('');
+}
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  if(b.dataset.city){FC=b.dataset.city}
+  else if(b.dataset.tier){FT = FT===b.dataset.tier?null:b.dataset.tier}
+  else if(b.dataset.book){FB=!FB}
+  document.querySelectorAll('#filters .fbtn').forEach(x=>{
+    let on=false;
+    if(x.dataset.city) on = x.dataset.city===FC;
+    if(x.dataset.tier) on = x.dataset.tier===FT;
+    if(x.dataset.book) on = FB;
+    x.setAttribute('aria-pressed',on?'true':'false');
+  });
+  renderItems();
+});
+renderItems();
+
+/* ============ FIG 1: TIME AUDIT ============ */
+(function(){
+  const svg=document.getElementById('audit-chart');
+  const W=1400,H=190,pad=44,barY=70,barH=54;
+  const totalH=192;
+  const x=h=>pad+(h/totalH)*(W-2*pad);
+  const segs=[
+    {a:0,b:15,cls:'t2'},
+    {a:15,b:24,cls:'p'},
+    {a:24,b:48,cls:'f'},
+    {a:48,b:72,cls:'f'},
+    {a:72,b:96,cls:'f'},
+    {a:96,b:120,cls:'f'},
+    {a:120,b:144,cls:'f'},
+    {a:144,b:166.6,cls:'f'},
+    {a:166.6,b:192,cls:'t'}
+  ];
+  const colors={t:'var(--magenta)',t2:'rgba(231,100,155,.55)',p:'rgba(242,169,60,.35)',f:'var(--amber)'};
+  let s='';
+  segs.forEach(sg=>{
+    const x1=x(sg.a),x2=x(sg.b);
+    s+=`<rect x="${x1}" y="${barY}" width="${Math.max(1,x2-x1-1)}" height="${barH}" fill="${colors[sg.cls]}"/>`;
+  });
+  const start=new Date(2027,0,14);
+  for(let d=0;d<=8;d++){
+    const hh=d*24, xx=x(hh);
+    const dt=new Date(start.getTime()+hh*36e5*1);
+    const dd=new Date(2027,0,14+d);
+    s+=`<line x1="${xx}" y1="${barY-6}" x2="${xx}" y2="${barY+barH+6}" class="axs"/>`;
+    s+=`<text x="${xx}" y="${barY-14}" class="lbl" text-anchor="${d===0?'start':d===8?'end':'middle'}">${dd.toLocaleDateString('en-CA',{day:'2-digit',month:'short'})}</text>`;
+  }
+  s+=`<line x1="${pad}" y1="${barY+barH+0.5}" x2="${W-pad}" y2="${barY+barH+0.5}" class="ax"/>`;
+  s+=`<text x="${x(24)}" y="${barY+barH+34}" class="lbl-a">6 full days — 15→20 Jan</text>`;
+  s+=`<text x="${x(0)}" y="${barY+barH+34}" class="lbl">↙ in from Riyadh</text>`;
+  s+=`<text x="${x(192)}" y="${barY+barH+34}" class="lbl-r" text-anchor="end">out 22:35 Wed 20 ↗</text>`;
+  s+=`<line x1="${x(166.6)}" y1="${barY-18}" x2="${x(166.6)}" y2="${barY+barH+8}" stroke="var(--red)" stroke-width="1.5" stroke-dasharray="4 3"/>`;
+  svg.innerHTML=s;
+})();
+
+/* ============ FIG 2: EXIT WINDOW ============ */
+(function(){
+  const svg=document.getElementById('exit-chart');
+  const W=1400,H=260,padL=40,padR=40,top=64,boxH=140;
+  const DAYS=[
+    {d:'Mon',n:18,fly:false},
+    {d:'Tue',n:19,fly:false},
+    {d:'Wed',n:20,fly:true,pick:true},
+    {d:'Thu',n:21,fly:false,planned:true},
+    {d:'Fri',n:22,fly:true},
+    {d:'Sat',n:23,fly:false},
+    {d:'Sun',n:24,fly:true}
+  ];
+  const cw=(W-padL-padR)/7;
+  let s='';
+  DAYS.forEach((D,i)=>{
+    const x0=padL+i*cw+6, bw=cw-12, cx=x0+bw/2;
+    s+=`<text x="${cx}" y="${top-30}" class="lbl" text-anchor="middle">${D.d}</text>`;
+    s+=`<text x="${cx}" y="${top-12}" class="${D.planned?'lbl-r':(D.fly?'lbl-a':'lbl')}" text-anchor="middle">${D.n} Jan</text>`;
+    let fill='rgba(25,65,80,.35)', stroke='var(--rule)', sw=1, dash='';
+    if(D.fly){fill='rgba(242,169,60,.16)';stroke='var(--amber)';sw=D.pick?2:1}
+    if(D.planned){fill='rgba(224,85,85,.12)';stroke='var(--red)';dash='4 3'}
+    s+=`<rect x="${x0}" y="${top}" width="${bw}" height="${boxH}" fill="${fill}" stroke="${stroke}" stroke-width="${sw}" ${dash?`stroke-dasharray="${dash}"`:''} rx="2"/>`;
+    if(D.fly){
+      s+=`<text x="${cx}" y="${top+38}" class="lbl-p" text-anchor="middle">MS819</text>`;
+      s+=`<text x="${cx}" y="${top+62}" class="lbl-a" text-anchor="middle">22:35</text>`;
+      s+=`<text x="${cx}" y="${top+84}" class="lbl" text-anchor="middle">ZNZ 05:15+1</text>`;
+      if(D.pick){
+        s+=`<text x="${cx}" y="${top+116}" class="lbl-a" text-anchor="middle">← TAKE THIS</text>`;
+      }
+    } else if(D.planned){
+      s+=`<text x="${cx}" y="${top+44}" class="lbl-r" text-anchor="middle">NO FLIGHT</text>`;
+      s+=`<text x="${cx}" y="${top+70}" class="lbl" text-anchor="middle">planned</text>`;
+      s+=`<text x="${cx}" y="${top+88}" class="lbl" text-anchor="middle">departure day</text>`;
+    } else {
+      s+=`<text x="${cx}" y="${top+76}" class="lbl" text-anchor="middle">—</text>`;
+    }
+  });
+  s+=`<line x1="${padL}" y1="${top+boxH+16}" x2="${W-padR}" y2="${top+boxH+16}" class="ax"/>`;
+  s+=`<text x="${padL}" y="${top+boxH+40}" class="lbl">Nonstop only · connections via Addis Ababa or Nairobi run daily</text>`;
+  svg.innerHTML=s;
+})();
+
+/* ============ FIG 3: HEAT ============ */
+(function(){
+  const svg=document.getElementById('heat-chart');
+  const W=1400,H=320,padL=52,padR=30,padT=24,padB=52;
+  const MO=[
+    {n:'Jan',l:23,c:19},{n:'Feb',l:25,c:21},{n:'Mar',l:29,c:24},{n:'Apr',l:35,c:28},
+    {n:'May',l:39,c:32},{n:'Jun',l:41,c:34},{n:'Jul',l:41,c:35},{n:'Aug',l:41,c:35},
+    {n:'Sep',l:39,c:33},{n:'Oct',l:35,c:29},{n:'Nov',l:28,c:24},{n:'Dec',l:24,c:20}
+  ];
+  const gw=(W-padL-padR)/MO.length;
+  const y=v=>padT+(1-v/45)*(H-padT-padB);
+  let s='';
+  [0,10,20,30,40].forEach(v=>{
+    s+=`<line x1="${padL}" y1="${y(v)}" x2="${W-padR}" y2="${y(v)}" class="axs"/>`;
+    s+=`<text x="${padL-10}" y="${y(v)+4}" class="lbl" text-anchor="end">${v}°</text>`;
+  });
+  s+=`<rect x="${padL+0*gw+2}" y="${padT-16}" width="${gw-4}" height="${H-padB-padT+16}" fill="rgba(231,100,155,.10)" stroke="var(--magenta)" stroke-width="1"/>`;
+  s+=`<text x="${padL+gw/2}" y="${padT-22}" class="lbl-a" text-anchor="middle">your window</text>`;
+  MO.forEach((m,i)=>{
+    const x0=padL+i*gw, bw=gw*0.32;
+    const isJan=m.n==='Jan';
+    s+=`<rect x="${x0+gw*0.12}" y="${y(m.l)}" width="${bw}" height="${H-padB-y(m.l)}" fill="${isJan?'var(--amber)':'rgba(242,169,60,.38)'}" rx="1"/>`;
+    s+=`<rect x="${x0+gw*0.52}" y="${y(m.c)}" width="${bw}" height="${H-padB-y(m.c)}" fill="${isJan?'var(--jade)':'rgba(88,196,163,.32)'}" rx="1"/>`;
+    s+=`<text x="${x0+gw/2}" y="${H-padB+18}" class="lbl" text-anchor="middle" ${isJan?'fill="var(--amber)"':''}>${m.n}</text>`;
+    s+=`<text x="${x0+gw*0.12+bw/2}" y="${y(m.l)-7}" class="${isJan?'lbl-a':'lbl'}" text-anchor="middle">${m.l}</text>`;
+  });
+  s+=`<line x1="${padL}" y1="${H-padB}" x2="${W-padR}" y2="${H-padB}" class="ax"/>`;
+  svg.innerHTML=s;
+})();
+
+/* ============ TICKET CALCULATOR ============ */
+const USD=51, CAD=37, PASS_USD=130;
+const SITES=[
+  {n:'Giza plateau, general entry',e:700,p:'cairo',def:true},
+  {n:'Great Pyramid interior (Khufu)',e:1500,p:'cairo',note:'Cairo Pass covers this'},
+  {n:'Saqqara — Step Pyramid',e:600,p:'cairo',note:'Half-day add-on'},
+  {n:'Egyptian Museum, Tahrir',e:550,p:'cairo',note:'Half its collection has moved'},
+  {n:'Grand Egyptian Museum',e:1700,p:null,def:true,note:'NOT on the Cairo Pass · US$35 since 1 Nov 2026'},
+  {n:'NMEC — royal mummies',e:550,p:null,def:true,note:'NOT on the Cairo Pass'},
+  {n:'Valley of the Kings (3 tombs)',e:750,p:'luxor',def:true},
+  {n:'Tomb of Seti I',e:2000,p:'luxorPrem',def:true,note:'Premium Luxor Pass only (US$250)'},
+  {n:'Karnak Temple',e:600,p:'luxor',def:true},
+  {n:'Luxor Temple',e:500,p:'luxor',def:true},
+  {n:'Hatshepsut — Deir el-Bahari',e:440,p:'luxor',def:true},
+  {n:'Medinet Habu',e:220,p:'luxor',def:true},
+  {n:'Luxor Museum',e:400,p:'luxor'},
+  {n:'Philae Temple, Aswan',e:550,p:null,def:true,note:'No Aswan pass exists'},
+  {n:'Abu Simbel',e:750,p:null,def:true,note:'No Aswan pass exists'},
+  {n:'Unfinished Obelisk, Aswan',e:220,p:null}
+];
+function renderLegs(){
+  document.getElementById('legs').innerHTML=SITES.map((l,i)=>`
+    <label class="leg-row">
+      <input type="checkbox" data-i="${i}" ${l.def?'checked':''}>
+      <span class="lname">${l.n}</span>
+      <span class="lyen">${l.e.toLocaleString('en-CA')} EGP</span>
+      ${l.note?`<span class="lnote">${l.note}</span>`:''}
+    </label>`).join('');
+}
+function calcTotals(){
+  let ptp=0, covered=0, needCairo=false, needLuxor=false;
+  document.querySelectorAll('#legs input[type="checkbox"]').forEach(cb=>{
+    const l=SITES[Number(cb.dataset.i)];
+    if(!cb.checked) return;
+    ptp+=l.e;
+    if(l.p==='cairo'){covered+=l.e;needCairo=true}
+    if(l.p==='luxor'){covered+=l.e;needLuxor=true}
+    if(l.p==='luxorPrem'){needLuxor=true}
+  });
+  const passUSD=(needCairo?PASS_USD:0)+(needLuxor?PASS_USD:0);
+  const passEGP=passUSD*USD;
+  document.getElementById('ptp').innerHTML=`${ptp.toLocaleString('en-CA')}<small>EGP · ≈C$${Math.round(ptp/CAD)}</small>`;
+  document.getElementById('covered').innerHTML=`${covered.toLocaleString('en-CA')}<small>EGP on passes</small>`;
+  document.getElementById('passcost').innerHTML=passUSD?`US$${passUSD}<small>≈${passEGP.toLocaleString('en-CA')} EGP</small>`:'—';
+  const vEl=document.getElementById('verdict');
+  if(!passUSD){
+    vEl.textContent='No pass-eligible sites ticked'; vEl.className='';
+  } else if(covered<passEGP){
+    vEl.textContent=`Buy site by site — passes cost ${Math.round(passEGP-covered).toLocaleString('en-CA')} EGP more`;
+    vEl.className='lose';
+  } else {
+    vEl.textContent=`Passes win by ${Math.round(covered-passEGP).toLocaleString('en-CA')} EGP`;
+    vEl.className='win';
+  }
+}
+renderLegs();
+document.getElementById('legs').addEventListener('change',calcTotals);
+calcTotals();
+</script>
+
+</body>
+</html>

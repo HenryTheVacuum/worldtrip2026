@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="darkreader-lock">
+<title>South Africa</title>
+<link rel="stylesheet" href="fonts.css">
+</head>
+<body>
+<style>
+:root{color-scheme:dark;
+  --ink:#05161D;--ink-2:#0A2029;--ink-3:#0E2A35;
+  --rule:#194150;--rule-soft:rgba(25,65,80,.6);
+  --paper:#E2EEED;--paper-dim:#A6C2C6;--muted:#6C8F98;
+  --amber:#F2A93C;--magenta:#E7649B;--jade:#58C4A3;--red:#E05555;
+  --display:'Big Shoulders Display','Arial Narrow',Impact,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --body:'Inter',system-ui,sans-serif;
+  --gut:clamp(18px,4vw,64px);--maxw:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+.section{padding-block:clamp(34px,4.4vw,58px);border-top:1px solid var(--rule-soft);position:relative}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:14px;margin:0 0 18px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--rule)}
+.eyebrow .n{color:var(--amber)}
+h2.head{font-family:var(--display);font-weight:700;font-size:clamp(34px,5.6vw,66px);line-height:.92;margin:0 0 14px;text-transform:uppercase}
+.lede{max-width:66ch;color:var(--paper-dim);font-size:clamp(15px,1.5vw,17px);margin:0 0 26px}
+.lede b{color:var(--paper);font-weight:600}
+a{color:var(--amber);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+.hint{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+@media (min-width:980px){.hint.wide{display:none}}
+.scroller{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--rule) transparent}
+.scroller::-webkit-scrollbar{height:6px}
+.scroller::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}
+.scroller>svg{display:block;width:100%;height:auto}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(30px,5vw,58px) clamp(24px,4vw,40px);overflow:hidden}
+.gridbg{position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:linear-gradient(to right,var(--rule-soft) 1px,transparent 1px),linear-gradient(to bottom,var(--rule-soft) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%);-webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%)}
+.back{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:inline-block;margin-bottom:20px}
+.back:hover{color:var(--amber)}
+.strip{font-family:var(--mono);font-size:clamp(10px,1.15vw,12px);letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;border-block:1px solid var(--rule);padding-block:11px;margin-bottom:clamp(26px,4vw,44px)}
+.strip .k{color:var(--muted)}.strip .amb{color:var(--amber)}
+.title{font-family:var(--display);text-transform:uppercase;margin:0;line-height:.82;position:relative}
+.title .l1{display:block;font-weight:400;font-size:clamp(34px,7.4vw,96px);color:transparent;-webkit-text-stroke:1.2px var(--paper-dim)}
+.title .l2{display:block;font-weight:800;font-size:clamp(72px,17vw,232px);letter-spacing:-.015em;color:var(--paper)}
+.subline{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:baseline;margin-top:clamp(18px,3vw,30px);font-family:var(--mono);font-size:clamp(11px,1.25vw,13px);letter-spacing:.14em;text-transform:uppercase;color:var(--paper-dim)}
+.subline .sep{color:var(--rule)}
+
+/* instruments */
+.instr{display:grid;grid-template-columns:repeat(auto-fit,minmax(124px,1fr));border:1px solid var(--rule);background:var(--ink-2);margin:clamp(24px,3.4vw,38px) 0 0}
+.instr div{padding:15px 17px;border-right:1px solid var(--rule-soft)}
+.instr div:last-child{border-right:0}
+.instr dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.instr dd{margin:0;font-family:var(--display);font-weight:600;font-size:31px;line-height:1}
+.instr dd span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--paper-dim);margin-left:3px}
+.instr dd.hot{color:var(--amber)}
+.instr dd.warn{color:var(--magenta)}
+
+/* chart frames */
+.figcap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:9px;margin:0 0 8px}
+.figcap b{color:var(--amber);font-weight:500}
+.fignote{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.fignote i{display:inline-block;width:14px;height:9px;margin:0 5px 0 14px;vertical-align:middle;border-radius:1px}
+.fignote i:first-child{margin-left:0}
+.ax{stroke:var(--rule);stroke-width:1}
+.axs{stroke:var(--rule-soft);stroke-width:1}
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.08em;fill:var(--muted)}
+.lbl-p{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;fill:var(--paper)}
+.lbl-a{font-family:var(--mono);font-size:10px;letter-spacing:.12em;fill:var(--amber)}
+
+/* cards */
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin:0 0 6px}
+.card{border:1px solid var(--rule);background:var(--ink-2);padding:18px 20px;position:relative}
+.card.bad{border-color:var(--red)}
+.card.good{border-color:var(--jade)}
+.card h3{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 4px;color:var(--paper)}
+.card .verdict{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:11px}
+.card .verdict.bad{color:var(--red)}
+.card .verdict.ok{color:var(--jade)}
+.card p{margin:0 0 10px;font-size:13.5px;color:var(--paper-dim);line-height:1.62}
+.card p:last-child{margin-bottom:0}
+.card p b{color:var(--paper);font-weight:600}
+.fix{border-left:2px solid var(--amber);padding-left:12px;margin:12px 0 0;font-size:12.8px;color:var(--paper-dim);line-height:1.6}
+.fix b{display:block;color:var(--amber);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px;font-weight:500}
+.fix strong{color:var(--paper);font-weight:600}
+
+/* shape cards */
+.shapes{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+.shape{border:1px solid var(--rule);background:var(--ink-2);padding:0;display:flex;flex-direction:column}
+.shape.pick{border-color:var(--amber);box-shadow:inset 0 0 0 1px rgba(242,169,60,.25)}
+.shape-hd{padding:16px 20px 14px;border-bottom:1px solid var(--rule-soft)}
+.shape-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.shape.pick .shape-tag{color:var(--amber)}
+.shape-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(24px,3vw,32px);line-height:.95;margin:0}
+.chainrow{display:flex;flex-wrap:wrap;align-items:center;gap:5px 7px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--paper);padding:13px 20px;border-bottom:1px solid var(--rule-soft);background:rgba(5,22,29,.5)}
+.chainrow .a{color:var(--rule)}
+.chainrow .n{color:var(--amber);font-size:9.5px}
+.shape-body{padding:15px 20px 18px;flex:1}
+.shape-body p{margin:0 0 10px;font-size:13.3px;color:var(--paper-dim);line-height:1.6}
+.shape-body p:last-child{margin-bottom:0}
+.shape-body p b{color:var(--paper);font-weight:600}
+.shape-meta{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--rule-soft)}
+.shape-meta div{flex:1;min-width:88px;padding:11px 20px;border-right:1px solid var(--rule-soft)}
+.shape-meta div:last-child{border-right:0}
+.shape-meta dt{font-family:var(--mono);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.shape-meta dd{margin:0;font-family:var(--mono);font-size:13px;color:var(--paper)}
+.shape-meta dd.g{color:var(--jade)}
+.shape-meta dd.r{color:var(--red)}
+
+/* day accordion */
+.days{border-top:1px solid var(--rule)}
+.day{border-bottom:1px solid var(--rule)}
+.day-btn{all:unset;box-sizing:border-box;display:grid;width:100%;cursor:pointer;grid-template-columns:76px 1fr auto;gap:0 clamp(14px,2.4vw,30px);align-items:baseline;padding:clamp(13px,1.8vw,18px) 4px;transition:background .18s ease}
+.day-btn:hover{background:rgba(242,169,60,.05)}
+.day-btn:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.day-date{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.1em}
+.day-date small{display:block;color:var(--muted);font-size:9.5px;letter-spacing:.14em;margin-top:3px}
+.day-btn>span:nth-child(2){display:flex;flex-direction:column;gap:6px}
+.day-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(22px,3.2vw,34px);line-height:.95;margin:0}
+.day-sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.day-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--paper-dim);text-align:right;white-space:nowrap}
+.day-meta .chev{display:inline-block;margin-left:12px;color:var(--muted);transition:transform .25s ease}
+.day.open .day-meta .chev{transform:rotate(180deg)}
+@media (max-width:720px){.day-btn{grid-template-columns:64px 1fr;row-gap:8px}.day-meta{grid-column:2;text-align:left}}
+.day-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .34s cubic-bezier(.3,.8,.3,1)}
+.day.open .day-body{grid-template-rows:1fr}
+.day-inner{overflow:hidden}
+.day-pad{padding:2px 4px clamp(22px,3vw,32px)}
+.slots{display:grid;gap:0;border-left:1px solid var(--rule)}
+.slot{padding:0 0 16px 16px;position:relative}
+.slot:last-child{padding-bottom:2px}
+.slot::before{content:"";position:absolute;left:-4px;top:6px;width:7px;height:7px;background:var(--amber);border-radius:50%}
+.slot.move::before{background:var(--magenta)}
+.slot h4{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 5px;font-weight:500}
+.slot.move h4{color:var(--magenta)}
+.slot p{margin:0;font-size:14px;line-height:1.62;color:var(--paper-dim);max-width:72ch}
+.slot p b{color:var(--paper);font-weight:600}
+
+/* worth doing */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.fbtn{all:unset;cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border:1px solid var(--rule);color:var(--paper-dim);border-radius:2px;transition:.15s}
+.fbtn:hover{background:var(--ink-3);color:var(--paper)}
+.fbtn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.fbtn[aria-pressed="true"]{background:var(--amber);color:var(--ink);border-color:var(--amber);font-weight:600}
+.fdiv{width:1px;background:var(--rule);margin:2px 6px}
+.items{display:grid;gap:1px;background:var(--rule-soft);border:1px solid var(--rule)}
+.item{background:var(--ink-2);padding:13px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:baseline}
+.item .tier{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:3px 7px 2px;border-radius:2px;white-space:nowrap;align-self:start;margin-top:2px}
+.tier.do{background:rgba(88,196,163,.14);color:var(--jade);border:1px solid rgba(88,196,163,.35)}
+.tier.opt{background:rgba(242,169,60,.12);color:var(--amber);border:1px solid rgba(242,169,60,.3)}
+.tier.skip{background:rgba(224,85,85,.1);color:var(--red);border:1px solid rgba(224,85,85,.3)}
+.item .nm{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:20px;line-height:1.05;color:var(--paper)}
+.item .why{grid-column:2;font-size:13.3px;color:var(--paper-dim);line-height:1.55;max-width:74ch}
+.item .why b{color:var(--paper);font-weight:600}
+.item .when{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);text-align:right;white-space:nowrap;align-self:start;margin-top:4px}
+.item .when.book{color:var(--magenta)}
+@media (max-width:640px){.item{grid-template-columns:auto 1fr}.item .when{grid-column:2;text-align:left;margin-top:2px}.item .why{grid-column:1/-1}}
+.empty{background:var(--ink-2);padding:22px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* rail calc */
+.calc{border:1px solid var(--rule);background:var(--ink-2)}
+.calc-legs{display:grid}
+.leg-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--rule-soft);cursor:pointer}
+.leg-row:hover{background:rgba(242,169,60,.04)}
+.leg-row input{accent-color:var(--amber);width:15px;height:15px;cursor:pointer}
+.leg-row .lname{font-family:var(--mono);font-size:12.5px;color:var(--paper-dim)}
+.leg-row input:checked+.lname{color:var(--paper)}
+.leg-row .lyen{font-family:var(--mono);font-size:12.5px;color:var(--amber);font-variant-numeric:tabular-nums;white-space:nowrap}
+.leg-row .lnote{grid-column:2/-1;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--muted);margin-top:-4px}
+.calc-out{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule-soft)}
+.calc-out div{background:var(--ink-3);padding:15px 17px}
+.calc-out dt{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.calc-out dd{margin:0;font-family:var(--display);font-weight:700;font-size:27px;line-height:1;font-variant-numeric:tabular-nums}
+.calc-out dd small{font-family:var(--mono);font-size:10px;font-weight:400;color:var(--paper-dim);margin-left:4px;letter-spacing:.06em}
+#verdict{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;line-height:1.5}
+#verdict.win{color:var(--jade)}
+#verdict.lose{color:var(--red)}
+
+/* panels / tables */
+.panel{border:1px solid var(--rule);background:var(--ink-2);padding:clamp(17px,2.4vw,24px);margin-top:22px}
+.panel h3{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 12px;font-weight:500}
+.panel p{margin:0 0 12px;font-size:13.6px;color:var(--paper-dim);line-height:1.62}
+.panel p:last-child{margin-bottom:0}
+.panel p b{color:var(--paper);font-weight:600}
+table.ref{width:100%;border-collapse:collapse;font-size:13.4px}
+table.ref th{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:500;padding:0 14px 10px 0;border-bottom:1px solid var(--rule)}
+table.ref td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule-soft);color:var(--paper-dim);vertical-align:top}
+table.ref td:first-child{font-family:var(--display);font-size:17px;font-weight:600;text-transform:uppercase;color:var(--paper);white-space:nowrap;width:1%}
+table.ref td.t{font-family:var(--mono);font-size:11px;letter-spacing:.06em;white-space:nowrap;color:var(--amber)}
+table.ref tr.flag td.t{color:var(--magenta)}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.cols{display:grid;gap:16px 34px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:20px}
+.cols p{margin:0;font-size:13.6px;color:var(--paper-dim);line-height:1.6}
+.cols p b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:5px;font-weight:500}
+
+footer{border-top:1px solid var(--rule);padding-block:26px 40px;color:var(--muted)}
+.foot-grid{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:flex-end}
+.foot-grid p{margin:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase}
+.foot-mark{font-family:var(--display);font-size:clamp(40px,9vw,110px);font-weight:800;text-transform:uppercase;line-height:.8;color:transparent;-webkit-text-stroke:1px var(--rule);margin:30px 0 0}
+</style>
+
+<header class="hero">
+  <div class="gridbg"></div>
+  <div class="wrap">
+    <a class="back" href="index.html">← Westbound · the dossier</a>
+    <p class="strip">
+      <span><span class="k">Stop</span> <span class="amb">24 of 27</span></span>
+      <span><span class="k">In</span> ZNZ · Zanzibar</span>
+      <span><span class="k">Fly South Africa</span> <span class="amb">CPT</span></span>
+      <span><span class="k">Out</span> RAI · Praia</span>
+      <span><span class="k">Window</span> 28 Jan – 4 Feb 2027</span>
+      <span><span class="k">Clock</span> UTC+2</span>
+    </p>
+    <h1 class="title">
+      <span class="l1">Twenty-fourth stop</span>
+      <span class="l2">South&nbsp;Africa</span>
+    </h1>
+    <p class="subline">
+      <span>One base, seven nights</span><span class="sep">/</span>
+      <span>Best weather on the whole itinerary</span><span class="sep">/</span>
+      <span>Getting out is the problem</span>
+    </p>
+
+    <dl class="instr">
+      <div><dt>Calendar days</dt><dd>7</dd></div>
+      <div><dt>Full days</dt><dd class="hot">6</dd></div>
+      <div><dt>Nights</dt><dd>7</dd></div>
+      <div><dt>Bases</dt><dd>1</dd></div>
+      <div><dt>Feb rain</dt><dd>8<span>mm</span></dd></div>
+      <div><dt>Nonstops to Praia</dt><dd class="warn">0</dd></div>
+    </dl>
+  </div>
+</header>
+
+<section class="section" id="audit">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">01</span> The time audit</p>
+    <h2 class="head">The most<br>generous week</h2>
+    <p class="lede">After twenty-three stops of three and four-night sprints, this is the one with room in it. Seven nights, <b>one base</b>, no internal moves, and the best weather on the entire itinerary. You land on the evening of the 28th and the outbound flight is an evening departure too, which means the 4th stays usable — so the real budget is <b>six full days plus two workable fragments</b>.</p>
+
+    <div class="figcap">
+      <span>Fig. 1 — What the week actually contains</span>
+      <span><b>28 Jan – 4 Feb</b> · hour by hour</span>
+    </div>
+    <div class="scroller">
+      <svg id="audit-chart" viewBox="0 0 1400 190" role="img" aria-label="Timeline of 28 January to 4 February showing the 28th consumed by the connection from Zanzibar via Johannesburg, six usable full days from the 29th to the 3rd, and a usable final day on the 4th before an evening departure."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--magenta);opacity:.55"></i>In transit<i style="background:rgba(242,169,60,.35)"></i>Part day<i style="background:var(--amber)"></i>Full day</p>
+
+    <div class="cols">
+      <p><b>No jet lag to speak of</b>Zanzibar is UTC+3 and Cape Town is UTC+2. You lose an hour. After the thirteen-hour whiplash of the Tokyo arrival and the long grind up the Gulf, this stop asks nothing of your body clock at all — which is just as well, because the days here are physical ones.</p>
+      <p><b>The weather sets the order, not the calendar</b>Almost everything worth doing in Cape Town is outdoors and at altitude or at sea. Table Mountain, Cape Point, Lion's Head and the Robben Island ferry are all cancellable by wind. Do not build a fixed schedule. Build a list, check the mountain every morning, and spend the clear days high.</p>
+      <p><b>Build in a float day</b>With six full days you can afford to hold one — 2 February in the plan below — entirely in reserve. Something will blow out. When the south-easter runs for two days straight, which it does in February, that reserve is the difference between seeing the mountain and not.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="flags">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">02</span> Two things that don't move</p>
+    <h2 class="head">Both ends<br>are broken</h2>
+    <p class="lede">The stop itself is the easiest on the itinerary. The flights either side of it are the hardest. Both were found in research, both are fixable, and both are cheaper to fix now than in January.</p>
+
+    <div class="cards">
+      <div class="card bad">
+        <h3>Getting in: Thursday has no nonstop</h3>
+        <div class="verdict bad">Filed separately · fix is straightforward</div>
+        <p>Airlink's Cape Town–Zanzibar nonstop, launched 3 October 2026, is the only nonstop on the route and it operates <b>once a week, on Saturdays</b> — 4Z357, ZNZ 15:30 → CPT 20:50. The handoff date is <b>Thursday 28 January</b>. There is no flight.</p>
+        <p>Slipping to the Saturday costs two of Cape Town's seven days, which is the wrong trade on the stop with the most to do and the most weather risk.</p>
+        <div class="fix"><b>The fix</b>Airlink <strong>4Z11, ZNZ 12:00 → JNB 14:55, operates Mondays and Thursdays</strong> — the 28th is a scheduled day. Connect onto the Johannesburg–Cape Town shuttle (Airlink, FlySafair, SAA and Lift all fly it many times daily) and you are in Cape Town mid-evening on the 28th, date unchanged. Buy it on one PNR; allow <strong>three hours at JNB</strong>, because it is an international-to-domestic transfer with immigration and a bag re-check. Avoid the Nairobi and Addis routings — both hubs sit on South Africa's yellow-fever list and a long delay there creates an entry problem at Cape Town that cannot be solved airside.</div>
+      </div>
+
+      <div class="card bad">
+        <h3>Getting out: there is no route to Praia</h3>
+        <div class="verdict bad">Worth restructuring the itinerary for</div>
+        <p>Cape Town to Praia is 7,037 km and there is <b>no nonstop and no one-stop</b>. Praia's only intercontinental gateways are Lisbon, Casablanca, Dakar and Bissau; Cape Town flies to none of them, and TAP's Johannesburg–Lisbon nonstop has been dead since March 2025.</p>
+        <p>Every workable routing runs <b>north to Europe, then back south-west</b>: three flights, roughly 30–32 hours. Leave on the evening of the 4th and you reach Praia in the small hours of the <b>6th</b>. Cape Verde has four nights; two of them go to the journey.</p>
+        <div class="fix"><b>The fix</b>Swap stops 25 and 26 — <strong>Cape Town → Morocco → Cape Verde → Lisbon</strong>. Casablanca–Praia is a 3h50 Royal Air Maroc nonstop five days a week, and Praia–Lisbon is TAP once or twice daily. Every leg becomes nonstop or a single connection, the double backtrack disappears, and nothing is lost seasonally — both countries are dry and mild across the whole 4–14 February span. Full working in <strong>flag-capetown-praia-no-route</strong>; section 03 below lays out the alternative.</div>
+      </div>
+
+      <div class="card good">
+        <h3>The window itself is perfect</h3>
+        <div class="verdict ok">Nothing to fix</div>
+        <p>February is the Cape's driest and most settled month — <b>8&nbsp;mm of rain</b> across the month against 85&nbsp;mm in July, an average high of <b>28.4°C</b>, and <b>4.6 rainy days</b>, the fewest of any month in the year. Eleven hours of sunshine a day.</p>
+        <p>You also arrive <i>after</i> the South African school holidays, which end in mid-January. Late January and February are the sweet spot: summer weather without the domestic crush that fills every Camps Bay restaurant between Christmas and the second week of January.</p>
+        <div class="fix"><b>The catch, such as it is</b>February is also peak south-easter. The Cape Doctor blows October to March, builds through the afternoon, and closes the cableway above roughly <strong>60 km/h at the summit</strong>. It is a scheduling problem, not a weather problem — see section 06.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="shapes">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">03</span> The open question</p>
+    <h2 class="head">The road<br>to Praia</h2>
+    <p class="lede">This is a decision about the <i>next two stops</i>, not this one, but it has to be made before anything gets booked — and it is made easier by the fact that neither Morocco nor Cape Verde has a date-bound reason to sit where it currently sits. Both are dry and mild across the whole of early February.</p>
+
+    <div class="figcap">
+      <span>Fig. 2 — Getting from Cape Town to the next stop</span>
+      <span><b>Elapsed door-to-door</b> · flights and hubs</span>
+    </div>
+    <div class="scroller">
+      <svg id="route-chart" viewBox="0 0 1400 300" role="img" aria-label="Horizontal bar chart comparing routings out of Cape Town. Cape Town to Praia via a European hub and Lisbon takes about 30 to 32 hours on three flights. Cape Town to Casablanca via Paris takes about 19 hours on two flights, and Casablanca to Praia is a 3 hour 50 minute nonstop."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--red);opacity:.65"></i>Current order<i style="background:var(--jade);opacity:.7"></i>Swapped order · elapsed times are indicative and include realistic connection time</p>
+
+    <div class="shapes" style="margin-top:26px">
+      <div class="shape pick">
+        <div class="shape-hd">
+          <div class="shape-tag">Recommended</div>
+          <p class="shape-name">Swap 25 and 26</p>
+        </div>
+        <div class="chainrow">
+          <span>CPT</span><span class="a">→</span>
+          <span>Morocco <span class="n">6N</span></span><span class="a">→</span>
+          <span>Cape Verde <span class="n">4N</span></span><span class="a">→</span>
+          <span class="n">LIS</span>
+        </div>
+        <div class="shape-body">
+          <p>Cape Town to Casablanca is one European connection — <b>CDG–CMN runs several times daily</b> on Royal Air Maroc and Air France, so an overnight out of Cape Town puts you in Morocco the following afternoon. Then Casablanca–Praia is a <b>3h50 nonstop</b>: AT591 Tuesdays, Fridays and Sundays, AT595 Thursdays and Saturdays, both at 21:30. Praia–Lisbon is TAP, one or two daily, 4h30, straight into the final stop.</p>
+          <p>Suggested dates: <b>Morocco 4–10 Feb, Cape Verde 10–14 Feb</b>, Lisbon from the 14th as written. A 10 February Praia arrival needs a Tuesday departure from Casablanca — AT591 flies Tuesdays, so it lands. The 11th and 13th also fall on operating days if the Morocco leg wants a day more or less.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Flights out</dt><dd class="g">2</dd></div>
+          <div><dt>Longest hop</dt><dd class="g">≈19h</dd></div>
+          <div><dt>Nights lost</dt><dd class="g">0</dd></div>
+          <div><dt>Backtracks</dt><dd class="g">1</dd></div>
+        </dl>
+      </div>
+
+      <div class="shape">
+        <div class="shape-hd">
+          <div class="shape-tag">If the order is fixed</div>
+          <p class="shape-name">Keep 25 and 26</p>
+        </div>
+        <div class="chainrow">
+          <span>CPT</span><span class="a">→</span>
+          <span class="n">LHR/CDG/AMS</span><span class="a">→</span>
+          <span class="n">LIS</span><span class="a">→</span>
+          <span>Cape Verde <span class="n">2N</span></span><span class="a">→</span>
+          <span>Morocco</span>
+        </div>
+        <div class="shape-body">
+          <p>Depart Cape Town on the evening of the 4th, cross overnight to London, Paris or Amsterdam, connect to Lisbon, and take TAP's <b>20:50 Lisbon–Praia</b>. Arrival is around <b>00:20 on the 6th</b>. The morning TAP departure at 09:00 is the alternative and it needs a Lisbon hotel, which pushes arrival to midday on the 6th.</p>
+          <p>Cape Verde becomes an effective <b>6–8 February</b> — two nights, not four — on an island stop whose entire point is slowing down. Then you fly back north-east to Casablanca and north again to Lisbon, crossing your own path twice.</p>
+          <p><b>The one thing in its favour:</b> the Cape Town week is untouched. Leaving a day early to recover a Cape Verde night is the worse version of this — Cape Town is the weather-dependent stop and its last day is the weather reserve.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Flights out</dt><dd class="r">3</dd></div>
+          <div><dt>Longest hop</dt><dd class="r">≈32h</dd></div>
+          <div><dt>Nights lost</dt><dd class="r">2</dd></div>
+          <div><dt>Backtracks</dt><dd class="r">3</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Why there is no third option</h3>
+      <p><b>Dakar.</b> Praia–Dakar is a busy short hop — around 29 flights a month — and on a map it is the obvious way in from the south. Cape Town has no service to Dakar and no one-stop worth the name. Dead end.</p>
+      <p><b>Sal instead of Praia.</b> Sal has more European charter and scheduled traffic than Praia does, and inter-island hops to Praia are frequent. It does not help: you still have to reach Europe first, so it adds a leg rather than removing one.</p>
+      <p><b>A Southern African hub.</b> Johannesburg used to be the answer — TAP flew it to Lisbon nonstop. <b>That route's last scheduled flight was 24 March 2025.</b> Royal Air Maroc does not serve Johannesburg or Cape Town either. There is currently no African-side shortcut at all.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="run">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">04</span> Day by day</p>
+    <h2 class="head">Seven nights,<br>one bed</h2>
+    <p class="lede">Two versions, because the single biggest practical decision in Cape Town is whether you rent a car. The peninsula and the Winelands are both genuinely hard without one and both have workarounds. Treat the order below as provisional — <b>check the mountain every morning and swap days freely</b>. The only fixed points are the Robben Island sailing and, if you want it, a Sunday concert.</p>
+    <div class="filters" id="dayToggle" style="margin-bottom:6px">
+      <button class="fbtn" data-plan="car" aria-pressed="true">With a car</button>
+      <button class="fbtn" data-plan="nocar" aria-pressed="false">Without one</button>
+    </div>
+    <div class="days" id="days"></div>
+    <p class="fignote" style="margin-top:16px">Amber = on foot or local · <span style="color:var(--magenta)">Magenta = a drive, a boat or a flight</span></p>
+  </div>
+</section>
+
+<section class="section" id="worth">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">05</span> What's actually worth doing</p>
+    <h2 class="head">Do, maybe,<br>don't bother</h2>
+    <p class="lede">Sorted by where it is, then by whether it earns a slot in a week that — for once — has a few spare. The <b>don't bother</b> entries are mostly fine things beaten by something else on the same list, with two exceptions that are here because they are genuinely bad ideas.</p>
+
+    <div class="filters" id="filters">
+      <button class="fbtn" data-city="all" aria-pressed="true">All</button>
+      <button class="fbtn" data-city="City" aria-pressed="false">City Bowl</button>
+      <button class="fbtn" data-city="Peninsula" aria-pressed="false">Peninsula</button>
+      <button class="fbtn" data-city="Winelands" aria-pressed="false">Winelands</button>
+      <button class="fbtn" data-city="Further" aria-pressed="false">Further out</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-tier="do" aria-pressed="false">Do</button>
+      <button class="fbtn" data-tier="opt" aria-pressed="false">Maybe</button>
+      <button class="fbtn" data-tier="skip" aria-pressed="false">Don't bother</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-book="1" aria-pressed="false">Needs booking</button>
+    </div>
+    <div class="items" id="items"></div>
+  </div>
+</section>
+
+<section class="section" id="mountain">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">06</span> The mountain and the wind</p>
+    <h2 class="head">Go up on<br>the first<br>clear morning</h2>
+    <p class="lede">Table Mountain is the reason the week has a float day. The cableway closes for wind — above roughly <b>60 km/h at the summit, or gusts past 90</b> — and February is peak south-easter season. The wind is also diurnal: it builds through the day and peaks mid-to-late afternoon. So the rule is simple and unromantic. <b>Whichever morning is calm and clear, go up that morning</b>, whatever else was on the list.</p>
+
+    <div class="figcap">
+      <span>Fig. 3 — Why the window is right, and what it costs</span>
+      <span><b>Cape Town</b> · rainfall by month</span>
+    </div>
+    <div class="scroller">
+      <svg id="rain-chart" viewBox="0 0 1400 300" role="img" aria-label="Bar chart of average monthly rainfall in Cape Town, peaking at 85 millimetres in May and July and falling to a minimum of 8 millimetres in February, the travel month."></svg>
+    </div>
+    <p class="fignote">Monthly averages · February is the driest month of the year and has the fewest rainy days, 4.6</p>
+
+    <div class="cols">
+      <p><b>Two ways up</b>The cableway is <b>R475 return online</b>, R530 at the ticket office, for the year from 1 July 2026. Buy online the morning you go — tickets are valid seven days, so a closure does not burn them. The walk up is <b>Platteklip Gorge</b>: about two hours, relentlessly steep, no shade, no water. Start at first light or don't start. Many people walk up and ride down, which is the right way round and costs R300 one-way.</p>
+      <p><b>Check before you leave the hotel</b>The cableway publishes its operating status each morning and it changes fast. A clear sky at sea level tells you nothing — the tablecloth cloud forms on the summit in a south-easter while Sea Point is in full sun. If it is shut and the sky is good, <b>Lion's Head</b> is the substitute: 45 minutes up, chains and ladders near the top, and arguably a better view because Table Mountain is in it.</p>
+      <p><b>Hiking safety is a real thing</b>Canada's own advisory notes attacks on hikers on both Table Mountain and Lion's Head. Go in a group, stay on the main routes, go in daylight, and don't take a phone out on an empty path. The full-moon Lion's Head walk is popular partly because the numbers make it safe.</p>
+      <p><b>Fire season</b>Late summer is when the Cape burns. Fynbos needs fire and the mountain has large ones most years — the 2025 blaze closed parts of the park. If a fire is running, trails and sometimes the cableway shut with no notice. It is another argument for taking the first good morning rather than the convenient one.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="tally">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">07</span> The money</p>
+    <h2 class="head">Cheap country,<br>paid sights</h2>
+    <p class="lede">Cape Town is inexpensive to eat and sleep in and surprisingly expensive to <i>enter</i> — almost everything worth seeing has a gate and a two-tier price, with international visitors paying several times the local rate. Tick what you'll actually do. Conservation fees below are the published <b>2025/26</b> tariff; SANParks raises them every 1 November, so budget a little more for February.</p>
+
+    <div class="calc">
+      <div class="calc-legs" id="legs"></div>
+      <dl class="calc-out">
+        <div><dt>Total, rand</dt><dd id="ptp"></dd></div>
+        <div><dt>Roughly, CAD</dt><dd id="cad"></dd></div>
+        <div><dt>Gates chosen</dt><dd id="cnt"></dd></div>
+        <div><dt>Verdict</dt><dd><span id="verdict"></span></dd></div>
+      </dl>
+    </div>
+    <p class="fignote">Converted at roughly R13 to the Canadian dollar — check the rate, it moves · prices verified Sept 2026</p>
+
+    <div class="panel">
+      <h3>What isn't on the list</h3>
+      <p><b>Food and wine.</b> The single best thing about this stop financially. A very good restaurant dinner costs a fraction of its Tokyo or Dubai equivalent, and the wine on the list is world-class and local. Cellar-door tastings run <b>R60 to R260</b> a person and are frequently waived if you buy a bottle.</p>
+      <p><b>Getting around.</b> Uber and Bolt both work well and are cheap in Cape Town — for the City Bowl, Sea Point and the Waterfront you do not need a car at all. Car hire is for the peninsula and the Winelands, and those are the only two days that need it.</p>
+      <p><b>The Wild Card.</b> If the tally above clears roughly R1,500 of SANParks gates, look at an international Wild Card cluster for the Cape parks before you buy day tickets. It is a marginal call on one week; do the sum at booking with the then-current tariff.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="admin">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">08</span> Ground rules</p>
+    <h2 class="head">Before you land</h2>
+
+    <div class="tablewrap">
+    <table class="ref">
+      <thead><tr><th>Item</th><th>What to do</th><th>When</th></tr></thead>
+      <tbody>
+        <tr><td>Entry</td><td>Visa-free for Canadians for up to 90 days. The stamp is issued at the border and the officer decides the length — the full 90 is not automatic, so have onward flight details ready.</td><td class="t">Nothing to do</td></tr>
+        <tr class="flag"><td>Blank pages</td><td><b>Two completely empty visa pages are mandatory.</b> Without them you are refused entry. On a 27-country trip with 23 stamps already in the book, check this before you leave Toronto, not in Zanzibar.</td><td class="t">Check now</td></tr>
+        <tr><td>Passport validity</td><td>Must be valid at least 30 days beyond your intended departure from South Africa.</td><td class="t">Check now</td></tr>
+        <tr class="flag"><td>ETA — watch this</td><td>South Africa's Electronic Travel Authorisation went live for ordinary passport holders from China, India, Indonesia and Mexico on 12 Feb 2026, and draft regulations gazetted 27 July 2026 propose a <b>R500 fee</b>. The stated plan is eventual expansion to visa-exempt markets. Canadians are not in scope today. <b>Recheck in December.</b></td><td class="t">Recheck Dec</td></tr>
+        <tr><td>Yellow fever</td><td>Not required arriving from Tanzania per DIRCO, but South African Tourism's list still names Tanzania and airline staff check whichever list they hold. A certificate costs nothing to carry and must be given 10+ days before arrival — decide months out.</td><td class="t">Decide now</td></tr>
+        <tr><td>Power</td><td>Load shedding is over. Eskom passed 300 consecutive days without it and declared the crisis ended in February 2026. Bring the adapter anyway — South Africa uses the unusual round three-pin Type M alongside Type C and N.</td><td class="t">Adapter only</td></tr>
+        <tr><td>Water</td><td>Cape Town tap water is safe to drink. Day Zero was 2018 and the dams have recovered, but the city stays water-conscious — short showers are the local norm and the signs in every bathroom are not decorative.</td><td class="t">Drink it</td></tr>
+        <tr class="flag"><td>Airport road</td><td>Canada's advisory names the roads around Cape Town International as an attack risk. <b>Use the N2 and M3, not the R300</b>, and avoid Borcherds Quarry Road. Take a metered ride or a pre-booked transfer rather than a random offer in the terminal.</td><td class="t">On arrival</td></tr>
+        <tr><td>General safety</td><td>Advisory level is "exercise a high degree of caution". The practical version: don't walk with a visible phone, don't walk the city at night, use Uber after dark even for six blocks, and don't hike alone.</td><td class="t">Throughout</td></tr>
+        <tr><td>Driving</td><td>Left-hand side. A Canadian licence in English is accepted; an International Driving Permit is cheap insurance against a confused rental desk. Petrol stations are full-service and tip about R10. Watch for minibus taxis, which stop without warning.</td><td class="t">If renting</td></tr>
+        <tr class="flag"><td>Robben Island</td><td><b>R650</b>, three sailings a day at 09:00, 11:00 and 13:00, about four hours round trip. Tickets release three to four months out and December–March sells out. Roughly one sailing in eight is cancelled for swell — book early in the week so there's room to rebook.</td><td class="t">Book now</td></tr>
+        <tr><td>Money</td><td>Cards work almost everywhere including small cafés; tap is universal. Carry a little cash for car guards, who watch parked cars for R5–R10 and are a real institution, not a scam. Tip 10–15% in restaurants.</td><td class="t">On arrival</td></tr>
+        <tr><td>Public holidays</td><td>Nothing lands in the window. The next one is Human Rights Day on 21 March.</td><td class="t">Clear</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="cols">
+      <p><b>Where to stay</b>One base for seven nights. The <b>City Bowl</b> — Gardens, Tamboerskloof, Oranjezicht — puts you walking distance from the restaurants and ten minutes from the cableway road, and it is the right answer. Sea Point is flatter, breezier and good for the promenade. Camps Bay is beautiful, expensive and inconvenient to everything except its own beach. The V&A Waterfront is safe, sterile and where the Robben Island ferry leaves from.</p>
+      <p><b>The two-tier gate</b>Almost every park and museum charges international visitors several times the South African rate — Kirstenbosch is R270 against R110, Cape Point R515 against a local fraction. This is normal, it is not a scam, and arguing about it at the gate marks you out. Budget for it and move on.</p>
+      <p><b>Harvest</b>You arrive in the middle of vintage. Late January through February is when the Winelands actually work — trucks of grapes on the roads, cellars open and loud, and estates running harvest events. It is the best possible month to be there and the worst for spontaneous cellar tours, since everyone is busy. Book tastings a day or two ahead.</p>
+      <p><b>The wind, once more</b>If the south-easter is running, the Atlantic beaches — Camps Bay, Clifton, Llandudno — are unusable, and False Bay on the other side of the peninsula is calm. Muizenberg, Fish Hoek and Kalk Bay are the wind day answer, and the water there is ten degrees warmer besides.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <p>Westbound · stop 24 · South Africa</p>
+      <p>28 Jan – 4 Feb 2027 · ZNZ in, RAI out</p>
+      <p>Fares, fees and schedules verified Sept 2026 — recheck before booking</p>
+    </div>
+    <p class="foot-mark">Table Mountain → Cape Point</p>
+  </div>
+</footer>
+<script>
+/* ============ DAY-BY-DAY ============ */
+const ARRIVE=[
+  {m:1,h:'12:00 · Zanzibar → Johannesburg',p:'Airlink 4Z11, ZNZ 12:00 → JNB 14:55. Bags in the car around 08:45. This is the Thursday workaround for the Saturday-only nonstop — see the card above.'},
+  {m:1,h:'15:00 · The JNB transfer',p:'International arrival, South African immigration, reclaim, re-check for the domestic hop. <b>Three hours is comfortable, two is the floor.</b> This is where your two blank passport pages get used.'},
+  {m:1,h:'19:30 · Land at CPT',p:'Johannesburg–Cape Town is the densest domestic corridor in Africa, so a misconnect costs an hour rather than a night. Pre-book the transfer into town, and take the N2, not the R300.'},
+  {h:'21:00 · Dinner near the bed',p:'Kloof Street if you’re in the City Bowl — it runs on late and nothing needs booking on a Thursday. One glass of something Stellenbosch and sleep. There is no jet lag to fight: you lost exactly one hour.'}
+];
+const DEPART=[
+  {h:'08:00 · Whatever the wind took',p:'Last call on the one thing the week didn’t deliver. If the mountain never opened, this is the morning to check it one final time — the cableway runs from 08:00 and tickets bought online are valid seven days.'},
+  {h:'11:00 · Sea Point and a long breakfast',p:'The promenade from Mouille Point to Bantry Bay, then breakfast somewhere on Regent Road. A flat, unhurried, entirely un-South-African-feeling last morning.'},
+  {m:1,h:'16:00 · To CPT',p:'Twenty-five minutes without traffic, closer to fifty at rush hour. Long-haul out of Cape Town almost all departs in the evening, so the day survives — but check in early, the international queues here are slow.'},
+  {m:1,h:'· Next stop',p:'This is the leg with the problem. Under the current order it is three flights and about 32 hours to Praia via Europe; under the recommended swap it is two flights to Casablanca. Section 03 has the working.'}
+];
+const DAYS_CAR=[
+ {d:'Thu 28',w:'Arrive',name:'Cape Town',sub:'Via Johannesburg · land 19:30',meta:'Night 1',slots:ARRIVE},
+ {d:'Fri 29',w:'Full',name:'The Mountain',sub:'If it’s clear, go up',meta:'Night 2',slots:[
+  {h:'07:00 · Check the cableway',p:'Before anything else. The status changes by the hour and a clear sky at street level tells you nothing about the summit. <b>If it is open and calm, everything below moves.</b> The wind builds through the day, so first cars are the safe cars.'},
+  {h:'08:00 · Table Mountain',p:'R475 return online, or walk Platteklip Gorge in about two hours and ride down for R300. The top is a plateau, not a viewpoint — give it two hours and walk out to the far cairns where nobody goes.'},
+  {h:'12:00 · Bo-Kaap',p:'The Cape Malay quarter on the slope of Signal Hill: painted houses, the oldest mosque in the country, and a community that is thoroughly tired of being photographed. Walk it, buy something, ask before you point a camera at a door.'},
+  {h:'14:00 · District Six Museum',p:'Small, and the most important room in Cape Town. Sixty thousand people were removed from this neighbourhood and the floor is a hand-annotated map of where they lived. An hour, and it reframes everything else you see this week.'},
+  {h:'17:00 · Bree Street',p:'The eating street. Wine bars, small plates, a queue outside at least one place. Cape Town dines early by European standards and late by South African ones.'}
+ ]},
+ {d:'Sat 30',w:'Full',name:'The Peninsula',sub:'Cape Point, penguins, the long way round',meta:'Night 3',slots:[
+  {m:1,h:'07:30 · Out along Chapman’s Peak',p:'Anticlockwise: Camps Bay, Llandudno, Hout Bay, then the toll road carved into the cliff — <b>R68 for a car, each way</b>. Nine kilometres, 114 curves, and worth the money. It closes in high wind and after rockfall; check before you commit.'},
+  {m:1,h:'09:30 · Cape of Good Hope',p:'<b>R515 per international adult.</b> Park at Cape Point, walk up to the old lighthouse rather than taking the funicular, then drive the few minutes to the Cape of Good Hope sign for the other photo. Baboons here will open an unlocked car — leave nothing visible.'},
+  {h:'13:00 · Boulders',p:'<b>R245.</b> A colony of African penguins that walked onto a suburban beach in 1982 and stayed. The June 2026 census counted 790 breeding pairs, up from 698 — a rare good year for a species with under 10,000 pairs left anywhere.'},
+  {h:'15:00 · Kalk Bay',p:'A working fishing harbour that never got smartened up, plus secondhand bookshops and the best fish lunch on the peninsula. Seals on the slipway. Stay for the light.'},
+  {m:1,h:'18:30 · Back over the neck',p:'Home via Boyes Drive or the M3 through Constantia. Total driving is around three hours across the day — the rest is stops.'}
+ ]},
+ {d:'Sun 31',w:'Full',name:'Winelands',sub:'Harvest is happening',meta:'Night 4',slots:[
+  {m:1,h:'08:30 · East to Franschhoek',p:'An hour on the N1. You arrive mid-vintage — trucks of grapes on the road, cellar doors loud, the whole valley working. It is the best month to be here and the worst for turning up unannounced.'},
+  {h:'10:00 · The Wine Tram',p:'<b>R350</b> hop-on hop-off across five colour-coded lines. Tastings are extra, R60–R260 an estate. It exists to solve the drink-driving problem and it solves it well — leave the car at the Franschhoek terminus. Book the line and the departure ahead.'},
+  {h:'15:00 · Franschhoek village',p:'One long street of restaurants at prices that would be absurd anywhere else and are merely high here. Or skip it and stay on the tram for a fourth estate.'},
+  {m:1,h:'17:30 · Kirstenbosch',p:'Back via the M3 for the <b>Summer Sunset Concert</b> — Sundays from late November into April, on the lawn below the mountain, blanket and a picnic. Tickets through Webtickets and the good acts sell out. Check the season’s line-up when it lands.'}
+ ]},
+ {d:'Mon 01',w:'Full',name:'Robben Island',sub:'And the Atlantic side',meta:'Night 5',slots:[
+  {m:1,h:'09:00 · The ferry',p:'<b>R650</b>, from the Nelson Mandela Gateway at the V&A. Thirty minutes each way, about four hours all in — a bus tour of the island and then the prison, led by a former political prisoner. Book months out; roughly one sailing in eight is cancelled for swell.'},
+  {h:'13:30 · Zeitz MOCAA',p:'A 1920s grain silo cut open into a cathedral of concrete tubes, holding the largest collection of contemporary African art anywhere. Worth it for the building alone, and the rooftop looks straight back at the mountain.'},
+  {h:'16:00 · Sea Point Promenade',p:'Eleven kilometres of seafront where the whole city walks, runs and pushes prams. Public art, tidal pools, and the most relaxed hour you will spend here.'},
+  {h:'18:30 · Lion’s Head',p:'Forty-five minutes up, chains and ladders near the summit, and the best view in Cape Town because Table Mountain is in it. Go in a group, bring a head torch for the descent, and go on the clearest evening of the week.'}
+ ]},
+ {d:'Tue 02',w:'Float',name:'Reserve',sub:'Whatever the wind cancelled',meta:'Night 6',slots:[
+  {h:'· Hold this day',p:'The single most useful thing in the week. The south-easter runs for two and three days at a stretch in February; the cableway, the ferry and the peaks all fall to it. <b>Do not book anything here.</b>'},
+  {h:'If the mountain is finally open',p:'Go. Everything else on this page can wait. Second choice, if it opened on the Friday: the <b>Silvermine</b> reservoir and Elephant’s Eye cave, R200, a gentler two-hour walk with the whole peninsula laid out below.'},
+  {h:'If it’s blowing',p:'Cross to False Bay, where the south-easter is offshore and the water is ten degrees warmer. Muizenberg’s beach huts and a surf lesson, then Kalk Bay. Or stay in town: the Iziko South African Museum, the Company’s Garden, the Castle of Good Hope.'},
+  {h:'If you want the other Cape Town',p:'A guided township food tour in Langa or Gugulethu, booked through an operator based there. It is the half of the city the rest of this itinerary doesn’t go near, and going independently is not the move.'}
+ ]},
+ {d:'Wed 03',w:'Full',name:'Constantia',sub:'Gardens, old vines, last dinner',meta:'Night 7',slots:[
+  {h:'09:00 · Kirstenbosch',p:'<b>R270</b> for international adults, open 08:00–19:00 in summer. Planted only with South African species on the mountain’s eastern slope. Do the Boomslang canopy walkway, then the fynbos beds, then keep climbing — Skeleton Gorge starts from the top of the garden.'},
+  {m:1,h:'12:30 · Groot Constantia',p:'Twenty-five minutes from the city and the oldest wine estate in the country, producing since the 1680s. The Constantia valley is closer, cooler and quieter than Stellenbosch, and if Sunday went to Franschhoek this is the unhurried version.'},
+  {h:'16:00 · Signal Hill',p:'Drive up for sunset over the Atlantic with the city on one side and Robben Island out in the bay. The noon gun fires from here every day except Sunday, which is worth knowing if you’re in town and hear artillery.'},
+  {h:'19:30 · The good dinner',p:'The one to spend on. Cape Town’s best restaurants cost a fraction of their equivalents in Tokyo or Dubai and the wine list is local and extraordinary. Book it the week you book the flights.'}
+ ]},
+ {d:'Thu 04',w:'Depart',name:'Out',sub:'Evening flight',meta:'Fly out',slots:DEPART}
+];
+const DAYS_NOCAR=[
+ {d:'Thu 28',w:'Arrive',name:'Cape Town',sub:'Via Johannesburg · land 19:30',meta:'Night 1',slots:ARRIVE},
+ {d:'Fri 29',w:'Full',name:'The Mountain',sub:'If it’s clear, go up',meta:'Night 2',slots:[
+  {h:'07:00 · Check the cableway',p:'Before anything else — the status changes by the hour and a clear sky at street level tells you nothing about the summit. If it is open and calm, everything below moves.'},
+  {h:'08:00 · Table Mountain',p:'Uber to the lower station; there is no parking problem to solve without a car and the ride is ten minutes from the City Bowl. R475 return online, or walk Platteklip and ride down for R300.'},
+  {h:'12:00 · Bo-Kaap and District Six',p:'Both walkable from the city centre and both better on foot. The Cape Malay quarter on Signal Hill’s slope, then the museum that explains why so much of the inner city is empty ground.'},
+  {h:'15:00 · Company’s Garden',p:'The original Dutch vegetable plot from 1652, now a shaded avenue running past the Iziko South African Museum and the National Gallery. Central, free, and a good place to sit.'},
+  {h:'17:00 · Bree Street',p:'The eating street, ten minutes’ walk from almost any City Bowl bed. Wine bars, small plates, no car to worry about.'}
+ ]},
+ {d:'Sat 30',w:'Full',name:'The Peninsula',sub:'Guided, or by the hour',meta:'Night 3',slots:[
+  {m:1,h:'08:00 · The full-day tour',p:'The honest answer without a car. A small-group peninsula day covers Chapman’s Peak, Cape Point and Boulders in one loop, and the conservation fees are usually extra rather than included — check, because they add R760 a head.'},
+  {h:'· The alternative',p:'Hire a driver for the day instead. In Cape Town this costs less than you’d expect and buys you the route on your own clock, which on a peninsula with baboons, viewpoints and a tide is worth a lot.'},
+  {h:'· What not to do',p:'Don’t try to string it together with Uber. Coverage thins south of Simon’s Town, Cape Point has effectively none, and you do not want to be solving that at 17:00 at a lighthouse.'},
+  {h:'· The train question',p:'The Southern Line to Simon’s Town runs beside the water and is beautiful. Service has been partially restored after years of collapse and reliability still varies — ask locally on the day rather than building the plan around it.'}
+ ]},
+ {d:'Sun 31',w:'Full',name:'Winelands',sub:'Harvest is happening',meta:'Night 4',slots:[
+  {m:1,h:'08:30 · Transfer to Franschhoek',p:'The Wine Tram sells a Cape Town transfer as an add-on, minimum 48 hours’ notice. Book it with the tram ticket and the whole day is solved in one transaction.'},
+  {h:'10:00 · The Wine Tram',p:'<b>R350</b> hop-on hop-off, five colour-coded lines, tastings extra at R60–R260. Three or four estates if you start early. Without a car this is not the compromise option — it is the best version of the day.'},
+  {h:'15:00 · Franschhoek village',p:'One long street of restaurants, walkable end to end, and the tram terminus is on it.'},
+  {m:1,h:'17:30 · Kirstenbosch',p:'Uber back for the <b>Summer Sunset Concert</b> — Sundays from late November into April, blanket on the lawn under the mountain. Tickets through Webtickets, and the good acts sell out.'}
+ ]},
+ {d:'Mon 01',w:'Full',name:'Robben Island',sub:'And the Atlantic side',meta:'Night 5',slots:[
+  {m:1,h:'09:00 · The ferry',p:'<b>R650</b> from the V&A Waterfront, which is a ten-minute Uber from anywhere central. Four hours all in, guided by a former political prisoner. Book months ahead; about one sailing in eight is cancelled for swell.'},
+  {h:'13:30 · Zeitz MOCAA',p:'Two minutes’ walk from the ferry gateway. A grain silo carved open into the largest contemporary African art museum anywhere.'},
+  {h:'16:00 · Sea Point Promenade',p:'Eleven flat kilometres of seafront. Walk it from the Waterfront end and get a ride back, or the other way round.'},
+  {h:'18:30 · Lion’s Head',p:'Uber to the Signal Hill Road trailhead. Forty-five minutes up, chains near the top, the best view in the city. Go in a group and carry a torch — and arrange the ride down before you start, because coverage at the trailhead after dark is patchy.'}
+ ]},
+ {d:'Tue 02',w:'Float',name:'Reserve',sub:'Whatever the wind cancelled',meta:'Night 6',slots:[
+  {h:'· Hold this day',p:'The south-easter runs for two and three days at a stretch in February and it closes the cableway, the ferry and the peaks. <b>Do not book anything here.</b>'},
+  {h:'If the mountain is finally open',p:'Go, and drop whatever was planned. Without a car the second choice is Kirstenbosch and the Skeleton Gorge path, both reachable by a single ride.'},
+  {h:'If it’s blowing',p:'Cross to False Bay, which is sheltered when the Atlantic side is not. Muizenberg for the beach huts and a surf lesson, Kalk Bay for lunch — both on the same road and both reachable without a car.'},
+  {h:'If you want the other Cape Town',p:'A guided food or history tour in Langa or Gugulethu with an operator based there, including transport. The half of the city this itinerary otherwise skips.'}
+ ]},
+ {d:'Wed 03',w:'Full',name:'Constantia',sub:'Gardens, old vines, last dinner',meta:'Night 7',slots:[
+  {h:'09:00 · Kirstenbosch',p:'<b>R270</b>, open until 19:00 in summer, twenty minutes by car from town. South African species only, planted up the mountain’s eastern slope, with the Boomslang canopy walkway through the trees.'},
+  {m:1,h:'12:30 · Groot Constantia',p:'Ten minutes further on and the oldest wine estate in the country, producing since the 1680s. Cooler and quieter than Stellenbosch, and close enough that a ride back is trivial.'},
+  {h:'16:00 · Signal Hill',p:'Sunset over the Atlantic with Robben Island out in the bay. Easy by ride; the road up is short.'},
+  {h:'19:30 · The good dinner',p:'The one to spend on, and cheap by the standards of everywhere else on this itinerary. Book it the week you book the flights.'}
+ ]},
+ {d:'Thu 04',w:'Depart',name:'Out',sub:'Evening flight',meta:'Fly out',slots:DEPART}
+];
+let CURRENT_PLAN='car';
+function renderDays(){
+  const DAYS = CURRENT_PLAN==='car' ? DAYS_CAR : DAYS_NOCAR;
+  document.getElementById('days').innerHTML=DAYS.map(D=>`
+  <div class="day">
+    <button class="day-btn" aria-expanded="false">
+      <span class="day-date">${D.d}<small>${D.w}</small></span>
+      <span><span class="day-name">${D.name}</span><span class="day-sub">${D.sub}</span></span>
+      <span class="day-meta">${D.meta}<span class="chev">▾</span></span>
+    </button>
+    <div class="day-body"><div class="day-inner"><div class="day-pad"><div class="slots">
+      ${D.slots.map(s=>`<div class="slot${s.m?' move':''}"><h4>${s.h}</h4><p>${s.p}</p></div>`).join('')}
+    </div></div></div></div>
+  </div>`).join('');
+  document.querySelectorAll('.day-btn').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const d=b.parentElement, open=d.classList.toggle('open');
+      b.setAttribute('aria-expanded',open?'true':'false');
+    });
+  });
+  document.querySelector('.day').classList.add('open');
+  document.querySelector('.day-btn').setAttribute('aria-expanded','true');
+}
+renderDays();
+document.getElementById('dayToggle').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  CURRENT_PLAN=b.dataset.plan;
+  document.querySelectorAll('#dayToggle .fbtn').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
+  renderDays();
+});
+
+/* ============ WORTH DOING ============ */
+const ITEMS=[
+{c:'City',t:'do',n:'Table Mountain',w:'R475 return online, R530 at the window. Go on the first calm, clear morning of the week whatever else was planned — the cableway closes above roughly 60 km/h at the summit and February is peak wind.',when:'First clear AM',b:1},
+{c:'City',t:'do',n:'Platteklip Gorge',w:'The walk up: about two hours, relentlessly steep, zero shade, and the only route that goes straight to the top. Walk up, ride down for R300. Start at first light or don’t start.',when:'Dawn'},
+{c:'City',t:'do',n:'Lion’s Head at sunset',w:'Forty-five minutes, chains and ladders near the summit, and a better view than the mountain itself because the mountain is in it. Go in a group; carry a torch for the way down.',when:'Clear evening'},
+{c:'City',t:'do',n:'District Six Museum',w:'Sixty thousand people removed from the inner city under apartheid, and a floor that is a hand-annotated map of where they lived. One hour, and it changes how the rest of the week reads.',when:'Closed Sun'},
+{c:'City',t:'do',n:'Bo-Kaap',w:'Painted houses on the slope of Signal Hill, the oldest mosque in South Africa, and a Cape Malay community thoroughly tired of being a backdrop. Walk it, eat there, ask before photographing anyone’s door.',when:'Any morning'},
+{c:'City',t:'do',n:'Zeitz MOCAA',w:'A 1920s grain silo cut open into a cathedral of concrete tubes, holding the biggest collection of contemporary African art anywhere. Worth the ticket for the building alone.',when:'Closed Tue'},
+{c:'City',t:'do',n:'Robben Island',w:'R650, four hours, three sailings daily, guided through the prison by a former political prisoner. Books out December–March and roughly one crossing in eight is cancelled for swell — go early in the week.',when:'Book 3 mo',b:1},
+{c:'City',t:'do',n:'Sea Point Promenade',w:'Eleven flat kilometres of seafront where the entire city walks. Public art, tidal pools, and the easiest good hour in Cape Town.',when:'Late afternoon'},
+{c:'City',t:'do',n:'Bree and Kloof Street',w:'Where you eat. Wine bars and small plates at prices that will feel like a clerical error after Tokyo and Dubai. Book the one proper dinner; improvise the rest.',when:'Evenings'},
+{c:'City',t:'opt',n:'Company’s Garden',w:'The Dutch East India Company’s vegetable plot from 1652, now a shaded avenue past the Iziko South African Museum and the National Gallery. Free, central, good for an hour.',when:'Any time'},
+{c:'City',t:'opt',n:'Signal Hill & the noon gun',w:'Sunset over the Atlantic with Robben Island in the bay. The gun fires at noon every day but Sunday — useful context if you hear artillery and wonder.',when:'Sunset'},
+{c:'City',t:'opt',n:'Oranjezicht City Farm Market',w:'Saturday mornings at Granger Bay. Produce, breakfast, and the most pleasant version of the Waterfront. Pairs with a Saturday that isn’t going to the peninsula.',when:'Sat AM'},
+{c:'City',t:'opt',n:'Castle of Good Hope',w:'The oldest surviving colonial building in the country, 1666, star-shaped, and quieter than it deserves. A wind-day option.',when:'Wind day'},
+{c:'City',t:'opt',n:'Township food tour',w:'Langa or Gugulethu, with an operator based there and transport included. The half of the city this itinerary otherwise skips entirely. Not a thing to attempt independently.',when:'Book ahead',b:1},
+{c:'City',t:'opt',n:'City Sightseeing bus',w:'Genuinely useful if you skip the car — the red line covers the cableway, Camps Bay and the Waterfront on a loop. Faintly embarrassing, quite practical.',when:'No-car day'},
+{c:'City',t:'skip',n:'V&A Waterfront as a destination',w:'A very good shopping mall on a working harbour. You will pass through it for the ferry and for Zeitz. That is enough time to give it.',when:''},
+{c:'City',t:'skip',n:'Long Street after midnight',w:'The backpacker strip. Loud, grubby, and the one part of the centre where the safety advice is not theoretical.',when:''},
+{c:'Peninsula',t:'do',n:'Cape of Good Hope',w:'R515 per international adult. Walk up to the old lighthouse rather than taking the funicular, then drive round to the sign. Lock the car and leave nothing visible — the baboons here open doors.',when:'Full morning'},
+{c:'Peninsula',t:'do',n:'Boulders penguins',w:'R245. African penguins colonised a suburban beach in 1982 and stayed; the June 2026 census found 790 breeding pairs, up from 698. Fewer than 10,000 pairs survive worldwide.',when:'With Cape Point'},
+{c:'Peninsula',t:'do',n:'Chapman’s Peak Drive',w:'R68 toll each way for a car. Nine kilometres and 114 curves cut into a cliff above the Atlantic. Closes for wind and rockfall — check the status the morning you go.',when:'Peninsula day'},
+{c:'Peninsula',t:'do',n:'Kirstenbosch',w:'R270 for international visitors, open to 19:00 in summer. South African species only, running up the mountain’s eastern slope, with the Boomslang walkway through the canopy.',when:'08:00–19:00'},
+{c:'Peninsula',t:'do',n:'Kalk Bay',w:'A working fishing harbour that never got gentrified into oblivion, plus secondhand bookshops, seals on the slipway and the best fish lunch south of the city.',when:'Lunch'},
+{c:'Peninsula',t:'do',n:'Kirstenbosch summer concert',w:'Sunday evenings from late November into April, on the lawn below the mountain. Blanket, picnic, a South African act you probably don’t know. Tickets via Webtickets and the good ones go.',when:'Sundays',b:1},
+{c:'Peninsula',t:'opt',n:'Silvermine & Elephant’s Eye',w:'R200. A reservoir on the spine of the peninsula and a cave looking down over False Bay. Two easy hours, and the best consolation if the cableway stays shut.',when:'Half day'},
+{c:'Peninsula',t:'opt',n:'Muizenberg',w:'Painted Victorian beach huts, warm water, and the friendliest beginner surf in the country. The answer on a south-easter day, when the Atlantic beaches are unusable and False Bay is glass.',when:'Wind day'},
+{c:'Peninsula',t:'opt',n:'Cape Point funicular',w:'Saves you a ten-minute uphill walk for a separate ticket. Take it if knees demand; otherwise the walk is short and the views are better on foot.',when:''},
+{c:'Peninsula',t:'opt',n:'Hout Bay harbour',w:'On the way to Chapman’s Peak anyway. Fish and chips on the quay, a fish market, and a lot of boat touts. A stop, not a destination.',when:'En route'},
+{c:'Peninsula',t:'skip',n:'Seal Island boat trip',w:'Twenty minutes out to a rock covered in seals, twenty minutes back, and you can smell it from the harbour. The peninsula day is better spent driving.',when:''},
+{c:'Peninsula',t:'skip',n:'"Where two oceans meet"',w:'They don’t, and not here. The Atlantic and Indian oceans are conventionally divided at Cape Agulhas, 200 km east. Cape Point is spectacular on its own terms and needs no myth.',when:''},
+{c:'Winelands',t:'do',n:'Franschhoek Wine Tram',w:'R350 hop-on hop-off across five colour-coded lines, tastings extra at R60–R260 an estate. It exists to solve the drink-driving problem and it solves it completely. Book the line and departure ahead.',when:'Book ahead',b:1},
+{c:'Winelands',t:'do',n:'Harvest',w:'You land mid-vintage. Late January and February are when the valleys actually work — grape trucks on the roads, cellars loud and open, harvest events on. The best month to come and the worst to arrive unannounced.',when:'All week'},
+{c:'Winelands',t:'do',n:'Groot Constantia',w:'Twenty-five minutes from the city and producing since the 1680s — the oldest estate in the country. Cooler, closer and quieter than Stellenbosch, and easy to reach without a full day.',when:'Half day'},
+{c:'Winelands',t:'opt',n:'Stellenbosch town',w:'Oak-lined streets, Cape Dutch gables, a university and several hundred estates within twenty minutes. The serious wine answer if you want one valley properly rather than a tram through another.',when:'Full day'},
+{c:'Winelands',t:'opt',n:'Babylonstoren',w:'An enormous formal working garden attached to a farm and a restaurant, on the Orange Line of the tram. Garden entry and the restaurant both need booking, well ahead in harvest season.',when:'Book ahead',b:1},
+{c:'Winelands',t:'opt',n:'A blending session',w:'Several estates run them, and in harvest month some let you near actual fermenting wine. Sillier and more memorable than a fourth tasting flight.',when:'Book ahead',b:1},
+{c:'Winelands',t:'skip',n:'Driving yourself between tastings',w:'South Africa’s limit is 0.05% and enforcement in the Winelands is real. The tram, a hired driver, or a designated non-drinker. There is no fourth option worth taking.',when:''},
+{c:'Winelands',t:'skip',n:'Paarl',w:'Perfectly good wine and a big granite dome. It is the one of the three valleys you can drop without missing anything the other two don’t do better.',when:''},
+{c:'Further',t:'opt',n:'Cape Agulhas',w:'The actual southernmost point of Africa and the actual division between the oceans, about two and a half hours each way. A full day for a signpost and a very good one.',when:'Full day'},
+{c:'Further',t:'opt',n:'Stony Point, Betty’s Bay',w:'A second penguin colony, an hour and a half out along a coast road that rivals Chapman’s Peak. Quieter than Boulders and cheaper. Only if the peninsula day left you wanting more.',when:'Full day'},
+{c:'Further',t:'skip',n:'Hermanus whale watching',w:'World-class, and in the wrong month. Southern right whales are in the bay roughly June to November. In February there is nothing to see.',when:''},
+{c:'Further',t:'skip',n:'Shark cage diving',w:'Two hours each way to Gansbaai, and the great whites largely abandoned those waters after orca predation. What you are likely to see is bronze whalers. Not on a seven-day stop.',when:''},
+{c:'Further',t:'skip',n:'A Big Five day safari',w:'The private reserves within reach of Cape Town are small, stocked and expensive. South Africa does world-class game viewing and none of it is here. Bank it.',when:''},
+{c:'Further',t:'skip',n:'The Garden Route',w:'Eight days minimum to do properly, and it runs east — the wrong direction entirely for a westbound trip. Come back for it.',when:''}
+];
+const TIERLBL={do:'Do',opt:'Maybe',skip:'Skip'};
+let FC='all', FT=null, FB=false;
+function renderItems(){
+  const list=ITEMS.filter(x=>(FC==='all'||x.c===FC) && (!FT||x.t===FT) && (!FB||x.b));
+  const host=document.getElementById('items');
+  if(!list.length){host.innerHTML='<div class="empty">No entries match those filters.</div>';return}
+  host.innerHTML=list.map(x=>`
+    <div class="item">
+      <span class="tier ${x.t}">${TIERLBL[x.t]}</span>
+      <span class="nm">${x.n}</span>
+      <span class="when${x.b?' book':''}">${x.when||'&nbsp;'}</span>
+      <span class="why">${x.w}</span>
+    </div>`).join('');
+}
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  if(b.dataset.city){FC=b.dataset.city}
+  else if(b.dataset.tier){FT = FT===b.dataset.tier?null:b.dataset.tier}
+  else if(b.dataset.book){FB=!FB}
+  document.querySelectorAll('#filters .fbtn').forEach(x=>{
+    let on=false;
+    if(x.dataset.city) on = x.dataset.city===FC;
+    if(x.dataset.tier) on = x.dataset.tier===FT;
+    if(x.dataset.book) on = FB;
+    x.setAttribute('aria-pressed',on?'true':'false');
+  });
+  renderItems();
+});
+renderItems();
+
+/* ============ FIG 1: TIME AUDIT ============ */
+(function(){
+  const svg=document.getElementById('audit-chart');
+  const W=1400,H=190,pad=40,barY=70,barH=54;
+  const start=new Date(2027,0,28), totalH=192;
+  const x=h=>pad+(h/totalH)*(W-2*pad);
+  const segs=[
+    {a:0,b:20,cls:'t'},{a:20,b:24,cls:'p'},
+    {a:24,b:48,cls:'f'},{a:48,b:72,cls:'f'},{a:72,b:96,cls:'f'},
+    {a:96,b:120,cls:'f'},{a:120,b:144,cls:'f'},{a:144,b:168,cls:'f'},
+    {a:168,b:186,cls:'p'},{a:186,b:192,cls:'t2'}
+  ];
+  const colors={t:'var(--magenta)',t2:'rgba(231,100,155,.55)',p:'rgba(242,169,60,.35)',f:'var(--amber)'};
+  let s=`<rect x="0" y="0" width="${W}" height="${H}" fill="none"/>`;
+  segs.forEach(sg=>{
+    const x1=x(sg.a),x2=x(sg.b);
+    s+=`<rect x="${x1}" y="${barY}" width="${x2-x1-1}" height="${barH}" fill="${colors[sg.cls]}"/>`;
+  });
+  for(let d=0;d<=8;d++){
+    const hh=d*24, xx=x(hh);
+    const dt=new Date(start.getTime()+hh*36e5);
+    s+=`<line x1="${xx}" y1="${barY-6}" x2="${xx}" y2="${barY+barH+6}" class="axs"/>`;
+    s+=`<text x="${xx}" y="${barY-14}" class="lbl" text-anchor="${d===0?'start':d===8?'end':'middle'}">${dt.toLocaleDateString('en-CA',{day:'2-digit',month:'short'})}</text>`;
+  }
+  s+=`<line x1="${pad}" y1="${barY+barH+0.5}" x2="${W-pad}" y2="${barY+barH+0.5}" class="ax"/>`;
+  s+=`<text x="${x(24)}" y="${barY+barH+34}" class="lbl-a">6 full days — 29 Jan → 3 Feb</text>`;
+  s+=`<text x="${x(0)}" y="${barY+barH+34}" class="lbl">↙ via Johannesburg</text>`;
+  s+=`<text x="${x(192)}" y="${barY+barH+34}" class="lbl" text-anchor="end">evening flight ↘</text>`;
+  svg.innerHTML=s;
+})();
+
+/* ============ FIG 2: EXIT ROUTINGS ============ */
+(function(){
+  const svg=document.getElementById('route-chart');
+  const W=1400,H=300,padL=360,padR=60,padT=26,rowH=56,maxH=36;
+  const x=h=>padL+(h/maxH)*(W-padL-padR);
+  const ROWS=[
+    {n:'CPT → Praia · via London + Lisbon',h:32,f:'3 flights',bad:1},
+    {n:'CPT → Praia · via Paris or Amsterdam + Lisbon',h:30,f:'3 flights',bad:1},
+    {n:'CPT → Casablanca · via Paris',h:19,f:'2 flights',bad:0},
+    {n:'Casablanca → Praia · nonstop',h:3.8,f:'1 flight · AT591/AT595',bad:0}
+  ];
+  let s='';
+  for(let h=0;h<=maxH;h+=6){
+    s+=`<line x1="${x(h)}" y1="${padT}" x2="${x(h)}" y2="${padT+ROWS.length*rowH}" class="axs"/>`;
+    s+=`<text x="${x(h)}" y="${padT+ROWS.length*rowH+24}" class="lbl" text-anchor="middle">${h}h</text>`;
+  }
+  s+=`<line x1="${padL}" y1="${padT}" x2="${x(maxH)}" y2="${padT}" class="ax"/>`;
+  ROWS.forEach((r,i)=>{
+    const y=padT+22+i*rowH;
+    s+=`<text x="${padL-16}" y="${y+5}" class="lbl-p" text-anchor="end">${r.n}</text>`;
+    s+=`<rect x="${padL}" y="${y-12}" width="${x(r.h)-padL}" height="24" rx="2" fill="${r.bad?'rgba(224,85,85,.65)':'rgba(88,196,163,.7)'}"/>`;
+    s+=`<text x="${x(r.h)+12}" y="${y+5}" class="${r.bad?'lbl':'lbl-a'}">${r.h}h · ${r.f}</text>`;
+  });
+  svg.innerHTML=s;
+})();
+
+/* ============ FIG 3: RAINFALL BY MONTH ============ */
+(function(){
+  const svg=document.getElementById('rain-chart');
+  const W=1400,H=300,padL=60,padR=30,padT=20,padB=50;
+  const MO=[{n:'Jan',v:12},{n:'Feb',v:8},{n:'Mar',v:17},{n:'Apr',v:45},{n:'May',v:85},{n:'Jun',v:80},
+            {n:'Jul',v:85},{n:'Aug',v:70},{n:'Sep',v:45},{n:'Oct',v:30},{n:'Nov',v:17},{n:'Dec',v:11}];
+  const bw=(W-padL-padR)/MO.length;
+  const y=v=>padT+(1-v/90)*(H-padT-padB);
+  let s='';
+  [0,30,60,90].forEach(v=>{
+    s+=`<line x1="${padL}" y1="${y(v)}" x2="${W-padR}" y2="${y(v)}" class="axs"/>`;
+    s+=`<text x="${padL-10}" y="${y(v)+4}" class="lbl" text-anchor="end">${v}mm</text>`;
+  });
+  MO.forEach((m,i)=>{
+    const x0=padL+i*bw+bw*0.18, bwid=bw*0.64, isFeb=m.n==='Feb';
+    s+=`<rect x="${x0}" y="${y(m.v)}" width="${bwid}" height="${H-padB-y(m.v)}" fill="${isFeb?'var(--amber)':'rgba(242,169,60,.3)'}" rx="1"/>`;
+    s+=`<text x="${x0+bwid/2}" y="${H-padB+18}" class="lbl" text-anchor="middle" ${isFeb?'fill="var(--amber)"':''}>${m.n}</text>`;
+    s+=`<text x="${x0+bwid/2}" y="${y(m.v)-8}" class="${isFeb?'lbl-a':'lbl'}" text-anchor="middle">${m.v}</text>`;
+  });
+  s+=`<line x1="${padL}" y1="${H-padB}" x2="${W-padR}" y2="${H-padB}" class="ax"/>`;
+  svg.innerHTML=s;
+})();
+
+/* ============ THE TICKET TALLY ============ */
+const GATES=[
+  {n:'Table Mountain cableway, return, online',r:475,def:true,note:'R530 at the ticket office · valid 7 days'},
+  {n:'Platteklip up, cableway down, one way',r:300,note:'Instead of the return, not as well as'},
+  {n:'Cape of Good Hope / Cape Point',r:515,def:true,note:'SANParks 2025/26 tariff — rises 1 Nov 2026'},
+  {n:'Boulders penguin colony',r:245,def:true,note:'SANParks 2025/26 tariff'},
+  {n:'Silvermine / Elephant’s Eye',r:200,note:'The cableway-is-shut consolation'},
+  {n:'Robben Island ferry and tour',r:650,def:true,note:'Book 3–4 months ahead'},
+  {n:'Kirstenbosch entry',r:270,def:true,note:'International adult · R110 for SA residents'},
+  {n:'Franschhoek Wine Tram, hop-on hop-off',r:350,def:true,note:'Tastings not included'},
+  {n:'Three tastings on the tram, mid-range',r:450,def:true,note:'Estates charge R60–R260 each'},
+  {n:'Chapman’s Peak toll, one way',r:68,def:true,note:'Class 1 car · payable each direction'}
+];
+function renderGates(){
+  document.getElementById('legs').innerHTML=GATES.map((g,i)=>`
+    <label class="leg-row">
+      <input type="checkbox" data-i="${i}" ${g.def?'checked':''}>
+      <span class="lname">${g.n}</span>
+      <span class="lyen">R${g.r.toLocaleString('en-CA')}</span>
+      ${g.note?`<span class="lnote">${g.note}</span>`:''}
+    </label>`).join('');
+}
+function calcTotals(){
+  let total=0,count=0;
+  document.querySelectorAll('#legs input[type="checkbox"]').forEach(cb=>{
+    if(cb.checked){total+=GATES[Number(cb.dataset.i)].r;count++}
+  });
+  const cad=Math.round(total/13);
+  document.getElementById('ptp').innerHTML=`R${total.toLocaleString('en-CA')}`;
+  document.getElementById('cad').innerHTML=`$${cad.toLocaleString('en-CA')}<small>per person</small>`;
+  document.getElementById('cnt').innerHTML=`${count}<small>of ${GATES.length}</small>`;
+  const v=document.getElementById('verdict');
+  if(total===0){v.textContent='Tick something above'; v.className=''}
+  else if(total<1200){v.textContent='Barely scratched it'; v.className='win'}
+  else if(total<2600){v.textContent='About right for a week'; v.className='win'}
+  else {v.textContent='Check the Wild Card maths'; v.className='lose'}
+}
+renderGates();
+document.getElementById('legs').addEventListener('change',calcTotals);
+calcTotals();
+</script>
+
+</body>
+</html>

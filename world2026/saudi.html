@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="darkreader-lock">
+<title>Saudi Arabia</title>
+<link rel="stylesheet" href="fonts.css">
+</head>
+<body>
+<style>
+:root{color-scheme:dark;
+  --ink:#05161D;--ink-2:#0A2029;--ink-3:#0E2A35;
+  --rule:#194150;--rule-soft:rgba(25,65,80,.6);
+  --paper:#E2EEED;--paper-dim:#A6C2C6;--muted:#6C8F98;
+  --amber:#F2A93C;--magenta:#E7649B;--jade:#58C4A3;--red:#E05555;
+  --display:'Big Shoulders Display','Arial Narrow',Impact,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --body:'Inter',system-ui,sans-serif;
+  --gut:clamp(18px,4vw,64px);--maxw:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+.section{padding-block:clamp(34px,4.4vw,58px);border-top:1px solid var(--rule-soft);position:relative}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:14px;margin:0 0 18px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--rule)}
+.eyebrow .n{color:var(--amber)}
+h2.head{font-family:var(--display);font-weight:700;font-size:clamp(34px,5.6vw,66px);line-height:.92;margin:0 0 14px;text-transform:uppercase}
+.lede{max-width:66ch;color:var(--paper-dim);font-size:clamp(15px,1.5vw,17px);margin:0 0 26px}
+.lede b{color:var(--paper);font-weight:600}
+a{color:var(--amber);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+.hint{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+@media (min-width:980px){.hint.wide{display:none}}
+.scroller{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--rule) transparent}
+.scroller::-webkit-scrollbar{height:6px}
+.scroller::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}
+.scroller>svg{display:block;width:100%;height:auto}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(30px,5vw,58px) clamp(24px,4vw,40px);overflow:hidden}
+.gridbg{position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:linear-gradient(to right,var(--rule-soft) 1px,transparent 1px),linear-gradient(to bottom,var(--rule-soft) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%);-webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%)}
+.back{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:inline-block;margin-bottom:20px}
+.back:hover{color:var(--amber)}
+.strip{font-family:var(--mono);font-size:clamp(10px,1.15vw,12px);letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;border-block:1px solid var(--rule);padding-block:11px;margin-bottom:clamp(26px,4vw,44px)}
+.strip .k{color:var(--muted)}.strip .amb{color:var(--amber)}
+.title{font-family:var(--display);text-transform:uppercase;margin:0;line-height:.82;position:relative}
+.title .l1{display:block;font-weight:400;font-size:clamp(34px,7.4vw,96px);color:transparent;-webkit-text-stroke:1.2px var(--paper-dim)}
+.title .l2{display:block;font-weight:800;font-size:clamp(52px,13vw,178px);letter-spacing:-.015em;color:var(--paper)}
+.subline{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:baseline;margin-top:clamp(18px,3vw,30px);font-family:var(--mono);font-size:clamp(11px,1.25vw,13px);letter-spacing:.14em;text-transform:uppercase;color:var(--paper-dim)}
+.subline .sep{color:var(--rule)}
+
+/* instruments */
+.instr{display:grid;grid-template-columns:repeat(auto-fit,minmax(124px,1fr));border:1px solid var(--rule);background:var(--ink-2);margin:clamp(24px,3.4vw,38px) 0 0}
+.instr div{padding:15px 17px;border-right:1px solid var(--rule-soft)}
+.instr div:last-child{border-right:0}
+.instr dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.instr dd{margin:0;font-family:var(--display);font-weight:600;font-size:31px;line-height:1}
+.instr dd span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--paper-dim);margin-left:3px}
+.instr dd.hot{color:var(--amber)}
+.instr dd.warn{color:var(--magenta)}
+
+/* chart frames */
+.figcap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:9px;margin:0 0 8px}
+.figcap b{color:var(--amber);font-weight:500}
+.fignote{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.fignote i{display:inline-block;width:14px;height:9px;margin:0 5px 0 14px;vertical-align:middle;border-radius:1px}
+.fignote i:first-child{margin-left:0}
+.ax{stroke:var(--rule);stroke-width:1}
+.axs{stroke:var(--rule-soft);stroke-width:1}
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.08em;fill:var(--muted)}
+.lbl-p{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;fill:var(--paper)}
+.lbl-a{font-family:var(--mono);font-size:10px;letter-spacing:.12em;fill:var(--amber)}
+
+/* cards */
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin:0 0 6px}
+.card{border:1px solid var(--rule);background:var(--ink-2);padding:18px 20px;position:relative}
+.card.bad{border-color:var(--red)}
+.card.good{border-color:var(--jade)}
+.card h3{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 4px;color:var(--paper)}
+.card .verdict{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:11px}
+.card .verdict.bad{color:var(--red)}
+.card .verdict.ok{color:var(--jade)}
+.card p{margin:0 0 10px;font-size:13.5px;color:var(--paper-dim);line-height:1.62}
+.card p:last-child{margin-bottom:0}
+.card p b{color:var(--paper);font-weight:600}
+.fix{border-left:2px solid var(--amber);padding-left:12px;margin:12px 0 0;font-size:12.8px;color:var(--paper-dim);line-height:1.6}
+.fix b{display:block;color:var(--amber);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px;font-weight:500}
+.fix strong{color:var(--paper);font-weight:600}
+
+/* shape cards */
+.shapes{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+.shape{border:1px solid var(--rule);background:var(--ink-2);padding:0;display:flex;flex-direction:column}
+.shape.pick{border-color:var(--amber);box-shadow:inset 0 0 0 1px rgba(242,169,60,.25)}
+.shape-hd{padding:16px 20px 14px;border-bottom:1px solid var(--rule-soft)}
+.shape-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.shape.pick .shape-tag{color:var(--amber)}
+.shape-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(24px,3vw,32px);line-height:.95;margin:0}
+.chainrow{display:flex;flex-wrap:wrap;align-items:center;gap:5px 7px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--paper);padding:13px 20px;border-bottom:1px solid var(--rule-soft);background:rgba(5,22,29,.5)}
+.chainrow .a{color:var(--rule)}
+.chainrow .n{color:var(--amber);font-size:9.5px}
+.shape-body{padding:15px 20px 18px;flex:1}
+.shape-body p{margin:0 0 10px;font-size:13.3px;color:var(--paper-dim);line-height:1.6}
+.shape-body p:last-child{margin-bottom:0}
+.shape-body p b{color:var(--paper);font-weight:600}
+.shape-meta{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--rule-soft)}
+.shape-meta div{flex:1;min-width:88px;padding:11px 20px;border-right:1px solid var(--rule-soft)}
+.shape-meta div:last-child{border-right:0}
+.shape-meta dt{font-family:var(--mono);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.shape-meta dd{margin:0;font-family:var(--mono);font-size:13px;color:var(--paper)}
+.shape-meta dd.g{color:var(--jade)}
+.shape-meta dd.r{color:var(--red)}
+
+/* day accordion */
+.days{border-top:1px solid var(--rule)}
+.day{border-bottom:1px solid var(--rule)}
+.day-btn{all:unset;box-sizing:border-box;display:grid;width:100%;cursor:pointer;grid-template-columns:76px 1fr auto;gap:0 clamp(14px,2.4vw,30px);align-items:baseline;padding:clamp(13px,1.8vw,18px) 4px;transition:background .18s ease}
+.day-btn:hover{background:rgba(242,169,60,.05)}
+.day-btn:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.day-date{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.1em}
+.day-date small{display:block;color:var(--muted);font-size:9.5px;letter-spacing:.14em;margin-top:3px}
+.day-btn>span:nth-child(2){display:flex;flex-direction:column;gap:6px}
+.day-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(22px,3.2vw,34px);line-height:.95;margin:0}
+.day-sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.day-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--paper-dim);text-align:right;white-space:nowrap}
+.day-meta .chev{display:inline-block;margin-left:12px;color:var(--muted);transition:transform .25s ease}
+.day.open .day-meta .chev{transform:rotate(180deg)}
+@media (max-width:720px){.day-btn{grid-template-columns:64px 1fr;row-gap:8px}.day-meta{grid-column:2;text-align:left}}
+.day-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .34s cubic-bezier(.3,.8,.3,1)}
+.day.open .day-body{grid-template-rows:1fr}
+.day-inner{overflow:hidden}
+.day-pad{padding:2px 4px clamp(22px,3vw,32px)}
+.slots{display:grid;gap:0;border-left:1px solid var(--rule)}
+.slot{padding:0 0 16px 16px;position:relative}
+.slot:last-child{padding-bottom:2px}
+.slot::before{content:"";position:absolute;left:-4px;top:6px;width:7px;height:7px;background:var(--amber);border-radius:50%}
+.slot.move::before{background:var(--magenta)}
+.slot h4{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 5px;font-weight:500}
+.slot.move h4{color:var(--magenta)}
+.slot p{margin:0;font-size:14px;line-height:1.62;color:var(--paper-dim);max-width:72ch}
+.slot p b{color:var(--paper);font-weight:600}
+
+/* worth doing */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.fbtn{all:unset;cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border:1px solid var(--rule);color:var(--paper-dim);border-radius:2px;transition:.15s}
+.fbtn:hover{background:var(--ink-3);color:var(--paper)}
+.fbtn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.fbtn[aria-pressed="true"]{background:var(--amber);color:var(--ink);border-color:var(--amber);font-weight:600}
+.fdiv{width:1px;background:var(--rule);margin:2px 6px}
+.items{display:grid;gap:1px;background:var(--rule-soft);border:1px solid var(--rule)}
+.item{background:var(--ink-2);padding:13px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:baseline}
+.item .tier{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:3px 7px 2px;border-radius:2px;white-space:nowrap;align-self:start;margin-top:2px}
+.tier.do{background:rgba(88,196,163,.14);color:var(--jade);border:1px solid rgba(88,196,163,.35)}
+.tier.opt{background:rgba(242,169,60,.12);color:var(--amber);border:1px solid rgba(242,169,60,.3)}
+.tier.skip{background:rgba(224,85,85,.1);color:var(--red);border:1px solid rgba(224,85,85,.3)}
+.item .nm{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:20px;line-height:1.05;color:var(--paper)}
+.item .why{grid-column:2;font-size:13.3px;color:var(--paper-dim);line-height:1.55;max-width:74ch}
+.item .why b{color:var(--paper);font-weight:600}
+.item .when{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);text-align:right;white-space:nowrap;align-self:start;margin-top:4px}
+.item .when.book{color:var(--magenta)}
+@media (max-width:640px){.item{grid-template-columns:auto 1fr}.item .when{grid-column:2;text-align:left;margin-top:2px}.item .why{grid-column:1/-1}}
+.empty{background:var(--ink-2);padding:22px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* calc */
+.calc{border:1px solid var(--rule);background:var(--ink-2)}
+.calc-legs{display:grid}
+.leg-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--rule-soft);cursor:pointer}
+.leg-row:hover{background:rgba(242,169,60,.04)}
+.leg-row input{accent-color:var(--amber);width:15px;height:15px;cursor:pointer}
+.leg-row .lname{font-family:var(--mono);font-size:12.5px;color:var(--paper-dim)}
+.leg-row input:checked+.lname{color:var(--paper)}
+.leg-row .lyen{font-family:var(--mono);font-size:12.5px;color:var(--amber);font-variant-numeric:tabular-nums;white-space:nowrap}
+.leg-row .lnote{grid-column:2/-1;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--muted);margin-top:-4px}
+.calc-out{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule-soft)}
+.calc-out div{background:var(--ink-3);padding:15px 17px}
+.calc-out dt{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.calc-out dd{margin:0;font-family:var(--display);font-weight:700;font-size:27px;line-height:1;font-variant-numeric:tabular-nums}
+.calc-out dd small{font-family:var(--mono);font-size:10px;font-weight:400;color:var(--paper-dim);margin-left:4px;letter-spacing:.06em}
+#verdict{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;line-height:1.5}
+#verdict.win{color:var(--jade)}
+#verdict.lose{color:var(--red)}
+
+/* panels / tables */
+.panel{border:1px solid var(--rule);background:var(--ink-2);padding:clamp(17px,2.4vw,24px);margin-top:22px}
+.panel h3{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 12px;font-weight:500}
+.panel p{margin:0 0 12px;font-size:13.6px;color:var(--paper-dim);line-height:1.62}
+.panel p:last-child{margin-bottom:0}
+.panel p b{color:var(--paper);font-weight:600}
+table.ref{width:100%;border-collapse:collapse;font-size:13.4px}
+table.ref th{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:500;padding:0 14px 10px 0;border-bottom:1px solid var(--rule)}
+table.ref td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule-soft);color:var(--paper-dim);vertical-align:top}
+table.ref td:first-child{font-family:var(--display);font-size:17px;font-weight:600;text-transform:uppercase;color:var(--paper);white-space:nowrap;width:1%}
+table.ref td.t{font-family:var(--mono);font-size:11px;letter-spacing:.06em;white-space:nowrap;color:var(--amber)}
+table.ref tr.flag td.t{color:var(--magenta)}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.cols{display:grid;gap:16px 34px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:20px}
+.cols p{margin:0;font-size:13.6px;color:var(--paper-dim);line-height:1.6}
+.cols p b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:5px;font-weight:500}
+
+footer{border-top:1px solid var(--rule);padding-block:26px 40px;color:var(--muted)}
+.foot-grid{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:flex-end}
+.foot-grid p{margin:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase}
+.foot-mark{font-family:var(--display);font-size:clamp(40px,9vw,110px);font-weight:800;text-transform:uppercase;line-height:.8;color:transparent;-webkit-text-stroke:1px var(--rule);margin:30px 0 0}
+</style>
+
+<header class="hero">
+  <div class="gridbg"></div>
+  <div class="wrap">
+    <a class="back" href="index.html">← Westbound · the dossier</a>
+    <p class="strip">
+      <span><span class="k">Stop</span> <span class="amb">21 of 27</span></span>
+      <span><span class="k">In</span> MCT · Muscat</span>
+      <span><span class="k">Fly Saudi</span> <span class="amb">RUH</span></span>
+      <span><span class="k">Out</span> CAI · Cairo</span>
+      <span><span class="k">Window</span> 10–14 Jan 2027</span>
+      <span><span class="k">Clock</span> UTC+3</span>
+    </p>
+    <h1 class="title">
+      <span class="l1">Twenty-one</span>
+      <span class="l2">Saudi Arabia</span>
+    </h1>
+    <p class="subline">
+      <span>Riyadh + AlUla</span><span class="sep">/</span>
+      <span>Tantora ended on the 9th</span><span class="sep">/</span>
+      <span>The domestic hop is the weak link</span>
+    </p>
+
+    <dl class="instr">
+      <div><dt>Calendar days</dt><dd>5</dd></div>
+      <div><dt>Whole days</dt><dd class="hot">2</dd></div>
+      <div><dt>Nights</dt><dd>4</dd></div>
+      <div><dt>Bases</dt><dd>2</dd></div>
+      <div><dt>RUH → AlUla</dt><dd>880<span>km</span></dd></div>
+      <div><dt>Tantora miss</dt><dd class="warn">2<span>days</span></dd></div>
+    </dl>
+  </div>
+</header>
+
+<section class="section" id="audit">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">01</span> The time audit</p>
+    <h2 class="head">Five days,<br>two of them whole</h2>
+    <p class="lede">Muscat to Riyadh is a short hop — about two hours, and you gain an hour crossing from UTC+4 into UTC+3 — so unlike most arrivals on this trip the 10th is genuinely half usable. The problem is the other end. Any version of this stop that includes AlUla spends <b>two of the four remaining days getting to it and back</b>, and a domestic flight eats a morning in each direction. What's left is the 12th, the 14th, and three afternoons.</p>
+
+    <div class="figcap">
+      <span>Fig. 1 — What the window really contains</span>
+      <span><b>10–14 Jan</b> · hour by hour</span>
+    </div>
+    <div class="scroller">
+      <svg id="audit-chart" viewBox="0 0 1400 200" role="img" aria-label="Timeline of 10 to 14 January showing a half day on arrival, a half day lost to the flight to AlUla, one full day in AlUla, a split day returning to Riyadh, and a final full day before the evening flight to Cairo."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--magenta);opacity:.55"></i>In transit<i style="background:rgba(242,169,60,.35)"></i>Part day<i style="background:var(--amber)"></i>Whole day</p>
+
+    <div class="cols">
+      <p><b>Sunday is a working day</b>The Saudi weekend is Friday–Saturday, so landing on Sunday 10 January puts you in a normal business day — shops open, traffic heavy, offices running. That's the good news. The bad news is that Sunday is the standard <b>closing day for Riyadh's state museums</b>: the National Museum and SAMoCA at JAX are both shut. Arrival day has to be Diriyah, Masmak or the Sky Bridge, none of which care what day it is.</p>
+      <p><b>No Friday in the window</b>10–14 January runs Sunday to Thursday. You miss the long Jumu'ah midday closure entirely, which on a four-day stop is worth more than it sounds — Friday mornings in Riyadh are effectively dead until about 13:30.</p>
+      <p><b>Ten and a half hours of light</b>Sunset is around 17:20 in Riyadh and 17:50 in AlUla. That sounds punishing until you notice that half the things worth doing here — At-Turaif, Elephant Rock, the Sky Bridge, Boulevard City — only open in the late afternoon anyway. Saudi front-loads its mornings with heat for most of the year and has built its evenings accordingly. See section 05.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="flags">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">02</span> Three things that don't move</p>
+    <h2 class="head">The calendar<br>is against you</h2>
+    <p class="lede">Two of these are about dates you can't shift without moving the whole westbound chain, and one is a piece of paperwork that has to be solved in Toronto. None of them is fatal. All three change what you should book.</p>
+
+    <div class="cards">
+      <div class="card bad">
+        <h3>Winter at Tantora ends 9 January</h3>
+        <div class="verdict bad">Missed by two days</div>
+        <p>AlUla's flagship festival — concerts at Maraya, Shorfat Tantora performances from the balconies of Old Town, the AlManshiyah carnival, pop-up dining across the oasis — runs <b>17 December 2026 to 9 January 2027</b>. You land in Riyadh on the 10th and reach AlUla on the 11th. The tents come down as you arrive.</p>
+        <p>Then it goes the other way. <b>Ultra Gobi AlUla, a 400 km desert ultramarathon, runs 13–20 January</b> — the first international edition, and it starts the day you leave. Runners and crew will already be in town on the 12th and 13th, competing for the same limited bed stock.</p>
+        <div class="fix"><b>What to do</b>Nothing, unless the whole Gulf leg shifts three days earlier — and it can't, because the UAE stop is anchored to New Year's. So <strong>reset expectations rather than the dates</strong>: mid-January AlUla is the archaeology, not the festival. Hegra, Dadan and the oasis are all open year-round and all better without a concert crowd. Book beds early anyway — Ultra Gobi is pulling on the same nights.</div>
+      </div>
+
+      <div class="card bad">
+        <h3>Riyadh–AlUla is not a daily flight</h3>
+        <div class="verdict bad">And the sources disagree</div>
+        <p>Every booking site calls RUH–ULH "daily." The detailed schedules do not agree with that or with each other. FlightsFrom's sample week shows five weekly departures from Riyadh; Wego's schedule, updated 2 September 2026, shows five on a different pattern. <b>Both agree there is no Wednesday departure out of Riyadh</b>, and they disagree about Sunday.</p>
+        <p>What they do agree on: <b>Monday (flynas XY159, 10:20), Tuesday (Saudia SV1574, 09:15) and Thursday (SV1576, 10:15)</b> all run. Coming back, flynas XY160 leaves AlUla at 12:50 every day but Saturday, and on a Wednesday it is the <b>only</b> flight of the day.</p>
+        <div class="fix"><b>What to do</b>Book the specific flight before you book the hotel, and treat the return as the fragile leg. <strong>Do not fly AlUla → Riyadh → Cairo on the same day.</strong> One 12:50 departure with no backup, feeding a four-hour international flight, is how a country gets deleted. Come back on the 13th and keep the 14th as buffer.</div>
+      </div>
+
+      <div class="card">
+        <h3>Canada's advisory vs. your insurance</h3>
+        <div class="verdict">Already flagged, still open</div>
+        <p>Global Affairs Canada has Saudi Arabia at <b>"avoid non-essential travel"</b>, updated 9 September 2026 — the same level and the same wording as the UAE and Oman. Most Canadian travel-medical policies exclude claims arising in a country already under a Level 3 advisory at the time of purchase.</p>
+        <p>The eVisa's bundled medical cover does <b>not</b> fill the gap: it is emergency treatment only, capped around SAR 100,000, with no repatriation, no cancellation and no baggage.</p>
+        <div class="fix"><b>What to do</b>This is stops 19 through 22, not just this one, and it's covered in full in the project note <strong>flag-gulf-advisory-insurance</strong>. Short version: buy a policy that names Level 3 destinations as covered, get it in writing, and check the war/terrorism carve-out doesn't reopen the same hole.</div>
+      </div>
+    </div>
+
+    <div class="figcap" style="margin-top:34px">
+      <span>Fig. 2 — AlUla's season, and where you land in it</span>
+      <span><b>Nov 2026 – Feb 2027</b></span>
+    </div>
+    <div class="scroller">
+      <svg id="cal-chart" viewBox="0 0 1400 300" role="img" aria-label="Calendar of AlUla events from November 2026 to February 2027. Winter at Tantora runs 17 December to 9 January and Ultra Gobi runs 13 to 20 January. The 11 to 13 January travel window falls in the three-day gap between them."></svg>
+    </div>
+    <p class="fignote"><i style="background:rgba(242,169,60,.55)"></i>Scheduled events<i style="background:rgba(231,100,155,.22);border:1px solid var(--magenta)"></i>Your AlUla nights · AlUla Tour dates projected from the 2026 edition, not yet announced</p>
+  </div>
+</section>
+
+<section class="section" id="shapes">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">03</span> The split</p>
+    <h2 class="head">Two nights<br>in AlUla, or three</h2>
+    <p class="lede">Riyadh and AlUla are 880 km apart and the only sane link is the plane. Four nights have to divide between them, and the flight days do most of the deciding for you. Both shapes below assume the same Monday outbound — it's the return that separates them, and the return is where the risk lives.</p>
+
+    <div class="shapes">
+      <div class="shape pick">
+        <div class="shape-hd">
+          <div class="shape-tag">Recommended</div>
+          <p class="shape-name">Two nights, buffered</p>
+        </div>
+        <div class="chainrow">
+          <span>Riyadh <span class="n">×1</span></span><span class="a">→</span>
+          <span>AlUla <span class="n">×2</span></span><span class="a">→</span>
+          <span>Riyadh <span class="n">×1</span></span><span class="a">→</span>
+          <span class="n">CAI</span>
+        </div>
+        <div class="shape-body">
+          <p>Out on flynas Monday morning, back on the Wednesday 12:50, and the whole of Thursday sitting in Riyadh as slack before the Cairo flight. AlUla gets one uninterrupted day plus two half-days at either end, which is enough for <b>Hegra, Dadan and Jabal Ikmah, the Old Town and the oasis, Elephant Rock after dark and a Maraya tour</b> — the core of the place.</p>
+          <p><b>What Thursday buys you:</b> either the National Museum and Murabba Palace — the museum opens until 22:00 on Thursdays specifically — or an Edge of the World sunset run. It also means a cancelled AlUla flight costs you a day, not the country.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>AlUla nights</dt><dd>2</dd></div>
+          <div><dt>Flights</dt><dd class="g">2</dd></div>
+          <div><dt>Buffer</dt><dd class="g">1 day</dd></div>
+          <div><dt>Fly out</dt><dd>RUH</dd></div>
+        </dl>
+      </div>
+
+      <div class="shape">
+        <div class="shape-hd">
+          <div class="shape-tag">If AlUla is the point of the stop</div>
+          <p class="shape-name">Three nights, no slack</p>
+        </div>
+        <div class="chainrow">
+          <span>Riyadh <span class="n">×1</span></span><span class="a">→</span>
+          <span>AlUla <span class="n">×3</span></span><span class="a">→</span>
+          <span class="n">RUH transit</span><span class="a">→</span>
+          <span class="n">CAI</span>
+        </div>
+        <div class="shape-body">
+          <p>The extra night unlocks the things the two-night version cuts: <b>Gharameel stargazing, a Sharaan desert morning, sunrise somewhere without a coach behind you</b>. AlUla's own guidance is that three nights is the minimum to do the place properly, and they're not wrong.</p>
+          <p><b>The cost is the Thursday.</b> You fly ULH→RUH at 12:50, land 14:35, and connect straight onto an evening Cairo flight with no margin. Book it as a single through-ticket so a delay is the airline's problem, or accept that a mechanical in AlUla means missing Egypt's first night.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>AlUla nights</dt><dd class="g">3</dd></div>
+          <div><dt>Flights</dt><dd>3</dd></div>
+          <div><dt>Buffer</dt><dd class="r">None</dd></div>
+          <div><dt>Fly out</dt><dd>RUH</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Why not skip Riyadh and give AlUla the whole stop</h3>
+      <p>Because you can't get to AlUla without Riyadh — there is no international service to ULH from anywhere on your route, and no direct ULH–Cairo flight. Riyadh is the door, so you're paying for at least one night there whatever you decide. Given that, the door is worth opening: <b>Diriyah's At-Turaif is a genuine UNESCO site and one of the best evenings in the Gulf</b>, the metro will take you from the airport to the middle of the city for SAR 4, and the National Museum is free.</p>
+      <p>The reverse trade — dropping AlUla and giving Riyadh four days — is only worth considering if the domestic flights won't line up. Riyadh is an interesting city but it is not a four-day city, and Hegra is the reason this stop is on the itinerary at all.</p>
+    </div>
+
+    <div class="panel">
+      <h3>What's cut either way</h3>
+      <p><b>Jeddah and the Red Sea.</b> The old town at Al-Balad is the most atmospheric urban fabric in the country and it's a completely different Saudi from Riyadh. It also needs its own two nights and a third flight. Not in five days.</p>
+      <p><b>Qiddiya.</b> Six Flags opened 31 December 2025, about an hour outside Riyadh, from SAR 325. It's a good theme park. It is not what you flew here for.</p>
+      <p><b>Sharaan Nature Reserve and Gharameel stargazing.</b> Both are AlUla's best desert experiences and both are three-night propositions. Worse: as of September 2026 the official Sharaan tours are marked "coming back soon" and the Gharameel listing shows a gap over the winter — check before you build a night around either.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="run">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">04</span> Day by day</p>
+    <h2 class="head">Both versions,<br>laid out</h2>
+    <p class="lede">The shape of a Saudi day is not the shape of a European one. Mornings are for the archaeology and the museums, the middle of the day is dead, and everything with atmosphere — the mud-brick districts, the rock formations, the terraces — switches on around 16:00 and runs to midnight. Plan backwards from dusk.</p>
+    <div class="filters" id="dayToggle" style="margin-bottom:6px">
+      <button class="fbtn" data-plan="two" aria-pressed="true">Two nights in AlUla</button>
+      <button class="fbtn" data-plan="three" aria-pressed="false">Three nights in AlUla</button>
+    </div>
+    <div class="days" id="days"></div>
+    <p class="fignote" style="margin-top:16px">Amber = on the ground · <span style="color:var(--magenta)">Magenta = a flight or a base change</span></p>
+  </div>
+</section>
+
+<section class="section" id="clock">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">05</span> Opening hours</p>
+    <h2 class="head">Everything<br>opens late</h2>
+    <p class="lede">This is the single most useful thing to know before you build a Saudi itinerary, and no guidebook leads with it. A large share of what you've come to see <b>does not open until the afternoon and stays open past midnight</b>. Turn up at Elephant Rock at 11am and you will find a locked boardwalk and a car park.</p>
+
+    <div class="tablewrap">
+    <table class="ref">
+      <thead><tr><th>Place</th><th>When it's actually open</th><th>Cost</th></tr></thead>
+      <tbody>
+        <tr class="flag"><td>At-Turaif</td><td>Diriyah's official pages say daily <b>17:00–00:00</b>; the site's own FAQ still says 10:00–00:00 and contradicts them. 2026 visitors report locked doors in daylight. Treat it as an evening venue and you can't be wrong.</td><td class="t">~SAR 50–100</td></tr>
+        <tr class="flag"><td>Elephant Rock</td><td><b>16:00–00:00 only.</b> Illuminated after dusk, fire pits, a food truck and a coffee stand until about 23:30. There is no daytime visit.</td><td class="t">Free</td></tr>
+        <tr><td>AlUla Old Town</td><td>Shops open from 08:00–09:00 but the place is asleep until about 15:00. Shops to 23:00, restaurants to 01:00.</td><td class="t">Free</td></tr>
+        <tr><td>Kingdom Centre</td><td>Sky Bridge daily <b>12:00–23:00</b>. Aim for 16:45 — January sunset in Riyadh is about 17:20, and the queue thickens after 18:00.</td><td class="t">SAR 69–138</td></tr>
+        <tr class="flag"><td>National Museum</td><td>Mon–Wed &amp; Sat 09:00–19:00, <b>Thu to 22:00</b>, Fri 14:00–22:00, <b>closed Sunday</b>. Free timed slots booked online.</td><td class="t">Free</td></tr>
+        <tr><td>Murabba Palace</td><td>Sat–Thu 09:00–20:00. Five minutes' walk from the National Museum, same compound.</td><td class="t">Free</td></tr>
+        <tr><td>Masmak</td><td>Reopened 26 July 2025 after a full restoration. Sun–Thu 08:00–21:00, Sat 09:00–20:00, Fri 16:00–20:00.</td><td class="t">Free</td></tr>
+        <tr><td>Hegra</td><td>Tours run daily, year-round, departing from Winter Park. <b>Self-driving inside the site is prohibited</b> — every visit is on official transport with a Rawi guide.</td><td class="t">From SAR 95</td></tr>
+        <tr><td>SAMoCA / JAX</td><td>Mon–Thu 10:00–22:00, Fri–Sat 16:00–22:00, <b>closed Sunday</b>. The Diriyah Biennale is biennial and ran Jan–May 2026, so there is no Biennale this January.</td><td class="t">Free</td></tr>
+        <tr><td>Boulevard World</td><td>16:00–01:00 during Riyadh Season. The 7th edition wasn't announced as of mid-September 2026, but every edition since 2019 has run October to March.</td><td class="t">SAR 30–40</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="figcap" style="margin-top:34px">
+      <span>Fig. 3 — Day and night, by month</span>
+      <span><b>Riyadh vs AlUla</b> · January marked</span>
+    </div>
+    <div class="scroller">
+      <svg id="temp-chart" viewBox="0 0 1400 340" role="img" aria-label="Chart of average monthly high and low temperatures for Riyadh and AlUla. January is the coolest month for both, with similar daytime highs near 21 degrees but AlUla nights around 4 degrees against Riyadh's 10."></svg>
+    </div>
+    <p class="fignote"><i style="background:rgba(242,169,60,.75)"></i>Riyadh<i style="background:rgba(88,196,163,.75)"></i>AlUla · indicative monthly averages, bar spans typical night low to day high</p>
+
+    <div class="cols">
+      <p><b>The AlUla night is the surprise</b>Both places sit around 21°C in the afternoon, which is perfect. But AlUla drops to about 4°C overnight and has recorded below zero in January. Elephant Rock after dark, a desert camp, or a stargazing run at Gharameel all need a real insulated jacket, a hat and gloves — not the fleece that got you through Bangkok. This is the coldest you will have been since Nepal.</p>
+      <p><b>Prayer times still pause things</b>The 2021 ruling let businesses stay open through prayers, and malls, hotels, pharmacies and airports do. Plenty of smaller shops and restaurants still shut for 20–30 minutes at each of the five. In January, Maghrib falls around 17:30 in Riyadh — right when you'd want dinner. Install a prayer-times app and don't build a tight restaurant-to-anything sequence across it.</p>
+      <p><b>Rain is not a factor</b>Riyadh averages about 5 mm across the whole of January; AlUla has roughly a 2% chance of a wet day. Nothing on this page needs a weather contingency, which after Sri Lanka and the Maldives is a novelty.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="worth">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">06</span> What's actually worth doing</p>
+    <h2 class="head">Do, maybe,<br>don't bother</h2>
+    <p class="lede">Saudi's tourism sector is four years old and it shows: things open, close, get renamed and quietly stop running between one season and the next. Prices below are current as of September 2026 and several of them are contested between sources — where that's true, it says so. The <b>don't bother</b> entries are mostly things that would be fine on a longer trip.</p>
+
+    <div class="filters" id="filters">
+      <button class="fbtn" data-city="all" aria-pressed="true">All</button>
+      <button class="fbtn" data-city="Riyadh" aria-pressed="false">Riyadh</button>
+      <button class="fbtn" data-city="AlUla" aria-pressed="false">AlUla</button>
+      <button class="fbtn" data-city="Out" aria-pressed="false">Out of town</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-tier="do" aria-pressed="false">Do</button>
+      <button class="fbtn" data-tier="opt" aria-pressed="false">Maybe</button>
+      <button class="fbtn" data-tier="skip" aria-pressed="false">Don't bother</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-book="1" aria-pressed="false">Needs booking</button>
+    </div>
+    <div class="items" id="items"></div>
+  </div>
+</section>
+
+<section class="section" id="cost">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">07</span> The ticket maths</p>
+    <h2 class="head">What this stop<br>costs to enter</h2>
+    <p class="lede">Saudi is not cheap, and almost none of it is optional in the way it is elsewhere: Hegra can only be visited on a paid official tour, AlUla has no useful public transport, and the visa is a fixed SAR 535 before you've eaten anything. Tick what you'd actually do and see the damage. <b>Accommodation, food and the Riyadh–Cairo flight are excluded</b> — this is entry costs and internal movement only.</p>
+
+    <div class="calc">
+      <div class="calc-legs" id="legs"></div>
+      <dl class="calc-out">
+        <div><dt>Total</dt><dd id="ptp"></dd></div>
+        <div><dt>In Canadian</dt><dd id="cad"></dd></div>
+        <div><dt>Discretionary</dt><dd id="disc"></dd></div>
+        <div><dt>Read</dt><dd><span id="verdict"></span></dd></div>
+      </dl>
+    </div>
+    <p class="fignote">SAR is pegged to the US dollar; CAD converted at roughly SAR 2.72 to the dollar · prices verified Sept 2026 and several are contested — check at booking</p>
+
+    <div class="panel">
+      <h3>Where the numbers are shaky</h3>
+      <p><b>The eVisa fee.</b> No official source publishes the breakdown. Third-party totals range from SAR 402 to SAR 535, most commonly quoted as SAR 300 government fee plus SAR 235 mandatory medical insurance. The checkout total at <b>visa.visitsaudi.com</b> is the only figure that counts — budget CAD 200 and expect to be pleasantly surprised.</p>
+      <p><b>At-Turaif entry.</b> Long-standing price is SAR 50, fully redeemable against food or drink at almost any Bujairi Terrace outlet. Multiple 2026 visitors report SAR 100, also redeemable. Budget SAR 100 and treat it as a dinner credit rather than a ticket.</p>
+      <p><b>The Kingdom Centre Sky Bridge.</b> SAR 69 in one 2026 source, SAR 138 including VAT in another. Budget the higher one.</p>
+      <p><b>The AlUla hop-on-hop-off shuttle.</b> Widely cited at SAR 150 by secondary guides, but the official Experience AlUla page marks the shuttle "coming back soon" — i.e. suspended. <b>Don't plan transport around it.</b></p>
+    </div>
+
+    <div class="panel">
+      <h3>Getting around, and the AlUla transport hole</h3>
+      <p><b>Riyadh is solved.</b> All six metro lines are open, Line 4 runs into all three airport terminal stations, and a two-hour ticket covering metro and bus is SAR 4 — a three-day pass is SAR 20. Apple Pay and contactless work at the gates. Uber and Careem both operate and are cheap: airport to downtown runs about SAR 85–110. The one gap is Diriyah, which the metro does <b>not</b> reach and won't until the early 2030s — that's a SAR 20–30 taxi from the nearest station.</p>
+      <p><b>AlUla is not solved.</b> Taxis exist only at the airport and are first-come-first-served. Uber and Careem have almost no cars. The official Darb AlUla ride-hail app exists but publishes no fares anywhere. The public shuttle is suspended. What actually works is that <b>the official tours include transport from Winter Park</b> — so book the tours and let them be your transport, stay somewhere central, and budget for a car or a driver to cover the gaps. A private full-day sedan starts around SAR 999; independent travellers report finding drivers nearer SAR 600.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="admin">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">08</span> Ground rules</p>
+    <h2 class="head">Before you land</h2>
+
+    <div class="tablewrap">
+    <table class="ref">
+      <thead><tr><th>Item</th><th>What to do</th><th>When</th></tr></thead>
+      <tbody>
+        <tr><td>Entry</td><td>Canadians are eligible for the tourist eVisa. Apply at <b>visa.visitsaudi.com</b> — that is the only official site, and everything else is a reseller. One year, multiple entry, up to 90 days per visit. Approval usually takes minutes to a few hours.</td><td class="t">Week before</td></tr>
+        <tr class="flag"><td>Visa on arrival</td><td>Technically available to Canadians at RUH for about SAR 480, but don't. Approval isn't guaranteed at the counter, and the airline in Muscat may refuse to board you without a visa in hand. On a four-day stop that's a day you can't spare.</td><td class="t">Avoid</td></tr>
+        <tr class="flag"><td>Insurance</td><td>The eVisa's bundled cover is emergency medical only, roughly SAR 100,000, no repatriation. Canada has Saudi at "avoid non-essential travel" as of 9 Sept 2026, which most Canadian policies treat as an exclusion. See the project note <b>flag-gulf-advisory-insurance</b> — this must be fixed before you leave Toronto.</td><td class="t">Before departure</td></tr>
+        <tr><td>Passport</td><td>Six months' validity from entry. An Israeli stamp has not been a problem since 2019 — confirmed still fine.</td><td class="t">Check now</td></tr>
+        <tr><td>Vaccinations</td><td>Nothing required on this routing. Polio and yellow fever certificates apply only from listed countries, and neither Oman nor Egypt is on any list. Meningococcal is a Hajj and Umrah requirement, not a tourist one.</td><td class="t">Nothing to do</td></tr>
+        <tr><td>Alcohol</td><td>Total ban. No duty-free allowance, no tourist exception, no licensed venues. The single diplomatic-quarter store in Riyadh is restricted to accredited non-Muslim diplomats. Penalties run to fines, imprisonment and deportation.</td><td class="t">Drink in Oman</td></tr>
+        <tr class="flag"><td>Vapes</td><td>Legal to buy and use in Saudi, but <b>import by an individual is banned</b> — expect confiscation, a fine and a seizure record at RUH. If you're carrying one across the trip, this is the stop that takes it.</td><td class="t">Leave it behind</td></tr>
+        <tr><td>Drones</td><td>Not realistically possible. GACA registration requires a Saudi national ID or Iqama and a local phone number. Assume confiscation at the border.</td><td class="t">Don't bring one</td></tr>
+        <tr class="flag"><td>Cash declaration</td><td>The threshold dropped to <b>SAR 40,000</b> in mid-2026, down from SAR 60,000. It covers cash, gold and fine jewellery, in and out. ZATCA's own site still shows the old figure in places — use 40,000.</td><td class="t">In and out</td></tr>
+        <tr><td>Money</td><td>Cards accepted essentially everywhere; Apple and Google Pay work broadly. VAT is 15%. Hotel bills carry 15% VAT plus a 5% municipality fee, so budget about 20% on top of the rate. Always decline dynamic currency conversion.</td><td class="t">Automatic</td></tr>
+        <tr><td>VAT refund</td><td>Live via Global Blue at 1,400+ authorised outlets, with ten kiosk points at RUH. Minimum SAR 500 per store, goods only — <b>hotels, restaurants and food are excluded</b>, so on a four-day trip this is only worth it if you buy something substantial.</td><td class="t">At the airport</td></tr>
+        <tr><td>Dress</td><td>Abaya has not been required since 2019 and headscarves aren't either. The standard is loose, opaque clothing covering shoulders and knees, for everyone. Riyadh reads noticeably more conservative in practice than AlUla. Mosques want full coverage.</td><td class="t">Pack for it</td></tr>
+        <tr class="flag"><td>Photography</td><td>The 2019 public decency code carries a <b>SAR 1,000 fine for photographing or recording people without permission</b>, and it's the rule most likely to catch a traveller. Never photograph military, government or diplomatic sites.</td><td class="t">Ask first</td></tr>
+        <tr><td>Speech</td><td>Criticism of the state, the royal family or Islam — including posts made years ago and from outside the country — has led to detention and multi-year travel bans. Same-sex relationships are criminalised.</td><td class="t">Know it</td></tr>
+        <tr><td>Booking window</td><td>Hegra and the AlUla tours have limited daily departures and January is peak. Ultra Gobi is pulling on the same beds 13–20 Jan. Book flights first, then the AlUla hotel, then the tours — in that order, the week the dates are fixed.</td><td class="t">Now</td></tr>
+        <tr><td>Calendar</td><td>Clear. Ramadan 1448 begins 8 February 2027, three and a half weeks after you leave. No Saudi public holiday falls in January, and there is no Friday in the window.</td><td class="t">Nothing to dodge</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="cols">
+      <p><b>Connectivity</b>STC, Mobily and Zain all have strong 5G in Riyadh and decent coverage in AlUla. A local SIM needs your passport at the counter. WhatsApp and FaceTime <b>messaging</b> always works; voice and video calling is still intermittently blocked on local networks despite being officially unblocked since 2017. A travel eSIM routing through an international carrier often gets calls through where a local SIM won't — worth the few dollars.</p>
+      <p><b>Mecca and Medina</b>Both are closed to non-Muslims inside the haram boundaries, marked by checkpoints on the highways. This has no effect on you: the restriction is on ground entry to those cities, not on airspace, and Riyadh–AlUla flies well north of both. If you were driving it — you aren't — the route via Hail keeps you clear anyway.</p>
+      <p><b>Getting in from Muscat</b>Roughly two hours, and you gain an hour going from UTC+4 to UTC+3, so a mid-morning departure puts you in Riyadh before lunch. Take the metro in: Line 4 serves all three terminal stations and SAR 4 buys you two hours of unlimited travel. It's the best-value thing in the country.</p>
+      <p><b>Getting out to Cairo</b>Not a worry. Nine carriers fly RUH–CAI — EgyptAir, Saudia, flynas, flyadeal, Nile Air, Air Cairo and others — roughly 177 flights a week, about four hours. If something slips, there is another plane. This is the opposite of the AlUla problem, and it's why the buffer day belongs in Riyadh.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <p>Westbound · stop 21 · Saudi Arabia</p>
+      <p>10–14 Jan 2027 · MCT in, CAI out</p>
+      <p>Fares, fees and hours verified Sept 2026 — recheck before booking</p>
+    </div>
+    <p class="foot-mark">Riyadh → AlUla</p>
+  </div>
+</footer>
+
+<script>
+/* ============ DAY-BY-DAY ============ */
+const ARRIVE={d:'Sun 10',w:'Arrive',name:'Riyadh',sub:'Land from Muscat · museums shut',meta:'Night 1',
+ slots:[
+  {m:1,h:'11:30 · RUH',p:'Roughly two hours up from Muscat, and you gain an hour crossing into UTC+3, so a mid-morning departure lands you before lunch. eVisa already in hand — do not try the counter. Metro Line 4 runs from all three terminal stations into the city for <b>SAR 4</b>.'},
+  {h:'14:30 · Masmak and Souq Al Zal',p:'The mud-brick fort at the centre of the 1902 story of how the Al Saud took Riyadh back, <b>reopened in July 2025</b> after a full restoration and free to enter. Souq Al Zal is next door — thirty minutes of incense and carpets, not a half day. Qasr Al Hokm metro on lines 1 and 3.'},
+  {h:'16:30 · Bujairi Terrace',p:'Out to Diriyah — a taxi, because the metro does not go there and will not until the 2030s. Bujairi in the last of the daylight, looking across the wadi at the walls you are about to walk into.'},
+  {h:'17:00 · At-Turaif',p:'The UNESCO site opens at five and the mud-brick goes gold, then floodlit. This is the best evening in Riyadh by a distance. <b>The ticket is redeemable against food and drink</b> at almost any Bujairi outlet, so eat there afterwards and get it back.'}
+]};
+
+const DAYS_TWO=[ARRIVE,
+{d:'Mon 11',w:'Move',name:'AlUla',sub:'flynas XY159 · 10:20',meta:'Night 2',
+ slots:[
+  {m:1,h:'10:20 · RUH → ULH',p:'flynas XY159, landing 12:10; Saudia SV1574 at 09:15 is the alternative if you want the morning back. <b>1h50 across the Najd</b>. Book this before the hotel — see the flag above about which days actually run.'},
+  {h:'14:30 · AlUla Old Town',p:'Ten centuries of mud-brick built and rebuilt on the same footprint, with a 45-metre fort above it. It is asleep before three and alive after; shops run to 23:00 and restaurants to 01:00. The Rawi storytelling walk is SAR 70 and about an hour.'},
+  {h:'15:30 · The Oasis Heritage Trail',p:'A guided walk from the Heart of the Oasis parking through the date palms and old irrigation channels, <b>SAR 35</b>, ninety minutes. The oasis is the reason a town exists here at all and it is easy to skip in favour of the rocks.'},
+  {h:'17:30 · Elephant Rock',p:'Opens at four, never before. Sunset in AlUla is about 17:50 and the rock is lit after dusk, with fire pits, a food truck and a coffee stand until 23:30. Free, twenty minutes northeast of Old Town. <b>Bring a real jacket</b> — it drops to 4°C.'}
+]},
+{d:'Tue 12',w:'Full',name:'AlUla',sub:'Hegra, and the only whole day',meta:'Night 3',
+ slots:[
+  {h:'08:00 · Hegra',p:'The reason this stop exists. A hundred and eleven Nabataean tombs cut into sandstone outcrops across the desert floor — the same civilisation as Petra, four hundred kilometres south of it, and almost nobody there. <b>From SAR 95</b>, coach from Winter Park, Rawi guide, two to three hours. Self-driving inside the site is prohibited, so this is the only way in.'},
+  {h:'11:30 · Dadan and Jabal Ikmah',p:'<b>SAR 60</b> for both. Dadan is the older capital — the Lihyanite lion tombs are cut high into a red cliff. Jabal Ikmah is a canyon of open-air Dadanitic inscriptions, effectively an ancient library on rock. This is the pair most people skip and the pair that makes Hegra make sense.'},
+  {h:'15:00 · Maraya',p:'The largest mirrored building in the world, dropped into the Ashar valley so that it mostly disappears into it. <b>You can tour the interior without a concert</b> — SAR 95, 45 minutes, daily year-round. Late afternoon light is when the mirrors do their trick.'},
+  {h:'19:00 · Dinner, or the dark sky',p:'AlUla is the Middle East’s first International Dark Sky Park. The Gharameel stargazing run is SAR 397 with a campfire dinner, three to four hours — but the listing showed a winter gap when checked in September, so <b>confirm it is running</b>. Otherwise Old Town after dark does fine.'}
+]},
+{d:'Wed 13',w:'Move',name:'Riyadh',sub:'XY160 12:50 — the only one today',meta:'Night 4',
+ slots:[
+  {h:'07:30 · The oasis at sunrise',p:'Sunrise is about 07:18 and the palm groves are cold, quiet and full of birds. An hour before breakfast, on foot, costing nothing. Then pack.'},
+  {m:1,h:'12:50 · ULH → RUH',p:'flynas XY160, landing 14:35. On a Wednesday this is the <b>only</b> flight of the day in either direction, which is exactly why you are doing it today and not on the 14th.'},
+  {h:'16:30 · The National Museum',p:'Free, and better than free — the pre-Islamic Arabian galleries give you the context Hegra and Dadan were missing. Open to 19:00 on a Wednesday; book the free timed slot online. Murabba Palace is five minutes’ walk in the same compound and also free.'},
+  {h:'19:30 · Riyadh Season',p:'If the 7th edition is running — every edition since 2019 has spanned October to March, but the 2026–27 dates were still unannounced in September. Boulevard City is free to enter and genuinely spectacular after dark; Boulevard World is SAR 30–40 and enormous. Tickets only through webook.com.'}
+]},
+{d:'Thu 14',w:'Depart',name:'To Cairo',sub:'The buffer day',meta:'Fly out',
+ slots:[
+  {h:'The choice',p:'Two good options and they conflict, because one of them eats the whole afternoon and returns after dark. Pick by what time the Cairo flight leaves.'},
+  {h:'14:00 · Edge of the World',p:'Ninety minutes northwest, then a rough unpaved run that genuinely needs a 4x4 — take the guided tour, from about <b>SAR 262</b>. The Tuwaiq escarpment ends in a 300-metre drop over what looks like the edge of the planet. Departs early afternoon, back after dark. <b>Only if your Cairo flight is late.</b>'},
+  {h:'09:00 · Or the museum day',p:'The safe version: National Museum (open to 22:00 on Thursdays specifically), Murabba Palace, and JAX district out at Diriyah for the galleries. All free, all central, all abandonable at short notice.'},
+  {m:1,h:'· Cairo',p:'Stop 22. RUH→CAI is about four hours and there are roughly 177 flights a week across nine carriers, so a delay is an inconvenience rather than a disaster. Verify your specific flight, but this is the least fragile hop of the Gulf leg.'}
+]}
+];
+
+const DAYS_THREE=[ARRIVE,DAYS_TWO[1],DAYS_TWO[2],
+{d:'Wed 13',w:'Full',name:'AlUla',sub:'The extra day the two-night plan cuts',meta:'Night 4',
+ slots:[
+  {h:'06:45 · Sunrise, unaccompanied',p:'The thing three nights actually buys: a morning with no coach departure attached. Harrat viewpoints above the valley, or the oasis on foot at first light, or a balloon over Hegra if you are willing to spend SAR 995 on the best forty minutes of the stop.'},
+  {h:'10:00 · Sharaan, if it is running',p:'The nature reserve is AlUla at its emptiest — sandstone canyons, reintroduced Arabian leopard habitat, a Jean Nouvel hotel being carved into a cliff. <b>Both official Sharaan tours were marked "coming back soon" in September 2026.</b> Check before you build the day on it; the fallback is a private 4x4 operator.'},
+  {h:'15:00 · Whatever Tuesday ran over',p:'Maraya if it slipped, the Oasis Trail if it slipped, via ferrata on the canyon wall for SAR 180 if nothing did. Ultra Gobi starts today — the town will have several hundred runners and crew in it, which is either atmosphere or a queue depending on your mood.'},
+  {h:'19:00 · Gharameel',p:'The stargazing run, SAR 397, campfire dinner in the desert, minimum age eight and minimum four people. This is the night the two-night plan cannot fit. Confirm availability — the listing showed a winter gap when checked.'}
+]},
+{d:'Thu 14',w:'Depart',name:'To Cairo',sub:'Two flights, no margin',meta:'Fly out',
+ slots:[
+  {m:1,h:'12:50 · ULH → RUH',p:'flynas XY160, landing 14:35. There is no earlier option and no later one. <b>This is the risk you accepted for the third night.</b>'},
+  {m:1,h:'· The connection',p:'Book AlUla–Riyadh–Cairo as a <b>single through-ticket</b>, not two separate bookings. On one ticket a delay is the airline’s problem to rebook; on two it is yours to pay for. This is the difference between an inconvenience and buying a new international flight at the desk.'},
+  {h:'15:30 · Riyadh, briefly',p:'If the connection is generous you have three or four hours landside. The National Museum is 25 minutes from the airport by metro and open to 22:00 on Thursdays. If it is tight, stay airside and read.'},
+  {m:1,h:'· Cairo',p:'Stop 22. About four hours, nine carriers, roughly 177 flights a week. Frequency is your friend here — if the AlUla leg slips, there is another Cairo plane in a couple of hours.'}
+]}
+];
+
+let CURRENT_PLAN='two';
+function renderDays(){
+  const DAYS = CURRENT_PLAN==='two' ? DAYS_TWO : DAYS_THREE;
+  document.getElementById('days').innerHTML=DAYS.map(D=>`
+  <div class="day">
+    <button class="day-btn" aria-expanded="false">
+      <span class="day-date">${D.d}<small>${D.w}</small></span>
+      <span><span class="day-name">${D.name}</span><span class="day-sub">${D.sub}</span></span>
+      <span class="day-meta">${D.meta}<span class="chev">&#9662;</span></span>
+    </button>
+    <div class="day-body"><div class="day-inner"><div class="day-pad"><div class="slots">
+      ${D.slots.map(s=>`<div class="slot${s.m?' move':''}"><h4>${s.h}</h4><p>${s.p}</p></div>`).join('')}
+    </div></div></div></div>
+  </div>`).join('');
+
+  document.querySelectorAll('.day-btn').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const d=b.parentElement, open=d.classList.toggle('open');
+      b.setAttribute('aria-expanded',open?'true':'false');
+    });
+  });
+  document.querySelector('.day').classList.add('open');
+  document.querySelector('.day-btn').setAttribute('aria-expanded','true');
+}
+renderDays();
+
+document.getElementById('dayToggle').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  CURRENT_PLAN=b.dataset.plan;
+  document.querySelectorAll('#dayToggle .fbtn').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
+  renderDays();
+});
+
+/* ============ WORTH DOING ============ */
+const ITEMS=[
+/* RIYADH */
+{c:'Riyadh',t:'do',n:'At-Turaif after dark',w:'The original Diriyah, a UNESCO site of Najdi mud-brick built from the wadi it stands over. Official hours are <b>17:00–00:00</b> — treat it as an evening venue. The ticket is redeemable against food at Bujairi Terrace, so it is effectively free if you eat there.',when:'From 17:00'},
+{c:'Riyadh',t:'do',n:'National Museum',w:'Free, and the best hour you can spend before AlUla — the pre-Islamic Arabian galleries are the context Hegra and Dadan assume you already have. <b>Closed Sundays</b>, open to 22:00 on Thursdays. Book the free timed slot online.',when:'Closed Sun'},
+{c:'Riyadh',t:'do',n:'Masmak Fortress',w:'Reopened July 2025 after a full restoration, still free. Small, and the whole modern Saudi state starts with what happened at its gate in 1902. Twenty minutes on the metro from anywhere.',when:'Free'},
+{c:'Riyadh',t:'do',n:'The metro',w:'Not a joke. Six lines, all open, SAR 4 for two hours including buses, and Line 4 runs into all three airport terminals. The single best-value thing in the country and a genuinely handsome piece of infrastructure.',when:'SAR 4'},
+{c:'Riyadh',t:'do',n:'Kingdom Centre Sky Bridge',w:'The bottle-opener tower, 300 metres up, open-air-adjacent walkway across the top. Fifteen minutes is enough. Go at 16:45 for the sunset — after 18:00 it queues.',when:'12:00–23:00'},
+{c:'Riyadh',t:'opt',n:'Murabba Palace',w:'Free, five minutes’ walk from the National Museum in the same compound. King Abdulaziz’s 1930s mud-brick residence. A good 45-minute add-on, not a destination.',when:'Sat–Thu'},
+{c:'Riyadh',t:'opt',n:'Riyadh Season',w:'Boulevard City is free and enormous after dark; Boulevard World is SAR 30–40 for 24 country zones and 40 rides. The 7th edition was unannounced in September but every edition since 2019 ran Oct–Mar. Book only through webook.com.',when:'Check dates',b:1},
+{c:'Riyadh',t:'opt',n:'JAX District',w:'Converted warehouses out at Diriyah, galleries and studios, SAMoCA free. <b>Closed Sundays.</b> The Diriyah Biennale is biennial and ran Jan–May 2026, so there is no Biennale this January — regular programming only.',when:'Closed Sun'},
+{c:'Riyadh',t:'opt',n:'Wadi Hanifah',w:'The valley Riyadh was built along, rehabilitated into a 120 km green corridor. Dam Park is the developed stretch. Free, no gates, and it sits directly below Diriyah — worth thirty minutes on the way.',when:'Free'},
+{c:'Riyadh',t:'opt',n:'Souq Al Zal',w:'Four hundred shops of carpets, incense and imported fabric next to Masmak. Reviews split hard between "authentic" and "dusty and overpriced". Half an hour bolted onto the fort, never a plan of its own.',when:'30 min'},
+{c:'Riyadh',t:'skip',n:'King Salman Park',w:'Billed as the largest urban park in the world. <b>Not open.</b> First phases were expected late 2026 at the earliest; substantial completion is a 2027-and-beyond target. Check in December in case something has opened.',when:''},
+{c:'Riyadh',t:'skip',n:'Six Flags Qiddiya',w:'Opened 31 December 2025, an hour out, from SAR 325. Very good roller coasters. Wrong trip, wrong continent, and it costs you the one buffer day.',when:''},
+{c:'Riyadh',t:'skip',n:'Aquarabia',w:'The Qiddiya water park, opened April 2026. It is January and AlUla nights are hitting 4°C. No.',when:''},
+{c:'Riyadh',t:'skip',n:'Malls',w:'Riyadh has world-class malls and you have been in Dubai for four days. Nothing here you did not already see at the Mall of the Emirates.',when:''},
+/* ALULA */
+{c:'AlUla',t:'do',n:'Hegra',w:'A hundred and eleven Nabataean tombs across the desert floor, the same hands that carved Petra, and a fraction of the people. <b>Guided transport only — self-driving in the site is prohibited.</b> From SAR 95, two to three hours, book ahead in January.',when:'Book ahead',b:1},
+{c:'AlUla',t:'do',n:'Dadan & Jabal Ikmah',w:'SAR 60 for the pair, and the pair everyone skips. Lihyanite lion tombs cut high into a red cliff, then a canyon wall of open-air Dadanitic inscriptions — a library carved in rock. This is what makes Hegra legible.',when:'SAR 60',b:1},
+{c:'AlUla',t:'do',n:'Elephant Rock',w:'Free, and <b>open 16:00–00:00 only</b> — there is no daytime visit. Lit after dusk, with fire pits and a food truck to 23:30. Twenty minutes from Old Town. The most photographed thing in AlUla and still worth it.',when:'After 16:00'},
+{c:'AlUla',t:'do',n:'AlUla Old Town',w:'Ten centuries of mud-brick on one footprint, with a fort above. Dead before 15:00, alive until 01:00. Free to wander; the Rawi storytelling walk is SAR 70 for an hour and adds a lot.',when:'After 15:00'},
+{c:'AlUla',t:'do',n:'Maraya',w:'The world’s largest mirrored building, sunk into the Ashar valley so it half-vanishes. <b>You can tour it without a concert</b> — SAR 95, 45 minutes, daily. Late afternoon is when the mirrors work.',when:'SAR 95'},
+{c:'AlUla',t:'opt',n:'Oasis Heritage Trail',w:'SAR 35 for ninety guided minutes through the date palms and the old falaj channels. Quiet, green and completely unlike the rest of the valley — which is exactly the point.',when:'SAR 35'},
+{c:'AlUla',t:'opt',n:'Gharameel stargazing',w:'The Middle East’s first International Dark Sky Park, SAR 397 with a campfire dinner, three to four hours. <b>The listing showed a winter availability gap when checked in September</b> — confirm before planning a night on it.',when:'Confirm first',b:1},
+{c:'AlUla',t:'opt',n:'Hot air balloon over Hegra',w:'SAR 995 and the single most expensive line item you could add. Sunrise over the tombs from 300 metres. Only in the three-night shape, and only if the morning is clear.',when:'Book ahead',b:1},
+{c:'AlUla',t:'opt',n:'Via ferrata',w:'SAR 180 for two to three hours on a bolted route up the canyon wall. Good if the archaeology has started to blur together and you want to use your body.',when:'SAR 180'},
+{c:'AlUla',t:'opt',n:'Sharaan Nature Reserve',w:'AlUla at its emptiest — canyons, leopard habitat, the Jean Nouvel hotel being cut into the cliff. <b>Both official tours were marked "coming back soon" in September 2026.</b> Check before you count on it.',when:'May not run',b:1},
+{c:'AlUla',t:'skip',n:'The hop-on-hop-off shuttle',w:'Widely cited at SAR 150 in guides. The official page marks it "coming back soon", i.e. suspended. <b>Do not build your transport around it</b> — book the tours, which include transport from Winter Park.',when:''},
+{c:'AlUla',t:'skip',n:'Winter at Tantora',w:'Ran 17 Dec 2026 to 9 January 2027. You land on the 10th. Listed here so nobody goes looking for it — see the flag at the top of the page.',when:''},
+{c:'AlUla',t:'skip',n:'Renting a car for two nights',w:'Tempting, given how thin the taxis are. But the tours include transport, the sites you would drive to yourself are mostly evening-only, and a foreign licence plus IDP plus desert tracks is friction you do not need. Budget a half-day driver instead.',when:''},
+/* OUT OF TOWN */
+{c:'Out',t:'do',n:'Edge of the World',w:'The Tuwaiq escarpment ending in a 300-metre drop, 90 minutes northwest of Riyadh. <b>4x4 genuinely required</b> for the last unpaved run and there is no phone signal out there — take the guided tour, from about SAR 262. Afternoon departure, back after dark.',when:'Half day',b:1},
+{c:'Out',t:'opt',n:'Jeddah and Al-Balad',w:'The coral-stone old town is the most atmospheric place in the country and an entirely different Saudi. It needs its own two nights and a third domestic flight. Bank it for a future trip.',when:'Not this trip'},
+{c:'Out',t:'skip',n:'Driving Riyadh to AlUla',w:'A thousand kilometres each way, routing north via Hail to stay clear of Medina. Two full days of your five, in a rental, to save a couple of hundred riyals. Fly it.',when:''}
+];
+
+const TIERLBL={do:'Do',opt:'Maybe',skip:'Skip'};
+let FC='all', FT=null, FB=false;
+
+function renderItems(){
+  const list=ITEMS.filter(x=>
+    (FC==='all'||x.c===FC) && (!FT||x.t===FT) && (!FB||x.b));
+  const host=document.getElementById('items');
+  if(!list.length){host.innerHTML='<div class="empty">No entries match those filters.</div>';return}
+  host.innerHTML=list.map(x=>`
+    <div class="item">
+      <span class="tier ${x.t}">${TIERLBL[x.t]}</span>
+      <span class="nm">${x.n}</span>
+      <span class="when${x.b?' book':''}">${x.when||'&nbsp;'}</span>
+      <span class="why">${x.w}</span>
+    </div>`).join('');
+}
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  if(b.dataset.city){FC=b.dataset.city}
+  else if(b.dataset.tier){FT = FT===b.dataset.tier?null:b.dataset.tier}
+  else if(b.dataset.book){FB=!FB}
+  document.querySelectorAll('#filters .fbtn').forEach(x=>{
+    let on=false;
+    if(x.dataset.city) on = x.dataset.city===FC;
+    if(x.dataset.tier) on = x.dataset.tier===FT;
+    if(x.dataset.book) on = FB;
+    x.setAttribute('aria-pressed',on?'true':'false');
+  });
+  renderItems();
+});
+renderItems();
+
+/* ============ FIG 1: TIME AUDIT ============ */
+(function(){
+  const svg=document.getElementById('audit-chart');
+  const W=1400,H=200,pad=44,barY=76,barH=54;
+  const totalH=120; // 10 Jan 00:00 -> 15 Jan 00:00
+  const x=h=>pad+(h/totalH)*(W-2*pad);
+  const segs=[
+    {a:0,b:11.5,cls:'t'},
+    {a:11.5,b:24,cls:'p'},
+    {a:24,b:36,cls:'t2'},
+    {a:36,b:48,cls:'p'},
+    {a:48,b:72,cls:'f'},
+    {a:72,b:84,cls:'p'},
+    {a:84,b:88,cls:'t2'},
+    {a:88,b:96,cls:'p'},
+    {a:96,b:116,cls:'f'},
+    {a:116,b:120,cls:'t2'}
+  ];
+  const colors={t:'var(--magenta)',t2:'rgba(231,100,155,.55)',p:'rgba(242,169,60,.35)',f:'var(--amber)'};
+  let s='';
+  segs.forEach(sg=>{
+    const x1=x(sg.a),x2=x(sg.b);
+    s+=`<rect x="${x1}" y="${barY}" width="${Math.max(1,x2-x1-1)}" height="${barH}" fill="${colors[sg.cls]}"/>`;
+  });
+  const names=['Sun 10','Mon 11','Tue 12','Wed 13','Thu 14',''];
+  for(let d=0;d<=5;d++){
+    const xx=x(d*24);
+    s+=`<line x1="${xx}" y1="${barY-6}" x2="${xx}" y2="${barY+barH+6}" class="axs"/>`;
+    if(names[d]) s+=`<text x="${xx+7}" y="${barY-14}" class="lbl" text-anchor="start">${names[d]}</text>`;
+  }
+  s+=`<line x1="${pad}" y1="${barY+barH+0.5}" x2="${W-pad}" y2="${barY+barH+0.5}" class="ax"/>`;
+  s+=`<text x="${x(60)}" y="${barY+barH+32}" class="lbl-a" text-anchor="middle">AlUla, whole</text>`;
+  s+=`<text x="${x(106)}" y="${barY+barH+32}" class="lbl-a" text-anchor="middle">Riyadh, whole</text>`;
+  s+=`<text x="${x(0)+4}" y="${barY+barH+32}" class="lbl" text-anchor="start">&#8601; Muscat</text>`;
+  s+=`<text x="${x(84)}" y="${barY-30}" class="lbl" text-anchor="middle">&#8600; the 12:50 back</text>`;
+  s+=`<text x="${x(30)}" y="${barY-30}" class="lbl" text-anchor="middle">&#8600; RUH &#8594; ULH</text>`;
+  svg.innerHTML=s;
+})();
+
+/* ============ FIG 2: ALULA CALENDAR ============ */
+(function(){
+  const svg=document.getElementById('cal-chart');
+  const W=1400,H=300,padL=250,padR=40,padT=26,rowH=42;
+  const t0=new Date(2026,10,1), t1=new Date(2027,1,15);
+  const span=t1-t0;
+  const x=d=>padL+((d-t0)/span)*(W-padL-padR);
+  const D=(y,m,dd)=>new Date(y,m,dd);
+  const EV=[
+    {n:'Peak touring season',a:D(2026,10,1),b:D(2027,1,15),soft:1},
+    {n:'AlUla Skies Festival',a:D(2026,10,6),b:D(2026,10,15)},
+    {n:'Winter at Tantora',a:D(2026,11,17),b:D(2027,0,9)},
+    {n:'Ultra Gobi AlUla',a:D(2027,0,13),b:D(2027,0,20)},
+    {n:'AlUla Tour (projected)',a:D(2027,0,26),b:D(2027,0,31),soft:1},
+    {n:'Ramadan begins',a:D(2027,1,8),b:D(2027,1,15),soft:1}
+  ];
+  const wA=x(D(2027,0,11)), wB=x(D(2027,0,13));
+  let s=`<rect x="${wA}" y="${padT}" width="${Math.max(3,wB-wA)}" height="${EV.length*rowH+8}" fill="rgba(231,100,155,.12)" stroke="var(--magenta)" stroke-width="1"/>`;
+  s+=`<text x="${(wA+wB)/2}" y="${padT-8}" class="lbl-a" text-anchor="middle">Your AlUla nights: 11&#8211;13 Jan</text>`;
+  [[2026,10,'Nov'],[2026,11,'Dec'],[2027,0,'Jan'],[2027,1,'Feb']].forEach(m=>{
+    const xx=x(D(m[0],m[1],1));
+    s+=`<line x1="${xx}" y1="${padT}" x2="${xx}" y2="${padT+EV.length*rowH+8}" class="axs"/>`;
+    s+=`<text x="${xx+6}" y="${padT+EV.length*rowH+28}" class="lbl">${m[2]}</text>`;
+  });
+  s+=`<line x1="${padL-2}" y1="${padT}" x2="${x(t1)}" y2="${padT}" class="ax"/>`;
+  EV.forEach((e,i)=>{
+    const y=padT+18+i*rowH;
+    s+=`<text x="${padL-14}" y="${y+4}" class="lbl-p" text-anchor="end">${e.n}</text>`;
+    const x1=x(e.a),x2=x(e.b);
+    s+=`<rect x="${x1}" y="${y-10}" width="${Math.max(3,x2-x1)}" height="20" rx="2" fill="${e.soft?'rgba(242,169,60,.22)':'rgba(242,169,60,.62)'}" ${e.soft?'stroke="rgba(242,169,60,.45)" stroke-dasharray="3 3"':''}/>`;
+  });
+  svg.innerHTML=s;
+})();
+
+/* ============ FIG 3: TEMPERATURES ============ */
+(function(){
+  const svg=document.getElementById('temp-chart');
+  const W=1400,H=340,padL=54,padR=30,padT=24,padB=54;
+  const MO=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const RUH=[[10,21],[11,23],[15,28],[20,33],[25,39],[27,42],[29,43],[29,43],[25,40],[20,35],[14,27],[11,22]];
+  const ULA=[[4,21],[6,24],[10,28],[15,33],[19,37],[22,40],[24,41],[24,41],[21,39],[16,34],[10,27],[6,22]];
+  const lo=-2, hi=46;
+  const y=v=>padT+(1-(v-lo)/(hi-lo))*(H-padT-padB);
+  const gw=(W-padL-padR)/12;
+  let s='';
+  [0,10,20,30,40].forEach(v=>{
+    s+=`<line x1="${padL}" y1="${y(v)}" x2="${W-padR}" y2="${y(v)}" class="axs"/>`;
+    s+=`<text x="${padL-10}" y="${y(v)+4}" class="lbl" text-anchor="end">${v}&#176;</text>`;
+  });
+  MO.forEach((m,i)=>{
+    const cx=padL+i*gw+gw/2, isJan=i===0, bw=gw*0.24;
+    const r=RUH[i], a=ULA[i];
+    s+=`<rect x="${cx-bw-3}" y="${y(r[1])}" width="${bw}" height="${y(r[0])-y(r[1])}" rx="2" fill="${isJan?'var(--amber)':'rgba(242,169,60,.38)'}"/>`;
+    s+=`<rect x="${cx+3}" y="${y(a[1])}" width="${bw}" height="${y(a[0])-y(a[1])}" rx="2" fill="${isJan?'var(--jade)':'rgba(88,196,163,.38)'}"/>`;
+    s+=`<text x="${cx}" y="${H-padB+18}" class="lbl" text-anchor="middle" ${isJan?'fill="var(--amber)"':''}>${m}</text>`;
+    if(isJan){
+      s+=`<text x="${cx-bw/2-3}" y="${y(r[1])-8}" class="lbl-a" text-anchor="middle">21&#176;</text>`;
+      s+=`<text x="${cx-bw/2-3}" y="${y(r[0])+16}" class="lbl-a" text-anchor="middle">10&#176;</text>`;
+      s+=`<text x="${cx+bw/2+3}" y="${y(a[1])-8}" class="lbl" text-anchor="middle" fill="var(--jade)">21&#176;</text>`;
+      s+=`<text x="${cx+bw/2+3}" y="${y(a[0])+16}" class="lbl" text-anchor="middle" fill="var(--jade)">4&#176;</text>`;
+    }
+  });
+  s+=`<line x1="${padL}" y1="${y(lo)}" x2="${W-padR}" y2="${y(lo)}" class="ax"/>`;
+  s+=`<text x="${padL+8}" y="${padT+14}" class="lbl">Night low to day high</text>`;
+  svg.innerHTML=s;
+})();
+
+/* ============ COST CALCULATOR ============ */
+const COSTS=[
+  {n:'Tourist eVisa, incl. mandatory medical insurance',v:535,req:1,def:1,note:'Sources range SAR 402–535 · checkout total is the real one'},
+  {n:'RUH ↔ ULH return, flynas',v:550,req:1,def:1,note:'One-way from ~SAR 260–280 · the unavoidable cost of AlUla'},
+  {n:'Riyadh Metro, 3-day pass',v:20,def:1,note:'Or SAR 4 per two hours · Line 4 reaches the airport'},
+  {n:'At-Turaif entry, Diriyah',v:100,def:1,note:'Redeemable against food at Bujairi · quoted SAR 50 and SAR 100'},
+  {n:'Hegra Day Tour, coach',v:95,def:1,note:'The only way in — self-driving prohibited'},
+  {n:'Dadan & Jabal Ikmah tour',v:60,def:1,note:'SAR 90 for the audio-guided version'},
+  {n:'Maraya architectural tour',v:95,def:1,note:'45 min · no concert required'},
+  {n:'AlUla Oasis Heritage Trail',v:35,note:'90 min guided walk from Heart of the Oasis'},
+  {n:'Old Town Rawi storytelling walk',v:70,note:'~1 hr · SAR 90 for the twilight Old Town + Oasis version'},
+  {n:'Kingdom Centre Sky Bridge',v:138,note:'Quoted SAR 69 and SAR 138 · budget the higher'},
+  {n:'Edge of the World, guided 4x4',v:262,note:'~USD 70 · half day, 4x4 genuinely required'},
+  {n:'Gharameel stargazing + campfire dinner',v:397,note:'Confirm it is running — winter gap in the listing'},
+  {n:'AlUla private driver, one full day',v:999,note:'Sedan from SAR 999 · independent travellers report ~SAR 600'},
+  {n:'Via ferrata, AlUla canyon',v:180,note:'2–3 hrs on a bolted route'},
+  {n:'Boulevard World, Riyadh Season',v:40,note:'Boulevard City is free · 7th edition dates unannounced'},
+  {n:'Helicopter over AlUla',v:500,note:'30 minutes'},
+  {n:'Hot air balloon over Hegra',v:995,note:'Sunrise · the single biggest line item available'},
+  {n:'Hegra Premium, private 4x4',v:1000,note:'Per vehicle, up to 7 · replaces the SAR 95 coach tour'},
+  {n:'Six Flags Qiddiya',v:325,note:'An hour out of Riyadh · costs you the buffer day'}
+];
+function renderLegs(){
+  document.getElementById('legs').innerHTML=COSTS.map((l,i)=>`
+    <label class="leg-row">
+      <input type="checkbox" data-i="${i}" ${l.def?'checked':''}>
+      <span class="lname">${l.n}</span>
+      <span class="lyen">SAR ${l.v.toLocaleString('en-CA')}</span>
+      ${l.note?`<span class="lnote">${l.note}</span>`:''}
+    </label>`).join('');
+}
+function calcTotals(){
+  let total=0, disc=0;
+  document.querySelectorAll('#legs input[type="checkbox"]').forEach(cb=>{
+    const l=COSTS[Number(cb.dataset.i)];
+    if(cb.checked){ total+=l.v; if(!l.req) disc+=l.v; }
+  });
+  const cad=Math.round(total/2.72);
+  document.getElementById('ptp').innerHTML=`SAR&#8239;${total.toLocaleString('en-CA')}<small>per person</small>`;
+  document.getElementById('cad').innerHTML=`$${cad.toLocaleString('en-CA')}<small>CAD</small>`;
+  document.getElementById('disc').innerHTML=`SAR&#8239;${disc.toLocaleString('en-CA')}<small>your choices</small>`;
+  const v=document.getElementById('verdict');
+  if(disc===0){ v.textContent='Visa and flight only'; v.className=''; }
+  else if(disc<250){ v.textContent='Lean — the free sites carry it'; v.className='win'; }
+  else if(disc<750){ v.textContent='About right for two nights'; v.className='win'; }
+  else if(disc<1600){ v.textContent='You have bought the good version'; v.className=''; }
+  else { v.textContent='That is the expensive AlUla'; v.className='lose'; }
+}
+renderLegs();
+document.getElementById('legs').addEventListener('change',calcTotals);
+calcTotals();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="darkreader-lock">
+<title>Hong Kong</title>
+<link rel="stylesheet" href="fonts.css">
+</head>
+<body>
+<style>
+:root{color-scheme:dark;
+  --ink:#05161D;--ink-2:#0A2029;--ink-3:#0E2A35;
+  --rule:#194150;--rule-soft:rgba(25,65,80,.6);
+  --paper:#E2EEED;--paper-dim:#A6C2C6;--muted:#6C8F98;
+  --amber:#F2A93C;--magenta:#E7649B;--jade:#58C4A3;--red:#E05555;
+  --display:'Big Shoulders Display','Arial Narrow',Impact,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --body:'Inter',system-ui,sans-serif;
+  --gut:clamp(18px,4vw,64px);--maxw:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+.section{padding-block:clamp(34px,4.4vw,58px);border-top:1px solid var(--rule-soft);position:relative}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:14px;margin:0 0 18px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--rule)}
+.eyebrow .n{color:var(--amber)}
+h2.head{font-family:var(--display);font-weight:700;font-size:clamp(34px,5.6vw,66px);line-height:.92;margin:0 0 14px;text-transform:uppercase}
+.lede{max-width:66ch;color:var(--paper-dim);font-size:clamp(15px,1.5vw,17px);margin:0 0 26px}
+.lede b{color:var(--paper);font-weight:600}
+a{color:var(--amber);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+.hint{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+@media (min-width:980px){.hint.wide{display:none}}
+.scroller{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--rule) transparent}
+.scroller::-webkit-scrollbar{height:6px}
+.scroller::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}
+.scroller>svg{display:block;width:100%;height:auto}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(30px,5vw,58px) clamp(24px,4vw,40px);overflow:hidden}
+.gridbg{position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:linear-gradient(to right,var(--rule-soft) 1px,transparent 1px),linear-gradient(to bottom,var(--rule-soft) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%);-webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%)}
+.back{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:inline-block;margin-bottom:20px}
+.back:hover{color:var(--amber)}
+.strip{font-family:var(--mono);font-size:clamp(10px,1.15vw,12px);letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;border-block:1px solid var(--rule);padding-block:11px;margin-bottom:clamp(26px,4vw,44px)}
+.strip .k{color:var(--muted)}.strip .amb{color:var(--amber)}
+.title{font-family:var(--display);text-transform:uppercase;margin:0;line-height:.82;position:relative}
+.title .l1{display:block;font-weight:400;font-size:clamp(34px,7.4vw,96px);color:transparent;-webkit-text-stroke:1.2px var(--paper-dim)}
+.title .l2{display:block;font-weight:800;font-size:clamp(60px,14.5vw,200px);letter-spacing:-.015em;color:var(--paper)}
+.subline{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:baseline;margin-top:clamp(18px,3vw,30px);font-family:var(--mono);font-size:clamp(11px,1.25vw,13px);letter-spacing:.14em;text-transform:uppercase;color:var(--paper-dim)}
+.subline .sep{color:var(--rule)}
+
+/* instruments */
+.instr{display:grid;grid-template-columns:repeat(auto-fit,minmax(124px,1fr));border:1px solid var(--rule);background:var(--ink-2);margin:clamp(24px,3.4vw,38px) 0 0}
+.instr div{padding:15px 17px;border-right:1px solid var(--rule-soft)}
+.instr div:last-child{border-right:0}
+.instr dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.instr dd{margin:0;font-family:var(--display);font-weight:600;font-size:31px;line-height:1}
+.instr dd span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--paper-dim);margin-left:3px}
+.instr dd.hot{color:var(--amber)}
+.instr dd.warn{color:var(--magenta)}
+.instr dd.good{color:var(--jade)}
+
+/* chart frames */
+.figcap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:9px;margin:0 0 8px}
+.figcap b{color:var(--amber);font-weight:500}
+.fignote{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.fignote i{display:inline-block;width:14px;height:9px;margin:0 5px 0 14px;vertical-align:middle;border-radius:1px}
+.fignote i:first-child{margin-left:0}
+.ax{stroke:var(--rule);stroke-width:1}
+.axs{stroke:var(--rule-soft);stroke-width:1}
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.08em;fill:var(--muted)}
+.lbl-p{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;fill:var(--paper)}
+.lbl-a{font-family:var(--mono);font-size:10px;letter-spacing:.12em;fill:var(--amber)}
+
+/* cards */
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin:0 0 6px}
+.card{border:1px solid var(--rule);background:var(--ink-2);padding:18px 20px;position:relative}
+.card.bad{border-color:var(--red)}
+.card.good{border-color:var(--jade)}
+.card h3{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 4px;color:var(--paper)}
+.card .verdict{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:11px}
+.card .verdict.bad{color:var(--red)}
+.card .verdict.ok{color:var(--jade)}
+.card p{margin:0 0 10px;font-size:13.5px;color:var(--paper-dim);line-height:1.62}
+.card p:last-child{margin-bottom:0}
+.card p b{color:var(--paper);font-weight:600}
+.fix{border-left:2px solid var(--amber);padding-left:12px;margin:12px 0 0;font-size:12.8px;color:var(--paper-dim);line-height:1.6}
+.fix b{display:block;color:var(--amber);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px;font-weight:500}
+.fix strong{color:var(--paper);font-weight:600}
+
+/* shape cards */
+.shapes{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+.shape{border:1px solid var(--rule);background:var(--ink-2);padding:0;display:flex;flex-direction:column}
+.shape.pick{border-color:var(--amber);box-shadow:inset 0 0 0 1px rgba(242,169,60,.25)}
+.shape-hd{padding:16px 20px 14px;border-bottom:1px solid var(--rule-soft)}
+.shape-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.shape.pick .shape-tag{color:var(--amber)}
+.shape-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(24px,3vw,32px);line-height:.95;margin:0}
+.chainrow{display:flex;flex-wrap:wrap;align-items:center;gap:5px 7px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--paper);padding:13px 20px;border-bottom:1px solid var(--rule-soft);background:rgba(5,22,29,.5)}
+.chainrow .a{color:var(--rule)}
+.chainrow .n{color:var(--amber);font-size:9.5px}
+.shape-body{padding:15px 20px 18px;flex:1}
+.shape-body p{margin:0 0 10px;font-size:13.3px;color:var(--paper-dim);line-height:1.6}
+.shape-body p:last-child{margin-bottom:0}
+.shape-body p b{color:var(--paper);font-weight:600}
+.shape-meta{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--rule-soft)}
+.shape-meta div{flex:1;min-width:88px;padding:11px 20px;border-right:1px solid var(--rule-soft)}
+.shape-meta div:last-child{border-right:0}
+.shape-meta dt{font-family:var(--mono);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.shape-meta dd{margin:0;font-family:var(--mono);font-size:13px;color:var(--paper)}
+.shape-meta dd.g{color:var(--jade)}
+.shape-meta dd.r{color:var(--red)}
+
+/* day accordion */
+.days{border-top:1px solid var(--rule)}
+.day{border-bottom:1px solid var(--rule)}
+.day-btn{all:unset;box-sizing:border-box;display:grid;width:100%;cursor:pointer;grid-template-columns:76px 1fr auto;gap:0 clamp(14px,2.4vw,30px);align-items:baseline;padding:clamp(13px,1.8vw,18px) 4px;transition:background .18s ease}
+.day-btn:hover{background:rgba(242,169,60,.05)}
+.day-btn:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.day-date{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.1em}
+.day-date small{display:block;color:var(--muted);font-size:9.5px;letter-spacing:.14em;margin-top:3px}
+.day-btn>span:nth-child(2){display:flex;flex-direction:column;gap:6px}
+.day-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(22px,3.2vw,34px);line-height:.95;margin:0}
+.day-sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.day-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--paper-dim);text-align:right;white-space:nowrap}
+.day-meta .chev{display:inline-block;margin-left:12px;color:var(--muted);transition:transform .25s ease}
+.day.open .day-meta .chev{transform:rotate(180deg)}
+@media (max-width:720px){.day-btn{grid-template-columns:64px 1fr;row-gap:8px}.day-meta{grid-column:2;text-align:left}}
+.day-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .34s cubic-bezier(.3,.8,.3,1)}
+.day.open .day-body{grid-template-rows:1fr}
+.day-inner{overflow:hidden}
+.day-pad{padding:2px 4px clamp(22px,3vw,32px)}
+.slots{display:grid;gap:0;border-left:1px solid var(--rule)}
+.slot{padding:0 0 16px 16px;position:relative}
+.slot:last-child{padding-bottom:2px}
+.slot::before{content:"";position:absolute;left:-4px;top:6px;width:7px;height:7px;background:var(--amber);border-radius:50%}
+.slot.move::before{background:var(--magenta)}
+.slot h4{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 5px;font-weight:500}
+.slot.move h4{color:var(--magenta)}
+.slot p{margin:0;font-size:14px;line-height:1.62;color:var(--paper-dim);max-width:72ch}
+.slot p b{color:var(--paper);font-weight:600}
+
+/* worth doing */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.fbtn{all:unset;cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border:1px solid var(--rule);color:var(--paper-dim);border-radius:2px;transition:.15s}
+.fbtn:hover{background:var(--ink-3);color:var(--paper)}
+.fbtn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.fbtn[aria-pressed="true"]{background:var(--amber);color:var(--ink);border-color:var(--amber);font-weight:600}
+.fdiv{width:1px;background:var(--rule);margin:2px 6px}
+.items{display:grid;gap:1px;background:var(--rule-soft);border:1px solid var(--rule)}
+.item{background:var(--ink-2);padding:13px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:baseline}
+.item .tier{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:3px 7px 2px;border-radius:2px;white-space:nowrap;align-self:start;margin-top:2px}
+.tier.do{background:rgba(88,196,163,.14);color:var(--jade);border:1px solid rgba(88,196,163,.35)}
+.tier.opt{background:rgba(242,169,60,.12);color:var(--amber);border:1px solid rgba(242,169,60,.3)}
+.tier.skip{background:rgba(224,85,85,.1);color:var(--red);border:1px solid rgba(224,85,85,.3)}
+.item .nm{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:20px;line-height:1.05;color:var(--paper)}
+.item .why{grid-column:2;font-size:13.3px;color:var(--paper-dim);line-height:1.55;max-width:74ch}
+.item .why b{color:var(--paper);font-weight:600}
+.item .when{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);text-align:right;white-space:nowrap;align-self:start;margin-top:4px}
+.item .when.book{color:var(--magenta)}
+@media (max-width:640px){.item{grid-template-columns:auto 1fr}.item .when{grid-column:2;text-align:left;margin-top:2px}.item .why{grid-column:1/-1}}
+.empty{background:var(--ink-2);padding:22px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* cost calc */
+.calc{border:1px solid var(--rule);background:var(--ink-2)}
+.calc-legs{display:grid}
+.leg-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--rule-soft);cursor:pointer}
+.leg-row:hover{background:rgba(242,169,60,.04)}
+.leg-row input{accent-color:var(--amber);width:15px;height:15px;cursor:pointer}
+.leg-row .lname{font-family:var(--mono);font-size:12.5px;color:var(--paper-dim)}
+.leg-row input:checked+.lname{color:var(--paper)}
+.leg-row .lyen{font-family:var(--mono);font-size:12.5px;color:var(--amber);font-variant-numeric:tabular-nums;white-space:nowrap}
+.leg-row .lyen.free{color:var(--jade)}
+.leg-row .lnote{grid-column:2/-1;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--muted);margin-top:-4px}
+.calc-out{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule-soft)}
+.calc-out div{background:var(--ink-3);padding:15px 17px}
+.calc-out dt{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.calc-out dd{margin:0;font-family:var(--display);font-weight:700;font-size:27px;line-height:1;font-variant-numeric:tabular-nums}
+.calc-out dd small{font-family:var(--mono);font-size:10px;font-weight:400;color:var(--paper-dim);margin-left:4px;letter-spacing:.06em}
+#verdict{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;line-height:1.5}
+#verdict.win{color:var(--jade)}
+#verdict.lose{color:var(--red)}
+
+/* panels / tables */
+.panel{border:1px solid var(--rule);background:var(--ink-2);padding:clamp(17px,2.4vw,24px);margin-top:22px}
+.panel h3{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 12px;font-weight:500}
+.panel p{margin:0 0 12px;font-size:13.6px;color:var(--paper-dim);line-height:1.62}
+.panel p:last-child{margin-bottom:0}
+.panel p b{color:var(--paper);font-weight:600}
+table.ref{width:100%;border-collapse:collapse;font-size:13.4px}
+table.ref th{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:500;padding:0 14px 10px 0;border-bottom:1px solid var(--rule)}
+table.ref td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule-soft);color:var(--paper-dim);vertical-align:top}
+table.ref td:first-child{font-family:var(--display);font-size:17px;font-weight:600;text-transform:uppercase;color:var(--paper);white-space:nowrap;width:1%}
+table.ref td.t{font-family:var(--mono);font-size:11px;letter-spacing:.06em;white-space:nowrap;color:var(--amber)}
+table.ref tr.flag td.t{color:var(--magenta)}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.cols{display:grid;gap:16px 34px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:20px}
+.cols p{margin:0;font-size:13.6px;color:var(--paper-dim);line-height:1.6}
+.cols p b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:5px;font-weight:500}
+
+footer{border-top:1px solid var(--rule);padding-block:26px 40px;color:var(--muted)}
+.foot-grid{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:flex-end}
+.foot-grid p{margin:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase}
+.foot-mark{font-family:var(--display);font-size:clamp(40px,9vw,110px);font-weight:800;text-transform:uppercase;line-height:.8;color:transparent;-webkit-text-stroke:1px var(--rule);margin:30px 0 0}
+</style>
+
+<header class="hero">
+  <div class="gridbg"></div>
+  <div class="wrap">
+    <a class="back" href="index.html">← Westbound · the dossier</a>
+    <p class="strip">
+      <span><span class="k">Stop</span> <span class="amb">11 of 27</span></span>
+      <span><span class="k">In</span> MNL · Manila</span>
+      <span><span class="k">Fly Hong Kong</span> <span class="amb">HKG</span></span>
+      <span><span class="k">Out</span> HAN · Hanoi</span>
+      <span><span class="k">Window</span> 30 Nov – 3 Dec 2026</span>
+      <span><span class="k">Clock</span> UTC+8</span>
+    </p>
+    <h1 class="title">
+      <span class="l1">Eleventh stop</span>
+      <span class="l2">Hong Kong</span>
+    </h1>
+    <p class="subline">
+      <span>Three nights, one base</span><span class="sep">/</span>
+      <span>No time change from Manila</span><span class="sep">/</span>
+      <span>The best weather of the year</span>
+    </p>
+
+    <dl class="instr">
+      <div><dt>Calendar days</dt><dd>4</dd></div>
+      <div><dt>Full days</dt><dd class="hot">2</dd></div>
+      <div><dt>Nights</dt><dd>3</dd></div>
+      <div><dt>Bases needed</dt><dd class="good">1</dd></div>
+      <div><dt>Clock shift</dt><dd class="good">0<span>hrs</span></dd></div>
+      <div><dt>Dec rain days</dt><dd class="good">5.3<span>/mo</span></dd></div>
+    </dl>
+  </div>
+</header>
+
+<section class="section" id="audit">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">01</span> The time audit</p>
+    <h2 class="head">Two days,<br>and a real afternoon</h2>
+    <p class="lede">This is the easiest arrival on the whole trip. Manila and Hong Kong sit in the <b>same time zone</b>, the flight is barely two hours, and there is no date line and no jet lag to absorb. Take a morning departure out of MNL and you are checked in and walking by early afternoon on Monday — which turns a nominal write-off into something close to a half day. Against that, Thursday's flight to Hanoi eats the last morning. Net: <b>two full days plus a working afternoon</b>, in a city compact enough that this is genuinely enough.</p>
+
+    <div class="figcap">
+      <span>Fig. 1 — What the window really contains</span>
+      <span><b>30 Nov – 3 Dec</b> · hour by hour</span>
+    </div>
+    <div class="scroller">
+      <svg id="audit-chart" viewBox="0 0 1400 190" role="img" aria-label="Timeline of 30 November to 3 December showing a short morning flight from Manila, a usable Monday afternoon, two full days on 1 and 2 December, and a final Thursday morning before the flight to Hanoi."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--magenta);opacity:.55"></i>In transit<i style="background:rgba(242,169,60,.35)"></i>Part day<i style="background:var(--amber)"></i>Full day</p>
+
+    <div class="cols">
+      <p><b>One base, no moving</b>Everything in this dossier is inside a 45-minute radius of Central. There is no second hotel, no bag forwarding, no internal flight. After Japan, Nepal and the Philippines that is a rest in itself — book three nights in one place and never touch the suitcase again.</p>
+      <p><b>Arrive on your own terms</b>Airport Express reaches Hong Kong Station in 24 minutes for HK$120 on Octopus. Bus A21 or A11 takes about an hour for roughly a third of that, and the S1 shuttle to Tung Chung plus the MTR is cheaper still. On an arrival day you have already half-salvaged, the train is worth it; on the way out, the bus is fine.</p>
+      <p><b>The Monday–Tuesday trap</b>Hong Kong's two big West Kowloon museums close on different days, and between them they knock out both your arrival day and your first full day. Section 02 has the fix, but the short version is: <b>West Kowloon happens on Wednesday</b>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="flags">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">02</span> Three things to know first</p>
+    <h2 class="head">Before you<br>plan a day</h2>
+    <p class="lede">One is unusually good news, one is a scheduling constraint that will quietly ruin a day if you don't route around it, and one is the honest version of what has changed here since most guidebooks were written.</p>
+
+    <div class="cards">
+      <div class="card good">
+        <h3>You picked the right week</h3>
+        <div class="verdict ok">Best month of the year</div>
+        <p>The northeast monsoon has taken over by late November and it turns Hong Kong into a different city. Observatory normals for December: mean daily maximum <b>20.4°C</b>, minimum 16.2°C, 70% humidity, <b>28.8 mm of rain across 5.3 days</b> and 162 hours of sunshine. November is a few degrees warmer at 24.5°C / 20.3°C, and your window straddles the two — expect low-twenties days and high-teens evenings.</p>
+        <p>Compare August: 453 mm of rain and a mean of 28.7°C at ninety-odd percent humidity. The real prize is not comfort but <b>visibility</b> — this is the season you can actually see across the harbour and off the ridges, which is the entire point of everything below.</p>
+        <div class="fix"><b>What to pack out of the bag</b>One light layer for the evening and on the MTR, which is air-conditioned like a meat locker year-round. No umbrella strategy required. Typhoon season is May–November and is effectively finished by the time you land.</div>
+      </div>
+
+      <div class="card bad">
+        <h3>The museum calendar is against you</h3>
+        <div class="verdict bad">Costs you a day if ignored</div>
+        <p><b>M+ is closed Mondays</b> — that's your arrival day, 30 November. <b>The Hong Kong Palace Museum is closed Tuesdays</b> — that's your first full day, 1 December. The two sit four minutes' walk apart in West Kowloon, and there is exactly one day of your stay when both are open: <b>Wednesday 2 December</b>.</p>
+        <p>Which is also, as it happens, the one night of your stay with racing at Happy Valley — meetings run Wednesday evenings from September to July. Both fit: the museums close at 18:00 and the first race is 18:40 or 19:10, twenty minutes away by MTR.</p>
+        <div class="fix"><b>The fix</b>Pin Wednesday: <strong>West Kowloon in the afternoon, Happy Valley at night.</strong> Everything else in the itinerary floats around that one fixed block.</div>
+      </div>
+
+      <div class="card">
+        <h3>The honest version</h3>
+        <div class="verdict">Say it plainly</div>
+        <p>Global Affairs Canada advises Canadians to <b>exercise a high degree of caution</b> in Hong Kong, citing the risk of arbitrary enforcement of local laws — advice reviewed as recently as 9 September 2026. The national security legislation of 2020 and 2024 is in force and is drawn broadly.</p>
+        <p>In practice, for a tourist on a three-night stop this means: border officers may inspect the contents of electronic devices, particularly at crossings to the mainland; you must declare cash or bearer instruments over HK$120,000; and political demonstrations and public commentary carry risks they did not a decade ago. None of that changes the ferry, the food or the hills.</p>
+        <div class="fix"><b>Worth knowing</b>A separate Chinese visa is required for the mainland — Hong Kong's visa-free entry does not extend across the boundary. Skip the Shenzhen day trip; on three nights it was never going to fit anyway.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="shapes">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">03</span> The open question</p>
+    <h2 class="head">One day out<br>of the city</h2>
+    <p class="lede">Wednesday belongs to West Kowloon and Happy Valley. Monday afternoon and Thursday morning are fragments. That leaves <b>Tuesday 1 December</b> as the only day large enough to leave the urban core — and three genuinely different ways to spend it. All three fit the same window; only one of them is free.</p>
+
+    <div class="shapes">
+      <div class="shape pick">
+        <div class="shape-hd">
+          <div class="shape-tag">Recommended</div>
+          <p class="shape-name">The ridge</p>
+        </div>
+        <div class="chainrow">
+          <span>Shau Kei Wan</span><span class="a">→</span>
+          <span>Bus 9 <span class="n">To Tei Wan</span></span><span class="a">→</span>
+          <span>Dragon's Back</span><span class="a">→</span>
+          <span>Big Wave Bay</span><span class="a">→</span>
+          <span>Shek O</span>
+        </div>
+        <div class="shape-body">
+          <p>Five-odd kilometres along a spine of hill with the South China Sea on both sides, finishing on a beach with a bus back. Two to three hours at a walking pace, and December is the <b>only season in which this is comfortable</b> rather than an endurance event — the same ridge in August is 33°C at ninety percent humidity.</p>
+          <p>It is also the single best argument for why this stop sits where it does in the trip. You are two weeks from Cape Town and eight from the Sahara; a cool, dry, high, empty ridgeline three MTR stops from a skyline is not a thing you get twice. <b>Cost: one bus fare.</b></p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Hours</dt><dd class="g">4–5</dd></div>
+          <div><dt>Cost</dt><dd class="g">≈HK$15</dd></div>
+          <div><dt>Booking</dt><dd class="g">None</dd></div>
+          <div><dt>Weather risk</dt><dd class="g">Low</dd></div>
+        </dl>
+      </div>
+
+      <div class="shape">
+        <div class="shape-hd">
+          <div class="shape-tag">If you want the big set piece</div>
+          <p class="shape-name">The Buddha</p>
+        </div>
+        <div class="chainrow">
+          <span>Tung Chung</span><span class="a">→</span>
+          <span>Cable car <span class="n">25 min</span></span><span class="a">→</span>
+          <span>Ngong Ping</span><span class="a">→</span>
+          <span>Tian Tan Buddha</span><span class="a">→</span>
+          <span>Tai O</span>
+        </div>
+        <div class="shape-body">
+          <p>The Ngong Ping 360 cable car runs 5.7 km over water and mountain to a 34-metre bronze Buddha on a plateau, with Po Lin Monastery beside it and the stilt-house village of Tai O reachable by bus afterwards. It is a genuine spectacle and the ride itself is the best part.</p>
+          <p><b>It is also the expensive option:</b> HK$295 for a standard-cabin round trip, HK$365 for the glass-floored crystal cabin. Weekday hours are 10:00–18:00, which caps how early you can start. New Lantao Bus route 23 climbs the same mountain road for a small fraction of the fare if you want the destination without the ride.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Hours</dt><dd>6–8</dd></div>
+          <div><dt>Cost</dt><dd class="r">HK$295+</dd></div>
+          <div><dt>Booking</dt><dd>Advised</dd></div>
+          <div><dt>Weather risk</dt><dd>Cloud/wind</dd></div>
+        </dl>
+      </div>
+
+      <div class="shape">
+        <div class="shape-hd">
+          <div class="shape-tag">If you want to slow down</div>
+          <p class="shape-name">The island</p>
+        </div>
+        <div class="chainrow">
+          <span>Central Pier 5</span><span class="a">→</span>
+          <span>Ferry <span class="n">35–60 min</span></span><span class="a">→</span>
+          <span>Cheung Chau</span><span class="a">→</span>
+          <span>Mini Great Wall</span>
+        </div>
+        <div class="shape-body">
+          <p>A dumbbell-shaped fishing island with no cars on it, forty minutes out of Central. Bicycles, a seafood praya, temples, a pirate cave, and a short cliff path called the Mini Great Wall that is a great deal better than the name. Half a day, easily stretched.</p>
+          <p><b>The trade-off is that it is restful rather than remarkable.</b> Choose it if eleven countries deep you would rather sit by water than climb something. The fast ferry costs a little more and halves the crossing; the slow one is more pleasant.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Hours</dt><dd>5–6</dd></div>
+          <div><dt>Cost</dt><dd class="g">Ferry only</dd></div>
+          <div><dt>Booking</dt><dd class="g">None</dd></div>
+          <div><dt>Weather risk</dt><dd class="g">Low</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Where to put the three nights</h3>
+      <p><b>Sheung Wan or Central (Hong Kong Island).</b> The recommendation. You are walking distance from Man Mo Temple, Tai Kwun, the Mid-Levels escalator, the tram and the Star Ferry pier, and Airport Express drops you at Hong Kong Station in the middle of it. Sheung Wan is the cheaper, older, more interesting end of the same walk.</p>
+      <p><b>Tsim Sha Tsui (Kowloon).</b> Cheaper per night, better for the skyline view — you are looking <i>at</i> Hong Kong Island rather than standing on it — and closer to West Kowloon, Temple Street and Sham Shui Po. Airport Express has its own Kowloon stop at HK$105. A reasonable second choice, especially if the harbour view matters to you.</p>
+      <p><b>Not the Peak, not Lantau, not Discovery Bay.</b> Beautiful, and each puts a mountain or a ferry between you and dinner. On three nights, stay where the trains are.</p>
+    </div>
+
+    <div class="panel">
+      <h3>What's cut, whichever Tuesday you pick</h3>
+      <p><b>Macau.</b> An hour by ferry or bridge bus, a separate immigration crossing, and a full day gone. Portuguese Macau is genuinely worth seeing — and you finish this entire trip in Lisbon eleven weeks from now, which is a strange and pleasing reason to leave it.</p>
+      <p><b>Sai Kung and Tai Long Wan.</b> The best beaches and the best coastal hiking in the territory, and both need a full day plus a boat. This is the thing to come back for.</p>
+      <p><b>Ocean Park and Disneyland.</b> Both eat a whole day. Neither is why you are here.</p>
+      <p><b>Lion Rock and Lantau Peak at sunrise.</b> Superb, and both mean a pre-dawn start on a stop where you finally get to sleep. If the ridge day leaves you wanting more hill, Lion Rock is the one to reach for.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="run">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">04</span> Day by day</p>
+    <h2 class="head">Both versions,<br>laid out</h2>
+    <p class="lede">Wednesday is fixed in both plans; Tuesday is what changes. Times are indicative — treat the anchored items (the museums, the races, the last ferry, the flight) as real and let everything else drift. Everything here is reachable on an Octopus card without a single taxi.</p>
+    <div class="filters" id="dayToggle" style="margin-bottom:6px">
+      <button class="fbtn" data-plan="ridge" aria-pressed="true">Ridge Tuesday</button>
+      <button class="fbtn" data-plan="buddha" aria-pressed="false">Buddha Tuesday</button>
+    </div>
+    <div class="days" id="days"></div>
+    <p class="fignote" style="margin-top:16px">Amber = on foot or on the MTR · <span style="color:var(--magenta)">Magenta = a flight, a ferry or a real move</span></p>
+  </div>
+</section>
+
+<section class="section" id="worth">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">05</span> What's actually worth doing</p>
+    <h2 class="head">Do, maybe,<br>don't bother</h2>
+    <p class="lede">Sorted by area, then by whether it earns a slot in a stay this short. Hong Kong is unusual in that <b>most of its best things are free and most of its expensive things are mediocre</b> — the <i>don't bother</i> list here is longer than usual for exactly that reason, and almost every entry on it has a free alternative sitting a few lines above.</p>
+
+    <div class="filters" id="filters">
+      <button class="fbtn" data-city="all" aria-pressed="true">All</button>
+      <button class="fbtn" data-city="Island" aria-pressed="false">HK Island</button>
+      <button class="fbtn" data-city="Kowloon" aria-pressed="false">Kowloon</button>
+      <button class="fbtn" data-city="Outlying" aria-pressed="false">Lantau &amp; islands</button>
+      <button class="fbtn" data-city="Green" aria-pressed="false">Hills &amp; water</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-tier="do" aria-pressed="false">Do</button>
+      <button class="fbtn" data-tier="opt" aria-pressed="false">Maybe</button>
+      <button class="fbtn" data-tier="skip" aria-pressed="false">Don't bother</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-book="1" aria-pressed="false">Needs booking</button>
+    </div>
+    <div class="items" id="items"></div>
+  </div>
+</section>
+
+<section class="section" id="harbour">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">06</span> The view question</p>
+    <h2 class="head">Every view,<br>by price</h2>
+    <p class="lede">Hong Kong sells its skyline harder than any city on this route, and the ranking of viewpoints by quality is close to the <b>inverse</b> of the ranking by price. The chart is the argument. The Star Ferry — a working commuter crossing, not a tour — is the best five dollars anyone spends anywhere on this trip.</p>
+
+    <div class="figcap">
+      <span>Fig. 2 — What each viewpoint costs</span>
+      <span><b>HK$</b> · adult, one visit</span>
+    </div>
+    <div class="scroller">
+      <svg id="view-chart" viewBox="0 0 1400 470" role="img" aria-label="Horizontal bar chart of Hong Kong viewpoint costs in Hong Kong dollars, from free options such as the Tsim Sha Tsui promenade, Lugard Road and Dragon's Back, through the Star Ferry at five dollars and bus 15 at nine dollars eighty, up to the Peak Tram at eighty-eight, Sky Terrace at one hundred and forty-nine, and the Ngong Ping cable car at two hundred and ninety-five."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--jade)"></i>Free or near-free<i style="background:rgba(242,169,60,.6)"></i>Paid · fares verified Sept 2026, and Star Ferry has an increase pending</p>
+
+    <div class="panel">
+      <h3>The Star Ferry, and the fare rise sitting behind it</h3>
+      <p>Since April 2023 the Tsim Sha Tsui–Central crossing has cost <b>HK$5 on the upper deck on a weekday</b> (HK$4 lower deck; HK$6.50 and HK$5.60 at weekends). Ten minutes, green and white, wooden benches with reversible backs, and the entire skyline rotating around you. Go at dusk in one direction and after the lights come on in the other — it is worth doing twice on the same evening, which costs you ten dollars.</p>
+      <p>The operator applied in March 2026 for a further increase of roughly 30% — 80 cents to HK$2 a journey — after years of losses. As of mid-2026 it had not been approved. Even at the proposed fare it stays the cheapest thing in this dossier by an order of magnitude.</p>
+      <p><b>Ignore the harbour tour.</b> The same company sells a 45-minute "Water Tour" on the <i>Shining Star</i> at HK$230, or HK$280 for the version timed to the light show. It is the same water. Two ordinary crossings and a bench on the promenade give you more, for two percent of the money.</p>
+    </div>
+
+    <div class="panel">
+      <h3>The Peak: go up cheap, look from the right place</h3>
+      <p>The Peak Tram is a 1888 funicular and worth riding once. Walk-up return is <b>HK$88 on a weekday</b>, HK$108 at weekends; one-way is HK$62. The online Sky Pass bundles the tram return with Sky Terrace 428 for HK$149. Queues at the Garden Road terminus are shortest before ten in the morning and worst between four and seven in the evening, when they can run past an hour.</p>
+      <p>The move most locals make: <b>bus 15 up from Exchange Square, HK$9.80</b>, forty-odd minutes of switchbacks with better views than the tram tunnel, then walk or take the tram down. And once you are up there, skip the paid deck and walk the <b>Lugard Road circuit</b> — a level, 3.5 km loop around the mountain, free, open all hours, and the source of most of the photographs that make you want to come here.</p>
+    </div>
+
+    <div class="panel">
+      <h3>A Symphony of Lights</h3>
+      <p>Nightly at 20:00, free, roughly ten minutes, and it has been running since 2004. Watch it from the Tsim Sha Tsui promenade — the buildings it choreographs are on the Island side, so Kowloon is where it makes sense. Manage expectations: it is a laser-and-searchlight show over a skyline that was already the spectacle. The skyline is the reason to be standing there; the show is a bonus that arrives on schedule.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="money">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">07</span> The arithmetic</p>
+    <h2 class="head">What three days<br>actually costs</h2>
+    <p class="lede">Tick what you plan to pay for. The point of the exercise is the <b>avoidable</b> column: on this stop, the difference between the expensive version and the good version is several hundred dollars and almost no experience. Accommodation, food and the flights out are not in here — this is only the sightseeing-and-getting-around layer.</p>
+
+    <div class="calc">
+      <div class="calc-legs" id="legs"></div>
+      <dl class="calc-out">
+        <div><dt>Selected</dt><dd id="ptp"></dd></div>
+        <div><dt>Roughly</dt><dd id="cad"></dd></div>
+        <div><dt>Avoidable</dt><dd id="diff"></dd></div>
+        <div><dt>Verdict</dt><dd><span id="verdict"></span></dd></div>
+      </dl>
+    </div>
+    <p class="fignote">Fares and admissions verified Sept 2026 and subject to change · CAD converted at roughly HK$5.6 to the dollar · avoidable figures are approximate</p>
+
+    <div class="panel">
+      <h3>What isn't on that list, because it's free</h3>
+      <p>Man Mo Temple. Tai Kwun, the restored Central Police Station compound, including its contemporary art galleries. The Central–Mid-Levels Escalator, 800 metres of it, downhill until 10:00 and uphill after. The Tsim Sha Tsui promenade and the Symphony of Lights. Dragon's Back and every other trail in the territory. The Lugard Road circuit. Chi Lin Nunnery and Nan Lian Garden. Kowloon Walled City Park. Sham Shui Po's street markets. Entry to the public enclosure at Happy Valley, which is HK$10 for residents and <b>free for visitors aged 18 and over on production of a passport</b>.</p>
+      <p>That list is most of a very good three days. The paid list above is genuinely optional, which is not true of many cities on this route.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="admin">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">08</span> Ground rules</p>
+    <h2 class="head">Before you land</h2>
+
+    <div class="tablewrap">
+    <table class="ref">
+      <thead><tr><th>Item</th><th>What to do</th><th>When</th></tr></thead>
+      <tbody>
+        <tr><td>Entry</td><td>Visa-free for Canadians, 90 days, for tourism. Passport must be valid at least one month beyond the date you expect to leave. No pre-registration, no e-visa, no online form.</td><td class="t">Nothing to do</td></tr>
+        <tr><td>Arrival card</td><td>Abolished. The Immigration Department no longer requires visitors to complete an arrival or departure card — you hand over the passport and that is the whole procedure. Ignore any guidebook that tells you to fill one in on the plane.</td><td class="t">Nothing to do</td></tr>
+        <tr class="flag"><td>Departure tax</td><td>Air Passenger Departure Tax rose from HK$120 to <b>HK$200</b> on 1 October 2025. Collected inside the airfare, so it's a line item rather than a counter. The exemption for passengers arriving and departing on consecutive calendar days doesn't apply to a three-night stay.</td><td class="t">Automatic</td></tr>
+        <tr class="flag"><td>Hotel tax</td><td>The 3% Hotel Accommodation Tax came back on 1 January 2025 after seventeen years suspended. It sits on top of the usual 10% service charge, so read quoted room rates as roughly 13% optimistic.</td><td class="t">Budget for it</td></tr>
+        <tr><td>Octopus</td><td>The card runs MTR, buses, trams, ferries, convenience stores and most small restaurants. Plastic cards carry a HK$50 refundable deposit; you can also add one to Apple Wallet before you fly. Contactless Visa and Mastercard now work directly on the MTR and Airport Express if you'd rather not bother.</td><td class="t">On arrival</td></tr>
+        <tr><td>Cash</td><td>Far less essential than Japan — but wet markets, dai pai dongs, some minibuses and the odd temple donation box still want it. HK$500–1,000 in hand is plenty. ATMs are everywhere.</td><td class="t">On arrival</td></tr>
+        <tr class="flag"><td>Museums</td><td><b>M+ closed Mondays</b> (HK$190 standard). <b>Hong Kong Palace Museum closed Tuesdays</b> (HK$70 general; HK$150 including the special exhibition). Wednesday 2 December is the only day both are open.</td><td class="t">Pin Wednesday</td></tr>
+        <tr><td>Special exhibition</td><td><i>Windows into Heaven — Religious Art Treasures from the State Tretyakov Gallery</i> runs at the Palace Museum from 21 October 2026 to 26 March 2027, so it is on during your visit. M+ opens a show drawn from the Takahashi Ryutaro collection of contemporary Japanese art in December — check the exact opening date.</td><td class="t">Book online</td></tr>
+        <tr><td>Happy Valley</td><td>Race meetings run Wednesday evenings, September to July. Gates two hours before the first race, which is 18:40 or 19:10; last sensible entry 21:30. Public enclosure is free for visitors 18+ with a passport. <b>2 December is a Wednesday.</b></td><td class="t">Wed evening</td></tr>
+        <tr class="flag"><td>Clockenflap</td><td>Hong Kong's big music festival lands at the Central Harbourfront in early December most years — 5–7 December in 2025, 29 November–1 December in 2024. The 2026 dates were not published as of September 2026. If it falls inside your window, harbourfront hotel rates move sharply and Central gets loud.</td><td class="t">Check now</td></tr>
+        <tr><td>Public holidays</td><td>None inside 30 November – 3 December. Christmas decorations and the WinterFest harbour lights go up from late November, so you get the display without the holiday crowds.</td><td class="t">Clear</td></tr>
+        <tr><td>Onward</td><td>HKG to Hanoi is about two hours, with Cathay Pacific, Vietnam Airlines, HK Express and Vietjet all flying it. Vietnam is UTC+7, so you land an hour "earlier" than you left. Check your Vietnam e-visa status well before this leg.</td><td class="t">Before you fly</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="cols">
+      <p><b>Getting around</b>The MTR is fast, cheap, clean and signed in English, and it reaches everything in this dossier. The double-decker trams on Hong Kong Island — the "ding ding" — are a flat HK$3 to anywhere on the line; take the front seat upstairs and ride from Kennedy Town to Causeway Bay for the best-value hour in the city. Minibuses are for the confident.</p>
+      <p><b>Eating</b>The best meals will cost under HK$100 and involve a shared table. Dim sum before eleven, cart-style if you can find it. Wonton noodles, roast goose over rice, claypot rice in Temple Street once the weather is this cool, egg tarts from a bakery counter, and milk tea strong enough to stand a spoon in. Sham Shui Po and Sheung Wan are where to look; hotel restaurants are where not to.</p>
+      <p><b>Language</b>Cantonese and English are both official, and English signage is universal on transport and in museums. Outside the tourist core — Sham Shui Po, the wet markets, a neighbourhood dai pai dong — pointing works fine and is expected.</p>
+      <p><b>Typhoons and weather signals</b>The season runs roughly May to November and is over by the time you arrive. If a signal ever goes up, the system is public and unambiguous: at Signal 8 the city closes, and that includes the Peak Tram, the ferries and the cable car. In early December the realistic risk is a grey day, not a shut one.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <p>Westbound · stop 11 · Hong Kong</p>
+      <p>30 Nov – 3 Dec 2026 · MNL in, HAN out</p>
+      <p>Fares, taxes and opening days verified Sept 2026 — recheck before booking</p>
+    </div>
+    <p class="foot-mark">Harbour → Ridge</p>
+  </div>
+</footer>
+
+<script>
+/* ============ DAY-BY-DAY ============ */
+const ARRIVE={d:'Mon 30',w:'Arrive',name:'Sheung Wan',sub:'Land midday · a real afternoon',meta:'Night 1',
+ slots:[
+  {m:1,h:'11:00 · HKG → Hong Kong Station',p:'Airport Express, 24 minutes, HK$120 on Octopus. Buy or top up the card in arrivals before you board. Bags down in Sheung Wan by half twelve, which is the whole reason to take the train rather than the bus today.'},
+  {h:'13:30 · Hollywood Road',p:'<b>Man Mo Temple</b> first — giant hanging incense coils, gods of literature and war, free, and the best-smelling room in Hong Kong. Then east along the antique shops and Cat Street with the hill on your right.'},
+  {h:'15:00 · Tai Kwun',p:'The former Central Police Station, magistracy and Victoria Prison, restored and opened as a free public compound. Granite parade ground, a preserved cell block, two contemporary art galleries and a good bar. Budget more time than you think.'},
+  {m:1,h:'17:15 · Star Ferry at dusk',p:'Walk down to Central Pier 7 and cross to Tsim Sha Tsui. Upper deck, HK$5 on a weekday. Time it so the lights come on while you are mid-harbour — this is the thing the whole stop is built around and it costs less than a coffee.'},
+  {h:'18:00 · Tsim Sha Tsui promenade',p:'Walk the waterfront with the Island in front of you. <b>A Symphony of Lights runs at 20:00 nightly</b>, free, about ten minutes. The skyline is the spectacle; the lasers are a bonus that arrives on time.'},
+  {h:'20:30 · Temple Street',p:'Claypot rice — properly good once the weather is this cool — then the night market up Temple Street. MTR or a second ferry back across.'}
+]};
+
+const RIDGE_TUE={d:'Tue 1',w:'Full',name:"The ridge",sub:"Dragon's Back, then the Peak",meta:'Night 2',
+ slots:[
+  {m:1,h:'08:00 · MTR to Shau Kei Wan',p:'Island line east to the end, then bus 9 from the terminus toward Shek O. Get off at <b>To Tei Wan</b>, about fifteen minutes up the coast road — the driver knows, and so does everyone else on the bus in walking shoes.'},
+  {h:'08:45 · Dragon’s Back',p:'A short climb to the ridge, then it undulates along the spine with Shek O and Tai Tam below on either side and the South China Sea beyond. Two to three unhurried hours to Big Wave Bay. December is the only season this is comfortable rather than an ordeal.'},
+  {h:'12:00 · Big Wave Bay & Shek O',p:'Come off the hill onto a beach. Lunch in Shek O village, ten minutes further on — the old Thai-Chinese place by the roundabout has been feeding hikers for decades. Swim if the sea is being generous. Bus 9 back.'},
+  {m:1,h:'16:00 · Bus 15 to the Peak',p:'From Exchange Square in Central, HK$9.80, about forty minutes of switchbacks up through Mid-Levels. Better views than the tram tunnel and no queue at this hour.'},
+  {h:'16:45 · Lugard Road at sunset',p:'The level 3.5 km circuit around the mountain — free, open all hours, and the source of most of the photographs that made you want to come here. Sky Terrace 428 charges HK$149 for a lower, more crowded version of the same view.'},
+  {h:'20:00 · Dinner below',p:'Peak Tram down if the queue has died, bus 15 if not. Eat in Sheung Wan or Kennedy Town — the far end of the tram line is where the good small restaurants went when Central got expensive.'}
+]};
+
+const BUDDHA_TUE={d:'Tue 1',w:'Full',name:'Lantau',sub:'Cable car, Buddha, Tai O',meta:'Night 2',
+ slots:[
+  {m:1,h:'09:15 · MTR to Tung Chung',p:'Tung Chung line from Hong Kong Station, about half an hour. The cable car terminal is beside the station exit, which is the one genuinely frictionless part of this day.'},
+  {h:'10:00 · Ngong Ping 360',p:'First cabins at 10:00 on a weekday (9:00 at weekends), last down at 18:00. HK$295 standard round trip, HK$365 for the glass-floored crystal cabin. Twenty-five minutes and 5.7 km over the water and then up the mountain — <b>the ride is the attraction</b>, not the village at the top.'},
+  {h:'11:15 · Tian Tan Buddha & Po Lin',p:'268 steps up to a 34-metre bronze Buddha finished in 1993, with a working monastery below it and a vegetarian canteen that is better than it needs to be. The plateau is often in cloud even on a clear day at sea level.'},
+  {m:1,h:'13:30 · Tai O',p:'New Lantao Bus 21 from Ngong Ping, about twenty minutes down the far side. A stilt-house fishing village on the western tip — shrimp paste drying in the sun, sampan tours out to look for pink dolphins you will probably not see, and the least Hong Kong-looking place in Hong Kong.'},
+  {m:1,h:'16:30 · Back to town',p:'Bus 11 direct to Tung Chung, or back over the cable car if you bought the return. Reckon ninety minutes door to door.'},
+  {h:'19:00 · What you traded',p:'This day costs you <b>Dragon’s Back</b> — the ridge has no other slot in this window. If you still want a view tonight, bus 15 to the Peak and walk Lugard Road at dusk; take a phone torch for the last stretch.'}
+]};
+
+const WED={d:'Wed 2',w:'Full',name:'West Kowloon',sub:'Museums, then the races',meta:'Night 3',
+ slots:[
+  {h:'08:30 · Sham Shui Po',p:'Apliu Street’s electronics sprawl, the fabric and bead lanes, and breakfast at a cha chaan teng — milk tea, scrambled egg on toast, macaroni soup. The least polished district in this dossier and the most alive.'},
+  {h:'11:00 · Chi Lin Nunnery & Nan Lian Garden',p:'Diamond Hill. Tang-dynasty-style timber halls built without a single nail, and a Tang-style garden across the footbridge. Both free, both improbably quiet under a ring of housing blocks. Drop it if Sham Shui Po ran long.'},
+  {h:'13:30 · M+',p:'HK$190, open until 18:00 today, and <b>shut on Mondays</b> — which is why it lands here. Two to three hours; don’t try to see all of it. The roof garden and the harbour-facing terrace are free to walk even without a ticket.'},
+  {h:'15:45 · Hong Kong Palace Museum',p:'Four minutes’ walk. HK$70 general, HK$150 including the special exhibition — <i>Windows into Heaven</i>, Tretyakov Gallery loans, running to 26 March 2027. <b>Shut on Tuesdays</b>, which is the other half of why Wednesday is fixed. Closes 18:00.'},
+  {m:1,h:'18:15 · Happy Valley',p:'MTR to Causeway Bay and walk, or take the tram for the sake of it. Public enclosure entry is <b>free for visitors 18 and over on production of a passport</b>. First race 18:40 or 19:10. Stay for three or four, bet small, eat from the stalls, and watch a racecourse operate inside a wall of apartment towers.'}
+]};
+
+const DEPART={d:'Thu 3',w:'Depart',name:'To Hanoi',sub:'One last morning',meta:'Fly out',
+ slots:[
+  {h:'08:00 · Dim sum, properly',p:'Your last chance on this leg for a trolley, a pot of pu’er and a table you share with strangers. A neighbourhood tea house will do it better than anything attached to a hotel. Go before nine.'},
+  {h:'09:30 · One more crossing',p:'Star Ferry over and back, or the tram from Sheung Wan to Causeway Bay if the harbour is grey. Ten dollars, forty minutes, nothing required of you.'},
+  {m:1,h:'11:30 · Airport Express to HKG',p:'24 minutes from Hong Kong Station. <b>In-town check-in</b> is available at Hong Kong and Kowloon stations for most airlines — hand over the bags before you get on the train and walk to the gate at the other end.'},
+  {m:1,h:'· Hanoi',p:'Stop 12. About two hours to HAN on Cathay Pacific, Vietnam Airlines, HK Express or Vietjet. Vietnam runs on UTC+7, so you land an hour "earlier" than you left and the afternoon repeats itself slightly.'}
+]};
+
+const DAYS_RIDGE=[ARRIVE,RIDGE_TUE,WED,DEPART];
+const DAYS_BUDDHA=[ARRIVE,BUDDHA_TUE,WED,DEPART];
+
+let CURRENT_PLAN='ridge';
+function renderDays(){
+  const DAYS = CURRENT_PLAN==='ridge' ? DAYS_RIDGE : DAYS_BUDDHA;
+  document.getElementById('days').innerHTML=DAYS.map(D=>`
+  <div class="day">
+    <button class="day-btn" aria-expanded="false">
+      <span class="day-date">${D.d}<small>${D.w}</small></span>
+      <span><span class="day-name">${D.name}</span><span class="day-sub">${D.sub}</span></span>
+      <span class="day-meta">${D.meta}<span class="chev">▾</span></span>
+    </button>
+    <div class="day-body"><div class="day-inner"><div class="day-pad"><div class="slots">
+      ${D.slots.map(s=>`<div class="slot${s.m?' move':''}"><h4>${s.h}</h4><p>${s.p}</p></div>`).join('')}
+    </div></div></div></div>
+  </div>`).join('');
+
+  document.querySelectorAll('.day-btn').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const d=b.parentElement, open=d.classList.toggle('open');
+      b.setAttribute('aria-expanded',open?'true':'false');
+    });
+  });
+  document.querySelector('.day').classList.add('open');
+  document.querySelector('.day-btn').setAttribute('aria-expanded','true');
+}
+renderDays();
+
+document.getElementById('dayToggle').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  CURRENT_PLAN=b.dataset.plan;
+  document.querySelectorAll('#dayToggle .fbtn').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
+  renderDays();
+});
+
+/* ============ WORTH DOING ============ */
+const ITEMS=[
+/* HONG KONG ISLAND */
+{c:'Island',t:'do',n:'Star Ferry at dusk',w:'A working commuter crossing, not a tour. Ten minutes, wooden benches with reversible backs, the whole skyline rotating around you. <b>HK$5</b> upper deck on a weekday. Do it twice in one evening for ten dollars.',when:'HK$5'},
+{c:'Island',t:'do',n:'Man Mo Temple',w:'Qing-era temple to the gods of literature and war, hung with enormous smouldering incense coils. Free, ten minutes’ walk uphill from Central, and unlike anything else on Hollywood Road.',when:'Free'},
+{c:'Island',t:'do',n:'Tai Kwun',w:'The old Central Police Station, magistracy and Victoria Prison, restored by Herzog & de Meuron into a free public compound with two contemporary art galleries and a preserved cell block.',when:'Free'},
+{c:'Island',t:'do',n:'The ding ding tram',w:'Double-decker trams running the length of the north shore since 1904, flat <b>HK$3</b> to anywhere on the line. Front seat upstairs, Kennedy Town to Causeway Bay. Best-value hour in the city.',when:'HK$3'},
+{c:'Island',t:'do',n:'Lugard Road circuit',w:'A level 3.5 km loop around the Peak with the harbour opening beneath you the whole way. Free, open at all hours, and the source of the photograph everyone thinks of. Beats the paid deck comfortably.',when:'Free'},
+{c:'Island',t:'do',n:'Central–Mid-Levels Escalator',w:'800 metres of covered outdoor escalator climbing the hill. Runs downhill until 10:00 and uphill after. Free, and the best way to understand how this city is stacked.',when:'Free'},
+{c:'Island',t:'do',n:'Happy Valley races',w:'Wednesday nights, September to July, inside a wall of apartment towers. Public enclosure is <b>free for visitors 18+ with a passport</b>. 2 December is a Wednesday, and it is the only race night of your stay.',when:'Wed only'},
+{c:'Island',t:'opt',n:'Peak Tram',w:'An 1888 funicular, worth riding once. HK$88 weekday return, HK$62 one way. Queues run past an hour between 16:00 and 19:00. Bus 15 up at HK$9.80 has the better view; take the tram down instead.',when:'HK$88'},
+{c:'Island',t:'opt',n:'Sky Terrace 428',w:'The paid deck at the top, bundled with the tram return in the HK$149 online Sky Pass. Higher than Lugard Road, more crowded, and behind glass in places. Only if you want the box ticked.',when:'HK$149'},
+{c:'Island',t:'opt',n:'Sheung Wan & Cat Street',w:'Dried-seafood shops, herbal medicine halls, antique stalls on Upper Lascar Row. Free to wander and the best hour of aimless walking on the Island.',when:'Free'},
+{c:'Island',t:'opt',n:'PMQ',w:'The former Police Married Quarters, now design studios and small shops over four floors. Free, five minutes from Tai Kwun, and easy to combine with it.',when:'Free'},
+{c:'Island',t:'opt',n:'Blue House, Wan Chai',w:'A surviving tong lau tenement in vivid blue, still lived in, with a small social-history house museum inside. Won a UNESCO award for conservation done without evicting anyone.',when:'Free'},
+{c:'Island',t:'skip',n:'Madame Tussauds',w:'At the top of the Peak, bundled into every combo ticket sold to you on the way up. Wax figures, in one of the great cities on earth.',when:''},
+{c:'Island',t:'skip',n:'Ocean Park',w:'A genuinely good theme park with a cable car and pandas, and a full day you do not have. Come back with children.',when:''},
+{c:'Island',t:'skip',n:'Lan Kwai Fong',w:'The expat drinking quarter. Fine, expensive, and identical to the same three streets in six other cities. Tai Kwun’s bars and Kennedy Town do it better.',when:''},
+{c:'Island',t:'skip',n:'Open-top bus tour',w:'The tram costs HK$3, is older, is open at the front, and goes through the same streets with people who actually live here.',when:''},
+/* KOWLOON */
+{c:'Kowloon',t:'do',n:'Tsim Sha Tsui promenade',w:'The single best free view in the territory: the Island skyline across a working harbour, with ferries crossing it constantly. Go at dusk, stay through the light show.',when:'Free'},
+{c:'Kowloon',t:'do',n:'A Symphony of Lights',w:'Nightly at 20:00, free, about ten minutes, running since 2004. Watch from the Kowloon side — the buildings it choreographs are the ones opposite.',when:'20:00 nightly'},
+{c:'Kowloon',t:'do',n:'M+',w:'The visual-culture museum in West Kowloon: design, architecture, moving image and Asian contemporary art in a Herzog & de Meuron building. HK$190. <b>Closed Mondays.</b> The roof garden is free.',when:'Closed Mon',b:1},
+{c:'Kowloon',t:'do',n:'Hong Kong Palace Museum',w:'Palace Museum loans from Beijing in a purpose-built hall next door. HK$70 general; HK$150 including <i>Windows into Heaven</i>, the Tretyakov show running to 26 March 2027. <b>Closed Tuesdays.</b>',when:'Closed Tue',b:1},
+{c:'Kowloon',t:'do',n:'Sham Shui Po',w:'Apliu Street electronics, the fabric and bead lanes, cha chaan teng breakfasts, and street food that has not been adjusted for anybody. The least polished district here and the one you will remember.',when:'Morning'},
+{c:'Kowloon',t:'do',n:'Temple Street Night Market',w:'Relaunched at the end of 2023 with more food and fewer phone cases. Claypot rice, fortune tellers, Cantonese opera singers at the Yau Ma Tei end. From about 18:00.',when:'From 18:00'},
+{c:'Kowloon',t:'opt',n:'Chi Lin Nunnery & Nan Lian Garden',w:'Tang-style timber halls joined without nails and a Tang-style garden opposite, both free, both improbably serene under a ring of housing estates at Diamond Hill.',when:'Free'},
+{c:'Kowloon',t:'opt',n:'Kowloon Walled City Park',w:'A classical Jiangnan garden on the footprint of the densest settlement that has ever existed. The small museum in the old yamen explains what stood here until 1994.',when:'Free'},
+{c:'Kowloon',t:'opt',n:'Chungking Mansions',w:'Seventeen floors of guesthouses, phone stalls and some of the best South Asian food in the city, in a building that has its own anthropological literature. Go for a curry, not a room.',when:'Any evening'},
+{c:'Kowloon',t:'opt',n:'Hong Kong Museum of History',w:'The permanent "Hong Kong Story" gallery is the clearest single explanation of how this place happened. Check what is open — it has been through long refurbishments.',when:'Check hours'},
+{c:'Kowloon',t:'skip',n:'Ladies’ Market, Mong Kok',w:'Phone cases and counterfeit handbags. Temple Street does the same evening better and Sham Shui Po does the daytime version with actual purpose.',when:''},
+{c:'Kowloon',t:'skip',n:'Sky100',w:'The 100th-floor indoor deck at the ICC. It is high, and it is the one place in Hong Kong from which you cannot see the ICC. Lugard Road and the promenade are free and better.',when:''},
+/* LANTAU & ISLANDS */
+{c:'Outlying',t:'opt',n:'Ngong Ping 360 & Tian Tan Buddha',w:'25 minutes and 5.7 km of cable car to a 34-metre bronze Buddha and a working monastery. HK$295 standard return, HK$365 crystal cabin. Weekday hours 10:00–18:00. Spectacular, and the priciest thing on this page.',when:'HK$295',b:1},
+{c:'Outlying',t:'opt',n:'Tai O',w:'Stilt houses over a tidal creek on Lantau’s western tip, shrimp paste drying on the roofs, sampans running out to the channel. Twenty minutes by bus from Ngong Ping and the better half of that day.',when:'Half day'},
+{c:'Outlying',t:'opt',n:'Cheung Chau',w:'Car-free fishing island 35–60 minutes from Central by ferry, depending which boat. Bicycles, a seafood praya, a pirate cave, and the Mini Great Wall cliff path. Restful rather than remarkable.',when:'Half day'},
+{c:'Outlying',t:'opt',n:'Lamma Island',w:'Yung Shue Wan to Sok Kwu Wan across the island in about ninety minutes, seafood at the far end, ferry back. The easiest island walk in the territory.',when:'Half day'},
+{c:'Outlying',t:'skip',n:'Macau day trip',w:'An hour by ferry or bridge bus, a separate immigration crossing, and your only spare day gone. Portuguese Macau is worth a proper visit — and you land in Lisbon eleven weeks from now.',when:''},
+{c:'Outlying',t:'skip',n:'Hong Kong Disneyland',w:'A full day, and not why you flew here.',when:''},
+/* HILLS & WATER */
+{c:'Green',t:'do',n:'Dragon’s Back',w:'A ridge walk with the sea on both sides, ending on a beach with a bus stop. Two to three hours, free, bus 9 from Shau Kei Wan to To Tei Wan. <b>December is the only comfortable season for it.</b>',when:'2–3 hrs'},
+{c:'Green',t:'opt',n:'Shek O & Big Wave Bay',w:'The village at the end of the ridge: a beach, a handful of restaurants, and surfboard rental at Big Wave Bay. Reachable on its own by bus 9 if you skip the hill.',when:'Half day'},
+{c:'Green',t:'opt',n:'Lion Rock',w:'The hill on the Kowloon skyline, and a steep 90-minute climb to a view straight down the peninsula. The hardest of the short hikes and the most local.',when:'Half day'},
+{c:'Green',t:'opt',n:'Lantau Peak at sunrise',w:'934 metres, a pre-dawn start from Ngong Ping, and a sea of cloud below you if the timing is kind. Superb, and it costs you a night’s sleep on the one stop where you finally get to keep it.',when:'Pre-dawn'},
+{c:'Green',t:'opt',n:'Sai Kung & Tai Long Wan',w:'The best beaches and best coastal hiking in the territory, reached by bus and then a boat or a long walk. Needs a full day you do not have. This is the thing to come back for.',when:'Full day'},
+{c:'Green',t:'skip',n:'Star Ferry "Water Tour"',w:'A 45-minute harbour cruise on the <i>Shining Star</i>, HK$230, or HK$280 timed to the light show. It is the same water as the HK$5 crossing, for fifty-six times the money.',when:''},
+{c:'Green',t:'skip',n:'Junk boat charter',w:'A wonderful Hong Kong summer institution and completely pointless in December with three nights and no group.',when:''}
+];
+
+const TIERLBL={do:'Do',opt:'Maybe',skip:'Skip'};
+let FC='all', FT=null, FB=false;
+
+function renderItems(){
+  const list=ITEMS.filter(x=>
+    (FC==='all'||x.c===FC) && (!FT||x.t===FT) && (!FB||x.b));
+  const host=document.getElementById('items');
+  if(!list.length){host.innerHTML='<div class="empty">No entries match those filters.</div>';return}
+  host.innerHTML=list.map(x=>`
+    <div class="item">
+      <span class="tier ${x.t}">${TIERLBL[x.t]}</span>
+      <span class="nm">${x.n}</span>
+      <span class="when${x.b?' book':''}">${x.when||'&nbsp;'}</span>
+      <span class="why">${x.w}</span>
+    </div>`).join('');
+}
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  if(b.dataset.city){FC=b.dataset.city}
+  else if(b.dataset.tier){FT = FT===b.dataset.tier?null:b.dataset.tier}
+  else if(b.dataset.book){FB=!FB}
+  document.querySelectorAll('#filters .fbtn').forEach(x=>{
+    let on=false;
+    if(x.dataset.city) on = x.dataset.city===FC;
+    if(x.dataset.tier) on = x.dataset.tier===FT;
+    if(x.dataset.book) on = FB;
+    x.setAttribute('aria-pressed',on?'true':'false');
+  });
+  renderItems();
+});
+renderItems();
+
+/* ============ FIG 1: TIME AUDIT ============ */
+(function(){
+  const svg=document.getElementById('audit-chart');
+  const W=1400,H=190,pad=40,barY=70,barH=54;
+  const start=new Date(2026,10,30), end=new Date(2026,11,4); // 30 Nov 00:00 to 4 Dec 00:00
+  const totalH=(end-start)/36e5;
+  const x=h=>pad+(h/totalH)*(W-2*pad);
+  const segs=[
+    {a:0,b:8,cls:'t2'},      // 30 Nov early — Manila, airport
+    {a:8,b:12,cls:'t'},      // flight + Airport Express
+    {a:12,b:24,cls:'p'},     // 30 Nov afternoon/evening — usable
+    {a:24,b:48,cls:'f'},     // 1 Dec
+    {a:48,b:72,cls:'f'},     // 2 Dec
+    {a:72,b:83,cls:'p'},     // 3 Dec morning
+    {a:83,b:96,cls:'t'}      // flight to Hanoi
+  ];
+  const colors={t:'var(--magenta)',t2:'rgba(231,100,155,.55)',p:'rgba(242,169,60,.35)',f:'var(--amber)'};
+  let s=`<rect x="0" y="0" width="${W}" height="${H}" fill="none"/>`;
+  segs.forEach(sg=>{
+    const x1=x(sg.a),x2=x(sg.b);
+    s+=`<rect x="${x1}" y="${barY}" width="${Math.max(x2-x1-1,1)}" height="${barH}" fill="${colors[sg.cls]}"/>`;
+  });
+  for(let d=0;d<=4;d++){
+    const hh=d*24, xx=x(hh);
+    const dt=new Date(start.getTime()+hh*36e5);
+    s+=`<line x1="${xx}" y1="${barY-6}" x2="${xx}" y2="${barY+barH+6}" class="axs"/>`;
+    s+=`<text x="${xx}" y="${barY-14}" class="lbl" text-anchor="${d===0?'start':d===4?'end':'middle'}">${dt.toLocaleDateString('en-CA',{day:'2-digit',month:'short'})}</text>`;
+  }
+  s+=`<line x1="${pad}" y1="${barY+barH+0.5}" x2="${W-pad}" y2="${barY+barH+0.5}" class="ax"/>`;
+  s+=`<text x="${x(24)}" y="${barY+barH+34}" class="lbl-a">2 full days — 1 &amp; 2 Dec</text>`;
+  s+=`<text x="${x(12)}" y="${barY-30}" class="lbl">↓ afternoon you keep</text>`;
+  s+=`<text x="${x(96)}" y="${barY+barH+34}" class="lbl" text-anchor="end">HAN ↗</text>`;
+  svg.innerHTML=s;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+})();
+
+/* ============ FIG 2: VIEWS BY PRICE ============ */
+(function(){
+  const svg=document.getElementById('view-chart');
+  const W=1400,padL=430,padR=110,padT=24,rowH=38;
+  const VIEWS=[
+    {n:'Tsim Sha Tsui promenade',v:0},
+    {n:'A Symphony of Lights, 20:00 nightly',v:0},
+    {n:'Lugard Road circuit, the Peak',v:0},
+    {n:"Dragon's Back ridge",v:0},
+    {n:'Ding ding tram, front seat upstairs',v:3},
+    {n:'Star Ferry, weekday upper deck',v:5},
+    {n:'Bus 15 up to the Peak',v:9.8},
+    {n:'Peak Tram, weekday return',v:88},
+    {n:'Sky Terrace 428, online Sky Pass',v:149},
+    {n:'Star Ferry "Water Tour", lights sailing',v:280},
+    {n:'Ngong Ping 360, standard round trip',v:295}
+  ];
+  const H=padT+VIEWS.length*rowH+44;
+  const max=300;
+  const xw=v=>(v/max)*(W-padL-padR);
+  let s=`<line x1="${padL}" y1="${padT-6}" x2="${padL}" y2="${padT+VIEWS.length*rowH+4}" class="ax"/>`;
+  [0,50,100,150,200,250,300].forEach(v=>{
+    const xx=padL+xw(v);
+    if(v>0) s+=`<line x1="${xx}" y1="${padT-6}" x2="${xx}" y2="${padT+VIEWS.length*rowH+4}" class="axs"/>`;
+    s+=`<text x="${xx}" y="${padT+VIEWS.length*rowH+26}" class="lbl" text-anchor="middle">HK$${v}</text>`;
+  });
+  VIEWS.forEach((p,i)=>{
+    const y=padT+10+i*rowH;
+    const free=p.v===0, cheap=p.v<20;
+    s+=`<text x="${padL-16}" y="${y+5}" class="lbl-p" text-anchor="end">${p.n}</text>`;
+    const w=Math.max(xw(p.v),free?0:3);
+    s+=`<rect x="${padL}" y="${y-9}" width="${w}" height="18" rx="2" fill="${free||cheap?'var(--jade)':'rgba(242,169,60,.6)'}"/>`;
+    if(free){
+      s+=`<circle cx="${padL+7}" cy="${y}" r="5" fill="var(--jade)"/>`;
+    }
+    s+=`<text x="${padL+w+12}" y="${y+5}" class="${free||cheap?'lbl-p':'lbl-a'}">${free?'Free':'HK$'+p.v}</text>`;
+  });
+  svg.innerHTML=s;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+})();
+
+/* ============ COST CALCULATOR ============ */
+const COSTS=[
+  {n:'Airport Express in — HKG → Hong Kong Station',hk:120,def:true,avoid:86,note:'Bus A11 or A21 does it in about an hour for roughly HK$34'},
+  {n:'Airport Express out — Hong Kong Station → HKG',hk:120,avoid:96,note:'Unchecked by default: the S1 shuttle plus the Tung Chung line comes in under HK$30'},
+  {n:'Peak Tram, weekday walk-up return',hk:88,avoid:78,note:'Bus 15 from Exchange Square is HK$9.80 and has the better view on the way up'},
+  {n:'Sky Terrace 428 (Sky Pass HK$149, less the tram)',hk:61,avoid:61,note:'Lugard Road is free, level, open all hours and higher on most photographers’ lists'},
+  {n:'M+ standard admission',hk:190,def:true,avoid:0,note:'No free equivalent — this is the one worth paying for. Closed Mondays'},
+  {n:'Hong Kong Palace Museum, general admission',hk:70,def:true,avoid:0,note:'Galleries 1–7. Closed Tuesdays'},
+  {n:'Palace Museum special exhibition upgrade',hk:80,avoid:80,note:'Tretyakov loans, to 26 Mar 2027. The general ticket already covers the permanent galleries'},
+  {n:'Ngong Ping 360, standard cabin round trip',hk:295,avoid:260,note:'New Lantao Bus 23 climbs the same mountain road for a small fraction — check nlb.com.hk'},
+  {n:'Star Ferry "Water Tour", lights sailing',hk:280,avoid:275,note:'Two ordinary crossings cost HK$10 and put you on the same water'},
+  {n:'Star Ferry, six weekday crossings',hk:30,def:true,avoid:0,note:'HK$5 each, upper deck. Leave this checked'},
+  {n:'Ding ding tram, six rides',hk:18,def:true,avoid:0,note:'Flat HK$3 anywhere on the line'},
+  {n:'Octopus card deposit (refundable)',hk:50,def:true,avoid:50,note:'Skip the plastic entirely if you add Octopus to Apple Wallet or tap a contactless card'},
+  {n:'Dragon’s Back — bus 9, both directions',hk:15,def:true,avoid:0,note:'The trail itself costs nothing'},
+  {n:'Happy Valley, public enclosure',hk:0,def:true,avoid:0,note:'HK$10 for residents, free for visitors 18+ with a passport'},
+  {n:'Man Mo, Tai Kwun, the escalator, Symphony of Lights',hk:0,def:true,avoid:0,note:'Free, and most of what makes this stop good'}
+];
+function renderLegs(){
+  document.getElementById('legs').innerHTML=COSTS.map((l,i)=>`
+    <label class="leg-row">
+      <input type="checkbox" data-i="${i}" ${l.def?'checked':''}>
+      <span class="lname">${l.n}</span>
+      <span class="lyen${l.hk===0?' free':''}">${l.hk===0?'Free':'HK$'+l.hk.toLocaleString('en-CA')}</span>
+      ${l.note?`<span class="lnote">${l.note}</span>`:''}
+    </label>`).join('');
+}
+function calcTotals(){
+  let total=0, avoidable=0;
+  document.querySelectorAll('#legs input[type="checkbox"]').forEach(cb=>{
+    const l=COSTS[Number(cb.dataset.i)];
+    if(cb.checked){total+=l.hk; avoidable+=l.avoid||0;}
+  });
+  const cad=Math.round(total/5.6);
+  document.getElementById('ptp').innerHTML=`HK$${total.toLocaleString('en-CA')}<small>per person</small>`;
+  document.getElementById('cad').innerHTML=`$${cad.toLocaleString('en-CA')}<small>CAD</small>`;
+  document.getElementById('diff').innerHTML=avoidable>0?`HK$${avoidable.toLocaleString('en-CA')}<small>with free swaps</small>`:'—';
+  const vEl=document.getElementById('verdict');
+  if(total<=550){vEl.textContent='Running the good version'; vEl.className='win';}
+  else if(total<=950){vEl.textContent='Middle path — check the notes'; vEl.className='';}
+  else {vEl.textContent='Paying for views that are free'; vEl.className='lose';}
+}
+renderLegs();
+document.getElementById('legs').addEventListener('change',calcTotals);
+calcTotals();
+</script>
+
+</body>
+</html>

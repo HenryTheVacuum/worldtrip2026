@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="darkreader-lock">
+<title>Malaysia</title>
+<link rel="stylesheet" href="fonts.css">
+</head>
+<body>
+<style>
+:root{color-scheme:dark;
+  --ink:#05161D;--ink-2:#0A2029;--ink-3:#0E2A35;
+  --rule:#194150;--rule-soft:rgba(25,65,80,.6);
+  --paper:#E2EEED;--paper-dim:#A6C2C6;--muted:#6C8F98;
+  --amber:#F2A93C;--magenta:#E7649B;--jade:#58C4A3;--red:#E05555;
+  --display:'Big Shoulders Display','Arial Narrow',Impact,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --body:'Inter',system-ui,sans-serif;
+  --gut:clamp(18px,4vw,64px);--maxw:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+.section{padding-block:clamp(34px,4.4vw,58px);border-top:1px solid var(--rule-soft);position:relative}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:14px;margin:0 0 18px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--rule)}
+.eyebrow .n{color:var(--amber)}
+h2.head{font-family:var(--display);font-weight:700;font-size:clamp(34px,5.6vw,66px);line-height:.92;margin:0 0 14px;text-transform:uppercase}
+.lede{max-width:66ch;color:var(--paper-dim);font-size:clamp(15px,1.5vw,17px);margin:0 0 26px}
+.lede b{color:var(--paper);font-weight:600}
+a{color:var(--amber);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+.hint{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+@media (min-width:980px){.hint.wide{display:none}}
+.scroller{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--rule) transparent}
+.scroller::-webkit-scrollbar{height:6px}
+.scroller::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}
+.scroller>svg{display:block;width:100%;height:auto}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(30px,5vw,58px) clamp(24px,4vw,40px);overflow:hidden}
+.gridbg{position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:linear-gradient(to right,var(--rule-soft) 1px,transparent 1px),linear-gradient(to bottom,var(--rule-soft) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%);-webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%)}
+.back{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:inline-block;margin-bottom:20px}
+.back:hover{color:var(--amber)}
+.strip{font-family:var(--mono);font-size:clamp(10px,1.15vw,12px);letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;border-block:1px solid var(--rule);padding-block:11px;margin-bottom:clamp(26px,4vw,44px)}
+.strip .k{color:var(--muted)}.strip .amb{color:var(--amber)}
+.title{font-family:var(--display);text-transform:uppercase;margin:0;line-height:.82;position:relative}
+.title .l1{display:block;font-weight:400;font-size:clamp(34px,7.4vw,96px);color:transparent;-webkit-text-stroke:1.2px var(--paper-dim)}
+.title .l2{display:block;font-weight:800;font-size:clamp(72px,17vw,232px);letter-spacing:-.015em;color:var(--paper)}
+.subline{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:baseline;margin-top:clamp(18px,3vw,30px);font-family:var(--mono);font-size:clamp(11px,1.25vw,13px);letter-spacing:.14em;text-transform:uppercase;color:var(--paper-dim)}
+.subline .sep{color:var(--rule)}
+
+/* instruments */
+.instr{display:grid;grid-template-columns:repeat(auto-fit,minmax(124px,1fr));border:1px solid var(--rule);background:var(--ink-2);margin:clamp(24px,3.4vw,38px) 0 0}
+.instr div{padding:15px 17px;border-right:1px solid var(--rule-soft)}
+.instr div:last-child{border-right:0}
+.instr dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.instr dd{margin:0;font-family:var(--display);font-weight:600;font-size:31px;line-height:1}
+.instr dd span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--paper-dim);margin-left:3px}
+.instr dd.hot{color:var(--amber)}
+.instr dd.warn{color:var(--magenta)}
+
+/* chart frames */
+.figcap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:9px;margin:0 0 8px}
+.figcap b{color:var(--amber);font-weight:500}
+.fignote{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.fignote i{display:inline-block;width:14px;height:9px;margin:0 5px 0 14px;vertical-align:middle;border-radius:1px}
+.fignote i:first-child{margin-left:0}
+.ax{stroke:var(--rule);stroke-width:1}
+.axs{stroke:var(--rule-soft);stroke-width:1}
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.08em;fill:var(--muted)}
+.lbl-p{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;fill:var(--paper)}
+.lbl-a{font-family:var(--mono);font-size:10px;letter-spacing:.12em;fill:var(--amber)}
+
+/* cards */
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin:0 0 6px}
+.card{border:1px solid var(--rule);background:var(--ink-2);padding:18px 20px;position:relative}
+.card.bad{border-color:var(--red)}
+.card.good{border-color:var(--jade)}
+.card h3{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 4px;color:var(--paper)}
+.card .verdict{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:11px}
+.card .verdict.bad{color:var(--red)}
+.card .verdict.ok{color:var(--jade)}
+.card p{margin:0 0 10px;font-size:13.5px;color:var(--paper-dim);line-height:1.62}
+.card p:last-child{margin-bottom:0}
+.card p b{color:var(--paper);font-weight:600}
+.fix{border-left:2px solid var(--amber);padding-left:12px;margin:12px 0 0;font-size:12.8px;color:var(--paper-dim);line-height:1.6}
+.fix b{display:block;color:var(--amber);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px;font-weight:500}
+.fix strong{color:var(--paper);font-weight:600}
+
+/* shape cards */
+.shapes{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+.shape{border:1px solid var(--rule);background:var(--ink-2);padding:0;display:flex;flex-direction:column}
+.shape.pick{border-color:var(--amber);box-shadow:inset 0 0 0 1px rgba(242,169,60,.25)}
+.shape-hd{padding:16px 20px 14px;border-bottom:1px solid var(--rule-soft)}
+.shape-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.shape.pick .shape-tag{color:var(--amber)}
+.shape-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(24px,3vw,32px);line-height:.95;margin:0}
+.chainrow{display:flex;flex-wrap:wrap;align-items:center;gap:5px 7px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--paper);padding:13px 20px;border-bottom:1px solid var(--rule-soft);background:rgba(5,22,29,.5)}
+.chainrow .a{color:var(--rule)}
+.chainrow .n{color:var(--amber);font-size:9.5px}
+.shape-body{padding:15px 20px 18px;flex:1}
+.shape-body p{margin:0 0 10px;font-size:13.3px;color:var(--paper-dim);line-height:1.6}
+.shape-body p:last-child{margin-bottom:0}
+.shape-body p b{color:var(--paper);font-weight:600}
+.shape-meta{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--rule-soft)}
+.shape-meta div{flex:1;min-width:88px;padding:11px 20px;border-right:1px solid var(--rule-soft)}
+.shape-meta div:last-child{border-right:0}
+.shape-meta dt{font-family:var(--mono);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.shape-meta dd{margin:0;font-family:var(--mono);font-size:13px;color:var(--paper)}
+.shape-meta dd.g{color:var(--jade)}
+.shape-meta dd.r{color:var(--red)}
+
+/* day accordion */
+.days{border-top:1px solid var(--rule)}
+.day{border-bottom:1px solid var(--rule)}
+.day-btn{all:unset;box-sizing:border-box;display:grid;width:100%;cursor:pointer;grid-template-columns:76px 1fr auto;gap:0 clamp(14px,2.4vw,30px);align-items:baseline;padding:clamp(13px,1.8vw,18px) 4px;transition:background .18s ease}
+.day-btn:hover{background:rgba(242,169,60,.05)}
+.day-btn:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.day-date{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.1em}
+.day-date small{display:block;color:var(--muted);font-size:9.5px;letter-spacing:.14em;margin-top:3px}
+.day-btn>span:nth-child(2){display:flex;flex-direction:column;gap:6px}
+.day-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(22px,3.2vw,34px);line-height:.95;margin:0}
+.day-sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.day-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--paper-dim);text-align:right;white-space:nowrap}
+.day-meta .chev{display:inline-block;margin-left:12px;color:var(--muted);transition:transform .25s ease}
+.day.open .day-meta .chev{transform:rotate(180deg)}
+@media (max-width:720px){.day-btn{grid-template-columns:64px 1fr;row-gap:8px}.day-meta{grid-column:2;text-align:left}}
+.day-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .34s cubic-bezier(.3,.8,.3,1)}
+.day.open .day-body{grid-template-rows:1fr}
+.day-inner{overflow:hidden}
+.day-pad{padding:2px 4px clamp(22px,3vw,32px)}
+.slots{display:grid;gap:0;border-left:1px solid var(--rule)}
+.slot{padding:0 0 16px 16px;position:relative}
+.slot:last-child{padding-bottom:2px}
+.slot::before{content:"";position:absolute;left:-4px;top:6px;width:7px;height:7px;background:var(--amber);border-radius:50%}
+.slot.move::before{background:var(--magenta)}
+.slot h4{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 5px;font-weight:500}
+.slot.move h4{color:var(--magenta)}
+.slot p{margin:0;font-size:14px;line-height:1.62;color:var(--paper-dim);max-width:72ch}
+.slot p b{color:var(--paper);font-weight:600}
+
+/* worth doing */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.fbtn{all:unset;cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border:1px solid var(--rule);color:var(--paper-dim);border-radius:2px;transition:.15s}
+.fbtn:hover{background:var(--ink-3);color:var(--paper)}
+.fbtn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.fbtn[aria-pressed="true"]{background:var(--amber);color:var(--ink);border-color:var(--amber);font-weight:600}
+.fdiv{width:1px;background:var(--rule);margin:2px 6px}
+.items{display:grid;gap:1px;background:var(--rule-soft);border:1px solid var(--rule)}
+.item{background:var(--ink-2);padding:13px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:baseline}
+.item .tier{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:3px 7px 2px;border-radius:2px;white-space:nowrap;align-self:start;margin-top:2px}
+.tier.do{background:rgba(88,196,163,.14);color:var(--jade);border:1px solid rgba(88,196,163,.35)}
+.tier.opt{background:rgba(242,169,60,.12);color:var(--amber);border:1px solid rgba(242,169,60,.3)}
+.tier.skip{background:rgba(224,85,85,.1);color:var(--red);border:1px solid rgba(224,85,85,.3)}
+.item .nm{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:20px;line-height:1.05;color:var(--paper)}
+.item .why{grid-column:2;font-size:13.3px;color:var(--paper-dim);line-height:1.55;max-width:74ch}
+.item .why b{color:var(--paper);font-weight:600}
+.item .when{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);text-align:right;white-space:nowrap;align-self:start;margin-top:4px}
+.item .when.book{color:var(--magenta)}
+@media (max-width:640px){.item{grid-template-columns:auto 1fr}.item .when{grid-column:2;text-align:left;margin-top:2px}.item .why{grid-column:1/-1}}
+.empty{background:var(--ink-2);padding:22px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* rail calc */
+.calc{border:1px solid var(--rule);background:var(--ink-2)}
+.calc-legs{display:grid}
+.leg-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--rule-soft);cursor:pointer}
+.leg-row:hover{background:rgba(242,169,60,.04)}
+.leg-row input{accent-color:var(--amber);width:15px;height:15px;cursor:pointer}
+.leg-row .lname{font-family:var(--mono);font-size:12.5px;color:var(--paper-dim)}
+.leg-row input:checked+.lname{color:var(--paper)}
+.leg-row .lyen{font-family:var(--mono);font-size:12.5px;color:var(--amber);font-variant-numeric:tabular-nums;white-space:nowrap}
+.leg-row .lnote{grid-column:2/-1;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--muted);margin-top:-4px}
+.calc-out{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule-soft)}
+.calc-out div{background:var(--ink-3);padding:15px 17px}
+.calc-out dt{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.calc-out dd{margin:0;font-family:var(--display);font-weight:700;font-size:27px;line-height:1;font-variant-numeric:tabular-nums}
+.calc-out dd small{font-family:var(--mono);font-size:10px;font-weight:400;color:var(--paper-dim);margin-left:4px;letter-spacing:.06em}
+#verdict{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;line-height:1.5}
+#verdict.win{color:var(--jade)}
+#verdict.lose{color:var(--red)}
+
+/* panels / tables */
+.panel{border:1px solid var(--rule);background:var(--ink-2);padding:clamp(17px,2.4vw,24px);margin-top:22px}
+.panel h3{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 12px;font-weight:500}
+.panel p{margin:0 0 12px;font-size:13.6px;color:var(--paper-dim);line-height:1.62}
+.panel p:last-child{margin-bottom:0}
+.panel p b{color:var(--paper);font-weight:600}
+table.ref{width:100%;border-collapse:collapse;font-size:13.4px}
+table.ref th{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:500;padding:0 14px 10px 0;border-bottom:1px solid var(--rule)}
+table.ref td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule-soft);color:var(--paper-dim);vertical-align:top}
+table.ref td:first-child{font-family:var(--display);font-size:17px;font-weight:600;text-transform:uppercase;color:var(--paper);white-space:nowrap;width:1%}
+table.ref td.t{font-family:var(--mono);font-size:11px;letter-spacing:.06em;white-space:nowrap;color:var(--amber)}
+table.ref tr.flag td.t{color:var(--magenta)}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.cols{display:grid;gap:16px 34px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:20px}
+.cols p{margin:0;font-size:13.6px;color:var(--paper-dim);line-height:1.6}
+.cols p b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:5px;font-weight:500}
+
+footer{border-top:1px solid var(--rule);padding-block:26px 40px;color:var(--muted)}
+.foot-grid{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:flex-end}
+.foot-grid p{margin:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase}
+.foot-mark{font-family:var(--display);font-size:clamp(40px,9vw,110px);font-weight:800;text-transform:uppercase;line-height:.8;color:transparent;-webkit-text-stroke:1px var(--rule);margin:30px 0 0}
+</style>
+
+<header class="hero">
+  <div class="gridbg"></div>
+  <div class="wrap">
+    <a class="back" href="index.html">← Westbound · the dossier</a>
+    <p class="strip">
+      <span><span class="k">Stop</span> <span class="amb">15 of 27</span></span>
+      <span><span class="k">In</span> REP · Siem Reap</span>
+      <span><span class="k">Fly Malaysia</span> <span class="amb">KUL</span></span>
+      <span><span class="k">Out</span> CMB · Colombo</span>
+      <span><span class="k">Window</span> 16–20 Dec 2026</span>
+      <span><span class="k">Clock</span> UTC+8</span>
+    </p>
+    <h1 class="title">
+      <span class="l1">Stop fifteen</span>
+      <span class="l2">Malaysia</span>
+    </h1>
+    <p class="subline">
+      <span>Kuala Lumpur &amp; Penang</span><span class="sep">/</span>
+      <span>Four nights, two bases</span><span class="sep">/</span>
+      <span>You fly out of KUL — plan backwards from that</span>
+    </p>
+
+    <dl class="instr">
+      <div><dt>Calendar days</dt><dd>5</dd></div>
+      <div><dt>Full days</dt><dd class="hot">3</dd></div>
+      <div><dt>Nights</dt><dd>4</dd></div>
+      <div><dt>Bases</dt><dd>2</dd></div>
+      <div><dt>Penang nights</dt><dd id="pen-nights">3</dd></div>
+      <div><dt>Clock change</dt><dd>+1<span>h</span></dd></div>
+    </dl>
+  </div>
+</header>
+
+<section class="section" id="audit">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">01</span> The time audit</p>
+    <h2 class="head">Five days<br>is three days</h2>
+    <p class="lede">Siem Reap to Kuala Lumpur is a short hop — around two hours, and only one hour forward on the clock, so nothing here costs you sleep. What it does cost is <b>both ends of the window</b>. The 16th is a flying day and the 20th is a flying day, and one of the three days in between contains a four-hour move between your two bases. Every plan below is built against <b>three usable days</b> rather than five.</p>
+
+    <div class="figcap">
+      <span>Fig. 1 — What the window really contains</span>
+      <span><b>16–20 Dec</b> · hour by hour</span>
+    </div>
+    <div class="scroller">
+      <svg id="audit-chart" viewBox="0 0 1400 190" role="img" aria-label="Timeline of 16 to 20 December showing the 16th consumed by the flight from Siem Reap, three usable days from the 17th to the 19th with a four-hour transfer inside the 19th, and the 20th lost to the flight to Colombo."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--magenta);opacity:.55"></i>In transit<i style="background:rgba(242,169,60,.35)"></i>Part day<i style="background:var(--amber)"></i>Full day</p>
+
+    <div class="cols">
+      <p><b>No jet lag, no dawn gift</b>Cambodia is UTC+7, Malaysia UTC+8. You arrive fully functional, which is good — but it also means Japan's trick of waking at five and owning the city doesn't repeat here. Worse, Malaysia keeps the whole country on UTC+8 despite sitting near 101°E, so the clock runs about half an hour ahead of the sun. Mid-December in KL: <b>sunrise around 07:10, sunset around 19:05</b>. "Early" on this leg means 07:30.</p>
+      <p><b>KUL is the exit, not just the entrance</b>Your onward flight to Colombo leaves Kuala Lumpur. That single fact governs the whole routing question below — if you end the stop in Penang, the last morning contains a domestic flight feeding an international one, on the same day, with no slack.</p>
+      <p><b>The 19th is half a travel day</b>KL and Georgetown are 365 km apart. Whichever direction you do it in and whichever way you travel, the move eats four to five hours door to door. Section 07 does that arithmetic properly.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="flags">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">02</span> Two things that don't move</p>
+    <h2 class="head">The coast is right,<br>the timing isn't</h2>
+    <p class="lede">One of these is the reason Malaysia sits in December at all. The other is the price you pay for it, and it's the one worth acting on this week rather than next.</p>
+
+    <div class="cards">
+      <div class="card good">
+        <h3>You're on the correct coast</h3>
+        <div class="verdict ok">The routing works</div>
+        <p>The northeast monsoon runs roughly November to March and it lands on the <b>east</b> side of the peninsula. Kota Bharu takes 600 mm-plus in each of November and December; Terengganu and Kelantan flood most years. KL and Penang, sheltered behind the Titiwangsa range, sit outside all of it.</p>
+        <p>Penang specifically has just come off its own wet peak — its heaviest months are September through November, and rainfall <b>drops by roughly half into December</b>. You are arriving on the falling edge.</p>
+        <div class="fix"><b>The honest caveat</b>Kuala Lumpur is not dry in December — it takes something like 230 mm, most of it in <strong>late-afternoon thunderstorms that arrive fast, dump hard and clear inside an hour</strong>. That is a scheduling fact, not a weather problem: put the outdoor things before 15:00 and the museums, malls and hawker halls after.</div>
+      </div>
+
+      <div class="card bad">
+        <h3>You've landed in school holidays</h3>
+        <div class="verdict bad">Book now, not later</div>
+        <p>Malaysia's end-of-year school break runs through December, and Singapore's overlaps it. Georgetown fills with domestic and Singaporean families from mid-December onward, and hotel rates move with them. Your window sits squarely inside it.</p>
+        <p>The sharper problem is the train. <b>ETS seats between KL and Butterworth sell out during school holidays</b> — KTMB routinely adds extra December services precisely because the scheduled ones go. Turning up at KL Sentral hoping for a seat is not a plan for 19 December.</p>
+        <div class="fix"><b>What to do</b>Book the ETS the moment the window opens — KTMB releases seats somewhere between <strong>30 days and three months</strong> out, and the release date itself moves. Set a reminder for early October and check weekly. Same for Georgetown accommodation.</div>
+      </div>
+    </div>
+
+    <div class="figcap" style="margin-top:30px">
+      <span>Fig. 2 — Why the west coast, and why December</span>
+      <span><b>Monthly rainfall</b> · indicative long-run averages, mm</span>
+    </div>
+    <div class="scroller">
+      <svg id="rain-chart" viewBox="0 0 1400 400" role="img" aria-label="Monthly rainfall chart comparing Penang, Kuala Lumpur and Kota Bharu on the east coast. Kota Bharu spikes above 600 millimetres in November and December while Penang falls to around 115 millimetres and Kuala Lumpur to around 235 millimetres in December."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--amber)"></i>Penang (west)<i style="background:var(--jade)"></i>Kuala Lumpur (west)<i style="background:var(--magenta)"></i>Kota Bharu (east) · figures are indicative climatological averages, individual years vary widely</p>
+  </div>
+</section>
+
+<section class="section" id="shapes">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">03</span> The open question</p>
+    <h2 class="head">Which end<br>gets Penang</h2>
+    <p class="lede">Both cities are already on the list, so the question isn't whether — it's the order. And the order is not cosmetic here, because the last day of this stop is an international departure from KUL. One shape protects that flight; the other buys you an extra half-day of Georgetown and puts the flight at risk.</p>
+
+    <div class="shapes">
+      <div class="shape pick">
+        <div class="shape-hd">
+          <div class="shape-tag">Recommended</div>
+          <p class="shape-name">Penang first</p>
+        </div>
+        <div class="chainrow">
+          <span class="n">KUL</span><span class="a">→</span>
+          <span>Penang <span class="n">×3</span></span><span class="a">→</span>
+          <span>KL <span class="n">×1</span></span><span class="a">→</span>
+          <span class="n">KUL</span>
+        </div>
+        <div class="shape-body">
+          <p>Land at KUL around midday on the 16th and connect straight onto a domestic hop north — <b>PEN is 50 minutes away and served constantly</b> by AirAsia, Batik and Firefly. You're eating in Georgetown that evening. Two clear days on the island, then the ETS south on the morning of the 19th.</p>
+          <p><b>The departure is safe.</b> You sleep in Kuala Lumpur on the 19th, thirty minutes from KL Sentral and a 28-minute train from the terminal. Nothing about the Colombo flight depends on a domestic connection running to time.</p>
+          <p>The cost is that Kuala Lumpur gets one evening and one morning. That's Merdeka 118 at sunset, dinner on Jalan Alor, and Batu Caves before the airport — which is, honestly, most of what a first pass at KL should be.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Penang</dt><dd class="g">3 nights</dd></div>
+          <div><dt>KL</dt><dd>1 night</dd></div>
+          <div><dt>Moves</dt><dd class="g">2</dd></div>
+          <div><dt>Exit risk</dt><dd class="g">Low</dd></div>
+        </dl>
+      </div>
+
+      <div class="shape">
+        <div class="shape-hd">
+          <div class="shape-tag">If KL deserves a real day</div>
+          <p class="shape-name">KL first</p>
+        </div>
+        <div class="chainrow">
+          <span class="n">KUL</span><span class="a">→</span>
+          <span>KL <span class="n">×2</span></span><span class="a">→</span>
+          <span>Penang <span class="n">×2</span></span><span class="a">→</span>
+          <span class="n">PEN→KUL</span>
+        </div>
+        <div class="shape-body">
+          <p>Settle into KL on arrival, spend the 17th on it properly — Batu Caves at opening, the Islamic Arts Museum, Chinatown, Merdeka 118 at golden hour — then take the ETS north on the morning of the 18th with an optional Ipoh stopover built in.</p>
+          <p><b>The catch is the 20th.</b> You have to fly PEN→KUL and connect to Colombo the same morning. Book it as a <strong>single through ticket</strong> so a delay is the airline's problem, or leave a minimum four-hour gap on separate tickets and accept that a cancelled morning hop costs you the leg.</p>
+          <p>Worth it if a full day in Kuala Lumpur matters more to you than a slow second morning of Penang hawker breakfasts. Reasonable people differ.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Penang</dt><dd>2 nights</dd></div>
+          <div><dt>KL</dt><dd class="g">2 nights</dd></div>
+          <div><dt>Moves</dt><dd>2</dd></div>
+          <div><dt>Exit risk</dt><dd class="r">Real</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>The third option, briefly: don't go to Penang</h3>
+      <p>Four nights in Kuala Lumpur alone would be a defensible trip — Batu Caves, the Islamic Arts Museum, Kampung Baru, a Melaka day trip, and enough evenings to eat properly. But <b>Georgetown is the better city</b> for what this leg is for. It's a walkable UNESCO core of shophouses and clan jetties, it has the best street food in Southeast Asia by most reckonings, and unlike KL it cannot be replicated by any of the other twenty-six stops. KL is a very good regional capital; Penang is specific.</p>
+      <p>The one genuine argument for staying put: you have just come off Siem Reap and Angkor, and you fly to Colombo on the 20th. If what you need in the middle of that is four nights in one bed and a city that runs on air conditioning, take it and don't apologise.</p>
+    </div>
+
+    <div class="panel">
+      <h3>What's cut either way</h3>
+      <p><b>Melaka.</b> The other half of the Straits-Chinese story, two hours south of KL by bus. It needs an overnight to be worth anything and a day trip is four hours of coach for a very touristed riverfront. Georgetown does Peranakan heritage better and you're already going there.</p>
+      <p><b>Cameron Highlands.</b> Tea plantations, cool air, mossy forest — and a punishing switchback road from Ipoh that eats most of a day each way. A two-night proposition minimum.</p>
+      <p><b>Taman Negara and Borneo.</b> The rainforest and the orangutans are the reason a lot of people come to Malaysia, and both are separate trips. Borneo is a two-hour flight and another week. Note it for later.</p>
+      <p><b>Langkawi.</b> An hour's flight from Penang and a good beach, but the northwest in December is on the wrong side of decent — and you have the Maldives on the 24th. Skip.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="run">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">04</span> Day by day</p>
+    <h2 class="head">Both versions,<br>laid out</h2>
+    <p class="lede">Written for heat and afternoon rain: outdoor things front-loaded, indoor things kept in reserve for 15:00–17:00, and eating scheduled around when the stalls actually cook rather than when you happen to be hungry. Times are indicative.</p>
+    <div class="filters" id="dayToggle" style="margin-bottom:6px">
+      <button class="fbtn" data-plan="penang" aria-pressed="true">Penang first</button>
+      <button class="fbtn" data-plan="kl" aria-pressed="false">KL first</button>
+    </div>
+    <div class="days" id="days"></div>
+    <p class="fignote" style="margin-top:16px">Amber = on foot · <span style="color:var(--magenta)">Magenta = a train, a flight or a base change</span></p>
+  </div>
+</section>
+
+<section class="section" id="worth">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">05</span> What's actually worth doing</p>
+    <h2 class="head">Do, maybe,<br>don't bother</h2>
+    <p class="lede">Sorted by city, then by whether it earns a slot in three days. The <b>don't bother</b> entries aren't bad — several are perfectly good and would make a two-week list. They're here because something else beats them for the same hours.</p>
+
+    <div class="filters" id="filters">
+      <button class="fbtn" data-city="all" aria-pressed="true">All</button>
+      <button class="fbtn" data-city="KL" aria-pressed="false">Kuala Lumpur</button>
+      <button class="fbtn" data-city="Penang" aria-pressed="false">Penang</button>
+      <button class="fbtn" data-city="Between" aria-pressed="false">In between</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-tier="do" aria-pressed="false">Do</button>
+      <button class="fbtn" data-tier="opt" aria-pressed="false">Maybe</button>
+      <button class="fbtn" data-tier="skip" aria-pressed="false">Don't bother</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-book="1" aria-pressed="false">Needs booking</button>
+    </div>
+    <div class="items" id="items"></div>
+  </div>
+</section>
+
+<section class="section" id="hawker">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">06</span> The point of Penang</p>
+    <h2 class="head">Eat on<br>the clock</h2>
+    <p class="lede">Georgetown's food is not a restaurant scene, it's a shift system. Individual dishes belong to specific hours, and the good stalls sell out and shut rather than stay open. Turn up for Hokkien mee at two in the afternoon and you will be told, politely, that it's finished — because it is. This chart is the single most useful thing on this page.</p>
+
+    <div class="figcap">
+      <span>Fig. 3 — When the hawkers actually cook</span>
+      <span><b>Georgetown</b> · typical windows</span>
+    </div>
+    <div class="scroller">
+      <svg id="hawker-chart" viewBox="0 0 1400 430" role="img" aria-label="Chart of typical serving windows for Penang hawker dishes across the day, showing prawn noodles and breakfast items in the morning, nasi kandar and cendol through the middle of the day, and char kway teow, satay and Chulia Street stalls in the evening and late night."></svg>
+    </div>
+    <p class="fignote"><i style="background:rgba(242,169,60,.6)"></i>Typical serving window<i style="background:var(--magenta)"></i>Sunrise / sunset · stalls close one day a week and the day varies — check before you cross town for one</p>
+
+    <div class="panel">
+      <h3>The five dishes that are actually Penang's</h3>
+      <p><b>Hokkien mee</b>, called prawn mee here — an orange broth cooked for hours from prawn shells and pork bones, noodles, egg, sambal on the side. <b>A morning dish.</b> The broth takes all night to make and the best stalls are done by noon.</p>
+      <p><b>Assam laksa</b> — tamarind and poached mackerel, torch ginger flower, mint, pineapple, a spoon of shrimp paste stirred in at the table. Sour, funky, nothing else tastes like it. Mid-day into early evening.</p>
+      <p><b>Char kway teow</b> — flat rice noodles, cockles, Chinese sausage, egg, dark soy, cooked one plate at a time over a fire hot enough to be frightening. Look for a <b>charcoal wok</b>; that's where the smoke flavour comes from. Mostly an evening dish, though a few morning stalls exist.</p>
+      <p><b>Nasi kandar</b> — the Indian-Muslim rice-and-curry counter. Point at things; ask for <i>banjir</i> and they flood the plate with several gravies at once. <b>Hameediyah on Campbell Street has been doing it since 1907.</b> Open more or less all day.</p>
+      <p><b>Cendol</b> — shaved ice, green pandan noodles, coconut milk, palm sugar. <b>Penang Road Famous Teochew Cendol</b>, in the alley off Lebuh Keng Kwee, has been there since the 1930s and there is always a queue. It moves fast.</p>
+    </div>
+
+    <div class="panel">
+      <h3>Mechanics</h3>
+      <p><b>Cash and QR.</b> Hawker stalls are cash-first; many now also take DuitNow QR, which you can't easily use on a foreign card. Carry small notes — RM50 in fives and tens covers a day of eating comfortably.</p>
+      <p><b>How it works in a coffee shop.</b> You sit down, someone comes to take a <i>drink</i> order — that's the person who owns the shop. The food stalls around the edge are separate businesses; you order from each one at the stall and they bring it to your table. Pay each seller as they deliver.</p>
+      <p><b>Where to go.</b> Chulia Street after dark for the street carts, Kimberley Street for duck kway chap and koay teow th'ng, Lebuh Presgrave and New Lane for evening hawker centres, Gurney Drive for the big touristed night market — good, not the best, and worth one visit for the scale of it.</p>
+      <p><b>Closing days.</b> Nearly every stall takes one day off a week and it's rarely a weekend. Two minutes of checking before you walk twenty minutes for a specific plate of noodles saves the walk.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="move">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">07</span> The transfer maths</p>
+    <h2 class="head">Train or plane,<br>KL to Penang</h2>
+    <p class="lede">The flight is fifty minutes and the train is four hours, which makes this look like an easy question. It isn't, because almost none of a flight is the flying. Add the airport at both ends and the gap collapses to roughly ninety minutes — for double the money and none of the view. Tick what you'd actually do and watch the numbers move.</p>
+
+    <div class="calc">
+      <div class="calc-legs" id="legs"></div>
+      <dl class="calc-out">
+        <div><dt>Train, door to door</dt><dd id="tTime"></dd></div>
+        <div><dt>Flight, door to door</dt><dd id="fTime"></dd></div>
+        <div><dt>Cost gap</dt><dd id="gap"></dd></div>
+        <div><dt>Verdict</dt><dd><span id="verdict"></span></dd></div>
+      </dl>
+    </div>
+    <p class="fignote">Base legs: ETS Platinum KL Sentral–Butterworth ≈4h05, from about RM78 · a KL–Penang flight ≈50 min airborne, typically RM60–130 booked ahead · KTM uses flexi pricing, so the earlier you book the cheaper it is · CAD at roughly RM2.95 to the dollar, so RM3 ≈ C$1</p>
+
+    <div class="panel">
+      <h3>The three things the calculator can't show you</h3>
+      <p><b>Firefly flies to Subang, not KLIA.</b> SZB is the old city airport, half an hour from central KL instead of the full KLIA Ekspres run. If you're flying this leg, a Firefly ticket into Subang quietly deletes about forty minutes and RM40 of the flight's overhead. It's the single best fare-class decision on this stop.</p>
+      <p><b>The Butterworth end is a walk.</b> The ETS terminates at Penang Sentral in Butterworth, on the mainland. The ferry to Georgetown is RM2 and about twenty minutes across, but the walk from the platform to the ferry gates through the terminal building is longer and more uphill than it looks — allow twenty minutes for it, more with luggage. First ferry 06:30, last one back from Georgetown 23:30.</p>
+      <p><b>The train is the nicer four hours.</b> ETS runs at 140 km/h through palm plantations and limestone karst, with power sockets, a trolley and real legroom in Platinum. It also drops you in the middle of Kuala Lumpur rather than on the edge of Sepang. On a trip this long, a leg where you get to sit still and look out of a window has value the arithmetic doesn't capture.</p>
+    </div>
+
+    <div class="panel">
+      <h3>The stopover: Ipoh</h3>
+      <p>Every ETS between KL and Butterworth stops at Ipoh, roughly the halfway mark and about two and a half hours from KL Sentral. It is Malaysia's quiet third food city — <b>white coffee</b>, bean sprout chicken, and a compact colonial old town of shophouses around a genuinely beautiful 1917 railway station.</p>
+      <p>Break the journey with a locker and three hours and you can walk Concubine Lane, eat at a kopitiam that's been open since the 1930s, and be back on a later train. Booking it means <b>two separate ETS tickets</b>, KL–Ipoh and Ipoh–Butterworth, which is fine but does double your exposure to sold-out December services. Only worth it in the KL-first shape, where the move happens on the 18th and the day has room in it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="admin">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">08</span> Ground rules</p>
+    <h2 class="head">Before you land</h2>
+
+    <div class="tablewrap">
+    <table class="ref">
+      <thead><tr><th>Item</th><th>What to do</th><th>When</th></tr></thead>
+      <tbody>
+        <tr><td>Entry</td><td>Visa-free for Canadians, 90 days, no fee. Passport must be valid at least six months beyond your departure date — worth checking now given you're twelve stops in.</td><td class="t">Nothing to do</td></tr>
+        <tr class="flag"><td>MDAC</td><td>The Malaysia Digital Arrival Card is mandatory and must be filed <b>no more than three days before arrival</b>. It is free, and only at imigresen-online.imi.gov.my. Copycat sites charge up to US$80 for the same form.</td><td class="t">14 Dec or later</td></tr>
+        <tr><td>Biometrics</td><td>Fingerprints are taken at the border. Canadians are eligible for the autogates, but first-time visitors are sent to a staffed counter regardless — budget the queue on arrival.</td><td class="t">On arrival</td></tr>
+        <tr class="flag"><td>Tourism tax</td><td>RM10 per room per night for foreign guests, flat, regardless of room rate. Four nights ≈ RM40. Often collected at check-in in cash rather than on the booking.</td><td class="t">At check-in</td></tr>
+        <tr><td>Hotel taxes</td><td>On top of the room rate: <b>8% service tax</b> and, in most hotels and sit-down restaurants, a <b>10% service charge</b>. A quoted RM300 room lands nearer RM365 with the tourism tax. Hawker stalls have neither.</td><td class="t">Budget for it</td></tr>
+        <tr class="flag"><td>Departure levy</td><td>Malaysia charges an exit levy on outbound flights — RM8 economy to ASEAN countries, <b>RM50 economy to everywhere else</b>. Colombo is not ASEAN, so you pay the RM50. It's inside the ticket price; don't be surprised by the line item.</td><td class="t">Automatic</td></tr>
+        <tr class="flag"><td>ETS booking</td><td>School-holiday December. Seats between KL Sentral and Butterworth go early and KTMB adds extra services because of it. Book through online.ktmb.com.my the day the window opens.</td><td class="t">From ~mid-Oct</td></tr>
+        <tr><td>Timed tickets</td><td>Petronas Skybridge (RM98, non-Malaysian adult, closed most Mondays) and The View at 118 both sell timed slots and both sell out at sunset. Buy from the official sites, not resellers.</td><td class="t">Weeks ahead</td></tr>
+        <tr><td>Money</td><td>Ringgit, about RM2.95 to the Canadian dollar — near enough RM3 ≈ C$1. Cards work everywhere in KL and in Georgetown's hotels and cafés; hawker stalls are cash. ATMs are everywhere and Maybank/CIMB take foreign cards.</td><td class="t">On arrival</td></tr>
+        <tr><td>Getting around</td><td><b>Grab</b>, not taxis — it's the default for everyone and metered taxis are the tourist-overcharge vector. KLIA Ekspres runs KL Sentral–KLIA in 28 minutes, RM55 one way, 10% off in the app, every 20 minutes. Batu Caves is RM2.60 on the KTM Komuter.</td><td class="t">App before you fly</td></tr>
+        <tr><td>Dress</td><td>Shoulders and knees covered at Batu Caves, mosques and Chinese temples. Sarongs are lent or rented for a few ringgit at the gate. Otherwise KL and Penang are relaxed.</td><td class="t">Pack one layer</td></tr>
+        <tr><td>Public holidays</td><td>Nothing between 14 and 22 December 2026. The Sultan of Selangor's birthday is on the 11th, Christmas Day is on the 25th — you miss both. School holidays are the crowd driver, not holidays.</td><td class="t">Clear</td></tr>
+        <tr><td>Plugs &amp; health</td><td>Type G, 240V — UK plugs, same as you'll want for Sri Lanka and the Maldives next. Tap water is chlorinated and generally safe in KL and Penang but almost everyone drinks bottled. Dengue is present year-round; use repellent at dusk.</td><td class="t">Pack accordingly</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="cols">
+      <p><b>Weather</b>31–33°C by day, 24–26°C at night, humidity high and constant. Rain arrives as short violent afternoon storms rather than all-day drizzle. Carry a small umbrella rather than a rain jacket — a shell in this humidity is unwearable.</p>
+      <p><b>Language</b>Bahasa Malaysia is the national language and English is genuinely widespread, more so than anywhere else on this leg of the trip. In Georgetown you'll hear Hokkien, Mandarin, Tamil and Malay in the same block. You will not need a phrase book.</p>
+      <p><b>Alcohol</b>Legal and available in KL and Penang, but heavily taxed — a beer in a bar runs RM20–35. Chinese coffee shops and Indian restaurants often serve it cheap; Malay-Muslim establishments don't serve it at all, which is worth knowing before you order.</p>
+      <p><b>Onward</b>KUL to Colombo is around three and a half hours, flown by AirAsia X, Batik Air, Malaysia Airlines and SriLankan. You gain nothing in the air but lose two and a half hours on the clock — Sri Lanka is UTC+5:30. Christmas Eve in the Maldives is four days after that.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <p>Westbound · stop 15 · Malaysia</p>
+      <p>16–20 Dec 2026 · KUL in, KUL out</p>
+      <p>Fares, taxes and schedules verified Sept 2026 — recheck before booking</p>
+    </div>
+    <p class="foot-mark">Georgetown → KL</p>
+  </div>
+</footer>
+
+<script>
+/* ============ DAY-BY-DAY ============ */
+const DAYS_PENANG=[
+{d:'Wed 16',w:'Arrive',name:'Georgetown',sub:'Two flights, one day',meta:'Night 1',
+ slots:[
+  {m:1,h:'Morning · REP → KUL',p:'Roughly two hours from Siem Reap, one hour forward on the clock. AirAsia and Malaysia Airlines both fly it. Aim to land by early afternoon so the connection north isn’t tight.'},
+  {m:1,h:'Afternoon · KUL → PEN',p:'Fifty minutes, constant departures on AirAsia, Batik and Firefly. Book it as a through ticket with the Siem Reap leg if the airlines allow it; otherwise leave three hours between them at KLIA.'},
+  {h:'19:00 · First plate',p:'Drop the bag and walk to Chulia Street or Lebuh Presgrave. Char kway teow from a charcoal wok, a plate of satay, a Tiger. Don’t over-plan the first night — you’ve been in two airports.'}
+]},
+{d:'Thu 17',w:'Full',name:'Georgetown',sub:'Heritage core on foot',meta:'Night 2',
+ slots:[
+  {h:'07:30 · Prawn mee',p:'Hokkien mee for breakfast, because by noon it’s gone. Sit in a kopitiam, order a kopi from the owner and the noodles from the stall. This is the correct way to start a day in Penang.'},
+  {h:'09:00 · The clan houses',p:'Khoo Kongsi first — an absurdly ornate 1906 clan temple hidden behind a courtyard of shophouses. Then Cheong Fatt Tze, the Blue Mansion, on one of its guided tours; the house only opens properly for those.'},
+  {h:'11:30 · Street art & the jetties',p:'Ernest Zacharevic’s wall pieces are scattered through Armenian Street and Lebuh Ah Quee — the good ones are the wrought-iron caricatures, not the Instagram queue. Then Chew Jetty, a stilt village of one Hokkien clan still lived in.'},
+  {h:'14:00 · Out of the heat',p:'Peranakan Mansion or the Penang State Museum while the afternoon storm does its thing. Cendol on Lebuh Keng Kwee on the way — the queue is long and fast.'},
+  {h:'18:30 · Little India & dinner',p:'Nasi kandar at Hameediyah on Campbell Street, going since 1907. Ask for banjir and let them flood the plate. Then walk the Chulia Street carts for a second, smaller dinner.'}
+]},
+{d:'Fri 18',w:'Full',name:'The hill',sub:'Up early, down before the rain',meta:'Night 3',
+ slots:[
+  {h:'07:00 · Penang Hill',p:'The funicular opens at 06:30 and the first hour is the whole point — cool air, no queue, and the island laid out below before the haze sets in. RM40 return for non-Malaysians, RM80 for the express lane you won’t need at seven.'},
+  {h:'09:30 · The Habitat',p:'A canopy walk and a rainforest loop at the top, or just coffee at the viewpoint and the walk down through Hindu and Muslim shrines. Either is fine; the air up there is twenty degrees of relief.'},
+  {h:'11:30 · Kek Lok Si',p:'On the way back down — the largest Buddhist temple complex in Malaysia, a seven-storey pagoda mixing Chinese, Thai and Burmese styles, and a thirty-metre bronze Guanyin above it. Go before noon.'},
+  {h:'14:00 · Assam laksa',p:'The sour one. Air Itam market, at the foot of Kek Lok Si, has one of the famous stalls and you are already there.'},
+  {h:'18:00 · Last night',p:'Gurney Drive for the scale of the night market, or New Lane for the version locals eat at. Then a rooftop bar in the old town if you want one — Georgetown does a good line in restored-shophouse rooftops.'}
+]},
+{d:'Sat 19',w:'Move',name:'Kuala Lumpur',sub:'South on the ETS',meta:'Night 4',
+ slots:[
+  {h:'07:30 · One more breakfast',p:'Roti canai and teh tarik, or chee cheong fun from a morning cart. Then the ferry — RM2, twenty minutes, and allow twenty more for the walk up into Penang Sentral.'},
+  {m:1,h:'09:30 · ETS to KL Sentral',p:'Four to four and a half hours through plantations and limestone. Booked weeks ago, because it’s December. Platinum if you can get it; the seats are better and it’s marginally faster.'},
+  {h:'15:00 · Islamic Arts Museum',p:'Ten minutes from KL Sentral and one of the best museums of its kind anywhere — architectural models, Qur’ans, Ottoman armour, and a building that’s worth the visit on its own. Perfectly timed for the afternoon storm.'},
+  {h:'17:30 · Merdeka 118',p:'The View at 118, on levels 115 and 116 of the second-tallest building on earth. Book a slot around 17:30 and you get the city in daylight, at golden hour and lit, in one visit. The Edge Walk on 117 is extra and optional.'},
+  {h:'20:00 · Jalan Alor',p:'Two hundred metres of plastic stools and smoke. Grilled stingray, satay, chicken wings, durian if you’re brave. Touristed and still the right last dinner in Malaysia.'}
+]},
+{d:'Sun 20',w:'Depart',name:'To Colombo',sub:'One morning, one temple',meta:'Fly out',
+ slots:[
+  {h:'07:30 · Batu Caves',p:'Thirty-five minutes on the KTM Komuter from KL Sentral for RM2.60, and free to enter. 272 rainbow steps to a limestone cavern under a 43-metre gold Murugan. At half seven it’s cool and near-empty; by ten it is neither. Cover shoulders and knees, and don’t carry visible food — the macaques are professionals.'},
+  {h:'10:30 · Back and pack',p:'Komuter back to KL Sentral. If you skipped it yesterday, the KLCC park and the Petronas Towers from below are twenty minutes away and cost nothing.'},
+  {m:1,h:'13:00 · KLIA Ekspres',p:'Twenty-eight minutes from KL Sentral to KLIA T1, three more to T2, every twenty minutes, RM55 with 10% off in the app. There is an in-town check-in at KL Sentral for some airlines — worth a look.'},
+  {m:1,h:'· Colombo',p:'Stop 16. KUL→CMB is about 3h50 non-stop with AirAsia X, Batik, Malaysia Airlines or SriLankan. You lose 2.5 hours on the clock: Sri Lanka runs UTC+5:30.'}
+]}
+];
+
+const DAYS_KL=[
+{d:'Wed 16',w:'Arrive',name:'Kuala Lumpur',sub:'Land, eat, sleep',meta:'Night 1',
+ slots:[
+  {m:1,h:'Morning · REP → KUL',p:'Two hours from Siem Reap, one hour forward. Land early afternoon, KLIA Ekspres into KL Sentral in 28 minutes, Grab to the hotel.'},
+  {h:'18:00 · Chinatown',p:'Petaling Street, then Kwai Chai Hong’s restored alley, then the Sri Mahamariamman temple on the edge of it — a South Indian gopuram in the middle of a Chinese quarter, which is Kuala Lumpur in one image.'},
+  {h:'20:00 · Jalan Alor',p:'Plastic stools, grilled stingray, satay, wok noise. The obvious first dinner and none the worse for it.'}
+]},
+{d:'Thu 17',w:'Full',name:'Kuala Lumpur',sub:'The one full day',meta:'Night 2',
+ slots:[
+  {h:'07:30 · Batu Caves',p:'KTM Komuter from KL Sentral, 35 minutes, RM2.60, free entry. 272 steps under a 43-metre gold Murugan. Half seven is cool and quiet; ten o’clock is a crowd in full sun. Shoulders and knees covered, food out of sight — the macaques will take it.'},
+  {h:'10:30 · Merdeka Square & Masjid Jamek',p:'The colonial core: the Sultan Abdul Samad building, the padang, and the mosque at the muddy confluence the city is literally named after. Half an hour of walking, and it explains the place.'},
+  {h:'12:30 · Islamic Arts Museum',p:'One of the best museums of its kind anywhere. Architectural models, manuscripts, textiles, arms — and a building worth the ticket by itself. Two hours minimum, and it covers you for the afternoon storm.'},
+  {h:'15:30 · Kampung Baru or KL Forest Eco Park',p:'A surviving Malay village of wooden stilt houses hemmed in by towers, or fifteen acres of actual rainforest with a canopy walkway ten minutes from the centre. Both are free and both are strange in the right way.'},
+  {h:'17:30 · Merdeka 118',p:'The View at 118, levels 115 and 116 of the world’s second-tallest building. Book the golden-hour slot — you get daylight, sunset and the lit city in one go. Then down for dinner in Bukit Bintang.'}
+]},
+{d:'Fri 18',w:'Move',name:'Georgetown',sub:'North on the ETS, via Ipoh',meta:'Night 3',
+ slots:[
+  {m:1,h:'08:00 · ETS north',p:'KL Sentral to Ipoh, about two and a half hours. Book it weeks ahead — December is school holidays and these trains fill.'},
+  {h:'11:00 · Ipoh, three hours',p:'Bag in a locker at the 1917 station. White coffee at a kopitiam, bean sprout chicken for lunch, a walk down Concubine Lane and the old-town shophouses. Malaysia’s quiet third food city, and it’s free to look at.'},
+  {m:1,h:'14:30 · Ipoh → Butterworth',p:'Another ninety minutes north. Note this is a second, separate ETS ticket — book both at once. If sold-out December makes the stopover fragile, take the direct train instead and give the time to Georgetown.'},
+  {h:'17:00 · Ferry across',p:'RM2, twenty minutes, and allow twenty more for the walk down from the platform. Georgetown from the water at dusk is a good first impression.'},
+  {h:'19:30 · Chulia Street',p:'Char kway teow from a charcoal wok, satay, a Tiger. Ease into it — tomorrow is the full day.'}
+]},
+{d:'Sat 19',w:'Full',name:'Georgetown',sub:'Everything, in one day',meta:'Night 4',
+ slots:[
+  {h:'07:00 · Penang Hill',p:'Funicular opens at 06:30 and the first hour is the whole point — cool air, no queue, clear air before the haze. RM40 return for non-Malaysians. Kek Lok Si on the way back down, before noon.'},
+  {h:'11:00 · Assam laksa at Air Itam',p:'At the foot of Kek Lok Si, which is exactly where you already are. The sour tamarind-and-mackerel one. This is the dish people fly here for.'},
+  {h:'13:30 · The heritage core',p:'Khoo Kongsi’s 1906 clan temple, the Blue Mansion if a tour time works, the Zacharevic wall pieces along Armenian Street, and Chew Jetty — a stilt village of one Hokkien clan, still lived in.'},
+  {h:'16:00 · Indoors',p:'Peranakan Mansion or the state museum while the storm passes. Cendol on Lebuh Keng Kwee — the queue looks worse than it is.'},
+  {h:'18:30 · Last dinner',p:'Nasi kandar at Hameediyah, going since 1907, or New Lane’s hawker centre for the local version of Gurney Drive. Pack tonight; tomorrow has no slack in it.'}
+]},
+{d:'Sun 20',w:'Depart',name:'To Colombo',sub:'Two flights, no margin',meta:'Fly out',
+ slots:[
+  {h:'07:00 · One last breakfast',p:'Roti canai and teh tarik near the hotel. Keep it short — this morning is a logistics problem, not a sightseeing one.'},
+  {m:1,h:'08:30 · PEN → KUL',p:'Fifty minutes, and the weak point of this whole shape. Book it on the same ticket as the Colombo flight if you can, so a delay becomes the airline’s problem. On separate tickets, allow four hours minimum at KLIA and accept the risk.'},
+  {m:1,h:'· Colombo',p:'Stop 16. KUL→CMB is about 3h50 non-stop with AirAsia X, Batik, Malaysia Airlines or SriLankan. You lose 2.5 hours on the clock: Sri Lanka runs UTC+5:30.'}
+]}
+];
+
+let CURRENT_PLAN='penang';
+function renderDays(){
+  const DAYS = CURRENT_PLAN==='penang' ? DAYS_PENANG : DAYS_KL;
+  document.getElementById('days').innerHTML=DAYS.map((D,i)=>`
+  <div class="day">
+    <button class="day-btn" aria-expanded="false">
+      <span class="day-date">${D.d}<small>${D.w}</small></span>
+      <span><span class="day-name">${D.name}</span><span class="day-sub">${D.sub}</span></span>
+      <span class="day-meta">${D.meta}<span class="chev">▾</span></span>
+    </button>
+    <div class="day-body"><div class="day-inner"><div class="day-pad"><div class="slots">
+      ${D.slots.map(s=>`<div class="slot${s.m?' move':''}"><h4>${s.h}</h4><p>${s.p}</p></div>`).join('')}
+    </div></div></div></div>
+  </div>`).join('');
+
+  document.querySelectorAll('.day-btn').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const d=b.parentElement, open=d.classList.toggle('open');
+      b.setAttribute('aria-expanded',open?'true':'false');
+    });
+  });
+  document.querySelector('.day').classList.add('open');
+  document.querySelector('.day-btn').setAttribute('aria-expanded','true');
+}
+renderDays();
+
+document.getElementById('dayToggle').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  CURRENT_PLAN=b.dataset.plan;
+  document.querySelectorAll('#dayToggle .fbtn').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
+  const pn=document.getElementById('pen-nights');
+  if(pn) pn.textContent = CURRENT_PLAN==='penang' ? '3' : '2';
+  renderDays();
+});
+
+/* ============ WORTH DOING ============ */
+const ITEMS=[
+/* KUALA LUMPUR */
+{c:'KL',t:'do',n:'Batu Caves at 07:30',w:'Free, 272 steps, a 43-metre gold Murugan, and a limestone cavern with daylight falling through the roof. RM2.60 and 35 minutes on the Komuter. The hour is the whole trick — by ten it is a crowd in full sun.',when:'07:00–09:00'},
+{c:'KL',t:'do',n:'The View at 118',w:'Levels 115 and 116 of Merdeka 118, the second-tallest building in the world. Timed slots; take one around 17:30 and get daylight, sunset and the lit city in a single ticket. The Edge Walk on 117 is a separate, optional thrill.',when:'Book ahead',b:1},
+{c:'KL',t:'do',n:'Islamic Arts Museum',w:'Architectural models, manuscripts, Ottoman and Mughal arms, textiles, and a building that would justify the trip on its own. Genuinely world-class and almost nobody outside Malaysia mentions it.',when:'2 hours'},
+{c:'KL',t:'do',n:'Jalan Alor after dark',w:'Two hundred metres of plastic stools, grilled stingray, satay and wok smoke. Touristed for the obvious reason that it is very good at what it does.',when:'After 18:00'},
+{c:'KL',t:'do',n:'Chinatown & Kwai Chai Hong',w:'Petaling Street’s covered market, the restored back-alley of Kwai Chai Hong, and the Sri Mahamariamman temple’s South Indian gopuram sitting in the middle of it all.',when:'Late afternoon'},
+{c:'KL',t:'do',n:'Merdeka Square & Masjid Jamek',w:'The Sultan Abdul Samad building, the padang, and the mosque at the muddy river confluence the city is named after. Half an hour, and the city stops being random afterwards.',when:'Morning'},
+{c:'KL',t:'opt',n:'Petronas Skybridge',w:'RM98 for non-Malaysian adults, closed most Mondays, timed entry from the official site. The counter-argument: the towers are the view, so you may prefer them from KLCC park at night for nothing.',when:'Book ahead',b:1},
+{c:'KL',t:'opt',n:'Kampung Baru',w:'A Malay village of wooden stilt houses that refused to sell, now ringed by towers. Best on a Saturday night market or an early morning. Free, and unlike anything else in the centre.',when:'Any time'},
+{c:'KL',t:'opt',n:'KL Forest Eco Park',w:'Fifteen acres of genuine primary rainforest with a canopy walkway, ten minutes from Bukit Bintang. Small, free, and a good twenty minutes when the heat has beaten you.',when:'Free'},
+{c:'KL',t:'opt',n:'Thean Hou Temple',w:'A six-tier Chinese temple on a hill south of the centre, all red lanterns and long views. Worth a Grab if you have a spare hour; not worth losing one.',when:'1 hour'},
+{c:'KL',t:'opt',n:'Central Market',w:'A 1937 art-deco wet market turned handicraft hall. Air-conditioned, mildly touristy, and the most efficient place to buy batik and pewter if you want any.',when:'Afternoon'},
+{c:'KL',t:'skip',n:'KL Tower observation deck',w:'Menara KL has a decent view and a glass box, but it loses to Merdeka 118 on height and to KLCC park on the fact that the Petronas Towers are the thing you actually came to look at.',when:''},
+{c:'KL',t:'skip',n:'Genting Highlands',w:'A casino resort in the clouds an hour north, reached by a long cable car. Fun, and entirely the wrong use of one of three days.',when:''},
+{c:'KL',t:'skip',n:'Aquaria KLCC & Sunway Lagoon',w:'A good aquarium and a good water park. You have the Maldives on the 24th.',when:''},
+{c:'KL',t:'skip',n:'Melaka day trip',w:'Two hours each way by coach for a riverfront that Georgetown does better and that you are already visiting. It deserves an overnight or nothing.',when:''},
+/* PENANG */
+{c:'Penang',t:'do',n:'Hokkien mee before noon',w:'Prawn-and-pork broth cooked overnight, noodles, egg, sambal on the side. A morning dish in the strict sense — the good stalls sell out and close by midday.',when:'07:00–11:00'},
+{c:'Penang',t:'do',n:'Char kway teow, charcoal wok',w:'Flat noodles, cockles, lap cheong, egg, dark soy, one plate at a time over a genuinely frightening fire. Look for charcoal; that is where the smoke flavour lives. Mostly evenings.',when:'After 17:00'},
+{c:'Penang',t:'do',n:'Assam laksa',w:'Tamarind and poached mackerel, torch ginger, mint, pineapple, shrimp paste stirred in at the table. Sour and funky and unlike anything else in Malaysia. Air Itam market has one of the famous ones.',when:'Midday'},
+{c:'Penang',t:'do',n:'Nasi kandar at Hameediyah',w:'Campbell Street, going since 1907. Point at the curries and ask for banjir — they flood the rice with several gravies at once. Open most of the day, which makes it the reliable fallback.',when:'All day'},
+{c:'Penang',t:'do',n:'Penang Road cendol',w:'Shaved ice, pandan noodles, coconut milk, palm sugar, in an alley off Lebuh Keng Kwee since the 1930s. There is always a queue and it always moves fast.',when:'10:30–19:00'},
+{c:'Penang',t:'do',n:'Penang Hill at opening',w:'Funicular from 06:30, RM40 return for non-Malaysians. The first hour is cool, empty and clear; by ten it is hot, queued and hazy. The RM80 express lane is money you don’t need to spend at seven.',when:'06:30–08:00'},
+{c:'Penang',t:'do',n:'Khoo Kongsi',w:'A 1906 clan temple of preposterous carved density, hidden behind a courtyard of shophouses. The best single building in Georgetown and consistently under-visited.',when:'09:00–17:00'},
+{c:'Penang',t:'do',n:'Chew Jetty',w:'A stilt village on the water built by one Hokkien clan, still lived in rather than preserved. Go early or late; the middle of the day is a tour-bus corridor.',when:'Before 10:00'},
+{c:'Penang',t:'do',n:'Kek Lok Si',w:'The largest Buddhist complex in Malaysia — a seven-storey pagoda that changes architectural style with each tier, and a thirty-metre bronze Guanyin above it. Pairs with Penang Hill on the same morning.',when:'Before noon'},
+{c:'Penang',t:'opt',n:'Cheong Fatt Tze, the Blue Mansion',w:'Indigo-washed 1880s courtyard house, restored to an award-winning standard. The interior only opens on scheduled guided tours, so the times decide whether it fits.',when:'Tour times',b:1},
+{c:'Penang',t:'opt',n:'Street art trail',w:'Ernest Zacharevic’s 2012 murals plus the wrought-iron caricatures scattered around the old town. Pleasant if you stumble on them, faintly silly if you queue for them.',when:'Any time'},
+{c:'Penang',t:'opt',n:'Peranakan Mansion',w:'Straits-Chinese domestic life at full volume — a green mansion stuffed with lacquer, tiles and ancestral portraits. The best rainy-afternoon hour in Georgetown.',when:'Afternoon'},
+{c:'Penang',t:'opt',n:'The Habitat, Penang Hill',w:'Canopy walk and a rainforest loop at the top of the funicular. Good, and easy to add — but the hill’s real value is the air and the view, both of which are free.',when:'2 hours'},
+{c:'Penang',t:'opt',n:'Gurney Drive night market',w:'The big, famous, thoroughly touristed one. Worth a single visit for the sheer scale; New Lane and Lebuh Presgrave are where the food is better.',when:'After 18:00'},
+{c:'Penang',t:'skip',n:'Batu Ferringhi as a base',w:'The beach strip is 40 minutes from the old town, the sand is unremarkable, and every meal you came for is back in Georgetown. Stay in a shophouse hotel instead.',when:''},
+{c:'Penang',t:'skip',n:'Entopia & Escape park',w:'A very good butterfly farm and a very good adventure park, both an hour out of town, both aimed squarely at the families who fill this island in December.',when:''},
+{c:'Penang',t:'skip',n:'Komtar & the Rainbow Skywalk',w:'Georgetown’s 1980s concrete tower with a glass viewing deck. Penang Hill is higher, cooler, older and better.',when:''},
+/* BETWEEN */
+{c:'Between',t:'opt',n:'Ipoh stopover',w:'Every ETS stops here, halfway. White coffee, bean sprout chicken, Concubine Lane, and a 1917 railway station that looks like a colonial fever dream. Three hours with a locker is enough. Needs two separate tickets.',when:'3 hours',b:1},
+{c:'Between',t:'opt',n:'The ETS itself',w:'140 km/h through oil palm and limestone karst, power sockets, real legroom in Platinum, and it lands you in the middle of the city rather than on the edge of Sepang. Sometimes the transport is the sightseeing.',when:'4 hours',b:1},
+{c:'Between',t:'skip',n:'Cameron Highlands',w:'Tea terraces, mossy forest, cool nights — and a switchback road that eats most of a day in each direction. A two-night trip minimum and you have four nights total.',when:''},
+{c:'Between',t:'skip',n:'Langkawi',w:'An hour from Penang, and a decent beach. But the northwest in December is not its best season and the Maldives is four days after you leave.',when:''},
+{c:'Between',t:'skip',n:'Taman Negara & Borneo',w:'The rainforest and the orangutans — the two things a lot of people come to Malaysia for, and both entirely separate trips. Note them down for the next one.',when:''}
+];
+
+const TIERLBL={do:'Do',opt:'Maybe',skip:'Skip'};
+let FC='all', FT=null, FB=false;
+
+function renderItems(){
+  const list=ITEMS.filter(x=>
+    (FC==='all'||x.c===FC) && (!FT||x.t===FT) && (!FB||x.b));
+  const host=document.getElementById('items');
+  if(!list.length){host.innerHTML='<div class="empty">No entries match those filters.</div>';return}
+  host.innerHTML=list.map(x=>`
+    <div class="item">
+      <span class="tier ${x.t}">${TIERLBL[x.t]}</span>
+      <span class="nm">${x.n}</span>
+      <span class="when${x.b?' book':''}">${x.when||'&nbsp;'}</span>
+      <span class="why">${x.w}</span>
+    </div>`).join('');
+}
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  if(b.dataset.city){FC=b.dataset.city}
+  else if(b.dataset.tier){FT = FT===b.dataset.tier?null:b.dataset.tier}
+  else if(b.dataset.book){FB=!FB}
+  document.querySelectorAll('#filters .fbtn').forEach(x=>{
+    let on=false;
+    if(x.dataset.city) on = x.dataset.city===FC;
+    if(x.dataset.tier) on = x.dataset.tier===FT;
+    if(x.dataset.book) on = FB;
+    x.setAttribute('aria-pressed',on?'true':'false');
+  });
+  renderItems();
+});
+renderItems();
+
+/* ============ FIG 1: TIME AUDIT ============ */
+(function(){
+  const svg=document.getElementById('audit-chart');
+  const W=1400,H=190,pad=40,barY=70,barH=54;
+  const totalH=120; // 16 Dec 00:00 -> 21 Dec 00:00
+  const start=new Date(2026,11,16);
+  const x=h=>pad+(h/totalH)*(W-2*pad);
+  const segs=[
+    {a:0,b:13,cls:'t'},
+    {a:13,b:24,cls:'p'},
+    {a:24,b:48,cls:'f'},
+    {a:48,b:72,cls:'f'},
+    {a:72,b:82,cls:'f'},
+    {a:82,b:87,cls:'t2'},
+    {a:87,b:96,cls:'f'},
+    {a:96,b:104,cls:'p'},
+    {a:104,b:120,cls:'t2'}
+  ];
+  const colors={t:'var(--magenta)',t2:'rgba(231,100,155,.55)',p:'rgba(242,169,60,.35)',f:'var(--amber)'};
+  let s='';
+  segs.forEach(sg=>{
+    const x1=x(sg.a),x2=x(sg.b);
+    s+=`<rect x="${x1}" y="${barY}" width="${Math.max(1,x2-x1-1)}" height="${barH}" fill="${colors[sg.cls]}"/>`;
+  });
+  for(let d=0;d<=5;d++){
+    const hh=d*24, xx=x(hh);
+    const dt=new Date(start.getTime()+hh*36e5);
+    s+=`<line x1="${xx}" y1="${barY-6}" x2="${xx}" y2="${barY+barH+6}" class="axs"/>`;
+    s+=`<text x="${xx}" y="${barY-14}" class="lbl" text-anchor="${d===0?'start':d===5?'end':'middle'}">${dt.toLocaleDateString('en-CA',{day:'2-digit',month:'short'})}</text>`;
+  }
+  s+=`<line x1="${pad}" y1="${barY+barH+0.5}" x2="${W-pad}" y2="${barY+barH+0.5}" class="ax"/>`;
+  s+=`<text x="${x(24)}" y="${barY+barH+34}" class="lbl-a">3 usable days — 17→19 Dec</text>`;
+  s+=`<text x="${x(0)}" y="${barY+barH+34}" class="lbl">↙ Siem Reap → KUL</text>`;
+  s+=`<text x="${x(84.5)}" y="${barY-30}" class="lbl" text-anchor="middle" fill="var(--magenta)">the move</text>`;
+  s+=`<line x1="${x(84.5)}" y1="${barY-24}" x2="${x(84.5)}" y2="${barY-2}" stroke="var(--magenta)" stroke-width="1"/>`;
+  s+=`<text x="${W-pad}" y="${barY+barH+34}" class="lbl" text-anchor="end">KUL → Colombo ↘</text>`;
+  svg.innerHTML=s;
+})();
+
+/* ============ FIG 2: RAINFALL ============ */
+(function(){
+  const svg=document.getElementById('rain-chart');
+  const W=1400,H=400,padL=64,padR=30,padT=30,padB=54;
+  const MO=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const SERIES=[
+    {n:'Penang',c:'var(--amber)',v:[70,90,140,220,200,180,190,240,350,380,230,115]},
+    {n:'Kuala Lumpur',c:'var(--jade)',v:[170,165,240,285,200,130,140,165,215,300,340,235]},
+    {n:'Kota Bharu',c:'var(--magenta)',v:[160,60,100,90,130,130,150,175,190,270,630,600]}
+  ];
+  const MAX=700;
+  const gw=(W-padL-padR)/12;
+  const y=v=>padT+(1-v/MAX)*(H-padT-padB);
+  let s='';
+  // december highlight
+  s+=`<rect x="${padL+11*gw}" y="${padT}" width="${gw}" height="${H-padT-padB}" fill="rgba(231,100,155,.10)" stroke="var(--magenta)" stroke-width="1"/>`;
+  s+=`<text x="${padL+11.5*gw}" y="${padT-9}" class="lbl-a" text-anchor="middle">Your month</text>`;
+  [0,200,400,600].forEach(v=>{
+    s+=`<line x1="${padL}" y1="${y(v)}" x2="${W-padR}" y2="${y(v)}" class="axs"/>`;
+    s+=`<text x="${padL-10}" y="${y(v)+4}" class="lbl" text-anchor="end">${v}</text>`;
+  });
+  MO.forEach((m,i)=>{
+    const gx=padL+i*gw;
+    SERIES.forEach((se,j)=>{
+      const bw=gw*0.24, bx=gx+gw*0.07+j*(bw+gw*0.035);
+      const v=se.v[i];
+      s+=`<rect x="${bx}" y="${y(v)}" width="${bw}" height="${H-padB-y(v)}" fill="${se.c}" opacity="${i===11?1:.62}" rx="1"/>`;
+    });
+    s+=`<text x="${gx+gw/2}" y="${H-padB+20}" class="lbl" text-anchor="middle" ${i===11?'fill="var(--amber)"':''}>${m}</text>`;
+  });
+  s+=`<line x1="${padL}" y1="${H-padB}" x2="${W-padR}" y2="${H-padB}" class="ax"/>`;
+  s+=`<text x="${padL-10}" y="${padT-9}" class="lbl" text-anchor="end">mm</text>`;
+  svg.innerHTML=s;
+})();
+
+/* ============ FIG 3: HAWKER CLOCK ============ */
+(function(){
+  const svg=document.getElementById('hawker-chart');
+  const W=1400,H=430,padL=280,padR=40,padT=34,rowH=36;
+  const T0=6, T1=26; // 06:00 to 02:00 next day
+  const x=h=>padL+((h-T0)/(T1-T0))*(W-padL-padR);
+  const ROWS=[
+    {n:'Roti canai & teh tarik',a:6.5,b:11.5},
+    {n:'Hokkien mee (prawn noodles)',a:6.5,b:12,hot:1},
+    {n:'Chee cheong fun, apom, kopi',a:7,b:11.5},
+    {n:'Nasi kandar — Hameediyah',a:10.5,b:22},
+    {n:'Assam laksa',a:11,b:19},
+    {n:'Cendol — Lebuh Keng Kwee',a:10.5,b:19},
+    {n:'Char kway teow (evening stalls)',a:17,b:23,hot:1},
+    {n:'Satay & Gurney Drive market',a:18,b:23.5},
+    {n:'Chulia Street street carts',a:19,b:26}
+  ];
+  let s='';
+  // hour gridlines
+  for(let h=6;h<=26;h+=2){
+    const xx=x(h);
+    s+=`<line x1="${xx}" y1="${padT}" x2="${xx}" y2="${padT+ROWS.length*rowH+6}" class="axs"/>`;
+    const lab=(h%24).toString().padStart(2,'0')+':00';
+    s+=`<text x="${xx}" y="${padT+ROWS.length*rowH+26}" class="lbl" text-anchor="middle">${lab}</text>`;
+  }
+  // sunrise / sunset
+  [{h:7.2,l:'sunrise'},{h:19.1,l:'sunset'}].forEach(m=>{
+    s+=`<line x1="${x(m.h)}" y1="${padT-8}" x2="${x(m.h)}" y2="${padT+ROWS.length*rowH+6}" stroke="var(--magenta)" stroke-width="1" stroke-dasharray="3 4"/>`;
+    s+=`<text x="${x(m.h)}" y="${padT-14}" class="lbl" text-anchor="middle" fill="var(--magenta)">${m.l}</text>`;
+  });
+  s+=`<line x1="${padL-2}" y1="${padT}" x2="${W-padR}" y2="${padT}" class="ax"/>`;
+  ROWS.forEach((r,i)=>{
+    const yy=padT+18+i*rowH;
+    s+=`<text x="${padL-14}" y="${yy+4}" class="lbl-p" text-anchor="end">${r.n}</text>`;
+    s+=`<rect x="${x(r.a)}" y="${yy-9}" width="${x(r.b)-x(r.a)}" height="18" rx="2" fill="${r.hot?'rgba(242,169,60,.95)':'rgba(242,169,60,.62)'}"/>`;
+  });
+  svg.innerHTML=s;
+})();
+
+/* ============ TRAIN VS PLANE ============ */
+const BASE={train:{min:245,rm:78},fly:{min:50,rm:90}};
+const EXTRAS=[
+  {n:'Get to KLIA — KLIA Ekspres from KL Sentral',mode:'fly',min:31,rm:55,def:true,note:'Flight · 28 min to T1, RM55 one way'},
+  {n:'Be at the airport 90 minutes early',mode:'fly',min:90,rm:0,def:true,note:'Flight · domestic, no bag drop queue assumed'},
+  {n:'Check a bag',mode:'fly',min:25,rm:45,def:false,note:'Flight · budget carriers charge for hold luggage'},
+  {n:'Penang airport → Georgetown by Grab',mode:'fly',min:30,rm:35,def:true,note:'Flight · PEN sits 16 km south of the old town'},
+  {n:'Butterworth ferry + the walk to the gates',mode:'train',min:40,rm:2,def:true,note:'Train · RM2, 20 min across, 20 min of terminal'},
+  {n:'Jetty → Georgetown hotel by Grab',mode:'train',min:12,rm:12,def:true,note:'Train · or walk it in 15 if you travel light'}
+];
+function fmt(m){return Math.floor(m/60)+'h'+String(m%60).padStart(2,'0')}
+function renderLegs(){
+  document.getElementById('legs').innerHTML=EXTRAS.map((l,i)=>`
+    <label class="leg-row">
+      <input type="checkbox" data-i="${i}" ${l.def?'checked':''}>
+      <span class="lname">${l.n}</span>
+      <span class="lyen">+${fmt(l.min)} · RM${l.rm}</span>
+      ${l.note?`<span class="lnote">${l.note}</span>`:''}
+    </label>`).join('');
+}
+function calcTotals(){
+  let t={min:BASE.train.min,rm:BASE.train.rm}, f={min:BASE.fly.min,rm:BASE.fly.rm};
+  document.querySelectorAll('#legs input[type="checkbox"]').forEach(cb=>{
+    if(!cb.checked) return;
+    const l=EXTRAS[Number(cb.dataset.i)];
+    const tgt = l.mode==='train'?t:f;
+    tgt.min+=l.min; tgt.rm+=l.rm;
+  });
+  document.getElementById('tTime').innerHTML=`${fmt(t.min)}<small>RM${t.rm} · C$${Math.round(t.rm/2.95)}</small>`;
+  document.getElementById('fTime').innerHTML=`${fmt(f.min)}<small>RM${f.rm} · C$${Math.round(f.rm/2.95)}</small>`;
+  const dRM=f.rm-t.rm, dMin=t.min-f.min;
+  const gEl=document.getElementById('gap'), vEl=document.getElementById('verdict');
+  gEl.innerHTML = dRM>=0 ? `RM${dRM}<small>flying costs more</small>` : `RM${Math.abs(dRM)}<small>the train costs more</small>`;
+  if(dMin>0){
+    vEl.textContent=`Flying saves ${fmt(dMin)} for ${dRM>=0?'RM'+dRM+' more':'RM'+Math.abs(dRM)+' less'}`;
+    vEl.className = dRM>=0 ? 'lose' : 'win';
+  } else if(dMin===0){
+    vEl.textContent='Dead heat — take the train'; vEl.className='win';
+  } else {
+    vEl.textContent=`The train is ${fmt(Math.abs(dMin))} faster and cheaper`; vEl.className='win';
+  }
+}
+renderLegs();
+document.getElementById('legs').addEventListener('change',calcTotals);
+calcTotals();
+</script>
+
+</body>
+</html>

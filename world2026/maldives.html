@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="darkreader-lock">
+<title>Maldives</title>
+<link rel="stylesheet" href="fonts.css">
+</head>
+<body>
+<style>
+:root{color-scheme:dark;
+  --ink:#05161D;--ink-2:#0A2029;--ink-3:#0E2A35;
+  --rule:#194150;--rule-soft:rgba(25,65,80,.6);
+  --paper:#E2EEED;--paper-dim:#A6C2C6;--muted:#6C8F98;
+  --amber:#F2A93C;--magenta:#E7649B;--jade:#58C4A3;--red:#E05555;
+  --display:'Big Shoulders Display','Arial Narrow',Impact,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --body:'Inter',system-ui,sans-serif;
+  --gut:clamp(18px,4vw,64px);--maxw:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+.section{padding-block:clamp(34px,4.4vw,58px);border-top:1px solid var(--rule-soft);position:relative}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:14px;margin:0 0 18px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--rule)}
+.eyebrow .n{color:var(--amber)}
+h2.head{font-family:var(--display);font-weight:700;font-size:clamp(34px,5.6vw,66px);line-height:.92;margin:0 0 14px;text-transform:uppercase}
+.lede{max-width:66ch;color:var(--paper-dim);font-size:clamp(15px,1.5vw,17px);margin:0 0 26px}
+.lede b{color:var(--paper);font-weight:600}
+a{color:var(--amber);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+.hint{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+@media (min-width:980px){.hint.wide{display:none}}
+.scroller{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--rule) transparent}
+.scroller::-webkit-scrollbar{height:6px}
+.scroller::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}
+.scroller>svg{display:block;width:100%;height:auto}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(30px,5vw,58px) clamp(24px,4vw,40px);overflow:hidden}
+.gridbg{position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:linear-gradient(to right,var(--rule-soft) 1px,transparent 1px),linear-gradient(to bottom,var(--rule-soft) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%);-webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%)}
+.back{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:inline-block;margin-bottom:20px}
+.back:hover{color:var(--amber)}
+.strip{font-family:var(--mono);font-size:clamp(10px,1.15vw,12px);letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;border-block:1px solid var(--rule);padding-block:11px;margin-bottom:clamp(26px,4vw,44px)}
+.strip .k{color:var(--muted)}.strip .amb{color:var(--amber)}
+.title{font-family:var(--display);text-transform:uppercase;margin:0;line-height:.82;position:relative}
+.title .l1{display:block;font-weight:400;font-size:clamp(34px,7.4vw,96px);color:transparent;-webkit-text-stroke:1.2px var(--paper-dim)}
+.title .l2{display:block;font-weight:800;font-size:clamp(72px,17vw,232px);letter-spacing:-.015em;color:var(--paper)}
+.subline{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:baseline;margin-top:clamp(18px,3vw,30px);font-family:var(--mono);font-size:clamp(11px,1.25vw,13px);letter-spacing:.14em;text-transform:uppercase;color:var(--paper-dim)}
+.subline .sep{color:var(--rule)}
+
+/* instruments */
+.instr{display:grid;grid-template-columns:repeat(auto-fit,minmax(124px,1fr));border:1px solid var(--rule);background:var(--ink-2);margin:clamp(24px,3.4vw,38px) 0 0}
+.instr div{padding:15px 17px;border-right:1px solid var(--rule-soft)}
+.instr div:last-child{border-right:0}
+.instr dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.instr dd{margin:0;font-family:var(--display);font-weight:600;font-size:31px;line-height:1}
+.instr dd span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--paper-dim);margin-left:3px}
+.instr dd.hot{color:var(--amber)}
+.instr dd.warn{color:var(--magenta)}
+
+/* chart frames */
+.figcap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:9px;margin:0 0 8px}
+.figcap b{color:var(--amber);font-weight:500}
+.fignote{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.fignote i{display:inline-block;width:14px;height:9px;margin:0 5px 0 14px;vertical-align:middle;border-radius:1px}
+.fignote i:first-child{margin-left:0}
+.ax{stroke:var(--rule);stroke-width:1}
+.axs{stroke:var(--rule-soft);stroke-width:1}
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.08em;fill:var(--muted)}
+.lbl-p{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;fill:var(--paper)}
+.lbl-a{font-family:var(--mono);font-size:10px;letter-spacing:.12em;fill:var(--amber)}
+
+/* cards */
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin:0 0 6px}
+.card{border:1px solid var(--rule);background:var(--ink-2);padding:18px 20px;position:relative}
+.card.bad{border-color:var(--red)}
+.card.good{border-color:var(--jade)}
+.card h3{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 4px;color:var(--paper)}
+.card .verdict{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:11px}
+.card .verdict.bad{color:var(--red)}
+.card .verdict.ok{color:var(--jade)}
+.card p{margin:0 0 10px;font-size:13.5px;color:var(--paper-dim);line-height:1.62}
+.card p:last-child{margin-bottom:0}
+.card p b{color:var(--paper);font-weight:600}
+.fix{border-left:2px solid var(--amber);padding-left:12px;margin:12px 0 0;font-size:12.8px;color:var(--paper-dim);line-height:1.6}
+.fix b{display:block;color:var(--amber);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px;font-weight:500}
+.fix strong{color:var(--paper);font-weight:600}
+
+/* shape cards */
+.shapes{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+.shape{border:1px solid var(--rule);background:var(--ink-2);padding:0;display:flex;flex-direction:column}
+.shape.pick{border-color:var(--amber);box-shadow:inset 0 0 0 1px rgba(242,169,60,.25)}
+.shape-hd{padding:16px 20px 14px;border-bottom:1px solid var(--rule-soft)}
+.shape-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.shape.pick .shape-tag{color:var(--amber)}
+.shape-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(24px,3vw,32px);line-height:.95;margin:0}
+.chainrow{display:flex;flex-wrap:wrap;align-items:center;gap:5px 7px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--paper);padding:13px 20px;border-bottom:1px solid var(--rule-soft);background:rgba(5,22,29,.5)}
+.chainrow .a{color:var(--rule)}
+.chainrow .n{color:var(--amber);font-size:9.5px}
+.shape-body{padding:15px 20px 18px;flex:1}
+.shape-body p{margin:0 0 10px;font-size:13.3px;color:var(--paper-dim);line-height:1.6}
+.shape-body p:last-child{margin-bottom:0}
+.shape-body p b{color:var(--paper);font-weight:600}
+.shape-meta{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--rule-soft)}
+.shape-meta div{flex:1;min-width:88px;padding:11px 20px;border-right:1px solid var(--rule-soft)}
+.shape-meta div:last-child{border-right:0}
+.shape-meta dt{font-family:var(--mono);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.shape-meta dd{margin:0;font-family:var(--mono);font-size:13px;color:var(--paper)}
+.shape-meta dd.g{color:var(--jade)}
+.shape-meta dd.r{color:var(--red)}
+
+/* day accordion */
+.days{border-top:1px solid var(--rule)}
+.day{border-bottom:1px solid var(--rule)}
+.day-btn{all:unset;box-sizing:border-box;display:grid;width:100%;cursor:pointer;grid-template-columns:76px 1fr auto;gap:0 clamp(14px,2.4vw,30px);align-items:baseline;padding:clamp(13px,1.8vw,18px) 4px;transition:background .18s ease}
+.day-btn:hover{background:rgba(242,169,60,.05)}
+.day-btn:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.day-date{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.1em}
+.day-date small{display:block;color:var(--muted);font-size:9.5px;letter-spacing:.14em;margin-top:3px}
+.day-btn>span:nth-child(2){display:flex;flex-direction:column;gap:6px}
+.day-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(22px,3.2vw,34px);line-height:.95;margin:0}
+.day-sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.day-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--paper-dim);text-align:right;white-space:nowrap}
+.day-meta .chev{display:inline-block;margin-left:12px;color:var(--muted);transition:transform .25s ease}
+.day.open .day-meta .chev{transform:rotate(180deg)}
+@media (max-width:720px){.day-btn{grid-template-columns:64px 1fr;row-gap:8px}.day-meta{grid-column:2;text-align:left}}
+.day-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .34s cubic-bezier(.3,.8,.3,1)}
+.day.open .day-body{grid-template-rows:1fr}
+.day-inner{overflow:hidden}
+.day-pad{padding:2px 4px clamp(22px,3vw,32px)}
+.slots{display:grid;gap:0;border-left:1px solid var(--rule)}
+.slot{padding:0 0 16px 16px;position:relative}
+.slot:last-child{padding-bottom:2px}
+.slot::before{content:"";position:absolute;left:-4px;top:6px;width:7px;height:7px;background:var(--amber);border-radius:50%}
+.slot.move::before{background:var(--magenta)}
+.slot h4{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 5px;font-weight:500}
+.slot.move h4{color:var(--magenta)}
+.slot p{margin:0;font-size:14px;line-height:1.62;color:var(--paper-dim);max-width:72ch}
+.slot p b{color:var(--paper);font-weight:600}
+
+/* worth doing */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.fbtn{all:unset;cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border:1px solid var(--rule);color:var(--paper-dim);border-radius:2px;transition:.15s}
+.fbtn:hover{background:var(--ink-3);color:var(--paper)}
+.fbtn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.fbtn[aria-pressed="true"]{background:var(--amber);color:var(--ink);border-color:var(--amber);font-weight:600}
+.fdiv{width:1px;background:var(--rule);margin:2px 6px}
+.items{display:grid;gap:1px;background:var(--rule-soft);border:1px solid var(--rule)}
+.item{background:var(--ink-2);padding:13px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:baseline}
+.item .tier{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:3px 7px 2px;border-radius:2px;white-space:nowrap;align-self:start;margin-top:2px}
+.tier.do{background:rgba(88,196,163,.14);color:var(--jade);border:1px solid rgba(88,196,163,.35)}
+.tier.opt{background:rgba(242,169,60,.12);color:var(--amber);border:1px solid rgba(242,169,60,.3)}
+.tier.skip{background:rgba(224,85,85,.1);color:var(--red);border:1px solid rgba(224,85,85,.3)}
+.item .nm{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:20px;line-height:1.05;color:var(--paper)}
+.item .why{grid-column:2;font-size:13.3px;color:var(--paper-dim);line-height:1.55;max-width:74ch}
+.item .why b{color:var(--paper);font-weight:600}
+.item .when{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);text-align:right;white-space:nowrap;align-self:start;margin-top:4px}
+.item .when.book{color:var(--magenta)}
+@media (max-width:640px){.item{grid-template-columns:auto 1fr}.item .when{grid-column:2;text-align:left;margin-top:2px}.item .why{grid-column:1/-1}}
+.empty{background:var(--ink-2);padding:22px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* rail calc */
+.calc{border:1px solid var(--rule);background:var(--ink-2)}
+.calc-legs{display:grid}
+.leg-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--rule-soft);cursor:pointer}
+.leg-row:hover{background:rgba(242,169,60,.04)}
+.leg-row input{accent-color:var(--amber);width:15px;height:15px;cursor:pointer}
+.leg-row .lname{font-family:var(--mono);font-size:12.5px;color:var(--paper-dim)}
+.leg-row input:checked+.lname{color:var(--paper)}
+.leg-row .lyen{font-family:var(--mono);font-size:12.5px;color:var(--amber);font-variant-numeric:tabular-nums;white-space:nowrap}
+.leg-row .lnote{grid-column:2/-1;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--muted);margin-top:-4px}
+.calc-out{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule-soft)}
+.calc-out div{background:var(--ink-3);padding:15px 17px}
+.calc-out dt{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.calc-out dd{margin:0;font-family:var(--display);font-weight:700;font-size:27px;line-height:1;font-variant-numeric:tabular-nums}
+.calc-out dd small{font-family:var(--mono);font-size:10px;font-weight:400;color:var(--paper-dim);margin-left:4px;letter-spacing:.06em}
+#verdict{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;line-height:1.5}
+#verdict.win{color:var(--jade)}
+#verdict.lose{color:var(--red)}
+
+/* panels / tables */
+.panel{border:1px solid var(--rule);background:var(--ink-2);padding:clamp(17px,2.4vw,24px);margin-top:22px}
+.panel h3{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 12px;font-weight:500}
+.panel p{margin:0 0 12px;font-size:13.6px;color:var(--paper-dim);line-height:1.62}
+.panel p:last-child{margin-bottom:0}
+.panel p b{color:var(--paper);font-weight:600}
+table.ref{width:100%;border-collapse:collapse;font-size:13.4px}
+table.ref th{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:500;padding:0 14px 10px 0;border-bottom:1px solid var(--rule)}
+table.ref td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule-soft);color:var(--paper-dim);vertical-align:top}
+table.ref td:first-child{font-family:var(--display);font-size:17px;font-weight:600;text-transform:uppercase;color:var(--paper);white-space:nowrap;width:1%}
+table.ref td.t{font-family:var(--mono);font-size:11px;letter-spacing:.06em;white-space:nowrap;color:var(--amber)}
+table.ref tr.flag td.t{color:var(--magenta)}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.cols{display:grid;gap:16px 34px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:20px}
+.cols p{margin:0;font-size:13.6px;color:var(--paper-dim);line-height:1.6}
+.cols p b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:5px;font-weight:500}
+
+footer{border-top:1px solid var(--rule);padding-block:26px 40px;color:var(--muted)}
+.foot-grid{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:flex-end}
+.foot-grid p{margin:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase}
+.foot-mark{font-family:var(--display);font-size:clamp(40px,9vw,110px);font-weight:800;text-transform:uppercase;line-height:.8;color:transparent;-webkit-text-stroke:1px var(--rule);margin:30px 0 0}
+</style>
+
+<header class="hero">
+  <div class="gridbg"></div>
+  <div class="wrap">
+    <a class="back" href="index.html">← Westbound · the dossier</a>
+    <p class="strip">
+      <span><span class="k">Stop</span> <span class="amb">17 of 27</span></span>
+      <span><span class="k">In</span> CMB · Colombo</span>
+      <span><span class="k">Fly Maldives</span> <span class="amb">MLE</span></span>
+      <span><span class="k">Out</span> BOM · Mumbai</span>
+      <span><span class="k">Window</span> 24–29 Dec 2026</span>
+      <span><span class="k">Clock</span> UTC+5</span>
+    </p>
+    <h1 class="title">
+      <span class="l1">Stop seventeen</span>
+      <span class="l2">Maldives</span>
+    </h1>
+    <p class="subline">
+      <span>Guesthouses, not resorts — correct</span><span class="sep">/</span>
+      <span>Christmas Day is a Friday</span><span class="sep">/</span>
+      <span>The dry season starts later than you think</span>
+    </p>
+
+    <dl class="instr">
+      <div><dt>Calendar days</dt><dd>6</dd></div>
+      <div><dt>Full days</dt><dd class="hot">3</dd></div>
+      <div><dt>Nights</dt><dd>5</dd></div>
+      <div><dt>Bases</dt><dd>2</dd></div>
+      <div><dt>Green tax</dt><dd>$30<span>total</span></dd></div>
+      <div><dt>Exit fee</dt><dd class="warn">$100<span>pp</span></dd></div>
+    </dl>
+  </div>
+</header>
+
+<section class="section" id="audit">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">01</span> The time audit</p>
+    <h2 class="head">Six days<br>is three days</h2>
+    <p class="lede">Colombo to Malé is the shortest hop on the entire trip — <b>1h40 in the air</b>, and you gain half an hour going west. So arrival day is unusually generous by Westbound standards. What eats it instead is water: any local island worth reaching is one to two hours by boat from the airport, and the boats run to a timetable, not to your flight. Add a departure day that ends at 14:10 and the honest count is <b>three uninterrupted days plus two useful halves</b>.</p>
+
+    <div class="figcap">
+      <span>Fig. 1 — What the week really contains</span>
+      <span><b>24–29 Dec</b> · hour by hour</span>
+    </div>
+    <div class="scroller">
+      <svg id="audit-chart" viewBox="0 0 1400 190" role="img" aria-label="Timeline of 24 to 29 December showing the morning of the 24th in transit from Colombo, an afternoon boat transfer, three full island days on the 25th, 26th and 27th, a boat back on the afternoon of the 28th, and a last morning on the 29th before the 14:10 flight to Mumbai."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--magenta);opacity:.55"></i>In transit<i style="background:rgba(242,169,60,.35)"></i>Part day<i style="background:var(--amber)"></i>Full day</p>
+
+    <div class="cols">
+      <p><b>No jet lag to speak of</b>Colombo is UTC+5:30, Malé is UTC+5. You put your watch back thirty minutes and that is the whole adjustment. For once in this trip the arrival day is a real day — the constraint is the boat schedule, not your body.</p>
+      <p><b>The new terminal is slower than the old one</b>Velana's Terminal 1 opened in July 2025 and international arrivals now run through it. It is a far better building, but it is still in phased rollout and arrivals are quoted at <b>75–90 minutes</b> from disembarking to the arrivals hall at busy times. Christmas week is a busy time. Do not book a transfer boat that leaves within two hours of landing.</p>
+      <p><b>Departure day is not a day</b>IndiGo 6E1132 leaves MLE at 14:10 for Mumbai. Working backwards through a two-hour check-in and a possible boat ride, the 29th gives you a slow breakfast and nothing else. That is why the plan below spends the night of the 28th within sight of the airport rather than out on a reef.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="flags">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">02</span> Three things that don't move</p>
+    <h2 class="head">Read these<br>before booking</h2>
+    <p class="lede">Two of these change what you do on specific days. The third changes what the week costs, and it is the one with a deadline attached — it is already September.</p>
+
+    <div class="cards">
+      <div class="card bad">
+        <h3>Christmas Day is a Friday</h3>
+        <div class="verdict bad">Fixed — plan around it</div>
+        <p>25 December 2026 falls on a Friday, and Friday is the Maldivian day of rest. The <b>MTCC public ferry network does not run on Fridays</b> — not the 15:00 Malé→Maafushi boat, not the atoll routes, essentially nothing. On inhabited islands, shops, cafés and offices close around midday prayers, and a fair number of excursion operators don't launch that morning either.</p>
+        <p>This is not a Christmas problem; it is a weekend problem that happens to land on Christmas. It also means the cheap way to move between islands is unavailable on exactly one of your five nights.</p>
+        <div class="fix"><b>What to do</b>Do not schedule a base change, an island hop or a Malé day on <strong>Fri 25 Dec</strong>. Make it the day you stay put, snorkel off your own beach and eat whatever the guesthouse cooks. Every shared and private <strong>speedboat still runs on Fridays</strong>, including the Malé⇄Dhigurah boats and all three Maafushi operators — so if a flight change forces a Friday transfer, budget USD 20–70 per person instead of the USD 1.50 ferry.</div>
+      </div>
+
+      <div class="card bad">
+        <h3>December is not the dry season yet</h3>
+        <div class="verdict bad">The window is a month early</div>
+        <p>The itinerary's premise is that the <i>iruvai</i> north-east monsoon opens in December. It opens <b>towards the end of</b> December, and the rainfall record is blunt about it: Malé averages <b>215 mm across about 12 rainy days in December</b>, against 115 mm in January and 40 mm in February. November is the wettest month of the year at 230 mm — you arrive three weeks after that peak, not three months.</p>
+        <p>The same goes for visibility. Best underwater clarity in the Maldives is <b>February and March</b>, on the far side of your window. December gives you good water, not the best water of the year.</p>
+        <div class="fix"><b>The honest version</b>The sea is 28.5°C, the air is 30°C, and December rain here is short heavy squalls between long sunny stretches, not the all-day grey of a temperate winter — roughly seven hours of sunshine a day on average. You will swim every day. Just don't build the week around a promise of flat glass, and keep the <strong>whale-shark day flexible</strong> so you can spend it on the calmest morning rather than a booked one.</div>
+      </div>
+
+      <div class="card bad">
+        <h3>You are inside the single most expensive week</h3>
+        <div class="verdict bad">Book now — it is September</div>
+        <p>22 December to 5 January is the Maldivian peak. Rates run <b>60–100% above shoulder season</b>, resorts impose 7–10 night minimum stays, and the standing advice for December travel is to book <b>four to six months ahead</b>. You are at roughly fifteen weeks and counting.</p>
+        <p>The good news is that the plan already dodges the worst of it. Those 7–10 night minimums are a <b>resort</b> rule; local-island guesthouses generally hold to one- to three-night minimums even at Christmas. "Guesthouses, not resorts" was the right call for reasons beyond budget — a five-night window simply cannot be spent at a resort this week.</p>
+        <div class="fix"><b>What to do</b>Book the guesthouse and the return speedboat <strong>this month</strong>, and read the fine print for a compulsory Christmas or New Year gala-dinner supplement, which is common and is charged per person on top of the room. Book excursions <strong>direct with the guesthouse</strong> rather than an online platform — it typically saves around USD 30 a trip, and in peak week it is also how you get a seat at all.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="shapes">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">03</span> The open question</p>
+    <h2 class="head">Which island</h2>
+    <p class="lede">"Malé and a local island" is the right shape — the question is which local island, and the two real candidates sit at opposite ends of a trade between distance and payoff. Both plans below spend four nights out on the water and the night of the 28th beside the airport, because a 14:10 departure and a two-hour boat ride do not belong on the same morning.</p>
+
+    <div class="shapes">
+      <div class="shape pick">
+        <div class="shape-hd">
+          <div class="shape-tag">Recommended</div>
+          <p class="shape-name">Dhigurah</p>
+        </div>
+        <div class="chainrow">
+          <span>MLE <span class="n">arr</span></span><span class="a">→</span>
+          <span>Dhigurah <span class="n">×4</span></span><span class="a">→</span>
+          <span>Hulhumalé <span class="n">×1</span></span><span class="a">→</span>
+          <span class="n">BOM</span>
+        </div>
+        <div class="shape-body">
+          <p>South Ari atoll, and the reason to go is specific: the <b>South Ari Marine Protected Area is the one place on earth with a year-round resident whale shark aggregation</b>. From Dhigurah the boat is on the site in twenty minutes. From Maafushi the same trip is a three-hour crossing each way and a ten-hour day.</p>
+          <p>The island itself is a three-kilometre sliver with a long empty sandbank running off the southern tip — the "local-island sandbank" in the brief, and you can walk to it. Far fewer guesthouses than Maafushi, which is the appeal and also the booking risk in peak week.</p>
+          <p><b>The cost:</b> a two-hour shared speedboat each way at USD 60–70 per person, departing 11:00 and 16:30. There is no practical public ferry — the routed version runs via Mahibadhoo and takes seven hours or more.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Boat, each way</dt><dd>≈2h</dd></div>
+          <div><dt>Return fare</dt><dd class="r">≈$130</dd></div>
+          <div><dt>Whale sharks</dt><dd class="g">On site</dd></div>
+          <div><dt>Crowds</dt><dd class="g">Low</dd></div>
+        </dl>
+      </div>
+
+      <div class="shape">
+        <div class="shape-hd">
+          <div class="shape-tag">The easy option</div>
+          <p class="shape-name">Maafushi</p>
+        </div>
+        <div class="chainrow">
+          <span>MLE <span class="n">arr</span></span><span class="a">→</span>
+          <span>Maafushi <span class="n">×4</span></span><span class="a">→</span>
+          <span>Hulhumalé <span class="n">×1</span></span><span class="a">→</span>
+          <span class="n">BOM</span>
+        </div>
+        <div class="shape-body">
+          <p>Kaafu atoll, thirty to forty-five minutes by speedboat from a jetty beside the arrivals hall, or <b>USD 1.50 on the 15:00 public ferry</b> — the cheapest transfer in the country. It is the island that invented Maldivian guesthouse tourism and it has the deepest excursion menu: nurse sharks, turtle reefs, a snorkellable shipwreck, dolphin cruises, resort day passes and an offshore floating bar.</p>
+          <p><b>The cost:</b> it is also the busiest and most built-up local island in the Maldives, with construction, a working harbour and a lot of other guesthouse tourists. Whale sharks are a full-day expedition to the atoll you'd otherwise be staying in.</p>
+          <p>Pick this if the transfer risk in peak week worries you more than the crowds do — it is the one island where a missed boat is a forty-minute problem rather than a lost day.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Boat, each way</dt><dd class="g">30–45m</dd></div>
+          <div><dt>Return fare</dt><dd class="g">$40–80</dd></div>
+          <div><dt>Whale sharks</dt><dd class="r">3h away</dd></div>
+          <div><dt>Crowds</dt><dd class="r">High</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>The third option, if both are full</h3>
+      <p><b>Fulidhoo</b> (Vaavu atoll, ~3h by ferry, a couple of times a week) and <b>Thoddoo, Ukulhas and Rasdhoo</b> (North Ari, 3–5h by ferry, 2–3 times weekly) are smaller, quieter and cheaper than either of the above. Thoddoo is the agricultural one, with fruit farms and a genuinely good bikini beach; Fulidhoo has nurse sharks and stingrays that come into the harbour at night.</p>
+      <p>The catch is the same catch throughout: infrequent ferries that do not run on Fridays, which on a five-night window means a shared speedboat anyway. Treat these as fallbacks if Dhigurah's handful of guesthouses are gone, not as first picks.</p>
+    </div>
+
+    <div class="panel">
+      <h3>What's cut, and why</h3>
+      <p><b>A resort night.</b> Tempting as a one-off splurge and effectively impossible this week — 7–10 night minimums over 22 Dec–5 Jan, and a seaplane transfer that runs USD 400 and up return per person on top. A Maafushi or nearby resort <b>day pass</b> at USD 110–160 gets you the pool, the beach and the drinks for one day and no minimum stay.</p>
+      <p><b>Hanifaru Bay.</b> The famous manta feeding aggregation is in Baa atoll and its season is <b>May to November</b>, peaking August–October. In December the big feeding events are rare, the atoll is a different base entirely, and the ranger permit is USD 20 a day for something that mostly won't be happening. Wrong month, wrong atoll.</p>
+      <p><b>A liveaboard.</b> The best way to see the Maldives, and it needs seven nights minimum. Bank it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="run">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">04</span> Day by day</p>
+    <h2 class="head">Both versions,<br>laid out</h2>
+    <p class="lede">Friday the 25th is deliberately the emptiest day in both plans — it is the day the ferries stop and the island shuts for prayers, so it is the day to be already where you want to be. Times are indicative; the boat times are not, and they are the only ones worth setting an alarm for.</p>
+    <div class="filters" id="dayToggle" style="margin-bottom:6px">
+      <button class="fbtn" data-plan="dhigurah" aria-pressed="true">Dhigurah</button>
+      <button class="fbtn" data-plan="maafushi" aria-pressed="false">Maafushi</button>
+    </div>
+    <div class="days" id="days"></div>
+    <p class="fignote" style="margin-top:16px">Amber = on the island · <span style="color:var(--magenta)">Magenta = a boat, a plane or a base change</span></p>
+  </div>
+</section>
+
+<section class="section" id="worth">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">05</span> What's actually worth doing</p>
+    <h2 class="head">Do, maybe,<br>don't bother</h2>
+    <p class="lede">The Maldives has an unusually short list of things to <i>do</i> and an unusually long list of things to <i>be in</i>, so this leans towards water. The <b>don't bother</b> entries are mostly things that are excellent in another month, another atoll, or another length of trip.</p>
+
+    <div class="filters" id="filters">
+      <button class="fbtn" data-city="all" aria-pressed="true">All</button>
+      <button class="fbtn" data-city="Male" aria-pressed="false">Malé &amp; Hulhumalé</button>
+      <button class="fbtn" data-city="Dhigurah" aria-pressed="false">Dhigurah</button>
+      <button class="fbtn" data-city="Maafushi" aria-pressed="false">Maafushi</button>
+      <button class="fbtn" data-city="Water" aria-pressed="false">In the water</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-tier="do" aria-pressed="false">Do</button>
+      <button class="fbtn" data-tier="opt" aria-pressed="false">Maybe</button>
+      <button class="fbtn" data-tier="skip" aria-pressed="false">Don't bother</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-book="1" aria-pressed="false">Needs booking</button>
+    </div>
+    <div class="items" id="items"></div>
+  </div>
+</section>
+
+<section class="section" id="season">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">06</span> The season you actually get</p>
+    <h2 class="head">Three weeks<br>too early</h2>
+    <p class="lede">Two charts, and between them they explain the whole compromise. Your window lands after the south-west monsoon's manta season has closed and before the north-east monsoon's clear water has arrived — while still sitting squarely inside the year's most expensive fortnight. That's a bad trio on paper. It matters less than it reads, because the one thing that <b>is</b> in season all year is the thing you actually came for.</p>
+
+    <div class="figcap">
+      <span>Fig. 2 — What's in season, and when</span>
+      <span><b>Oct 2026 – Apr 2027</b> · your window marked</span>
+    </div>
+    <div class="scroller">
+      <svg id="season-chart" viewBox="0 0 1400 400" role="img" aria-label="Season chart from October to April. Whale sharks in South Ari run year-round. Hanifaru Bay manta aggregations end in November. Eastern-atoll manta season and best visibility run January to April. Peak pricing covers 22 December to 5 January. The 24 to 29 December window falls between the two manta seasons and before peak visibility."></svg>
+    </div>
+    <p class="fignote"><i style="background:rgba(88,196,163,.6)"></i>In season<i style="background:rgba(224,85,85,.45)"></i>Peak pricing<i style="background:rgba(231,100,155,.22);border:1px solid var(--magenta)"></i>Your window</p>
+
+    <div class="figcap" style="margin-top:34px">
+      <span>Fig. 3 — Rainfall at Malé, by month</span>
+      <span><b>Millimetres</b> · long-run averages</span>
+    </div>
+    <div class="scroller">
+      <svg id="rain-chart" viewBox="0 0 1400 300" role="img" aria-label="Bar chart of average monthly rainfall at Male in millimetres. November is wettest at 230, December 215, January 115, February the driest at 40 and March 75. December is highlighted."></svg>
+    </div>
+    <p class="fignote">December is the second-wettest month of the year here · about 12 rainy days, 7 hours of sun a day, sea at 28.5°C</p>
+
+    <div class="panel">
+      <h3>The one thing that is always in season</h3>
+      <p>The South Ari Marine Protected Area holds the <b>only known year-round aggregation of whale sharks anywhere in the world</b>. Almost everywhere else they are seasonal visitors; here a population of mostly juvenile males stays put. December is not a worse month for them than March — which is why, of everything on this page, the whale-shark day is the one that does not care that your window is three weeks early.</p>
+      <p>Mantas are a different story. Their aggregations follow the plankton, which follows the monsoon: Hanifaru Bay in the west from May to November, then the eastern sides of the atolls from roughly January. Late December is the changeover, when they are dispersed and unpredictable. You may well see one. Do not book a day around it.</p>
+    </div>
+
+    <div class="panel">
+      <h3>What "215 mm" actually feels like</h3>
+      <p>Tropical rain is not temperate rain. December here delivers its total in short violent squalls, often at night or in the early afternoon, separated by long bright stretches — hence around seven hours of daily sunshine even in the wettest months. The practical effect is not a lost day; it is a lost <b>hour</b>, once or twice, at unpredictable times.</p>
+      <p>What it does affect is the sea. Post-monsoon swell and suspended plankton mean visibility in the twenties of metres rather than the forty-plus of February. For snorkelling off a sandbank this is invisible to you. For photographs at depth it is the difference between good and extraordinary.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="bill">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">07</span> The bill</p>
+    <h2 class="head">The sticker<br>is not the price</h2>
+    <p class="lede">The Maldives quotes prices before tax and then applies a stack of them. <b>TGST rose to 17% on 1 July 2025</b>; a <b>10% service charge is mandatory by law</b> at tourist establishments and TGST is charged on top of it; <b>green tax doubled on 1 January 2025</b> to USD 6 per person per night at guesthouses of 50 rooms or fewer and USD 12 at resorts; and since <b>1 December 2024</b> every foreign passenger leaving in economy pays USD 50 departure tax plus USD 50 airport development fee. Tick what you'd actually do.</p>
+
+    <div class="calc">
+      <div class="calc-legs" id="legs"></div>
+      <dl class="calc-out">
+        <div><dt>Sticker price</dt><dd id="sticker"></dd></div>
+        <div><dt>Taxes &amp; fees</dt><dd id="taxes"></dd></div>
+        <div><dt>Real total</dt><dd id="real"></dd></div>
+        <div><dt>Per day</dt><dd id="perday"></dd></div>
+        <div><dt>Uplift</dt><dd><span id="verdict"></span></dd></div>
+      </dl>
+    </div>
+    <p class="fignote">Per person, USD. Accommodation carries service charge then TGST; excursions and transfers carry TGST · green tax at $6 per night is not itself taxed · the $100 exit charge is collected inside your airline ticket, not at the airport · prices are indicative peak-week figures — verify at booking</p>
+
+    <div class="panel">
+      <h3>Where the money actually goes</h3>
+      <p><b>The transfer is the hidden line.</b> On a five-night trip a USD 130 return speedboat is a real fraction of the bill — comparable to a night's accommodation. It is also the line most people forget when comparing a USD 90 guesthouse on a far island against a USD 130 one nearby.</p>
+      <p><b>Excursions are the good value.</b> A whale-shark day at USD 90–130 or a full-day snorkel with lunch at USD 55–80 buys the actual reason you came. Booked through the guesthouse rather than a platform they run around USD 30 cheaper, and in peak week the guesthouse is often the only way to get a seat.</p>
+      <p><b>Cash barely matters.</b> The rufiyaa is pegged to the dollar and USD is accepted essentially everywhere a tourist goes; cards work at guesthouses, dive centres and Malé shops. Carry a small amount of USD in low denominations for tea shops, ferries and tips.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="admin">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">08</span> Ground rules</p>
+    <h2 class="head">Before you land</h2>
+
+    <div class="tablewrap">
+    <table class="ref">
+      <thead><tr><th>Item</th><th>What to do</th><th>When</th></tr></thead>
+      <tbody>
+        <tr><td>Entry</td><td>Free 30-day visa on arrival for Canadians — no application, no fee. Passport needs a machine-readable zone and at least one month's validity. Immigration can ask for an onward ticket, proof of funds, and a <b>prepaid confirmed booking at a registered facility</b> — have the guesthouse voucher on your phone.</td><td class="t">Nothing to file</td></tr>
+        <tr class="flag"><td>IMUGA declaration</td><td>Every traveller must submit a Traveller Declaration through the IMUGA portal <b>within 96 hours before arrival</b>. It's free and takes minutes. You need a second one before you fly out. Do not pay a third-party site for this.</td><td class="t">23–24 Dec</td></tr>
+        <tr class="flag"><td>Exit charges</td><td>USD 50 departure tax plus USD 50 airport development fee per foreign passenger in economy, since 1 Dec 2024. Collected in the ticket price — so buy the MLE→BOM flight knowing USD 100 of it isn't the fare.</td><td class="t">In the ticket</td></tr>
+        <tr class="flag"><td>Green tax</td><td>USD 6 per person per night at guesthouses with 50 rooms or fewer on inhabited islands; USD 12 at resorts and larger properties. Doubled on 1 Jan 2025. Under-2s exempt. Usually charged at checkout in cash or card.</td><td class="t">≈$30 for the week</td></tr>
+        <tr><td>TGST &amp; service</td><td>17% tourism GST since 1 Jul 2025, plus a legally mandated 10% service charge at tourist establishments, with TGST applied on top of the service charge. Assume any quoted rate grows by roughly 29%.</td><td class="t">On every bill</td></tr>
+        <tr class="flag"><td>Alcohol</td><td>Illegal on inhabited islands — which is every island you'll sleep on. It is served only at resorts, on liveaboards and at licensed offshore floating bars. <b>Bringing any in is a customs seizure</b>; it is taken at the airport and returned when you leave.</td><td class="t">Leave it in Colombo</td></tr>
+        <tr class="flag"><td>Vapes</td><td>Import banned since 15 Nov 2024, possession and use banned nationwide since 15 Dec 2024, tourists included. Devices are confiscated at customs. A generational tobacco ban also took effect 1 Nov 2025 for anyone born on or after 1 Jan 2007.</td><td class="t">Don't pack one</td></tr>
+        <tr><td>Dress</td><td>Shoulders and knees covered anywhere on an inhabited island except the marked <b>bikini beach</b> — most guesthouse islands have one, and Maafushi enforces the distinction on its eastern shore. Swimwear on the boat and at sea is fine.</td><td class="t">Every day</td></tr>
+        <tr class="flag"><td>Fridays</td><td>The public ferry network does not run. Shops, cafés and offices close for midday prayers, roughly 11:30–14:00. Speedboats and most guesthouse excursions still operate. Christmas Day is a Friday this year.</td><td class="t">Fri 25 Dec</td></tr>
+        <tr><td>Booking window</td><td>22 Dec–5 Jan is the year's peak: rates 60–100% over shoulder season, and the standard advice for December is to book four to six months out. Guesthouse, return speedboat and the whale-shark day, in that order.</td><td class="t">Now</td></tr>
+        <tr><td>Ramadan</td><td>Ramadan 1448 is expected to begin around 8 February 2027, well after you leave. No fasting-month restrictions on this stop.</td><td class="t">Clear</td></tr>
+        <tr><td>Connectivity</td><td>Dhiraagu and Ooredoo both sell tourist data eSIMs at the airport and online; coverage on inhabited islands is good and often better than the guesthouse wifi. Buy on arrival, not in advance.</td><td class="t">At MLE</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="cols">
+      <p><b>Getting in from Colombo</b>SriLankan runs three daily non-stops CMB→MLE at roughly 07:20, 13:30 and 18:55, all about 1h40, and Emirates, Gulf Air, flydubai and FitsAir add more. Take the <b>07:20</b>: it lands around 08:30 Malé time, which after 75–90 minutes in Terminal 1 still leaves the 11:00 Dhigurah speedboat as a stretch and the 16:30 as a certainty. Verify the exact days against operated flights rather than a schedule table — this route is dense, but Christmas week retimings happen.</p>
+      <p><b>Getting out to Mumbai</b>IndiGo 6E1132 is the anchor: MLE 14:10, non-stop to Mumbai Terminal 2, about 2h50 on an A321neo, listed daily. It is effectively the only convenient non-stop on this pair, so confirm it is operating on <b>Tue 29 Dec</b> specifically before you commit the rest of the week; Air India also serves Mumbai–Malé and is the fallback.</p>
+      <p><b>Sun</b>Equatorial, ten hours a day, and reflecting off white sand and water from both sides. Reef-safe mineral sunscreen, a long-sleeved rash guard for snorkelling, and a hat. A bad first-day burn costs you more of this stop than rain will.</p>
+      <p><b>Where to sleep on the 28th</b>Hulhumalé, not Malé city. It is on the same island as the airport, connected by a road bridge and a five-minute taxi, it has an actual beach, and it removes every boat from your departure morning. Malé city is a twenty-minute ferry away and worth an evening, not a night.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <p>Westbound · stop 17 · Maldives</p>
+      <p>24–29 Dec 2026 · MLE in, BOM out</p>
+      <p>Taxes, fares and schedules verified Sept 2026 — recheck before booking</p>
+    </div>
+    <p class="foot-mark">Malé → South Ari</p>
+  </div>
+</footer>
+
+<script>
+/* ============ DAY-BY-DAY ============ */
+const DAYS_DHIGURAH=[
+{d:'Thu 24',w:'Arrive',name:'Out to South Ari',sub:'Colombo → Malé → the boat',meta:'Night 1',
+ slots:[
+  {m:1,h:'07:20 · CMB → MLE',p:'SriLankan UL101, 1h40, and you gain half an hour going west. Lands around <b>08:30 Malé time</b>. Submit both IMUGA declarations before you leave Colombo.'},
+  {m:1,h:'08:30 · Velana Terminal 1',p:'The new terminal, open since July 2025 and quoted at 75–90 minutes to the arrivals hall at busy times. Christmas week is busy. Buy a Dhiraagu or Ooredoo data eSIM in the hall.'},
+  {m:1,h:'11:00 or 16:30 · Shared speedboat',p:'Two hours to Dhigurah, USD 60–70. The 11:00 is the good one <b>if</b> immigration is quick — otherwise take the 16:30 and don’t fight it. Booked through the guesthouse, weeks ahead.'},
+  {h:'18:30 · The long beach',p:'Drop the bags, walk south. Dhigurah is three kilometres of sand and about 800 metres of village, and the sandbank runs off the far end. Eat whatever the guesthouse is cooking.'}
+]},
+{d:'Fri 25',w:'Full',name:'Stay put',sub:'No ferries · the island is closed',meta:'Night 2',
+ slots:[
+  {h:'07:00 · Reef off the beach',p:'The house reef drops off within swimming distance on the lagoon side. Go at first light while the water is glassy and before the day’s first squall decides anything.'},
+  {h:'11:30 · Midday prayers',p:'Shops and cafés close for roughly two and a half hours and the island goes quiet. This is the entire reason today is the do-nothing day. Read, sleep, swim.'},
+  {h:'15:00 · The sandbank',p:'Walk or take a short boat to the spit off the southern tip. Bare sand, no shade, no one selling anything. Bring water and take the hat seriously.'},
+  {h:'18:15 · Sunset, then dinner',p:'Sun goes down around 18:10 here year-round — the equator doesn’t do seasons. Fresh tuna, reef fish, curry, roshi. No alcohol anywhere on the island; this is the law, not the guesthouse.'}
+]},
+{d:'Sat 26',w:'Full',name:'Whale sharks',sub:'South Ari MPA',meta:'Night 3',
+ slots:[
+  {h:'07:30 · The boat out',p:'Twenty minutes to the protected area — the whole reason to base here rather than Maafushi, where the same trip is three hours each way. USD 90–130 through the guesthouse.'},
+  {h:'09:00 · In the water',p:'Juvenile whale sharks, present here <b>year-round</b> and unbothered by your window being three weeks early. Fins and snorkel only, keep three metres off, never touch, never block the path.'},
+  {h:'13:00 · Second site',p:'Most operators run a reef or turtle stop and a sandbank lunch on the way back. Turtles at Dhigurah’s own reefs are reliable and often better than the advertised stop.'},
+  {h:'17:00 · Back and horizontal',p:'Six hours of sun and salt is a full day. Rinse everything in fresh water — the tap salt will kill a camera housing seal quietly.'}
+]},
+{d:'Sun 27',w:'Full',name:'Whatever yesterday wasn’t',sub:'The flex day',meta:'Night 4',
+ slots:[
+  {h:'—  · If the whale sharks missed',p:'This is the rerun. Aggregations are year-round but not guaranteed on a given morning, and most operators discount or waive a second attempt. Holding this day open is why it is here.'},
+  {h:'08:00 · Two-tank dive',p:'If yesterday landed. South Ari has Kudarah Thila and Broken Rock within reach — around USD 130 for two tanks with kit. Certification card required; the reef sites are current-swept and not a place to learn.'},
+  {h:'14:00 · Dhangethi',p:'The neighbouring inhabited island, a short boat away, with a lived-in village and almost no guesthouse traffic. Or just repeat the sandbank, which is a perfectly good answer.'},
+  {h:'20:30 · Night fishing',p:'Handline off the back of a dhoni, around USD 40, and the crew will grill whatever you catch. Reliably the most fun forty dollars on the island.'}
+]},
+{d:'Mon 28',w:'Move',name:'Back to the airport',sub:'The de-risking day',meta:'Night 5',
+ slots:[
+  {h:'07:00 · Last swim',p:'One more hour on the house reef, then pack. Everything you own is damp; the guesthouse will let you rinse and hang.'},
+  {m:1,h:'13:30 · Speedboat to Malé',p:'The afternoon return, roughly two hours, arriving mid-afternoon. There is also a 06:30 boat if you want the whole day in the capital — this route runs Sat–Thu, so Monday is fine either way.'},
+  {m:1,h:'16:00 · Into Hulhumalé',p:'Taxi over the Sinamalé bridge, five minutes from the airport, and check into a guesthouse with a beach. You are now permanently within fifteen minutes of your departure gate.'},
+  {h:'17:30 · Malé, on foot',p:'Twenty-minute ferry across, or skip it and stay put. If you go: the fish market at the north waterfront while the day’s catch is landing, Majeedhee Magu end to end, and hedhikaa — short eats — at a tea shop.'}
+]},
+{d:'Tue 29',w:'Depart',name:'To Mumbai',sub:'One slow morning',meta:'Fly out',
+ slots:[
+  {h:'07:00 · Hulhumalé beach',p:'A long artificial beach with almost no tourists on it, five minutes from your room. This is the last warm ocean of the trip until Zanzibar — use it.'},
+  {m:1,h:'11:30 · Velana Terminal 1',p:'Second IMUGA declaration done. The USD 100 in departure tax and airport development fee is already inside your ticket; nothing to pay at the counter.'},
+  {m:1,h:'14:10 · MLE → BOM',p:'Stop 18. IndiGo 6E1132, non-stop to Mumbai Terminal 2, about 2h50 on an A321neo. Confirm it is operating on this exact date before the rest of the week is locked.'}
+]}
+];
+
+const DAYS_MAAFUSHI=[
+{d:'Thu 24',w:'Arrive',name:'Out to Maafushi',sub:'Colombo → Malé → 40 minutes',meta:'Night 1',
+ slots:[
+  {m:1,h:'07:20 · CMB → MLE',p:'SriLankan UL101, 1h40, half an hour back on the clock. Lands around 08:30 Malé time. Both IMUGA declarations submitted before leaving Colombo.'},
+  {m:1,h:'11:00 · Shared speedboat',p:'From the Hulhule jetty beside arrivals — no need to reach Malé city at all. Thirty to forty-five minutes, USD 20–40, three operators running daily. The 15:00 public ferry from Malé is USD 1.50 but needs you across to the capital first.'},
+  {h:'13:00 · Bikini beach',p:'Check in, find the marked swimming beach on the western shore, and stay there. Swimwear is confined to it — the eastern shore is the village’s.'},
+  {h:'18:30 · Dinner',p:'Maafushi has actual restaurants, several with rooftops. No alcohol on the island; the floating bar is moored offshore and runs a free tender.'}
+]},
+{d:'Fri 25',w:'Full',name:'Stay put',sub:'No ferries · the island is closed',meta:'Night 2',
+ slots:[
+  {h:'08:00 · Sandbank half day',p:'Around USD 35–55 for five or six hours: two reef sites and a sandbank stop. Excursions still run on Fridays even though the public ferries don’t — confirm with the operator the day before.'},
+  {h:'11:30 · Midday prayers',p:'Shops and cafés shut for roughly two and a half hours. If you’re on the water you won’t notice; if you’re on the island, this is nap time.'},
+  {h:'16:00 · Turtles',p:'The reefs around Maafushi are reliable for green turtles, and a half-day turtle snorkel runs USD 35–50. Or swim off the bikini beach for free.'},
+  {h:'19:00 · The floating bar',p:'Moored offshore because it has to be. Beer around USD 6 a bottle, tender out from the jetty. The only legal drink within several kilometres.'}
+]},
+{d:'Sat 26',w:'Full',name:'Whale sharks',sub:'The long day to South Ari',meta:'Night 3',
+ slots:[
+  {m:1,h:'06:30 · The crossing',p:'Three hours each way to the South Ari protected area, ten or eleven hours door to door, USD 90–130. This is the single biggest argument for basing at Dhigurah instead — there, it is a twenty-minute ride.'},
+  {h:'10:00 · In the water',p:'Juvenile whale sharks, resident year-round. Snorkel only, three metres off, no touching, no blocking.'},
+  {h:'13:00 · Reef stops on the way home',p:'Most operators build in a sandbank lunch and a second snorkel to justify the crossing. Take the shade when it’s offered.'},
+  {h:'18:00 · Back',p:'Long day, a lot of sun, no ambition for the evening. Eat early.'}
+]},
+{d:'Sun 27',w:'Full',name:'Nurse sharks or a pool',sub:'Pick your register',meta:'Night 4',
+ slots:[
+  {h:'08:00 · Nurse sharks & the wreck',p:'A full day out — Keyodhoo’s shipwreck is one of very few in the Maldives shallow enough to snorkel, plus a nurse shark point and a dolphin run, around USD 65 with BBQ lunch.'},
+  {h:'—  · Or the resort day pass',p:'USD 110–160 at a nearby resort: pool, private beach, buffet and alcohol included, no minimum stay. The one legal way to get a resort day inside a week where resorts want seven nights.'},
+  {h:'17:30 · Dolphin cruise',p:'Ninety minutes at sunset for USD 25–45, spinner dolphins most evenings. The cheapest good thing on the excursion board.'}
+]},
+{d:'Mon 28',w:'Move',name:'Back to the airport',sub:'The de-risking day',meta:'Night 5',
+ slots:[
+  {h:'08:00 · Last swim',p:'Bikini beach, then pack. Forty minutes of boat is the only thing between you and the mainland, which is exactly why this island is the low-risk pick.'},
+  {m:1,h:'13:00 · Speedboat to Malé',p:'Or the public ferry at 07:30, USD 1.50, ninety minutes — it runs Sat–Thu, and Monday qualifies. The speedboat is the sane choice if you want the morning.'},
+  {m:1,h:'15:00 · Into Hulhumalé',p:'Taxi over the Sinamalé bridge, same island as the airport, guesthouse with a beach. Every boat is now behind you.'},
+  {h:'17:30 · Malé, on foot',p:'Ferry across for the evening: the fish market as the catch lands, Majeedhee Magu, hedhikaa at a tea shop, the gold dome of the Islamic Centre from outside.'}
+]},
+{d:'Tue 29',w:'Depart',name:'To Mumbai',sub:'One slow morning',meta:'Fly out',
+ slots:[
+  {h:'07:00 · Hulhumalé beach',p:'Long, artificial, nearly empty, five minutes from the room. Last warm ocean until Zanzibar.'},
+  {m:1,h:'11:30 · Velana Terminal 1',p:'Second IMUGA declaration filed. The USD 100 exit charge is already inside the ticket.'},
+  {m:1,h:'14:10 · MLE → BOM',p:'Stop 18. IndiGo 6E1132, non-stop, about 2h50. Confirm it operates on this exact date.'}
+]}
+];
+
+let CURRENT_PLAN='dhigurah';
+function renderDays(){
+  const DAYS = CURRENT_PLAN==='dhigurah' ? DAYS_DHIGURAH : DAYS_MAAFUSHI;
+  document.getElementById('days').innerHTML=DAYS.map(D=>`
+  <div class="day">
+    <button class="day-btn" aria-expanded="false">
+      <span class="day-date">${D.d}<small>${D.w}</small></span>
+      <span><span class="day-name">${D.name}</span><span class="day-sub">${D.sub}</span></span>
+      <span class="day-meta">${D.meta}<span class="chev">▾</span></span>
+    </button>
+    <div class="day-body"><div class="day-inner"><div class="day-pad"><div class="slots">
+      ${D.slots.map(s=>`<div class="slot${s.m?' move':''}"><h4>${s.h}</h4><p>${s.p}</p></div>`).join('')}
+    </div></div></div></div>
+  </div>`).join('');
+
+  document.querySelectorAll('.day-btn').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const d=b.parentElement, open=d.classList.toggle('open');
+      b.setAttribute('aria-expanded',open?'true':'false');
+    });
+  });
+  document.querySelector('.day').classList.add('open');
+  document.querySelector('.day-btn').setAttribute('aria-expanded','true');
+}
+renderDays();
+
+document.getElementById('dayToggle').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  CURRENT_PLAN=b.dataset.plan;
+  document.querySelectorAll('#dayToggle .fbtn').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
+  renderDays();
+});
+
+/* ============ WORTH DOING ============ */
+const ITEMS=[
+/* MALÉ & HULHUMALÉ */
+{c:'Male',t:'do',n:'Malé fish market',w:'The north waterfront as the day’s tuna comes off the dhonis — whole yellowfin on wet concrete, no ceremony, no entry fee. The most alive twenty minutes in the capital.',when:'Late afternoon'},
+{c:'Male',t:'do',n:'Hedhikaa at a tea shop',w:'Maldivian short eats — <b>gulha</b>, <b>bajiya</b>, <b>mas huni</b>, fish and coconut in every form — eaten standing at a counter for a couple of dollars. The country’s real food, and you will not find it on a resort island.',when:'Any time'},
+{c:'Male',t:'do',n:'Majeedhee Magu end to end',w:'Malé is two kilometres across and one of the densest places on earth. Walking its main street is the whole city tour, and it costs nothing.',when:'1 hour'},
+{c:'Male',t:'do',n:'Hulhumalé beach',w:'A long artificial beach on the airport island with local families and almost no visitors. The reason to sleep here rather than in Malé city on your last night.',when:'Sunrise'},
+{c:'Male',t:'opt',n:'Hukuru Miskiy, the Old Friday Mosque',w:'1658, built from carved coral stone with lacquered woodwork, and on UNESCO’s tentative list. Non-Muslims need permission from the Ministry of Islamic Affairs — arrange it through a guide or your guesthouse, or admire the coral-stone cemetery from outside.',when:'Permission needed',b:1},
+{c:'Male',t:'opt',n:'Islamic Centre & Grand Friday Mosque',w:'The gold dome over the city. Non-Muslims may visit outside prayer times, modestly dressed and with heads covered for women. Friday midday is out, and access is at the mosque office’s discretion.',when:'Not Friday midday'},
+{c:'Male',t:'opt',n:'National Museum, Sultan Park',w:'Pre-Islamic Buddhist coral carvings, sultans’ regalia, lacquerwork. Small, and a good hour if it’s raining. Some of the best pieces were destroyed in 2012 and never replaced.',when:'Closed Fri AM'},
+{c:'Male',t:'skip',n:'A guided "Malé city tour"',w:'Two hours and USD 40 to be walked around an island you can cross on foot in twenty-five minutes. Worth paying for only if it is the vehicle for getting inside Hukuru Miskiy.',when:''},
+{c:'Male',t:'skip',n:'Sleeping in Malé city',w:'Noisy, no beach, and it puts a ferry between you and a 14:10 departure. Hulhumalé is the same price, has sand, and is a five-minute taxi from the terminal.',when:''},
+/* DHIGURAH */
+{c:'Dhigurah',t:'do',n:'The southern sandbank',w:'A bare spit of sand running off the end of a three-kilometre island, walkable from the village. No vendors, no shade, no one. This is the picture in the brief and it is free.',when:'Late afternoon'},
+{c:'Dhigurah',t:'do',n:'House reef at first light',w:'The drop-off is within swimming distance of the beach. Go before seven — the water is glassiest, the light is best, and the day’s first squall hasn’t formed yet.',when:'06:30'},
+{c:'Dhigurah',t:'do',n:'Whale sharks, South Ari MPA',w:'Twenty minutes from the jetty, and the only <b>year-round</b> whale shark aggregation known anywhere on earth. December is no worse than March. USD 90–130 booked through the guesthouse.',when:'Book on arrival',b:1},
+{c:'Dhigurah',t:'opt',n:'Two-tank dive, South Ari',w:'Kudarah Thila and Broken Rock are within reach, around USD 130 with kit. Certification card required — these are current-swept reef sites, not a place to take a first lesson.',when:'Certified only',b:1},
+{c:'Dhigurah',t:'opt',n:'Night fishing off a dhoni',w:'Handline, no rods, around USD 40, and the crew grills the catch. Consistently the best-value evening on any local island.',when:'After dark'},
+{c:'Dhigurah',t:'opt',n:'Dhangethi',w:'The neighbouring inhabited island, a short boat ride, with a lived-in village and a fraction of the guesthouse traffic. A half-day for people who want to see the Maldives that isn’t a beach.',when:'Half day'},
+{c:'Dhigurah',t:'skip',n:'The public ferry to get here',w:'It exists, routed via Mahibadhoo, and takes seven hours or more with a Friday blackout. On a five-night trip the USD 65 speedboat is not a splurge, it is the only option.',when:''},
+/* MAAFUSHI */
+{c:'Maafushi',t:'do',n:'Nurse sharks & the Keyodhoo wreck',w:'One of very few Maldivian shipwrecks shallow enough to snorkel, paired with a nurse shark point and a dolphin run. Around USD 65 for eight hours with a BBQ lunch.',when:'Full day'},
+{c:'Maafushi',t:'do',n:'Half-day sandbank & reef',w:'USD 35–55 for two reef sites and a sandbank stop. The default Maafushi excursion and the one to do on Friday, when the ferries stop but the boats don’t.',when:'5–6 hours'},
+{c:'Maafushi',t:'opt',n:'Resort day pass',w:'USD 110–160 buys a pool, a private beach, a buffet and legal alcohol for a day with no minimum stay — the only way to touch a resort in a week when resorts demand seven nights.',when:'Book a day ahead',b:1},
+{c:'Maafushi',t:'opt',n:'Dolphin sunset cruise',w:'Ninety minutes for USD 25–45, spinner dolphins most evenings. The cheapest thing on the board that is genuinely good.',when:'17:30'},
+{c:'Maafushi',t:'opt',n:'The floating bar',w:'Moored offshore because it legally cannot be anywhere else. Free tender from the jetty, beer around USD 6. More interesting as a piece of regulatory theatre than as a bar.',when:'Evening'},
+{c:'Maafushi',t:'skip',n:'Whale sharks from here',w:'The same trip Dhigurah does in twenty minutes takes three hours each way and eats an entire day. Do it if you’re based here — but it is the argument for not being based here.',when:''},
+/* IN THE WATER */
+{c:'Water',t:'do',n:'Snorkel on a slack tide',w:'Ask the guesthouse when the tide turns and go then. Current is what makes Maldivian reef snorkelling either effortless or exhausting, and it changes by the hour, not the day.',when:'Ask locally'},
+{c:'Water',t:'do',n:'Turtles',w:'Green and hawksbill turtles are genuinely common on house reefs across South Ari and Kaafu, more reliable than anything you can book. Keep your distance and never chase.',when:'Free'},
+{c:'Water',t:'opt',n:'Bioluminescence',w:'Real, and dependent on both a plankton bloom and a dark sky. The moon is against you: <b>full moon falls on roughly 24 December</b>, so your entire window sits under a bright one. Odds are poor. Costs nothing to walk down and look.',when:'Full moon — poor odds'},
+{c:'Water',t:'skip',n:'Hanifaru Bay',w:'The great manta aggregation is in Baa atoll, its season is May–November peaking August–October, and December events are rare. Wrong month, wrong atoll, USD 20 permit for a maybe.',when:''},
+{c:'Water',t:'skip',n:'A seaplane transfer',w:'USD 400 and up return per person, and it exists to serve resorts you aren’t staying at. The view is spectacular; it is also the single worst value on this page.',when:''},
+{c:'Water',t:'skip',n:'A liveaboard',w:'The best way to see this country and it needs seven nights minimum. You have five, over Christmas, with a fixed flight at each end. Come back for it.',when:''},
+{c:'Water',t:'skip',n:'Bringing your own alcohol',w:'Not a rule you negotiate. It is seized at customs on arrival and returned when you fly out. Resorts, liveaboards and licensed floating bars only.',when:''}
+];
+
+const TIERLBL={do:'Do',opt:'Maybe',skip:'Skip'};
+let FC='all', FT=null, FB=false;
+
+function renderItems(){
+  const list=ITEMS.filter(x=>
+    (FC==='all'||x.c===FC) && (!FT||x.t===FT) && (!FB||x.b));
+  const host=document.getElementById('items');
+  if(!list.length){host.innerHTML='<div class="empty">No entries match those filters.</div>';return}
+  host.innerHTML=list.map(x=>`
+    <div class="item">
+      <span class="tier ${x.t}">${TIERLBL[x.t]}</span>
+      <span class="nm">${x.n}</span>
+      <span class="when${x.b?' book':''}">${x.when||'&nbsp;'}</span>
+      <span class="why">${x.w}</span>
+    </div>`).join('');
+}
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  if(b.dataset.city){FC=b.dataset.city}
+  else if(b.dataset.tier){FT = FT===b.dataset.tier?null:b.dataset.tier}
+  else if(b.dataset.book){FB=!FB}
+  document.querySelectorAll('#filters .fbtn').forEach(x=>{
+    let on=false;
+    if(x.dataset.city) on = x.dataset.city===FC;
+    if(x.dataset.tier) on = x.dataset.tier===FT;
+    if(x.dataset.book) on = FB;
+    x.setAttribute('aria-pressed',on?'true':'false');
+  });
+  renderItems();
+});
+renderItems();
+
+/* ============ FIG 1: TIME AUDIT ============ */
+(function(){
+  const svg=document.getElementById('audit-chart');
+  const W=1400,H=190,pad=40,barY=70,barH=54;
+  const start=new Date(2026,11,24), end=new Date(2026,11,30);
+  const totalH=(end-start)/36e5;
+  const x=h=>pad+(h/totalH)*(W-2*pad);
+  const segs=[
+    {a:0,b:10,cls:'t'},      /* 24th, flight + terminal */
+    {a:10,b:19,cls:'t2'},    /* 24th, transfer boat */
+    {a:19,b:24,cls:'p'},     /* 24th evening */
+    {a:24,b:48,cls:'f'},     /* 25 Dec */
+    {a:48,b:72,cls:'f'},     /* 26 Dec */
+    {a:72,b:96,cls:'f'},     /* 27 Dec */
+    {a:96,b:109,cls:'p'},    /* 28th morning */
+    {a:109,b:113,cls:'t2'},  /* 28th boat back */
+    {a:113,b:120,cls:'p'},   /* 28th evening */
+    {a:120,b:131,cls:'p'},   /* 29th morning */
+    {a:131,b:144,cls:'t'}    /* 29th flight */
+  ];
+  const colors={t:'var(--magenta)',t2:'rgba(231,100,155,.55)',p:'rgba(242,169,60,.35)',f:'var(--amber)'};
+  let s=`<rect x="0" y="0" width="${W}" height="${H}" fill="none"/>`;
+  segs.forEach(sg=>{
+    const x1=x(sg.a),x2=x(sg.b);
+    s+=`<rect x="${x1}" y="${barY}" width="${Math.max(1,x2-x1-1)}" height="${barH}" fill="${colors[sg.cls]}"/>`;
+  });
+  for(let d=0;d<=6;d++){
+    const hh=d*24, xx=x(hh);
+    const dt=new Date(start.getTime()+hh*36e5);
+    s+=`<line x1="${xx}" y1="${barY-6}" x2="${xx}" y2="${barY+barH+6}" class="axs"/>`;
+    s+=`<text x="${xx}" y="${barY-14}" class="lbl" text-anchor="${d===0?'start':d===6?'end':'middle'}">${dt.toLocaleDateString('en-CA',{day:'2-digit',month:'short'})}</text>`;
+  }
+  s+=`<line x1="${pad}" y1="${barY+barH+0.5}" x2="${W-pad}" y2="${barY+barH+0.5}" class="ax"/>`;
+  s+=`<text x="${x(24)}" y="${barY+barH+34}" class="lbl-a">3 full days — 25→27 Dec</text>`;
+  s+=`<text x="${x(0)}" y="${barY+barH+34}" class="lbl">↙ flight + 2h boat</text>`;
+  s+=`<text x="${x(144)}" y="${barY+barH+34}" class="lbl" text-anchor="end">14:10 to Mumbai ↘</text>`;
+  svg.innerHTML=s;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+})();
+
+/* ============ FIG 2: SEASON WINDOWS ============ */
+(function(){
+  const svg=document.getElementById('season-chart');
+  const W=1400,H=400,padL=250,padR=40,padT=20,rowH=42;
+  const t0=new Date(2026,9,1), t1=new Date(2027,3,30);
+  const totalD=(t1-t0)/864e5;
+  const x=d=>padL+((d-t0)/864e5/totalD)*(W-padL-padR);
+  const D=(y,m,dd)=>new Date(y,m,dd);
+  const ROWS=[
+    {n:'Whale sharks · South Ari',      a:D(2026,9,1),  b:D(2027,3,30), good:1, note:'year-round'},
+    {n:'Manta aggregation · Hanifaru',  a:D(2026,9,1),  b:D(2026,10,30),good:1, note:'ends Nov'},
+    {n:'Manta · eastern atolls',        a:D(2027,0,10), b:D(2027,3,30), good:1, note:'from Jan'},
+    {n:'Best visibility',               a:D(2027,0,1),  b:D(2027,3,30), good:1, note:'peaks Feb–Mar'},
+    {n:'Rain easing (iruvai proper)',   a:D(2026,11,26),b:D(2027,3,30), good:1, note:'late Dec on'},
+    {n:'Peak pricing',                  a:D(2026,11,22),b:D(2027,0,5),  good:0, note:'+60–100%'},
+    {n:'Peak pricing · second wave',    a:D(2027,1,1),  b:D(2027,2,31), good:0, note:'Feb–Mar'}
+  ];
+  const wx1=x(D(2026,11,24)), wx2=x(D(2026,11,30));
+  let s=`<rect x="${wx1}" y="${padT}" width="${Math.max(6,wx2-wx1)}" height="${ROWS.length*rowH+8}" fill="rgba(231,100,155,.12)" stroke="var(--magenta)" stroke-width="1"/>`;
+  s+=`<text x="${(wx1+wx2)/2}" y="${padT-6}" class="lbl-a" text-anchor="middle">24–29 Dec</text>`;
+  for(let m=0;m<7;m++){
+    const dt=new Date(2026,9+m,1), xx=x(dt);
+    s+=`<line x1="${xx}" y1="${padT}" x2="${xx}" y2="${padT+ROWS.length*rowH+8}" class="axs"/>`;
+    s+=`<text x="${xx+5}" y="${padT+ROWS.length*rowH+28}" class="lbl">${dt.toLocaleDateString('en-CA',{month:'short'})}</text>`;
+  }
+  s+=`<line x1="${padL-2}" y1="${padT}" x2="${x(t1)}" y2="${padT}" class="ax"/>`;
+  ROWS.forEach((r,i)=>{
+    const y=padT+18+i*rowH;
+    s+=`<text x="${padL-14}" y="${y+4}" class="lbl-p" text-anchor="end">${r.n}</text>`;
+    const x1=Math.max(padL,x(r.a)), x2=Math.min(x(t1),x(r.b));
+    s+=`<rect x="${x1}" y="${y-10}" width="${Math.max(3,x2-x1)}" height="20" rx="2" fill="${r.good?'rgba(88,196,163,.6)':'rgba(224,85,85,.45)'}"/>`;
+    s+=`<text x="${x2+8}" y="${y+4}" class="lbl">${r.note}</text>`;
+  });
+  svg.innerHTML=s;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+})();
+
+/* ============ FIG 3: RAINFALL ============ */
+(function(){
+  const svg=document.getElementById('rain-chart');
+  const W=1400,H=300,padL=60,padR=30,padT=20,padB=50;
+  const MO=[
+    {n:'Jan',v:115},{n:'Feb',v:40},{n:'Mar',v:75},{n:'Apr',v:125},
+    {n:'May',v:220},{n:'Jun',v:165},{n:'Jul',v:150},{n:'Aug',v:175},
+    {n:'Sep',v:200},{n:'Oct',v:195},{n:'Nov',v:230},{n:'Dec',v:215}
+  ];
+  const bw=(W-padL-padR)/MO.length;
+  const y=v=>padT+(1-v/250)*(H-padT-padB);
+  let s='';
+  [0,50,100,150,200,250].forEach(v=>{
+    s+=`<line x1="${padL}" y1="${y(v)}" x2="${W-padR}" y2="${y(v)}" class="axs"/>`;
+    s+=`<text x="${padL-10}" y="${y(v)+4}" class="lbl" text-anchor="end">${v}</text>`;
+  });
+  MO.forEach((m,i)=>{
+    const x0=padL+i*bw+bw*0.18, bwid=bw*0.64;
+    const hot=m.n==='Dec', cool=m.n==='Feb';
+    const fill = hot?'var(--magenta)': cool?'var(--jade)':'rgba(242,169,60,.32)';
+    s+=`<rect x="${x0}" y="${y(m.v)}" width="${bwid}" height="${H-padB-y(m.v)}" fill="${fill}" rx="1"/>`;
+    s+=`<text x="${x0+bwid/2}" y="${H-padB+18}" class="lbl" text-anchor="middle" ${hot?'fill="var(--magenta)"':cool?'fill="var(--jade)"':''}>${m.n}</text>`;
+    s+=`<text x="${x0+bwid/2}" y="${y(m.v)-8}" class="lbl" text-anchor="middle" ${hot?'fill="var(--magenta)"':cool?'fill="var(--jade)"':''}>${m.v}</text>`;
+  });
+  s+=`<line x1="${padL}" y1="${H-padB}" x2="${W-padR}" y2="${H-padB}" class="ax"/>`;
+  s+=`<text x="${padL}" y="${padT+2}" class="lbl">mm</text>`;
+  svg.innerHTML=s;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+})();
+
+/* ============ THE BILL ============ */
+const BILL=[
+  {n:'4 nights guesthouse, Dhigurah — peak-week rate',u:150,q:4,tg:1,sc:1,nt:1,def:true,note:'Shoulder season is USD 70–90 for the same room'},
+  {n:'1 night, Hulhumalé — the airport buffer',u:90,q:1,tg:1,sc:1,nt:1,def:true,note:'Night of 28 Dec, so the 29th is not a gamble'},
+  {n:'Shared speedboat, Malé ⇄ Dhigurah',u:65,q:2,tg:1,sc:0,def:true,note:'2 hours each way · 11:00 and 16:30 outbound'},
+  {n:'Whale shark day, South Ari MPA',u:95,q:1,tg:1,sc:0,def:true,note:'Booked through the guesthouse, not a platform'},
+  {n:'Sandbank & reef half day',u:45,q:1,tg:1,sc:0,def:true,note:''},
+  {n:'Night fishing off a dhoni',u:40,q:1,tg:1,sc:0,note:'Crew grills whatever you land'},
+  {n:'Two-tank dive, South Ari',u:130,q:1,tg:1,sc:0,note:'Certification card required'},
+  {n:'Resort day pass',u:130,q:1,tg:1,sc:1,note:'Pool, beach and the only legal drink for miles'},
+  {n:'Malé day — ferry, taxis, tea shops',u:25,q:1,tg:0,sc:0,def:true,note:'General 8% GST, already inside the price'}
+];
+const GREEN=6, EXIT=100, DAYS_COUNT=6;
+
+function renderLegs(){
+  document.getElementById('legs').innerHTML=BILL.map((l,i)=>`
+    <label class="leg-row">
+      <input type="checkbox" data-i="${i}" ${l.def?'checked':''}>
+      <span class="lname">${l.n}</span>
+      <span class="lyen">$${(l.u*l.q).toLocaleString('en-CA')}</span>
+      ${l.note?`<span class="lnote">${l.note}</span>`:''}
+    </label>`).join('');
+}
+function calcTotals(){
+  let sticker=0, real=0, nights=0;
+  document.querySelectorAll('#legs input[type="checkbox"]').forEach(cb=>{
+    const l=BILL[Number(cb.dataset.i)];
+    if(!cb.checked) return;
+    const base=l.u*l.q;
+    sticker+=base;
+    let v=base;
+    if(l.sc) v*=1.10;
+    if(l.tg) v*=1.17;
+    real+=v;
+    if(l.nt) nights+=l.q;
+  });
+  const green=nights*GREEN;
+  real+=green+EXIT;
+  const taxes=real-sticker;
+  const fmt=n=>'$'+Math.round(n).toLocaleString('en-CA');
+  document.getElementById('sticker').innerHTML=`${fmt(sticker)}<small>as quoted</small>`;
+  document.getElementById('taxes').innerHTML=`${fmt(taxes)}<small>incl. $${green} green, $${EXIT} exit</small>`;
+  document.getElementById('real').innerHTML=`${fmt(real)}<small>what you pay</small>`;
+  document.getElementById('perday').innerHTML=`${fmt(real/DAYS_COUNT)}<small>over 6 days</small>`;
+  const vEl=document.getElementById('verdict');
+  if(sticker===0){
+    vEl.textContent='Still $100 of exit fees'; vEl.className='lose';
+  } else {
+    const pct=Math.round((real/sticker-1)*100);
+    vEl.textContent='+'+pct+'% on the sticker';
+    vEl.className = pct>=25 ? 'lose' : 'win';
+  }
+}
+renderLegs();
+document.getElementById('legs').addEventListener('change',calcTotals);
+calcTotals();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="darkreader-lock">
+<title>Singapore</title>
+<link rel="stylesheet" href="fonts.css">
+</head>
+<body>
+<style>
+:root{color-scheme:dark;
+  --ink:#05161D;--ink-2:#0A2029;--ink-3:#0E2A35;
+  --rule:#194150;--rule-soft:rgba(25,65,80,.6);
+  --paper:#E2EEED;--paper-dim:#A6C2C6;--muted:#6C8F98;
+  --amber:#F2A93C;--magenta:#E7649B;--jade:#58C4A3;--red:#E05555;
+  --display:'Big Shoulders Display','Arial Narrow',Impact,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --body:'Inter',system-ui,sans-serif;
+  --gut:clamp(18px,4vw,64px);--maxw:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+.section{padding-block:clamp(34px,4.4vw,58px);border-top:1px solid var(--rule-soft);position:relative}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:14px;margin:0 0 18px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--rule)}
+.eyebrow .n{color:var(--amber)}
+h2.head{font-family:var(--display);font-weight:700;font-size:clamp(34px,5.6vw,66px);line-height:.92;margin:0 0 14px;text-transform:uppercase}
+.lede{max-width:66ch;color:var(--paper-dim);font-size:clamp(15px,1.5vw,17px);margin:0 0 26px}
+.lede b{color:var(--paper);font-weight:600}
+a{color:var(--amber);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+.hint{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+@media (min-width:980px){.hint.wide{display:none}}
+.scroller{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--rule) transparent}
+.scroller::-webkit-scrollbar{height:6px}
+.scroller::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}
+.scroller>svg{display:block;width:100%;height:auto}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(30px,5vw,58px) clamp(24px,4vw,40px);overflow:hidden}
+.gridbg{position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:linear-gradient(to right,var(--rule-soft) 1px,transparent 1px),linear-gradient(to bottom,var(--rule-soft) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%);-webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%)}
+.back{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:inline-block;margin-bottom:20px}
+.back:hover{color:var(--amber)}
+.strip{font-family:var(--mono);font-size:clamp(10px,1.15vw,12px);letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;border-block:1px solid var(--rule);padding-block:11px;margin-bottom:clamp(26px,4vw,44px)}
+.strip .k{color:var(--muted)}.strip .amb{color:var(--amber)}
+.title{font-family:var(--display);text-transform:uppercase;margin:0;line-height:.82;position:relative}
+.title .l1{display:block;font-weight:400;font-size:clamp(34px,7.4vw,96px);color:transparent;-webkit-text-stroke:1.2px var(--paper-dim)}
+.title .l2{display:block;font-weight:800;font-size:clamp(72px,17vw,232px);letter-spacing:-.015em;color:var(--paper)}
+.subline{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:baseline;margin-top:clamp(18px,3vw,30px);font-family:var(--mono);font-size:clamp(11px,1.25vw,13px);letter-spacing:.14em;text-transform:uppercase;color:var(--paper-dim)}
+.subline .sep{color:var(--rule)}
+
+/* instruments */
+.instr{display:grid;grid-template-columns:repeat(auto-fit,minmax(124px,1fr));border:1px solid var(--rule);background:var(--ink-2);margin:clamp(24px,3.4vw,38px) 0 0}
+.instr div{padding:15px 17px;border-right:1px solid var(--rule-soft)}
+.instr div:last-child{border-right:0}
+.instr dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.instr dd{margin:0;font-family:var(--display);font-weight:600;font-size:31px;line-height:1}
+.instr dd span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--paper-dim);margin-left:3px}
+.instr dd.hot{color:var(--amber)}
+.instr dd.warn{color:var(--magenta)}
+
+/* chart frames */
+.figcap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:9px;margin:0 0 8px}
+.figcap b{color:var(--amber);font-weight:500}
+.fignote{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.fignote i{display:inline-block;width:14px;height:9px;margin:0 5px 0 14px;vertical-align:middle;border-radius:1px}
+.fignote i:first-child{margin-left:0}
+.ax{stroke:var(--rule);stroke-width:1}
+.axs{stroke:var(--rule-soft);stroke-width:1}
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.08em;fill:var(--muted)}
+.lbl-p{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;fill:var(--paper)}
+.lbl-a{font-family:var(--mono);font-size:10px;letter-spacing:.12em;fill:var(--amber)}
+
+/* cards */
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin:0 0 6px}
+.card{border:1px solid var(--rule);background:var(--ink-2);padding:18px 20px;position:relative}
+.card.bad{border-color:var(--red)}
+.card.good{border-color:var(--jade)}
+.card h3{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 4px;color:var(--paper)}
+.card .verdict{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:11px}
+.card .verdict.bad{color:var(--red)}
+.card .verdict.ok{color:var(--jade)}
+.card p{margin:0 0 10px;font-size:13.5px;color:var(--paper-dim);line-height:1.62}
+.card p:last-child{margin-bottom:0}
+.card p b{color:var(--paper);font-weight:600}
+.fix{border-left:2px solid var(--amber);padding-left:12px;margin:12px 0 0;font-size:12.8px;color:var(--paper-dim);line-height:1.6}
+.fix b{display:block;color:var(--amber);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px;font-weight:500}
+.fix strong{color:var(--paper);font-weight:600}
+
+/* shape cards */
+.shapes{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+.shape{border:1px solid var(--rule);background:var(--ink-2);padding:0;display:flex;flex-direction:column}
+.shape.pick{border-color:var(--amber);box-shadow:inset 0 0 0 1px rgba(242,169,60,.25)}
+.shape-hd{padding:16px 20px 14px;border-bottom:1px solid var(--rule-soft)}
+.shape-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.shape.pick .shape-tag{color:var(--amber)}
+.shape-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(24px,3vw,32px);line-height:.95;margin:0}
+.chainrow{display:flex;flex-wrap:wrap;align-items:center;gap:5px 7px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--paper);padding:13px 20px;border-bottom:1px solid var(--rule-soft);background:rgba(5,22,29,.5)}
+.chainrow .a{color:var(--rule)}
+.chainrow .n{color:var(--amber);font-size:9.5px}
+.shape-body{padding:15px 20px 18px;flex:1}
+.shape-body p{margin:0 0 10px;font-size:13.3px;color:var(--paper-dim);line-height:1.6}
+.shape-body p:last-child{margin-bottom:0}
+.shape-body p b{color:var(--paper);font-weight:600}
+.shape-meta{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--rule-soft)}
+.shape-meta div{flex:1;min-width:88px;padding:11px 20px;border-right:1px solid var(--rule-soft)}
+.shape-meta div:last-child{border-right:0}
+.shape-meta dt{font-family:var(--mono);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.shape-meta dd{margin:0;font-family:var(--mono);font-size:13px;color:var(--paper)}
+.shape-meta dd.g{color:var(--jade)}
+.shape-meta dd.r{color:var(--red)}
+
+/* day accordion */
+.days{border-top:1px solid var(--rule)}
+.day{border-bottom:1px solid var(--rule)}
+.day-btn{all:unset;box-sizing:border-box;display:grid;width:100%;cursor:pointer;grid-template-columns:76px 1fr auto;gap:0 clamp(14px,2.4vw,30px);align-items:baseline;padding:clamp(13px,1.8vw,18px) 4px;transition:background .18s ease}
+.day-btn:hover{background:rgba(242,169,60,.05)}
+.day-btn:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.day-date{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.1em}
+.day-date small{display:block;color:var(--muted);font-size:9.5px;letter-spacing:.14em;margin-top:3px}
+.day-btn>span:nth-child(2){display:flex;flex-direction:column;gap:6px}
+.day-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(22px,3.2vw,34px);line-height:.95;margin:0}
+.day-sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.day-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--paper-dim);text-align:right;white-space:nowrap}
+.day-meta .chev{display:inline-block;margin-left:12px;color:var(--muted);transition:transform .25s ease}
+.day.open .day-meta .chev{transform:rotate(180deg)}
+@media (max-width:720px){.day-btn{grid-template-columns:64px 1fr;row-gap:8px}.day-meta{grid-column:2;text-align:left}}
+.day-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .34s cubic-bezier(.3,.8,.3,1)}
+.day.open .day-body{grid-template-rows:1fr}
+.day-inner{overflow:hidden}
+.day-pad{padding:2px 4px clamp(22px,3vw,32px)}
+.slots{display:grid;gap:0;border-left:1px solid var(--rule)}
+.slot{padding:0 0 16px 16px;position:relative}
+.slot:last-child{padding-bottom:2px}
+.slot::before{content:"";position:absolute;left:-4px;top:6px;width:7px;height:7px;background:var(--amber);border-radius:50%}
+.slot.move::before{background:var(--magenta)}
+.slot h4{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 5px;font-weight:500}
+.slot.move h4{color:var(--magenta)}
+.slot p{margin:0;font-size:14px;line-height:1.62;color:var(--paper-dim);max-width:72ch}
+.slot p b{color:var(--paper);font-weight:600}
+
+/* worth doing */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.fbtn{all:unset;cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border:1px solid var(--rule);color:var(--paper-dim);border-radius:2px;transition:.15s}
+.fbtn:hover{background:var(--ink-3);color:var(--paper)}
+.fbtn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.fbtn[aria-pressed="true"]{background:var(--amber);color:var(--ink);border-color:var(--amber);font-weight:600}
+.fdiv{width:1px;background:var(--rule);margin:2px 6px}
+.items{display:grid;gap:1px;background:var(--rule-soft);border:1px solid var(--rule)}
+.item{background:var(--ink-2);padding:13px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:baseline}
+.item .tier{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:3px 7px 2px;border-radius:2px;white-space:nowrap;align-self:start;margin-top:2px}
+.tier.do{background:rgba(88,196,163,.14);color:var(--jade);border:1px solid rgba(88,196,163,.35)}
+.tier.opt{background:rgba(242,169,60,.12);color:var(--amber);border:1px solid rgba(242,169,60,.3)}
+.tier.skip{background:rgba(224,85,85,.1);color:var(--red);border:1px solid rgba(224,85,85,.3)}
+.item .nm{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:20px;line-height:1.05;color:var(--paper)}
+.item .why{grid-column:2;font-size:13.3px;color:var(--paper-dim);line-height:1.55;max-width:74ch}
+.item .why b{color:var(--paper);font-weight:600}
+.item .when{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);text-align:right;white-space:nowrap;align-self:start;margin-top:4px}
+.item .when.book{color:var(--magenta)}
+@media (max-width:640px){.item{grid-template-columns:auto 1fr}.item .when{grid-column:2;text-align:left;margin-top:2px}.item .why{grid-column:1/-1}}
+.empty{background:var(--ink-2);padding:22px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* rail calc */
+.calc{border:1px solid var(--rule);background:var(--ink-2)}
+.calc-legs{display:grid}
+.leg-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--rule-soft);cursor:pointer}
+.leg-row:hover{background:rgba(242,169,60,.04)}
+.leg-row input{accent-color:var(--amber);width:15px;height:15px;cursor:pointer}
+.leg-row .lname{font-family:var(--mono);font-size:12.5px;color:var(--paper-dim)}
+.leg-row input:checked+.lname{color:var(--paper)}
+.leg-row .lyen{font-family:var(--mono);font-size:12.5px;color:var(--amber);font-variant-numeric:tabular-nums;white-space:nowrap}
+.leg-row .lnote{grid-column:2/-1;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--muted);margin-top:-4px}
+.calc-out{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule-soft)}
+.calc-out div{background:var(--ink-3);padding:15px 17px}
+.calc-out dt{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.calc-out dd{margin:0;font-family:var(--display);font-weight:700;font-size:27px;line-height:1;font-variant-numeric:tabular-nums}
+.calc-out dd small{font-family:var(--mono);font-size:10px;font-weight:400;color:var(--paper-dim);margin-left:4px;letter-spacing:.06em}
+#verdict{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;line-height:1.5}
+#verdict.win{color:var(--jade)}
+#verdict.lose{color:var(--red)}
+
+/* panels / tables */
+.panel{border:1px solid var(--rule);background:var(--ink-2);padding:clamp(17px,2.4vw,24px);margin-top:22px}
+.panel h3{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 12px;font-weight:500}
+.panel p{margin:0 0 12px;font-size:13.6px;color:var(--paper-dim);line-height:1.62}
+.panel p:last-child{margin-bottom:0}
+.panel p b{color:var(--paper);font-weight:600}
+table.ref{width:100%;border-collapse:collapse;font-size:13.4px}
+table.ref th{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:500;padding:0 14px 10px 0;border-bottom:1px solid var(--rule)}
+table.ref td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule-soft);color:var(--paper-dim);vertical-align:top}
+table.ref td:first-child{font-family:var(--display);font-size:17px;font-weight:600;text-transform:uppercase;color:var(--paper);white-space:nowrap;width:1%}
+table.ref td.t{font-family:var(--mono);font-size:11px;letter-spacing:.06em;white-space:nowrap;color:var(--amber)}
+table.ref tr.flag td.t{color:var(--magenta)}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.cols{display:grid;gap:16px 34px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:20px}
+.cols p{margin:0;font-size:13.6px;color:var(--paper-dim);line-height:1.6}
+.cols p b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:5px;font-weight:500}
+
+footer{border-top:1px solid var(--rule);padding-block:26px 40px;color:var(--muted)}
+.foot-grid{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:flex-end}
+.foot-grid p{margin:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase}
+.foot-mark{font-family:var(--display);font-size:clamp(40px,9vw,110px);font-weight:800;text-transform:uppercase;line-height:.8;color:transparent;-webkit-text-stroke:1px var(--rule);margin:30px 0 0}
+
+/* stop-specific: nine-letter country name needs a smaller display size than JAPAN */
+.title .l2{font-size:clamp(52px,13.2vw,178px)}
+</style>
+<header class="hero">
+  <div class="gridbg"></div>
+  <div class="wrap">
+    <a class="back" href="index.html">← Westbound · the dossier</a>
+    <p class="strip">
+      <span><span class="k">Stop</span> <span class="amb">08 of 27</span></span>
+      <span><span class="k">In</span> KTM · Kathmandu</span>
+      <span><span class="k">Fly Singapore</span> <span class="amb">SIN</span></span>
+      <span><span class="k">Out</span> DPS · Bali</span>
+      <span><span class="k">Window</span> 16–20 Nov 2026</span>
+      <span><span class="k">Clock</span> UTC+8</span>
+    </p>
+    <h1 class="title">
+      <span class="l1">Eighth stop</span>
+      <span class="l2">Singapore</span>
+    </h1>
+    <p class="subline">
+      <span>One city, one base</span><span class="sep">/</span>
+      <span>The wettest month of the year</span><span class="sep">/</span>
+      <span>And the right place for it</span>
+    </p>
+
+    <dl class="instr">
+      <div><dt>Calendar days</dt><dd>5</dd></div>
+      <div><dt>Full days</dt><dd class="hot">3</dd></div>
+      <div><dt>Nights</dt><dd>4</dd></div>
+      <div><dt>Bases</dt><dd>1</dd></div>
+      <div><dt>Nov rainfall</dt><dd class="warn">255<span>mm</span></dd></div>
+      <div><dt>Nov rain days</dt><dd class="warn">15<span>/30</span></dd></div>
+    </dl>
+  </div>
+</header>
+
+<section class="section" id="audit">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">01</span> The time audit</p>
+    <h2 class="head">Five days<br>is three days</h2>
+    <p class="lede">Singapore Airlines flies <b>SQ441 Kathmandu–Singapore non-stop, daily, about five hours</b> — the only direct on that pair, so the schedule is the schedule. Add the clock: Nepal runs at UTC+5:45, Singapore at UTC+8, so you lose <b>two hours and fifteen minutes</b> to the move. Arrival day and departure day are both fragments. What you actually get is <b>three full days</b>, Tue 17 to Thu 19, and every plan below is built against that number.</p>
+
+    <div class="figcap">
+      <span>Fig. 1 — What the stop really contains</span>
+      <span><b>16–20 Nov</b> · hour by hour</span>
+    </div>
+    <div class="scroller">
+      <svg id="audit-chart" viewBox="0 0 1400 190" role="img" aria-label="Timeline of 16 to 20 November showing the 16th largely consumed by the flight from Kathmandu, three usable full days from the 17th to the 19th, and a part-morning on the 20th before the flight to Bali."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--magenta);opacity:.55"></i>In transit<i style="background:rgba(242,169,60,.35)"></i>Part day<i style="background:var(--amber)"></i>Full day</p>
+
+    <div class="cols">
+      <p><b>The compact-city dividend</b>Three days sounds thin until you remember the country is 50 km end to end and served by one of the best metros on earth. Nothing on this page is more than 45 minutes from anything else on this page. Singapore is the one stop on the whole trip where three days is genuinely enough to see the place rather than sample it.</p>
+      <p><b>Changi is not a penalty</b>The MRT runs from the airport on the East–West line, no surcharge, roughly 40–50 minutes to the city with one change at Tanah Merah. A taxi is 20–25 minutes. Either way you are checked in and eating within ninety minutes of the belt.</p>
+      <p><b>Coming down from altitude</b>You arrive from Pokhara and Poon Hill — thin air, cold mornings, hard walking. Singapore is sea level, 31°C and 85% humidity. Your legs will be fine and your thermostat will not. Give day one nothing harder than dinner.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="rain">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">02</span> The honest bit</p>
+    <h2 class="head">You picked<br>the wet month</h2>
+    <p class="lede">There is no way to dress this up: <b>November and December are Singapore's two wettest months</b>, at roughly 255 mm and 330 mm against an annual average nearer 170. November averages about <b>15 rain days in 30</b> and the lowest sunshine of the year, around 4.5 hours a day. Statistically, you will get rained on. The argument for coming anyway is not that the forecast is wrong — it's that this is the one city in Asia where rain costs you almost nothing.</p>
+
+    <div class="figcap">
+      <span>Fig. 2 — Rain by month</span>
+      <span><b>Millimetres and rain days</b> · your window marked</span>
+    </div>
+    <div class="scroller">
+      <svg id="rain-chart" viewBox="0 0 1400 340" role="img" aria-label="Bar chart of Singapore's average monthly rainfall in millimetres with a line for average rain days, showing November at about 255 millimetres and 15 rain days and December at about 330 millimetres and 16 rain days, the two wettest months of the year."></svg>
+    </div>
+    <p class="fignote"><i style="background:rgba(242,169,60,.55)"></i>Rainfall, mm<i style="background:var(--magenta)"></i>Rain days<i style="background:rgba(231,100,155,.14);border:1px solid var(--magenta)"></i>Your month · long-term averages, Changi climate station</p>
+
+    <div class="cards">
+      <div class="card bad">
+        <h3>What the rain actually does</h3>
+        <div class="verdict bad">Plan around it, not through it</div>
+        <p>Tropical rain here is <b>convective, not frontal</b> — it builds through the late morning, dumps hard for 30 to 90 minutes, and clears. It is not the all-day grey drizzle of a Canadian November. A wet day is usually a dry morning, a loud afternoon and a warm evening.</p>
+        <p>Two things it genuinely ruins: long open-air walks with no bail-out (the Southern Ridges, MacRitchie's TreeTop Walk, Pulau Ubin) and anything on a beach. Those are the plans to hold loosely and move to whichever morning looks clear.</p>
+        <div class="fix"><b>The lever</b>Front-load. Every outdoor thing on this page belongs before 11:00. Museums, hawker centres, the domes at Gardens by the Bay and the entire underground city exist for the afternoon.</div>
+      </div>
+
+      <div class="card good">
+        <h3>Why it barely matters here</h3>
+        <div class="verdict ok">The city is built for it</div>
+        <p>Singapore is threaded with sheltered walkways, covered five-foot ways under the shophouses, and a genuinely enormous connected underground: you can walk from City Hall to Marina Bay Sands, or across most of Orchard, without going outside. The MRT is air-conditioned end to end.</p>
+        <p>The best things to eat are all under roofs. Hawker centres, the museums, the two conservatories, Jewel — a rained-out afternoon in Singapore is simply a different good afternoon, which is not true of Bali, Nepal or the Philippines on either side of this stop.</p>
+        <div class="fix"><b>The compensation</b>Rain drops the temperature ten degrees and kills the humidity for an hour. The best walking weather you'll get all week is the hour <strong>after</strong> a storm, usually around dusk.</div>
+      </div>
+    </div>
+
+    <div class="figcap" style="margin-top:34px">
+      <span>Fig. 3 — Daily sunshine hours</span>
+      <span><b>November is the annual low</b></span>
+    </div>
+    <div class="scroller">
+      <svg id="sun-chart" viewBox="0 0 1400 260" role="img" aria-label="Bar chart of average daily sunshine hours in Singapore by month, ranging from about 6.5 hours in February down to 4.5 hours in November and December, the annual low."></svg>
+    </div>
+    <p class="fignote">Long-term monthly averages · temperature barely moves all year: 24–25°C overnight, 31–32°C by day, humidity above 80%</p>
+  </div>
+</section>
+
+<section class="section" id="reset">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">03</span> What this stop is for</p>
+    <h2 class="head">The service<br>station</h2>
+    <p class="lede">Sixteen days before this you were in Bhutan; five days before this you were walking down from Poon Hill. Ahead of you are Bali, the Philippines and eleven more countries. Singapore is the <b>only stop between Tokyo and Dubai where everything works, everything is in English, and everything is buyable</b> — which makes it worth deliberately spending part of it on admin instead of sights.</p>
+
+    <div class="cols">
+      <p><b>Gear</b>Whatever broke in Nepal — boots, poles, a pack strap, a dead power bank, a phone screen — gets replaced here properly rather than improvised for the next two months. Sim Lim Square for electronics (haggle, and check the receipt before you leave the counter), Queensway Shopping Centre or Novena for outdoor kit, Mustafa Centre in Little India for the genuinely random, open 24 hours.</p>
+      <p><b>Laundry</b>Everything you own has been hand-washed in a teahouse for two weeks. Coin laundries are common in the HDB heartlands and most hotels and hostels have same-day service. Do the whole bag, not the urgent half.</p>
+      <p><b>Medical and dental</b>World-class, English-speaking, walk-in, and priced accordingly. If something has been nagging since Kathmandu, this is the best place to deal with it between Tokyo and Cape Town. Travel-insurance paperwork is straightforward here in a way it will not be in Laos.</p>
+      <p><b>Onward admin</b>Reliable fast wifi and a working printer. Bali's e-VOA and Indonesia's electronic arrival card, the Philippines eTravel form, and anything else that needs a real connection is easier done here than from a Canggu café. Do them on the last afternoon.</p>
+      <p><b>The price shock</b>Be ready for it. You arrive from one of the cheapest countries on the itinerary into one of the most expensive. Accommodation and alcohol are the two lines that jump hardest — a beer in a bar is startling, and there is no cheap version. Food is the exception and the great consolation: hawker meals run roughly S$4–8 and are the best value on the entire trip.</p>
+      <p><b>Water and the small mercies</b>Tap water is potable straight from the tap, everywhere, which will not be true again until Dubai. Refill rather than buy. Public toilets are clean and free. Nothing here will make you ill, which after Nepal and before Indonesia is worth more than it sounds.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="base">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">04</span> The one real decision</p>
+    <h2 class="head">Where to<br>put the bag</h2>
+    <p class="lede">There is no routing question on this leg — one country, one city, four nights, one base. The only decision that changes the shape of the stop is <b>which neighbourhood you sleep in</b>, because in a city this walkable your doorstep is most of your day. All four below sit on the MRT and none is more than 20 minutes from the others.</p>
+
+    <div class="shapes">
+      <div class="shape pick">
+        <div class="shape-hd">
+          <div class="shape-tag">Recommended</div>
+          <p class="shape-name">Chinatown &amp; Tanjong Pagar</p>
+        </div>
+        <div class="chainrow">
+          <span>Chinatown <span class="n">NE/DT</span></span><span class="a">·</span>
+          <span>Maxwell <span class="n">5 min</span></span><span class="a">·</span>
+          <span>Marina Bay <span class="n">15 min</span></span><span class="a">·</span>
+          <span>Changi <span class="n">45 min</span></span>
+        </div>
+        <div class="shape-body">
+          <p>The densest concentration of things you actually came to eat. <b>Maxwell Food Centre, Chinatown Complex, Amoy Street and Hong Lim</b> are all inside a ten-minute walk, plus the shophouse bars of Ann Siang Hill and Club Street when you want a roof and a drink.</p>
+          <p>Two MRT lines, walking distance to the CBD and the river, and the cheapest decent rooms in the central area. The temples — Buddha Tooth Relic, Thian Hock Keng, Sri Mariamman — are on the way to breakfast rather than a trip.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Food</dt><dd class="g">Best</dd></div>
+          <div><dt>Price</dt><dd class="g">Mid</dd></div>
+          <div><dt>Nightlife</dt><dd>Good</dd></div>
+          <div><dt>Quiet</dt><dd>Mixed</dd></div>
+        </dl>
+      </div>
+
+      <div class="shape">
+        <div class="shape-hd">
+          <div class="shape-tag">If atmosphere beats convenience</div>
+          <p class="shape-name">Kampong Glam &amp; Bugis</p>
+        </div>
+        <div class="chainrow">
+          <span>Bugis <span class="n">EW/DT</span></span><span class="a">·</span>
+          <span>Little India <span class="n">10 min</span></span><span class="a">·</span>
+          <span>Marina Bay <span class="n">15 min</span></span><span class="a">·</span>
+          <span>Changi <span class="n">40 min</span></span>
+        </div>
+        <div class="shape-body">
+          <p>The Malay-Arab quarter: <b>Sultan Mosque at the end of the street, Haji Lane's painted shophouses, Arab Street's textile shops</b>, and a strip of small independent cafés and record stores that feels more like a neighbourhood than a district.</p>
+          <p>Walkable to Little India and the National Library, and the best-looking streets in the city at night. Slightly further from the classic hawker centres, and the bar strip on Haji Lane gets loud on weekends — you're there Mon–Fri, which helps.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Food</dt><dd>Good</dd></div>
+          <div><dt>Price</dt><dd class="g">Mid</dd></div>
+          <div><dt>Nightlife</dt><dd>Good</dd></div>
+          <div><dt>Quiet</dt><dd>Mixed</dd></div>
+        </dl>
+      </div>
+
+      <div class="shape">
+        <div class="shape-hd">
+          <div class="shape-tag">If the view is the point</div>
+          <p class="shape-name">Marina Bay</p>
+        </div>
+        <div class="chainrow">
+          <span>Bayfront <span class="n">CE/DT</span></span><span class="a">·</span>
+          <span>Gardens <span class="n">5 min</span></span><span class="a">·</span>
+          <span>Chinatown <span class="n">15 min</span></span><span class="a">·</span>
+          <span>Changi <span class="n">45 min</span></span>
+        </div>
+        <div class="shape-body">
+          <p>Gardens by the Bay, the Supertrees and the free nightly light shows on your doorstep, plus the ArtScience Museum and the whole waterfront promenade. If you want the postcard version of Singapore without commuting to it, this is it.</p>
+          <p><b>The cost is money and character.</b> Rooms here are the most expensive in the city, the food within walking distance is mall food at mall prices, and the district empties of actual Singaporeans after 20:00. Four nights of it is three too many.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Food</dt><dd class="r">Weak</dd></div>
+          <div><dt>Price</dt><dd class="r">High</dd></div>
+          <div><dt>Nightlife</dt><dd>Hotel bars</dd></div>
+          <div><dt>Quiet</dt><dd class="g">Very</dd></div>
+        </dl>
+      </div>
+
+      <div class="shape">
+        <div class="shape-hd">
+          <div class="shape-tag">If the budget is the point</div>
+          <p class="shape-name">Little India</p>
+        </div>
+        <div class="chainrow">
+          <span>Little India <span class="n">NE/DT</span></span><span class="a">·</span>
+          <span>Tekka <span class="n">2 min</span></span><span class="a">·</span>
+          <span>Marina Bay <span class="n">20 min</span></span><span class="a">·</span>
+          <span>Changi <span class="n">45 min</span></span>
+        </div>
+        <div class="shape-body">
+          <p>The cheapest central beds in Singapore by a clear margin, and — for your specific dates — the district is <b>still fully lit for Deepavali</b>, whose light-up runs 30 Sep to 3 Dec 2026 even though the festival itself fell on 8 November, eight days before you land.</p>
+          <p>Tekka Centre for banana-leaf thali and biryani, Mustafa Centre open all night, and the loudest, densest, least sanitised streets in the country. Rooms are basic and it is the one part of central Singapore that is genuinely noisy.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Food</dt><dd class="g">Great</dd></div>
+          <div><dt>Price</dt><dd class="g">Low</dd></div>
+          <div><dt>Nightlife</dt><dd class="r">Thin</dd></div>
+          <div><dt>Quiet</dt><dd class="r">No</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Why Chinatown wins on a four-night stop</h3>
+      <p>Because your limiting factor here is meals, not sights. You have roughly <b>ten eating opportunities</b> in Singapore and the difference between a good and a great stop is whether you spend them well. Basing within five minutes of Maxwell and Chinatown Complex means breakfast and late supper both happen without a train, which is worth more than a view you'll photograph twice.</p>
+      <p>The counter-argument is real, though: Kampong Glam is the better-looking neighbourhood to wake up in and the better one to wander at night with nothing planned. If the trip so far has been heavy on logistics and you want four nights of simply being somewhere pleasant, take it and eat one train ride away.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="run">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">05</span> Day by day</p>
+    <h2 class="head">Mornings out,<br>afternoons in</h2>
+    <p class="lede">One rule shapes every day below: <b>anything outdoors happens before 11:00</b>, because that's when the heat peaks and the storms build. Afternoons go to museums, conservatories, hawker centres and the underground city. Evenings are the best hours of the Singapore day — cooler, lit, and busy.</p>
+    <div class="days" id="days"></div>
+    <p class="fignote" style="margin-top:16px">Amber = on foot or on the MRT · <span style="color:var(--magenta)">Magenta = an airport, a border, a flight</span></p>
+  </div>
+</section>
+
+<section class="section" id="worth">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">06</span> What's actually worth doing</p>
+    <h2 class="head">Do, maybe,<br>don't bother</h2>
+    <p class="lede">Sorted by district, then by whether it earns a slot in three full days. As on every page in this series, the <b>don't bother</b> entries aren't bad — most are perfectly good and several are famous. They're here because something else beats them for the same hours.</p>
+
+    <div class="filters" id="filters">
+      <button class="fbtn" data-city="all" aria-pressed="true">All</button>
+      <button class="fbtn" data-city="Marina" aria-pressed="false">Marina Bay &amp; Civic</button>
+      <button class="fbtn" data-city="Chinatown" aria-pressed="false">Chinatown &amp; CBD</button>
+      <button class="fbtn" data-city="Quarters" aria-pressed="false">Glam, India &amp; Katong</button>
+      <button class="fbtn" data-city="Green" aria-pressed="false">Green &amp; wild</button>
+      <button class="fbtn" data-city="Islands" aria-pressed="false">Sentosa &amp; islands</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-tier="do" aria-pressed="false">Do</button>
+      <button class="fbtn" data-tier="opt" aria-pressed="false">Maybe</button>
+      <button class="fbtn" data-tier="skip" aria-pressed="false">Don't bother</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-book="1" aria-pressed="false">Needs booking</button>
+    </div>
+    <div class="items" id="items"></div>
+    <p class="fignote" style="margin-top:14px">Prices are indicative standard adult admission and move — verify before booking</p>
+  </div>
+</section>
+
+<section class="section" id="eat">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">07</span> The actual reason to come</p>
+    <h2 class="head">Ten meals,<br>spend them well</h2>
+    <p class="lede">Singapore's hawker culture is on UNESCO's intangible heritage list and it is, with no serious competition, the best cheap eating on this entire itinerary. A <b>Michelin-recognised plate of food for under S$8</b> is a normal Tuesday here. Treat the hawker centres as the itinerary and the sights as the gaps between them.</p>
+
+    <div class="panel">
+      <h3>The four that matter, and what they're for</h3>
+      <p><b>Maxwell Food Centre, Chinatown</b> — the one for a first meal. Central, open-sided, easy to read. Tian Tian Hainanese Chicken Rice is the famous stall and the queue is real; Zhen Zhen porridge and China Street Fritters are the ones locals actually rate. Lunch-heavy, so go at noon rather than at night.</p>
+      <p><b>Chinatown Complex</b> — 260-odd stalls over two floors, the largest in the country, and the cheapest. Hong Kong Soya Sauce Chicken Rice &amp; Noodle here was the first street-food stall in the world to hold a Michelin star, at under S$4 a plate. Also the best beer-and-supper scene in the city on the ground floor.</p>
+      <p><b>Old Airport Road Food Centre, Geylang East</b> — the connoisseur's pick and the one worth a train ride. 150-plus stalls with the highest density of Michelin-listed hawkers anywhere. Hokkien prawn mee, rojak, satay and barbecued wings after dark. Not central, entirely worth it.</p>
+      <p><b>Lau Pa Sat, CBD</b> — a Victorian cast-iron market hall from 1894, which is the draw as much as the food. The reason to come is <b>Satay Street</b>: from around 19:00 the road beside it closes and grills take it over. Touristy, still good, and unbeatable as an evening.</p>
+    </div>
+
+    <div class="panel">
+      <h3>What to order, roughly in order of importance</h3>
+      <p><b>Hainanese chicken rice</b> — poached chicken, rice cooked in the stock, chilli-ginger on the side. The national dish and the one to eat twice. <b>Chilli crab</b> — the other national dish, and the one exception to the cheap rule: a proper one at East Coast or on the river runs S$70–100 for two, messy, worth doing once. <b>Char kway teow</b> — flat noodles in dark soy and lard, cockles if you're brave. <b>Laksa</b> — coconut curry noodle soup; the Katong version is the one people argue about.</p>
+      <p><b>Bak kut teh</b> — peppery pork rib soup, a breakfast dish here. <b>Roti prata</b> with fish curry, and <b>kaya toast</b> with soft eggs and kopi, which is the correct Singaporean breakfast and costs about S$3. <b>Satay</b> at Lau Pa Sat, sold by the stick. <b>Banana-leaf thali</b> or biryani at Tekka in Little India. <b>Nasi lemak</b> and <b>mee goreng</b> from any Malay stall.</p>
+    </div>
+
+    <div class="panel">
+      <h3>How hawker centres work, if you've never used one</h3>
+      <p>Order and pay at the individual stall, not a central till. Take a number or wait; some stalls call, some hand it over. Seating is communal and unassigned — <b>a packet of tissues on a table means it's taken</b>, a local convention called <i>chope</i> that is universally respected and mildly enforced.</p>
+      <p>Return your tray. This stopped being politeness in 2021 and became law: leaving a dirty tray is a fineable offence, and the trays go to labelled racks by the exits. Most stalls take cards or QR now, but the older ones are cash-only and PayNow doesn't work on a foreign card — <b>carry S$20–30 in small notes</b>.</p>
+      <p>Stalls close on rotation and many shut one or two days a week with no pattern; the good ones also sell out. If you have a specific stall in mind, check its hours the morning of, and have a second choice in the same building.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="transit">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">08</span> The transit maths</p>
+    <h2 class="head">Skip the<br>tourist pass</h2>
+    <p class="lede">The Singapore Tourist Pass sells unlimited travel at <b>S$17 for one day, S$29 for three and S$45 for five</b>, plus a S$10 refundable card deposit. Against it: any contactless Visa, Mastercard or Amex — or the phone in your pocket — taps straight through the gantry at the ordinary distance-based fare, which runs about <b>S$1.28 to S$2.57</b> a trip. Tick the journeys you'll actually make and watch the pass lose.</p>
+
+    <div class="calc">
+      <div class="calc-legs" id="legs"></div>
+      <dl class="calc-out">
+        <div><dt>Pay as you go</dt><dd id="ptp"></dd></div>
+        <div><dt>5-day tourist pass</dt><dd id="pass">S$45<small>+S$10 dep.</small></dd></div>
+        <div><dt>Difference</dt><dd id="diff"></dd></div>
+        <div><dt>Verdict</dt><dd><span id="verdict"></span></dd></div>
+      </dl>
+    </div>
+    <p class="fignote">Fares are approximate adult card fares and move — verify at the gantry · foreign-issued cards add roughly S$0.60 a day in admin fees, included above</p>
+
+    <div class="panel">
+      <h3>The three things that actually go wrong</h3>
+      <p><b>Tap in and tap out with the same card.</b> If you enter on your phone and exit on the physical card, the system can't match the journey and charges the maximum fare on both. This is the single most common tourist mistake and it is not refundable at the gate.</p>
+      <p><b>The pass only covers three of your five days.</b> Even on its own terms the S$29 three-day pass leaves your arrival and departure days unpaid, which is the arithmetic above being generous to it. The five-day version at S$45 needs you to make roughly thirty journeys to break even, and you won't.</p>
+      <p><b>Grab, not taxis flagged down.</b> Ride-hailing is cheap by Canadian standards, universally used, and priced up front — usually S$8–15 for a cross-town hop. Worth it after a storm, worth it with luggage, unnecessary otherwise. Airport trips carry a surcharge either way.</p>
+    </div>
+
+    <div class="cols">
+      <p><b>Buses</b>Same fares, same tap, and often the better ride: the upper deck of a double-decker through Chinatown or down Serangoon Road is a free city tour. Google Maps handles the routing correctly here.</p>
+      <p><b>Walking</b>Between about 11:00 and 16:00, budget for a slower pace and more stops than you'd think. The heat is not dangerous, but the humidity is relentless and it turns a 25-minute walk into a decision. Everything indoors is aggressively air-conditioned; carry a layer for restaurants and the MRT.</p>
+      <p><b>The last day</b>Changi has free luggage storage counters at reasonable rates and every terminal connects to Jewel, so checking the bag early and going back out is entirely viable. Give yourself three hours before the Bali flight anyway — Changi is efficient but it is enormous.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="admin">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">09</span> Ground rules</p>
+    <h2 class="head">Before you land</h2>
+
+    <div class="tablewrap">
+    <table class="ref">
+      <thead><tr><th>Item</th><th>What to do</th><th>When</th></tr></thead>
+      <tbody>
+        <tr><td>Entry</td><td>No visa for Canadians. A Short-Term Visit Pass is granted on arrival — commonly <b>30 days</b> for a Canadian passport, and the officer sets the actual length, so check what you're given. Passport valid six months beyond departure, and have the Bali onward ticket ready to show.</td><td class="t">Nothing to file</td></tr>
+        <tr class="flag"><td>SG Arrival Card</td><td>Mandatory, electronic, and <b>free</b>. Submit within three days before arrival via the ICA website or the MyICA app. ICA publishes a list of 61 fake sites that charge for it — <b>ica.gov.sg only</b>, and never pay anyone for this.</td><td class="t">3 days before</td></tr>
+        <tr><td>Immigration</td><td>Changi has run fully passport-free biometric clearance since 2024 — face and iris, no stamp, no booklet at the gate. Have the passport anyway for the airline and for the hotel.</td><td class="t">Automatic</td></tr>
+        <tr class="flag"><td>Vaping</td><td>Take this seriously. Possessing or using any vape is illegal, including in transit. Since <b>1 September 2025</b> etomidate-laced pods are a Class C drug: up to ten years' jail, a S$20,000 fine, and caning for trafficking. If you own a vape, it does not come to Singapore.</td><td class="t">Leave it behind</td></tr>
+        <tr class="flag"><td>Drugs</td><td>Trafficking carries the death penalty and thresholds are low. Singapore also prosecutes citizens and residents for consumption abroad. There is no grey area here and no story where this ends well.</td><td class="t">Understand it</td></tr>
+        <tr><td>GST &amp; refunds</td><td>GST is 9%. The Tourist Refund Scheme refunds it on purchases of <b>S$100 or more</b> from participating retailers (up to three same-day invoices can be combined), claimed at eTRS kiosks at Changi — before check-in for checked bags, after immigration for hand carry.</td><td class="t">At the airport</td></tr>
+        <tr><td>Departure levy</td><td>Singapore's sustainable-fuel levy was deferred: it applies to tickets sold from <b>1 Oct 2026</b> for flights departing from <b>1 Jan 2027</b>. Your 20 Nov departure lands before it. Nice timing.</td><td class="t">Doesn't hit you</td></tr>
+        <tr><td>Money</td><td>Contactless cards work almost everywhere including the MRT. Carry S$20–30 in small notes for older hawker stalls; PayNow QR is domestic-only and won't work on a foreign card. ATMs are everywhere and tap water is drinkable.</td><td class="t">On arrival</td></tr>
+        <tr><td>Deepavali</td><td>Fell on <b>Sunday 8 November 2026</b>, eight days before you land — so the crowds are gone but the Little India light-up runs <b>30 Sep to 3 Dec</b>, on from 19:00 to midnight. You get the lights without the scrum.</td><td class="t">Free, evenings</td></tr>
+        <tr><td>Writers Festival</td><td>Singapore Writers Festival runs <b>13–22 November 2026</b>, so your whole window sits inside it. Mostly ticketed events around the Civic District and the Arts House, with free fringe programming. Worth a look at the schedule.</td><td class="t">Book if keen</td></tr>
+        <tr><td>Christmas lights</td><td>Orchard Road's light-up typically switches on in the second week of November, so it should be lit for your dates — but the launch date moves each year. Check before making a night of it.</td><td class="t">Verify</td></tr>
+        <tr><td>Booking window</td><td>Very little here sells out. The exceptions worth pre-booking: Gardens by the Bay conservatories at peak hours, Night Safari, Universal Studios, and any restaurant with a name. Everything else is walk-up.</td><td class="t">A week out</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="cols">
+      <p><b>Weather to pack for</b>31–32°C by day, 24–25°C overnight, humidity above 80%, and rain most days in short bursts. A folding umbrella beats a rain jacket — a shell in this heat is a sauna. Quick-dry everything, sandals you don't mind soaking, and a light layer for the aggressive indoor air-conditioning.</p>
+      <p><b>The famous fines</b>Real, but overstated for a visitor behaving normally. Chewing gum can't be sold (bringing a personal amount in is fine); no eating or drinking on the MRT, including water; no smoking outside marked areas; littering and jaywalking are ticketed. Durian is banned on public transport, which you will see signposted and should probably respect.</p>
+      <p><b>Language and etiquette</b>English is an official language and universal. Singlish is a distinct creole and you'll hear "lah", "can/cannot" and "shiok" constantly. Tipping is not customary — restaurants add 10% service and the 9% GST, shown as "++" on menus.</p>
+      <p><b>Next stop</b>SIN–DPS is a short hop, about 2h50, with roughly fifteen departures a day across Singapore Airlines, Scoot, Jetstar, Garuda and TransNusa — no shortage of options. Sort Indonesia's e-VOA and electronic arrival card, and Bali's <b>IDR 150,000 tourist levy</b>, from a Singapore desk before you go.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <p>Westbound · stop 08 · Singapore</p>
+      <p>16–20 Nov 2026 · SIN in, DPS out</p>
+      <p>Rules, fares and taxes verified Sept 2026 — recheck before booking</p>
+    </div>
+    <p class="foot-mark">Kathmandu → Bali</p>
+  </div>
+</footer>
+<script>
+/* ============ DAY-BY-DAY ============ */
+const DAYS=[
+{d:'Mon 16',w:'Arrive',name:'Changi',sub:'In from Kathmandu · do nothing',meta:'Night 1',
+ slots:[
+  {m:1,h:'· SQ441 KTM → SIN',p:'The only non-stop on the pair, daily, about five hours. Clocks jump 2h15 forward — Nepal runs at UTC+5:45, Singapore at UTC+8. Verify the exact schedule for your date; a single daily flight means no second chance if it slips.'},
+  {m:1,h:'· Changi',p:'Passport-free biometric clearance, so arrivals are fast. MRT on the East–West line with one change at Tanah Merah, 40–50 minutes to town, no airport surcharge — or a taxi in 20–25. Tap in with a contactless card or your phone.'},
+  {h:'19:00 · First hawker meal',p:'Whatever is nearest. If you’re based in Chinatown that’s <b>Chinatown Complex</b> — 260 stalls, cheap, loud, open late. If you land tired, kaya toast and a kopi counts and nobody is judging.'},
+  {h:'21:00 · Laundry in',p:'Two weeks of Nepal. Drop the whole bag with the hotel or find a coin laundry tonight so it’s back before the last day. This is the boring thing that makes the next two months better.'}
+]},
+{d:'Tue 17',w:'Full',name:'Green &amp; grand',sub:'Botanic Gardens, Civic District, the domes',meta:'Night 2',
+ slots:[
+  {h:'07:30 · Singapore Botanic Gardens',p:'A UNESCO World Heritage site and free to enter, opening at dawn. Go early for the heat, not the crowds. The <b>National Orchid Garden</b> inside opens at 08:30 and is the only paid part — a modest entry, and the one bit of the gardens worth paying for.'},
+  {h:'10:30 · National Gallery Singapore',p:'The old Supreme Court and City Hall joined into one building — the best Southeast Asian art collection anywhere, and a genuinely great piece of architecture. Air-conditioned, which by 11:00 is the actual point. Two to three hours.'},
+  {h:'14:00 · The Civic District on foot',p:'Padang, St Andrew’s Cathedral, the Asian Civilisations Museum and the colonial river bank, then across the Cavenagh or Anderson bridge. Duck indoors when it opens up — this whole stretch has cover within a minute.'},
+  {h:'17:00 · Gardens by the Bay',p:'The <b>Cloud Forest</b> is the one to pay for if you only pay for one: a 35-metre indoor waterfall and a mountain of mist. Flower Dome is around S$28, Cloud Forest the same, both together around S$48. Supertree Grove itself is free.'},
+  {h:'19:45 · Garden Rhapsody',p:'The Supertrees light and sound show, nightly at 19:45 and 20:45, free, ten minutes long. Lie on the grass under them rather than standing at the rail. Dinner after, at Satay by the Bay or back into town.'}
+]},
+{d:'Wed 18',w:'Full',name:'The quarters',sub:'Kampong Glam, Little India, Katong',meta:'Night 3',
+ slots:[
+  {h:'08:00 · Kampong Glam',p:'<b>Sultan Mosque</b> opens to visitors outside prayer times — cover shoulders and knees, robes are lent at the door. Then Arab Street’s textile shops, Haji Lane’s painted shophouses before anything opens, and coffee at one of the small roasters on Bussorah.'},
+  {h:'10:00 · Little India',p:'<b>Tekka Centre</b> for the wet market upstairs and a banana-leaf thali downstairs, then Sri Veeramakaliamman Temple and the Indian Heritage Centre. Mustafa Centre if anything on the packing list needs replacing — it’s open 24 hours and sells literally everything.'},
+  {h:'13:00 · Peranakan Museum',p:'Small, superb, and the key to understanding the shophouses, the food and half the aesthetics of the city. Under two hours and entirely indoors, which suits the hour.'},
+  {h:'15:30 · Katong &amp; Joo Chiat',p:'The pastel Peranakan terrace houses on Koon Seng Road are the most photographed street in Singapore and still worth it. <b>328 Katong Laksa</b> is the argument-starting bowl. A 20-minute bus or train from town.'},
+  {h:'19:30 · Little India lit up',p:'The Deepavali light-up along Serangoon Road runs until 3 December, on from 19:00 to midnight — the festival itself was 8 November, so you get the arches and the crowds don’t. Then late supper wherever you land.'}
+]},
+{d:'Thu 19',w:'Full',name:'Ridges &amp; the bay',sub:'The outdoor day — take the clearest morning',meta:'Night 4',
+ slots:[
+  {h:'07:00 · Southern Ridges',p:'Ten kilometres of connected parks and canopy bridges from Mount Faber through <b>Henderson Waves</b> — the highest pedestrian bridge in the country — to Kent Ridge and Hort Park. Three hours at a walk, shaded most of the way, and effectively empty at seven. <b>Move this to whichever morning looks driest.</b>'},
+  {h:'11:00 · HarbourFront &amp; Tiong Bahru',p:'Down off the ridge and into the city. <b>Tiong Bahru</b> is 1930s Streamline Moderne housing, an old market with terrific shui kueh and chwee kueh, an independent bookshop and good coffee. The right place to be when the sky opens.'},
+  {h:'15:00 · Old Airport Road Food Centre',p:'The connoisseur’s hawker centre and the one worth the train. 150-plus stalls, the highest concentration of Michelin-listed hawkers anywhere. Hokkien prawn mee and rojak. Go hungry and order across three stalls.'},
+  {h:'18:30 · Marina Bay at dusk',p:'The waterfront promenade from the Merlion round to the Sands, best walked in the hour after sunset when it finally cools. <b>Spectra</b>, the free light and water show on the Event Plaza, runs nightly. The Sands observation deck is around S$30; the infinity pool is hotel guests only, whatever Instagram implies.'},
+  {h:'21:00 · Satay Street',p:'Lau Pa Sat, the 1894 cast-iron market hall. From about 19:00 the street beside it closes and the grills come out — satay by the stick, cold beer, plastic stools. Touristy and completely worth it as a last night.'}
+]},
+{d:'Fri 20',w:'Depart',name:'To Bali',sub:'One morning, then the short hop',meta:'Fly out',
+ slots:[
+  {h:'07:30 · Kaya toast and kopi',p:'The correct Singaporean breakfast and about S$3: charcoal-toasted bread with coconut jam and cold butter, two soft-boiled eggs with dark soy and white pepper, and a kopi. Ya Kun or Killiney if you want the chain version, any hawker centre if you don’t.'},
+  {h:'09:00 · Onward admin',p:'Last fast wifi for a while. Sort Indonesia’s <b>e-VOA</b> and electronic arrival card, and pay Bali’s IDR 150,000 tourist levy online rather than queueing for it at Denpasar. Repack around the clean laundry.'},
+  {m:1,h:'11:30 · Changi via Jewel',p:'Get there early and use it. <b>Jewel</b> sits before security and is free — the 40-metre Rain Vortex, the forest valley, and the best airport food court in the world. eTRS kiosks for any GST refund are in the departure hall before check-in for checked bags.'},
+  {m:1,h:'· SIN → DPS',p:'Stop 09, Indonesia. About 2h50, roughly fifteen departures a day across Singapore Airlines, Scoot, Jetstar, Garuda and TransNusa. Bali’s wet season opens in November — the honest exception on this itinerary, and the reason mornings matter there too.'}
+]}
+];
+
+document.getElementById('days').innerHTML=DAYS.map(D=>`
+  <div class="day">
+    <button class="day-btn" aria-expanded="false">
+      <span class="day-date">${D.d}<small>${D.w}</small></span>
+      <span><span class="day-name">${D.name}</span><span class="day-sub">${D.sub}</span></span>
+      <span class="day-meta">${D.meta}<span class="chev">▾</span></span>
+    </button>
+    <div class="day-body"><div class="day-inner"><div class="day-pad"><div class="slots">
+      ${D.slots.map(s=>`<div class="slot${s.m?' move':''}"><h4>${s.h}</h4><p>${s.p}</p></div>`).join('')}
+    </div></div></div></div>
+  </div>`).join('');
+
+document.querySelectorAll('.day-btn').forEach(b=>{
+  b.addEventListener('click',()=>{
+    const d=b.parentElement, open=d.classList.toggle('open');
+    b.setAttribute('aria-expanded',open?'true':'false');
+  });
+});
+document.querySelector('.day').classList.add('open');
+document.querySelector('.day-btn').setAttribute('aria-expanded','true');
+
+/* ============ WORTH DOING ============ */
+const ITEMS=[
+/* MARINA & CIVIC */
+{c:'Marina',t:'do',n:'Gardens by the Bay',w:'Cloud Forest is the one — a 35m indoor waterfall inside a mountain of mist, and the better of the two domes by a distance. Flower Dome ~S$28, Cloud Forest ~S$28, both ~S$48. The Supertree Grove outside is free.',when:'Late afternoon'},
+{c:'Marina',t:'do',n:'Garden Rhapsody',w:'The Supertrees’ light and sound show, ten minutes, twice a night, and it costs nothing. Lie on the grass underneath rather than watching from the rail.',when:'19:45 & 20:45'},
+{c:'Marina',t:'do',n:'National Gallery Singapore',w:'The old Supreme Court and City Hall stitched into one building. The best Southeast Asian art collection anywhere, and the architecture is worth the ticket on its own. Cool, quiet, three hours.',when:'Rain plan'},
+{c:'Marina',t:'do',n:'Marina Bay promenade at dusk',w:'Merlion round to the Sands and back over the Helix Bridge, in the hour after sunset when it finally drops below thirty. Spectra, the free light-and-water show on the Event Plaza, runs nightly.',when:'After 18:30'},
+{c:'Marina',t:'opt',n:'Sands SkyPark observation deck',w:'Around S$30 for the view from 200m. Genuinely good, and the only way up for non-guests — the infinity pool is hotel guests only. A drink at the rooftop bar costs about the same and includes a chair.',when:'Sunset'},
+{c:'Marina',t:'opt',n:'ArtScience Museum',w:'The lotus-shaped building at the Sands. Programming swings wildly between excellent and thin, so check what’s actually on before committing S$20-odd.',when:'Check listings'},
+{c:'Marina',t:'opt',n:'Asian Civilisations Museum',w:'Trade, faith and migration across Asia, in a beautiful riverside building. Pairs neatly with the National Gallery on a wet afternoon if one museum isn’t enough.',when:'Rain plan'},
+{c:'Marina',t:'opt',n:'Singapore Writers Festival',w:'Runs 13–22 Nov 2026, so your entire window sits inside it. Ticketed events around the Civic District and the Arts House, plus free fringe programming.',when:'Book ahead',b:1},
+{c:'Marina',t:'skip',n:'Singapore Flyer',w:'A large slow observation wheel with a worse view than the Sands deck at a similar price, and it takes half an hour. There is no version of three days where this earns a slot.',when:''},
+{c:'Marina',t:'skip',n:'Clarke Quay',w:'Riverside nightlife rebuilt for tourists and priced for expense accounts. Ann Siang Hill, Keong Saik or Kampong Glam do the same evening better and cheaper.',when:''},
+/* CHINATOWN & CBD */
+{c:'Chinatown',t:'do',n:'Chinatown Complex',w:'260-odd stalls over two floors, the biggest and cheapest hawker centre in the country. Hong Kong Soya Sauce Chicken was the world’s first Michelin-starred street stall, at under S$4 a plate.',when:'Any meal'},
+{c:'Chinatown',t:'do',n:'Maxwell Food Centre',w:'The one for a first hawker meal — central, legible, open-sided. Tian Tian is the famous chicken rice and the queue is real; Zhen Zhen porridge and China Street Fritters are what locals order.',when:'Lunch'},
+{c:'Chinatown',t:'do',n:'Lau Pa Sat & Satay Street',w:'An 1894 Victorian cast-iron market hall, and from about 19:00 the street beside it closes for charcoal satay grills, plastic stools and cold beer. Touristy, brilliant, unmissable as an evening.',when:'From 19:00'},
+{c:'Chinatown',t:'do',n:'Old Airport Road Food Centre',w:'Not in Chinatown and worth the train anyway. 150-plus stalls with the highest density of Michelin-listed hawkers anywhere on earth. Hokkien prawn mee, rojak, wings after dark.',when:'Worth the trip'},
+{c:'Chinatown',t:'do',n:'Buddha Tooth Relic Temple',w:'A vast Tang-style temple finished in 2007, five floors of it, gold everywhere, free. The rooftop garden with its prayer wheel is the part most visitors miss. Modest dress.',when:'Morning'},
+{c:'Chinatown',t:'opt',n:'Thian Hock Keng & Sri Mariamman',w:'The oldest Hokkien temple in Singapore, built without a single nail, and the oldest Hindu one, three streets apart. Ten minutes each and they cost nothing.',when:'En route'},
+{c:'Chinatown',t:'opt',n:'Ann Siang Hill & Club Street',w:'Restored shophouses on a low hill, full of small bars and restaurants, pedestrianised in the evenings. The best drink in the city that isn’t on a roof.',when:'After 18:00'},
+{c:'Chinatown',t:'opt',n:'Chinatown Heritage Centre',w:'Three restored shophouses showing how families actually lived in these buildings — cramped, shared, hot. A useful corrective to the pastel-shophouse version of the city.',when:'1 hour'},
+{c:'Chinatown',t:'skip',n:'Merlion Park',w:'A statue that spits water. Photograph it in passing on the Marina Bay walk and keep going; there is nothing else there and the queue for the photo is real.',when:''},
+{c:'Chinatown',t:'skip',n:'Chinatown Street Market',w:'Souvenir stalls on Pagoda Street selling the same fridge magnets as every other Chinatown on earth. The hawker centre one street over is the actual attraction.',when:''},
+/* QUARTERS */
+{c:'Quarters',t:'do',n:'Kampong Glam & Sultan Mosque',w:'The Malay-Arab quarter and the best-looking streets in Singapore. The mosque opens to visitors outside prayer times, robes lent at the door. Arab Street for textiles, Bussorah for coffee.',when:'Morning'},
+{c:'Quarters',t:'do',n:'Little India after dark',w:'The Deepavali light-up runs 30 Sep to 3 Dec 2026, on 19:00 to midnight — the festival was 8 November, so you get the arches without the crush. Loudest, densest streets in the country.',when:'From 19:00'},
+{c:'Quarters',t:'do',n:'Tekka Centre',w:'Wet market upstairs, and downstairs the best Indian food in the city — banana-leaf thali, biryani, fish head curry, thosai. Around S$6–10 and the antidote to a week of noodles.',when:'Lunch'},
+{c:'Quarters',t:'do',n:'Peranakan Museum',w:'Small, superb, and the key to the shophouses, the laksa and half the city’s aesthetics. Under two hours, fully indoors. The single most useful museum here for making sense of the rest.',when:'Rain plan'},
+{c:'Quarters',t:'do',n:'Katong & Joo Chiat',w:'Pastel Peranakan terraces on Koon Seng Road, the most photographed street in Singapore and still worth it. 328 Katong Laksa is the bowl people argue about.',when:'Afternoon'},
+{c:'Quarters',t:'opt',n:'Mustafa Centre',w:'Open 24 hours, sells everything, and priced well below anywhere else. The right place to replace whatever Nepal destroyed. Chaotic in a way nothing else in Singapore is.',when:'Any time'},
+{c:'Quarters',t:'opt',n:'Tiong Bahru',w:'1930s Streamline Moderne public housing, an old market with terrific chwee kueh, an independent bookshop and good coffee. Low-key, residential, entirely pleasant.',when:'Half morning'},
+{c:'Quarters',t:'opt',n:'Haw Par Villa',w:'A free 1937 theme park of Chinese mythology including the Ten Courts of Hell, rendered in lurid concrete. Genuinely strange and completely unlike anything else here. Fully outdoors.',when:'Dry morning'},
+{c:'Quarters',t:'skip',n:'Orchard Road',w:'Excellent if you are shopping for brands, nothing to look at if you are not. The underground link is useful in a downpour; the street itself is a mall with weather.',when:''},
+/* GREEN */
+{c:'Green',t:'do',n:'Singapore Botanic Gardens',w:'A UNESCO World Heritage site, free, open from dawn. The National Orchid Garden inside opens 08:30 and is the only paid section — the one part worth paying for.',when:'From 07:00'},
+{c:'Green',t:'do',n:'Southern Ridges',w:'Ten kilometres of connected parks and canopy bridges, Mount Faber to Kent Ridge, over Henderson Waves. Three hours, shaded, empty at seven, and free. Take whichever morning looks driest.',when:'07:00, dry day'},
+{c:'Green',t:'opt',n:'MacRitchie TreeTop Walk',w:'A 250m suspension bridge through rainforest canopy with monkeys and monitor lizards under it. Free, but the loop is 10km-plus and completely exposed to weather — a bad rainy-season bet.',when:'Half day, dry'},
+{c:'Green',t:'opt',n:'Pulau Ubin',w:'A ten-minute bumboat to the last kampong island — dirt tracks, rented bicycles, mangroves, hornbills, and no city at all. Superb, and the first thing to cancel if the sky looks wrong.',when:'Full day, dry'},
+{c:'Green',t:'opt',n:'Fort Canning Park',w:'A hill in the middle of town with the Instagram spiral staircase, an ancient Javanese-era archaeological site and the WWII Battlebox bunker. Twenty minutes’ walk from the Civic District.',when:'En route'},
+{c:'Green',t:'opt',n:'Sungei Buloh Wetland Reserve',w:'Mangrove boardwalks, mudskippers, monitor lizards and migratory waders — November is inside the migration season. An hour each way from town and fully outdoors.',when:'Dry morning'},
+{c:'Green',t:'opt',n:'Night Safari',w:'The zoo at night, by tram, and it does the thing it promises. It’s also around S$55, an hour out at Mandai, and eats a whole evening you could spend eating. A maybe, not a must.',when:'Book ahead',b:1},
+{c:'Green',t:'skip',n:'Singapore Zoo & Bird Paradise',w:'Both genuinely excellent and both full days at Mandai with a ticket to match. On three days in a city this dense, they cost more than they return. Come back with children.',when:''},
+/* ISLANDS */
+{c:'Islands',t:'opt',n:'Singapore Oceanarium',w:'The rebuilt and much-expanded S.E.A. Aquarium, reopened on Sentosa in 2025 across 22 zones. Good, indoors, and a solid rainy-afternoon fallback if Sentosa is already on the list.',when:'Rain plan'},
+{c:'Islands',t:'opt',n:'Universal Studios Singapore',w:'Compact, well-run, and about S$85. Worth it if theme parks are your thing and a full-day write-off if they aren’t. Book online for the timed entry.',when:'Book ahead',b:1},
+{c:'Islands',t:'skip',n:'Sentosa beaches',w:'Imported sand, container ships on the horizon, and it is raining. Every beach later on this trip — El Nido, Zanzibar, the Maldives — makes this look like what it is.',when:''},
+{c:'Islands',t:'skip',n:'Jewel Changi as a day trip',w:'Not because it isn’t good — the Rain Vortex is spectacular and it’s free. But you have a departure morning at Changi already. See it then and save the afternoon.',when:'See on 20 Nov'}
+];
+
+const TIERLBL={do:'Do',opt:'Maybe',skip:'Skip'};
+let FC='all', FT=null, FB=false;
+
+function renderItems(){
+  const list=ITEMS.filter(x=>
+    (FC==='all'||x.c===FC) && (!FT||x.t===FT) && (!FB||x.b));
+  const host=document.getElementById('items');
+  if(!list.length){host.innerHTML='<div class="empty">No entries match those filters.</div>';return}
+  host.innerHTML=list.map(x=>`
+    <div class="item">
+      <span class="tier ${x.t}">${TIERLBL[x.t]}</span>
+      <span class="nm">${x.n}</span>
+      <span class="when${x.b?' book':''}">${x.when||'&nbsp;'}</span>
+      <span class="why">${x.w}</span>
+    </div>`).join('');
+}
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  if(b.dataset.city){FC=b.dataset.city}
+  else if(b.dataset.tier){FT = FT===b.dataset.tier?null:b.dataset.tier}
+  else if(b.dataset.book){FB=!FB}
+  document.querySelectorAll('#filters .fbtn').forEach(x=>{
+    let on=false;
+    if(x.dataset.city) on = x.dataset.city===FC;
+    if(x.dataset.tier) on = x.dataset.tier===FT;
+    if(x.dataset.book) on = FB;
+    x.setAttribute('aria-pressed',on?'true':'false');
+  });
+  renderItems();
+});
+renderItems();
+
+/* ============ FIG 1: TIME AUDIT ============ */
+(function(){
+  const svg=document.getElementById('audit-chart');
+  const W=1400,H=190,pad=40,barY=70,barH=54;
+  const start=new Date(2026,10,16), end=new Date(2026,10,21);
+  const totalH=(end-start)/36e5;
+  const x=h=>pad+(h/totalH)*(W-2*pad);
+  const segs=[
+    {a:0,b:16,cls:'t',label:'16 Nov — flight from Kathmandu'},
+    {a:16,b:24,cls:'p',label:'16 Nov PM — arrival evening'},
+    {a:24,b:48,cls:'f',label:'17 Nov — full day'},
+    {a:48,b:72,cls:'f',label:'18 Nov — full day'},
+    {a:72,b:96,cls:'f',label:'19 Nov — full day'},
+    {a:96,b:107,cls:'p',label:'20 Nov AM — last morning'},
+    {a:107,b:120,cls:'t2',label:'20 Nov — flight to Bali'}
+  ];
+  const colors={t:'var(--magenta)',t2:'rgba(231,100,155,.55)',p:'rgba(242,169,60,.35)',f:'var(--amber)'};
+  let s=`<rect x="0" y="0" width="${W}" height="${H}" fill="none"/>`;
+  segs.forEach(sg=>{
+    const x1=x(sg.a),x2=x(sg.b);
+    s+=`<rect x="${x1}" y="${barY}" width="${x2-x1-1}" height="${barH}" fill="${colors[sg.cls]}"/>`;
+  });
+  for(let d=0;d<=5;d++){
+    const hh=d*24, xx=x(hh);
+    const dt=new Date(start.getTime()+hh*36e5);
+    s+=`<line x1="${xx}" y1="${barY-6}" x2="${xx}" y2="${barY+barH+6}" class="axs"/>`;
+    s+=`<text x="${xx}" y="${barY-14}" class="lbl" text-anchor="${d===0?'start':d===5?'end':'middle'}">${dt.toLocaleDateString('en-CA',{day:'2-digit',month:'short'})}</text>`;
+  }
+  s+=`<line x1="${pad}" y1="${barY+barH+0.5}" x2="${W-pad}" y2="${barY+barH+0.5}" class="ax"/>`;
+  s+=`<text x="${x(24)}" y="${barY+barH+34}" class="lbl-a">3 full days — 17→19 Nov</text>`;
+  s+=`<text x="${x(0)}" y="${barY+barH+34}" class="lbl">↙ SQ441, 5h, +2h15 on the clock</text>`;
+  svg.innerHTML=s;
+})();
+
+/* ============ FIG 2: RAIN BY MONTH ============ */
+(function(){
+  const svg=document.getElementById('rain-chart');
+  const W=1400,H=340,padL=56,padR=56,padT=30,padB=54;
+  const MO=[
+    {n:'Jan',mm:220,d:11},{n:'Feb',mm:105,d:6},{n:'Mar',mm:150,d:9},{n:'Apr',mm:165,d:11},
+    {n:'May',mm:165,d:11},{n:'Jun',mm:135,d:10},{n:'Jul',mm:145,d:10},{n:'Aug',mm:150,d:11},
+    {n:'Sep',mm:125,d:10},{n:'Oct',mm:165,d:12},{n:'Nov',mm:255,d:15},{n:'Dec',mm:330,d:16}
+  ];
+  const bw=(W-padL-padR)/MO.length;
+  const maxMM=350, maxD=20;
+  const y=v=>padT+(1-v/maxMM)*(H-padT-padB);
+  const yd=v=>padT+(1-v/maxD)*(H-padT-padB);
+  let s='';
+  [0,100,200,300].forEach(v=>{
+    s+=`<line x1="${padL}" y1="${y(v)}" x2="${W-padR}" y2="${y(v)}" class="axs"/>`;
+    s+=`<text x="${padL-10}" y="${y(v)+4}" class="lbl" text-anchor="end">${v}</text>`;
+  });
+  [0,5,10,15,20].forEach(v=>{
+    s+=`<text x="${W-padR+10}" y="${yd(v)+4}" class="lbl" text-anchor="start" fill="var(--magenta)" opacity=".8">${v}d</text>`;
+  });
+  const novX=padL+10*bw;
+  s+=`<rect x="${novX}" y="${padT-16}" width="${bw}" height="${H-padB-padT+16}" fill="rgba(231,100,155,.14)" stroke="var(--magenta)" stroke-width="1"/>`;
+  s+=`<text x="${novX+bw/2}" y="${padT-22}" class="lbl-a" text-anchor="middle" fill="var(--magenta)">You are here</text>`;
+  MO.forEach((m,i)=>{
+    const x0=padL+i*bw+bw*0.2, bwid=bw*0.6;
+    const hot=m.n==='Nov';
+    s+=`<rect x="${x0}" y="${y(m.mm)}" width="${bwid}" height="${H-padB-y(m.mm)}" fill="${hot?'var(--amber)':'rgba(242,169,60,.32)'}" rx="1"/>`;
+    s+=`<text x="${x0+bwid/2}" y="${H-padB+18}" class="lbl" text-anchor="middle" ${hot?'fill="var(--amber)"':''}>${m.n}</text>`;
+    s+=`<text x="${x0+bwid/2}" y="${y(m.mm)-8}" class="${hot?'lbl-a':'lbl'}" text-anchor="middle">${m.mm}</text>`;
+  });
+  const pts=MO.map((m,i)=>`${padL+i*bw+bw/2},${yd(m.d)}`).join(' ');
+  s+=`<polyline points="${pts}" fill="none" stroke="var(--magenta)" stroke-width="2"/>`;
+  MO.forEach((m,i)=>{
+    s+=`<circle cx="${padL+i*bw+bw/2}" cy="${yd(m.d)}" r="${m.n==='Nov'?4.5:3}" fill="var(--magenta)"/>`;
+  });
+  s+=`<line x1="${padL}" y1="${H-padB}" x2="${W-padR}" y2="${H-padB}" class="ax"/>`;
+  s+=`<text x="${padL-10}" y="${padT-10}" class="lbl" text-anchor="end">mm</text>`;
+  svg.innerHTML=s;
+})();
+
+/* ============ FIG 3: SUNSHINE HOURS ============ */
+(function(){
+  const svg=document.getElementById('sun-chart');
+  const W=1400,H=260,padL=56,padR=30,padT=24,padB=48;
+  const MO=[
+    {n:'Jan',v:5.5},{n:'Feb',v:6.5},{n:'Mar',v:6.0},{n:'Apr',v:6.0},
+    {n:'May',v:6.0},{n:'Jun',v:6.0},{n:'Jul',v:6.0},{n:'Aug',v:6.0},
+    {n:'Sep',v:5.0},{n:'Oct',v:5.0},{n:'Nov',v:4.5},{n:'Dec',v:4.5}
+  ];
+  const bw=(W-padL-padR)/MO.length;
+  const y=v=>padT+(1-v/7)*(H-padT-padB);
+  let s='';
+  [0,2,4,6].forEach(v=>{
+    s+=`<line x1="${padL}" y1="${y(v)}" x2="${W-padR}" y2="${y(v)}" class="axs"/>`;
+    s+=`<text x="${padL-10}" y="${y(v)+4}" class="lbl" text-anchor="end">${v}h</text>`;
+  });
+  MO.forEach((m,i)=>{
+    const x0=padL+i*bw+bw*0.2, bwid=bw*0.6;
+    const hot=m.n==='Nov';
+    s+=`<rect x="${x0}" y="${y(m.v)}" width="${bwid}" height="${H-padB-y(m.v)}" fill="${hot?'var(--amber)':'rgba(242,169,60,.28)'}" rx="1"/>`;
+    s+=`<text x="${x0+bwid/2}" y="${H-padB+18}" class="lbl" text-anchor="middle" ${hot?'fill="var(--amber)"':''}>${m.n}</text>`;
+    s+=`<text x="${x0+bwid/2}" y="${y(m.v)-8}" class="${hot?'lbl-a':'lbl'}" text-anchor="middle">${m.v}</text>`;
+  });
+  s+=`<line x1="${padL}" y1="${H-padB}" x2="${W-padR}" y2="${H-padB}" class="ax"/>`;
+  svg.innerHTML=s;
+})();
+
+/* ============ TOURIST PASS CALCULATOR ============ */
+const TRIPS=[
+  {n:'Changi Airport → Chinatown (arrival)',c:2.20,def:true},
+  {n:'Chinatown → Botanic Gardens',c:1.70,def:true},
+  {n:'Botanic Gardens → Bras Basah (National Gallery)',c:1.60,def:true},
+  {n:'City Hall → Bayfront (Gardens by the Bay)',c:1.28,def:true},
+  {n:'Bayfront → Chinatown (late)',c:1.28,def:true},
+  {n:'Chinatown → Bugis (Kampong Glam)',c:1.28,def:true},
+  {n:'Bugis → Little India',c:1.28,def:true},
+  {n:'Little India → Bras Basah (Peranakan Museum)',c:1.28,def:true},
+  {n:'Bras Basah → Marine Parade (Katong)',c:1.60,def:true},
+  {n:'Katong → Little India (evening)',c:1.90,def:true},
+  {n:'Chinatown → HarbourFront (Southern Ridges)',c:1.40,def:true},
+  {n:'Kent Ridge → Tiong Bahru',c:1.40,def:true},
+  {n:'Tiong Bahru → Dakota (Old Airport Rd)',c:1.60,def:true},
+  {n:'Dakota → Raffles Place (Marina Bay)',c:1.60,def:true},
+  {n:'Marina Bay → Chinatown (last night)',c:1.28,def:true},
+  {n:'Chinatown → Changi Airport (departure)',c:2.20,def:true},
+  {n:'Assorted bus hops, six of them',c:7.70,def:false},
+  {n:'Grab across town, once',c:12.00,def:false}
+];
+const DAYFEE=0.60, DAYS_N=5, PASS=45;
+function renderLegs(){
+  document.getElementById('legs').innerHTML=TRIPS.map((l,i)=>`
+    <label class="leg-row">
+      <input type="checkbox" data-i="${i}" ${l.def?'checked':''}>
+      <span class="lname">${l.n}</span>
+      <span class="lyen">S$${l.c.toFixed(2)}</span>
+    </label>`).join('');
+}
+function calcTotals(){
+  let total=0;
+  document.querySelectorAll('#legs input[type="checkbox"]').forEach(cb=>{
+    if(cb.checked) total+=TRIPS[Number(cb.dataset.i)].c;
+  });
+  const fees=DAYFEE*DAYS_N;
+  const grand=total+fees;
+  const diff=PASS-grand;
+  document.getElementById('ptp').innerHTML=`S$${grand.toFixed(2)}<small>incl. S$${fees.toFixed(2)} card fees</small>`;
+  const dEl=document.getElementById('diff');
+  const vEl=document.getElementById('verdict');
+  if(total===0){
+    dEl.innerHTML='—'; vEl.textContent='Select journeys above'; vEl.className='';
+  } else if(diff>0){
+    dEl.innerHTML=`S$${diff.toFixed(2)}<small>pass costs more</small>`;
+    vEl.textContent='Just tap your card'; vEl.className='lose';
+  } else {
+    dEl.innerHTML=`S$${Math.abs(diff).toFixed(2)}<small>pass saves you</small>`;
+    vEl.textContent='Pass wins'; vEl.className='win';
+  }
+}
+renderLegs();
+document.getElementById('legs').addEventListener('change',calcTotals);
+calcTotals();
+</script>
+
+</body>
+</html>

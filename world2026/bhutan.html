@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="darkreader-lock">
+<title>Bhutan</title>
+<link rel="stylesheet" href="fonts.css">
+</head>
+<body>
+<style>
+:root{color-scheme:dark;
+  --ink:#05161D;--ink-2:#0A2029;--ink-3:#0E2A35;
+  --rule:#194150;--rule-soft:rgba(25,65,80,.6);
+  --paper:#E2EEED;--paper-dim:#A6C2C6;--muted:#6C8F98;
+  --amber:#F2A93C;--magenta:#E7649B;--jade:#58C4A3;--red:#E05555;
+  --display:'Big Shoulders Display','Arial Narrow',Impact,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --body:'Inter',system-ui,sans-serif;
+  --gut:clamp(18px,4vw,64px);--maxw:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+.section{padding-block:clamp(34px,4.4vw,58px);border-top:1px solid var(--rule-soft);position:relative}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:14px;margin:0 0 18px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--rule)}
+.eyebrow .n{color:var(--amber)}
+h2.head{font-family:var(--display);font-weight:700;font-size:clamp(34px,5.6vw,66px);line-height:.92;margin:0 0 14px;text-transform:uppercase}
+.lede{max-width:66ch;color:var(--paper-dim);font-size:clamp(15px,1.5vw,17px);margin:0 0 26px}
+.lede b{color:var(--paper);font-weight:600}
+a{color:var(--amber);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+.hint{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+@media (min-width:980px){.hint.wide{display:none}}
+.scroller{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--rule) transparent}
+.scroller::-webkit-scrollbar{height:6px}
+.scroller::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}
+.scroller>svg{display:block;width:100%;height:auto}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(30px,5vw,58px) clamp(24px,4vw,40px);overflow:hidden}
+.gridbg{position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:linear-gradient(to right,var(--rule-soft) 1px,transparent 1px),linear-gradient(to bottom,var(--rule-soft) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%);-webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%)}
+.back{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:inline-block;margin-bottom:20px}
+.back:hover{color:var(--amber)}
+.strip{font-family:var(--mono);font-size:clamp(10px,1.15vw,12px);letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;border-block:1px solid var(--rule);padding-block:11px;margin-bottom:clamp(26px,4vw,44px)}
+.strip .k{color:var(--muted)}.strip .amb{color:var(--amber)}
+.title{font-family:var(--display);text-transform:uppercase;margin:0;line-height:.82;position:relative}
+.title .l1{display:block;font-weight:400;font-size:clamp(34px,7.4vw,96px);color:transparent;-webkit-text-stroke:1.2px var(--paper-dim)}
+.title .l2{display:block;font-weight:800;font-size:clamp(72px,17vw,232px);letter-spacing:-.015em;color:var(--paper)}
+.subline{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:baseline;margin-top:clamp(18px,3vw,30px);font-family:var(--mono);font-size:clamp(11px,1.25vw,13px);letter-spacing:.14em;text-transform:uppercase;color:var(--paper-dim)}
+.subline .sep{color:var(--rule)}
+
+/* instruments */
+.instr{display:grid;grid-template-columns:repeat(auto-fit,minmax(124px,1fr));border:1px solid var(--rule);background:var(--ink-2);margin:clamp(24px,3.4vw,38px) 0 0}
+.instr div{padding:15px 17px;border-right:1px solid var(--rule-soft)}
+.instr div:last-child{border-right:0}
+.instr dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.instr dd{margin:0;font-family:var(--display);font-weight:600;font-size:31px;line-height:1}
+.instr dd span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--paper-dim);margin-left:3px}
+.instr dd.hot{color:var(--amber)}
+.instr dd.warn{color:var(--magenta)}
+
+/* chart frames */
+.figcap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:9px;margin:0 0 8px}
+.figcap b{color:var(--amber);font-weight:500}
+.fignote{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.fignote i{display:inline-block;width:14px;height:9px;margin:0 5px 0 14px;vertical-align:middle;border-radius:1px}
+.fignote i:first-child{margin-left:0}
+.ax{stroke:var(--rule);stroke-width:1}
+.axs{stroke:var(--rule-soft);stroke-width:1}
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.08em;fill:var(--muted)}
+.lbl-p{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;fill:var(--paper)}
+.lbl-a{font-family:var(--mono);font-size:10px;letter-spacing:.12em;fill:var(--amber)}
+
+/* cards */
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin:0 0 6px}
+.card{border:1px solid var(--rule);background:var(--ink-2);padding:18px 20px;position:relative}
+.card.bad{border-color:var(--red)}
+.card.good{border-color:var(--jade)}
+.card h3{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 4px;color:var(--paper)}
+.card .verdict{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:11px}
+.card .verdict.bad{color:var(--red)}
+.card .verdict.ok{color:var(--jade)}
+.card p{margin:0 0 10px;font-size:13.5px;color:var(--paper-dim);line-height:1.62}
+.card p:last-child{margin-bottom:0}
+.card p b{color:var(--paper);font-weight:600}
+.fix{border-left:2px solid var(--amber);padding-left:12px;margin:12px 0 0;font-size:12.8px;color:var(--paper-dim);line-height:1.6}
+.fix b{display:block;color:var(--amber);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px;font-weight:500}
+.fix strong{color:var(--paper);font-weight:600}
+
+/* shape cards */
+.shapes{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+.shape{border:1px solid var(--rule);background:var(--ink-2);padding:0;display:flex;flex-direction:column}
+.shape.pick{border-color:var(--amber);box-shadow:inset 0 0 0 1px rgba(242,169,60,.25)}
+.shape-hd{padding:16px 20px 14px;border-bottom:1px solid var(--rule-soft)}
+.shape-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.shape.pick .shape-tag{color:var(--amber)}
+.shape-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(24px,3vw,32px);line-height:.95;margin:0}
+.chainrow{display:flex;flex-wrap:wrap;align-items:center;gap:5px 7px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--paper);padding:13px 20px;border-bottom:1px solid var(--rule-soft);background:rgba(5,22,29,.5)}
+.chainrow .a{color:var(--rule)}
+.chainrow .n{color:var(--amber);font-size:9.5px}
+.shape-body{padding:15px 20px 18px;flex:1}
+.shape-body p{margin:0 0 10px;font-size:13.3px;color:var(--paper-dim);line-height:1.6}
+.shape-body p:last-child{margin-bottom:0}
+.shape-body p b{color:var(--paper);font-weight:600}
+.shape-meta{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--rule-soft)}
+.shape-meta div{flex:1;min-width:88px;padding:11px 20px;border-right:1px solid var(--rule-soft)}
+.shape-meta div:last-child{border-right:0}
+.shape-meta dt{font-family:var(--mono);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.shape-meta dd{margin:0;font-family:var(--mono);font-size:13px;color:var(--paper)}
+.shape-meta dd.g{color:var(--jade)}
+.shape-meta dd.r{color:var(--red)}
+
+/* day accordion */
+.days{border-top:1px solid var(--rule)}
+.day{border-bottom:1px solid var(--rule)}
+.day-btn{all:unset;box-sizing:border-box;display:grid;width:100%;cursor:pointer;grid-template-columns:76px 1fr auto;gap:0 clamp(14px,2.4vw,30px);align-items:baseline;padding:clamp(13px,1.8vw,18px) 4px;transition:background .18s ease}
+.day-btn:hover{background:rgba(242,169,60,.05)}
+.day-btn:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.day-date{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.1em}
+.day-date small{display:block;color:var(--muted);font-size:9.5px;letter-spacing:.14em;margin-top:3px}
+.day-btn>span:nth-child(2){display:flex;flex-direction:column;gap:6px}
+.day-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(22px,3.2vw,34px);line-height:.95;margin:0}
+.day-sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.day-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--paper-dim);text-align:right;white-space:nowrap}
+.day-meta .chev{display:inline-block;margin-left:12px;color:var(--muted);transition:transform .25s ease}
+.day.open .day-meta .chev{transform:rotate(180deg)}
+@media (max-width:720px){.day-btn{grid-template-columns:64px 1fr;row-gap:8px}.day-meta{grid-column:2;text-align:left}}
+.day-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .34s cubic-bezier(.3,.8,.3,1)}
+.day.open .day-body{grid-template-rows:1fr}
+.day-inner{overflow:hidden}
+.day-pad{padding:2px 4px clamp(22px,3vw,32px)}
+.slots{display:grid;gap:0;border-left:1px solid var(--rule)}
+.slot{padding:0 0 16px 16px;position:relative}
+.slot:last-child{padding-bottom:2px}
+.slot::before{content:"";position:absolute;left:-4px;top:6px;width:7px;height:7px;background:var(--amber);border-radius:50%}
+.slot.move::before{background:var(--magenta)}
+.slot h4{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 5px;font-weight:500}
+.slot.move h4{color:var(--magenta)}
+.slot p{margin:0;font-size:14px;line-height:1.62;color:var(--paper-dim);max-width:72ch}
+.slot p b{color:var(--paper);font-weight:600}
+
+/* worth doing */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.fbtn{all:unset;cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border:1px solid var(--rule);color:var(--paper-dim);border-radius:2px;transition:.15s}
+.fbtn:hover{background:var(--ink-3);color:var(--paper)}
+.fbtn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.fbtn[aria-pressed="true"]{background:var(--amber);color:var(--ink);border-color:var(--amber);font-weight:600}
+.fdiv{width:1px;background:var(--rule);margin:2px 6px}
+.items{display:grid;gap:1px;background:var(--rule-soft);border:1px solid var(--rule)}
+.item{background:var(--ink-2);padding:13px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:baseline}
+.item .tier{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:3px 7px 2px;border-radius:2px;white-space:nowrap;align-self:start;margin-top:2px}
+.tier.do{background:rgba(88,196,163,.14);color:var(--jade);border:1px solid rgba(88,196,163,.35)}
+.tier.opt{background:rgba(242,169,60,.12);color:var(--amber);border:1px solid rgba(242,169,60,.3)}
+.tier.skip{background:rgba(224,85,85,.1);color:var(--red);border:1px solid rgba(224,85,85,.3)}
+.item .nm{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:20px;line-height:1.05;color:var(--paper)}
+.item .why{grid-column:2;font-size:13.3px;color:var(--paper-dim);line-height:1.55;max-width:74ch}
+.item .why b{color:var(--paper);font-weight:600}
+.item .when{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);text-align:right;white-space:nowrap;align-self:start;margin-top:4px}
+.item .when.book{color:var(--magenta)}
+@media (max-width:640px){.item{grid-template-columns:auto 1fr}.item .when{grid-column:2;text-align:left;margin-top:2px}.item .why{grid-column:1/-1}}
+.empty{background:var(--ink-2);padding:22px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* cost calc */
+.calc{border:1px solid var(--rule);background:var(--ink-2)}
+.calc-legs{display:grid}
+.leg-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--rule-soft);cursor:pointer}
+.leg-row:hover{background:rgba(242,169,60,.04)}
+.leg-row input{accent-color:var(--amber);width:15px;height:15px;cursor:pointer}
+.leg-row .lname{font-family:var(--mono);font-size:12.5px;color:var(--paper-dim)}
+.leg-row input:checked+.lname{color:var(--paper)}
+.leg-row .lyen{font-family:var(--mono);font-size:12.5px;color:var(--amber);font-variant-numeric:tabular-nums;white-space:nowrap}
+.leg-row .lnote{grid-column:2/-1;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--muted);margin-top:-4px}
+.leg-row.fixed{cursor:default;background:rgba(5,22,29,.45)}
+.leg-row.fixed .lock{font-family:var(--mono);font-size:11px;color:var(--muted);width:15px;text-align:center}
+.calc-out{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule-soft)}
+.calc-out div{background:var(--ink-3);padding:15px 17px}
+.calc-out dt{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.calc-out dd{margin:0;font-family:var(--display);font-weight:700;font-size:27px;line-height:1;font-variant-numeric:tabular-nums}
+.calc-out dd small{font-family:var(--mono);font-size:10px;font-weight:400;color:var(--paper-dim);margin-left:4px;letter-spacing:.06em}
+#verdict{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;line-height:1.5}
+#verdict.win{color:var(--jade)}
+#verdict.lose{color:var(--red)}
+
+/* panels / tables */
+.panel{border:1px solid var(--rule);background:var(--ink-2);padding:clamp(17px,2.4vw,24px);margin-top:22px}
+.panel h3{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 12px;font-weight:500}
+.panel p{margin:0 0 12px;font-size:13.6px;color:var(--paper-dim);line-height:1.62}
+.panel p:last-child{margin-bottom:0}
+.panel p b{color:var(--paper);font-weight:600}
+table.ref{width:100%;border-collapse:collapse;font-size:13.4px}
+table.ref th{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:500;padding:0 14px 10px 0;border-bottom:1px solid var(--rule)}
+table.ref td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule-soft);color:var(--paper-dim);vertical-align:top}
+table.ref td:first-child{font-family:var(--display);font-size:17px;font-weight:600;text-transform:uppercase;color:var(--paper);white-space:nowrap;width:1%}
+table.ref td.t{font-family:var(--mono);font-size:11px;letter-spacing:.06em;white-space:nowrap;color:var(--amber)}
+table.ref tr.flag td.t{color:var(--magenta)}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.cols{display:grid;gap:16px 34px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:20px}
+.cols p{margin:0;font-size:13.6px;color:var(--paper-dim);line-height:1.6}
+.cols p strong{color:var(--paper);font-weight:600}
+.cols p b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:5px;font-weight:500}
+
+footer{border-top:1px solid var(--rule);padding-block:26px 40px;color:var(--muted)}
+.foot-grid{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:flex-end}
+.foot-grid p{margin:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase}
+.foot-mark{font-family:var(--display);font-size:clamp(40px,9vw,110px);font-weight:800;text-transform:uppercase;line-height:.8;color:transparent;-webkit-text-stroke:1px var(--rule);margin:30px 0 0}
+</style>
+
+<header class="hero">
+  <div class="gridbg"></div>
+  <div class="wrap">
+    <a class="back" href="index.html">← Westbound · the dossier</a>
+    <p class="strip">
+      <span><span class="k">Stop</span> <span class="amb">06 of 27</span></span>
+      <span><span class="k">In</span> BKK · Bangkok</span>
+      <span><span class="k">Fly Bhutan</span> <span class="amb">PBH</span></span>
+      <span><span class="k">Out</span> KTM · Kathmandu</span>
+      <span><span class="k">Window</span> 7–11 Nov 2026</span>
+      <span><span class="k">Clock</span> UTC+6</span>
+    </p>
+    <h1 class="title">
+      <span class="l1">Stop six</span>
+      <span class="l2">Bhutan</span>
+    </h1>
+    <p class="subline">
+      <span>Drukair BKK→PBH, 05:00</span><span class="sep">/</span>
+      <span>US$440 before a single hotel night</span><span class="sep">/</span>
+      <span>Guide legally required</span>
+    </p>
+
+    <dl class="instr">
+      <div><dt>Calendar days</dt><dd>5</dd></div>
+      <div><dt>Usable days</dt><dd class="hot">4</dd></div>
+      <div><dt>Nights</dt><dd>4</dd></div>
+      <div><dt>SDF payable</dt><dd class="warn">$400</dd></div>
+      <div><dt>Paro elevation</dt><dd>2,235<span>m</span></dd></div>
+      <div><dt>Taktsang top</dt><dd>3,120<span>m</span></dd></div>
+    </dl>
+  </div>
+</header>
+
+<section class="section" id="cost">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">01</span> The entry fee</p>
+    <h2 class="head">The only country<br>with a turnstile</h2>
+    <p class="lede">Every other stop on this trip charges you nothing to exist inside it. Bhutan charges <b>US$100 per person per night</b> — the Sustainable Development Fee — plus a US$40 visa fee, before you have booked a bed or eaten a meal. That is deliberate: the policy is "high value, low volume", and the fee is the volume control. On four nights it comes to <b>US$440 a head just to be admitted</b>.</p>
+    <p class="lede">The good news is timing. The SDF was US$200 a night until September 2023; the 50% discount that brought it to $100 <b>runs through 31 August 2027</b>, so your window sits comfortably inside the cheap era. The other thing worth knowing before you build a budget: a licensed Bhutanese guide is not optional for most of what you came to see, so the guide and vehicle are effectively a second entry fee. Tick what applies and watch the floor move.</p>
+
+    <div class="calc">
+      <div class="calc-legs" id="legs"></div>
+      <dl class="calc-out">
+        <div><dt>Government fees</dt><dd id="gov"></dd></div>
+        <div><dt>Ground &amp; entries</dt><dd id="ground"></dd></div>
+        <div><dt>Floor, per person</dt><dd id="total"></dd></div>
+        <div><dt>Per usable day</dt><dd><span id="verdict"></span></dd></div>
+      </dl>
+    </div>
+    <p class="fignote">Excludes flights and accommodation · guide, driver and monument rates are typical 2026 independent-booking figures and vary by operator — confirm in writing before you pay</p>
+
+    <div class="panel">
+      <h3>What the SDF is and isn't</h3>
+      <p>It is a government levy, paid up front with the visa application, that funds free healthcare and schooling, forest cover above 70%, and trail and monument upkeep. It is <b>not</b> a tour package: it buys you no hotel, no meals, no guide and no transport. Those are all separate, and Bhutan has no hostel-and-local-bus underlayer to fall back on the way Thailand does.</p>
+      <p>Children under 6 travel free; ages 6–11 pay half. Indian nationals pay Nu 1,200 a night on a separate permit system. Day-trippers who stay inside the border towns of Phuentsholing, Samtse, Gelephu or Samdrup Jongkhar and leave within 24 hours are exempt — irrelevant to you, since you arrive by air into the interior.</p>
+      <p><b>The counting rule is per night, not per day.</b> Arriving 7 November and flying out on the 11th is four nights, so four SDF nights: US$400. Don't let an operator quote you five.</p>
+    </div>
+
+    <div class="panel">
+      <h3>The one genuine way to spend less</h3>
+      <p>Since September 2023 you are no longer required to book through a licensed tour operator — you can apply for the visa yourself on the government portal and hire a guide directly, which typically runs <b>US$40–50 a day</b> against the US$150–200 a day an all-in package charges. That difference over four days is real money.</p>
+      <p>The catch is that you then arrange your own hotel, vehicle, driver and permits, in a country where almost nothing is bookable on the platforms you're used to and where a wrong guess about which monument needs a guide costs you the monument. On a five-day stop wedged between Bangkok and Kathmandu, an operator handling the logistics is defensible. On a five-week stay it obviously isn't. <b>Decide which you are.</b></p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="arrive">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">02</span> Getting in</p>
+    <h2 class="head">A 05:00 flight<br>into a valley</h2>
+    <p class="lede">Bangkok sits immediately before Bhutan on this itinerary for exactly one reason: Drukair flies BKK–PBH direct, and there are very few doors into this country. That convenience comes with an alarm clock. Drukair's <b>KB153 leaves Bangkok at 05:00 and lands in Paro at 07:15</b> on the July–November 2026 timetable — which means leaving your Bangkok hotel around 02:30, on the last night of stop 05.</p>
+
+    <div class="cards">
+      <div class="card bad">
+        <h3>7 November is a Saturday</h3>
+        <div class="verdict bad">Check this first, before anything else</div>
+        <p>Drukair publishes its schedule in <b>monthly PDFs, usually three to six months out</b>, and the operating days move. The March 2026 timetable ran KB153 six days a week — Monday through Friday plus Sunday, with <b>Saturday the one day it did not fly</b>. Agents currently advertise the route as daily. Both cannot be true for every month.</p>
+        <p>Your arrival day is a Saturday. If November 2026 repeats the March pattern, the direct flight you have planned around does not exist on the date you need it.</p>
+        <div class="fix"><b>What to do</b>Pull the <strong>November 2026 monthly schedule PDF</strong> from Drukair's own site and confirm KB153 on Sat 7 Nov before you commit to Bangkok's dates. If Saturday is blank, the fixes in order of preference: shift the whole leg forward to <strong>Sun 8 Nov</strong> and take a night off Nepal; fly <strong>Bhutan Airlines</strong>, which added BKK–PBH in 2026 (B3701, 06:30→09:55, and a far more civilised departure); or route BKK–Kolkata/Bagdogra/Guwahati and pick up a Drukair regional leg, which costs you the day.</div>
+      </div>
+
+      <div class="card">
+        <h3>Paro is a visual approach</h3>
+        <div class="verdict">Plan for a delay, not a disaster</div>
+        <p>The airport sits at <b>2,235 m in a river valley ringed by peaks to 5,500 m</b>, on a single 1,964 m runway. There is no instrument landing system and no radar. Every arrival and departure is flown by eye, in daylight only, with the crew sighting the runway a mile or two out and seconds to commit. Roughly <b>50 pilots worldwide</b> are certified for it.</p>
+        <p>What that means practically: cloud, valley fog or high wind cancels flights, and there is no night operation to recover into. Delays cluster in the monsoon, June to September — <b>you are arriving in the clearest, calmest stretch of the year</b>, which is the single best argument for this window.</p>
+        <div class="fix"><b>The lever</b>Sit on the <strong>left</strong> flying in — the Himalaya are north of the track from Bangkok, Kathmandu and Delhi alike — and on the <strong>right</strong> flying out. Online check-in opens two days ahead; set an alarm for it, because there are 118 seats and the window rows go.</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Leaving for Kathmandu</h3>
+      <p>Drukair's <b>KB400 Paro→Kathmandu runs daily</b>, departing between roughly 07:00 and 08:00 depending on the day and landing an hour later. It is a short hop and the most spectacular scheduled flight in the world: Kanchenjunga, Makalu, Lhotse and Everest strung along the northern horizon. <b>Sit on the right.</b> Clear November air is the whole reason this leg is worth a window seat and a charged phone.</p>
+      <p>One consequence for your last day: an 07:00-ish departure means being at the airport around 06:00 and awake at 05:00, in the dark, at freezing point. <b>Wednesday 11 November is not a day in Bhutan.</b> Treat Tuesday evening as the end of the stop and pack the night before.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="audit">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">03</span> The time audit</p>
+    <h2 class="head">Five days<br>is four days</h2>
+    <p class="lede">Bhutan is the rare stop where the arrival day survives. You land at <b>07:15</b>, clear a small airport, and are in Paro town before nine — that is a real day, not a fragment. The departure day is the one that vanishes, because the only flight to Kathmandu goes at dawn. So: <b>four usable days, four nights, one of them at altitude before you climb anything</b>.</p>
+
+    <div class="figcap">
+      <span>Fig. 1 — What the stop really contains</span>
+      <span><b>7–11 Nov</b> · hour by hour</span>
+    </div>
+    <div class="scroller">
+      <svg id="audit-chart" viewBox="0 0 1400 190" role="img" aria-label="Timeline of 7 to 11 November showing an overnight flight from Bangkok landing 07:15 on the 7th, four usable days from the 7th to the 10th, and the 11th consumed by the dawn flight to Kathmandu."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--magenta);opacity:.55"></i>In transit<i style="background:rgba(242,169,60,.35)"></i>Part day<i style="background:var(--amber)"></i>Full day</p>
+
+    <div class="cols">
+      <p><b>The daylight budget</b>Paro in mid-November: <strong>sunrise 06:22, sunset 17:11</strong>. Under eleven hours of light, and the valleys go dark early because the walls are high. This is the real constraint on the stop — not the number of days but the number of usable hours inside them. Nothing gets scheduled after four in the afternoon except dinner.</p>
+      <p><b>No jet lag to exploit</b>Bangkok is UTC+7, Bhutan UTC+6. You lose an hour and gain nothing. Unlike Japan, dawn here is not free — you have to actually get up. Given the daylight budget, do it anyway.</p>
+      <p><b>Acclimatisation is the reason for day one</b>You go from sea level in Bangkok to 2,235 m in three hours of flying. That is not altitude-sickness territory for most people, but Tiger's Nest tops out at 3,120 m and 520 m of climbing feels different on your first afternoon than on your second morning. Day one stays in the valley on purpose.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="shapes">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">04</span> The open question</p>
+    <h2 class="head">Punakha:<br>in or out</h2>
+    <p class="lede">Paro, Thimphu and Tiger's Nest are the fixed points, and they fit four days with room to breathe. Punakha — the old winter capital, the country's most beautiful dzong, at a warm 1,200 m — is the obvious addition and the obvious temptation. It costs two mountain drives over the <b>Dochu La pass at 3,100 m</b> and, realistically, all of Thimphu.</p>
+
+    <div class="shapes">
+      <div class="shape pick">
+        <div class="shape-hd">
+          <div class="shape-tag">Recommended</div>
+          <p class="shape-name">Paro &amp; Thimphu</p>
+        </div>
+        <div class="chainrow">
+          <span>Paro <span class="n">×2</span></span><span class="a">→</span>
+          <span>Thimphu <span class="n">×1</span></span><span class="a">→</span>
+          <span>Paro <span class="n">×1</span></span><span class="a">→</span>
+          <span class="n">PBH</span>
+        </div>
+        <div class="shape-body">
+          <p>Two nights in Paro puts <b>Tiger's Nest on your second morning</b> — acclimatised, and with two spare days behind it if the weather closes in. Then a night in Thimphu, a proper one, with an evening in the only capital city on earth without a traffic light. Back to Paro on Tuesday for the dawn flight.</p>
+          <p><b>What the slack buys you:</b> Chele La. At <b>3,988 m</b> it's the highest motorable pass in Bhutan, two hours from Paro through blue-pine forest, with Jomolhari on the skyline on a clear morning and the Haa valley dropping away behind it. In November it is exactly the day this window exists for.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Bases</dt><dd class="g">2</dd></div>
+          <div><dt>Road hours</dt><dd class="g">≈3</dd></div>
+          <div><dt>Weather buffer</dt><dd class="g">2 days</dd></div>
+          <div><dt>Highest point</dt><dd>3,988 m</dd></div>
+        </dl>
+      </div>
+
+      <div class="shape">
+        <div class="shape-hd">
+          <div class="shape-tag">If Punakha is non-negotiable</div>
+          <p class="shape-name">Over Dochu La</p>
+        </div>
+        <div class="chainrow">
+          <span>Paro <span class="n">×2</span></span><span class="a">→</span>
+          <span>Punakha <span class="n">×1</span></span><span class="a">→</span>
+          <span>Paro <span class="n">×1</span></span><span class="a">→</span>
+          <span class="n">PBH</span>
+        </div>
+        <div class="shape-body">
+          <p>Monday becomes a drive: Paro to Thimphu, up to Dochu La and its 108 chortens, then down the far side to Punakha — roughly <b>four hours of mountain road each way</b> with stops. Punakha Dzong at the confluence of the Pho and Mo rivers genuinely is the finest building in the country, and the descent to 1,200 m is a warm, subtropical relief after two nights at altitude.</p>
+          <p><b>The cost is Thimphu's, entirely.</b> You see it through a windscreen twice and get maybe two hours there on the way back. Chele La is gone. And you spend two of four usable days largely in a car on a road that narrows and switchbacks past the pass.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Bases</dt><dd>3</dd></div>
+          <div><dt>Road hours</dt><dd class="r">≈9</dd></div>
+          <div><dt>Weather buffer</dt><dd class="r">1 day</dd></div>
+          <div><dt>Highest point</dt><dd>3,100 m</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Why the recommendation keeps Thimphu rather than Punakha</h3>
+      <p>Because of what the rest of this trip already contains. You will see spectacular religious architecture in Cambodia, Nepal, Sri Lanka and Egypt; Punakha Dzong is superb but it is competing against Angkor six weeks later. What you will not see anywhere else on twenty-seven stops is <b>a functioning Himalayan capital of 120,000 people</b> — archery in a public field, monks with smartphones, the traffic officer in his pavilion, a city that decided to stay small on purpose. That is the thing that is only here.</p>
+      <p>The other half of the argument is weather insurance. Tiger's Nest is the reason this stop exists, it needs a clear-ish morning, and a plan with two spare days can absorb one bad one. The Punakha shape leaves you a single fallback day, and if you lose it you have paid US$440 to look at cloud.</p>
+    </div>
+
+    <div class="panel">
+      <h3>What's out of reach either way, and worth knowing why</h3>
+      <p><b>Phobjikha and the black-necked cranes.</b> The cranes arrive from Tibet in late October and winter in the Phobjikha valley, and the <b>Black-Necked Crane Festival falls on 11 November 2026</b> at Gangtey Goemba — your departure day, five hours' drive from Paro. This is a genuine near-miss rather than an oversight. Reaching it would mean adding two nights and abandoning the Kathmandu leg; the cranes are magnificent and the arithmetic doesn't work.</p>
+      <p><b>Bumthang and Jambay Lhakhang Drup.</b> The fire ceremony, embers walked barefoot, late October into early November. It is eight hours east of Thimphu by road or a domestic flight to Bathpalathang. Not in five days.</p>
+      <p><b>Trekking.</b> The Druk Path from Paro to Thimphu is four to six days over 4,200 m passes and is the correct way to see this country. You do not have four to six days, and this trip has Poon Hill in Nepal in exactly one week's time. Bank it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="run">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">05</span> Day by day</p>
+    <h2 class="head">Both versions,<br>laid out</h2>
+    <p class="lede">Short days and hard light: everything front-loads into the morning, and dinner is at seven because the valley has been dark since half five. Dzongs and monasteries close to visitors in the late afternoon and most require your guide alongside you, so treat opening hours as the real schedule.</p>
+    <div class="filters" id="dayToggle" style="margin-bottom:6px">
+      <button class="fbtn" data-plan="paro" aria-pressed="true">Paro &amp; Thimphu</button>
+      <button class="fbtn" data-plan="punakha" aria-pressed="false">Over Dochu La</button>
+    </div>
+    <div class="days" id="days"></div>
+    <p class="fignote" style="margin-top:16px">Amber = on foot · <span style="color:var(--magenta)">Magenta = a drive or a base change</span></p>
+  </div>
+</section>
+
+<section class="section" id="worth">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">06</span> What's actually worth doing</p>
+    <h2 class="head">Do, maybe,<br>don't bother</h2>
+    <p class="lede">Sorted by valley, then by whether it earns a slot in four days. Note the fees: <b>Taktsang is Nu 1,000</b> for foreign visitors and most other dzongs, lhakhangs and chortens are <b>Nu 500</b> — trivial against the SDF, but they add up and they're usually cash.</p>
+
+    <div class="filters" id="filters">
+      <button class="fbtn" data-city="all" aria-pressed="true">All</button>
+      <button class="fbtn" data-city="Paro" aria-pressed="false">Paro</button>
+      <button class="fbtn" data-city="Thimphu" aria-pressed="false">Thimphu</button>
+      <button class="fbtn" data-city="Beyond" aria-pressed="false">Beyond the valleys</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-tier="do" aria-pressed="false">Do</button>
+      <button class="fbtn" data-tier="opt" aria-pressed="false">Maybe</button>
+      <button class="fbtn" data-tier="skip" aria-pressed="false">Don't bother</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-book="1" aria-pressed="false">Needs a guide or booking</button>
+    </div>
+    <div class="items" id="items"></div>
+  </div>
+</section>
+
+<section class="section" id="taktsang">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">07</span> The climb</p>
+    <h2 class="head">Tiger's Nest,<br>properly</h2>
+    <p class="lede">Taktsang Palphug clings to a cliff face 900 m above the Paro valley floor, where Guru Rinpoche is said to have arrived on the back of a flying tigress in the eighth century. It is the reason most people come to Bhutan and it is not a viewpoint you drive to — it is <b>6 to 6.4 km round trip, four to six hours, and a net 520 m of climbing</b> that includes a hard sting at the end.</p>
+
+    <div class="figcap">
+      <span>Fig. 2 — The profile</span>
+      <span><b>Trailhead 2,600 m → monastery 3,120 m</b></span>
+    </div>
+    <div class="scroller">
+      <svg id="profile-chart" viewBox="0 0 1400 340" role="img" aria-label="Elevation profile of the Tiger's Nest hike from the 2,600 metre trailhead through the cafeteria at 2,940 metres and a viewpoint at about 3,140 metres, down roughly 100 metres of staircase to a waterfall bridge, then back up to the monastery entrance at 3,120 metres."></svg>
+    </div>
+    <p class="fignote">Indicative profile · the numbered sting is the staircase down to the bridge and straight back up — you climb it twice, once in each direction</p>
+
+    <div class="cards">
+      <div class="card good">
+        <h3>The timing that matters</h3>
+        <div class="verdict ok">Start 07:30–08:30</div>
+        <p>The monastery admits visitors <b>08:00–13:00 and again 14:00–17:00</b>, closed over the middle of the day. Start at half seven and you reach the entrance inside the morning window with the light still low and the coach groups behind you.</p>
+        <p>Start at ten and you arrive during the closure, having climbed 520 m to sit outside a locked door for an hour. This is the single most common way the day gets ruined.</p>
+        <div class="fix"><b>Also</b>Entry is <strong>Nu 1,000</strong> for international visitors, Nu 500 for ages 5–18. Your guide must be with you. Cameras, phones and bags go into <strong>lockers at the entrance</strong> — photography inside is genuinely prohibited, and the inside is the part worth remembering rather than filming.</div>
+      </div>
+
+      <div class="card">
+        <h3>Horses, and their limits</h3>
+        <div class="verdict">Uphill only, to halfway</div>
+        <p>Ponies can be hired at the trailhead for roughly <b>US$18–25 one way</b>, and they take you to the cafeteria at 2,940 m and no further. The upper section — the viewpoint, the staircase down to the waterfall bridge, the flights back up to the entrance — is on foot for everyone.</p>
+        <p>They are also not permitted for the descent, which is the half that actually hurts your knees. If you take a horse up you still walk the whole way down.</p>
+        <div class="fix"><b>The cafeteria</b>Midway at 2,940 m, with meals around Nu 600–900, water and the only toilets on the route. Most people eat on the way back rather than the way up. Take two litres of water regardless; it's dry, it's high, and you will drink more than you expect at 10°C.</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Why it goes on your second morning</h3>
+      <p>One night at 2,235 m before climbing to 3,120 m is not real acclimatisation, but it is meaningfully better than stepping off a Bangkok flight and starting up the hill the same afternoon — and the afternoon is the wrong half of the day anyway. Sunday 8 November gives you a full morning window with two clear days behind it as insurance.</p>
+      <p>The other reason is weather. November mornings in Paro are the most reliable of the year, but the valley can hold cloud, and the photograph you want — the monastery floating with nothing behind it — needs the cliff face clear. <b>If Sunday looks wrong, move it to Monday or Tuesday.</b> A plan that can do that is worth more here than a plan that squeezes in one more dzong.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="window">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">08</span> The window</p>
+    <h2 class="head">Why early<br>November</h2>
+    <p class="lede">This is the clearest, driest, stillest stretch of the Bhutanese year, and unlike Bali later on this trip there is no compromise to admit. The monsoon has gone, the winter cloud has not arrived, and the air over the Himalaya is as transparent as it gets. The cost is temperature: Paro runs about <b>10°C by day and −1°C at night</b>, and the valley is in shadow by half five.</p>
+
+    <div class="figcap">
+      <span>Fig. 3 — Paro by month</span>
+      <span><b>Temperature and rain</b> · your window marked</span>
+    </div>
+    <div class="scroller">
+      <svg id="climate-chart" viewBox="0 0 1400 400" role="img" aria-label="Chart of Paro's monthly average high and low temperatures and rainfall, showing the June to September monsoon peak and a dry, cold, clear November with highs near 10 degrees and lows near minus one."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--amber)"></i>Daily high<i style="background:rgba(166,194,198,.75)"></i>Daily low<i style="background:rgba(88,196,163,.35)"></i>Rainfall · indicative climate averages, not a forecast</p>
+
+    <div class="cols">
+      <p><b>Rain is essentially off the table</b>About a <strong>21% chance of any precipitation</strong> on a given November day in Paro, and roughly 13 mm for the whole month against July's downpours. November is also the calmest month of the year for wind, which is why flights into Paro behave themselves.</p>
+      <p><b>Cold at both ends of the day</b>Freezing or just below overnight, and Bhutanese hotels below the top tier are often heated by a single bukhari wood stove in the common room. Pack for a mountain, not for the Asia you have been in since October: thermal base layer, insulated mid-layer, hat and gloves for the pre-dawn airport run.</p>
+      <p><b>The clarity is the point</b>The whole reason Bhutan sits between Bangkok and Kathmandu on this route is that early November buys you sharp air over big mountains — Jomolhari from Chele La, the range from the Kathmandu flight, and the cliff face at Taktsang standing out instead of dissolving into haze. That is a fortnight-wide window and you are inside it.</p>
+    </div>
+
+    <div class="panel">
+      <h3>The festival you just miss, and the holiday you land on</h3>
+      <p>Bhutan's tsechu calendar runs on the lunar year, and 7–11 November 2026 falls between the big ones. <b>Jambay Lhakhang Drup</b> in Bumthang — the fire ceremony, embers underfoot — lands late October into early November, but it is eight hours east. The <b>Black-Necked Crane Festival at Gangtey is 11 November</b>, the morning your flight leaves for Kathmandu, five hours' drive the wrong way. Both are real misses; neither is fixable inside this itinerary.</p>
+      <p>What you do land on: <b>Wednesday 11 November is a national holiday</b> — the Birth Anniversary of the Fourth Druk Gyalpo, marked as Constitution Day. Government offices close. It affects nothing on your last morning except that if you had any admin to do in Thimphu, Tuesday is the deadline. Note also that <b>1 November</b>, the King's Coronation Day and the Descending Day of Lord Buddha, falls just before you arrive.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="admin">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">09</span> Ground rules</p>
+    <h2 class="head">Before you land</h2>
+
+    <div class="tablewrap">
+    <table class="ref">
+      <thead><tr><th>Item</th><th>What to do</th><th>When</th></tr></thead>
+      <tbody>
+        <tr class="flag"><td>Visa</td><td>Canadians need a visa in advance — there is no visa on arrival. Apply on the government portal or have a licensed operator submit for you. <b>US$40, non-refundable</b>, approval typically inside five working days, issued electronically. Passport needs six months' validity beyond departure.</td><td class="t">6+ weeks out</td></tr>
+        <tr class="flag"><td>SDF</td><td>US$100 per person per night, paid up front with the visa application by card or bank transfer. Four nights = <b>US$400</b>. The discounted rate holds through 31 Aug 2027.</td><td class="t">With the visa</td></tr>
+        <tr><td>Insurance</td><td>Travel insurance covering the whole stay is required with the application. Make sure it covers <b>hiking to 3,200 m</b> — Taktsang is well within normal policy limits but check the altitude clause.</td><td class="t">Before applying</td></tr>
+        <tr class="flag"><td>Guide</td><td>Not optional. Since Sept 2023 you may move freely around Paro, Thimphu and Punakha for meals, shops and walks — but a licensed guide is <b>legally required for every dzong, lhakhang, museum and monument, for Tiger's Nest, and anywhere outside that corridor</b>. Budget US$40–50/day booked direct, or US$150–200/day inside a package.</td><td class="t">Book with the visa</td></tr>
+        <tr><td>Flights</td><td>Drukair and Bhutan Airlines only, and they sell direct rather than through the usual aggregators. Around <b>US$490 one way BKK–PBH</b>. Book early; 118 seats, and November is high season.</td><td class="t">Now</td></tr>
+        <tr class="flag"><td>Verify KB153</td><td>Confirm the Bangkok–Paro flight actually operates on <b>Saturday 7 November</b> against Drukair's November 2026 monthly schedule. See section 02 — this is the one thing on this page that could break the leg.</td><td class="t">Before booking</td></tr>
+        <tr><td>Money</td><td>Ngultrum, pegged 1:1 to the Indian rupee. ATMs exist in Paro and Thimphu but are unreliable; cards work at better hotels and almost nowhere else. Exchange on arrival at Paro airport — changing back is only possible there. Indian rupees are accepted, though ₹500 notes are often refused.</td><td class="t">On arrival</td></tr>
+        <tr><td>Cash to carry</td><td>US$200–300 equivalent covers entries, tips, meals outside your booking and souvenirs for a stop this length. Guides and drivers generally prefer <b>tips in USD</b>: roughly US$8–10/day for a guide, US$5–8 for a driver, handed over at the end.</td><td class="t">Bring it in</td></tr>
+        <tr><td>Entry fees</td><td>Taktsang Nu 1,000. Most dzongs, lhakhangs and chortens Nu 500. Motithang Takin Preserve Nu 300. Cash, usually collected by your guide.</td><td class="t">Cash on hand</td></tr>
+        <tr><td>Dress code</td><td>Dzongs and temples require covered shoulders and knees, long trousers, no hats indoors, shoes off at shrine doors. This is enforced, not advisory. One pair of long trousers and a collared layer solves the whole trip.</td><td class="t">Pack it</td></tr>
+        <tr><td>Photography</td><td>Fine outside, prohibited inside most temple interiors including Taktsang, where you surrender your bag and camera at the door. Ask before photographing monks or people.</td><td class="t">Rule of thumb</td></tr>
+        <tr><td>Tobacco</td><td>Legal to bring in for personal use and to buy since 2021, but <b>smoking in public places remains banned</b> and enforced. Not a trip to be casual about it.</td><td class="t">Know it</td></tr>
+        <tr><td>Connectivity</td><td>Bhutan Telecom or TashiCell SIMs, cheap, sold at the airport and in Thimphu; coverage is good in the valleys and patchy on the passes. Hotel wifi is generally serviceable. Assume no signal on the Taktsang trail.</td><td class="t">At the airport</td></tr>
+        <tr><td>Altitude</td><td>Paro 2,235 m, Thimphu 2,334 m, Taktsang 3,120 m, Dochu La 3,100 m, Chele La 3,988 m. Low risk of anything serious, but hydrate hard, skip the alcohol on night one, and take the first afternoon slowly.</td><td class="t">Days 1–2</td></tr>
+        <tr><td>Holiday</td><td>Wed 11 Nov is a national holiday (Birth Anniversary of the Fourth Druk Gyalpo / Constitution Day). Offices shut. Your dawn flight is unaffected.</td><td class="t">Departure day</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="cols">
+      <p><b>Eating</b>Ema datshi — chillies and yak cheese — is the national dish and it is genuinely hot; ask for it mild the first time and build up. Red rice, momos, phaksha paa, suja butter tea, and ara if someone offers it. Restaurant culture is thin outside Thimphu, so most dinners will be at your hotel, and that is normal rather than a failure of planning.</p>
+      <p><b>Booking window</b>November is Bhutan's peak season alongside April, and the country has a hard cap on decent rooms. Flights, visa, guide and hotels all want to be locked six to eight weeks out at minimum. Nothing here is a last-minute country.</p>
+      <p><b>The corridor rule, precisely</b>Free movement inside Paro, Thimphu and Punakha means walking around, eating, shopping, a stroll along the Pa Chhu. It does not mean entering a dzong alone, and it does not extend to Chele La, Haa or anywhere over a pass. Plan your guide's days accordingly rather than assuming you can improvise them.</p>
+      <p><b>What you can't do here</b>No independent driving — hire cars come with a driver. No unaccompanied trekking. No drones without a permit that you will not get in time. And no rushing: distances look tiny and the roads are single-lane switchbacks, so double whatever a map tells you.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <p>Westbound · stop 06 · Bhutan</p>
+      <p>7–11 Nov 2026 · PBH in, KTM out</p>
+      <p>Fees, schedules and rules verified Sept 2026 — recheck before booking</p>
+    </div>
+    <p class="foot-mark">Paro → Taktsang</p>
+  </div>
+</footer>
+
+<script>
+/* ============ DAY-BY-DAY ============ */
+const ARRIVE={d:'Sat 7',w:'Arrive',name:'Paro',sub:'Land 07:15 · stay low',meta:'Night 1',
+ slots:[
+  {m:1,h:'07:15 · PBH',p:'A small airport and a short queue. Change money here — it is the only place you can change it back — pick up a Bhutan Telecom or TashiCell SIM, and meet your guide. Paro town is ten minutes down the valley.'},
+  {h:'09:30 · Rinpung Dzong',p:'The fortress above the river, 1644, still half monastery and half district administration. Nu 500 and your guide beside you. Walk out across the cantilevered wooden bridge below it.'},
+  {h:'11:30 · National Museum',p:'Ta Dzong, the round watchtower on the hill above Rinpung, built as a lookout and now the national collection — thangkas, masks, textiles, and a view straight down the valley.'},
+  {h:'14:00 · Kyichu Lhakhang',p:'One of the oldest temples in Bhutan, seventh century in origin, with two orange trees in the courtyard said to fruit year-round. Small, dark, working, and worth more than its size suggests.'},
+  {h:'16:00 · Paro town',p:'One wood-fronted street and it takes twenty minutes, which is the point. The light goes early here — <b>sunset is 17:11</b> — so this is the last outdoor hour of the day.'},
+  {h:'19:00 · Dinner, early',p:'Ema datshi — ask for it mild the first time, the chillies are the vegetable, not the seasoning. Skip the alcohol on night one at 2,235 m and drink more water than you want to.'}
+]};
+const TAKTSANG={d:'Sun 8',w:'Full',name:'Taktsang',sub:'Tiger’s Nest · 07:30 start',meta:'Night 2',
+ slots:[
+  {h:'07:30 · Trailhead, 2,600 m',p:'Ten minutes north of Paro. Start now, not at ten — the monastery closes 13:00–14:00 and arriving mid-climb into a locked door is the standard way this day goes wrong. Two litres of water.'},
+  {h:'09:30 · Cafeteria, 2,940 m',p:'Halfway, and the last toilets. Ponies stop here if you took one; everyone walks from this point on. Save the meal for the descent.'},
+  {h:'10:30 · The sting',p:'Up to the viewpoint at roughly 3,140 m, where the whole thing appears across the gorge — then <b>down a long staircase to the waterfall bridge and straight back up</b>. You do this section twice, once in each direction.'},
+  {h:'11:00 · Inside, 3,120 m',p:'Nu 1,000, guide with you, and <b>bag, phone and camera into the lockers at the door</b>. Photography inside is prohibited and the interior — butter lamps, the cave, the smoke — is the part you would rather remember than film.'},
+  {h:'14:00 · Down',p:'Lunch at the cafeteria on the way back, then the descent, which is where your knees find out. Four to six hours round trip all in, and you will be finished by mid-afternoon.'},
+  {h:'16:00 · Hot stone bath',p:'River stones heated in a fire and dropped into a wooden tub of water and artemisia. Book it that morning through the hotel. This is the correct end to this particular day.'}
+]};
+const DEPART={d:'Wed 11',w:'Depart',name:'To Kathmandu',sub:'Dawn flight · sit on the right',meta:'Fly out',
+ slots:[
+  {m:1,h:'06:00 · PBH',p:'Awake at five, in the dark, at roughly freezing. Pack the night before. Nothing is open and nothing needs to be — this is a transit morning, and today is a national holiday in Bhutan anyway.'},
+  {m:1,h:'· Nepal',p:'Stop 07. Drukair KB400 departs around 07:00–08:00 daily and lands in Kathmandu about an hour later. <b>Sit on the right</b> — Kanchenjunga, Makalu, Lhotse and Everest, in November air. Verify the exact time on the monthly schedule.'}
+]};
+
+const DAYS_PARO=[ARRIVE,TAKTSANG,
+{d:'Mon 9',w:'Move',name:'Thimphu',sub:'Down the Pa Chhu to the capital',meta:'Night 3',
+ slots:[
+  {m:1,h:'09:00 · Paro → Thimphu',p:'About 50 km and an hour and a quarter, following the river down to the Chuzom confluence and then up the Wang Chhu. Three chortens at the junction, in three different styles, and your first real look at how Bhutanese roads work.'},
+  {h:'11:00 · Buddha Dordenma',p:'A 51 m gilded Shakyamuni on the ridge above the city with <b>125,000 smaller Buddhas inside it</b>, and the best overview of Thimphu from the terrace. Nu 500.'},
+  {h:'13:00 · Takin preserve',p:'Motithang, Nu 300, and the national animal — which looks like a moose assembled by committee and has a founding myth involving a saint, a goat and a cow. Twenty minutes, and oddly worth it.'},
+  {h:'14:30 · Memorial Chorten',p:'Built in 1974 for the Third King, and the spiritual centre of the city in practice: elderly Thimphu residents circumambulate it all day. Sit for ten minutes rather than photographing it and moving on.'},
+  {h:'16:00 · Tashichho Dzong',p:'The seat of government and the central monastic body, with the throne room inside. Visitors are generally admitted <b>after office hours</b>, late afternoon, so this slot is deliberate. Confirm the day’s timing with your guide.'},
+  {h:'18:30 · Thimphu evening',p:'Walk Norzin Lam past the <b>one intersection on earth where a capital city uses a uniformed officer instead of a traffic light</b>. If there is archery on at Changlimithang, go and stand at a safe distance; it is the national sport and it is nothing like the Olympic version.'}
+]},
+{d:'Tue 10',w:'Full',name:'Chele La',sub:'The highest road in Bhutan',meta:'Night 4',
+ slots:[
+  {m:1,h:'07:30 · Back west, then up',p:'Thimphu to Paro, then the climb south out of the valley towards Haa. Roughly three hours of driving to the pass with stops, through blue pine and rhododendron and then above the treeline.'},
+  {h:'10:00 · The pass, 3,988 m',p:'Prayer flags in the wind, the Haa valley dropping away west, and <b>Jomolhari at 7,326 m on the skyline</b> on a clear morning. This is what early November is for. It is also cold and thin — hat, gloves, don’t sprint.'},
+  {h:'12:00 · Haa, or turn back',p:'Down into the Haa valley for lunch and the two temples — Lhakhang Karpo and Lhakhang Nagpo — or turn around at the pass and take the afternoon slowly. Decide on the morning’s weather with your guide, not in advance.'},
+  {h:'15:00 · Paro, and pack',p:'Back to a hotel near the airport. Pack tonight; tomorrow starts at five in the dark and you will not be functional.'},
+  {h:'18:00 · Last dinner',p:'Tip the guide and driver now, in USD, in an envelope — roughly US$8–10 a day for the guide and US$5–8 for the driver is the norm. Then bed, absurdly early.'}
+]},DEPART];
+
+const DAYS_PUNAKHA=[ARRIVE,TAKTSANG,
+{d:'Mon 9',w:'Move',name:'Punakha',sub:'Over Dochu La, 3,100 m',meta:'Night 3',
+ slots:[
+  {m:1,h:'08:00 · Paro → Dochu La',p:'Two and a half hours to the pass through Thimphu, climbing steadily. This is the day the drive is the itinerary, so leave early and accept it.'},
+  {h:'10:30 · Dochu La, 3,100 m',p:'The <b>108 Druk Wangyal chortens</b> on the saddle, built in 2004, with the Himalaya along the north horizon behind them on a clear morning. The temple above holds murals of the Fourth King. Twenty to thirty minutes.'},
+  {m:1,h:'12:30 · Chimi Lhakhang',p:'Down the far side into warm air, then a twenty-minute walk through terraced paddy to the fertility temple of Drukpa Kunley, the Divine Madman — which explains the phallus murals you have been noticing on village walls since you landed.'},
+  {h:'14:30 · Punakha Dzong',p:'At the confluence of the Pho Chhu and Mo Chhu, whitewashed under a jacaranda, and <b>the finest building in the country</b> — the winter seat of the monastic body and where Bhutan’s kings are crowned. Nu 500. Give it an hour and a half.'},
+  {h:'16:00 · The suspension bridge',p:'Bhutan’s longest, strung across the Pho Chhu below the dzong, prayer flags the whole way. It moves. Twenty minutes.'},
+  {h:'17:00 · Night at 1,200 m',p:'Warm for the first time since Bangkok, and low enough to sleep properly. This is the genuine argument for the Punakha shape: it is a different country down here.'}
+]},
+{d:'Tue 10',w:'Move',name:'Back over',sub:'Punakha → Thimphu → Paro',meta:'Night 4',
+ slots:[
+  {m:1,h:'08:00 · Up and over again',p:'The same road in reverse, 1,200 m up to Dochu La and down the other side. Two and a half hours to Thimphu on a good day, and the road narrows and switchbacks above the pass.'},
+  {h:'11:00 · Thimphu, two hours',p:'This is all Thimphu gets in this version. <b>Buddha Dordenma and the Memorial Chorten, and that is it</b> — no dzong, no archery, no evening on Norzin Lam. Worth being honest with yourself about before you choose this shape.'},
+  {m:1,h:'14:00 · Thimphu → Paro',p:'An hour and a quarter back down the river to a hotel near the airport.'},
+  {h:'16:00 · Paro, and pack',p:'Nothing ambitious. Chele La is gone in this version, so if there is light and energy left, walk up to the ruins of Drukgyel Dzong instead — twenty minutes north, and Jomolhari behind it.'},
+  {h:'18:00 · Last dinner',p:'Tip the guide and driver in USD, in an envelope. Then bed — the alarm is at five.'}
+]},DEPART];
+
+let CURRENT_PLAN='paro';
+function renderDays(){
+  const DAYS = CURRENT_PLAN==='paro' ? DAYS_PARO : DAYS_PUNAKHA;
+  document.getElementById('days').innerHTML=DAYS.map(D=>`
+  <div class="day">
+    <button class="day-btn" aria-expanded="false">
+      <span class="day-date">${D.d}<small>${D.w}</small></span>
+      <span><span class="day-name">${D.name}</span><span class="day-sub">${D.sub}</span></span>
+      <span class="day-meta">${D.meta}<span class="chev">&#9662;</span></span>
+    </button>
+    <div class="day-body"><div class="day-inner"><div class="day-pad"><div class="slots">
+      ${D.slots.map(s=>`<div class="slot${s.m?' move':''}"><h4>${s.h}</h4><p>${s.p}</p></div>`).join('')}
+    </div></div></div></div>
+  </div>`).join('');
+
+  document.querySelectorAll('.day-btn').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const d=b.parentElement, open=d.classList.toggle('open');
+      b.setAttribute('aria-expanded',open?'true':'false');
+    });
+  });
+  document.querySelector('.day').classList.add('open');
+  document.querySelector('.day-btn').setAttribute('aria-expanded','true');
+}
+renderDays();
+
+document.getElementById('dayToggle').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  CURRENT_PLAN=b.dataset.plan;
+  document.querySelectorAll('#dayToggle .fbtn').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
+  renderDays();
+});
+
+/* ============ WORTH DOING ============ */
+const ITEMS=[
+/* PARO */
+{c:'Paro',t:'do',n:'Taktsang — Tiger’s Nest',w:'The reason you are in Bhutan. 6–6.4 km round trip, 520 m net climb, four to six hours. <b>Start 07:30</b> — it closes 13:00–14:00. Nu 1,000, guide required, no photography inside.',when:'Guide required',b:1},
+{c:'Paro',t:'do',n:'Rinpung Dzong',w:'The 1644 fortress above the Pa Chhu, still functioning as both monastery and district administration. Nu 500. The cantilevered bridge below it is the photograph.',when:'Guide required',b:1},
+{c:'Paro',t:'do',n:'Kyichu Lhakhang',w:'Seventh-century in origin, two orange trees in the courtyard, and one of the most genuinely atmospheric small temples in the country. Nu 500.',when:'1 hour',b:1},
+{c:'Paro',t:'do',n:'A hot stone bath',w:'River stones heated in a fire, dropped into a wooden tub of water and artemisia. Book it through the hotel the morning of. The right thing to do after the climb.',when:'Book same day',b:1},
+{c:'Paro',t:'opt',n:'National Museum, Ta Dzong',w:'The round watchtower above Rinpung, now the national collection — thangkas, festival masks, textiles, natural history. An hour, and a good valley view from the terrace.',when:'1 hour',b:1},
+{c:'Paro',t:'opt',n:'Drukgyel Dzong',w:'Ruins at the head of the valley, burnt in 1951 and recently restored, with Jomolhari behind it on a clear day. Twenty minutes north of Paro and a good filler slot.',when:'45 min',b:1},
+{c:'Paro',t:'opt',n:'Paro town',w:'One wood-fronted street, a handful of shops and cafes, and about twenty minutes of walking. Free, guide-free, and pleasant at the end of a day.',when:'Late afternoon'},
+{c:'Paro',t:'skip',n:'The pony up Taktsang',w:'US$18–25 to the cafeteria and no further, and it is not allowed on the descent — so you still walk the whole way down, which is the harder half. Take it only if the climb is genuinely in doubt.',when:''},
+/* THIMPHU */
+{c:'Thimphu',t:'do',n:'Buddha Dordenma',w:'51 m of gilded Shakyamuni on the ridge, <b>125,000 smaller Buddhas inside</b>, and the clearest overview you will get of the city. Nu 500.',when:'Guide required',b:1},
+{c:'Thimphu',t:'do',n:'Tashichho Dzong',w:'Seat of government and of the central monastic body, throne room included. Visitors are generally admitted after office hours, so aim late afternoon and confirm the day’s timing.',when:'After 16:00',b:1},
+{c:'Thimphu',t:'do',n:'National Memorial Chorten',w:'1974, for the Third King, and the working spiritual centre of Thimphu — residents circumambulate it all day. Sit rather than photograph. Nu 500.',when:'Guide required',b:1},
+{c:'Thimphu',t:'do',n:'The traffic officer',w:'Thimphu is the only capital city on earth without a single traffic light. One uniformed officer in a pavilion directs the busiest junction by hand. Free, absurd, and completely characteristic.',when:'Anytime'},
+{c:'Thimphu',t:'opt',n:'Archery at Changlimithang',w:'The national sport, shot at 145 m with singing, dancing and heavy mockery of the opposition. If a match is on, go; nothing explains the country faster. Ask your guide what’s scheduled.',when:'If on'},
+{c:'Thimphu',t:'opt',n:'Motithang Takin Preserve',w:'Nu 300 to look at the national animal, which resembles a moose designed by a committee and has a creation myth involving a saint, a goat and a cow. Twenty minutes.',when:'20 min'},
+{c:'Thimphu',t:'opt',n:'Centenary Farmers’ Market',w:'Bhutan’s biggest produce market — dried chillies, red rice, ferns, slabs of datshi — and it runs at the <b>weekend</b>. Your Thimphu day is a Monday in both plans, so this is a casualty of the calendar.',when:'Weekends only'},
+{c:'Thimphu',t:'opt',n:'National Textile Museum',w:'Bhutanese weaving is world-class and this is the place to understand what you are looking at on every kira and gho in the street. Small, good, and an easy hour if the weather turns.',when:'Wet-day option',b:1},
+{c:'Thimphu',t:'skip',n:'Simply Bhutan',w:'A staged living-museum experience with costumes, butter tea and archery for tourists. Harmless, but you are in the actual country — spend the hour on the dzong instead.',when:''},
+/* BEYOND */
+{c:'Beyond',t:'do',n:'Chele La, 3,988 m',w:'The highest motorable pass in Bhutan, two to three hours from Paro, prayer flags above the treeline and <b>Jomolhari at 7,326 m</b> on the skyline in clear November air. The best use of a spare day.',when:'Guide required',b:1},
+{c:'Beyond',t:'opt',n:'Punakha Dzong',w:'At the confluence of the Pho Chhu and Mo Chhu, and probably the most beautiful building in the country — winter seat of the monastic body, where the kings are crowned. Four hours each way from Paro.',when:'Full day',b:1},
+{c:'Beyond',t:'opt',n:'Dochu La and the 108 chortens',w:'3,100 m, built in 2004, with the eastern Himalaya on the horizon behind them on a clear morning. Unavoidable if you go to Punakha and worth the stop in its own right.',when:'En route',b:1},
+{c:'Beyond',t:'opt',n:'Chimi Lhakhang',w:'The Divine Madman’s fertility temple, reached on a twenty-minute walk through paddy fields, and the explanation for the phallus murals on village walls everywhere. Near Punakha.',when:'En route',b:1},
+{c:'Beyond',t:'opt',n:'Haa valley',w:'Over Chele La and down the far side — quiet, barely visited, two old temples and a lot of buckwheat. Only if you have committed the whole day to the pass.',when:'Full day',b:1},
+{c:'Beyond',t:'skip',n:'Phobjikha and the cranes',w:'The black-necked cranes winter here and the <b>festival is 11 November 2026</b> — your departure morning, five hours the wrong way. A real miss, and not fixable inside this itinerary.',when:''},
+{c:'Beyond',t:'skip',n:'Bumthang',w:'Jambay Lhakhang Drup and its fire ceremony land late October into early November, but Bumthang is eight hours east by road. Needs three days you do not have.',when:''},
+{c:'Beyond',t:'skip',n:'The Druk Path trek',w:'Four to six days from Paro to Thimphu over 4,200 m passes, and the right way to see this country. You have four days total, and Poon Hill is one week away. Bank it for a future trip.',when:''}
+];
+
+const TIERLBL={do:'Do',opt:'Maybe',skip:'Skip'};
+let FC='all', FT=null, FB=false;
+
+function renderItems(){
+  const list=ITEMS.filter(x=>
+    (FC==='all'||x.c===FC) && (!FT||x.t===FT) && (!FB||x.b));
+  const host=document.getElementById('items');
+  if(!list.length){host.innerHTML='<div class="empty">No entries match those filters.</div>';return}
+  host.innerHTML=list.map(x=>`
+    <div class="item">
+      <span class="tier ${x.t}">${TIERLBL[x.t]}</span>
+      <span class="nm">${x.n}</span>
+      <span class="when${x.b?' book':''}">${x.when||'&nbsp;'}</span>
+      <span class="why">${x.w}</span>
+    </div>`).join('');
+}
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  if(b.dataset.city){FC=b.dataset.city}
+  else if(b.dataset.tier){FT = FT===b.dataset.tier?null:b.dataset.tier}
+  else if(b.dataset.book){FB=!FB}
+  document.querySelectorAll('#filters .fbtn').forEach(x=>{
+    let on=false;
+    if(x.dataset.city) on = x.dataset.city===FC;
+    if(x.dataset.tier) on = x.dataset.tier===FT;
+    if(x.dataset.book) on = FB;
+    x.setAttribute('aria-pressed',on?'true':'false');
+  });
+  renderItems();
+});
+renderItems();
+
+/* ============ FIG 1: TIME AUDIT ============ */
+(function(){
+  const svg=document.getElementById('audit-chart');
+  const W=1400,H=190,pad=40,barY=70,barH=54;
+  const totalH=108; // 7 Nov 00:00 -> 11 Nov 12:00
+  const x=h=>pad+(h/totalH)*(W-2*pad);
+  const segs=[
+    {a:0,b:7.25,cls:'t'},
+    {a:7.25,b:24,cls:'f'},
+    {a:24,b:48,cls:'f'},
+    {a:48,b:72,cls:'f'},
+    {a:72,b:96,cls:'f'},
+    {a:96,b:108,cls:'t2'}
+  ];
+  const colors={t:'var(--magenta)',t2:'rgba(231,100,155,.55)',p:'rgba(242,169,60,.35)',f:'var(--amber)'};
+  let s='';
+  segs.forEach(sg=>{
+    const x1=x(sg.a),x2=x(sg.b);
+    s+=`<rect x="${x1}" y="${barY}" width="${Math.max(1,x2-x1-1)}" height="${barH}" fill="${colors[sg.cls]}"/>`;
+  });
+  const ticks=[0,24,48,72,96,108];
+  ticks.forEach((hh,i)=>{
+    const xx=x(hh);
+    const dt=new Date(2026,10,7,0,0);
+    dt.setTime(dt.getTime()+hh*36e5);
+    s+=`<line x1="${xx}" y1="${barY-6}" x2="${xx}" y2="${barY+barH+6}" class="axs"/>`;
+    const lab=hh===108?'11 Nov 12:00':dt.toLocaleDateString('en-CA',{day:'2-digit',month:'short'});
+    s+=`<text x="${xx}" y="${barY-14}" class="lbl" text-anchor="${i===0?'start':i===ticks.length-1?'end':'middle'}">${lab}</text>`;
+  });
+  s+=`<line x1="${pad}" y1="${barY+barH+0.5}" x2="${W-pad}" y2="${barY+barH+0.5}" class="ax"/>`;
+  s+=`<text x="${x(7.25)}" y="${barY+barH+34}" class="lbl-a">4 usable days — lands 07:15 on the 7th</text>`;
+  s+=`<text x="${x(108)}" y="${barY+barH+34}" class="lbl" text-anchor="end">dawn flight out ↘</text>`;
+  s+=`<text x="${x(0)}" y="${barY+barH+52}" class="lbl">↙ overnight from Bangkok, 05:00 departure</text>`;
+  svg.innerHTML=s;
+})();
+
+/* ============ FIG 2: TAKTSANG PROFILE ============ */
+(function(){
+  const svg=document.getElementById('profile-chart');
+  const W=1400,H=360,padL=64,padR=46,padT=34,padB=76;
+  const PTS=[[0,2600],[0.6,2705],[1.2,2840],[2.0,2940],[2.6,3060],[3.0,3140],[3.12,3050],[3.24,3025],[3.4,3120]];
+  const maxD=3.4, loE=2550, hiE=3260;
+  const x=d=>padL+(d/maxD)*(W-padL-padR);
+  const y=e=>padT+(1-(e-loE)/(hiE-loE))*(H-padT-padB);
+  let s='';
+  [2600,2700,2800,2900,3000,3100,3200].forEach(e=>{
+    s+=`<line x1="${padL}" y1="${y(e)}" x2="${W-padR}" y2="${y(e)}" class="axs"/>`;
+    s+=`<text x="${padL-10}" y="${y(e)+4}" class="lbl" text-anchor="end">${e.toLocaleString('en-CA')}</text>`;
+  });
+  s+=`<rect x="${x(3.0)}" y="${padT-8}" width="${x(3.4)-x(3.0)}" height="${H-padB-padT+8}" fill="rgba(231,100,155,.10)" stroke="var(--magenta)" stroke-width="1"/>`;
+  let area=`M ${x(0)} ${y(loE)} `;
+  PTS.forEach(pt=>{area+=`L ${x(pt[0])} ${y(pt[1])} `});
+  area+=`L ${x(maxD)} ${y(loE)} Z`;
+  s+=`<path d="${area}" fill="rgba(242,169,60,.16)"/>`;
+  s+=`<path d="M ${PTS.map(pt=>`${x(pt[0])} ${y(pt[1])}`).join(' L ')}" fill="none" stroke="var(--amber)" stroke-width="2.5" stroke-linejoin="round"/>`;
+  const MARK=[
+    {d:0,e:2600,t:'Trailhead 2,600 m',anchor:'start',dx:9,dy:-20},
+    {d:2.0,e:2940,t:'Cafeteria 2,940 m',anchor:'middle',dx:0,dy:-16},
+    {d:3.0,e:3140,t:'Viewpoint 3,140 m',anchor:'end',dx:-10,dy:-12},
+    {d:3.24,e:3025,t:'Waterfall bridge',anchor:'middle',dx:0,dy:30},
+    {d:3.4,e:3120,t:'Monastery 3,120 m',anchor:'end',dx:-6,dy:-26}
+  ];
+  MARK.forEach(m=>{
+    s+=`<circle cx="${x(m.d)}" cy="${y(m.e)}" r="4.5" fill="var(--ink)" stroke="var(--amber)" stroke-width="2"/>`;
+    s+=`<text x="${x(m.d)+m.dx}" y="${y(m.e)+m.dy}" class="lbl-a" text-anchor="${m.anchor}">${m.t}</text>`;
+  });
+  s+=`<line x1="${padL}" y1="${H-padB}" x2="${W-padR}" y2="${H-padB}" class="ax"/>`;
+  [0,1,2,3].forEach(d=>{
+    s+=`<text x="${x(d)}" y="${H-padB+21}" class="lbl" text-anchor="middle">${d} km</text>`;
+  });
+  s+=`<text x="${W-padR}" y="${H-padB+42}" class="lbl" text-anchor="end" fill="var(--magenta)">↑ the staircase — down 100 m, then straight back up</text>`;
+  s+=`<text x="${padL}" y="${H-12}" class="lbl">elevation, metres</text>`;
+  s+=`<text x="${W-padR}" y="${H-12}" class="lbl" text-anchor="end">one way · double it for the round trip</text>`;
+  svg.innerHTML=s;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+})();
+
+/* ============ FIG 3: PARO CLIMATE ============ */
+(function(){
+  const svg=document.getElementById('climate-chart');
+  const W=1400,H=400,padL=56,padR=60,padT=26,padB=54;
+  const MO=[
+    {n:'Jan',hi:9,lo:-6,mm:15},{n:'Feb',hi:11,lo:-3,mm:25},{n:'Mar',hi:15,lo:1,mm:40},
+    {n:'Apr',hi:18,lo:4,mm:80},{n:'May',hi:21,lo:9,mm:130},{n:'Jun',hi:23,lo:13,mm:250},
+    {n:'Jul',hi:24,lo:15,mm:330},{n:'Aug',hi:23,lo:14,mm:300},{n:'Sep',hi:22,lo:12,mm:190},
+    {n:'Oct',hi:18,lo:6,mm:60},{n:'Nov',hi:10,lo:-1,mm:13},{n:'Dec',hi:9,lo:-5,mm:10}
+  ];
+  const bw=(W-padL-padR)/MO.length;
+  const loT=-10, hiT=28, maxMM=350;
+  const y=t=>padT+(1-(t-loT)/(hiT-loT))*(H-padT-padB);
+  const yr=mm=>H-padB-(mm/maxMM)*(H-padT-padB);
+  let s='';
+  [-10,0,10,20].forEach(t=>{
+    s+=`<line x1="${padL}" y1="${y(t)}" x2="${W-padR}" y2="${y(t)}" class="axs"/>`;
+    s+=`<text x="${padL-10}" y="${y(t)+4}" class="lbl" text-anchor="end">${t}°</text>`;
+  });
+  [0,100,200,300].forEach(mm=>{
+    s+=`<text x="${W-padR+10}" y="${yr(mm)+4}" class="lbl">${mm}</text>`;
+  });
+  s+=`<text x="${W-padR+10}" y="${padT-10}" class="lbl">mm</text>`;
+  // rainfall bars
+  MO.forEach((m,i)=>{
+    const x0=padL+i*bw+bw*0.24, bwid=bw*0.52;
+    s+=`<rect x="${x0}" y="${yr(m.mm)}" width="${bwid}" height="${H-padB-yr(m.mm)}" fill="rgba(88,196,163,.30)" rx="1"/>`;
+  });
+  // window highlight
+  const nx=padL+10*bw;
+  s+=`<rect x="${nx}" y="${padT-6}" width="${bw}" height="${H-padB-padT+6}" fill="rgba(231,100,155,.10)" stroke="var(--magenta)" stroke-width="1"/>`;
+  s+=`<text x="${nx+bw/2}" y="${padT-12}" class="lbl-a" text-anchor="middle">7–11 Nov</text>`;
+  // temp lines
+  const cx=i=>padL+i*bw+bw/2;
+  ['hi','lo'].forEach(k=>{
+    const line='M '+MO.map((m,i)=>`${cx(i)} ${y(m[k])}`).join(' L ');
+    s+=`<path d="${line}" fill="none" stroke="${k==='hi'?'var(--amber)':'rgba(166,194,198,.75)'}" stroke-width="2.5" stroke-linejoin="round"/>`;
+    MO.forEach((m,i)=>{
+      const isNov=m.n==='Nov';
+      s+=`<circle cx="${cx(i)}" cy="${y(m[k])}" r="${isNov?4.5:3}" fill="${isNov?'var(--ink)':(k==='hi'?'var(--amber)':'rgba(166,194,198,.75)')}" ${isNov?`stroke="${k==='hi'?'var(--amber)':'var(--paper-dim)'}" stroke-width="2"`:''}/>`;
+      if(isNov) s+=`<text x="${cx(i)}" y="${y(m[k])+(k==='hi'?-14:20)}" class="lbl-a" text-anchor="middle">${m[k]}°</text>`;
+    });
+  });
+  s+=`<line x1="${padL}" y1="${H-padB}" x2="${W-padR}" y2="${H-padB}" class="ax"/>`;
+  MO.forEach((m,i)=>{
+    const isNov=m.n==='Nov';
+    s+=`<text x="${cx(i)}" y="${H-padB+20}" class="lbl" text-anchor="middle" ${isNov?'fill="var(--amber)"':''}>${m.n}</text>`;
+  });
+  s+=`<text x="${padL}" y="${H-14}" class="lbl">Paro · 2,235 m · sunrise 06:22, sunset 17:11 in mid-November</text>`;
+  svg.innerHTML=s;
+})();
+
+/* ============ COST OF ENTRY ============ */
+const FIXED=[
+  {n:'Sustainable Development Fee — 4 nights × US$100',v:400,note:'Per person, per night. Paid up front with the visa.'},
+  {n:'Visa processing fee',v:40,note:'Non-refundable. US$40 per person.'}
+];
+const OPTS=[
+  {n:'Licensed guide, 4 days × US$45',v:180,def:true,note:'Booked direct. Legally required for every dzong, temple and Taktsang.'},
+  {n:'Vehicle and driver, 4 days × US$110',v:440,def:true,note:'No self-driving in Bhutan — hire cars come with a driver.'},
+  {n:'Taktsang entry — Nu 1,000',v:12,def:true,note:'Tiger’s Nest, international rate. Cash.'},
+  {n:'Six other dzongs and lhakhangs × Nu 500',v:36,def:true,note:'Standard monument rate. Add Nu 300 for the takin preserve.'},
+  {n:'Pony to the Taktsang cafeteria, one way',v:22,note:'Halfway only, uphill only. You still walk down.'},
+  {n:'Chele La day — extra vehicle hours and fuel',v:60,note:'Paro & Thimphu shape. Six hours of driving to 3,988 m.'},
+  {n:'Punakha shape — two extra mountain driving days',v:130,note:'Over Dochu La and back. Replaces the Chele La day.'},
+  {n:'All-in operator package instead — 4 days × US$175',v:700,note:'Includes hotel, meals, guide, vehicle and entries. Untick the four rows above if you choose this.'}
+];
+function renderLegs(){
+  const fixedRows=FIXED.map(l=>`
+    <div class="leg-row fixed">
+      <span class="lock">●</span>
+      <span class="lname">${l.n}</span>
+      <span class="lyen">US$${l.v.toLocaleString('en-CA')}</span>
+      <span class="lnote">${l.note}</span>
+    </div>`).join('');
+  const optRows=OPTS.map((l,i)=>`
+    <label class="leg-row">
+      <input type="checkbox" data-i="${i}" ${l.def?'checked':''}>
+      <span class="lname">${l.n}</span>
+      <span class="lyen">US$${l.v.toLocaleString('en-CA')}</span>
+      <span class="lnote">${l.note}</span>
+    </label>`).join('');
+  document.getElementById('legs').innerHTML=fixedRows+optRows;
+}
+function calcTotals(){
+  const gov=FIXED.reduce((a,l)=>a+l.v,0);
+  let ground=0;
+  document.querySelectorAll('#legs input[type="checkbox"]').forEach(cb=>{
+    if(cb.checked) ground+=OPTS[Number(cb.dataset.i)].v;
+  });
+  const total=gov+ground, per=Math.round(total/4);
+  document.getElementById('gov').innerHTML=`US$${gov.toLocaleString('en-CA')}<small>unavoidable</small>`;
+  document.getElementById('ground').innerHTML=`US$${ground.toLocaleString('en-CA')}<small>your choices</small>`;
+  document.getElementById('total').innerHTML=`US$${total.toLocaleString('en-CA')}<small>excl. beds &amp; flights</small>`;
+  const v=document.getElementById('verdict');
+  v.textContent=`US$${per.toLocaleString('en-CA')} a day`;
+  v.className = per<=250 ? 'win' : per>=400 ? 'lose' : '';
+}
+renderLegs();
+document.getElementById('legs').addEventListener('change',calcTotals);
+calcTotals();
+</script>
+
+</body>
+</html>

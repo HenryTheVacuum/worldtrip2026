@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="darkreader-lock">
+<title>Westbound · 02 Korea — 22–26 Oct 2026</title>
+<link rel="stylesheet" href="fonts.css">
+</head>
+<body>
+<style>
+:root{color-scheme:dark;
+  --ink:#05161D;--ink-2:#0A2029;--ink-3:#0E2A35;
+  --rule:#194150;--rule-soft:rgba(25,65,80,.6);
+  --paper:#E2EEED;--paper-dim:#A6C2C6;--muted:#6C8F98;
+  --amber:#F2A93C;--magenta:#E7649B;--jade:#58C4A3;--red:#E05555;
+  --display:'Big Shoulders Display','Arial Narrow',Impact,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --body:'Inter',system-ui,sans-serif;
+  --gut:clamp(18px,4vw,64px);--maxw:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+.section{padding-block:clamp(34px,4.4vw,58px);border-top:1px solid var(--rule-soft);position:relative}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:14px;margin:0 0 18px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--rule)}
+.eyebrow .n{color:var(--amber)}
+h2.head{font-family:var(--display);font-weight:700;font-size:clamp(34px,5.6vw,66px);line-height:.92;margin:0 0 14px;text-transform:uppercase}
+.lede{max-width:66ch;color:var(--paper-dim);font-size:clamp(15px,1.5vw,17px);margin:0 0 26px}
+.lede b{color:var(--paper);font-weight:600}
+a{color:var(--amber);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+.hint{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+@media (min-width:980px){.hint.wide{display:none}}
+.scroller{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--rule) transparent}
+.scroller::-webkit-scrollbar{height:6px}
+.scroller::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}
+.scroller>svg{display:block;width:100%;height:auto}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(30px,5vw,58px) clamp(24px,4vw,40px);overflow:hidden}
+.gridbg{position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:linear-gradient(to right,var(--rule-soft) 1px,transparent 1px),linear-gradient(to bottom,var(--rule-soft) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%);-webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%)}
+.back{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:inline-block;margin-bottom:20px}
+.back:hover{color:var(--amber)}
+.strip{font-family:var(--mono);font-size:clamp(10px,1.15vw,12px);letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;border-block:1px solid var(--rule);padding-block:11px;margin-bottom:clamp(26px,4vw,44px)}
+.strip .k{color:var(--muted)}.strip .amb{color:var(--amber)}
+.title{font-family:var(--display);text-transform:uppercase;margin:0;line-height:.82;position:relative}
+.title .l1{display:block;font-weight:400;font-size:clamp(34px,7.4vw,96px);color:transparent;-webkit-text-stroke:1.2px var(--paper-dim)}
+.title .l2{display:block;font-weight:800;font-size:clamp(72px,17vw,232px);letter-spacing:-.015em;color:var(--paper)}
+.subline{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:baseline;margin-top:clamp(18px,3vw,30px);font-family:var(--mono);font-size:clamp(11px,1.25vw,13px);letter-spacing:.14em;text-transform:uppercase;color:var(--paper-dim)}
+.subline .sep{color:var(--rule)}
+
+/* instruments */
+.instr{display:grid;grid-template-columns:repeat(auto-fit,minmax(124px,1fr));border:1px solid var(--rule);background:var(--ink-2);margin:clamp(24px,3.4vw,38px) 0 0}
+.instr div{padding:15px 17px;border-right:1px solid var(--rule-soft)}
+.instr div:last-child{border-right:0}
+.instr dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.instr dd{margin:0;font-family:var(--display);font-weight:600;font-size:31px;line-height:1}
+.instr dd span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--paper-dim);margin-left:3px}
+.instr dd.hot{color:var(--amber)}
+.instr dd.warn{color:var(--magenta)}
+
+/* chart frames */
+.figcap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:9px;margin:0 0 8px}
+.figcap b{color:var(--amber);font-weight:500}
+.fignote{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.fignote i{display:inline-block;width:14px;height:9px;margin:0 5px 0 14px;vertical-align:middle;border-radius:1px}
+.fignote i:first-child{margin-left:0}
+.ax{stroke:var(--rule);stroke-width:1}
+.axs{stroke:var(--rule-soft);stroke-width:1}
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.08em;fill:var(--muted)}
+.lbl-p{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;fill:var(--paper)}
+.lbl-a{font-family:var(--mono);font-size:10px;letter-spacing:.12em;fill:var(--amber)}
+
+/* cards */
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin:0 0 6px}
+.card{border:1px solid var(--rule);background:var(--ink-2);padding:18px 20px;position:relative}
+.card.bad{border-color:var(--red)}
+.card.good{border-color:var(--jade)}
+.card h3{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 4px;color:var(--paper)}
+.card .verdict{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:11px}
+.card .verdict.bad{color:var(--red)}
+.card .verdict.ok{color:var(--jade)}
+.card p{margin:0 0 10px;font-size:13.5px;color:var(--paper-dim);line-height:1.62}
+.card p:last-child{margin-bottom:0}
+.card p b{color:var(--paper);font-weight:600}
+.fix{border-left:2px solid var(--amber);padding-left:12px;margin:12px 0 0;font-size:12.8px;color:var(--paper-dim);line-height:1.6}
+.fix b{display:block;color:var(--amber);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px;font-weight:500}
+.fix strong{color:var(--paper);font-weight:600}
+
+/* shape cards */
+.shapes{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+.shape{border:1px solid var(--rule);background:var(--ink-2);padding:0;display:flex;flex-direction:column}
+.shape.pick{border-color:var(--amber);box-shadow:inset 0 0 0 1px rgba(242,169,60,.25)}
+.shape-hd{padding:16px 20px 14px;border-bottom:1px solid var(--rule-soft)}
+.shape-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.shape.pick .shape-tag{color:var(--amber)}
+.shape-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(24px,3vw,32px);line-height:.95;margin:0}
+.chainrow{display:flex;flex-wrap:wrap;align-items:center;gap:5px 7px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--paper);padding:13px 20px;border-bottom:1px solid var(--rule-soft);background:rgba(5,22,29,.5)}
+.chainrow .a{color:var(--rule)}
+.chainrow .n{color:var(--amber);font-size:9.5px}
+.shape-body{padding:15px 20px 18px;flex:1}
+.shape-body p{margin:0 0 10px;font-size:13.3px;color:var(--paper-dim);line-height:1.6}
+.shape-body p:last-child{margin-bottom:0}
+.shape-body p b{color:var(--paper);font-weight:600}
+.shape-meta{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--rule-soft)}
+.shape-meta div{flex:1;min-width:88px;padding:11px 20px;border-right:1px solid var(--rule-soft)}
+.shape-meta div:last-child{border-right:0}
+.shape-meta dt{font-family:var(--mono);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.shape-meta dd{margin:0;font-family:var(--mono);font-size:13px;color:var(--paper)}
+.shape-meta dd.g{color:var(--jade)}
+.shape-meta dd.r{color:var(--red)}
+
+/* day accordion */
+.days{border-top:1px solid var(--rule)}
+.day{border-bottom:1px solid var(--rule)}
+.day-btn{all:unset;box-sizing:border-box;display:grid;width:100%;cursor:pointer;grid-template-columns:76px 1fr auto;gap:0 clamp(14px,2.4vw,30px);align-items:baseline;padding:clamp(13px,1.8vw,18px) 4px;transition:background .18s ease}
+.day-btn:hover{background:rgba(242,169,60,.05)}
+.day-btn:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.day-date{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.1em}
+.day-date small{display:block;color:var(--muted);font-size:9.5px;letter-spacing:.14em;margin-top:3px}
+.day-btn>span:nth-child(2){display:flex;flex-direction:column;gap:6px}
+.day-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(22px,3.2vw,34px);line-height:.95;margin:0}
+.day-sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.day-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--paper-dim);text-align:right;white-space:nowrap}
+.day-meta .chev{display:inline-block;margin-left:12px;color:var(--muted);transition:transform .25s ease}
+.day.open .day-meta .chev{transform:rotate(180deg)}
+@media (max-width:720px){.day-btn{grid-template-columns:64px 1fr;row-gap:8px}.day-meta{grid-column:2;text-align:left}}
+.day-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .34s cubic-bezier(.3,.8,.3,1)}
+.day.open .day-body{grid-template-rows:1fr}
+.day-inner{overflow:hidden}
+.day-pad{padding:2px 4px clamp(22px,3vw,32px)}
+.slots{display:grid;gap:0;border-left:1px solid var(--rule)}
+.slot{padding:0 0 16px 16px;position:relative}
+.slot:last-child{padding-bottom:2px}
+.slot::before{content:"";position:absolute;left:-4px;top:6px;width:7px;height:7px;background:var(--amber);border-radius:50%}
+.slot.move::before{background:var(--magenta)}
+.slot h4{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 5px;font-weight:500}
+.slot.move h4{color:var(--magenta)}
+.slot p{margin:0;font-size:14px;line-height:1.62;color:var(--paper-dim);max-width:72ch}
+.slot p b{color:var(--paper);font-weight:600}
+
+/* worth doing */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.fbtn{all:unset;cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border:1px solid var(--rule);color:var(--paper-dim);border-radius:2px;transition:.15s}
+.fbtn:hover{background:var(--ink-3);color:var(--paper)}
+.fbtn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.fbtn[aria-pressed="true"]{background:var(--amber);color:var(--ink);border-color:var(--amber);font-weight:600}
+.fdiv{width:1px;background:var(--rule);margin:2px 6px}
+.items{display:grid;gap:1px;background:var(--rule-soft);border:1px solid var(--rule)}
+.item{background:var(--ink-2);padding:13px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:baseline}
+.item .tier{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:3px 7px 2px;border-radius:2px;white-space:nowrap;align-self:start;margin-top:2px}
+.tier.do{background:rgba(88,196,163,.14);color:var(--jade);border:1px solid rgba(88,196,163,.35)}
+.tier.opt{background:rgba(242,169,60,.12);color:var(--amber);border:1px solid rgba(242,169,60,.3)}
+.tier.skip{background:rgba(224,85,85,.1);color:var(--red);border:1px solid rgba(224,85,85,.3)}
+.item .nm{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:20px;line-height:1.05;color:var(--paper)}
+.item .why{grid-column:2;font-size:13.3px;color:var(--paper-dim);line-height:1.55;max-width:74ch}
+.item .why b{color:var(--paper);font-weight:600}
+.item .when{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);text-align:right;white-space:nowrap;align-self:start;margin-top:4px}
+.item .when.book{color:var(--magenta)}
+@media (max-width:640px){.item{grid-template-columns:auto 1fr}.item .when{grid-column:2;text-align:left;margin-top:2px}.item .why{grid-column:1/-1}}
+.empty{background:var(--ink-2);padding:22px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* rail calc */
+.calc{border:1px solid var(--rule);background:var(--ink-2)}
+.calc-legs{display:grid}
+.leg-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--rule-soft);cursor:pointer}
+.leg-row:hover{background:rgba(242,169,60,.04)}
+.leg-row input{accent-color:var(--amber);width:15px;height:15px;cursor:pointer}
+.leg-row .lname{font-family:var(--mono);font-size:12.5px;color:var(--paper-dim)}
+.leg-row input:checked+.lname{color:var(--paper)}
+.leg-row .lyen{font-family:var(--mono);font-size:12.5px;color:var(--amber);font-variant-numeric:tabular-nums;white-space:nowrap}
+.leg-row .lnote{grid-column:2/-1;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--muted);margin-top:-4px}
+.calc-out{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule-soft)}
+.calc-out div{background:var(--ink-3);padding:15px 17px}
+.calc-out dt{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.calc-out dd{margin:0;font-family:var(--display);font-weight:700;font-size:27px;line-height:1;font-variant-numeric:tabular-nums}
+.calc-out dd small{font-family:var(--mono);font-size:10px;font-weight:400;color:var(--paper-dim);margin-left:4px;letter-spacing:.06em}
+#verdict{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;line-height:1.5}
+#verdict.win{color:var(--jade)}
+#verdict.lose{color:var(--red)}
+
+/* panels / tables */
+.panel{border:1px solid var(--rule);background:var(--ink-2);padding:clamp(17px,2.4vw,24px);margin-top:22px}
+.panel h3{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 12px;font-weight:500}
+.panel p{margin:0 0 12px;font-size:13.6px;color:var(--paper-dim);line-height:1.62}
+.panel p:last-child{margin-bottom:0}
+.panel p b{color:var(--paper);font-weight:600}
+table.ref{width:100%;border-collapse:collapse;font-size:13.4px}
+table.ref th{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:500;padding:0 14px 10px 0;border-bottom:1px solid var(--rule)}
+table.ref td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule-soft);color:var(--paper-dim);vertical-align:top}
+table.ref td:first-child{font-family:var(--display);font-size:17px;font-weight:600;text-transform:uppercase;color:var(--paper);white-space:nowrap;width:1%}
+table.ref td.t{font-family:var(--mono);font-size:11px;letter-spacing:.06em;white-space:nowrap;color:var(--amber)}
+table.ref tr.flag td.t{color:var(--magenta)}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.cols{display:grid;gap:16px 34px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:20px}
+.cols p{margin:0;font-size:13.6px;color:var(--paper-dim);line-height:1.6}
+.cols p b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:5px;font-weight:500}
+
+footer{border-top:1px solid var(--rule);padding-block:26px 40px;color:var(--muted)}
+.foot-grid{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:flex-end}
+.foot-grid p{margin:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase}
+.foot-mark{font-family:var(--display);font-size:clamp(40px,9vw,110px);font-weight:800;text-transform:uppercase;line-height:.8;color:transparent;-webkit-text-stroke:1px var(--rule);margin:30px 0 0}
+</style>
+
+
+
+<header class="hero">
+  <div class="gridbg"></div>
+  <div class="wrap">
+    <a class="back" href="index.html">← Westbound · the dossier</a>
+    <p class="strip">
+      <span><span class="k">Stop</span> <span class="amb">02 of 27</span></span>
+      <span><span class="k">In</span> ICN · from HIJ</span>
+      <span><span class="k">Base</span> <span class="amb">Seoul</span></span>
+      <span><span class="k">Out</span> stop 03 · TBC</span>
+      <span><span class="k">Window</span> 22–26 Oct 2026</span>
+      <span><span class="k">Clock</span> UTC+9 · no change</span>
+    </p>
+    <h1 class="title">
+      <span class="l1">Second stop</span>
+      <span class="l2">Korea</span>
+    </h1>
+    <p class="subline">
+      <span>One city, one base</span><span class="sep">/</span>
+      <span>Three full days</span><span class="sep">/</span>
+      <span>Leave town or don't: see below</span>
+    </p>
+
+    <dl class="instr">
+      <div><dt>Calendar days</dt><dd>5</dd></div>
+      <div><dt>Full days</dt><dd class="hot">3</dd></div>
+      <div><dt>Nights</dt><dd>4</dd></div>
+      <div><dt>Bases</dt><dd>1</dd></div>
+      <div><dt>Clock change</dt><dd>0<span>hrs</span></dd></div>
+      <div><dt>Weekend days</dt><dd class="warn">2<span>of 3</span></dd></div>
+    </dl>
+  </div>
+</header>
+
+<section class="section" id="audit">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">01</span> The time audit</p>
+    <h2 class="head">Three days<br>is three days</h2>
+    <p class="lede">For once the calendar tells the truth. Korea sits in the same time zone as Japan, the flight is under two hours, and there is no date line to pay. You land on the evening of the 22nd, you leave on the morning of the 26th, and the <b>three days in between are genuinely three days</b>. Everything that made the Japan week arithmetically hostile is absent here. Something else takes its place.</p>
+
+    <div class="figcap">
+      <span>Fig. 1 — What the stop really contains</span>
+      <span><b>22–26 Oct</b> · hour by hour</span>
+    </div>
+    <div class="scroller">
+      <svg id="audit-chart" viewBox="0 0 1400 190" role="img" aria-label="Timeline of 22 to 26 October showing the morning of the 22nd in Hiroshima, an afternoon in transit, an arrival evening, three complete full days on the 23rd, 24th and 25th, and a final part-morning on the 26th before the onward flight."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--magenta);opacity:.55"></i>In transit<i style="background:rgba(242,169,60,.35)"></i>Part day<i style="background:var(--amber)"></i>Full day</p>
+
+    <div class="cols">
+      <p><b>The jet-lag gift expires here</b>Japan's whole strategy was 6am. That was a loan against a thirteen-hour time shift, and by the 23rd you are into your second week on Tokyo time with nothing left to borrow. Korea is the same clock. You will wake at a normal hour and want to stay up, which is exactly the opposite of what stop 01 trained you for.</p>
+      <p><b>Seoul is an evening city anyway</b>This turns out not to matter, because Seoul does not reward dawn the way Japan does. The palaces open at 09:00. Bukchon is legally closed to visitors until 10:00. The markets, the alleys and the mountain-view bars are all at their best after dark. Adjust the shape of the day rather than fighting it.</p>
+      <p><b>The arrival evening is half a thing</b>Land around 17:00, clear a digital immigration desk, be at a hotel by 19:00. That's dinner and a walk, not a plan. But unlike Tokyo you won't be destroyed — it's a two-hour hop, not a Pacific crossing. Cheonggyecheon at night is ten minutes from most central hotels and costs nothing.</p>
+      <p><b>One correction carried over</b>The Japan page has its weekdays a day out — 22 Oct 2026 is a <b>Thursday</b>, not a Wednesday, and 16 Oct is a Friday. Everything here is built on the corrected calendar, which matters more than it sounds: your three days fall on Friday, Saturday and Sunday, several sites close on Mondays, and the one border train runs Fridays only.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="flags">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">02</span> Three things that don't move</p>
+    <h2 class="head">Fixed before<br>you choose</h2>
+    <p class="lede">These hold whatever you decide about leaving the city. Two of them are the reason the day-by-day is ordered the way it is.</p>
+
+    <div class="cards">
+      <div class="card good">
+        <h3>The colour finally shows up</h3>
+        <div class="verdict ok">Partial, but real</div>
+        <p>Japan gave you a hard zero. Korea gives you the <b>first autumn of the trip</b> — but on the same terms Japan set, which is to say by altitude. Seoraksan, at 1,708 m in the north-east, is at or very near peak during your exact window. Bukhansan's upper ridge, 836 m and inside Seoul's city limits, is just beginning to turn.</p>
+        <p>What is <b>not</b> ready is the postcard: the ginkgo avenues, the palace maples, Namsan. Seoul's street trees peak in the first half of November, a good two weeks after you leave.</p>
+        <div class="fix"><b>The play</b>Go up. Bukhansan's ridge is roughly a week ahead of the streets below it and is reachable on a subway ticket. That is the entire trick and it is covered in section 06.</div>
+      </div>
+
+      <div class="card bad">
+        <h3>Your three days are Fri, Sat, Sun</h3>
+        <div class="verdict bad">The worst possible draw</div>
+        <p>Korea hikes. On an autumn weekend the popular Bukhansan trails carry queues at the scrambling sections, and the summit of Baegundae can involve genuinely waiting your turn on fixed ropes. Markets, palaces and Bukchon all take a weekend surcharge in bodies too.</p>
+        <p>You get exactly one weekday, and it is Friday. Whatever you most want uncrowded has to go there.</p>
+        <div class="fix"><b>The fix</b>Put the mountain on <strong>Friday</strong> and the city on the weekend. Seoul absorbs crowds; a granite ridge does not. If you take the DMZ option instead, Friday goes to the border and the hike takes the weekend hit — that's the real cost of that choice, and it's priced into section 03.</div>
+      </div>
+
+      <div class="card bad">
+        <h3>Bukchon is closed before 10:00</h3>
+        <div class="verdict bad">₩100,000 fine</div>
+        <p>Jongno-gu made the residential core of Bukchon Hanok Village a Special Management Area. In the Red Zone — the famous alley, Bukchon-ro 11-gil, and its neighbours — visitors are barred from <b>17:00 to 10:00</b> the following morning, and the penalty is a hundred thousand won. Enforcement with fines has been live since March 2025 and stewards patrol the lanes from late afternoon.</p>
+        <p>Separately, since 1 January 2026 chartered tour buses are banned across a 2.3 km stretch of Bukchon-ro at all hours. Only relevant if you book a private car.</p>
+        <div class="fix"><b>What this costs you</b>The single most photographed hanok street in Korea is available in a seven-hour window, in the middle of the day, in the worst light. Take the 10:00 opening, keep your voice down, and get your quiet shots in Seochon or Ikseon-dong instead — neither is restricted.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="shapes">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">03</span> The open question</p>
+    <h2 class="head">Leave the city:<br>yes or no</h2>
+    <p class="lede">With one base and three days there is no routing puzzle — there is one decision, and it is whether any part of this stop happens outside Seoul. The honest answer is that almost nothing within reach earns a whole day. The DMZ is the one exception worth arguing about, and only in its half-day form.</p>
+
+    <div class="shapes">
+      <div class="shape pick">
+        <div class="shape-hd">
+          <div class="shape-tag">Recommended</div>
+          <p class="shape-name">All Seoul</p>
+        </div>
+        <div class="chainrow">
+          <span>Mountain <span class="n">×1</span></span><span class="a">→</span>
+          <span>Old city <span class="n">×1</span></span><span class="a">→</span>
+          <span>River &amp; west <span class="n">×1</span></span><span class="a">→</span>
+          <span class="n">ICN</span>
+        </div>
+        <div class="shape-body">
+          <p>Three days, three distinct Seouls, no coach and no checkpoint. Friday goes up Bukhansan while the trails are empty and the ridge has just turned. Saturday is the Joseon city — palaces, the Secret Garden, Jongmyo, Bukchon inside its legal window. Sunday is the modern one: the Han, the silver grass at Haneul Park, and a wall walk at dusk.</p>
+          <p><b>What you're actually buying</b> is depth in a city that rewards it. Seoul is not a checklist town; the good parts are alleys, meals and hills, and all three of those want unhurried hours rather than a longer list of sights.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Bases</dt><dd class="g">1</dd></div>
+          <div><dt>City days</dt><dd class="g">3</dd></div>
+          <div><dt>Transit hrs</dt><dd>≈2</dd></div>
+          <div><dt>Fly out</dt><dd>ICN</dd></div>
+        </dl>
+      </div>
+
+      <div class="shape">
+        <div class="shape-hd">
+          <div class="shape-tag">If the border is the point</div>
+          <p class="shape-name">With the DMZ</p>
+        </div>
+        <div class="chainrow">
+          <span>DMZ <span class="n">×½</span></span><span class="a">→</span>
+          <span>Old city <span class="n">×1½</span></span><span class="a">→</span>
+          <span>Mountain <span class="n">×1</span></span><span class="a">→</span>
+          <span class="n">ICN</span>
+        </div>
+        <div class="shape-body">
+          <p>A half-day tour takes Friday morning: pickup around 07:00, the Third Infiltration Tunnel, Dora Observatory, Imjingak, back in central Seoul by early afternoon. The rest of Friday still works as a city afternoon. Nothing is deleted — but the hike slides to Sunday and takes the weekend crowd with it.</p>
+          <p><b>Take the half-day, not the full.</b> The full-day version adds a suspension bridge, a defector Q&amp;A and a great deal of coach. It converts a genuine morning into a lost day, and it does not get you meaningfully closer to the line.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Bases</dt><dd class="g">1</dd></div>
+          <div><dt>City days</dt><dd>2½</dd></div>
+          <div><dt>Transit hrs</dt><dd class="r">≈5</dd></div>
+          <div><dt>Fly out</dt><dd>ICN</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>What the DMZ actually is in 2026, before you book it</h3>
+      <p>The <b>JSA at Panmunjom — the blue huts, the facing guards, the line you step over — has been shut to ordinary visitors since July 2023</b>, after a US soldier crossed during a tour. A partial reopening in summer 2025 restored access to the JSA Visitor Centre on selected tours, but the conference buildings themselves remain closed and the orientation tour was redesigned to remove them. Many tours still sold as "JSA tours" substitute an indoor JSA Experience Museum. If that distinction matters to you, ask the operator point-blank what you will actually stand in front of.</p>
+      <p>What a standard DMZ tour reliably delivers is the Third Tunnel, Dora Observatory looking north, and Imjingak. It is worth doing, it is strange and sober, and it is not the photograph you have in your head. <b>Bring your physical passport</b> — the manifest is submitted to the military in advance and a photo of your passport will not get you past the checkpoint.</p>
+      <p>One curiosity for your dates: the Seoul–Dorasan <b>DMZ Peace Connection Train</b> resumed in April 2026 after a six-year suspension and runs on Fridays, with about 120 seats. Friday 23 October is the only day of this stop it could apply to. Availability is thin and it does not replace a tour, but it exists.</p>
+    </div>
+
+    <div class="panel">
+      <h3>What's cut either way, and why</h3>
+      <p><b>Seoraksan.</b> Painful, because it is the one place in Korea at genuine peak colour during your window. It is also two and a half hours each way by express bus to Sokcho, plus a park transfer, and the cable car sells only on the day. As a day trip in peak week you would spend nine hours moving for maybe three on the mountain, in Korea's heaviest domestic travel weekend of the autumn. As an overnight it costs two of your three days. Bank it.</p>
+      <p><b>Suwon Hwaseong.</b> Forty minutes on Line 1 and a genuinely superb 18th-century fortress wall you can walk end to end. The best-value day trip on the board — and still a poor trade against a third day in Seoul on a first visit. It also sits outside the Climate Card boundary, which is a small tax on top.</p>
+      <p><b>Nami Island and the Garden of Morning Calm.</b> Ninety minutes out, at their best in the first week of November, and heavily coached. You would arrive a week early to a car park.</p>
+      <p><b>Gyeongju, Jeonju, Busan.</b> All two hours or more by KTX, all worth two nights, none worth one day. These are the reason to come back, not the reason to leave Seoul now.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="run">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">04</span> Day by day</p>
+    <h2 class="head">Both versions,<br>laid out</h2>
+    <p class="lede">Later starts than Japan and much later finishes — this is the correct shape for Seoul and it is also what your body will want by day nine. Times are indicative. The fixed points are the Bukhansan start, the 10:00 Bukchon opening and the Secret Garden slot you booked weeks ago.</p>
+    <div class="filters" id="dayToggle" style="margin-bottom:6px">
+      <button class="fbtn" data-plan="city" aria-pressed="true">All Seoul</button>
+      <button class="fbtn" data-plan="dmz" aria-pressed="false">With the DMZ</button>
+    </div>
+    <div class="days" id="days"></div>
+    <p class="fignote">Amber = on foot or on the subway · <span style="color:var(--magenta)">Magenta = a coach, a train or an airport</span></p>
+  </div>
+</section>
+
+<section class="section" id="worth">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">05</span> What's actually worth doing</p>
+    <h2 class="head">Do, maybe,<br>don't bother</h2>
+    <p class="lede">Sorted by part of the city, then by whether it earns a slot in three days. As with Japan, <b>don't bother</b> rarely means bad — it usually means something else on this list does the same job better, or does it for free.</p>
+
+    <div class="filters" id="filters">
+      <button class="fbtn" data-city="all" aria-pressed="true">All</button>
+      <button class="fbtn" data-city="Palaces" aria-pressed="false">Palaces &amp; Jongno</button>
+      <button class="fbtn" data-city="Mountains" aria-pressed="false">Mountains &amp; walls</button>
+      <button class="fbtn" data-city="Food" aria-pressed="false">Food &amp; markets</button>
+      <button class="fbtn" data-city="River" aria-pressed="false">River &amp; west</button>
+      <button class="fbtn" data-city="Out" aria-pressed="false">Out of town</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-tier="do" aria-pressed="false">Do</button>
+      <button class="fbtn" data-tier="opt" aria-pressed="false">Maybe</button>
+      <button class="fbtn" data-tier="skip" aria-pressed="false">Don't bother</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-book="1" aria-pressed="false">Needs booking</button>
+    </div>
+    <div class="items" id="items"></div>
+  </div>
+</section>
+
+<section class="section" id="colour">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">06</span> The colour question</p>
+    <h2 class="head">Go up, not<br>out</h2>
+    <p class="lede">This is the same chart as Japan's, one week later and one country west, and it has the same shape for the same reason: <b>autumn in East Asia is a function of altitude before it is a function of the calendar</b>. Korea's colour starts on Seoraksan's granite in late September and walks downhill and southward for eight weeks. Your window catches the top of that staircase, not the bottom.</p>
+
+    <div class="figcap">
+      <span>Fig. 2 — When the leaves actually turn</span>
+      <span><b>Typical peak danpung</b> · your window marked</span>
+    </div>
+    <div class="scroller">
+      <svg id="foliage-chart" viewBox="0 0 1400 460" role="img" aria-label="Chart of typical autumn colour windows from mid-October to late November for nine places in Korea, ordered by elevation. Seoraksan and Odaesan overlap the 22 to 26 October window fully, Bukhansan's ridge catches only its first days, and Seoul's palaces and street trees peak in early to mid November."></svg>
+    </div>
+    <p class="fignote"><i style="background:rgba(242,169,60,.55)"></i>Peak colour<i style="background:rgba(231,100,155,.22);border:1px solid var(--magenta)"></i>Your window · indicative averages; Korean peak dates have drifted about five days later over sixteen years and move a week either way each season</p>
+
+    <div class="panel">
+      <h3>Why Bukhansan is the answer and Seoraksan isn't</h3>
+      <p><b>Bukhansan</b> rises to 836 m on the northern edge of the metropolitan area and is inside Seoul's city limits — Line 3 to Gupabal, then a bus to the trailhead, about fifty minutes door to trail. Its ridge typically colours from around the end of October, roughly a week ahead of the street trees below. You will not get peak. You will get the first proper reds and golds of the whole trip, on granite, with twenty million people laid out beneath you.</p>
+      <p><b>Seoraksan</b> is at peak. It is also 2h30 by express bus to Sokcho and a transfer beyond that, and its long-run normal peak is 17 October — meaning it peaked on the 29th in 2024 and the 24th in 2025 and nobody can tell you in advance which kind of year 2026 is. Chasing a peak that mobile, at that distance, with three days, is how people lose a day and see a car park.</p>
+      <p>The consolation is that the two mountains are the same phenomenon at different heights, and one of them is a subway ride away.</p>
+    </div>
+
+    <div class="panel">
+      <h3>Colour inside the city, for the days you're not on a mountain</h3>
+      <p><b>Changdeokgung's Secret Garden</b> is the best of it — a 45-minute guided walk through pond pavilions under maples, on ground that was closed to commoners for four centuries. Entry is capped and timed. Book it online through the Royal Palaces and Tombs office, or take one of the roughly fifty tickets released on the day at the gate and accept the risk.</p>
+      <p><b>Deoksugung's stone wall path</b> — Doldam-gil — is the ginkgo walk everyone photographs, and it is genuinely lovely in the evening because the palace itself stays open late. It will be more green than gold on your dates.</p>
+      <p><b>Haneul Park</b> is the outlier that doesn't depend on maples at all: a landfill turned meadow above the Han, planted with silver grass that peaks in exactly your window and runs an evening-lit festival in the second half of October. Two hundred and ninety-one steps up, or a short shuttle. This one you have timed perfectly.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="daytrips">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">07</span> The day-trip maths</p>
+    <h2 class="head">Everything<br>is too far</h2>
+    <p class="lede">Korea is small and its trains are fast, which produces a persistent illusion that day trips are cheap. They are not cheap in the currency that matters here. On three days, a place two hours out costs you a third of the stop to visit for four hours. Below is every serious candidate, measured one way from central Seoul.</p>
+
+    <div class="figcap">
+      <span>Fig. 3 — One-way travel time from central Seoul</span>
+      <span><b>Door to door</b> · fastest realistic public route</span>
+    </div>
+    <div class="scroller">
+      <svg id="trip-chart" viewBox="0 0 1400 470" role="img" aria-label="Horizontal bar chart of one-way travel times from central Seoul. Bukhansan and Haneul Park are under an hour and inside the city. Suwon and Incheon are around forty to sixty minutes. The DMZ tour is about seventy minutes each way. Nami Island, Jeonju, Andong, Seoraksan, Gyeongju and Busan all exceed ninety minutes."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--jade);opacity:.6"></i>Inside Seoul<i style="background:rgba(242,169,60,.6)"></i>Still a day<i style="background:rgba(224,85,85,.55)"></i>Costs the day · dashed line at 75 min is where a half-day stops being possible</p>
+
+    <div class="cols">
+      <p><b>The 75-minute line</b>Under it, you can be back for an afternoon and the trip is an addition. Over it, you have committed the day, and on a three-day stop the day you commit is a third of everything. Only the DMZ sits close enough to the line to argue about, and only in its half-day form.</p>
+      <p><b>Suwon is the near miss</b>Forty minutes on Line 1 to a UNESCO fortress wall you can walk in three hours, with an excellent local speciality — galbi — waiting at the end. On a five-day Seoul stop it goes straight in. On three, the third Seoul day beats it, and it isn't close.</p>
+      <p><b>Nothing here is a mistake to skip</b>Gyeongju is the old Silla capital and deserves two nights. Jeonju is the best eating city in the country. Busan is a different Korea entirely. All three are reasons to plan a return, and none of them survives contact with a 24-hour budget.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="transit">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">08</span> The transit maths</p>
+    <h2 class="head">Buy the<br>Climate Card</h2>
+    <p class="lede">The opposite verdict to Japan's, for the opposite reason. Seoul's Climate Card is an unlimited subway-and-bus pass sold in short-term tourist durations — <b>₩5,000 for one day, ₩10,000 for three, ₩15,000 for five</b>, plus ₩3,000 once for the physical card. Against a ₩1,550 base fare it breaks even at roughly four rides a day, and visitors typically take five or six. Tick the legs you'll ride and watch it pay for itself — then read the two traps underneath, because both are real and neither is obvious.</p>
+
+    <div class="calc">
+      <div class="calc-legs" id="legs"></div>
+      <dl class="calc-out">
+        <div><dt>Pay as you go</dt><dd id="ptp"></dd></div>
+        <div><dt>Best pass</dt><dd id="pass"></dd></div>
+        <div><dt>Difference</dt><dd id="diff"></dd></div>
+        <div><dt>Verdict</dt><dd><span id="verdict"></span></dd></div>
+      </dl>
+    </div>
+    <p class="fignote">Pass options priced at ₩10,000 for three days and ₩15,000 for five, both plus a one-off ₩3,000 card · fares move; verify at the machine · CAD at roughly ₩1,050 to the dollar</p>
+
+    <div class="panel">
+      <h3>Trap one: the clock starts when you charge it, not when you ride</h3>
+      <p>Short-term passes count calendar days from the moment they are loaded, not from first use. Charge a three-day pass at the airport on Thursday evening and it dies on Saturday night, stranding your Sunday. <b>Your stop spans five calendar days of transit</b> — the 22nd through the 26th — so either buy the five-day pass, or pay cash on the arrival evening and load a three-day pass on Friday morning, which covers Friday, Saturday and Sunday and leaves only the Monday airport run outside.</p>
+      <p>A second wrinkle: the mobile version lives in the Tmoney app and needs Android 12 or later. iPhones cannot use it at all, because Apple doesn't open NFC to third parties in Korea. Buy the physical card. Since March 2026 the newer machines at over 270 stations on Lines 1–8 take foreign credit cards, which removes the old cash-only annoyance, but stock at convenience stores is genuinely patchy — get it at a station.</p>
+    </div>
+
+    <div class="panel">
+      <h3>Trap two: it stops at the city line</h3>
+      <p>The Climate Card is a <b>Seoul</b> pass. It does not cover the AREX from Incheon in either direction, red express buses, the Shinbundang line, or any journey that begins or ends in Gyeonggi-do — which rules out Suwon, and rules out getting yourself to a DMZ tour meeting point outside the boundary. Tap out at a Gyeonggi station and the gate will simply refuse you and a member of staff will take the full fare in cash.</p>
+      <p>So roughly ₩22,000 of your Seoul transport — the two airport runs — sits outside any pass no matter what you buy. That is not an argument against the card; it's the reason the arithmetic below only counts the legs the card can actually pay for. <b>Prices and boundaries both move — check before buying.</b></p>
+    </div>
+
+    <div class="panel">
+      <h3>Getting in from Incheon</h3>
+      <p><b>AREX Express</b> runs non-stop to Seoul Station in 43 minutes with a reserved seat and luggage space, priced somewhere between ₩9,500 and ₩13,000 depending on whether you buy online, at the machine or at the counter — quoted rates vary widely, so check rather than assume. <b>AREX All-Stop</b> does the same run in about an hour for around ₩5,000 on a T-money tap, and it stops at Hongdae and Digital Media City, which is often more useful than Seoul Station.</p>
+      <p><b>Airport limousine buses</b> run ₩17,000–18,000 direct to hotel clusters — worth it for Gangnam, pointless for anywhere on Line 1 or 4. A taxi is ₩65,000–85,000; hail it through Kakao T rather than the rank so you get the fare estimate up front. The last Express leaves T1 around 22:40, so a 17:00 landing has no timing problem at all.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="admin">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">09</span> Ground rules</p>
+    <h2 class="head">Before you land</h2>
+
+    <div class="tablewrap">
+    <table class="ref">
+      <thead><tr><th>Item</th><th>What to do</th><th>When</th></tr></thead>
+      <tbody>
+        <tr><td>Entry</td><td>Visa-free for Canadians, and the K-ETA requirement is temporarily waived through 31 December 2026. You need nothing but the passport. From 1 January 2027 the K-ETA is expected back, which is a problem for a future stop, not this one.</td><td class="t">Nothing to do</td></tr>
+        <tr class="flag"><td>e-Arrival Card</td><td><b>This is the one people miss.</b> Paper arrival cards were abolished on 1 January 2026. Because you are K-ETA exempt, you must file the free e-Arrival Card at e-arrivalcard.go.kr within 72 hours of landing and arrive with a QR code. No card means a kiosk queue at Incheon. One filing per traveller.</td><td class="t">3 days before</td></tr>
+        <tr><td>Passport, physically</td><td>Carry the actual booklet on a DMZ tour. Identity is checked at the civilian control line against a manifest lodged with the military in advance; a photo or photocopy will get you turned back at the checkpoint.</td><td class="t">On the day</td></tr>
+        <tr class="flag"><td>Secret Garden</td><td>Changdeokgung's Huwon is capped, timed and guided. Book online through the Royal Palaces and Tombs office; the international site is unreliable, so use the Korean-language page with the English toggle. Around fifty tickets go on the gate each day as a fallback.</td><td class="t">Weeks ahead</td></tr>
+        <tr><td>Palace closing days</td><td>Gyeongbokgung closes <b>Tuesdays</b>. Changdeokgung, Changgyeonggung and Deoksugung close <b>Mondays</b> — which is your departure day, so it costs you nothing here. Jongmyo is guided-tour-only except on Saturdays, when you can walk it yourself.</td><td class="t">Check</td></tr>
+        <tr><td>Palace tickets</td><td>Gyeongbokgung ₩3,000; Changdeokgung ₩3,000, or ₩8,000 with the Secret Garden. The Royal Palace Pass is ₩10,000 for four palaces plus Jongmyo and pays for itself if you do Changdeokgung and one other. Hanbok rental gets you free general admission — but not the Secret Garden.</td><td class="t">At the gate</td></tr>
+        <tr class="flag"><td>Bukchon curfew</td><td>Red Zone open to visitors 10:00–17:00 only. ₩100,000 fine outside those hours, enforced. Chartered buses banned across 2.3 km of Bukchon-ro at all times since 1 January 2026.</td><td class="t">Plan around it</td></tr>
+        <tr><td>Payment</td><td>Korea is close to cashless — cards work almost everywhere, including markets. Carry ₩50,000–100,000 anyway for street stalls and the physical Climate Card. Foreign cards are widely accepted but not universally; a WOWPASS or a topped-up T-money covers the gaps.</td><td class="t">On arrival</td></tr>
+        <tr><td>Maps</td><td>Google Maps does not do turn-by-turn walking or driving directions in Korea — export restrictions on national mapping data. Download <b>Naver Map</b> or <b>KakaoMap</b> before you fly; both have English. Kakao T for taxis. Papago beats Google Translate for Korean.</td><td class="t">Before departure</td></tr>
+        <tr><td>Public holidays</td><td>Chuseok fell in late September 2026 and Hangeul Day on 9 October — both well clear of your window. Nothing national lands inside 22–26 October.</td><td class="t">Clear</td></tr>
+        <tr><td>Booking window</td><td>Late October is peak domestic travel season. Seoul hotels are fine at a few weeks' notice; the Secret Garden, any DMZ tour and the Friday Dorasan train are not.</td><td class="t">Now</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="cols">
+      <p><b>Weather</b>Materially colder than the Japan leg. Expect 17–19°C by day and 7–10°C overnight, against Hiroshima's low twenties. Clear, dry and bright — late October is the best weather Korea gets all year. What your Japan packing won't cover is a granite ridge at 09:00, which will be near freezing in wind. Add one warm layer and gloves you can lose.</p>
+      <p><b>Two festivals worth checking</b>The Jogyesa Chrysanthemum Festival fills the temple courtyard near Anguk with flower sculptures through roughly the second half of October, free, five minutes from Insadong. The Seoul Silver Grass Festival at Haneul Park runs mid-to-late October with evening lighting. Both are annual and both publish dates late — confirm before building an evening around either.</p>
+      <p><b>Eating</b>The pattern from Japan holds: the best meals will be cheap and served at a counter. Where Korea differs is that dinner is social and long, and a lot of the good stuff is minimum-two-people — barbecue, jjigae, whole braised dishes. Solo travellers do better at gimbap counters, noodle shops and market stalls, all of which are excellent.</p>
+      <p><b>Drinking</b>Euljiro's nogari alley, the Ikseon-dong lanes and the Hongdae backstreets are three completely different evenings. Soju is cheap enough to be a hazard; makgeolli with a pancake on a cold night is the better tradition. Bars run very late and the subway does not — last trains are around midnight, after which it's Kakao T.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <p>Westbound · stop 02 · Korea</p>
+      <p>22–26 Oct 2026 · ICN in, ICN out</p>
+      <p>Fares, rules and closures verified Sept 2026 — recheck before booking</p>
+    </div>
+    <p class="foot-mark">Three days, one city</p>
+  </div>
+</footer>
+
+<script>
+/* ============ DAY-BY-DAY ============ */
+const DAYS_CITY=[
+{d:'Thu 22',w:'Arrive',name:'Seoul',sub:'Land 17:00 · do nothing',meta:'Night 1',
+ slots:[
+  {m:1,h:'16:50 · ICN',p:'Scan the e-Arrival QR you filed three days ago and walk past the kiosk queue. AREX Express to Seoul Station in 43 minutes, or the All-Stop if your hotel is nearer Hongdae. Buy a physical Climate Card now but <b>do not load it</b> — the clock starts on the charge date, not the first tap.'},
+  {h:'19:30 · Cheonggyecheon and dinner',p:'The restored stream runs eleven kilometres through the middle of the city, sunk below street level and lit at night. Walk twenty minutes of it, then eat the first Korean barbecue of the trip somewhere within staggering distance of the bed.'}
+]},
+{d:'Fri 23',w:'Full',name:'Bukhansan',sub:'The one weekday you get',meta:'Night 2',
+ slots:[
+  {h:'07:30 · Line 3 to Gupabal',p:'Then bus 704 or a short taxi to the Bukhansanseong trailhead. Fifty minutes door to trail. Going on the weekday is the entire point — this same trail on Sunday has queues at the fixed ropes.'},
+  {h:'09:00 · Baegundae, 836m',p:'Four to five hours return over granite, with chains and rope on the final scramble. The ridge is where the first real autumn colour of your whole trip is, roughly a week ahead of the streets below. Twenty million people laid out underneath at the top. Proper shoes, gloves, one warm layer — it is near freezing up there in wind.'},
+  {h:'14:30 · Jjimjilbang',p:'Korean bathhouse, and the single most correct thing to do with legs that have just done that. Hot pools, cold plunge, a shared floor where people nap in cotton pyjamas. Around ₩10,000–15,000. Dragon Hill near Yongsan is the tourist-friendly one; almost any neighbourhood has a better, plainer version.'},
+  {h:'18:00 · Gwangjang Market',p:'The oldest covered market in Korea and the best eating in it happens at the stalls: bindaetteok mung-bean pancakes off the griddle, mayak gimbap, raw beef tartare if you are brave. Watch for the tourist-pricing complaints that have dogged the place — ask the price before you sit, which locals do too.'},
+  {h:'20:30 · Euljiro',p:'Ten minutes\u2019 walk. The print-shop district turns into a drinking district after dark — nogari alley is plastic stools, dried pollack and cheap beer under the awnings, and the surrounding blocks hide some of the best small bars in the city up unmarked staircases.'}
+]},
+{d:'Sat 24',w:'Full',name:'Old Seoul',sub:'Palaces, and one alley on a clock',meta:'Night 3',
+ slots:[
+  {h:'09:00 · Gyeongbokgung',p:'Opens at nine, and you want the first half hour before the hanbok crowds thicken. The changing of the guard at the main gate is at 10:00 — genuinely good theatre, ten minutes, then leave through the north gate for the Blue House grounds if you want the detour.'},
+  {h:'11:00 · Bukchon and Samcheong-dong',p:'The Red Zone opens to visitors at exactly 10:00 and shuts at 17:00, so this is the legal window and there is no way around it. Keep your voice down — stewards patrol and the fine is ₩100,000. Then downhill into Samcheong-dong for coffee and galleries with no restrictions at all.'},
+  {h:'14:30 · Changdeokgung and the Secret Garden',p:'The best of the five palaces and the only UNESCO one, laid along the contours of the hill rather than on a grid. The Huwon tour is 45 minutes, capped, timed and booked weeks ahead — pond pavilions, maples, four centuries of nobody being allowed in. This is your one Seoul garden and it is worth the admin.'},
+  {h:'16:30 · Jongmyo',p:'The royal ancestral shrine, and on paper the least photogenic thing in Seoul: two immensely long empty halls on an empty stone platform. It is also the most severe and moving space in the city. <b>Saturday is the only day you can walk it unguided</b> — every other day is timed group tours. Your dates hand you the right day.'},
+  {h:'18:30 · Ikseon-dong',p:'A block of 1920s hanoks turned into bars, kitchens and coffee shops, threaded by alleys about a metre wide. It does everything Bukchon does photographically, with no curfew, and you can actually eat there.'}
+]},
+{d:'Sun 25',w:'Full',name:'The other Seoul',sub:'River, grass, and a wall at dusk',meta:'Night 4',
+ slots:[
+  {h:'08:30 · Haneul Park',p:'A landfill mountain turned meadow above the Han, planted with silver grass that peaks in exactly this window and runs an evening-lit festival through late October. Two hundred and ninety-one steps up, or take the shuttle. Get there before the Sunday crowds and the light is sideways through the grass.'},
+  {h:'11:00 · The Han at Yeouido',p:'Rent a Ttareungi bike for a couple of thousand won and ride the riverside path. This is where Seoul actually relaxes — tents, fried chicken delivered to the grass, ramyeon from a vending machine you cook at the table. Do the last one; it is a genuine local ritual and costs about three dollars.'},
+  {h:'13:30 · Mangwon Market',p:'A real neighbourhood market with none of Gwangjang\u2019s tour groups. Lunch here, then walk east through Yeonnam-dong along the old railway that\u2019s now a linear park.'},
+  {h:'15:30 · Seongsu-dong',p:'The former shoe-factory district, now concept stores and coffee roasters in unrenovated industrial shells. Skip if you\u2019ve had enough of that genre — Seoul does it better than most cities but it is still that genre.'},
+  {h:'17:30 · Naksan and the city wall',p:'The Joseon fortress wall runs over Naksan\u2019s ridge, floodlit after dark, with the whole city on one side and Ihwa village on the other. Forty minutes of walking, free, and the best skyline view in Seoul that doesn\u2019t cost an observation-deck ticket.'},
+  {h:'20:00 · Last dinner',p:'Gopchang, or a proper samgyetang, or one more barbecue. Bars run very late; the subway does not. Last trains are around midnight and after that it\u2019s Kakao T.'}
+]},
+{d:'Mon 26',w:'Depart',name:'To stop 03',sub:'Half a morning',meta:'Fly out',
+ slots:[
+  {h:'08:00 · One last thing',p:'Monday closes Changdeokgung, Changgyeonggung and Deoksugung — but Deoksugung\u2019s stone wall path is a public street and open regardless, and it is the ginkgo walk of the city. Or Namdaemun Market for a standing breakfast. An hour either way.'},
+  {m:1,h:'11:00 · AREX to ICN',p:'43 minutes on the Express from Seoul Station, an hour on the All-Stop. Neither is covered by the Climate Card. Build in the usual buffer — Incheon is efficient but it is very large.'},
+  {m:1,h:'· Stop 03',p:'Westbound continues. Whatever is next, you leave Korea one week before its cities turn gold, which is either a small tragedy or a good reason to come back in November.'}
+]}
+];
+
+const DAYS_DMZ=[
+{d:'Thu 22',w:'Arrive',name:'Seoul',sub:'Land 17:00 · do nothing',meta:'Night 1',
+ slots:[
+  {m:1,h:'16:50 · ICN',p:'e-Arrival QR, AREX Express, 43 minutes to Seoul Station. Buy the physical Climate Card tonight but load it tomorrow morning — the pass counts calendar days from the charge, not the first tap.'},
+  {h:'19:30 · Cheonggyecheon and dinner',p:'Twenty minutes along the lit stream, then barbecue within walking distance. Set an alarm you will hate — the border coach leaves early.'}
+]},
+{d:'Fri 23',w:'Move',name:'The DMZ',sub:'The border, back for lunch',meta:'Night 2',
+ slots:[
+  {m:1,h:'07:00 · Pickup',p:'Half-day tours collect from central hotels or a downtown meeting point between 07:00 and 08:00. <b>Physical passport, not a photo</b> — the manifest went to the military days ago and the checkpoint checks the booklet.'},
+  {h:'09:00 · Third Infiltration Tunnel',p:'Dug by the North, discovered in 1978, and you walk down a 350-metre access slope at eleven degrees to reach it. The climb back up is the equivalent of a 25-storey building. Low ceilings, hard hats, genuinely claustrophobic. Skip the descent if that is a problem — the exhibition above is worth the stop on its own.'},
+  {h:'10:45 · Dora Observatory',p:'Binoculars pointed at Kaesong and the propaganda village. Photo lines are strictly enforced now. On a clear late-October morning you can see a long way into a country you cannot go to.'},
+  {h:'12:00 · Imjingak',p:'The border park outside the control line — Freedom Bridge, the ribbon-covered fence, memorials left by families who never went back. Open to anyone without a permit, if you ever want to return under your own steam.'},
+  {m:1,h:'14:00 · Back in Seoul',p:'Half-day tours return early afternoon. The rest of the day is still a day, which is the entire argument for the half over the full.'},
+  {h:'15:00 · Gyeongbokgung and Bukchon',p:'Tight but legal: the palace, then Bukchon before its 17:00 shutout. Two hours, moving. If it slips, drop Bukchon rather than rushing the palace — Ikseon-dong tonight covers the same ground without a curfew.'},
+  {h:'19:00 · Gwangjang Market',p:'Bindaetteok, mayak gimbap, and stalls that have been there for generations. Ask prices before sitting.'}
+]},
+{d:'Sat 24',w:'Full',name:'Old Seoul',sub:'The Joseon city, unhurried',meta:'Night 3',
+ slots:[
+  {h:'09:00 · Changdeokgung and the Secret Garden',p:'The best palace and the only UNESCO one. The Huwon tour is capped, timed and booked weeks ahead — 45 minutes of pond pavilions under maples on ground closed to commoners for four hundred years.'},
+  {h:'11:30 · Jongmyo',p:'Two enormous empty halls on a stone platform, and the most severe space in Seoul. Saturday is the one day of the week you can walk it without a guided group — your dates happen to give you it.'},
+  {h:'13:00 · Seochon',p:'The west village, on the other side of Gyeongbokgung from Bukchon. Same hanoks, a fraction of the visitors, no restricted hours, and better lunch. Tosokchon\u2019s ginseng chicken soup is nearby and deserves its queue.'},
+  {h:'15:30 · Ikseon-dong',p:'1920s hanok alleys turned into bars and kitchens, a metre wide, no curfew. Coffee, then stay for early drinks.'},
+  {h:'17:30 · Naksan and the city wall',p:'The Joseon fortress wall over the ridge, floodlit after dark, the whole city on one side. Forty minutes, free, and the best skyline in Seoul without an admission ticket.'},
+  {h:'20:00 · Euljiro',p:'Nogari alley for plastic stools and dried pollack, then the unmarked staircases above the print shops.'}
+]},
+{d:'Sun 25',w:'Full',name:'Bukhansan',sub:'The mountain, on the wrong day',meta:'Night 4',
+ slots:[
+  {h:'07:00 · Earlier than you want',p:'This is the price of the DMZ. Autumn Sunday on Bukhansan is Korea\u2019s national pastime at full volume, and the popular routes back up at the scrambling sections. Leaving at seven buys you maybe an hour of quiet.'},
+  {h:'08:30 · Take a different summit',p:'Skip Baegundae and its rope queues. The Bibong ridge or the Uiryeong path give you the same granite, the same first-of-the-season colour and a fraction of the bodies. You lose the highest point and keep the day.'},
+  {h:'14:00 · Jjimjilbang',p:'Hot pools, cold plunge, ₩10,000–15,000, and the correct response to that descent.'},
+  {h:'17:00 · Namsan at sunset',p:'Cable car or the walk up through the park to N Seoul Tower. Not subtle, but the light over the river at this hour in late October is the best the city gives you.'},
+  {h:'19:30 · What this version skips',p:'Haneul Park\u2019s silver grass — which peaks in exactly your window and nowhere else in the year — the Han River afternoon, and Mangwon. Those three are what the border morning actually costs. If that reads as a bad trade, take the All Seoul plan.'}
+]},
+{d:'Mon 26',w:'Depart',name:'To stop 03',sub:'Half a morning',meta:'Fly out',
+ slots:[
+  {h:'08:00 · One last thing',p:'Monday closes most palaces, but Deoksugung\u2019s stone wall path is a public street and it is the city\u2019s ginkgo walk. Or Namdaemun Market, standing up.'},
+  {m:1,h:'11:00 · AREX to ICN',p:'43 minutes on the Express, an hour on the All-Stop, neither covered by the Climate Card.'},
+  {m:1,h:'· Stop 03',p:'Westbound continues.'}
+]}
+];
+
+let CURRENT_PLAN='city';
+function renderDays(){
+  const DAYS = CURRENT_PLAN==='city' ? DAYS_CITY : DAYS_DMZ;
+  document.getElementById('days').innerHTML=DAYS.map((D,i)=>`
+  <div class="day">
+    <button class="day-btn" aria-expanded="false">
+      <span class="day-date">${D.d}<small>${D.w}</small></span>
+      <span><span class="day-name">${D.name}</span><span class="day-sub">${D.sub}</span></span>
+      <span class="day-meta">${D.meta}<span class="chev">▾</span></span>
+    </button>
+    <div class="day-body"><div class="day-inner"><div class="day-pad"><div class="slots">
+      ${D.slots.map(s=>`<div class="slot${s.m?' move':''}"><h4>${s.h}</h4><p>${s.p}</p></div>`).join('')}
+    </div></div></div></div>
+  </div>`).join('');
+
+  document.querySelectorAll('.day-btn').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const d=b.parentElement, open=d.classList.toggle('open');
+      b.setAttribute('aria-expanded',open?'true':'false');
+    });
+  });
+  document.querySelector('.day').classList.add('open');
+  document.querySelector('.day-btn').setAttribute('aria-expanded','true');
+}
+renderDays();
+
+document.getElementById('dayToggle').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  CURRENT_PLAN=b.dataset.plan;
+  document.querySelectorAll('#dayToggle .fbtn').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
+  renderDays();
+});
+
+/* ============ WORTH DOING ============ */
+const ITEMS=[
+/* PALACES & JONGNO */
+{c:'Palaces',t:'do',n:'Changdeokgung Secret Garden',w:'The best enclosed landscape in Seoul and the only UNESCO palace — pond pavilions and maples laid along the hill instead of on a grid. Capped, timed, guided, 45 minutes. ₩8,000 with palace entry.',when:'Book ahead',b:1},
+{c:'Palaces',t:'do',n:'Jongmyo',w:'Two vast empty halls on a bare stone platform, and the most severe and affecting space in the city. Guided groups only — <b>except Saturdays</b>, when you can walk it yourself.',when:'Saturdays'},
+{c:'Palaces',t:'do',n:'Gyeongbokgung',w:'The big one, largely a 20th-century reconstruction of a 14th-century original, and none the worse for it. Guard changing at 10:00 and 14:00. Closed Tuesdays.',when:'09:00 · Closed Tue'},
+{c:'Palaces',t:'do',n:'Bukchon Hanok Village',w:'Six hundred surviving hanoks on a hillside between two palaces. Red Zone open to visitors 10:00–17:00 only, ₩100,000 fine outside it, stewards enforcing. Keep your voice down; people live there.',when:'10:00–17:00'},
+{c:'Palaces',t:'do',n:'Seochon',w:'The west village. Same period, same hanoks, a fraction of the visitors, no restricted hours and better food. Where Bukchon sends you once Bukchon has disappointed you.',when:'Any time'},
+{c:'Palaces',t:'opt',n:'Deoksugung and the doldam-gil',w:'Small palace with an incongruous neoclassical wing, open into the evening, and the stone wall path outside is the ginkgo walk of Seoul. Path is a public street — open even on Mondays when the palace isn\u2019t.',when:'To 21:00 · Closed Mon'},
+{c:'Palaces',t:'opt',n:'Changgyeonggung',w:'The quiet palace, connected to Changdeokgung by a gate, with a 1909 glasshouse the Japanese built when they turned it into a zoo. Half-empty most days.',when:'Closed Mon'},
+{c:'Palaces',t:'opt',n:'Hanbok rental',w:'Gets you free general admission to all five palaces, though not the Secret Garden. ₩15,000–30,000 for a few hours. Half the palace crowd is doing it, which is either the fun or the problem.',when:'Half day'},
+{c:'Palaces',t:'opt',n:'Royal Palace Pass',w:'₩10,000 for four palaces plus Jongmyo, three months\u2019 validity, sold at any palace ticket office. Pays for itself the moment you do Changdeokgung with Huwon plus one other.',when:'At the gate'},
+{c:'Palaces',t:'skip',n:'Gyeonghuigung',w:'The fifth palace, almost entirely rebuilt in the 1990s on a fraction of its original footprint. Free, empty, and there is nothing there.',when:''},
+{c:'Palaces',t:'skip',n:'Insadong main street',w:'A souvenir arcade with a Starbucks sign in hangul. The alleys off it still hold real teahouses, but Ikseon-dong does the whole job better five minutes east.',when:''},
+/* MOUNTAINS & WALLS */
+{c:'Mountains',t:'do',n:'Bukhansan · Baegundae',w:'836m of granite inside the city limits, four to five hours return, chains and rope at the top. The ridge holds the first genuine autumn colour of your entire trip. Line 3 to Gupabal then a bus.',when:'Weekday'},
+{c:'Mountains',t:'do',n:'Seoul City Wall at Naksan',w:'Joseon fortress wall over a ridge, floodlit after dark, the skyline on one side and Ihwa village on the other. Forty minutes, free, and better than any paid observation deck.',when:'Dusk'},
+{c:'Mountains',t:'do',n:'Jjimjilbang',w:'Bathhouse: hot pools, cold plunge, saunas, and a communal floor where strangers nap in matching pyjamas. ₩10,000–15,000. Do it the afternoon you come off the mountain, not before.',when:'After the hike'},
+{c:'Mountains',t:'opt',n:'Inwangsan',w:'338m, two hours, shaman shrines and boulder fields on the way up, and a stretch of city wall along the top. The short version of Bukhansan if the long one looks like too much.',when:'Half day'},
+{c:'Mountains',t:'opt',n:'Namsan and N Seoul Tower',w:'Cable car or walk up through the park. Unsubtle and busy, but the late-October light over the river at sunset earns it. Free to reach the base of the tower; the observatory costs.',when:'Sunset'},
+{c:'Mountains',t:'opt',n:'Achasan',w:'An hour up on the eastern edge for a long view down the Han. The low-effort option, and a good half-morning if the legs have gone.',when:'1–2 hours'},
+{c:'Mountains',t:'skip',n:'Lotte World Tower Seoul Sky',w:'555 metres and Korea\u2019s tallest, out in Jamsil, and expensive. Namsan and the Naksan wall give you the city for nothing, and you have already done the great glass-box view at Shibuya Sky in Tokyo.',when:''},
+{c:'Mountains',t:'skip',n:'Bukaksan summit trail',w:'The wall route behind the Blue House is genuinely good, but sections close at short notice for presidential security and the ID checks are a lottery. Inwangsan next door has none of that.',when:''},
+/* FOOD & MARKETS */
+{c:'Food',t:'do',n:'Gwangjang Market',w:'The oldest covered market in the country, and the eating is at the stalls — mung-bean pancakes off the griddle, mayak gimbap, raw beef. Ask the price before you sit; tourist pricing has been a running scandal.',when:'From 17:00'},
+{c:'Food',t:'do',n:'Euljiro nogari alley',w:'Plastic stools under awnings between print shops, dried pollack and cheap beer, and some of the best small bars in Seoul up unmarked staircases in the surrounding blocks.',when:'After 19:00'},
+{c:'Food',t:'do',n:'Ikseon-dong',w:'A block of 1920s hanoks turned into kitchens and bars along alleys a metre wide. Everything Bukchon offers photographically, with no curfew and food at the end of it.',when:'Evening'},
+{c:'Food',t:'do',n:'Korean barbecue, properly',w:'Pork belly over charcoal at a neighbourhood place with an extractor hood and no English menu beats any of the polished ones. Minimum two people for most cuts — this is a social cuisine and solo diners get steered to stews.',when:'Dinner'},
+{c:'Food',t:'opt',n:'Mangwon Market',w:'A real neighbourhood market near the river with none of Gwangjang\u2019s coach parties. Cheaper, calmer, and the fried chicken is better.',when:'Lunch'},
+{c:'Food',t:'opt',n:'Tosokchon samgyetang',w:'Whole young chicken stuffed with rice and ginseng, near Gyeongbokgung, with a permanent queue that moves fast. Exactly the right thing on a cold morning off a mountain.',when:'Lunch'},
+{c:'Food',t:'opt',n:'Noryangjin fish market',w:'Pick it downstairs, they cook it upstairs. Busiest before dawn, fine all day. Worth it if you liked Tsukiji and want the Korean argument against it.',when:'Any time'},
+{c:'Food',t:'opt',n:'Gopchang',w:'Grilled beef intestine, chewy, rich and the thing Koreans actually crave. Not a first-night dish. Excellent third-night dish.',when:'Dinner'},
+{c:'Food',t:'skip',n:'Myeongdong street food',w:'The most expensive and least interesting eating in Seoul, aimed squarely at people who have been in the country under twelve hours. Myeongdong is a cosmetics district; shop there, eat elsewhere.',when:''},
+{c:'Food',t:'skip',n:'Itaewon',w:'The international quarter, and there is nothing here you can\u2019t get better and cheaper in a neighbourhood that isn\u2019t trying to be somewhere else.',when:''},
+/* RIVER & WEST */
+{c:'River',t:'do',n:'Haneul Park silver grass',w:'A landfill mountain turned meadow above the Han, planted with silver grass that peaks in <b>exactly your window</b> and is lit in the evenings for the late-October festival. 291 steps or a shuttle. The one piece of seasonal timing you have got perfectly right.',when:'Late Oct'},
+{c:'River',t:'do',n:'The Han at Yeouido',w:'Rent a Ttareungi bike for a couple of thousand won and ride the riverside path. Tents on the grass, delivery chicken, and ramyeon cooked at a riverside vending machine — do the last one, it costs three dollars and it is a genuine local ritual.',when:'Afternoon'},
+{c:'River',t:'opt',n:'Yeonnam-dong and the Gyeongui line park',w:'A decommissioned railway turned into a two-kilometre linear park, with the good coffee and small restaurants strung along it. Walk it from Hongdae to Mangwon.',when:'Afternoon'},
+{c:'River',t:'opt',n:'Hongdae after dark',w:'Buskers, cheap food, students, and a level of noise that is either the point or the problem. Best sampled for an hour on the way somewhere else.',when:'Evening'},
+{c:'River',t:'opt',n:'Banpo Bridge fountain',w:'The bridge sprays a lit arc of water into the Han on a schedule, seasonally — usually April to October, so your dates are on the edge. Check it is still running before you cross the city for it.',when:'Check season'},
+{c:'River',t:'opt',n:'Seongsu-dong',w:'Shoe factories turned into concept stores and roasters in unrenovated industrial shells. Seoul does this genre better than most cities, but it is still that genre.',when:'Afternoon'},
+{c:'River',t:'skip',n:'Lotte World',w:'The world\u2019s largest indoor theme park. Not on three days, not in the best weather Korea gets all year.',when:''},
+{c:'River',t:'skip',n:'Gangnam',w:'Wide roads, tall offices, expensive restaurants and a statue of a dance move. Bongeunsa temple and the Starfield library are the two things worth the trip, and neither is worth the trip alone.',when:''},
+/* OUT OF TOWN */
+{c:'Out',t:'do',n:'DMZ half-day tour',w:'Third Tunnel, Dora Observatory, Imjingak, back by early afternoon. The only thing outside Seoul that survives a three-day budget. <b>Physical passport required</b> — the manifest goes to the military days ahead.',when:'Book ahead',b:1},
+{c:'Out',t:'opt',n:'The Dorasan peace train',w:'The Seoul–Dorasan tourist train resumed in April 2026 after six years, Fridays only, around 120 seats. Friday 23 October is the one day this could apply to. Thin availability, and it complements a tour rather than replacing one.',when:'Fridays',b:1},
+{c:'Out',t:'opt',n:'Suwon Hwaseong',w:'Forty minutes on Line 1 to an 18th-century fortress wall you can walk end to end in three hours, with galbi waiting at the end. The best day trip on the board — and still beaten by a third day in Seoul. Outside the Climate Card boundary.',when:'Full day'},
+{c:'Out',t:'opt',n:'Incheon open port and Chinatown',w:'An hour on the subway. Japanese colonial banks, Chinese merchant houses and the birthplace of jjajangmyeon. Genuinely interesting, low priority.',when:'Half day'},
+{c:'Out',t:'skip',n:'Seoraksan',w:'The one place at true peak colour in your window, and 2h30 each way to Sokcho plus a park transfer, on Korea\u2019s heaviest domestic weekend of the autumn. Nine hours moving for three on the mountain. Bukhansan is the same phenomenon 900m lower and fifty minutes away.',when:''},
+{c:'Out',t:'skip',n:'Nami Island & Garden of Morning Calm',w:'Ninety minutes out, peaking in the first week of November, and coached hard. You would arrive a week early to a car park.',when:''},
+{c:'Out',t:'skip',n:'Gyeongju',w:'The Silla capital — burial mounds, Bulguksa, Seokguram. Deserves two nights and repays them. Does not survive a day trip.',when:''},
+{c:'Out',t:'skip',n:'Jeonju hanok village',w:'The best eating city in Korea and a hanok quarter that makes Bukchon look like a film set. Also 100 minutes each way. Come back for it.',when:''},
+{c:'Out',t:'skip',n:'Busan',w:'A completely different Korea — coastal, looser, better seafood. Two hours forty on the KTX. This is a separate trip, not an afternoon.',when:''}
+];
+
+const TIERLBL={do:'Do',opt:'Maybe',skip:'Skip'};
+let FC='all', FT=null, FB=false;
+
+function renderItems(){
+  const list=ITEMS.filter(x=>
+    (FC==='all'||x.c===FC) && (!FT||x.t===FT) && (!FB||x.b));
+  const host=document.getElementById('items');
+  if(!list.length){host.innerHTML='<div class="empty">No entries match those filters.</div>';return}
+  host.innerHTML=list.map(x=>`
+    <div class="item">
+      <span class="tier ${x.t}">${TIERLBL[x.t]}</span>
+      <span class="nm">${x.n}</span>
+      <span class="when${x.b?' book':''}">${x.when||'&nbsp;'}</span>
+      <span class="why">${x.w}</span>
+    </div>`).join('');
+}
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  if(b.dataset.city){FC=b.dataset.city}
+  else if(b.dataset.tier){FT = FT===b.dataset.tier?null:b.dataset.tier}
+  else if(b.dataset.book){FB=!FB}
+  document.querySelectorAll('#filters .fbtn').forEach(x=>{
+    let on=false;
+    if(x.dataset.city) on = x.dataset.city===FC;
+    if(x.dataset.tier) on = x.dataset.tier===FT;
+    if(x.dataset.book) on = FB;
+    x.setAttribute('aria-pressed',on?'true':'false');
+  });
+  renderItems();
+});
+renderItems();
+
+/* ============ FIG 1: TIME AUDIT ============ */
+(function(){
+  const svg=document.getElementById('audit-chart');
+  const W=1400,H=190,pad=40,barY=70,barH=54;
+  const start=new Date(2026,9,22), end=new Date(2026,9,27);
+  const totalH=(end-start)/36e5;
+  const x=h=>pad+(h/totalH)*(W-2*pad);
+  const segs=[
+    {a:0,b:11,cls:'t2'},
+    {a:11,b:19,cls:'t'},
+    {a:19,b:24,cls:'p'},
+    {a:24,b:48,cls:'f'},
+    {a:48,b:72,cls:'f'},
+    {a:72,b:96,cls:'f'},
+    {a:96,b:108,cls:'p'},
+    {a:108,b:120,cls:'t2'}
+  ];
+  const colors={t:'var(--magenta)',t2:'rgba(231,100,155,.55)',p:'rgba(242,169,60,.35)',f:'var(--amber)'};
+  let s=`<rect x="0" y="0" width="${W}" height="${H}" fill="none"/>`;
+  segs.forEach(sg=>{
+    const x1=x(sg.a),x2=x(sg.b);
+    s+=`<rect x="${x1}" y="${barY}" width="${x2-x1-1}" height="${barH}" fill="${colors[sg.cls]}"/>`;
+  });
+  for(let d=0;d<=5;d++){
+    const hh=d*24, xx=x(hh);
+    const dt=new Date(start.getTime()+hh*36e5);
+    s+=`<line x1="${xx}" y1="${barY-6}" x2="${xx}" y2="${barY+barH+6}" class="axs"/>`;
+    s+=`<text x="${xx}" y="${barY-14}" class="lbl" text-anchor="${d===0?'start':d===5?'end':'middle'}">${dt.toLocaleDateString('en-CA',{day:'2-digit',month:'short'})}</text>`;
+  }
+  s+=`<line x1="${pad}" y1="${barY+barH+0.5}" x2="${W-pad}" y2="${barY+barH+0.5}" class="ax"/>`;
+  s+=`<text x="${x(60)}" y="${barY+barH+34}" class="lbl-a" text-anchor="middle">3 full days — 23→25 Oct</text>`;
+  s+=`<text x="${x(0)}" y="${barY+barH+34}" class="lbl">↙ handover from stop 01</text>`;
+  s+=`<text x="${W-pad}" y="${barY+barH+34}" class="lbl" text-anchor="end">no date line · no clock change ↘</text>`;
+  svg.innerHTML=s;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+})();
+
+/* ============ FIG 2: DANPUNG WINDOW ============ */
+(function(){
+  const svg=document.getElementById('foliage-chart');
+  const W=1400,H=460,padL=250,padR=40,padT=20,rowH=38;
+  const monthStart=new Date(2026,9,10), monthEnd=new Date(2026,10,25);
+  const totalD=(monthEnd-monthStart)/864e5;
+  const x=d=>padL+((d-monthStart)/864e5/totalD)*(W-padL-padR);
+  const PLACES=[
+    {n:'Seoraksan, upper (1,708m)',a:'12 Oct',b:'24 Oct',hi:1},
+    {n:'Odaesan (1,563m)',a:'16 Oct',b:'28 Oct',hi:1},
+    {n:'Seoraksan, valleys',a:'20 Oct',b:'2 Nov',hi:1},
+    {n:'Bukhansan, ridge (836m)',a:'25 Oct',b:'5 Nov',hi:1},
+    {n:'Bukhansan, base',a:'30 Oct',b:'8 Nov',hi:0},
+    {n:'Nami Island & Gapyeong',a:'28 Oct',b:'10 Nov',hi:0},
+    {n:'Seoul palaces & Namsan',a:'1 Nov',b:'12 Nov',hi:0},
+    {n:'Seoul street ginkgo',a:'5 Nov',b:'15 Nov',hi:0},
+    {n:'Naejangsan (south-west)',a:'5 Nov',b:'18 Nov',hi:0}
+  ];
+  const d2x=s=>{const[dd,mo]=s.split(' ');const months={Oct:9,Nov:10};return x(new Date(2026,months[mo],parseInt(dd)))};
+  const wA=x(new Date(2026,9,22)), wB=x(new Date(2026,9,26));
+  let s=`<rect x="${wA}" y="${padT}" width="${wB-wA}" height="${PLACES.length*rowH+8}" fill="rgba(231,100,155,.10)" stroke="var(--magenta)" stroke-width="1"/>`;
+  s+=`<text x="${(wA+wB)/2}" y="${padT-6}" class="lbl-a" text-anchor="middle">Your window: 22–26 Oct</text>`;
+  [[9,15],[10,1],[10,15]].forEach(([mo,dd])=>{
+    const dt=new Date(2026,mo,dd);
+    const xx=x(dt);
+    if(xx<padL) return;
+    s+=`<line x1="${xx}" y1="${padT}" x2="${xx}" y2="${padT+PLACES.length*rowH+8}" class="axs"/>`;
+    s+=`<text x="${xx}" y="${padT+PLACES.length*rowH+28}" class="lbl" text-anchor="middle">${dt.toLocaleDateString('en-CA',{day:'numeric',month:'short'})}</text>`;
+  });
+  s+=`<line x1="${padL-2}" y1="${padT}" x2="${x(monthEnd)}" y2="${padT}" class="ax"/>`;
+  PLACES.forEach((p,i)=>{
+    const y=padT+16+i*rowH;
+    s+=`<text x="${padL-14}" y="${y+4}" class="lbl-p" text-anchor="end">${p.n}</text>`;
+    const x1=d2x(p.a), x2=d2x(p.b);
+    s+=`<rect x="${x1}" y="${y-9}" width="${x2-x1}" height="18" rx="2" fill="${p.hi?'rgba(242,169,60,.7)':'rgba(242,169,60,.4)'}"/>`;
+  });
+  svg.innerHTML=s;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+})();
+
+/* ============ FIG 3: DAY-TRIP DISTANCE ============ */
+(function(){
+  const svg=document.getElementById('trip-chart');
+  const W=1400,H=470,padL=300,padR=110,padT=26,rowH=34;
+  const TRIPS=[
+    {n:'Namsan / city wall',v:20,k:'in'},
+    {n:'Haneul Park',v:35,k:'in'},
+    {n:'Suwon Hwaseong',v:45,k:'ok'},
+    {n:'Bukhansan trailhead',v:50,k:'in'},
+    {n:'Incheon open port',v:60,k:'ok'},
+    {n:'DMZ tour (each way)',v:70,k:'ok'},
+    {n:'Nami Island / Morning Calm',v:90,k:'no'},
+    {n:'Jeonju',v:105,k:'no'},
+    {n:'Gyeongju',v:135,k:'no'},
+    {n:'Andong',v:140,k:'no'},
+    {n:'Seoraksan / Sokcho',v:150,k:'no'},
+    {n:'Busan',v:160,k:'no'}
+  ];
+  const MAX=170;
+  const x=v=>padL+(v/MAX)*(W-padL-padR);
+  const FILL={in:'rgba(88,196,163,.6)',ok:'rgba(242,169,60,.6)',no:'rgba(224,85,85,.55)'};
+  let s='';
+  [0,30,60,90,120,150].forEach(v=>{
+    s+=`<line x1="${x(v)}" y1="${padT}" x2="${x(v)}" y2="${padT+TRIPS.length*rowH+6}" class="axs"/>`;
+    s+=`<text x="${x(v)}" y="${padT+TRIPS.length*rowH+26}" class="lbl" text-anchor="middle">${v}m</text>`;
+  });
+  const cut=x(75);
+  s+=`<line x1="${cut}" y1="${padT-8}" x2="${cut}" y2="${padT+TRIPS.length*rowH+6}" stroke="var(--magenta)" stroke-width="1" stroke-dasharray="5 4"/>`;
+  s+=`<text x="${cut}" y="${padT-14}" class="lbl-a" text-anchor="middle" fill="var(--magenta)">75 min — the half-day line</text>`;
+  TRIPS.forEach((t,i)=>{
+    const y=padT+16+i*rowH;
+    s+=`<text x="${padL-14}" y="${y+4}" class="lbl-p" text-anchor="end">${t.n}</text>`;
+    s+=`<rect x="${padL}" y="${y-9}" width="${x(t.v)-padL}" height="18" rx="2" fill="${FILL[t.k]}"/>`;
+    s+=`<text x="${x(t.v)+10}" y="${y+4}" class="${t.k==='no'?'lbl':'lbl-a'}">${t.v} min</text>`;
+  });
+  s+=`<line x1="${padL}" y1="${padT}" x2="${padL}" y2="${padT+TRIPS.length*rowH+6}" class="ax"/>`;
+  svg.innerHTML=s;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+})();
+
+/* ============ CLIMATE CARD CALCULATOR ============ */
+const CARD_FEE=3000, PASS3=10000, PASS5=15000;
+const LEGS=[
+  {n:'ICN → Seoul Station, AREX Express',y:11000,cc:false,d:0,note:'Never covered — the pass stops at the city boundary'},
+  {n:'Thu evening: 2 rides, Cheonggyecheon and dinner',y:3100,cc:true,d:0,def:true},
+  {n:'Fri: Bukhansan return, bathhouse, market, 6 rides',y:9300,cc:true,d:1,def:true},
+  {n:'Sat: palaces, Bukchon, Ikseon, Euljiro, 6 rides',y:9300,cc:true,d:2,def:true},
+  {n:'Sun: Haneul Park, Yeouido, Mangwon, Naksan, 7 rides',y:10850,cc:true,d:3,def:true},
+  {n:'Mon: 1 ride to Seoul Station',y:1550,cc:true,d:4,def:true},
+  {n:'Suwon return on Line 1',y:5800,cc:false,d:2,note:'Gyeonggi-do — outside the boundary in both directions'},
+  {n:'Seoul Station → ICN, AREX Express',y:11000,cc:false,d:4,note:'Never covered'}
+];
+function renderLegs(){
+  document.getElementById('legs').innerHTML=LEGS.map((l,i)=>`
+    <label class="leg-row">
+      <input type="checkbox" data-i="${i}" ${l.def?'checked':''}>
+      <span class="lname">${l.n}</span>
+      <span class="lyen">₩${l.y.toLocaleString('en-CA')}</span>
+      ${l.note?`<span class="lnote">${l.note}</span>`:''}
+    </label>`).join('');
+}
+function calcTotals(){
+  const byDay=[0,0,0,0,0];
+  let covered=0;
+  document.querySelectorAll('#legs input[type="checkbox"]').forEach(cb=>{
+    const l=LEGS[Number(cb.dataset.i)];
+    if(cb.checked && l.cc){ covered+=l.y; byDay[l.d]+=l.y; }
+  });
+  const five = PASS5+CARD_FEE;
+  let bestWindow=0, startIdx=0;
+  for(let i=0;i<=2;i++){
+    const sum=byDay[i]+byDay[i+1]+byDay[i+2];
+    if(sum>bestWindow){bestWindow=sum;startIdx=i}
+  }
+  const three = PASS3+CARD_FEE+(covered-bestWindow);
+  const DAYNM=['Thu','Fri','Sat','Sun','Mon'];
+  const ptpEl=document.getElementById('ptp');
+  const passEl=document.getElementById('pass');
+  const dEl=document.getElementById('diff');
+  const vEl=document.getElementById('verdict');
+  ptpEl.innerHTML=`₩${covered.toLocaleString('en-CA')}<small>coverable legs only</small>`;
+  if(covered===0){
+    passEl.innerHTML='—';
+    dEl.innerHTML='—';
+    vEl.textContent='Tick some Seoul rides above'; vEl.className='';
+    return;
+  }
+  const useThree = three<=five;
+  const best = useThree?three:five;
+  const label = useThree?`3-day, from ${DAYNM[startIdx]}`:'5-day, all-in';
+  passEl.innerHTML=`₩${best.toLocaleString('en-CA')}<small>${label}</small>`;
+  const diff=covered-best;
+  if(diff>0){
+    dEl.innerHTML=`₩${diff.toLocaleString('en-CA')}<small>pass saves you</small>`;
+    vEl.textContent=useThree?'Buy the 3-day, load it Friday':'Buy the 5-day pass'; vEl.className='win';
+  } else {
+    dEl.innerHTML=`₩${Math.abs(diff).toLocaleString('en-CA')}<small>pass costs more</small>`;
+    vEl.textContent='Just tap T-money'; vEl.className='lose';
+  }
+}
+renderLegs();
+document.getElementById('legs').addEventListener('change',calcTotals);
+calcTotals();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="darkreader-lock">
+<title>Nepal</title>
+<link rel="stylesheet" href="fonts.css">
+</head>
+<body>
+<style>
+:root{color-scheme:dark;
+  --ink:#05161D;--ink-2:#0A2029;--ink-3:#0E2A35;
+  --rule:#194150;--rule-soft:rgba(25,65,80,.6);
+  --paper:#E2EEED;--paper-dim:#A6C2C6;--muted:#6C8F98;
+  --amber:#F2A93C;--magenta:#E7649B;--jade:#58C4A3;--red:#E05555;
+  --display:'Big Shoulders Display','Arial Narrow',Impact,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --body:'Inter',system-ui,sans-serif;
+  --gut:clamp(18px,4vw,64px);--maxw:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+.section{padding-block:clamp(34px,4.4vw,58px);border-top:1px solid var(--rule-soft);position:relative}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:14px;margin:0 0 18px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--rule)}
+.eyebrow .n{color:var(--amber)}
+h2.head{font-family:var(--display);font-weight:700;font-size:clamp(34px,5.6vw,66px);line-height:.92;margin:0 0 14px;text-transform:uppercase}
+.lede{max-width:66ch;color:var(--paper-dim);font-size:clamp(15px,1.5vw,17px);margin:0 0 26px}
+.lede b{color:var(--paper);font-weight:600}
+a{color:var(--amber);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+.hint{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+@media (min-width:980px){.hint.wide{display:none}}
+.scroller{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--rule) transparent}
+.scroller::-webkit-scrollbar{height:6px}
+.scroller::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}
+.scroller>svg{display:block;width:100%;height:auto}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(30px,5vw,58px) clamp(24px,4vw,40px);overflow:hidden}
+.gridbg{position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:linear-gradient(to right,var(--rule-soft) 1px,transparent 1px),linear-gradient(to bottom,var(--rule-soft) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%);-webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%)}
+.back{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:inline-block;margin-bottom:20px}
+.back:hover{color:var(--amber)}
+.strip{font-family:var(--mono);font-size:clamp(10px,1.15vw,12px);letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;border-block:1px solid var(--rule);padding-block:11px;margin-bottom:clamp(26px,4vw,44px)}
+.strip .k{color:var(--muted)}.strip .amb{color:var(--amber)}
+.title{font-family:var(--display);text-transform:uppercase;margin:0;line-height:.82;position:relative}
+.title .l1{display:block;font-weight:400;font-size:clamp(34px,7.4vw,96px);color:transparent;-webkit-text-stroke:1.2px var(--paper-dim)}
+.title .l2{display:block;font-weight:800;font-size:clamp(72px,17vw,232px);letter-spacing:-.015em;color:var(--paper)}
+.subline{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:baseline;margin-top:clamp(18px,3vw,30px);font-family:var(--mono);font-size:clamp(11px,1.25vw,13px);letter-spacing:.14em;text-transform:uppercase;color:var(--paper-dim)}
+.subline .sep{color:var(--rule)}
+
+/* instruments */
+.instr{display:grid;grid-template-columns:repeat(auto-fit,minmax(124px,1fr));border:1px solid var(--rule);background:var(--ink-2);margin:clamp(24px,3.4vw,38px) 0 0}
+.instr div{padding:15px 17px;border-right:1px solid var(--rule-soft)}
+.instr div:last-child{border-right:0}
+.instr dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.instr dd{margin:0;font-family:var(--display);font-weight:600;font-size:31px;line-height:1}
+.instr dd span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--paper-dim);margin-left:3px}
+.instr dd.hot{color:var(--amber)}
+.instr dd.warn{color:var(--magenta)}
+
+/* chart frames */
+.figcap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:9px;margin:0 0 8px}
+.figcap b{color:var(--amber);font-weight:500}
+.fignote{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.fignote i{display:inline-block;width:14px;height:9px;margin:0 5px 0 14px;vertical-align:middle;border-radius:1px}
+.fignote i:first-child{margin-left:0}
+.ax{stroke:var(--rule);stroke-width:1}
+.axs{stroke:var(--rule-soft);stroke-width:1}
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.08em;fill:var(--muted)}
+.lbl-p{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;fill:var(--paper)}
+.lbl-a{font-family:var(--mono);font-size:10px;letter-spacing:.12em;fill:var(--amber)}
+
+/* cards */
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin:0 0 6px}
+.card{border:1px solid var(--rule);background:var(--ink-2);padding:18px 20px;position:relative}
+.card.bad{border-color:var(--red)}
+.card.good{border-color:var(--jade)}
+.card h3{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 4px;color:var(--paper)}
+.card .verdict{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:11px}
+.card .verdict.bad{color:var(--red)}
+.card .verdict.ok{color:var(--jade)}
+.card p{margin:0 0 10px;font-size:13.5px;color:var(--paper-dim);line-height:1.62}
+.card p:last-child{margin-bottom:0}
+.card p b{color:var(--paper);font-weight:600}
+.fix{border-left:2px solid var(--amber);padding-left:12px;margin:12px 0 0;font-size:12.8px;color:var(--paper-dim);line-height:1.6}
+.fix b{display:block;color:var(--amber);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px;font-weight:500}
+.fix strong{color:var(--paper);font-weight:600}
+
+/* shape cards */
+.shapes{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+.shape{border:1px solid var(--rule);background:var(--ink-2);padding:0;display:flex;flex-direction:column}
+.shape.pick{border-color:var(--amber);box-shadow:inset 0 0 0 1px rgba(242,169,60,.25)}
+.shape-hd{padding:16px 20px 14px;border-bottom:1px solid var(--rule-soft)}
+.shape-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.shape.pick .shape-tag{color:var(--amber)}
+.shape-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(24px,3vw,32px);line-height:.95;margin:0}
+.chainrow{display:flex;flex-wrap:wrap;align-items:center;gap:5px 7px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--paper);padding:13px 20px;border-bottom:1px solid var(--rule-soft);background:rgba(5,22,29,.5)}
+.chainrow .a{color:var(--rule)}
+.chainrow .n{color:var(--amber);font-size:9.5px}
+.shape-body{padding:15px 20px 18px;flex:1}
+.shape-body p{margin:0 0 10px;font-size:13.3px;color:var(--paper-dim);line-height:1.6}
+.shape-body p:last-child{margin-bottom:0}
+.shape-body p b{color:var(--paper);font-weight:600}
+.shape-meta{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--rule-soft)}
+.shape-meta div{flex:1;min-width:88px;padding:11px 20px;border-right:1px solid var(--rule-soft)}
+.shape-meta div:last-child{border-right:0}
+.shape-meta dt{font-family:var(--mono);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.shape-meta dd{margin:0;font-family:var(--mono);font-size:13px;color:var(--paper)}
+.shape-meta dd.g{color:var(--jade)}
+.shape-meta dd.r{color:var(--red)}
+
+/* day accordion */
+.days{border-top:1px solid var(--rule)}
+.day{border-bottom:1px solid var(--rule)}
+.day-btn{all:unset;box-sizing:border-box;display:grid;width:100%;cursor:pointer;grid-template-columns:76px 1fr auto;gap:0 clamp(14px,2.4vw,30px);align-items:baseline;padding:clamp(13px,1.8vw,18px) 4px;transition:background .18s ease}
+.day-btn:hover{background:rgba(242,169,60,.05)}
+.day-btn:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.day-date{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.1em}
+.day-date small{display:block;color:var(--muted);font-size:9.5px;letter-spacing:.14em;margin-top:3px}
+.day-btn>span:nth-child(2){display:flex;flex-direction:column;gap:6px}
+.day-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(22px,3.2vw,34px);line-height:.95;margin:0}
+.day-sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.day-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--paper-dim);text-align:right;white-space:nowrap}
+.day-meta .chev{display:inline-block;margin-left:12px;color:var(--muted);transition:transform .25s ease}
+.day.open .day-meta .chev{transform:rotate(180deg)}
+@media (max-width:720px){.day-btn{grid-template-columns:64px 1fr;row-gap:8px}.day-meta{grid-column:2;text-align:left}}
+.day-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .34s cubic-bezier(.3,.8,.3,1)}
+.day.open .day-body{grid-template-rows:1fr}
+.day-inner{overflow:hidden}
+.day-pad{padding:2px 4px clamp(22px,3vw,32px)}
+.slots{display:grid;gap:0;border-left:1px solid var(--rule)}
+.slot{padding:0 0 16px 16px;position:relative}
+.slot:last-child{padding-bottom:2px}
+.slot::before{content:"";position:absolute;left:-4px;top:6px;width:7px;height:7px;background:var(--amber);border-radius:50%}
+.slot.move::before{background:var(--magenta)}
+.slot h4{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 5px;font-weight:500}
+.slot.move h4{color:var(--magenta)}
+.slot p{margin:0;font-size:14px;line-height:1.62;color:var(--paper-dim);max-width:72ch}
+.slot p b{color:var(--paper);font-weight:600}
+
+/* worth doing */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.fbtn{all:unset;cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border:1px solid var(--rule);color:var(--paper-dim);border-radius:2px;transition:.15s}
+.fbtn:hover{background:var(--ink-3);color:var(--paper)}
+.fbtn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.fbtn[aria-pressed="true"]{background:var(--amber);color:var(--ink);border-color:var(--amber);font-weight:600}
+.fdiv{width:1px;background:var(--rule);margin:2px 6px}
+.items{display:grid;gap:1px;background:var(--rule-soft);border:1px solid var(--rule)}
+.item{background:var(--ink-2);padding:13px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:baseline}
+.item .tier{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:3px 7px 2px;border-radius:2px;white-space:nowrap;align-self:start;margin-top:2px}
+.tier.do{background:rgba(88,196,163,.14);color:var(--jade);border:1px solid rgba(88,196,163,.35)}
+.tier.opt{background:rgba(242,169,60,.12);color:var(--amber);border:1px solid rgba(242,169,60,.3)}
+.tier.skip{background:rgba(224,85,85,.1);color:var(--red);border:1px solid rgba(224,85,85,.3)}
+.item .nm{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:20px;line-height:1.05;color:var(--paper)}
+.item .why{grid-column:2;font-size:13.3px;color:var(--paper-dim);line-height:1.55;max-width:74ch}
+.item .why b{color:var(--paper);font-weight:600}
+.item .when{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);text-align:right;white-space:nowrap;align-self:start;margin-top:4px}
+.item .when.book{color:var(--magenta)}
+@media (max-width:640px){.item{grid-template-columns:auto 1fr}.item .when{grid-column:2;text-align:left;margin-top:2px}.item .why{grid-column:1/-1}}
+.empty{background:var(--ink-2);padding:22px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* cost calc */
+.calc{border:1px solid var(--rule);background:var(--ink-2)}
+.calc-legs{display:grid}
+.leg-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--rule-soft);cursor:pointer}
+.leg-row:hover{background:rgba(242,169,60,.04)}
+.leg-row input{accent-color:var(--amber);width:15px;height:15px;cursor:pointer}
+.leg-row .lname{font-family:var(--mono);font-size:12.5px;color:var(--paper-dim)}
+.leg-row input:checked+.lname{color:var(--paper)}
+.leg-row .lyen{font-family:var(--mono);font-size:12.5px;color:var(--amber);font-variant-numeric:tabular-nums;white-space:nowrap}
+.leg-row .lnote{grid-column:2/-1;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--muted);margin-top:-4px}
+.calc-out{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule-soft)}
+.calc-out div{background:var(--ink-3);padding:15px 17px}
+.calc-out dt{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.calc-out dd{margin:0;font-family:var(--display);font-weight:700;font-size:27px;line-height:1;font-variant-numeric:tabular-nums}
+.calc-out dd small{font-family:var(--mono);font-size:10px;font-weight:400;color:var(--paper-dim);margin-left:4px;letter-spacing:.06em}
+#verdict{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;line-height:1.5}
+#verdict.win{color:var(--jade)}
+#verdict.lose{color:var(--red)}
+
+/* panels / tables */
+.panel{border:1px solid var(--rule);background:var(--ink-2);padding:clamp(17px,2.4vw,24px);margin-top:22px}
+.panel h3{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 12px;font-weight:500}
+.panel p{margin:0 0 12px;font-size:13.6px;color:var(--paper-dim);line-height:1.62}
+.panel p:last-child{margin-bottom:0}
+.panel p b{color:var(--paper);font-weight:600}
+table.ref{width:100%;border-collapse:collapse;font-size:13.4px}
+table.ref th{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:500;padding:0 14px 10px 0;border-bottom:1px solid var(--rule)}
+table.ref td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule-soft);color:var(--paper-dim);vertical-align:top}
+table.ref td:first-child{font-family:var(--display);font-size:17px;font-weight:600;text-transform:uppercase;color:var(--paper);white-space:nowrap;width:1%}
+table.ref td.t{font-family:var(--mono);font-size:11px;letter-spacing:.06em;white-space:nowrap;color:var(--amber)}
+table.ref tr.flag td.t{color:var(--magenta)}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.cols{display:grid;gap:16px 34px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:20px}
+.cols p{margin:0;font-size:13.6px;color:var(--paper-dim);line-height:1.6}
+.cols p b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:5px;font-weight:500}
+
+footer{border-top:1px solid var(--rule);padding-block:26px 40px;color:var(--muted)}
+.foot-grid{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:flex-end}
+.foot-grid p{margin:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase}
+.foot-mark{font-family:var(--display);font-size:clamp(40px,9vw,110px);font-weight:800;text-transform:uppercase;line-height:.8;color:transparent;-webkit-text-stroke:1px var(--rule);margin:30px 0 0}
+</style>
+
+<header class="hero">
+  <div class="gridbg"></div>
+  <div class="wrap">
+    <a class="back" href="index.html">← Westbound · the dossier</a>
+    <p class="strip">
+      <span><span class="k">Stop</span> <span class="amb">07 of 27</span></span>
+      <span><span class="k">In</span> PBH · Paro</span>
+      <span><span class="k">Fly Nepal</span> <span class="amb">KTM</span></span>
+      <span><span class="k">Out</span> SIN · Singapore</span>
+      <span><span class="k">Window</span> 11–16 Nov 2026</span>
+      <span><span class="k">Clock</span> UTC+5:45</span>
+    </p>
+    <h1 class="title">
+      <span class="l1">Seventh stop</span>
+      <span class="l2">Nepal</span>
+    </h1>
+    <p class="subline">
+      <span>Kathmandu &amp; Pokhara fixed</span><span class="sep">/</span>
+      <span>Poon Hill is the whole question</span><span class="sep">/</span>
+      <span>You land on Bhai Tika</span>
+    </p>
+
+    <dl class="instr">
+      <div><dt>Calendar days</dt><dd>6</dd></div>
+      <div><dt>Nights</dt><dd>5</dd></div>
+      <div><dt>Usable days</dt><dd class="hot">5½</dd></div>
+      <div><dt>Bases</dt><dd>3</dd></div>
+      <div><dt>Nights up high</dt><dd id="trek-nights">2</dd></div>
+      <div><dt>Highest point</dt><dd id="high-pt">3,210<span>m</span></dd></div>
+    </dl>
+  </div>
+</header>
+
+<section class="section" id="audit">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">01</span> The time audit</p>
+    <h2 class="head">Six days<br>is five and a half</h2>
+    <p class="lede">Unusually for this trip, both flights are generous. Drukair's Paro service leaves at 07:10 and puts you on the ground at Tribhuvan around <b>08:10 Nepal time</b> — a whole day, not a fragment. And Singapore Airlines' daily non-stop out of Kathmandu goes late, around <b>22:50</b>, so the last day is a real one too. Five nights buys five full days and a long arrival day, which is more than the calendar suggests and still not much for a country this size.</p>
+
+    <div class="figcap">
+      <span>Fig. 1 — What the window really contains</span>
+      <span><b>11–16 Nov</b> · hour by hour</span>
+    </div>
+    <div class="scroller">
+      <svg id="audit-chart" viewBox="0 0 1400 190" role="img" aria-label="Timeline of 11 to 16 November showing a short transit block on the morning of the 11th, then a long arrival day and five full days, with the flight to Singapore leaving late on the 16th."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--magenta);opacity:.55"></i>In transit<i style="background:rgba(242,169,60,.35)"></i>Part day<i style="background:var(--amber)"></i>Full day</p>
+
+    <div class="cols">
+      <p><b>No jet lag to speak of</b>Bhutan runs UTC+6, Nepal UTC+5:45 — a fifteen-minute clock change and a seventy-five-minute flight. You arrive at your own body's normal hour for the first time since Toronto, which is worth remembering when you plan the alarm for Poon Hill.</p>
+      <p><b>Already part-acclimatised</b>Paro sits at 2,235 m and you walked to Tiger's Nest at 3,120 m. Ghorepani is 2,860 m and Poon Hill is 3,210 m. Nothing on this leg is higher than what Bhutan already put you through, and that is the single best reason this stop sits exactly here in the order.</p>
+      <p><b>Sit on the right out of Paro</b>Flying west, the Himalaya are on your northern side. On a clear November morning the PBH–KTM leg runs past Kanchenjunga, Makalu, Everest and Lhotse in sequence. It is the free version of the mountain flight everyone pays two hundred dollars for out of Kathmandu.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="flags">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">02</span> Three things to know first</p>
+    <h2 class="head">One of these<br>is a real problem</h2>
+    <p class="lede">The road between Kathmandu and Pokhara is currently severed, and everything about how you move on this leg follows from that. The other two are smaller but shape the first two days.</p>
+
+    <div class="cards">
+      <div class="card bad">
+        <h3>The road to Pokhara is cut</h3>
+        <div class="verdict bad">Live as of September 2026</div>
+        <p>On <b>30 August 2026</b> the flooded Trishuli took out roughly 70 metres of the Prithvi Highway at Krishnabhir in Dhading, with another 120 metres badly damaged. That highway is the artery between Kathmandu and Pokhara. Tourist buses have sat idle since; operators have been improvising a bypass over a suspension bridge at Jamire with a jeep shuttle to Benighat, and a temporary diversion track was under construction in early September.</p>
+        <p>The government said the section would be operational "within this month". <b>No engineering timeline has been published.</b> The realistic read is that it may well be fixed by mid-November — but it may be a fragile single-lane diversion rather than a highway.</p>
+        <div class="fix"><b>What it means for you</b><strong>Fly, and book early.</strong> Kathmandu–Pokhara passenger numbers went from about 1,300 a day on 25 August to over 3,500 within a week, and seats have been hard to get on Buddha, Yeti and Shree. Reserve both domestic legs the day you fix your dates, and recheck the highway a fortnight out.</div>
+      </div>
+
+      <div class="card">
+        <h3>You land on Bhai Tika</h3>
+        <div class="verdict">11 November, the last day of Tihar</div>
+        <p>Tihar 2026 runs 7–11 November, and <b>Bhai Tika falls on your arrival day</b>. It's a private family festival — sisters marking brothers with a seven-colour tika — so shops shut, offices close, and the streets go quiet in a way Kathmandu almost never does. The city is still garlanded and lit from Laxmi Puja three nights earlier.</p>
+        <p>The flip side: it's the tail of the busiest domestic travel week of the year, with the whole country moving home and back.</p>
+        <div class="fix"><b>The lever</b>Don't try to connect straight through to Pokhara on the 11th. <strong>Take the Kathmandu night.</strong> The city on Bhai Tika is genuinely worth having, and a morning domestic flight on the 12th is the safer bet anyway.</div>
+      </div>
+
+      <div class="card good">
+        <h3>Mid-November is the best window Nepal has</h3>
+        <div class="verdict ok">Nothing to fix</div>
+        <p>The monsoon has washed the air, the harvest is in, and the post-monsoon sky is the most stable and clearest of the year — better even than October, and well before the winter inversion that puts Kathmandu in the world's ten most polluted cities by February. Expect <b>21–23°C by day in Kathmandu, 24°C in Pokhara</b>, and around <b>10°C by day, −2 to −4°C at night at Ghorepani</b>.</p>
+        <p>The cost is company. This is peak trekking season: Ghorepani's teahouses fill, and the permit checkpoints are at their strictest of the year.</p>
+        <div class="fix"><b>Expectation setting</b>Poon Hill at 05:45 in mid-November will have somewhere between thirty and a hundred people on it. That is normal, and it does not spoil it. <strong>Walk to the far end of the platform</strong> and let the tour groups cluster by the tower.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="shapes">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">03</span> The open question</p>
+    <h2 class="head">How much<br>trek fits</h2>
+    <p class="lede">Kathmandu and Pokhara are fixed; the variable is how far up you go between them. The shortest honest Ghorepani–Poon Hill trek is <b>three days on foot</b> plus a flight and two jeep transfers, and it consumes the entire middle of the window. The alternative is a single night on a ridge at 2,060 m that costs one day instead of four.</p>
+
+    <div class="shapes">
+      <div class="shape pick">
+        <div class="shape-hd">
+          <div class="shape-tag">Recommended</div>
+          <p class="shape-name">Poon Hill proper</p>
+        </div>
+        <div class="chainrow">
+          <span>Kathmandu <span class="n">×1</span></span><span class="a">→</span>
+          <span>Ulleri <span class="n">×1</span></span><span class="a">→</span>
+          <span>Ghorepani <span class="n">×1</span></span><span class="a">→</span>
+          <span>Pokhara <span class="n">×1</span></span><span class="a">→</span>
+          <span>Kathmandu <span class="n">×1</span></span>
+        </div>
+        <div class="shape-body">
+          <p>The trek goes in the middle, deliberately. Fly to Pokhara on the morning of the 12th, walk up over two days, take the dawn on the 14th, and be back in Kathmandu by the evening of the 15th with a <b>full final day in the valley</b>.</p>
+          <p><b>Why the middle and not the end:</b> the trek is the only weather-and-daylight-dependent thing on this leg. If a domestic flight cancels for morning fog on the 12th, you still have the 15th and 16th to absorb it. Reverse the order — Kathmandu first, trek last — and one cancellation eats Poon Hill entirely with no room to recover.</p>
+          <p>The cost is Kathmandu: <b>one full day plus two evenings</b>, which means Bhaktapur or the valley's Durbar squares, not both at leisure.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Walking days</dt><dd>3</dd></div>
+          <div><dt>Highest</dt><dd class="g">3,210m</dd></div>
+          <div><dt>Bases</dt><dd class="r">5</dd></div>
+          <div><dt>KTM days</dt><dd>1½</dd></div>
+        </dl>
+      </div>
+
+      <div class="shape">
+        <div class="shape-hd">
+          <div class="shape-tag">If three days on foot is too much</div>
+          <p class="shape-name">The low road</p>
+        </div>
+        <div class="chainrow">
+          <span>Kathmandu <span class="n">×2</span></span><span class="a">→</span>
+          <span>Pokhara <span class="n">×1</span></span><span class="a">→</span>
+          <span>Aus. Camp <span class="n">×1</span></span><span class="a">→</span>
+          <span>Kathmandu <span class="n">×1</span></span>
+        </div>
+        <div class="shape-body">
+          <p>Two proper valley days up front — Pashupatinath, Patan, Bhaktapur without a clock — then Pokhara, then a single night on the ridge at <b>Australian Camp, 2,060 m</b>, reached by a two-hour climb from Phedi. Sunset and sunrise over Annapurna South, Hiunchuli and Machhapuchhre from the same doorstep.</p>
+          <p>Add <b>Sarangkot at dawn</b> — a forty-minute drive from Lakeside, no walking at all — and you have seen essentially the same range twice for one day of effort instead of four.</p>
+          <p><b>What you give up</b> is the thing itself: the 3,300-step staircase to Ulleri, the forest, the sleeping at 2,860 m, and Dhaulagiri and Annapurna I stacked side by side at 05:50. Australian Camp is a lovely view. Poon Hill is a different order of thing.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Walking days</dt><dd class="g">1</dd></div>
+          <div><dt>Highest</dt><dd>2,060m</dd></div>
+          <div><dt>Bases</dt><dd class="g">4</dd></div>
+          <div><dt>KTM days</dt><dd class="g">3½</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>The version that doesn't fit, and why</h3>
+      <p>The classic Poon Hill circuit descends via <b>Deurali, Tadapani and Ghandruk</b> rather than back down the staircase — a far better walk, through Gurung villages with the mountains in front of you the whole way. It needs a fourth and usually a fifth day on foot. On a five-night window with two domestic flights in it, there is no version of that which leaves you a day in Kathmandu.</p>
+      <p>So the three-day trek above is <b>out and back the same way</b>: up the Ulleri stairs, down the Ulleri stairs. The descent is around six hours and is harder on the knees than the climb was on the lungs. Take poles, and take the porter.</p>
+    </div>
+
+    <div class="panel">
+      <h3>What's cut either way</h3>
+      <p><b>Chitwan.</b> Two nights minimum for the jungle to be worth the drive, and it's south, off the line entirely. Tanzania is on this itinerary in January; let that be the wildlife stop.</p>
+      <p><b>Annapurna Base Camp and Everest Base Camp.</b> Seven and twelve days respectively, before contingency. Not a near miss — a different trip.</p>
+      <p><b>Langtang and Gosaikunda.</b> Normal access through Syabrubesi has been disrupted by the same August floods; the Helambu alternative adds time you don't have.</p>
+      <p><b>Lumbini.</b> The Buddha's birthplace, and a long way west of everything else here.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="run">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">04</span> Day by day</p>
+    <h2 class="head">Both versions,<br>laid out</h2>
+    <p class="lede">Times are indicative, except the ones that aren't: the 04:45 alarm at Ghorepani and the first domestic flight of the morning are both real constraints. Everything else can float.</p>
+    <div class="filters" id="dayToggle" style="margin-bottom:6px">
+      <button class="fbtn" data-plan="trek" aria-pressed="true">Poon Hill proper</button>
+      <button class="fbtn" data-plan="low" aria-pressed="false">The low road</button>
+    </div>
+    <div class="days" id="days"></div>
+    <p class="fignote" style="margin-top:16px">Amber = on foot or in place · <span style="color:var(--magenta)">Magenta = a flight, a jeep or a base change</span></p>
+  </div>
+</section>
+
+<section class="section" id="worth">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">05</span> What's actually worth doing</p>
+    <h2 class="head">Do, maybe,<br>don't bother</h2>
+    <p class="lede">Sorted by place, then by whether it earns a slot in a window this tight. The <b>don't bother</b> entries mostly aren't bad — several are good and would make the cut on a two-week trip. They're here because something else beats them for the same hours.</p>
+
+    <div class="filters" id="filters">
+      <button class="fbtn" data-city="all" aria-pressed="true">All</button>
+      <button class="fbtn" data-city="Kathmandu" aria-pressed="false">Kathmandu</button>
+      <button class="fbtn" data-city="Pokhara" aria-pressed="false">Pokhara</button>
+      <button class="fbtn" data-city="Trek" aria-pressed="false">The trek</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-tier="do" aria-pressed="false">Do</button>
+      <button class="fbtn" data-tier="opt" aria-pressed="false">Maybe</button>
+      <button class="fbtn" data-tier="skip" aria-pressed="false">Don't bother</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-book="1" aria-pressed="false">Needs booking</button>
+    </div>
+    <div class="items" id="items"></div>
+  </div>
+</section>
+
+<section class="section" id="climb">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">06</span> The climb</p>
+    <h2 class="head">Two days up,<br>one dawn</h2>
+    <p class="lede">Roughly 35 kilometres out and back from Birethanti, and about 2,200 metres of cumulative ascent. It is not technical and it is not high enough to be dangerous. It is, however, <b>relentlessly vertical</b> — the two kilometres between Tikhedhunga and Ulleri are a stone staircase of something like 3,300 steps, and that single stretch is what people remember.</p>
+
+    <div class="figcap">
+      <span>Fig. 2 — The Ghorepani–Poon Hill profile</span>
+      <span><b>Out and back</b> · 35 km · 2 nights</span>
+    </div>
+    <div class="scroller">
+      <svg id="prof-chart" viewBox="0 0 1400 400" role="img" aria-label="Elevation profile of the Ghorepani Poon Hill trek from Birethanti at 1,025 metres, climbing through Tikhedhunga and the Ulleri staircase to Ulleri at 1,960 metres, then Banthanti, Nangethanti and Ghorepani at 2,860 metres, topping out at Poon Hill at 3,210 metres before descending the same way."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--magenta)"></i>The Ulleri staircase<i style="background:var(--amber)"></i>Night stops<i style="background:rgba(242,169,60,.25)"></i>The descent, same way back</p>
+
+    <div class="figcap" style="margin-top:38px">
+      <span>Fig. 3 — Chance of a clear Annapurna dawn, by month</span>
+      <span><b>Sunrise</b> · Poon Hill and Sarangkot</span>
+    </div>
+    <div class="scroller">
+      <svg id="clear-chart" viewBox="0 0 1400 300" role="img" aria-label="Bar chart of the approximate chance of a clear mountain dawn in the Annapurna region by month, near zero through the June to August monsoon and peaking around 80 percent in November."></svg>
+    </div>
+    <p class="fignote">Indicative morning odds, not measured statistics · afternoons cloud over in almost every month</p>
+
+    <div class="cols">
+      <p><b>What you actually see at 05:50</b>Dhaulagiri (8,167 m) squarely west, Annapurna I (8,091 m) and Annapurna South to the north-east, Nilgiri between them, and Machhapuchhre's fishtail off to the east. The light hits Dhaulagiri first. There is a ₨100 fee at the top, collected in the dark.</p>
+      <p><b>Altitude</b>Ghorepani at 2,860 m is below the altitude where acute mountain sickness usually starts, and you'll have come from Paro and Tiger's Nest. Day two is deliberately short for this reason — 900 m of gain and an early arrival. Drink more than you want to and don't skip the second night's sleep for a sunset.</p>
+      <p><b>Cold</b>Below freezing at Ghorepani after dark and colder on the ridge at dawn, with wind. Teahouse rooms are unheated plywood; the dining room has a stove and everyone sits in it. Down jacket, hat, gloves, and a head torch you have actually tested.</p>
+      <p><b>The forest, honestly</b>This trail is famous for rhododendrons and you will see none. They flower in <b>March and April</b>; in November the trees are bare-branched and mossy and the walk is about the terraces, the waterfalls and the light instead. It's a fair trade for the clearest skies of the year.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="cost">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">07</span> The trek maths</p>
+    <h2 class="head">Package or<br>do it yourself</h2>
+    <p class="lede">A registered agency will run the three-day Poon Hill trek out of Pokhara for something like <b>₨45,000 per person</b> (roughly CAD 450), covering guide, permits, transfers, rooms and food. Assembling the same thing yourself is cheaper — but not by as much as you'd expect, and the gap is the price of somebody else standing at the ACAP counter. Tick what you'd actually arrange.</p>
+
+    <div class="calc">
+      <div class="calc-legs" id="legs"></div>
+      <dl class="calc-out">
+        <div><dt>Your own arrangements</dt><dd id="diy"></dd></div>
+        <div><dt>Agency package</dt><dd id="pkg">₨45,000<small>3-day, guided</small></dd></div>
+        <div><dt>Difference</dt><dd id="diff"></dd></div>
+        <div><dt>Verdict</dt><dd><span id="verdict"></span></dd></div>
+      </dl>
+    </div>
+    <p class="fignote">Indicative 2026 rates in Nepali rupees · roughly ₨100 to the Canadian dollar · guide and porter rates move with season and agency — get a written quote</p>
+
+    <div class="panel">
+      <h3>The guide is not optional any more</h3>
+      <p>Nepal Tourism Board rules require foreign trekkers in conservation areas and national parks to walk with a <b>licensed guide booked through a government-registered agency</b>. The rule dates from April 2023 and was tightened again in 2025; enforcement has always been patchy, but it is checked at Birethanti and Ghorepani and it is <b>strictest in peak season</b>, which mid-November is. Officials verify the guide's licence number and the agency's registration, and the sanction is being turned back.</p>
+      <p>On a leg with five nights and no slack, being sent back down from Birethanti costs you the entire stop. Book the agency. It is also the cheapest way to have the permits in hand before you reach Pokhara.</p>
+    </div>
+
+    <div class="panel">
+      <h3>What a package quote usually doesn't include</h3>
+      <p><b>The domestic flights.</b> Kathmandu–Pokhara return is on you, and with the highway cut it's the expensive, scarce part of this leg. Budget well above the usual and book it first.</p>
+      <p><b>Your Pokhara hotel</b> on the nights either side of the trek, and anything you eat in Lakeside.</p>
+      <p><b>Tips.</b> ₨2,000–3,000 to the guide over three days is normal, more if you took a porter. Carry it in small notes; there is no ATM above Birethanti.</p>
+      <p><b>Gear.</b> Down jacket, sleeping bag and poles all rent in Lakeside for a couple of dollars a day. Do not carry a four-season sleeping bag through twenty-six other countries for two nights in Ghorepani.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="admin">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">08</span> Ground rules</p>
+    <h2 class="head">Before you land</h2>
+
+    <div class="tablewrap">
+    <table class="ref">
+      <thead><tr><th>Item</th><th>What to do</th><th>When</th></tr></thead>
+      <tbody>
+        <tr><td>Entry</td><td>Visa on arrival at Tribhuvan for Canadians. <b>US$30 for 15 days</b>, US$50 for 30, US$125 for 90. Passport valid six months. The 15-day visa is all this window needs.</td><td class="t">On arrival</td></tr>
+        <tr><td>Pre-fill</td><td>Complete the online arrival form at nepaliport.immigration.gov.np and print the barcode — it saves the kiosk queue. The application is <b>only valid 15 days</b>, so do it after 27 October, not before.</td><td class="t">From 27 Oct</td></tr>
+        <tr class="flag"><td>Visa cash</td><td>Bring the US$30 in clean, unmarked US notes. Card readers at the visa desk are unreliable and the ATM is past immigration. Rupees and euros are accepted but dollars are frictionless.</td><td class="t">Before you fly</td></tr>
+        <tr class="flag"><td>Domestic flights</td><td>With the Prithvi Highway cut at Krishnabhir, Kathmandu–Pokhara is effectively air-only and demand has nearly tripled. Book both legs — Buddha, Yeti or Shree — the day you fix your dates.</td><td class="t">Now</td></tr>
+        <tr class="flag"><td>Trekking agency</td><td>A licensed guide through a registered agency is required in the Annapurna Conservation Area and checked at Birethanti. Book from Kathmandu or online before you arrive in Pokhara.</td><td class="t">Weeks ahead</td></tr>
+        <tr><td>ACAP permit</td><td><b>₨3,000</b> per person for non-SAARC nationals, plus about 2.9% if you pay by card. Issued in Kathmandu or Pokhara only — the Birethanti checkpoint verifies, it does not sell.</td><td class="t">Before the trail</td></tr>
+        <tr><td>TIMS card</td><td><b>₨2,000</b>. Sources genuinely disagree on whether Annapurna still requires it; agencies buy it regardless. Combined with ACAP it's about US$40 — not worth arguing over.</td><td class="t">With ACAP</td></tr>
+        <tr><td>Cash</td><td>ATMs in Kathmandu and Pokhara Lakeside, none above Birethanti. Carry ₨25,000–30,000 onto the trail. Teahouses, the Poon Hill fee and tips are all cash.</td><td class="t">In Pokhara</td></tr>
+        <tr><td>Heritage fees</td><td>Boudhanath ₨400, Swayambhunath ₨200, Pashupatinath ₨1,000, Kathmandu and Patan Durbar Squares ₨1,000 each, <b>Bhaktapur ₨2,000 since June 2026</b>. Cash, at the gate.</td><td class="t">As you go</td></tr>
+        <tr><td>Bhai Tika</td><td>11 November is the last day of Tihar and a near-total shutdown of shops and offices. Beautiful, and a bad day to try to do logistics.</td><td class="t">Arrival day</td></tr>
+        <tr class="flag"><td>Insurance</td><td>Nepal's domestic carriers sit on the EU air safety list, and some travel policies exclude flights on banned operators. You will be flying Buddha or Yeti twice — read the wording rather than assume.</td><td class="t">Before you fly</td></tr>
+        <tr><td>Politics</td><td>The Rastriya Swatantra Party won 182 of 275 seats in the March 2026 election and Balen Shah has been prime minister since 27 March. Calm, but check your government's advisory before flying.</td><td class="t">Week before</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="cols">
+      <p><b>Weather</b>Kathmandu 21–23°C by day and around 8°C at night; Pokhara 24°C and 11°C; Ghorepani roughly 10°C by day and −2 to −4°C after dark. Rain is barely a factor — the valley sees about 10 mm across the whole of November.</p>
+      <p><b>Air</b>November is the valley's clean month. The bad season is late December through March, when Kathmandu regularly lands among the world's ten most polluted cities. Even so, mornings are always clearer than afternoons — another argument for early starts.</p>
+      <p><b>Pashupatinath</b>Non-Hindus cannot enter the main temple; the view is from the east bank of the Bagmati anyway, above the cremation ghats. Go early, dress conservatively, and don't photograph a cremation. It is somebody's family.</p>
+      <p><b>Water and food</b>Refill from boiled water at teahouses rather than buying bottles up the hill — it's cheaper and the plastic has nowhere to go. Order dal bhat; it comes with unlimited refills and everything else on a teahouse menu is a worse version of something you'd eat lower down.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <p>Westbound · stop 07 · Nepal</p>
+      <p>11–16 Nov 2026 · KTM in, SIN out</p>
+      <p>Fees, permits and road status verified Sept 2026 — recheck before booking</p>
+    </div>
+    <p class="foot-mark">Kathmandu → Poon Hill</p>
+  </div>
+</footer>
+
+<script>
+/* ============ DAY-BY-DAY ============ */
+const DAYS_TREK=[
+{d:'Wed 11',w:'Arrive',name:'Kathmandu',sub:'Land 08:10 · Bhai Tika',meta:'Night 1',
+ slots:[
+  {m:1,h:'08:10 · Tribhuvan',p:'Drukair KB400 out of Paro, seventy-five minutes with the Himalaya out the right-hand window. Visa on arrival with US$30 in cash and your printed barcode. Into Thamel in about 40 minutes — the traffic is unusually light, because the whole city is at home.'},
+  {h:'11:00 · Bhai Tika',p:'The fifth and last day of Tihar. Shops shut, families indoors, and the streets still carrying marigold garlands and coloured rangoli from Laxmi Puja three nights ago. This is the quietest Kathmandu you will ever walk through — take it as a gift rather than a lost day.'},
+  {h:'14:00 · Boudhanath',p:'The great white stupa with the eyes, and one of the largest in the world. Walk the kora clockwise with the Tibetan pilgrims, then take a rooftop café on the ring and stay for the butter lamps at dusk. ₨400 at the gate.'},
+  {h:'19:00 · Dinner and an early night',p:'Thamel or Jhamsikhel. You have a dawn flight and a 3,300-step staircase inside the next thirty hours; nothing about tonight should be ambitious.'}
+]},
+{d:'Thu 12',w:'Move',name:'To the trailhead',sub:'Fly, drive, then climb',meta:'Night 2 · Ulleri',
+ slots:[
+  {m:1,h:'06:30 · KTM → Pokhara',p:'Twenty-five minutes, and the entire Annapurna and Manaslu wall out of the right-hand side. Book weeks ahead: with the Prithvi Highway cut this is the only practical way west, and the seats are going.'},
+  {m:1,h:'08:30 · Jeep to Birethanti',p:'Ninety minutes to two hours on a country road to Nayapul, then a few minutes to Birethanti at 1,025 m. Your ACAP permit gets checked and logged at the post here, along with your guide’s licence.'},
+  {h:'10:30 · Birethanti → Ulleri',p:'About five hours and 935 m of gain. Gentle first, along the Modi Khola through Hile to Tikhedhunga — then the staircase, roughly 3,300 stone steps to Ulleri at 1,960 m. That last ninety minutes is the hardest hour of the whole leg. Go slow and let the mule trains past on the inside.'},
+  {h:'16:00 · Ulleri',p:'Teahouse, dal bhat, and Annapurna South over the ridge if the afternoon cloud lifts. Layers on the moment you stop walking. Everyone is in bed by eight and you will not fight it.'}
+]},
+{d:'Fri 13',w:'Full',name:'Up to Ghorepani',sub:'Forest, waterfalls, 2,860m',meta:'Night 3 · high',
+ slots:[
+  {h:'07:30 · Ulleri → Banthanti',p:'Forty-five minutes out of the terraced fields and into oak and rhododendron forest. The trees are bare — they flower in March — but the moss and the light through them are the reason people walk this in the first place.'},
+  {h:'09:00 · Banthanti → Nangethanti',p:'An hour and forty, climbing steadily beside waterfalls. Nangethanti at 2,460 m is the standard lunch stop and the last flat ground for a while.'},
+  {h:'11:30 · Nangethanti → Ghorepani',p:'Ninety minutes to the saddle at 2,860 m, arriving early afternoon. The short day is deliberate — you are gaining 900 m and sleeping high, and there is a 04:45 alarm coming.'},
+  {h:'14:00 · Ghorepani',p:'Walk the ridge behind the village for a first look at Dhaulagiri. Then the dining-room stove, because it drops below freezing after dark and the rooms are unheated plywood. Cash only up here; settle the bill in rupees.'}
+]},
+{d:'Sat 14',w:'Full',name:'Poon Hill',sub:'Dawn at 3,210m, then all the way down',meta:'Night 4 · Pokhara',
+ slots:[
+  {h:'04:45 · The climb',p:'Forty-five minutes and 350 m up by head torch, in a slow line of a hundred other torches. ₨100 collected at the top in the dark. Get there with twenty minutes spare and walk to the far end of the platform, away from the tower.'},
+  {h:'05:50 · Sunrise',p:'Dhaulagiri at 8,167 m due west takes the light first, then Annapurna I at 8,091 m, Annapurna South, Nilgiri, and Machhapuchhre’s fishtail off to the east. This is the thing you came to Nepal for and it lasts about twenty-five minutes.'},
+  {h:'08:00 · The descent',p:'Back through Ghorepani for breakfast, then down the way you came — around six hours to Birethanti, and considerably harder on the knees than the climb was on the lungs. Poles, and let the porter carry the bag.'},
+  {m:1,h:'16:30 · Pokhara',p:'Jeep back to Lakeside. A hot shower, a lake, and the best meal of the leg by some distance. You have earned all three.'}
+]},
+{d:'Sun 15',w:'Move',name:'Pokhara',sub:'One morning, then east',meta:'Night 5 · Kathmandu',
+ slots:[
+  {h:'05:30 · Sarangkot, or a lie-in',p:'Forty minutes up by road for a second dawn over the same range, with no walking involved. Genuinely spectacular and genuinely touristed. After yesterday, sleeping through it is a defensible choice.'},
+  {h:'09:00 · Phewa Lake',p:'Row across to the Tal Barahi temple on its island, or walk up to the World Peace Pagoda on the south shore — about forty-five minutes of climb for the best view of the lake with the massif stacked behind it.'},
+  {h:'11:00 · Paragliding, if the nerves hold',p:'Sarangkot is one of the best tandem sites anywhere and November is its month — thermals, stable air, and Annapurna as the backdrop. Around thirty minutes in the air. Book the morning slot; the afternoon gets rough.'},
+  {m:1,h:'14:00 · Pokhara → Kathmandu',p:'Twenty-five minutes back east, out of Pokhara International — a near-empty, Chinese-financed terminal at the centre of a long-running corruption case, which your small domestic turboprop uses anyway.'},
+  {h:'17:00 · Patan',p:'Patan Durbar Square in the late light, ₨1,000, with the Patan Museum next door — the best-curated museum in Nepal and worth an hour on its own. Dinner in Jhamsikhel afterwards.'}
+]},
+{d:'Mon 16',w:'Depart',name:'Kathmandu',sub:'A full last day',meta:'Fly out 22:50',
+ slots:[
+  {h:'07:00 · Swayambhunath',p:'Up the east stairway before the tour buses, monkeys and all. ₨200, and the whole valley laid out below with the stupa’s eyes over your shoulder. An hour is enough.'},
+  {h:'10:00 · Bhaktapur',p:'Forty-five minutes out of the centre and the most complete of the three Durbar Squares — the one where the 2015 reconstruction reads as finished rather than ongoing. ₨2,000 since June 2026. Give it three hours and eat juju dhau, the king of yoghurts, out of a clay pot in the square.'},
+  {h:'15:00 · Kathmandu Durbar Square',p:'₨1,000, and still visibly mid-repair a decade after the earthquake, which is its own kind of information. The Kumari Ghar is in the corner. Then Thamel for anything you need for the next twenty countries.'},
+  {m:1,h:'20:00 · To Tribhuvan',p:'Singapore Airlines’ daily non-stop leaves around 22:50, roughly five hours and ten minutes to Changi. Stop 08 — verify the exact time when you book, it is the one flight on this leg with no alternative.'}
+]}
+];
+
+const DAYS_LOW=[
+{d:'Wed 11',w:'Arrive',name:'Kathmandu',sub:'Land 08:10 · Bhai Tika',meta:'Night 1',
+ slots:[
+  {m:1,h:'08:10 · Tribhuvan',p:'Drukair out of Paro, seventy-five minutes, Himalaya on the right. Visa on arrival, US$30 cash, printed barcode. Into Thamel in about 40 minutes through unusually empty streets.'},
+  {h:'11:00 · Bhai Tika',p:'The last day of Tihar. Shops shut, families indoors, garlands and rangoli still down from Laxmi Puja. The quietest Kathmandu you will ever walk through.'},
+  {h:'14:00 · Boudhanath',p:'Kora clockwise with the pilgrims, a rooftop café on the ring, butter lamps at dusk. ₨400.'},
+  {h:'19:00 · Thamel',p:'Dinner, and a browse for whatever the next twenty countries need. The gear shops here sell both the real thing and a very convincing imitation of it, at prices that reflect neither.'}
+]},
+{d:'Thu 12',w:'Full',name:'The valley',sub:'Pashupatinath, Patan',meta:'Night 2',
+ slots:[
+  {h:'07:00 · Pashupatinath',p:'₨1,000. Non-Hindus stay outside the main temple, but the view is from the terraces on the east bank of the Bagmati anyway, above the cremation ghats. Go early, dress conservatively, and put the camera away.'},
+  {h:'10:30 · Patan Durbar Square',p:'₨1,000, and the best-preserved of the three squares — Newar brick and carved wood at close quarters. The Patan Museum inside it is genuinely the best museum in the country; give it an hour rather than ten minutes.'},
+  {h:'15:00 · Bhaktapur',p:'₨2,000 since June 2026. The medieval city that reads as finished rather than mid-repair. Pottery Square, the Nyatapola temple, and juju dhau in a clay pot. Stay for the light going off the brick.'},
+  {h:'19:30 · Back into town',p:'Dinner in Thamel or Jhamsikhel. Nothing scheduled — this is the shape that has slack in it, so use some.'}
+]},
+{d:'Fri 13',w:'Move',name:'Pokhara',sub:'Fly west to the lake',meta:'Night 3',
+ slots:[
+  {m:1,h:'09:00 · KTM → Pokhara',p:'Twenty-five minutes with the whole range out the right-hand window. Book well ahead — with the Prithvi Highway cut at Krishnabhir, these seats are scarce and expensive.'},
+  {h:'12:00 · Phewa Lake',p:'Lunch on Lakeside, then row out to the Tal Barahi temple on its island. Pokhara after Kathmandu is a decompression chamber: no traffic, no dust, a lake and a wall of mountains.'},
+  {h:'15:00 · World Peace Pagoda',p:'Boat across and walk up from the south shore, about forty-five minutes. The best view of the lake with Annapurna and Machhapuchhre behind it, and worth timing for late afternoon.'},
+  {h:'18:30 · Lakeside',p:'Early dinner. Tomorrow starts at half five and ends with a two-hour climb.'}
+]},
+{d:'Sat 14',w:'Move',name:'Australian Camp',sub:'One night on the ridge, 2,060m',meta:'Night 4 · high',
+ slots:[
+  {h:'05:30 · Sarangkot',p:'Forty minutes up by road for dawn over Annapurna South, Hiunchuli, Machhapuchhre and Lamjung Himal. No walking, no permit, and the same range Poon Hill shows you from further back.'},
+  {h:'10:00 · Paragliding, optional',p:'Sarangkot is a world-class tandem site and November is the month for it. Thirty minutes in the air over Phewa with the massif in front of you. Morning slots only — the afternoon air gets rough.'},
+  {m:1,h:'13:00 · Drive to Phedi',p:'Half an hour from Lakeside. You still need the ACAP permit — Australian Camp sits inside the conservation area — so it gets bought in Pokhara that morning at the latest.'},
+  {h:'14:00 · Phedi → Australian Camp',p:'Two to two and a half hours and about 700 m of climb through Dhampus village. Lodges strung along a ridge at 2,060 m with the whole range directly in front of them. Sunset and sunrise from the same doorstep, and no head torch required for either.'}
+]},
+{d:'Sun 15',w:'Move',name:'Down and east',sub:'Back to Kathmandu',meta:'Night 5',
+ slots:[
+  {h:'06:15 · Dawn from the ridge',p:'Annapurna South, Hiunchuli and Machhapuchhre, from a chair, with tea. It is not Poon Hill — it is a thousand metres lower and the peaks are smaller for it — but you slept through none of it and climbed no staircase.'},
+  {h:'09:00 · Down to Phedi',p:'Ninety minutes to two hours down, then half an hour back to Lakeside. Time for a proper lunch before the airport.'},
+  {m:1,h:'14:00 · Pokhara → Kathmandu',p:'Twenty-five minutes east out of Pokhara International.'},
+  {h:'17:00 · Kathmandu',p:'Garden of Dreams for an hour of walled quiet off Thamel, then dinner. Or Patan Durbar Square in the late light if you would rather have the brick than the lawn.'}
+]},
+{d:'Mon 16',w:'Depart',name:'Kathmandu',sub:'A full last day',meta:'Fly out 22:50',
+ slots:[
+  {h:'07:00 · Swayambhunath',p:'Up the east stairway before the buses. ₨200, monkeys, and the whole valley below.'},
+  {h:'10:00 · Kathmandu Durbar Square',p:'₨1,000. Still visibly mid-repair a decade after 2015, with the Kumari Ghar in the corner — the house of the living goddess, who appears at a window on no particular schedule.'},
+  {h:'14:00 · Narayanhiti Palace Museum',p:'The royal palace, opened to the public after the monarchy ended, including the wing where the 2001 massacre happened. Strange, unvarnished and quietly extraordinary. Or a second, slower pass through Boudhanath if you would rather end on the stupa.'},
+  {m:1,h:'20:00 · To Tribhuvan',p:'Singapore Airlines’ daily non-stop, around 22:50, five hours and ten to Changi. Stop 08.'}
+]}
+];
+
+let CURRENT_PLAN='trek';
+function renderDays(){
+  const DAYS = CURRENT_PLAN==='trek' ? DAYS_TREK : DAYS_LOW;
+  document.getElementById('days').innerHTML=DAYS.map((D,i)=>`
+  <div class="day">
+    <button class="day-btn" aria-expanded="false">
+      <span class="day-date">${D.d}<small>${D.w}</small></span>
+      <span><span class="day-name">${D.name}</span><span class="day-sub">${D.sub}</span></span>
+      <span class="day-meta">${D.meta}<span class="chev">▾</span></span>
+    </button>
+    <div class="day-body"><div class="day-inner"><div class="day-pad"><div class="slots">
+      ${D.slots.map(s=>`<div class="slot${s.m?' move':''}"><h4>${s.h}</h4><p>${s.p}</p></div>`).join('')}
+    </div></div></div></div>
+  </div>`).join('');
+
+  document.querySelectorAll('.day-btn').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const d=b.parentElement, open=d.classList.toggle('open');
+      b.setAttribute('aria-expanded',open?'true':'false');
+    });
+  });
+  document.querySelector('.day').classList.add('open');
+  document.querySelector('.day-btn').setAttribute('aria-expanded','true');
+}
+renderDays();
+
+document.getElementById('dayToggle').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  CURRENT_PLAN=b.dataset.plan;
+  document.querySelectorAll('#dayToggle .fbtn').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
+  const tn=document.getElementById('trek-nights');
+  const hp=document.getElementById('high-pt');
+  if(tn) tn.textContent = CURRENT_PLAN==='trek' ? '2' : '1';
+  if(hp) hp.innerHTML = CURRENT_PLAN==='trek' ? '3,210<span>m</span>' : '2,060<span>m</span>';
+  renderDays();
+});
+
+/* ============ WORTH DOING ============ */
+const ITEMS=[
+/* KATHMANDU */
+{c:'Kathmandu',t:'do',n:'Boudhanath at dusk',w:'One of the largest stupas in the world and the centre of Tibetan Kathmandu. Walk the kora clockwise with the pilgrims and stay for the butter lamps. ₨400.',when:'05:30–20:00'},
+{c:'Kathmandu',t:'do',n:'Bhaktapur',w:'The most complete of the three Durbar Squares and the one where the post-2015 reconstruction actually reads as finished. Give it three hours. <b>₨2,000 since June 2026.</b>',when:'Half day'},
+{c:'Kathmandu',t:'do',n:'Patan Durbar Square',w:'Newar brick and carved wood at close quarters, ₨1,000 — and the Patan Museum inside it is the best-curated museum in Nepal by a distance.',when:'₨1,000'},
+{c:'Kathmandu',t:'do',n:'Swayambhunath at 07:00',w:'Up the east stairway before the tour buses. ₨200, monkeys, and the whole valley below. An hour is genuinely enough.',when:'05:00–20:00'},
+{c:'Kathmandu',t:'do',n:'Pashupatinath',w:'₨1,000. Non-Hindus stay outside the main temple; the view is from the east bank above the cremation ghats anyway. Go early, dress conservatively, camera away.',when:'From 04:00'},
+{c:'Kathmandu',t:'opt',n:'Kathmandu Durbar Square',w:'₨1,000, and still visibly mid-repair a decade after the earthquake — which is its own kind of information. The Kumari Ghar, home of the living goddess, is in the corner.',when:'09:00–17:00'},
+{c:'Kathmandu',t:'opt',n:'Narayanhiti Palace Museum',w:'The royal palace opened to the public after the monarchy fell, including the wing where the 2001 massacre happened. Unvarnished, strange, and quietly extraordinary.',when:'Closed Tue'},
+{c:'Kathmandu',t:'opt',n:'Garden of Dreams',w:'A restored neoclassical walled garden a minute off Thamel. Small, and exactly the right thing when the traffic has beaten you.',when:'1 hour'},
+{c:'Kathmandu',t:'opt',n:'Thamel gear shops',w:'Real brands, convincing counterfeits, and prices that reflect neither. Worth an hour if anything has worn out in the first six countries — and it will have.',when:'Any evening'},
+{c:'Kathmandu',t:'opt',n:'Nagarkot at dawn',w:'The valley rim, an hour and a half out, with the Himalaya along the northern horizon and Everest visible on the best mornings. Only makes sense in the shape where you are not trekking.',when:'Overnight'},
+{c:'Kathmandu',t:'skip',n:'Everest mountain flight',w:'An hour out of Kathmandu for around US$200–280, window seat not guaranteed. You will already have flown the range from Paro and stood on Poon Hill. Spend it on the domestic flights instead.',when:'',b:1},
+{c:'Kathmandu',t:'skip',n:'Chitwan',w:'Two nights minimum for the jungle to justify the drive, and it is south, off the line. Tanzania is on this itinerary in January — let that be the wildlife stop.',when:''},
+{c:'Kathmandu',t:'skip',n:'Everest / Annapurna Base Camp',w:'Twelve days and seven days respectively before contingency. Not a near miss on a five-night window — a different trip entirely.',when:''},
+{c:'Kathmandu',t:'skip',n:'Lumbini',w:'The Buddha’s birthplace, and a long way west of everything else on this leg.',when:''},
+/* POKHARA */
+{c:'Pokhara',t:'do',n:'Sarangkot at dawn',w:'Forty minutes up by road, no walking, no permit — Annapurna South, Hiunchuli, Machhapuchhre and Lamjung Himal in a row. The cheapest mountain dawn in Nepal.',when:'05:30'},
+{c:'Pokhara',t:'do',n:'Phewa Lake & Tal Barahi',w:'Row out to the island temple in the middle of the lake, ideally late afternoon when the water goes still and the massif comes out behind it.',when:'Afternoon'},
+{c:'Pokhara',t:'do',n:'World Peace Pagoda',w:'Boat across and climb 45 minutes from the south shore. The definitive view of Pokhara — lake in front, Annapurna behind. Free.',when:'Late afternoon'},
+{c:'Pokhara',t:'opt',n:'Paragliding off Sarangkot',w:'One of the best tandem sites in the world and November is its month. Around 30 minutes in the air, roughly US$90–110. Morning slots only — afternoon air gets rough.',when:'Book ahead',b:1},
+{c:'Pokhara',t:'opt',n:'Begnas Lake',w:'Half an hour east, and what Phewa was twenty years ago. Quiet, green, almost no tourism. Good if you have half a day and no appetite for Lakeside.',when:'Half day'},
+{c:'Pokhara',t:'opt',n:'International Mountain Museum',w:'Better than it needs to be on Himalayan climbing history and the ethnography of the mountain peoples. Skippable, but a good rainy option.',when:'2 hours'},
+{c:'Pokhara',t:'skip',n:'Devi’s Fall & Gupteshwor Cave',w:'A waterfall down a hole and a damp cave, both fenced, ticketed and surrounded by souvenir stalls. The lake is a hundred metres away and free.',when:''},
+{c:'Pokhara',t:'skip',n:'The Pokhara–Kathmandu bus',w:'Normally seven to nine hours on the Prithvi Highway. Currently severed at Krishnabhir with no reopening date. Even if it reopens, fly on a window this tight.',when:''},
+/* TREK */
+{c:'Trek',t:'do',n:'Poon Hill at sunrise',w:'3,210 m, 45 minutes above Ghorepani, ₨100 collected in the dark. Dhaulagiri takes the light first, then Annapurna I. Walk to the far end of the platform and away from the tower.',when:'04:45'},
+{c:'Trek',t:'do',n:'Dal bhat',w:'Lentils, rice, curried vegetables and pickle, and it comes with unlimited refills. Everything else on a teahouse menu is a worse version of something you would eat lower down.',when:'Twice daily'},
+{c:'Trek',t:'do',n:'A licensed guide through a registered agency',w:'Required in the conservation area, checked at Birethanti and Ghorepani, strictest in peak season — which mid-November is. The sanction is being turned back, and that costs you the whole stop.',when:'Book ahead',b:1},
+{c:'Trek',t:'opt',n:'A porter',w:'₨2,500–3,000 a day. Optional on this route and worth every rupee on the descent, which is six hours of stone stairs and unkind to knees.',when:'With the agency',b:1},
+{c:'Trek',t:'opt',n:'Australian Camp & Dhampus',w:'The one-night version: two hours up from Phedi to a ridge at 2,060 m, sunset and sunrise from the same doorstep. Still needs the ACAP permit.',when:'Overnight'},
+{c:'Trek',t:'opt',n:'Renting gear in Lakeside',w:'Down jacket, sleeping bag and poles for a couple of dollars a day. Far better than carrying a four-season bag through twenty-six other countries for two nights.',when:'Day before'},
+{c:'Trek',t:'skip',n:'The Ghandruk loop descent',w:'Via Deurali and Tadapani — a far better walk than going back down the stairs, through Gurung villages with the peaks ahead of you. Needs a fourth and fifth day on foot. It does not fit.',when:''},
+{c:'Trek',t:'skip',n:'Rhododendrons',w:'The reason this trail is famous, and they flower in March and April. In November the trees are bare. The clearest skies of the year are the compensation and it is a fair trade.',when:''},
+{c:'Trek',t:'skip',n:'Jhinu Danda hot springs',w:'Riverside hot pools below Chhomrong and a lovely thing — on the Annapurna Base Camp route, well off this one.',when:''},
+{c:'Trek',t:'skip',n:'Trekking without a guide',w:'The rule has been in force since April 2023 and tightened in 2025. Checkpoints verify the licence number and the agency registration. On five nights with no slack, this is not the corner to cut.',when:''}
+];
+
+const TIERLBL={do:'Do',opt:'Maybe',skip:'Skip'};
+let FC='all', FT=null, FB=false;
+
+function renderItems(){
+  const list=ITEMS.filter(x=>
+    (FC==='all'||x.c===FC) && (!FT||x.t===FT) && (!FB||x.b));
+  const host=document.getElementById('items');
+  if(!list.length){host.innerHTML='<div class="empty">No entries match those filters.</div>';return}
+  host.innerHTML=list.map(x=>`
+    <div class="item">
+      <span class="tier ${x.t}">${TIERLBL[x.t]}</span>
+      <span class="nm">${x.n}</span>
+      <span class="when${x.b?' book':''}">${x.when||'&nbsp;'}</span>
+      <span class="why">${x.w}</span>
+    </div>`).join('');
+}
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  if(b.dataset.city){FC=b.dataset.city}
+  else if(b.dataset.tier){FT = FT===b.dataset.tier?null:b.dataset.tier}
+  else if(b.dataset.book){FB=!FB}
+  document.querySelectorAll('#filters .fbtn').forEach(x=>{
+    let on=false;
+    if(x.dataset.city) on = x.dataset.city===FC;
+    if(x.dataset.tier) on = x.dataset.tier===FT;
+    if(x.dataset.book) on = FB;
+    x.setAttribute('aria-pressed',on?'true':'false');
+  });
+  renderItems();
+});
+renderItems();
+
+/* ============ FIG 1: TIME AUDIT ============ */
+(function(){
+  const svg=document.getElementById('audit-chart');
+  const W=1400,H=190,pad=40,barY=70,barH=54;
+  const start=new Date(2026,10,11), end=new Date(2026,10,17);
+  const totalH=(end-start)/36e5;
+  const x=h=>pad+(h/totalH)*(W-2*pad);
+  const segs=[
+    {a:0,b:8.2,cls:'t2'},
+    {a:8.2,b:24,cls:'p'},
+    {a:24,b:48,cls:'f'},
+    {a:48,b:72,cls:'f'},
+    {a:72,b:96,cls:'f'},
+    {a:96,b:120,cls:'f'},
+    {a:120,b:142.8,cls:'f'},
+    {a:142.8,b:144,cls:'t'}
+  ];
+  const colors={t:'var(--magenta)',t2:'rgba(231,100,155,.55)',p:'rgba(242,169,60,.35)',f:'var(--amber)'};
+  let s=`<rect x="0" y="0" width="${W}" height="${H}" fill="none"/>`;
+  segs.forEach(sg=>{
+    const x1=x(sg.a),x2=x(sg.b);
+    s+=`<rect x="${x1}" y="${barY}" width="${Math.max(x2-x1-1,2)}" height="${barH}" fill="${colors[sg.cls]}"/>`;
+  });
+  for(let d=0;d<=6;d++){
+    const hh=d*24, xx=x(hh);
+    const dt=new Date(start.getTime()+hh*36e5);
+    s+=`<line x1="${xx}" y1="${barY-6}" x2="${xx}" y2="${barY+barH+6}" class="axs"/>`;
+    s+=`<text x="${xx}" y="${barY-14}" class="lbl" text-anchor="${d===0?'start':d===6?'end':'middle'}">${dt.toLocaleDateString('en-CA',{day:'2-digit',month:'short'})}</text>`;
+  }
+  s+=`<line x1="${pad}" y1="${barY+barH+0.5}" x2="${W-pad}" y2="${barY+barH+0.5}" class="ax"/>`;
+  s+=`<text x="${x(24)}" y="${barY+barH+34}" class="lbl-a">5 full days — 12→16 Nov</text>`;
+  s+=`<text x="${x(0)}" y="${barY+barH+34}" class="lbl">↙ lands 08:10</text>`;
+  s+=`<text x="${W-pad}" y="${barY+barH+34}" class="lbl" text-anchor="end">departs 22:50 ↘</text>`;
+  svg.innerHTML=s;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+})();
+
+/* ============ FIG 2: TREK ELEVATION PROFILE ============ */
+(function(){
+  const svg=document.getElementById('prof-chart');
+  const W=1400,H=400,padL=56,padR=30,padT=40,padB=54;
+  const PTS=[
+    {km:0,   m:1025, n:'Birethanti',   lab:1, side:'start'},
+    {km:5.5, m:1430, n:'Hile',         lab:0},
+    {km:7.5, m:1540, n:'Tikhedhunga',  lab:1},
+    {km:9.5, m:1960, n:'Ulleri',       lab:1, night:1},
+    {km:11.5,m:2250, n:'Banthanti',    lab:1},
+    {km:13.5,m:2460, n:'Nangethanti',  lab:1},
+    {km:16,  m:2860, n:'Ghorepani',    lab:1, night:1},
+    {km:17.5,m:3210, n:'Poon Hill',    lab:1, top:1},
+    {km:19,  m:2860, n:'',             lab:0},
+    {km:25.5,m:1960, n:'',             lab:0},
+    {km:35,  m:1025, n:'Birethanti',   lab:1, side:'end'}
+  ];
+  const maxKm=35, loM=900, hiM=3400;
+  const x=km=>padL+(km/maxKm)*(W-padL-padR);
+  const y=m=>padT+(1-(m-loM)/(hiM-loM))*(H-padT-padB);
+  let s='';
+  // horizontal gridlines
+  [1000,1500,2000,2500,3000].forEach(m=>{
+    s+=`<line x1="${padL}" y1="${y(m)}" x2="${W-padR}" y2="${y(m)}" class="axs"/>`;
+    s+=`<text x="${padL-9}" y="${y(m)+4}" class="lbl" text-anchor="end">${m.toLocaleString('en-CA')}m</text>`;
+  });
+  // area under the outbound + return
+  const ptStr=PTS.map(p=>`${x(p.km)},${y(p.m)}`).join(' ');
+  s+=`<polygon points="${x(0)},${y(loM)} ${ptStr} ${x(maxKm)},${y(loM)}" fill="rgba(242,169,60,.10)"/>`;
+  // descent limb faded
+  const desc=PTS.slice(7).map(p=>`${x(p.km)},${y(p.m)}`).join(' ');
+  s+=`<polyline points="${desc}" fill="none" stroke="rgba(242,169,60,.35)" stroke-width="2.5" stroke-dasharray="6 5"/>`;
+  // ascent limb solid
+  const asc=PTS.slice(0,8).map(p=>`${x(p.km)},${y(p.m)}`).join(' ');
+  s+=`<polyline points="${asc}" fill="none" stroke="var(--amber)" stroke-width="2.5"/>`;
+  // the staircase segment highlighted
+  s+=`<polyline points="${x(7.5)},${y(1540)} ${x(9.5)},${y(1960)}" fill="none" stroke="var(--magenta)" stroke-width="4"/>`;
+  s+=`<text x="${x(8.5)}" y="${y(1540)+26}" class="lbl" text-anchor="middle" fill="#E7649B">≈3,300 steps</text>`;
+  // points and labels
+  PTS.forEach(p=>{
+    if(!p.lab) return;
+    const cx=x(p.km), cy=y(p.m);
+    const r=p.night?5:(p.top?5.5:3.5);
+    const fill=p.night?'var(--amber)':(p.top?'var(--paper)':'var(--muted)');
+    s+=`<circle cx="${cx}" cy="${cy}" r="${r}" fill="${fill}"/>`;
+    if(p.night) s+=`<circle cx="${cx}" cy="${cy}" r="9" fill="none" stroke="var(--amber)" stroke-width="1"/>`;
+    if(p.side==='end') return;
+    const anchor = p.side==='start' ? 'start' : (p.top?'middle':'middle');
+    const cls = (p.top||p.night) ? 'lbl-p' : 'lbl';
+    s+=`<text x="${cx}" y="${cy-16}" class="${cls}" text-anchor="${anchor}">${p.n}</text>`;
+    s+=`<text x="${cx}" y="${cy-4}" class="lbl" text-anchor="${anchor}">${p.m.toLocaleString('en-CA')}m</text>`;
+  });
+  // night annotations
+  s+=`<text x="${x(9.5)}" y="${y(1960)+24}" class="lbl-a" text-anchor="middle">night 1</text>`;
+  s+=`<text x="${x(16)}" y="${y(2860)+24}" class="lbl-a" text-anchor="middle">night 2</text>`;
+  s+=`<text x="${x(27)}" y="${y(2100)}" class="lbl" text-anchor="middle">the same way down — ≈6h, all knees</text>`;
+  // x axis
+  s+=`<line x1="${padL}" y1="${y(loM)}" x2="${W-padR}" y2="${y(loM)}" class="ax"/>`;
+  [0,5,10,15,20,25,30,35].forEach(km=>{
+    s+=`<text x="${x(km)}" y="${y(loM)+20}" class="lbl" text-anchor="middle">${km} km</text>`;
+  });
+  s+=`<text x="${x(0)}" y="${padT-16}" class="lbl-a">Day 1 →</text>`;
+  s+=`<text x="${x(16.6)}" y="${padT-16}" class="lbl-a" text-anchor="middle">Day 3, 04:45 →</text>`;
+  svg.innerHTML=s;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+})();
+
+/* ============ FIG 3: CLEAR-DAWN ODDS ============ */
+(function(){
+  const svg=document.getElementById('clear-chart');
+  const W=1400,H=300,padL=50,padR=30,padT=20,padB=50;
+  const MO=[
+    {n:'Jan',v:76},{n:'Feb',v:70},{n:'Mar',v:54},{n:'Apr',v:44},
+    {n:'May',v:34},{n:'Jun',v:12},{n:'Jul',v:8},{n:'Aug',v:11},
+    {n:'Sep',v:32},{n:'Oct',v:70},{n:'Nov',v:80},{n:'Dec',v:78}
+  ];
+  const bw=(W-padL-padR)/MO.length;
+  const y=v=>padT+(1-v/100)*(H-padT-padB);
+  let s='';
+  [0,25,50,75,100].forEach(v=>{
+    s+=`<line x1="${padL}" y1="${y(v)}" x2="${W-padR}" y2="${y(v)}" class="axs"/>`;
+    s+=`<text x="${padL-10}" y="${y(v)+4}" class="lbl" text-anchor="end">${v}%</text>`;
+  });
+  MO.forEach((m,i)=>{
+    const x0=padL+i*bw+bw*0.18, bwid=bw*0.64;
+    const isNov=m.n==='Nov';
+    s+=`<rect x="${x0}" y="${y(m.v)}" width="${bwid}" height="${H-padB-y(m.v)}" fill="${isNov?'var(--amber)':'rgba(242,169,60,.32)'}" rx="1"/>`;
+    s+=`<text x="${x0+bwid/2}" y="${H-padB+18}" class="lbl" text-anchor="middle" ${isNov?'fill="var(--amber)"':''}>${m.n}</text>`;
+    s+=`<text x="${x0+bwid/2}" y="${y(m.v)-8}" class="${isNov?'lbl-a':'lbl'}" text-anchor="middle">${m.v}%</text>`;
+  });
+  s+=`<line x1="${padL}" y1="${H-padB}" x2="${W-padR}" y2="${H-padB}" class="ax"/>`;
+  svg.innerHTML=s;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+})();
+
+/* ============ TREK COST CALCULATOR ============ */
+const TREK_COSTS=[
+  {n:'ACAP permit (per person, non-SAARC)',r:3000,def:true,note:'Kathmandu or Pokhara only — Birethanti checks, it does not sell'},
+  {n:'TIMS card',r:2000,def:true,note:'Contested for Annapurna; agencies buy it regardless'},
+  {n:'Poon Hill viewpoint entry',r:100,def:true,note:'Collected at the top, at 05:30, in the dark'},
+  {n:'Licensed guide × 3 days',r:13500,def:true,note:'₨4,000–5,000 a day through a registered agency'},
+  {n:'Porter × 3 days',r:7500,note:'₨2,500–3,000 a day — optional, and kind to the descent'},
+  {n:'Teahouse rooms × 2 nights',r:2000,def:true,note:'₨500–1,500 a night; the money is in the food, not the bed'},
+  {n:'Food on the trail × 3 days',r:9000,def:true,note:'Dal bhat runs ₨700–900 at Ghorepani, refills included'},
+  {n:'Jeep, Pokhara ↔ Birethanti return',r:6000,def:true,note:'Per vehicle, 1.5–2h each way'}
+];
+function renderLegs(){
+  document.getElementById('legs').innerHTML=TREK_COSTS.map((l,i)=>`
+    <label class="leg-row">
+      <input type="checkbox" data-i="${i}" ${l.def?'checked':''}>
+      <span class="lname">${l.n}</span>
+      <span class="lyen">₨${l.r.toLocaleString('en-CA')}</span>
+      ${l.note?`<span class="lnote">${l.note}</span>`:''}
+    </label>`).join('');
+}
+function calcTotals(){
+  let diy=0;
+  document.querySelectorAll('#legs input[type="checkbox"]').forEach(cb=>{
+    const l=TREK_COSTS[Number(cb.dataset.i)];
+    if(cb.checked) diy+=l.r;
+  });
+  const pkg=45000;
+  const gap=pkg-diy;
+  document.getElementById('diy').innerHTML=`₨${diy.toLocaleString('en-CA')}<small>≈CAD ${Math.round(diy/100)}</small>`;
+  const dEl=document.getElementById('diff');
+  const vEl=document.getElementById('verdict');
+  if(diy===0){
+    dEl.innerHTML='—'; vEl.textContent='Tick what you would arrange'; vEl.className='';
+  } else if(gap>8000){
+    dEl.innerHTML=`₨${gap.toLocaleString('en-CA')}<small>you save</small>`;
+    vEl.textContent='DIY saves real money'; vEl.className='win';
+  } else if(gap>0){
+    dEl.innerHTML=`₨${gap.toLocaleString('en-CA')}<small>you save</small>`;
+    vEl.textContent='Too close to bother'; vEl.className='';
+  } else {
+    dEl.innerHTML=`₨${Math.abs(gap).toLocaleString('en-CA')}<small>package is cheaper</small>`;
+    vEl.textContent='Book the package'; vEl.className='lose';
+  }
+}
+renderLegs();
+document.getElementById('legs').addEventListener('change',calcTotals);
+calcTotals();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="darkreader-lock">
+<title>Japan</title>
+<link rel="stylesheet" href="fonts.css">
+</head>
+<body>
+<style>
+:root{color-scheme:dark;
+  --ink:#05161D;--ink-2:#0A2029;--ink-3:#0E2A35;
+  --rule:#194150;--rule-soft:rgba(25,65,80,.6);
+  --paper:#E2EEED;--paper-dim:#A6C2C6;--muted:#6C8F98;
+  --amber:#F2A93C;--magenta:#E7649B;--jade:#58C4A3;--red:#E05555;
+  --display:'Big Shoulders Display','Arial Narrow',Impact,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --body:'Inter',system-ui,sans-serif;
+  --gut:clamp(18px,4vw,64px);--maxw:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+.section{padding-block:clamp(34px,4.4vw,58px);border-top:1px solid var(--rule-soft);position:relative}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:14px;margin:0 0 18px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--rule)}
+.eyebrow .n{color:var(--amber)}
+h2.head{font-family:var(--display);font-weight:700;font-size:clamp(34px,5.6vw,66px);line-height:.92;margin:0 0 14px;text-transform:uppercase}
+.lede{max-width:66ch;color:var(--paper-dim);font-size:clamp(15px,1.5vw,17px);margin:0 0 26px}
+.lede b{color:var(--paper);font-weight:600}
+a{color:var(--amber);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+.hint{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+@media (min-width:980px){.hint.wide{display:none}}
+.scroller{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--rule) transparent}
+.scroller::-webkit-scrollbar{height:6px}
+.scroller::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}
+.scroller>svg{display:block;width:100%;height:auto}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(30px,5vw,58px) clamp(24px,4vw,40px);overflow:hidden}
+.gridbg{position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:linear-gradient(to right,var(--rule-soft) 1px,transparent 1px),linear-gradient(to bottom,var(--rule-soft) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%);-webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%)}
+.back{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:inline-block;margin-bottom:20px}
+.back:hover{color:var(--amber)}
+.strip{font-family:var(--mono);font-size:clamp(10px,1.15vw,12px);letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;border-block:1px solid var(--rule);padding-block:11px;margin-bottom:clamp(26px,4vw,44px)}
+.strip .k{color:var(--muted)}.strip .amb{color:var(--amber)}
+.title{font-family:var(--display);text-transform:uppercase;margin:0;line-height:.82;position:relative}
+.title .l1{display:block;font-weight:400;font-size:clamp(34px,7.4vw,96px);color:transparent;-webkit-text-stroke:1.2px var(--paper-dim)}
+.title .l2{display:block;font-weight:800;font-size:clamp(72px,17vw,232px);letter-spacing:-.015em;color:var(--paper)}
+.subline{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:baseline;margin-top:clamp(18px,3vw,30px);font-family:var(--mono);font-size:clamp(11px,1.25vw,13px);letter-spacing:.14em;text-transform:uppercase;color:var(--paper-dim)}
+.subline .sep{color:var(--rule)}
+
+/* instruments */
+.instr{display:grid;grid-template-columns:repeat(auto-fit,minmax(124px,1fr));border:1px solid var(--rule);background:var(--ink-2);margin:clamp(24px,3.4vw,38px) 0 0}
+.instr div{padding:15px 17px;border-right:1px solid var(--rule-soft)}
+.instr div:last-child{border-right:0}
+.instr dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.instr dd{margin:0;font-family:var(--display);font-weight:600;font-size:31px;line-height:1}
+.instr dd span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--paper-dim);margin-left:3px}
+.instr dd.hot{color:var(--amber)}
+.instr dd.warn{color:var(--magenta)}
+
+/* chart frames */
+.figcap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:9px;margin:0 0 8px}
+.figcap b{color:var(--amber);font-weight:500}
+.fignote{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.fignote i{display:inline-block;width:14px;height:9px;margin:0 5px 0 14px;vertical-align:middle;border-radius:1px}
+.fignote i:first-child{margin-left:0}
+.ax{stroke:var(--rule);stroke-width:1}
+.axs{stroke:var(--rule-soft);stroke-width:1}
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.08em;fill:var(--muted)}
+.lbl-p{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;fill:var(--paper)}
+.lbl-a{font-family:var(--mono);font-size:10px;letter-spacing:.12em;fill:var(--amber)}
+
+/* cards */
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin:0 0 6px}
+.card{border:1px solid var(--rule);background:var(--ink-2);padding:18px 20px;position:relative}
+.card.bad{border-color:var(--red)}
+.card.good{border-color:var(--jade)}
+.card h3{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 4px;color:var(--paper)}
+.card .verdict{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:11px}
+.card .verdict.bad{color:var(--red)}
+.card .verdict.ok{color:var(--jade)}
+.card p{margin:0 0 10px;font-size:13.5px;color:var(--paper-dim);line-height:1.62}
+.card p:last-child{margin-bottom:0}
+.card p b{color:var(--paper);font-weight:600}
+.fix{border-left:2px solid var(--amber);padding-left:12px;margin:12px 0 0;font-size:12.8px;color:var(--paper-dim);line-height:1.6}
+.fix b{display:block;color:var(--amber);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px;font-weight:500}
+.fix strong{color:var(--paper);font-weight:600}
+
+/* shape cards */
+.shapes{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+.shape{border:1px solid var(--rule);background:var(--ink-2);padding:0;display:flex;flex-direction:column}
+.shape.pick{border-color:var(--amber);box-shadow:inset 0 0 0 1px rgba(242,169,60,.25)}
+.shape-hd{padding:16px 20px 14px;border-bottom:1px solid var(--rule-soft)}
+.shape-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.shape.pick .shape-tag{color:var(--amber)}
+.shape-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(24px,3vw,32px);line-height:.95;margin:0}
+.chainrow{display:flex;flex-wrap:wrap;align-items:center;gap:5px 7px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--paper);padding:13px 20px;border-bottom:1px solid var(--rule-soft);background:rgba(5,22,29,.5)}
+.chainrow .a{color:var(--rule)}
+.chainrow .n{color:var(--amber);font-size:9.5px}
+.shape-body{padding:15px 20px 18px;flex:1}
+.shape-body p{margin:0 0 10px;font-size:13.3px;color:var(--paper-dim);line-height:1.6}
+.shape-body p:last-child{margin-bottom:0}
+.shape-body p b{color:var(--paper);font-weight:600}
+.shape-meta{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--rule-soft)}
+.shape-meta div{flex:1;min-width:88px;padding:11px 20px;border-right:1px solid var(--rule-soft)}
+.shape-meta div:last-child{border-right:0}
+.shape-meta dt{font-family:var(--mono);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.shape-meta dd{margin:0;font-family:var(--mono);font-size:13px;color:var(--paper)}
+.shape-meta dd.g{color:var(--jade)}
+.shape-meta dd.r{color:var(--red)}
+
+/* day accordion */
+.days{border-top:1px solid var(--rule)}
+.day{border-bottom:1px solid var(--rule)}
+.day-btn{all:unset;box-sizing:border-box;display:grid;width:100%;cursor:pointer;grid-template-columns:76px 1fr auto;gap:0 clamp(14px,2.4vw,30px);align-items:baseline;padding:clamp(13px,1.8vw,18px) 4px;transition:background .18s ease}
+.day-btn:hover{background:rgba(242,169,60,.05)}
+.day-btn:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.day-date{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.1em}
+.day-date small{display:block;color:var(--muted);font-size:9.5px;letter-spacing:.14em;margin-top:3px}
+.day-btn>span:nth-child(2){display:flex;flex-direction:column;gap:6px}
+.day-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(22px,3.2vw,34px);line-height:.95;margin:0}
+.day-sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.day-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--paper-dim);text-align:right;white-space:nowrap}
+.day-meta .chev{display:inline-block;margin-left:12px;color:var(--muted);transition:transform .25s ease}
+.day.open .day-meta .chev{transform:rotate(180deg)}
+@media (max-width:720px){.day-btn{grid-template-columns:64px 1fr;row-gap:8px}.day-meta{grid-column:2;text-align:left}}
+.day-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .34s cubic-bezier(.3,.8,.3,1)}
+.day.open .day-body{grid-template-rows:1fr}
+.day-inner{overflow:hidden}
+.day-pad{padding:2px 4px clamp(22px,3vw,32px)}
+.slots{display:grid;gap:0;border-left:1px solid var(--rule)}
+.slot{padding:0 0 16px 16px;position:relative}
+.slot:last-child{padding-bottom:2px}
+.slot::before{content:"";position:absolute;left:-4px;top:6px;width:7px;height:7px;background:var(--amber);border-radius:50%}
+.slot.move::before{background:var(--magenta)}
+.slot h4{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 5px;font-weight:500}
+.slot.move h4{color:var(--magenta)}
+.slot p{margin:0;font-size:14px;line-height:1.62;color:var(--paper-dim);max-width:72ch}
+.slot p b{color:var(--paper);font-weight:600}
+
+/* worth doing */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.fbtn{all:unset;cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border:1px solid var(--rule);color:var(--paper-dim);border-radius:2px;transition:.15s}
+.fbtn:hover{background:var(--ink-3);color:var(--paper)}
+.fbtn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.fbtn[aria-pressed="true"]{background:var(--amber);color:var(--ink);border-color:var(--amber);font-weight:600}
+.fdiv{width:1px;background:var(--rule);margin:2px 6px}
+.items{display:grid;gap:1px;background:var(--rule-soft);border:1px solid var(--rule)}
+.item{background:var(--ink-2);padding:13px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:baseline}
+.item .tier{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:3px 7px 2px;border-radius:2px;white-space:nowrap;align-self:start;margin-top:2px}
+.tier.do{background:rgba(88,196,163,.14);color:var(--jade);border:1px solid rgba(88,196,163,.35)}
+.tier.opt{background:rgba(242,169,60,.12);color:var(--amber);border:1px solid rgba(242,169,60,.3)}
+.tier.skip{background:rgba(224,85,85,.1);color:var(--red);border:1px solid rgba(224,85,85,.3)}
+.item .nm{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:20px;line-height:1.05;color:var(--paper)}
+.item .why{grid-column:2;font-size:13.3px;color:var(--paper-dim);line-height:1.55;max-width:74ch}
+.item .why b{color:var(--paper);font-weight:600}
+.item .when{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);text-align:right;white-space:nowrap;align-self:start;margin-top:4px}
+.item .when.book{color:var(--magenta)}
+@media (max-width:640px){.item{grid-template-columns:auto 1fr}.item .when{grid-column:2;text-align:left;margin-top:2px}.item .why{grid-column:1/-1}}
+.empty{background:var(--ink-2);padding:22px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* rail calc */
+.calc{border:1px solid var(--rule);background:var(--ink-2)}
+.calc-legs{display:grid}
+.leg-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--rule-soft);cursor:pointer}
+.leg-row:hover{background:rgba(242,169,60,.04)}
+.leg-row input{accent-color:var(--amber);width:15px;height:15px;cursor:pointer}
+.leg-row .lname{font-family:var(--mono);font-size:12.5px;color:var(--paper-dim)}
+.leg-row input:checked+.lname{color:var(--paper)}
+.leg-row .lyen{font-family:var(--mono);font-size:12.5px;color:var(--amber);font-variant-numeric:tabular-nums;white-space:nowrap}
+.leg-row .lnote{grid-column:2/-1;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--muted);margin-top:-4px}
+.calc-out{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule-soft)}
+.calc-out div{background:var(--ink-3);padding:15px 17px}
+.calc-out dt{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.calc-out dd{margin:0;font-family:var(--display);font-weight:700;font-size:27px;line-height:1;font-variant-numeric:tabular-nums}
+.calc-out dd small{font-family:var(--mono);font-size:10px;font-weight:400;color:var(--paper-dim);margin-left:4px;letter-spacing:.06em}
+#verdict{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;line-height:1.5}
+#verdict.win{color:var(--jade)}
+#verdict.lose{color:var(--red)}
+
+/* panels / tables */
+.panel{border:1px solid var(--rule);background:var(--ink-2);padding:clamp(17px,2.4vw,24px);margin-top:22px}
+.panel h3{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 12px;font-weight:500}
+.panel p{margin:0 0 12px;font-size:13.6px;color:var(--paper-dim);line-height:1.62}
+.panel p:last-child{margin-bottom:0}
+.panel p b{color:var(--paper);font-weight:600}
+table.ref{width:100%;border-collapse:collapse;font-size:13.4px}
+table.ref th{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:500;padding:0 14px 10px 0;border-bottom:1px solid var(--rule)}
+table.ref td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule-soft);color:var(--paper-dim);vertical-align:top}
+table.ref td:first-child{font-family:var(--display);font-size:17px;font-weight:600;text-transform:uppercase;color:var(--paper);white-space:nowrap;width:1%}
+table.ref td.t{font-family:var(--mono);font-size:11px;letter-spacing:.06em;white-space:nowrap;color:var(--amber)}
+table.ref tr.flag td.t{color:var(--magenta)}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.cols{display:grid;gap:16px 34px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:20px}
+.cols p{margin:0;font-size:13.6px;color:var(--paper-dim);line-height:1.6}
+.cols p b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:5px;font-weight:500}
+
+footer{border-top:1px solid var(--rule);padding-block:26px 40px;color:var(--muted)}
+.foot-grid{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:flex-end}
+.foot-grid p{margin:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase}
+.foot-mark{font-family:var(--display);font-size:clamp(40px,9vw,110px);font-weight:800;text-transform:uppercase;line-height:.8;color:transparent;-webkit-text-stroke:1px var(--rule);margin:30px 0 0}
+</style>
+
+<header class="hero">
+  <div class="gridbg"></div>
+  <div class="wrap">
+    <a class="back" href="index.html">← Westbound · the dossier</a>
+    <p class="strip">
+      <span><span class="k">Stop</span> <span class="amb">01 of 27</span></span>
+      <span><span class="k">In</span> HND · Toronto</span>
+      <span><span class="k">Fly Japan</span> <span class="amb">HIJ</span></span>
+      <span><span class="k">Out</span> ICN · Seoul</span>
+      <span><span class="k">Window</span> 15–22 Oct 2026</span>
+      <span><span class="k">Clock</span> UTC+9</span>
+    </p>
+    <h1 class="title">
+      <span class="l1">First stop</span>
+      <span class="l2">Japan</span>
+    </h1>
+    <p class="subline">
+      <span>Tokyo confirmed</span><span class="sep">/</span>
+      <span>Fly out HIJ confirmed</span><span class="sep">/</span>
+      <span>Kyoto: your call, see below</span>
+    </p>
+
+    <dl class="instr">
+      <div><dt>Calendar days</dt><dd>7</dd></div>
+      <div><dt>Full days</dt><dd class="hot">5</dd></div>
+      <div><dt>Nights</dt><dd>6</dd></div>
+      <div><dt>Bases, w/o Kyoto</dt><dd>3</dd></div>
+      <div><dt>Rail, one way</dt><dd id="rail-km">≈900<span>km</span></dd></div>
+      <div><dt>Koyo overlap</dt><dd class="warn">0<span>%</span></dd></div>
+    </dl>
+  </div>
+</header>
+
+<section class="section" id="audit">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">01</span> The time audit</p>
+    <h2 class="head">Seven days<br>is five days</h2>
+    <p class="lede">The itinerary says 15–22 October. Flying west over the Pacific you lose the 15th to the date line — Air Canada leaves Toronto early afternoon and lands at Haneda late on the <b>16th</b>. Departure day is a travel day too. What you actually get is <b>five full days and two fragments</b>, and every plan below is built against that number rather than the calendar one.</p>
+
+    <div class="figcap">
+      <span>Fig. 1 — What the week really contains</span>
+      <span><b>15–22 Oct</b> · hour by hour</span>
+    </div>
+    <div class="scroller">
+      <svg id="audit-chart" viewBox="0 0 1400 190" role="img" aria-label="Timeline of 15 to 22 October showing the 15th and most of the 16th consumed by the flight from Toronto, five usable full days from the 17th to the 21st, and two part-days at either end."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--magenta);opacity:.55"></i>In transit<i style="background:rgba(242,169,60,.35)"></i>Part day<i style="background:var(--amber)"></i>Full day</p>
+
+    <div class="cols">
+      <p><b>The jet-lag gift</b>Toronto to Tokyo is thirteen hours forward. For the first four or five days you will be wide awake at 4am and useless by 9pm. That is the single best thing that will happen to you here — Japan's most crowded sights are empty and beautiful at 6:30. Build the whole week around dawn and go to bed early without guilt.</p>
+      <p><b>Haneda, not Narita</b>You land at the good airport. Keikyū or the Monorail puts you in central Tokyo in about 30 minutes, against 60–90 from Narita. If the airline tries to rebook you onto Narita during a schedule change, push back — it costs you two hours of a week that has none spare.</p>
+      <p><b>Arrival evening is not a day</b>Land ~16:00, clear immigration, reach a hotel around 18:30 still wearing yesterday. Plan exactly one thing: dinner within walking distance. Anything more ambitious gets abandoned.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="flags">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">02</span> Two things that don't move</p>
+    <h2 class="head">Whichever way<br>you slice it</h2>
+    <p class="lede">These two hold regardless of whether Kyoto makes the cut — worth knowing before you get into the routing decision below.</p>
+
+    <div class="cards">
+      <div class="card bad">
+        <h3>Mid-October is not autumn</h3>
+        <div class="verdict bad">Nothing you can do</div>
+        <p>Japan's famous colour runs from the mountains downward over about eight weeks. Kyoto and Tokyo peak in <b>late November</b>. Hakone in early November. On 15–22 October, every garden on this route — Kyoto's included, if you add it — will be entirely green.</p>
+        <p>The only overlap is elevation. Nikko's Lake Chūzenji, at about 1,300 m, turns in mid-to-late October — but that's a Tokyo day trip you won't have room for once Hiroshima is in the plan.</p>
+        <div class="fix"><b>The consolation</b>You dodge the crush. Late-November Kyoto is a scrum — booked out, queued, shoulder to shoulder at every gate. In mid-October you get the same gardens at maybe a third of the density. Green and empty beats red and immobile.</div>
+      </div>
+
+      <div class="card">
+        <h3>Fuji in October</h3>
+        <div class="verdict">Better than you'd think</div>
+        <p>You cannot climb it — the season is July to 10 September, and all four trails now carry a mandatory ¥4,000 fee and a reservation anyway. But climbing was never the plan, and October is a good month to <b>see</b> it.</p>
+        <p>Summer air is hazy and the mountain hides behind cloud most days. Visibility climbs steadily through autumn into a winter peak. Mid-October also usually catches the first snow cap, which is the version everyone pictures.</p>
+        <div class="fix"><b>The lever</b>Time of day, not day of week. Clear mornings collapse into cloud by lunchtime almost year-round. Be at the lake within two hours of sunrise, which your jet lag makes trivial.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="shapes">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">03</span> The open question</p>
+    <h2 class="head">Kyoto:<br>in or out</h2>
+    <p class="lede">Tokyo and Hiroshima are fixed points — six nights between them. Adding Kyoto doesn't cost you a spare day, because there isn't one; it takes a full day from Tokyo and turns two travel days into three. Both shapes below fit the same 15–22 Oct window.</p>
+
+    <div class="shapes">
+      <div class="shape pick">
+        <div class="shape-hd">
+          <div class="shape-tag">Recommended</div>
+          <p class="shape-name">Without Kyoto</p>
+        </div>
+        <div class="chainrow">
+          <span>Tokyo <span class="n">×3</span></span><span class="a">→</span>
+          <span>Hakone <span class="n">×1</span></span><span class="a">→</span>
+          <span>Hiroshima <span class="n">×2</span></span><span class="a">→</span>
+          <span class="n">HIJ</span>
+        </div>
+        <div class="shape-body">
+          <p>Two full days in Tokyo, a proper onsen night in Hakone, and — the part a rushed Kyoto stop would have squeezed — <b>two nights in Hiroshima</b>. That's enough for the Peace Memorial Museum without racing the clock, plus a real afternoon on Miyajima timed to the tide.</p>
+          <p><b>The consolation prize:</b> Okayama's Kōraku-en garden sits fifteen minutes from a Shinkansen stop directly on your line to Hiroshima. A two-hour stopover, bag in a locker, gets you a real garden without touching the Kyoto question at all.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Bases</dt><dd class="g">3</dd></div>
+          <div><dt>Moves</dt><dd class="g">2</dd></div>
+          <div><dt>Rail hours</dt><dd>≈6</dd></div>
+          <div><dt>Fly out</dt><dd>HIJ</dd></div>
+        </dl>
+      </div>
+
+      <div class="shape">
+        <div class="shape-hd">
+          <div class="shape-tag">If Kyoto is worth the squeeze</div>
+          <p class="shape-name">With Kyoto</p>
+        </div>
+        <div class="chainrow">
+          <span>Tokyo <span class="n">×2</span></span><span class="a">→</span>
+          <span>Hakone <span class="n">×1</span></span><span class="a">→</span>
+          <span>Kyoto <span class="n">×1</span></span><span class="a">→</span>
+          <span>Hiroshima <span class="n">×2</span></span><span class="a">→</span>
+          <span class="n">HIJ</span>
+        </div>
+        <div class="shape-body">
+          <p>Kyoto goes in for one night — arrive evening, one dawn temple session, back on the train by mid-morning. It's genuinely enough to say you've stood in Fushimi Inari at night and Ryōan-ji at dawn. It is not enough for the version of Kyoto in the gardens section below.</p>
+          <p><b>The cost is entirely Tokyo's.</b> One full day instead of two — old Tokyo or new Tokyo, not both. Miyajima and the Peace Park stay intact; Hiroshima doesn't pay for this one.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Bases</dt><dd>4</dd></div>
+          <div><dt>Moves</dt><dd class="r">3</dd></div>
+          <div><dt>Rail hours</dt><dd>≈8</dd></div>
+          <div><dt>Fly out</dt><dd>HIJ</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Why the recommendation cuts Kyoto rather than Tokyo or Hiroshima</h3>
+      <p>Hiroshima is the newer addition and the one with a hard floor — under two nights, either the Peace Park or Miyajima gets rushed, and rushing the Peace Park specifically is a bad trade to make for a stopover. Tokyo at one day is thin for a first visit to a city this dense. Kyoto is the only one of the three where a <b>zero-night version already exists</b>: the Okayama stopover above, or simply banking Kyoto for a future trip when it isn't fighting green gardens for its own colour season anyway.</p>
+      <p>If Kyoto is non-negotiable for you, the one-night version is genuinely workable — it's the same trade Tue 21 makes in the day-by-day below. Use the toggle in the next section to see exactly what changes.</p>
+    </div>
+
+    <div class="panel">
+      <h3>What's cut either way</h3>
+      <p><b>Kanazawa and Kenroku-en.</b> One of the Three Great Gardens, and a beautiful city — but it sits north of the main line, a full extra day to reach. Okayama's Kōraku-en is free and on the way.</p>
+      <p><b>Osaka.</b> Thirty minutes from Kyoto and a genuinely good eating city, but it doesn't do anything Tokyo hasn't already done for you at larger scale. On a 27-country trip, it's an easy skip.</p>
+      <p><b>Nara.</b> Forty-five minutes from Kyoto; Tōdai-ji and Isuien garden are superb. Only fits if Kyoto gets two nights, which neither shape above gives it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="run">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">04</span> Day by day</p>
+    <h2 class="head">Both versions,<br>laid out</h2>
+    <p class="lede">Every morning starts earlier than feels reasonable and that is the entire trick — jet lag hands you 6am for free, and 6am is when Japan is at its best. Times are indicative; treat the first slot of each day as the one that matters and let the rest float.</p>
+    <div class="filters" id="dayToggle" style="margin-bottom:6px">
+      <button class="fbtn" data-plan="nokyoto" aria-pressed="true">Without Kyoto</button>
+      <button class="fbtn" data-plan="kyoto" aria-pressed="false">With Kyoto</button>
+    </div>
+    <div class="days" id="days"></div>
+    <p class="fignote" style="margin-top:16px">Amber = on foot · <span style="color:var(--magenta)">Magenta = a train or a base change</span></p>
+  </div>
+</section>
+
+<section class="section" id="worth">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">05</span> What's actually worth doing</p>
+    <h2 class="head">Do, maybe,<br>don't bother</h2>
+    <p class="lede">Sorted by city, then by whether it earns its place in a week this short. The <b>don't bother</b> entries are not bad things — most are perfectly good and would make the cut on a two-week trip. They're here because something else on the list beats them for the same slot.</p>
+
+    <div class="filters" id="filters">
+      <button class="fbtn" data-city="all" aria-pressed="true">All</button>
+      <button class="fbtn" data-city="Tokyo" aria-pressed="false">Tokyo</button>
+      <button class="fbtn" data-city="Fuji" aria-pressed="false">Fuji &amp; Hakone</button>
+      <button class="fbtn" data-city="Kyoto" aria-pressed="false">Kyoto</button>
+      <button class="fbtn" data-city="Hiroshima" aria-pressed="false">Hiroshima</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-tier="do" aria-pressed="false">Do</button>
+      <button class="fbtn" data-tier="opt" aria-pressed="false">Maybe</button>
+      <button class="fbtn" data-tier="skip" aria-pressed="false">Don't bother</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-book="1" aria-pressed="false">Needs booking</button>
+    </div>
+    <div class="items" id="items"></div>
+  </div>
+</section>
+
+<section class="section" id="gardens">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">06</span> The garden question</p>
+    <h2 class="head">Green, and<br>that's fine</h2>
+    <p class="lede">You said gardens on the way to Hiroshima, so this is the honest version, whether or not Kyoto makes the final cut. Japan's colour arrives by altitude, sliding down the mountains through November. Your window sits three to six weeks early everywhere you'll be, with one exception at 1,300 metres.</p>
+
+    <div class="figcap">
+      <span>Fig. 2 — When the leaves actually turn</span>
+      <span><b>Typical peak koyo</b> · your window marked</span>
+    </div>
+    <div class="scroller">
+      <svg id="koyo-chart" viewBox="0 0 1400 460" role="img" aria-label="Chart of typical autumn colour windows from October to mid-December for nine places, ordered by elevation. Only Kamikochi and Nikko's Lake Chuzenji overlap the 15 to 22 October travel window; Kyoto, Tokyo and Hiroshima peak in late November."></svg>
+    </div>
+    <p class="fignote"><i style="background:rgba(242,169,60,.55)"></i>Peak colour<i style="background:rgba(231,100,155,.22);border:1px solid var(--magenta)"></i>Your window · indicative averages, koyo shifts a week either way each year</p>
+
+    <div class="panel">
+      <h3>The Three Great Gardens, and why only one is on your route</h3>
+      <p><b>Kōraku-en, Okayama</b> — fifteen minutes' walk from a Shinkansen station that sits directly between Kyoto and Hiroshima, next to the black castle. A two-hour stop with your bag in a coin locker. This is the one that's free.</p>
+      <p><b>Kenroku-en, Kanazawa</b> — arguably the finest of the three, and a full day of your five to reach. Cut it.</p>
+      <p><b>Kairaku-en, Mito</b> — north-east of Tokyo, wrong direction, and it's a plum garden that exists for February. Not this trip, not this month.</p>
+      <p>The uncomfortable truth is that the Three Great Gardens are a Meiji-era list, and <b>Kyoto's temple gardens are better than any of them</b> — smaller, stranger, more deliberate. Ryōan-ji's rock garden, Tōfuku-ji's modernist checkerboard moss, the Daitoku-ji subtemples, Murin-an's Meiji water garden with Higashiyama borrowed behind it. That's the case for adding Kyoto. If the answer is no, Okayama is the free consolation and Kōraku-en is a genuinely good garden in its own right — just not this good.</p>
+    </div>
+
+    <div class="panel">
+      <h3>Two that need booking weeks ahead, and are worth it</h3>
+      <p><b>Katsura Rikyū</b> — the imperial villa in west Kyoto, widely held to be the greatest garden in Japan. Free, but visits are guided, capped, and booked through the Imperial Household Agency. Slots open roughly three months out and go.</p>
+      <p><b>Saihō-ji, the moss temple</b> — 120-odd species of moss under maples, entry by advance reservation only, around ¥4,000, and you copy a sutra before they let you into the garden. That gatekeeping is why it's quiet.</p>
+      <p>Both are booked online. Do it the week you finalise the flights, not the week you fly.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="fuji">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">07</span> The mountain</p>
+    <h2 class="head">Odds on Fuji</h2>
+    <p class="lede">Fuji is visible on well under half the days in a year and hardly at all in summer. October sits on the rising edge of the good season — roughly two mornings in five, improving through November into a winter peak near eighty percent. These are rules of thumb rather than measured statistics, but the shape is right and the shape is what matters.</p>
+
+    <div class="figcap">
+      <span>Fig. 3 — Chance of a clear summit, by month</span>
+      <span><b>Morning</b> · Fuji Five Lakes and Hakone</span>
+    </div>
+    <div class="scroller">
+      <svg id="fuji-chart" viewBox="0 0 1400 300" role="img" aria-label="Bar chart of the approximate chance of seeing Mount Fuji's summit by month, low from June to August around 15 percent, rising through October at about 40 percent to a winter peak near 80 percent in January."></svg>
+    </div>
+    <p class="fignote">Indicative morning odds · afternoons are materially worse in every month</p>
+
+    <div class="cols">
+      <p><b>Hakone</b>Lake Ashi at first light, from the Moto-Hakone end, with the shrine's torii standing in the water and the cone behind it. Sitting on the Tōkaidō line means you continue west afterwards instead of doubling back. Onsen and a kaiseki dinner are the bonus, and the ropeway over the Ōwakudani vents is genuinely strange. Check the volcanic-gas status the morning you go; the ropeway closes without much warning.</p>
+      <p><b>Kawaguchiko</b>The Chūreitō pagoda shot — pagoda, cherry-less October slopes, Fuji beyond — is the postcard, and it is a real place with 400 steps. But Kawaguchiko is a dead end: you either return to Shinjuku or take the bus down to Mishima to rejoin the Shinkansen. It has also become extremely crowded. Choose it if the specific photograph matters more than the day it costs.</p>
+      <p><b>The free one</b>Going Tokyo→Kyoto, sit on the right — seats D and E. Fuji appears about forty minutes out, near Shin-Fuji, for roughly ninety seconds. On a clear morning it is startling, and you paid nothing for it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="rail">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">08</span> The rail maths</p>
+    <h2 class="head">Skip the<br>rail pass</h2>
+    <p class="lede">The nationwide JR Pass stopped being an automatic buy in October 2023 when the 7-day ordinary fare went from ¥29,650 to ¥50,000. It gets worse for you specifically: <b>a further rise to ¥53,000 lands on 1 October 2026</b> through overseas sales channels, two weeks before you arrive. A one-way westbound line doesn't come close to earning that back. Tick the legs you'll actually ride and watch.</p>
+
+    <div class="calc">
+      <div class="calc-legs" id="legs"></div>
+      <dl class="calc-out">
+        <div><dt>Point-to-point</dt><dd id="ptp"></dd></div>
+        <div><dt>7-day JR Pass</dt><dd id="pass">¥53,000<small>from 1 Oct</small></dd></div>
+        <div><dt>Difference</dt><dd id="diff"></dd></div>
+        <div><dt>Verdict</dt><dd><span id="verdict"></span></dd></div>
+      </dl>
+    </div>
+    <p class="fignote">Fares are approximate reserved-seat ordinary-class figures and move — verify on Smart EX or at the machine · CAD at roughly ¥110 to the dollar</p>
+
+    <div class="panel">
+      <h3>What the pass wouldn't cover anyway</h3>
+      <p>The Odakyū Romancecar into Hakone, the whole Hakone loop, Kyoto's buses and subway, and the Hiroshima airport bus are all private or non-JR. A meaningful share of your moving is outside the pass entirely, which makes the arithmetic worse than the table above suggests.</p>
+      <p>Regional passes are a different question and occasionally do win — JR West's Sanyō–San'in and Kansai–Hiroshima passes can cover a Kyoto→Hiroshima run if you add Kyoto. Do the sum against your actual legs rather than the brochure; on a six-night trip the margins are thin either way. <b>Prices move often — check before buying.</b></p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="admin">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">09</span> Ground rules</p>
+    <h2 class="head">Before you land</h2>
+
+    <div class="tablewrap">
+    <table class="ref">
+      <thead><tr><th>Item</th><th>What to do</th><th>When</th></tr></thead>
+      <tbody>
+        <tr><td>Entry</td><td>Visa-free for Canadians, 90 days. The JESTA authorisation law passed in May 2026 but doesn't start until 2029, so it doesn't touch this trip.</td><td class="t">Nothing to do</td></tr>
+        <tr><td>Visit Japan Web</td><td>Register the party and pre-fill immigration and customs. You land with QR codes instead of paper forms and walk past the queue writing on clipboards.</td><td class="t">Week before</td></tr>
+        <tr class="flag"><td>Departure tax</td><td>¥3,000 per person leaving Japan since 1 July 2026, tripled from ¥1,000. Bundled into the airline ticket — just don't be surprised by the line item.</td><td class="t">Automatic</td></tr>
+        <tr class="flag"><td>Kyoto lodging tax</td><td>New five-tier city tax since 1 March 2026, ¥200 to ¥10,000 per person per night by room rate. A mid-range Kyoto room lands around ¥400; a good ryokan bites harder.</td><td class="t">Budget for it</td></tr>
+        <tr><td>Tax-free shopping</td><td>Still the old instant-exemption-at-the-register system during your window. It switches to pay-full, refund-at-the-airport on <b>1 November 2026</b> — you're out ten days early.</td><td class="t">Lucky timing</td></tr>
+        <tr><td>Suica</td><td>Add one to Apple Wallet before you fly and top it up on arrival. Android needs a Japanese handset, so pick up a Welcome Suica at the airport instead. Trains, buses, konbini, coin lockers, vending machines.</td><td class="t">Before departure</td></tr>
+        <tr><td>Cash</td><td>Carry ¥20,000–30,000. Temple entries, small restaurants, buses and lockers are still cash-first. 7-Eleven and Japan Post ATMs take foreign cards.</td><td class="t">On arrival</td></tr>
+        <tr class="flag"><td>Luggage</td><td>Yamato takkyūbin forwards a bag hotel-to-hotel overnight for roughly ¥2,000–2,500. On a three-base week this is the best ¥5,000 you'll spend. Shinkansen also require a reservation for oversized bags.</td><td class="t">At each hotel</td></tr>
+        <tr><td>Booking window</td><td>October is high season and Kyoto is the pinch point. Rooms, Shibuya Sky, teamLab, Katsura Rikyū, Saihō-ji and any onsen ryokan all want weeks of notice.</td><td class="t">Now</td></tr>
+        <tr><td>Public holidays</td><td>Sports Day falls on Monday 12 October 2026, three days before you arrive. Nothing else lands inside the window.</td><td class="t">Clear</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="cols">
+      <p><b>Weather</b>Expect 21–23°C by day and 13–15°C at night across Tokyo, Kyoto and Hiroshima, with humidity finally gone. Late typhoons are possible into October but rare by mid-month. Layers, a light shell, and shoes you can put twenty kilometres a day through.</p>
+      <p><b>Gion</b>Kyoto closed several private alleys in the Gion district to visitors after years of bad behaviour, with fines attached. The public streets are still open and still beautiful; don't chase geiko down side streets, and don't photograph people without asking.</p>
+      <p><b>Booking trains</b>Smart EX or the ticket machines both work, and you can reserve Shinkansen seats a month out. Reserve the Tokyo→Kyoto leg specifically so you can pick a right-hand window for Fuji. Everything else can be bought the day before.</p>
+      <p><b>Eating</b>The best meals of the week will cost under ¥1,500 and be eaten standing up or at a counter with eight seats. Reserve one proper dinner — a kaiseki in Kyoto or a ryokan meal in Hakone — and improvise everything else.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <p>Westbound · stop 01 · Japan</p>
+      <p>15–22 Oct 2026 · HND in, ICN out</p>
+      <p>Fares, taxes and schedules verified Sept 2026 — recheck before booking</p>
+    </div>
+    <p class="foot-mark">Tokyo → Hiroshima</p>
+  </div>
+</footer>
+
+<script>
+/* ============ DAY-BY-DAY ============ */
+const DAYS_NOKYOTO=[
+{d:'Thu 16',w:'Arrive',name:'Tokyo',sub:'Land 16:00 · do nothing',meta:'Night 1',
+ slots:[
+  {m:1,h:'16:00 · HND',p:'Clear immigration with your Visit Japan Web codes. Keikyū line or the Monorail into town, roughly 30 minutes. Pick up or top up a Suica in the arrivals hall.'},
+  {h:'19:00 · Dinner and bed',p:'One restaurant, walking distance, no reservation. A ramen counter or a konbini haul on the hotel bed both count. You will fall asleep at 20:30 and this is correct.'}
+]},
+{d:'Fri 17',w:'Full',name:'Old Tokyo',sub:'The 6am day',meta:'Night 2',
+ slots:[
+  {h:'06:00 · Tsukiji outer market',p:'The inner market moved to Toyosu years ago but the outer lanes are still where you eat — tamagoyaki on a stick, grilled scallops, a standing sushi counter. Busy from 08:00, gone by 14:00.'},
+  {h:'07:30 · Sensō-ji',p:'Asakusa\u2019s great temple, and the single best argument for jet lag. At half seven the Nakamise arcade is shuttered and near-empty; by ten it is impassable. Walk the Sumida riverbank afterwards.'},
+  {h:'10:30 · Yanaka',p:'The low city that survived the bombing. Wooden houses, a cemetery full of cats, the long shopping street down to Nippori. No sights, which is the point.'},
+  {h:'14:00 · Hama-rikyū',p:'A shogunal stroll garden on the bay, tidal pond, teahouse on an island, skyscrapers stacked behind the pines. The clearest picture of what Tokyo is that you will get all week.'},
+  {h:'18:00 · Shinjuku after dark',p:'Omoide Yokochō for grilled skewers under the tracks, then Golden Gai\u2019s six alleys of tiny bars. Most seat six people and some charge a cover; pick one with an English sign if it\u2019s your first go.'}
+]},
+{d:'Sat 18',w:'Full',name:'New Tokyo',sub:'Height, light, crowds',meta:'Night 3',
+ slots:[
+  {h:'07:00 · Meiji Jingū',p:'Opens at sunrise. A forest of 100,000 donated trees in the middle of the city, gravel underfoot, almost silent. Walk out through Harajuku and down Omotesandō as the shops open.'},
+  {h:'11:00 · teamLab',p:'Planets in Toyosu or Borderless at Azabudai Hills — pick one, not both. Timed entry, book well ahead. Planets involves wading barefoot through water, so dress for it.'},
+  {h:'15:00 · Nezu Museum',p:'Asian art in a Kengo Kuma building, but you\u2019re there for the garden behind it — bamboo, stone lanterns, a teahouse, and total quiet a hundred metres off Omotesandō.'},
+  {h:'17:00 · Shibuya Sky',p:'Book the sunset slot weeks ahead. Open rooftop, 230 metres, the scramble crossing directly below and Fuji on the horizon if the day has been clear. Then walk down into Shibuya and eat.'}
+]},
+{d:'Sun 19',w:'Move',name:'Hakone',sub:'Tokyo → the mountain',meta:'Night 4',
+ slots:[
+  {m:1,h:'09:00 · Romancecar',p:'Odakyū from Shinjuku to Hakone-Yumoto, about 85 minutes, reserved seats. Forward the big bag straight to Hiroshima from your Tokyo hotel this morning and travel up with an overnight bag.'},
+  {h:'11:30 · The loop',p:'Switchback mountain railway, then the cable car, then the ropeway over the Ōwakudani sulphur vents, then a boat across Lake Ashi. Check the gas status before committing to the ropeway.'},
+  {h:'15:00 · Open-Air Museum',p:'Sculpture on a hillside with the valley behind it, plus a Picasso pavilion and a hot-spring foot bath at the end. Skip if the loop ran long.'},
+  {h:'17:30 · Ryokan',p:'The night to spend money on. Tatami, a kaiseki dinner brought to the room, and an onsen before bed. Book months out; the good ones in Hakone go early.'}
+]},
+{d:'Mon 20',w:'Move',name:'Hiroshima',sub:'Fuji at dawn, then the long haul west',meta:'Night 5',
+ slots:[
+  {h:'06:15 · Lake Ashi',p:'Down to Moto-Hakone before the light gets high. The Hakone Shrine torii stands in the water with Fuji behind it on a clear morning. This is your best shot at the mountain all week — take it or lose it.'},
+  {m:1,h:'10:00 · Odawara → Hiroshima',p:'The long one: back to Odawara, then Shinkansen west, roughly four hours with a change onto the Sanyō line. Sit on the right out of Odawara for a second look at Fuji near Shin-Fuji.'},
+  {h:'14:30 · Okayama stopover',p:'Break the journey here if the timing works — Kōraku-en garden is fifteen minutes\u2019 walk from the station, bag in a coin locker, back on a train within two hours. The Kyoto-question consolation prize.'},
+  {h:'18:00 · Arrive Hiroshima',p:'Check in, then okonomiyaki for dinner — layered, not mixed, cooked in front of you. Okonomimura stacks two dozen counters over several floors if you want to compare styles.'}
+]},
+{d:'Tue 21',w:'Full',name:'Hiroshima',sub:'Peace Park, then Miyajima',meta:'Night 6',
+ slots:[
+  {h:'08:30 · Peace Memorial Museum',p:'Go early while you have the energy for it — plan three hours. Walk the Peace Memorial Park and the A-Bomb Dome afterwards; give yourself quiet time before the next thing.'},
+  {m:1,h:'13:00 · Ferry to Miyajima',p:'JR ferry from Miyajimaguchi, included on a JR pass if you have one, ten minutes to the island. There\u2019s a ¥100 visitor levy on arrival.'},
+  {h:'14:00 · Mount Misen or the shore',p:'Ropeway up for the island\u2019s best view, or stay low and walk the shrine approach and Momijidani park. Check the tide tables before you go — the torii only stands in water at high tide.'},
+  {h:'17:30 · The torii at sunset',p:'Time your position on the shore for high tide if the tables allow it. This is the shot. Dinner on the island — grilled oysters and anago are the local things to eat — before the last ferry back.'}
+]},
+{d:'Wed 22',w:'Depart',name:'To Seoul',sub:'Half a morning',meta:'Fly out',
+ slots:[
+  {h:'08:00 · One last thing',p:'Shukkei-en, a compact 17th-century stroll garden ten minutes from Hiroshima Station, rebuilt after 1945. An hour is enough. Or a second, quieter pass through the Peace Park if yesterday felt rushed.'},
+  {m:1,h:'11:00 · Airport bus to HIJ',p:'About 45–50 minutes from Hiroshima Station or central hotels. Build in buffer — it\u2019s a limited-access highway but it\u2019s still a bus, not a train.'},
+  {m:1,h:'· Seoul',p:'Stop 02. Jeju Air HIJ→ICN, non-stop, around 1h50. Verify the schedule for your exact dates — frequency on this route moves seasonally.'}
+]}
+];
+
+const DAYS_KYOTO=[
+{d:'Thu 16',w:'Arrive',name:'Tokyo',sub:'Land 16:00 · do nothing',meta:'Night 1',
+ slots:[
+  {m:1,h:'16:00 · HND',p:'Clear immigration with your Visit Japan Web codes. Keikyū line or the Monorail into town, roughly 30 minutes. Pick up or top up a Suica in the arrivals hall.'},
+  {h:'19:00 · Dinner and bed',p:'One restaurant, walking distance, no reservation. A ramen counter or a konbini haul on the hotel bed both count. You will fall asleep at 20:30 and this is correct.'}
+]},
+{d:'Fri 17',w:'Full',name:'Tokyo',sub:'One big day, not two',meta:'Night 2',
+ slots:[
+  {h:'06:00 · Tsukiji outer market',p:'Grilled scallops, tamagoyaki, a standing sushi counter, gone by mid-morning. The inner market moved to Toyosu years ago; the eating stayed here.'},
+  {h:'07:30 · Sensō-ji',p:'Half seven is the entire trick — the Nakamise arcade is empty; by ten it\u2019s impassable. Walk the Sumida riverbank on the way out.'},
+  {h:'10:30 · Meiji Jingū & Harajuku',p:'A hundred thousand donated trees planted as a forest in 1920, then straight into Harajuku and down Omotesandō as the shops open.'},
+  {h:'16:30 · Shibuya Sky',p:'Book the sunset slot weeks ahead. Open rooftop, 230 metres, the scramble crossing below. Walk down into Shibuya for dinner afterwards.'},
+  {h:'20:00 · What this day skips',p:'Yanaka, Hama-rikyū, teamLab and the Nezu Museum all lose their slot to make Kyoto fit. They\u2019re the first things to reinstate if you find an extra Tokyo day somewhere else in the trip.'}
+]},
+{d:'Sat 18',w:'Move',name:'Hakone',sub:'Tokyo → the mountain',meta:'Night 3',
+ slots:[
+  {m:1,h:'09:00 · Romancecar',p:'Odakyū from Shinjuku to Hakone-Yumoto, about 85 minutes. Forward the big bag straight to Hiroshima from your Tokyo hotel this morning and travel on with an overnight bag.'},
+  {h:'11:30 · The loop',p:'Switchback railway, cable car, ropeway over the Ōwakudani vents, boat across Lake Ashi. Check the gas status before the ropeway.'},
+  {h:'17:30 · Ryokan',p:'Tatami, kaiseki in the room, onsen before bed. Book months out.'}
+]},
+{d:'Sun 19',w:'Move',name:'Kyoto',sub:'Fuji at dawn, then west',meta:'Night 4',
+ slots:[
+  {h:'06:15 · Lake Ashi',p:'Down to Moto-Hakone before the light gets high. Hakone Shrine\u2019s torii in the water with Fuji behind it — your best shot at the mountain all week.'},
+  {m:1,h:'10:30 · Odawara → Kyoto',p:'Hikari Shinkansen, about two hours. Sit on the right for a second run at Fuji near Shin-Fuji.'},
+  {h:'14:00 · Higashiyama',p:'Drop bags, then on foot: Kiyomizu-dera, down Sannenzaka, through Yasaka Shrine into Gion as the lanterns come on.'},
+  {h:'18:30 · Fushimi Inari after dark',p:'Open all night, unstaffed, lit, and near-empty in the evening — a completely different experience from the daytime queue. Go as far as Yotsutsuji, about 30 minutes up, and turn back.'}
+]},
+{d:'Mon 20',w:'Move',name:'Hiroshima',sub:'One Kyoto morning, then the long haul',meta:'Night 5',
+ slots:[
+  {h:'07:00 · Arashiyama & Ryōan-ji',p:'The one morning you get. Bamboo grove at seven before the crowds, Tenryū-ji at 08:30, then Ryōan-ji\u2019s rock garden — sit on the veranda and don\u2019t rush it, but watch the clock.'},
+  {m:1,h:'10:30 · Kyoto → Hiroshima',p:'Nozomi Shinkansen, about 1h40 direct. This is the whole of what Kyoto costs the rest of the trip — one morning, one long-haul afternoon.'},
+  {h:'13:00 · Himeji stopover, optional',p:'If the timing allows: the finest original castle in Japan, five minutes from its own Shinkansen stop on this exact line. Non-resident admission is ¥2,500 since March 2026. Cuts into Hiroshima arrival time — pick one or the other.'},
+  {h:'17:00 · Arrive Hiroshima',p:'Check in, then okonomiyaki for dinner — layered, not mixed, cooked in front of you at Okonomimura.'}
+]},
+{d:'Tue 21',w:'Full',name:'Hiroshima',sub:'Peace Park, then Miyajima',meta:'Night 6',
+ slots:[
+  {h:'08:30 · Peace Memorial Museum',p:'Go early — plan three hours. Walk the Peace Memorial Park and the A-Bomb Dome afterwards.'},
+  {m:1,h:'13:00 · Ferry to Miyajima',p:'From Miyajimaguchi, ten minutes, ¥100 visitor levy on arrival.'},
+  {h:'14:00 · Mount Misen or the shore',p:'Ropeway up, or walk the shrine approach and Momijidani park. Check tide tables — the torii only stands in water at high tide.'},
+  {h:'17:30 · The torii at sunset',p:'Time your position for high tide if the tables allow it. Dinner on the island — grilled oysters and anago — before the last ferry back.'}
+]},
+{d:'Wed 22',w:'Depart',name:'To Seoul',sub:'Half a morning',meta:'Fly out',
+ slots:[
+  {h:'08:00 · One last thing',p:'Shukkei-en, a compact 17th-century garden ten minutes from Hiroshima Station, rebuilt after 1945. An hour is enough.'},
+  {m:1,h:'11:00 · Airport bus to HIJ',p:'About 45–50 minutes from central Hiroshima. Build in buffer.'},
+  {m:1,h:'· Seoul',p:'Stop 02. Jeju Air HIJ→ICN, non-stop, around 1h50. Verify the schedule for your exact dates.'}
+]}
+];
+
+let CURRENT_PLAN='nokyoto';
+function renderDays(){
+  const DAYS = CURRENT_PLAN==='nokyoto' ? DAYS_NOKYOTO : DAYS_KYOTO;
+  document.getElementById('days').innerHTML=DAYS.map((D,i)=>`
+  <div class="day">
+    <button class="day-btn" aria-expanded="false">
+      <span class="day-date">${D.d}<small>${D.w}</small></span>
+      <span><span class="day-name">${D.name}</span><span class="day-sub">${D.sub}</span></span>
+      <span class="day-meta">${D.meta}<span class="chev">▾</span></span>
+    </button>
+    <div class="day-body"><div class="day-inner"><div class="day-pad"><div class="slots">
+      ${D.slots.map(s=>`<div class="slot${s.m?' move':''}"><h4>${s.h}</h4><p>${s.p}</p></div>`).join('')}
+    </div></div></div></div>
+  </div>`).join('');
+
+  document.querySelectorAll('.day-btn').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const d=b.parentElement, open=d.classList.toggle('open');
+      b.setAttribute('aria-expanded',open?'true':'false');
+    });
+  });
+  document.querySelector('.day').classList.add('open');
+  document.querySelector('.day-btn').setAttribute('aria-expanded','true');
+}
+renderDays();
+
+document.getElementById('dayToggle').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  CURRENT_PLAN=b.dataset.plan;
+  document.querySelectorAll('#dayToggle .fbtn').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
+  const kmEl=document.getElementById('rail-km');
+  if(kmEl) kmEl.innerHTML = CURRENT_PLAN==='nokyoto' ? '≈900<span>km</span>' : '≈1,150<span>km</span>';
+  renderDays();
+});
+
+/* ============ WORTH DOING ============ */
+const ITEMS=[
+/* TOKYO */
+{c:'Tokyo',t:'do',n:'Sensō-ji at dawn',w:'Tokyo\u2019s oldest temple, and the crowd difference between 07:30 and 10:30 is the difference between a place and a queue.',when:'07:00'},
+{c:'Tokyo',t:'do',n:'Tsukiji outer market',w:'The inner market went to Toyosu; the outer lanes kept the eating. Grilled scallops, tamagoyaki, uni on rice, standing room only.',when:'06:00–09:00'},
+{c:'Tokyo',t:'do',n:'Shibuya Sky',w:'Open-air rooftop at 230m over the scramble crossing. Sunset slots sell out weeks ahead and are worth the scramble to get one.',when:'Book ahead',b:1},
+{c:'Tokyo',t:'do',n:'teamLab',w:'Planets in Toyosu or Borderless at Azabudai Hills. One, not both — they overlap heavily and the second one is déjà vu at full price. Timed entry.',when:'Book ahead',b:1},
+{c:'Tokyo',t:'do',n:'Meiji Jingū',w:'A hundred thousand donated trees planted as an artificial forest in 1920. Opens at sunrise, empty at seven, and it leads straight into Harajuku.',when:'Sunrise'},
+{c:'Tokyo',t:'do',n:'Golden Gai & Omoide Yokochō',w:'Two blocks of postwar Shinjuku that redevelopment somehow missed. Bars seating six. Some charge a cover, most are friendlier than they look.',when:'After 19:00'},
+{c:'Tokyo',t:'do',n:'Yanaka',w:'Old low-city streets, a huge cemetery, a shopping arcade nobody photographs. The antidote to three days of Tokyo\u2019s greatest hits.',when:'Any morning'},
+{c:'Tokyo',t:'do',n:'Hama-rikyū garden',w:'Tidal saltwater pond, 300-year-old pines, a teahouse on an island, and a wall of glass towers behind it. Best single garden in central Tokyo.',when:'09:00–17:00'},
+{c:'Tokyo',t:'opt',n:'Nezu Museum garden',w:'Kuma building, decent Asian collection, and a wooded garden with teahouses that shouldn\u2019t exist that close to Omotesandō.',when:'Closed Mon'},
+{c:'Tokyo',t:'opt',n:'Toyosu tuna auction',w:'From the observation deck at 05:30. Jet lag makes this genuinely easy for once. Worth it if you find fish markets interesting; skip if you don\u2019t.',when:'05:30'},
+{c:'Tokyo',t:'opt',n:'Ghibli Museum',w:'Tickets go on sale on the 10th of the previous month and evaporate. Mitaka is 20 minutes out of central Tokyo.',when:'Sale 10 Sept',b:1},
+{c:'Tokyo',t:'opt',n:'Shimokitazawa',w:'Vintage shops, record stores, small coffee, no landmarks. A good place to lose an afternoon if the weather turns.',when:'Afternoon'},
+{c:'Tokyo',t:'opt',n:'Tokyo National Museum',w:'In Ueno. Go for the Honkan\u2019s Japanese galleries — swords, screens, ceramics — and ignore the rest unless you have hours.',when:'Closed Mon'},
+{c:'Tokyo',t:'opt',n:'Baseball playoffs',w:'NPB\u2019s Climax Series lands in mid-October. A Japanese ballpark is a completely different sport socially, and tickets are cheap.',when:'Check schedule'},
+{c:'Tokyo',t:'opt',n:'Nikko day trip',w:'Two hours out. Tōshō-gū\u2019s baroque shrine complex, and — at Lake Chūzenji and the Irohazaka switchbacks, 1,300m up — the only autumn colour on this whole itinerary.',when:'Full day'},
+{c:'Tokyo',t:'skip',n:'Tokyo Tower & Skytree',w:'You have limited height budget and Shibuya Sky beats both. If you want a free view instead, the Metropolitan Government Building observatory in Shinjuku is genuinely good and costs nothing.',when:''},
+{c:'Tokyo',t:'skip',n:'Odaiba',w:'A long trip out for a shopping mall, a Gundam, and a small Statue of Liberty. Not in a five-day week.',when:''},
+{c:'Tokyo',t:'skip',n:'Ginza',w:'Excellent if you are shopping, nothing to see if you are not. Nishi-Azabu and Nakameguro do the same job with more character.',when:''},
+{c:'Tokyo',t:'skip',n:'Robot Restaurant',w:'Closed permanently. Still in half the guidebooks.',when:''},
+/* FUJI */
+{c:'Fuji',t:'do',n:'The Hakone loop',w:'Mountain railway, cable car, ropeway over the Ōwakudani vents, pirate boat across Lake Ashi. Circular, so you end where the onward train is.',when:'Half day'},
+{c:'Fuji',t:'do',n:'Onsen ryokan night',w:'Tatami, yukata, kaiseki served in the room, hot spring before bed. The best-value splurge of the week and the one your legs will thank you for.',when:'Book ahead',b:1},
+{c:'Fuji',t:'do',n:'Lake Ashi at first light',w:'Moto-Hakone end, the shrine torii standing in the water, Fuji behind it. Best odds of a clear summit are within two hours of sunrise.',when:'06:00–08:00'},
+{c:'Fuji',t:'opt',n:'Hakone Open-Air Museum',w:'Sculpture across a hillside, a Picasso pavilion, and a foot onsen at the end. Good, not essential.',when:'2 hours'},
+{c:'Fuji',t:'opt',n:'Chūreitō Pagoda',w:'The postcard: pagoda, five-storey, Fuji beyond, 400 steps up from Shimoyoshida. It means basing at Kawaguchiko instead of Hakone, which is a dead end and heavily crowded.',when:'Sunrise'},
+{c:'Fuji',t:'skip',n:'Climbing Fuji',w:'Season is 1 July to 10 September only. All four trails now carry a mandatory ¥4,000 fee and reservations. Closed and gated in October.',when:''},
+{c:'Fuji',t:'skip',n:'Fuji-Q Highland',w:'Very good roller coasters. Wrong trip.',when:''},
+{c:'Fuji',t:'skip',n:'Gotemba outlets',w:'Fuji views from a car park full of outlet stores.',when:''},
+/* KYOTO */
+{c:'Kyoto',t:'do',n:'Fushimi Inari after dark',w:'Open all night, unstaffed, lit. The torii tunnels at 19:00 are eerie and near-empty; the same path at noon is a shuffling column. Go up to Yotsutsuji and turn round.',when:'After 18:00'},
+{c:'Kyoto',t:'do',n:'Arashiyama bamboo at 07:00',w:'A short walk that is either extraordinary or a crowd, entirely depending on the hour. Then Tenryū-ji opens at 08:30 with its 700-year-old pond garden.',when:'07:00'},
+{c:'Kyoto',t:'do',n:'Ryōan-ji',w:'Fifteen rocks, raked gravel, no agreed meaning. Be there when it opens and stay on the veranda longer than you planned.',when:'08:00'},
+{c:'Kyoto',t:'do',n:'Daitoku-ji subtemples',w:'Daisen-in and Zuihō-in especially. Dry gardens of real strangeness inside a walled monastic compound, and often almost empty.',when:'Morning'},
+{c:'Kyoto',t:'do',n:'Murin-an',w:'Small Meiji-era water garden below Nanzen-ji, Higashiyama borrowed as backdrop, hardly anyone there. The connoisseur\u2019s pick in a city of famous gardens.',when:'Any time'},
+{c:'Kyoto',t:'do',n:'Higashiyama at dawn',w:'Kiyomizu-dera, down Sannenzaka and Ninenzaka, through Yasaka into Gion. Do it before eight and it is a different city.',when:'06:30'},
+{c:'Kyoto',t:'do',n:'Tōfuku-ji Hōjō gardens',w:'Shigemori\u2019s 1939 gardens — checkerboard moss and stone, modernist and startling. Mobbed in late November for maples; in October you get it quiet.',when:'Morning'},
+{c:'Kyoto',t:'opt',n:'Katsura Rikyū',w:'Arguably the finest garden in Japan. Free, guided, capped, booked through the Imperial Household Agency months out. If you get a slot, restructure the day around it.',when:'Book ~3 mo',b:1},
+{c:'Kyoto',t:'opt',n:'Saihō-ji (moss temple)',w:'Reservation only, around ¥4,000, and you copy a sutra before entry. That friction is exactly why it is still quiet.',when:'Book ahead',b:1},
+{c:'Kyoto',t:'opt',n:'Nara day trip',w:'45 minutes each way. Tōdai-ji\u2019s Great Buddha, Isuien garden, and the deer. Costs a full Kyoto day — only in the unhurried shape.',when:'Full day'},
+{c:'Kyoto',t:'opt',n:'Nishiki Market',w:'Five covered blocks of pickles, tofu, knives and skewers. Touristed and still good. Opens around 09:00.',when:'Late morning'},
+{c:'Kyoto',t:'opt',n:'Ginkaku-ji & Philosopher\u2019s Path',w:'Silver Pavilion, sand cone, moss garden, then a canal walk south. Pairs neatly with Nanzen-ji and Murin-an.',when:'Afternoon'},
+{c:'Kyoto',t:'skip',n:'Kinkaku-ji',w:'The Golden Pavilion is genuinely beautiful and you will see it for ten minutes from a rope line after queueing for forty. If you go, be there at opening.',when:''},
+{c:'Kyoto',t:'skip',n:'Kyoto Tower',w:'A 1964 observation tower opposite the station. There are better views from any temple hillside, for free.',when:''},
+{c:'Kyoto',t:'skip',n:'Geiko-spotting in Gion',w:'Several private alleys are now closed to visitors with fines after years of harassment. Book a proper performance if you want to see maiko dance.',when:''},
+/* HIROSHIMA */
+{c:'Hiroshima',t:'do',n:'Peace Memorial Museum',w:'Three hours, and difficult ones. Go in the morning while you have the energy for it, then walk the park and the A-Bomb Dome afterwards in silence.',when:'From 08:30'},
+{c:'Hiroshima',t:'do',n:'Miyajima at high tide',w:'The great torii stands in water only when the tide is in — check the tables before choosing your ferry. Sunset behind it is the shot. There is a ¥100 visitor levy.',when:'Tide-dependent'},
+{c:'Hiroshima',t:'do',n:'Okonomiyaki, Hiroshima style',w:'Layered rather than mixed, with noodles, cooked on the griddle in front of you. Okonomimura stacks dozens of counters over several floors.',when:'Dinner'},
+{c:'Hiroshima',t:'opt',n:'Shukkei-en',w:'A compact 17th-century stroll garden ten minutes from the station. Rebuilt after 1945. Easy to fit around a train.',when:'1 hour'},
+{c:'Hiroshima',t:'opt',n:'Mount Misen',w:'Ropeway up Miyajima\u2019s peak, then walk down through the forest. Two to three hours and the island\u2019s best views.',when:'Half day'},
+{c:'Hiroshima',t:'opt',n:'Kōraku-en, Okayama',w:'One of the Three Great Gardens, 15 minutes\u2019 walk from a Shinkansen station on the Kyoto–Hiroshima line. A two-hour stopover with your bag in a locker.',when:'Stopover'},
+{c:'Hiroshima',t:'opt',n:'Himeji Castle',w:'The finest original castle in Japan, five minutes from its own Shinkansen stop — the other candidate for the Kyoto–Hiroshima stopover. Non-resident admission rose to ¥2,500 in March 2026.',when:'Stopover'},
+{c:'Hiroshima',t:'skip',n:'Shimanami Kaidō',w:'Sixty kilometres of cycling across six islands, and one of the great rides anywhere. It needs a full day minimum and you do not have one. Come back.',when:''},
+{c:'Hiroshima',t:'skip',n:'Hiroshima Castle',w:'A 1958 concrete reconstruction. Fine, but not against Miyajima and the Peace Park in a day and a half.',when:''}
+];
+
+const TIERLBL={do:'Do',opt:'Maybe',skip:'Skip'};
+let FC='all', FT=null, FB=false;
+
+function renderItems(){
+  const list=ITEMS.filter(x=>
+    (FC==='all'||x.c===FC) && (!FT||x.t===FT) && (!FB||x.b));
+  const host=document.getElementById('items');
+  if(!list.length){host.innerHTML='<div class="empty">No entries match those filters.</div>';return}
+  host.innerHTML=list.map(x=>`
+    <div class="item">
+      <span class="tier ${x.t}">${TIERLBL[x.t]}</span>
+      <span class="nm">${x.n}</span>
+      <span class="when${x.b?' book':''}">${x.when||'&nbsp;'}</span>
+      <span class="why">${x.w}</span>
+    </div>`).join('');
+}
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  if(b.dataset.city){FC=b.dataset.city}
+  else if(b.dataset.tier){FT = FT===b.dataset.tier?null:b.dataset.tier}
+  else if(b.dataset.book){FB=!FB}
+  document.querySelectorAll('#filters .fbtn').forEach(x=>{
+    let on=false;
+    if(x.dataset.city) on = x.dataset.city===FC;
+    if(x.dataset.tier) on = x.dataset.tier===FT;
+    if(x.dataset.book) on = FB;
+    x.setAttribute('aria-pressed',on?'true':'false');
+  });
+  renderItems();
+});
+renderItems();
+
+/* ============ FIG 1: TIME AUDIT ============ */
+(function(){
+  const svg=document.getElementById('audit-chart');
+  const W=1400,H=190,pad=40,barY=70,barH=54;
+  const start=new Date(2026,9,15), end=new Date(2026,9,23); // 15th 00:00 to 23rd 00:00
+  const totalH=(end-start)/36e5;
+  const x=h=>pad+(h/totalH)*(W-2*pad);
+  // segments in hours from start
+  const segs=[
+    {a:0,b:24,cls:'t',label:'15 Oct — in transit (date line)'},
+    {a:24,b:40,cls:'t2',label:'16 Oct AM — still flying / landing 16:00'},
+    {a:40,b:48,cls:'p',label:'16 Oct PM — arrival evening'},
+    {a:48,b:72,cls:'f',label:'17 Oct — full day'},
+    {a:72,b:96,cls:'f',label:'18 Oct — full day'},
+    {a:96,b:120,cls:'f',label:'19 Oct — full day'},
+    {a:120,b:144,cls:'f',label:'20 Oct — full day'},
+    {a:144,b:168,cls:'f',label:'21 Oct — full day'},
+    {a:168,b:180,cls:'p',label:'22 Oct AM — last morning'},
+    {a:180,b:192,cls:'t2',label:'22 Oct PM — flight to Seoul'}
+  ];
+  const colors={t:'var(--magenta)',t2:'rgba(231,100,155,.55)',p:'rgba(242,169,60,.35)',f:'var(--amber)'};
+  let s=`<rect x="0" y="0" width="${W}" height="${H}" fill="none"/>`;
+  segs.forEach(sg=>{
+    const x1=x(sg.a),x2=x(sg.b);
+    s+=`<rect x="${x1}" y="${barY}" width="${x2-x1-1}" height="${barH}" fill="${colors[sg.cls]}" opacity="${sg.cls==='f'?1:1}"/>`;
+  });
+  // day tick marks + labels at midnight
+  for(let d=0;d<=8;d++){
+    const hh=d*24, xx=x(hh);
+    const dt=new Date(start.getTime()+hh*36e5);
+    s+=`<line x1="${xx}" y1="${barY-6}" x2="${xx}" y2="${barY+barH+6}" class="axs"/>`;
+    s+=`<text x="${xx}" y="${barY-14}" class="lbl" text-anchor="${d===0?'start':d===8?'end':'middle'}">${dt.toLocaleDateString('en-CA',{day:'2-digit',month:'short'})}</text>`;
+  }
+  s+=`<line x1="${pad}" y1="${barY+barH+0.5}" x2="${W-pad}" y2="${barY+barH+0.5}" class="ax"/>`;
+  // usable-days count label
+  s+=`<text x="${x(48)}" y="${barY+barH+34}" class="lbl-a">5 full days — 17→21 Oct</text>`;
+  s+=`<text x="${x(0)}" y="${barY+barH+34}" class="lbl">↙ lost to transit</text>`;
+  svg.innerHTML=s;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+})();
+
+/* ============ FIG 2: KOYO WINDOW ============ */
+(function(){
+  const svg=document.getElementById('koyo-chart');
+  const W=1400,H=460,padL=230,padR=40,padT=20,rowH=38;
+  const monthStart=new Date(2026,9,1), monthEnd=new Date(2026,11,15);
+  const totalD=(monthEnd-monthStart)/864e5;
+  const x=d=>padL+((d-monthStart)/864e5/totalD)*(W-padL-padR);
+  const PLACES=[
+    {n:'Kamikōchi (1,500m)',a:'5 Oct',b:'20 Oct',elev:1},
+    {n:'Chūzenji-ko, Nikko (1,270m)',a:'12 Oct',b:'25 Oct',elev:1},
+    {n:'Hakone (700m)',a:'1 Nov',b:'20 Nov',elev:0},
+    {n:'Kawaguchiko (830m)',a:'28 Oct',b:'15 Nov',elev:0},
+    {n:'Nagano city',a:'25 Oct',b:'10 Nov',elev:0},
+    {n:'Tokyo',a:'20 Nov',b:'10 Dec',elev:0},
+    {n:'Kyoto',a:'18 Nov',b:'5 Dec',elev:0},
+    {n:'Okayama',a:'15 Nov',b:'2 Dec',elev:0},
+    {n:'Hiroshima',a:'20 Nov',b:'7 Dec',elev:0}
+  ];
+  const d2x=s=>{const[dd,mo]=s.split(' ');const months={Oct:9,Nov:10,Dec:11};return x(new Date(2026,months[mo],parseInt(dd)))};
+  let s=`<rect x="${padL-2}" y="${padT}" width="${x(new Date(2026,9,22))-x(new Date(2026,9,15))}" height="${PLACES.length*rowH+10}" fill="rgba(231,100,155,.10)" stroke="var(--magenta)" stroke-width="1" x="${x(new Date(2026,9,15))}"/>`;
+  s=`<rect x="${x(new Date(2026,9,15))}" y="${padT}" width="${x(new Date(2026,9,22))-x(new Date(2026,9,15))}" height="${PLACES.length*rowH+8}" fill="rgba(231,100,155,.10)" stroke="var(--magenta)" stroke-width="1"/>`;
+  s+=`<text x="${(x(new Date(2026,9,15))+x(new Date(2026,9,22)))/2}" y="${padT-6}" class="lbl-a" text-anchor="middle">Your window: 15–22 Oct</text>`;
+  // month gridlines
+  [10,11,12].forEach(mo=>{
+    const dt=new Date(2026,mo-1,1);
+    const xx=x(dt);
+    s+=`<line x1="${xx}" y1="${padT}" x2="${xx}" y2="${padT+PLACES.length*rowH+8}" class="axs"/>`;
+    s+=`<text x="${xx}" y="${padT+PLACES.length*rowH+28}" class="lbl">${dt.toLocaleDateString('en-CA',{month:'short'})}</text>`;
+  });
+  const xEndAxis=x(monthEnd);
+  s+=`<line x1="${padL-2}" y1="${padT}" x2="${xEndAxis}" y2="${padT}" class="ax"/>`;
+  PLACES.forEach((p,i)=>{
+    const y=padT+16+i*rowH;
+    s+=`<text x="${padL-14}" y="${y+4}" class="lbl-p" text-anchor="end">${p.n}</text>`;
+    const x1=d2x(p.a), x2=d2x(p.b);
+    s+=`<rect x="${x1}" y="${y-9}" width="${x2-x1}" height="18" rx="2" fill="${p.elev?'rgba(242,169,60,.7)':'rgba(242,169,60,.55)'}"/>`;
+  });
+  svg.innerHTML=s;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+})();
+
+/* ============ FIG 3: FUJI ODDS ============ */
+(function(){
+  const svg=document.getElementById('fuji-chart');
+  const W=1400,H=300,padL=50,padR=30,padT=20,padB=50;
+  const MO=[
+    {n:'Jan',v:78},{n:'Feb',v:75},{n:'Mar',v:55},{n:'Apr',v:40},
+    {n:'May',v:32},{n:'Jun',v:16},{n:'Jul',v:14},{n:'Aug',v:15},
+    {n:'Sep',v:28},{n:'Oct',v:42},{n:'Nov',v:62},{n:'Dec',v:74}
+  ];
+  const bw=(W-padL-padR)/MO.length;
+  const y=v=>padT+(1-v/100)*(H-padT-padB);
+  let s='';
+  // gridlines
+  [0,25,50,75,100].forEach(v=>{
+    s+=`<line x1="${padL}" y1="${y(v)}" x2="${W-padR}" y2="${y(v)}" class="axs"/>`;
+    s+=`<text x="${padL-10}" y="${y(v)+4}" class="lbl" text-anchor="end">${v}%</text>`;
+  });
+  MO.forEach((m,i)=>{
+    const x0=padL+i*bw+bw*0.18, bwid=bw*0.64;
+    const isOct=m.n==='Oct';
+    s+=`<rect x="${x0}" y="${y(m.v)}" width="${bwid}" height="${H-padB-y(m.v)}" fill="${isOct?'var(--amber)':'rgba(242,169,60,.32)'}" rx="1"/>`;
+    s+=`<text x="${x0+bwid/2}" y="${H-padB+18}" class="lbl" text-anchor="middle" ${isOct?'fill="var(--amber)"':''}>${m.n}</text>`;
+    s+=`<text x="${x0+bwid/2}" y="${y(m.v)-8}" class="${isOct?'lbl-a':'lbl'}" text-anchor="middle">${m.v}%</text>`;
+  });
+  s+=`<line x1="${padL}" y1="${H-padB}" x2="${W-padR}" y2="${H-padB}" class="ax"/>`;
+  svg.innerHTML=s;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+})();
+
+/* ============ RAIL PASS CALCULATOR ============ */
+const RAIL_LEGS=[
+  {n:'Tokyo → Hakone-Yumoto (Odakyū Romancecar)',y:2470,jr:false,note:'Private line — never covered by JR Pass'},
+  {n:'Odawara → Hiroshima direct (Shinkansen)',y:21000,jr:true,def:true,note:'No-Kyoto plan — one long leg'},
+  {n:'Odawara → Kyoto (Shinkansen Hikari)',y:13320,jr:true,note:'With-Kyoto plan, leg 1 of 2'},
+  {n:'Kyoto local transport, 1 day (bus/subway)',y:700,jr:false,note:'Non-JR — city bus & subway'},
+  {n:'Kyoto → Hiroshima (Nozomi Shinkansen)',y:11310,jr:true,note:'With-Kyoto plan, leg 2 of 2'},
+  {n:'Hiroshima airport bus to HIJ',y:1370,jr:false,note:'Non-JR — Hiroden bus, both plans'}
+];
+function renderLegs(){
+  document.getElementById('legs').innerHTML=RAIL_LEGS.filter(l=>l.y>0).map((l,i)=>`
+    <label class="leg-row">
+      <input type="checkbox" data-i="${i}" ${l.def?'checked':''}>
+      <span class="lname">${l.n}</span>
+      <span class="lyen">¥${l.y.toLocaleString('en-CA')}</span>
+      ${l.note?`<span class="lnote">${l.note}</span>`:''}
+    </label>`).join('');
+}
+const RL=RAIL_LEGS.filter(l=>l.y>0);
+function calcTotals(){
+  let jrTotal=0;
+  document.querySelectorAll('#legs input[type="checkbox"]').forEach(cb=>{
+    const l=RL[Number(cb.dataset.i)];
+    if(cb.checked && l.jr) jrTotal+=l.y;
+  });
+  const pass=53000;
+  const diff=pass-jrTotal;
+  document.getElementById('ptp').innerHTML=`¥${jrTotal.toLocaleString('en-CA')}<small>JR legs only</small>`;
+  const dEl=document.getElementById('diff');
+  const vEl=document.getElementById('verdict');
+  if(jrTotal===0){
+    dEl.innerHTML='—'; vEl.textContent='Select JR legs above'; vEl.className='';
+  } else if(diff>0){
+    dEl.innerHTML=`¥${diff.toLocaleString('en-CA')}<small>pass costs more</small>`;
+    vEl.textContent='Buy point-to-point'; vEl.className='lose';
+  } else {
+    dEl.innerHTML=`¥${Math.abs(diff).toLocaleString('en-CA')}<small>pass saves you</small>`;
+    vEl.textContent='Pass wins'; vEl.className='win';
+  }
+}
+renderLegs();
+document.getElementById('legs').addEventListener('change',calcTotals);
+calcTotals();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="darkreader-lock">
+<title>Taiwan</title>
+<link rel="stylesheet" href="fonts.css">
+</head>
+<body>
+<style>
+:root{color-scheme:dark;
+  --ink:#05161D;--ink-2:#0A2029;--ink-3:#0E2A35;
+  --rule:#194150;--rule-soft:rgba(25,65,80,.6);
+  --paper:#E2EEED;--paper-dim:#A6C2C6;--muted:#6C8F98;
+  --amber:#F2A93C;--magenta:#E7649B;--jade:#58C4A3;--red:#E05555;
+  --display:'Big Shoulders Display','Arial Narrow',Impact,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --body:'Inter',system-ui,sans-serif;
+  --gut:clamp(18px,4vw,64px);--maxw:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+.section{padding-block:clamp(34px,4.4vw,58px);border-top:1px solid var(--rule-soft);position:relative}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:14px;margin:0 0 18px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--rule)}
+.eyebrow .n{color:var(--amber)}
+h2.head{font-family:var(--display);font-weight:700;font-size:clamp(34px,5.6vw,66px);line-height:.92;margin:0 0 14px;text-transform:uppercase}
+.lede{max-width:66ch;color:var(--paper-dim);font-size:clamp(15px,1.5vw,17px);margin:0 0 26px}
+.lede b{color:var(--paper);font-weight:600}
+a{color:var(--amber);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+.hint{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+@media (min-width:980px){.hint.wide{display:none}}
+.scroller{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--rule) transparent}
+.scroller::-webkit-scrollbar{height:6px}
+.scroller::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}
+.scroller>svg{display:block;width:100%;height:auto}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(30px,5vw,58px) clamp(24px,4vw,40px);overflow:hidden}
+.gridbg{position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:linear-gradient(to right,var(--rule-soft) 1px,transparent 1px),linear-gradient(to bottom,var(--rule-soft) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%);-webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%)}
+.back{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:inline-block;margin-bottom:20px}
+.back:hover{color:var(--amber)}
+.strip{font-family:var(--mono);font-size:clamp(10px,1.15vw,12px);letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;border-block:1px solid var(--rule);padding-block:11px;margin-bottom:clamp(26px,4vw,44px)}
+.strip .k{color:var(--muted)}.strip .amb{color:var(--amber)}
+.title{font-family:var(--display);text-transform:uppercase;margin:0;line-height:.82;position:relative}
+.title .l1{display:block;font-weight:400;font-size:clamp(34px,7.4vw,96px);color:transparent;-webkit-text-stroke:1.2px var(--paper-dim)}
+.title .l2{display:block;font-weight:800;font-size:clamp(72px,17vw,232px);letter-spacing:-.015em;color:var(--paper)}
+.subline{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:baseline;margin-top:clamp(18px,3vw,30px);font-family:var(--mono);font-size:clamp(11px,1.25vw,13px);letter-spacing:.14em;text-transform:uppercase;color:var(--paper-dim)}
+.subline .sep{color:var(--rule)}
+
+/* instruments */
+.instr{display:grid;grid-template-columns:repeat(auto-fit,minmax(124px,1fr));border:1px solid var(--rule);background:var(--ink-2);margin:clamp(24px,3.4vw,38px) 0 0}
+.instr div{padding:15px 17px;border-right:1px solid var(--rule-soft)}
+.instr div:last-child{border-right:0}
+.instr dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.instr dd{margin:0;font-family:var(--display);font-weight:600;font-size:31px;line-height:1}
+.instr dd span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--paper-dim);margin-left:3px}
+.instr dd.hot{color:var(--amber)}
+.instr dd.warn{color:var(--magenta)}
+
+/* chart frames */
+.figcap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:9px;margin:0 0 8px}
+.figcap b{color:var(--amber);font-weight:500}
+.fignote{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.fignote i{display:inline-block;width:14px;height:9px;margin:0 5px 0 14px;vertical-align:middle;border-radius:1px}
+.fignote i:first-child{margin-left:0}
+.ax{stroke:var(--rule);stroke-width:1}
+.axs{stroke:var(--rule-soft);stroke-width:1}
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.08em;fill:var(--muted)}
+.lbl-p{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;fill:var(--paper)}
+.lbl-a{font-family:var(--mono);font-size:10px;letter-spacing:.12em;fill:var(--amber)}
+
+/* cards */
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin:0 0 6px}
+.card{border:1px solid var(--rule);background:var(--ink-2);padding:18px 20px;position:relative}
+.card.bad{border-color:var(--red)}
+.card.good{border-color:var(--jade)}
+.card h3{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 4px;color:var(--paper)}
+.card .verdict{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:11px}
+.card .verdict.bad{color:var(--red)}
+.card .verdict.ok{color:var(--jade)}
+.card p{margin:0 0 10px;font-size:13.5px;color:var(--paper-dim);line-height:1.62}
+.card p:last-child{margin-bottom:0}
+.card p b{color:var(--paper);font-weight:600}
+.fix{border-left:2px solid var(--amber);padding-left:12px;margin:12px 0 0;font-size:12.8px;color:var(--paper-dim);line-height:1.6}
+.fix b{display:block;color:var(--amber);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px;font-weight:500}
+.fix strong{color:var(--paper);font-weight:600}
+
+/* shape cards */
+.shapes{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+.shape{border:1px solid var(--rule);background:var(--ink-2);padding:0;display:flex;flex-direction:column}
+.shape.pick{border-color:var(--amber);box-shadow:inset 0 0 0 1px rgba(242,169,60,.25)}
+.shape-hd{padding:16px 20px 14px;border-bottom:1px solid var(--rule-soft)}
+.shape-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.shape.pick .shape-tag{color:var(--amber)}
+.shape-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(24px,3vw,32px);line-height:.95;margin:0}
+.chainrow{display:flex;flex-wrap:wrap;align-items:center;gap:5px 7px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--paper);padding:13px 20px;border-bottom:1px solid var(--rule-soft);background:rgba(5,22,29,.5)}
+.chainrow .a{color:var(--rule)}
+.chainrow .n{color:var(--amber);font-size:9.5px}
+.shape-body{padding:15px 20px 18px;flex:1}
+.shape-body p{margin:0 0 10px;font-size:13.3px;color:var(--paper-dim);line-height:1.6}
+.shape-body p:last-child{margin-bottom:0}
+.shape-body p b{color:var(--paper);font-weight:600}
+.shape-meta{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--rule-soft)}
+.shape-meta div{flex:1;min-width:88px;padding:11px 20px;border-right:1px solid var(--rule-soft)}
+.shape-meta div:last-child{border-right:0}
+.shape-meta dt{font-family:var(--mono);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.shape-meta dd{margin:0;font-family:var(--mono);font-size:13px;color:var(--paper)}
+.shape-meta dd.g{color:var(--jade)}
+.shape-meta dd.r{color:var(--red)}
+
+/* day accordion */
+.days{border-top:1px solid var(--rule)}
+.day{border-bottom:1px solid var(--rule)}
+.day-btn{all:unset;box-sizing:border-box;display:grid;width:100%;cursor:pointer;grid-template-columns:76px 1fr auto;gap:0 clamp(14px,2.4vw,30px);align-items:baseline;padding:clamp(13px,1.8vw,18px) 4px;transition:background .18s ease}
+.day-btn:hover{background:rgba(242,169,60,.05)}
+.day-btn:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.day-date{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.1em}
+.day-date small{display:block;color:var(--muted);font-size:9.5px;letter-spacing:.14em;margin-top:3px}
+.day-btn>span:nth-child(2){display:flex;flex-direction:column;gap:6px}
+.day-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(22px,3.2vw,34px);line-height:.95;margin:0}
+.day-sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.day-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--paper-dim);text-align:right;white-space:nowrap}
+.day-meta .chev{display:inline-block;margin-left:12px;color:var(--muted);transition:transform .25s ease}
+.day.open .day-meta .chev{transform:rotate(180deg)}
+@media (max-width:720px){.day-btn{grid-template-columns:64px 1fr;row-gap:8px}.day-meta{grid-column:2;text-align:left}}
+.day-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .34s cubic-bezier(.3,.8,.3,1)}
+.day.open .day-body{grid-template-rows:1fr}
+.day-inner{overflow:hidden}
+.day-pad{padding:2px 4px clamp(22px,3vw,32px)}
+.slots{display:grid;gap:0;border-left:1px solid var(--rule)}
+.slot{padding:0 0 16px 16px;position:relative}
+.slot:last-child{padding-bottom:2px}
+.slot::before{content:"";position:absolute;left:-4px;top:6px;width:7px;height:7px;background:var(--amber);border-radius:50%}
+.slot.move::before{background:var(--magenta)}
+.slot h4{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 5px;font-weight:500}
+.slot.move h4{color:var(--magenta)}
+.slot p{margin:0;font-size:14px;line-height:1.62;color:var(--paper-dim);max-width:72ch}
+.slot p b{color:var(--paper);font-weight:600}
+
+/* worth doing */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.fbtn{all:unset;cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border:1px solid var(--rule);color:var(--paper-dim);border-radius:2px;transition:.15s}
+.fbtn:hover{background:var(--ink-3);color:var(--paper)}
+.fbtn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.fbtn[aria-pressed="true"]{background:var(--amber);color:var(--ink);border-color:var(--amber);font-weight:600}
+.fdiv{width:1px;background:var(--rule);margin:2px 6px}
+.items{display:grid;gap:1px;background:var(--rule-soft);border:1px solid var(--rule)}
+.item{background:var(--ink-2);padding:13px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:baseline}
+.item .tier{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:3px 7px 2px;border-radius:2px;white-space:nowrap;align-self:start;margin-top:2px}
+.tier.do{background:rgba(88,196,163,.14);color:var(--jade);border:1px solid rgba(88,196,163,.35)}
+.tier.opt{background:rgba(242,169,60,.12);color:var(--amber);border:1px solid rgba(242,169,60,.3)}
+.tier.skip{background:rgba(224,85,85,.1);color:var(--red);border:1px solid rgba(224,85,85,.3)}
+.item .nm{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:20px;line-height:1.05;color:var(--paper)}
+.item .why{grid-column:2;font-size:13.3px;color:var(--paper-dim);line-height:1.55;max-width:74ch}
+.item .why b{color:var(--paper);font-weight:600}
+.item .when{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);text-align:right;white-space:nowrap;align-self:start;margin-top:4px}
+.item .when.book{color:var(--magenta)}
+@media (max-width:640px){.item{grid-template-columns:auto 1fr}.item .when{grid-column:2;text-align:left;margin-top:2px}.item .why{grid-column:1/-1}}
+.empty{background:var(--ink-2);padding:22px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* panels / tables */
+.panel{border:1px solid var(--rule);background:var(--ink-2);padding:clamp(17px,2.4vw,24px);margin-top:22px}
+.panel h3{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 12px;font-weight:500}
+.panel p{margin:0 0 12px;font-size:13.6px;color:var(--paper-dim);line-height:1.62}
+.panel p:last-child{margin-bottom:0}
+.panel p b{color:var(--paper);font-weight:600}
+table.ref{width:100%;border-collapse:collapse;font-size:13.4px}
+table.ref th{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:500;padding:0 14px 10px 0;border-bottom:1px solid var(--rule)}
+table.ref td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule-soft);color:var(--paper-dim);vertical-align:top}
+table.ref td:first-child{font-family:var(--display);font-size:17px;font-weight:600;text-transform:uppercase;color:var(--paper);white-space:nowrap;width:1%}
+table.ref td.t{font-family:var(--mono);font-size:11px;letter-spacing:.06em;white-space:nowrap;color:var(--amber)}
+table.ref tr.flag td.t{color:var(--magenta)}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.cols{display:grid;gap:16px 34px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:20px}
+.cols p{margin:0;font-size:13.6px;color:var(--paper-dim);line-height:1.6}
+.cols p b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:5px;font-weight:500}
+
+footer{border-top:1px solid var(--rule);padding-block:26px 40px;color:var(--muted)}
+.foot-grid{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:flex-end}
+.foot-grid p{margin:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase}
+.foot-mark{font-family:var(--display);font-size:clamp(40px,9vw,110px);font-weight:800;text-transform:uppercase;line-height:.8;color:transparent;-webkit-text-stroke:1px var(--rule);margin:30px 0 0}
+</style>
+
+<header class="hero">
+  <div class="gridbg"></div>
+  <div class="wrap">
+    <a class="back" href="index.html">← Westbound · the dossier</a>
+    <p class="strip">
+      <span><span class="k">Stop</span> <span class="amb">04 of 27</span></span>
+      <span><span class="k">In</span> PVG · Shanghai</span>
+      <span><span class="k">Fly Taiwan</span> <span class="amb">TPE</span></span>
+      <span><span class="k">Out</span> BKK · Bangkok</span>
+      <span><span class="k">Window</span> 1–4 Nov 2026</span>
+      <span><span class="k">Clock</span> UTC+8</span>
+    </p>
+    <h1 class="title">
+      <span class="l1">Fourth stop</span>
+      <span class="l2">Taiwan</span>
+    </h1>
+    <p class="subline">
+      <span>Taipei confirmed</span><span class="sep">/</span>
+      <span>Fly out TPE confirmed</span><span class="sep">/</span>
+      <span>Taroko: overnight or day trip, see below</span>
+    </p>
+
+    <dl class="instr">
+      <div><dt>Calendar days</dt><dd>4</dd></div>
+      <div><dt>Full days</dt><dd class="hot">2</dd></div>
+      <div><dt>Nights</dt><dd>3</dd></div>
+      <div><dt>Time change</dt><dd>0<span>hrs</span></dd></div>
+      <div><dt>Taipei–Hualien</dt><dd id="rail-time">≈2<span>hrs</span></dd></div>
+      <div><dt>Gorge trails open</dt><dd class="warn">2<span>of 5</span></dd></div>
+    </dl>
+  </div>
+</header>
+
+<section class="section" id="audit">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">01</span> The time audit</p>
+    <h2 class="head">Four days<br>is two days</h2>
+    <p class="lede">The itinerary says 1–4 November, and unlike every stop before it, this one costs you almost no jet lag — Shanghai and Taipei share a time zone, and the hop is under two hours. What it doesn't give you is time: land early afternoon on the 1st, fly onward to Bangkok on the morning of the 4th, and what's left is <b>two full days sandwiched between two fragments</b>. That's a tight budget for a route that wants both Taroko Gorge and a night market in every plan.</p>
+
+    <div class="figcap">
+      <span>Fig. 1 — What the four days really contain</span>
+      <span><b>1–4 Nov</b> · hour by hour</span>
+    </div>
+    <div class="scroller">
+      <svg id="audit-chart" viewBox="0 0 1400 190" role="img" aria-label="Timeline of 1 to 4 November showing a short morning flight from Shanghai consuming the first few hours of the 1st, two full days on the 2nd and 3rd, and the morning of the 4th consumed by the flight to Bangkok."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--magenta);opacity:.55"></i>In transit<i style="background:rgba(242,169,60,.35)"></i>Part day<i style="background:var(--amber)"></i>Full day</p>
+
+    <div class="cols">
+      <p><b>No jet lag, for once</b>China Eastern or EVA fly Shanghai–Taipei in under two hours with zero time-zone change — the first stop on this trip where your body clock doesn't need resetting. Land around 13:00, clear immigration, and you have a genuine afternoon rather than a write-off evening.</p>
+      <p><b>Taoyuan, not Songshan</b>Most Shanghai flights land at Taoyuan (TPE), 40km west of the city — the Airport MRT gets you to Taipei Main Station in about 35–50 minutes depending on express or local. If your flight happens to route through Songshan (TSA) instead, you're already inside the city; either way, buy an EasyCard in the arrivals hall before you do anything else.</p>
+      <p><b>The 4th is a half-day, not a day</b>Bangkok is a four-hour flight and Thailand is an hour behind Taiwan — budget the whole morning for the airport run and treat 3 November night as your last full evening in Taiwan.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="flags">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">02</span> Two things that don't move</p>
+    <h2 class="head">Whichever way<br>you slice it</h2>
+    <p class="lede">These two hold regardless of how you split Taipei and Taroko below — worth knowing before you get into the routing decision.</p>
+
+    <div class="cards">
+      <div class="card bad">
+        <h3>Taroko in 2026 is a smaller gorge</h3>
+        <div class="verdict bad">Nothing you can do</div>
+        <p>The 7.4-magnitude earthquake of April 2024 brought down cliff faces throughout the gorge, and recovery is measured in years, not months. <b>Shakadang Trail, the Zhuilu Old Road and Baiyang Trail remain closed</b> as of early 2026, and the main road through the gorge (Highway 8) is open to traffic only in short scheduled windows rather than freely, with landslide risk closing it outright after rain.</p>
+        <p>What's open: the entrance arch and visitor centre, the short Dekalun Trail, Tianxiang with its Xiangde Temple path, and Qixingtan Beach and the Chongde viewpoint on the coast, unaffected by the quake. Eternal Spring Shrine and the Buluowan suspension bridge are roadside-view only for now.</p>
+        <div class="fix"><b>The reframe</b>This still isn't a bad two days — you're seeing marble cliffs and a river gorge few Western tourists get to before 2024's damage is fully repaired — it's just a different, smaller version of the trip than the one in every five-year-old blog post. Plan around the road's opening windows (Fig. 2 below), not around the old trail map.</div>
+      </div>
+
+      <div class="card">
+        <h3>The scooter needs paperwork you get at home</h3>
+        <div class="verdict">Handle before YYZ</div>
+        <p>Taiwan will not rent a scooter to a foreign licence alone. You need an <b>International Driving Permit with a motorcycle ("A") endorsement</b> — most Canadian provinces issue this through CAA, and it has to show you're licensed to ride a motorcycle at home, not just drive a car. Get it before you leave; there's no fixing this in Hualien.</p>
+        <p>Even with the endorsement, a growing number of shops near Taroko are tightening up and asking for it explicitly since the road restrictions began. A few still rent without it for a larger deposit, but don't plan the day around finding one of those.</p>
+        <div class="fix"><b>The lever</b>If the IDP endorsement genuinely isn't obtainable before you fly, book a guided minibus or taxi day tour into the gorge instead — several outfits run exactly this route from Hualien station and know the road's open windows better than you will.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="shapes">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">03</span> The open question</p>
+    <h2 class="head">Taroko:<br>day trip or overnight</h2>
+    <p class="lede">Taipei and the flight to Bangkok are fixed points. Taroko sits roughly two hours each way by train, and the gorge road itself only opens in short scheduled windows — so the question isn't really "how many days," it's whether you sleep in Hualien or commute. Both shapes below fit the same 1–4 Nov window and both use the scooter.</p>
+
+    <div class="shapes">
+      <div class="shape pick">
+        <div class="shape-hd">
+          <div class="shape-tag">Recommended</div>
+          <p class="shape-name">Hualien overnight</p>
+        </div>
+        <div class="chainrow">
+          <span>Taipei <span class="n">×1</span></span><span class="a">→</span>
+          <span>Tianxiang/Hualien <span class="n">×1</span></span><span class="a">→</span>
+          <span>Taipei <span class="n">×1</span></span><span class="a">→</span>
+          <span class="n">TPE</span>
+        </div>
+        <div class="shape-body">
+          <p>Train out early on day two, scooter into the gorge for the midday window, sleep in Tianxiang or Hualien, then a second crack at the road on an early window next morning before heading back. Two windows instead of one, and no four-hour same-day round trip eating into gorge time.</p>
+          <p><b>The routing trick:</b> the Hualien line runs through Ruifang on the way back — get off there instead of riding straight through, and Jiufen is a fifteen-minute bus up the hill. You reach Taipei's fixed point and Jiufen's open question in the same afternoon.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Bases</dt><dd class="g">3</dd></div>
+          <div><dt>Moves</dt><dd class="g">2</dd></div>
+          <div><dt>Road windows used</dt><dd class="g">2</dd></div>
+          <div><dt>Fly out</dt><dd>TPE</dd></div>
+        </dl>
+      </div>
+
+      <div class="shape">
+        <div class="shape-hd">
+          <div class="shape-tag">If you'd rather not repack</div>
+          <p class="shape-name">Taipei-based day trip</p>
+        </div>
+        <div class="chainrow">
+          <span>Taipei <span class="n">×3</span></span><span class="a">→</span>
+          <span class="n">TPE</span>
+        </div>
+        <div class="shape-body">
+          <p>One base the whole trip, one bag, no overnight logistics. Out on the earliest train (around 06:30), scooter for the day, back on a late train into Taipei by 21:00–22:00. Genuinely workable, but you're up against the clock all day and you only get one of the road's opening windows rather than two.</p>
+          <p><b>The cost is entirely time in the gorge.</b> Jiufen has to move to the first afternoon instead, arriving already tired from the flight — or gets squeezed against Taipei's own sights, which is the harder trade.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Bases</dt><dd>1</dd></div>
+          <div><dt>Moves</dt><dd class="r">0</dd></div>
+          <div><dt>Road windows used</dt><dd class="r">1</dd></div>
+          <div><dt>Fly out</dt><dd>TPE</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Why the recommendation is the overnight, not the day trip</h3>
+      <p>With only two full days total, the day-trip shape spends one of them almost entirely on a train and a scooter, and still only banks one road-opening window if the return train has any padding built in — miss the window and you're waiting two hours at a checkpoint with the gorge still ahead of you. The overnight costs you nothing extra in nights (you have three either way) and buys a second window, a sunrise in the mountains, and the Jiufen stopover on the way back essentially for free.</p>
+      <p>If you'd rather not deal with hotel logistics for a single night, the day-trip shape is genuinely fine — just book the earliest outbound train you can and treat any road window past the first as a bonus, not the plan.</p>
+    </div>
+
+    <div class="panel">
+      <h3>What's cut either way</h3>
+      <p><b>Sun Moon Lake.</b> Central Taiwan's other big scenic draw, and a beautiful place — but it's a three-hour bus from Taichung in the opposite direction from Hualien. Not on a four-day trip with Taroko already booked.</p>
+      <p><b>Kenting.</b> The beach town at Taiwan's southern tip is excellent in November's dry season, but it's a full day's travel from Taipei each way. Save it for a trip built around the south.</p>
+      <p><b>Alishan.</b> The other great mountain railway and sunrise-above-the-clouds spot, reached from Chiayi in the centre-south. Wrong direction again — this itinerary only has room for one mountain, and the route already picked Taroko.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="run">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">04</span> Day by day</p>
+    <h2 class="head">Both versions,<br>laid out</h2>
+    <p class="lede">Times against the gorge road are the ones that matter here — everything else can flex around them. The overnight version below assumes an early-October-style light pack; the day-trip version assumes you're back in your Taipei bed both nights.</p>
+    <div class="filters" id="dayToggle" style="margin-bottom:6px">
+      <button class="fbtn" data-plan="overnight" aria-pressed="true">Hualien overnight</button>
+      <button class="fbtn" data-plan="daytrip" aria-pressed="false">Taipei-based day trip</button>
+    </div>
+    <div class="days" id="days"></div>
+    <p class="fignote" style="margin-top:16px">Amber = on foot or by scooter · <span style="color:var(--magenta)">Magenta = a train or a base change</span></p>
+  </div>
+</section>
+
+<section class="section" id="worth">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">05</span> What's actually worth doing</p>
+    <h2 class="head">Do, maybe,<br>don't bother</h2>
+    <p class="lede">Sorted by area, then by whether it earns its place in a trip this short. The <b>don't bother</b> entries aren't bad — most would make the cut on a longer Taiwan trip. They're here because something else on the list beats them for the same slot.</p>
+
+    <div class="filters" id="filters">
+      <button class="fbtn" data-city="all" aria-pressed="true">All</button>
+      <button class="fbtn" data-city="Taipei" aria-pressed="false">Taipei</button>
+      <button class="fbtn" data-city="Taroko" aria-pressed="false">Taroko &amp; Hualien</button>
+      <button class="fbtn" data-city="Jiufen" aria-pressed="false">Jiufen &amp; the coast</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-tier="do" aria-pressed="false">Do</button>
+      <button class="fbtn" data-tier="opt" aria-pressed="false">Maybe</button>
+      <button class="fbtn" data-tier="skip" aria-pressed="false">Don't bother</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-book="1" aria-pressed="false">Needs booking</button>
+    </div>
+    <div class="items" id="items"></div>
+  </div>
+</section>
+
+<section class="section" id="gorge">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">06</span> The gorge question</p>
+    <h2 class="head">Smaller, and<br>still worth it</h2>
+    <p class="lede">You asked for Taroko by scooter, so this is the honest version. The road through the gorge is a single lane blasted into a marble cliff face, and since the 2024 quake it's managed almost like a level crossing — open to traffic in scheduled windows, closed the rest of the time, and shut outright after rain while crews check for loose rock.</p>
+
+    <div class="figcap">
+      <span>Fig. 2 — When Highway 8 is actually open to vehicles</span>
+      <span><b>Visitor Centre to Tianxiang</b> · daily, subject to change</span>
+    </div>
+    <div class="scroller">
+      <svg id="road-chart" viewBox="0 0 1400 220" role="img" aria-label="Timeline of a 24 hour day showing Highway 8 through Taroko Gorge open to vehicle traffic only in five short windows: 6:30 to 8:00, 10:00 to 10:05, 12:00 to 13:00, 15:00 to 15:05, and 17:00 to 17:30, closed the rest of the day."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--amber)"></i>Road open<i style="background:rgba(242,169,60,.18);border:1px solid var(--rule)"></i>Road closed · times move with repair progress, check the day you go</p>
+
+    <div class="panel">
+      <h3>What's actually open, area by area</h3>
+      <p><b>Near the entrance</b> — the arch, the visitor centre, and the short, steep Dekalun Trail (about ninety minutes return) are all open without restriction. This is where a rushed day trip ends up spending most of its time if the road windows don't cooperate.</p>
+      <p><b>Tianxiang, deeper in</b> — reachable inside a road window, with the Xiangde Temple trail and a suspension bridge still open. This is also where the overnight shape sleeps, which is what buys the second window the next morning.</p>
+      <p><b>Closed for now</b> — Shakadang Trail, the Zhuilu Old Road (which needed a permit even before 2024), and Baiyang Trail's tunnel-and-waterfall walk are all shut, some indefinitely. Eternal Spring Shrine and the Buluowan suspension bridge are visible from the road but not walkable.</p>
+      <p>The honest comparison: this is not the Taroko of ten years of guidebooks. It is still a marble gorge with a river running through it and cliffs on both sides, seen from a scooter seat inside a real, functioning national park recovering in real time. Go for what's there rather than what's closed.</p>
+    </div>
+
+    <div class="panel">
+      <h3>Getting the scooter, and the train that gets you there</h3>
+      <p>Rental shops cluster around Hualien Station and, per the IDP note above, increasingly require the motorcycle endorsement. Expect to leave a passport copy and a deposit; a day rate for a 125cc scooter runs roughly NT$500–700.</p>
+      <p>The Taroko and Puyuma Express trains cover Taipei–Hualien in about two hours for around NT$440 one-way; slower trains take three to four. <b>Book ahead</b> — these specific express services sell out on weekends and holidays, and 1 November lands on a Sunday. Reserve online at the TRA site (railway.gov.tw) or through 7-Eleven's ibon kiosk once in Taiwan, and pick tickets up at any 7-Eleven counter for a small fee.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="admin">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">07</span> Ground rules</p>
+    <h2 class="head">Before you land</h2>
+
+    <div class="tablewrap">
+    <table class="ref">
+      <thead><tr><th>Item</th><th>What to do</th><th>When</th></tr></thead>
+      <tbody>
+        <tr><td>Entry</td><td>Visa-free for Canadians, 90 days. No arrival card or online declaration required — just a passport valid 6+ months past your entry date.</td><td class="t">Nothing to do</td></tr>
+        <tr class="flag"><td>IDP + "A" stamp</td><td>Get an International Driving Permit with a motorcycle endorsement from CAA before you fly, if the scooter plan is happening. Cannot be arranged in Taiwan.</td><td class="t">Before departure</td></tr>
+        <tr class="flag"><td>Airport service fee</td><td>Taiwan's departure fee rose from NT$500 to NT$750 on 1 September 2026 — bundled into the ticket, but don't be surprised by the line item on 4 Nov.</td><td class="t">Automatic</td></tr>
+        <tr><td>EasyCard</td><td>Buy on arrival at Taoyuan or any MRT counter (NT$100, non-refundable) and top up as you go. Covers MRT, buses, the Hualien and Jiufen buses, and convenience stores — roughly a 20% discount over cash fares.</td><td class="t">On arrival</td></tr>
+        <tr><td>Cash</td><td>Carry NT$3,000–5,000. Night market stalls, small Jiufen tea houses and the odd rural bus are still cash-first, though most of Taipei now takes cards or EasyCard.</td><td class="t">On arrival</td></tr>
+        <tr><td>VAT refund</td><td>5% refund on single-store, same-day purchases over NT$2,000 at stores displaying the Tax Refund logo — claim at the airport before check-in, so leave extra time on the 4th if you've shopped.</td><td class="t">At TPE</td></tr>
+        <tr><td>Train booking</td><td>Taroko/Puyuma Express tickets to Hualien sell out on weekends — 1 Nov is a Sunday. Book online at railway.gov.tw as soon as dates are fixed; collect at any 7-Eleven.</td><td class="t">Now</td></tr>
+        <tr><td>Public holidays</td><td>National Day (10 Oct) and Retrocession Day (25–26 Oct) both fall before you arrive. Nothing lands inside the 1–4 Nov window.</td><td class="t">Clear</td></tr>
+        <tr><td>Booking window</td><td>Taipei 101's observatory and any Hualien scooter reservation are worth locking in a week or two out; everything else in Taipei can be decided the day before.</td><td class="t">1–2 weeks out</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="cols">
+      <p><b>Weather</b>Expect 24–26°C by day and 18–20°C at night in Taipei, cooling further in the mountains around Taroko. November is one of the driest months on the calendar and typhoon season is all but over, though a late storm remains a small possibility this far into autumn.</p>
+      <p><b>Getting into town</b>The Airport MRT from Taoyuan to Taipei Main Station runs express (35 min) and local (50 min) services on the same line — buy the EasyCard first, then just tap through either train.</p>
+      <p><b>Booking trains</b>Reserve the Hualien legs specifically; everything else — MRT, city buses, the Jiufen bus — runs frequently enough to wing it with an EasyCard in hand.</p>
+      <p><b>Eating</b>Night market food is the meal, not the snack before one — pepper buns and stinky tofu at Raohe, the sheer size of Shilin, or Ningxia's tighter, more local lineup. Budget NT$150–300 for a full night of grazing and reserve nothing.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <p>Westbound · stop 04 · Taiwan</p>
+      <p>1–4 Nov 2026 · TPE in, TPE out</p>
+      <p>Fares, taxes and schedules verified Sept 2026 — recheck before booking</p>
+    </div>
+    <p class="foot-mark">Taipei → Taroko → Jiufen</p>
+  </div>
+</footer>
+
+<script>
+/* ============ DAY-BY-DAY ============ */
+const DAYS_OVERNIGHT=[
+{d:'Sun 1',w:'Arrive',name:'Taipei',sub:'Land ~13:00 · half a day',meta:'Night 1',
+ slots:[
+  {m:1,h:'13:00 · TPE',p:'Short hop from Shanghai, no time change to adjust to. Airport MRT into Taipei Main Station, 35–50 minutes. Buy an EasyCard in the arrivals hall before anything else.'},
+  {h:'15:30 · Longshan Temple & Ximending',p:'A working Taoist-Buddhist temple thick with incense smoke, then a short walk into Ximending’s pedestrian streets for an easy first afternoon.'},
+  {h:'18:30 · Raohe Street Night Market',p:'Compact, local, and famous for hu jiao bing — black pepper buns baked in a coal-fired oven at the entrance. A gentle introduction before the bigger markets later in the week.'}
+]},
+{d:'Mon 2',w:'Move',name:'Tianxiang / Hualien',sub:'Taipei → the gorge',meta:'Night 2',
+ slots:[
+  {m:1,h:'06:45 · Taroko Express to Hualien',p:'Booked ahead — these sell out on weekends. About two hours down the coast, watching the Pacific most of the way.'},
+  {m:1,h:'09:15 · Scooter pickup, Hualien Station',p:'IDP with motorcycle endorsement, passport copy, deposit. A 125cc scooter runs roughly NT$500–700 for the day.'},
+  {h:'10:00 · First road window',p:'Ride the open lane into the gorge — the entrance arch, the visitor centre, and the Dekalun Trail if time allows before the window closes.'},
+  {h:'12:00 · Second window, on to Tianxiang',p:'The road’s longest daily opening. Push deeper — Xiangde Temple’s trail, the marble cliffs at their narrowest — and check in for the night here rather than riding back out.'},
+  {h:'18:00 · Tianxiang or Hualien evening',p:'A quiet mountain evening if you’ve stayed at Tianxiang; Hualien city, if you rode back out, has its own smaller night market for dinner.'}
+]},
+{d:'Tue 3',w:'Full',name:'Gorge, then Jiufen',sub:'One more window, then the coast',meta:'Night 3',
+ slots:[
+  {h:'06:30 · Sunrise road window',p:'The earliest opening of the day and usually the quietest — worth being up for if you’re already sleeping in the gorge.'},
+  {m:1,h:'10:00 · Return scooter, train toward Taipei',p:'Ride back to Hualien Station inside a window, return the scooter, and catch a Taipei-bound express — but don’t ride it all the way.'},
+  {m:1,h:'13:30 · Alight at Ruifang',p:'The Hualien line runs straight through Ruifang. Bag in a station locker, then a fifteen-minute bus up the hill to Jiufen.'},
+  {h:'14:00 · Jiufen Old Street',p:'Steep lantern-strung lanes, tea houses stacked up the hillside, taro balls and peanut ice-cream rolls. Busy by midday — the golden hour before sunset is the good version.'},
+  {h:'18:00 · A Mei Tea House at dusk',p:'The lantern-lit teahouse everyone photographs, genuinely worth a pot of tea on the terrace as the lanes below light up. Last bus back to Ruifang, then train into Taipei for the night.'}
+]},
+{d:'Wed 4',w:'Depart',name:'To Bangkok',sub:'Half a morning',meta:'Fly out',
+ slots:[
+  {h:'08:00 · Elephant Mountain',p:'A short, steep climb to the Xiangshan viewpoint over Taipei 101 and the skyline — a good last look at the city before the airport, if the legs have anything left.'},
+  {m:1,h:'10:30 · Airport MRT to TPE',p:'Express service from Taipei Main Station, about 35 minutes. Build in time for the VAT refund counter if you’ve shopped.'},
+  {m:1,h:'· Bangkok',p:'Stop 05. Around four hours, one hour back in time. Verify your exact carrier and terminal — Taoyuan splits international departures across two.'}
+]}
+];
+
+const DAYS_DAYTRIP=[
+{d:'Sun 1',w:'Arrive',name:'Taipei',sub:'Land ~13:00 · half a day',meta:'Night 1',
+ slots:[
+  {m:1,h:'13:00 · TPE',p:'Short hop from Shanghai, no time change to adjust to. Airport MRT into Taipei Main Station, 35–50 minutes. Buy an EasyCard in the arrivals hall before anything else.'},
+  {h:'15:30 · Jiufen',p:'With no scooter day to plan around, Jiufen moves here — direct bus 1062 from Zhongxiao Fuxing, about ninety minutes each way. Steep lantern-lit lanes and tea houses as the light goes gold.'},
+  {h:'19:00 · Back to Taipei',p:'Last bus back, then dinner near the hotel — you’ll be up before dawn tomorrow.'}
+]},
+{d:'Mon 2',w:'Move',name:'Taroko',sub:'The whole day, out and back',meta:'Night 2',
+ slots:[
+  {m:1,h:'06:30 · Taroko Express to Hualien',p:'The earliest realistic departure — booked ahead, since weekend and holiday services sell out. About two hours.'},
+  {m:1,h:'09:00 · Scooter pickup, Hualien Station',p:'IDP with motorcycle endorsement, passport copy, deposit.'},
+  {h:'10:00 · First road window',p:'Entrance arch, visitor centre, Dekalun Trail.'},
+  {h:'12:00 · Second window, Tianxiang',p:'The longest opening of the day — the one to build the schedule around, since you need to be back at Hualien Station well before the last useful evening train.'},
+  {m:1,h:'18:00 · Return scooter, train to Taipei',p:'Return by early evening to make a reasonable train — the day trip trades the sunrise and second-morning window for sleeping in your own bed. Arrive Taipei ~21:00–22:00.'}
+]},
+{d:'Tue 3',w:'Full',name:'Taipei',sub:'The city, properly',meta:'Night 3',
+ slots:[
+  {h:'08:00 · Beitou',p:'MRT out to the hot-spring district — walk the Thermal Valley’s steaming green pool, then a soak at a public bathhouse before the crowds arrive.'},
+  {h:'12:00 · Dihua Street & National Palace Museum',p:'Old dry-goods street in the morning, or the museum’s Song-and-Qing collection if you’d rather trade the walk for the galleries — both compete for the same slot.'},
+  {h:'17:00 · Taipei 101 at sunset',p:'Book ahead; same-day slots run out. Sixty to ninety minutes before sunset gets you daylight, sunset and blue hour in one visit.'},
+  {h:'19:30 · Shilin Night Market',p:'The biggest of the three, a proper maze of stalls — oyster omelettes, giant fried chicken, bubble tea invented a few blocks from here, depending which local you ask.'}
+]},
+{d:'Wed 4',w:'Depart',name:'To Bangkok',sub:'Half a morning',meta:'Fly out',
+ slots:[
+  {h:'08:00 · Elephant Mountain',p:'A short, steep climb to the Xiangshan viewpoint over Taipei 101 and the skyline — a good last look at the city before the airport.'},
+  {m:1,h:'10:30 · Airport MRT to TPE',p:'Express service from Taipei Main Station, about 35 minutes. Build in time for the VAT refund counter if you’ve shopped.'},
+  {m:1,h:'· Bangkok',p:'Stop 05. Around four hours, one hour back in time. Verify your exact carrier and terminal — Taoyuan splits international departures across two.'}
+]}
+];
+
+let CURRENT_PLAN='overnight';
+function renderDays(){
+  const DAYS = CURRENT_PLAN==='overnight' ? DAYS_OVERNIGHT : DAYS_DAYTRIP;
+  document.getElementById('days').innerHTML=DAYS.map((D,i)=>`
+  <div class="day">
+    <button class="day-btn" aria-expanded="false">
+      <span class="day-date">${D.d}<small>${D.w}</small></span>
+      <span><span class="day-name">${D.name}</span><span class="day-sub">${D.sub}</span></span>
+      <span class="day-meta">${D.meta}<span class="chev">▾</span></span>
+    </button>
+    <div class="day-body"><div class="day-inner"><div class="day-pad"><div class="slots">
+      ${D.slots.map(s=>`<div class="slot${s.m?' move':''}"><h4>${s.h}</h4><p>${s.p}</p></div>`).join('')}
+    </div></div></div></div>
+  </div>`).join('');
+
+  document.querySelectorAll('.day-btn').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const d=b.parentElement, open=d.classList.toggle('open');
+      b.setAttribute('aria-expanded',open?'true':'false');
+    });
+  });
+  document.querySelector('.day').classList.add('open');
+  document.querySelector('.day-btn').setAttribute('aria-expanded','true');
+}
+renderDays();
+
+document.getElementById('dayToggle').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  CURRENT_PLAN=b.dataset.plan;
+  document.querySelectorAll('#dayToggle .fbtn').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
+  renderDays();
+});
+
+/* ============ WORTH DOING ============ */
+const ITEMS=[
+/* TAIPEI */
+{c:'Taipei',t:'do',n:'Longshan Temple',w:'A working Taoist-Buddhist temple in the old Wanhua district, thick with incense and genuinely used rather than staged for visitors. Free, and open into the evening.',when:'Any time'},
+{c:'Taipei',t:'do',n:'Taipei 101 at sunset',w:'Observatory across floors 88–91, NT$600. Book ahead — same-day slots run out — and arrive 60–90 minutes before sunset for daylight into blue hour.',when:'Book ahead',b:1},
+{c:'Taipei',t:'do',n:'Elephant Mountain (Xiangshan)',w:'A steep twenty-minute climb for the postcard shot of Taipei 101 over the skyline. Best at sunset or as a last morning before the airport.',when:'Sunrise or sunset'},
+{c:'Taipei',t:'do',n:'Night markets — Raohe, Shilin, Ningxia',w:'Pick two, not three. Raohe is compact and local; Shilin is the biggest maze of stalls; Ningxia is tighter and food-focused. Any one is dinner, not a snack.',when:'After 18:00'},
+{c:'Taipei',t:'do',n:'Beitou hot springs',w:'Twenty minutes from central Taipei by MRT. Walk the steaming green Thermal Valley pool, then soak at a public bathhouse for a few hundred NT.',when:'Morning'},
+{c:'Taipei',t:'opt',n:'National Palace Museum',w:'One of the world’s great Chinese art collections — jade cabbage included. Go for the Song and Qing galleries specifically if you’re short on time.',when:'2–3 hours'},
+{c:'Taipei',t:'opt',n:'Dihua Street',w:'Old dry-goods and herbal-medicine street, handsome Qing- and Japanese-era shopfronts, good for tea and preserved fruit to bring home.',when:'Morning'},
+{c:'Taipei',t:'opt',n:'Ximending',w:'Taipei’s youth-culture pedestrian district — fashion, arcades, street food. Easy to fold into an arrival afternoon near Longshan Temple.',when:'Afternoon'},
+{c:'Taipei',t:'skip',n:'Taipei Zoo & Maokong Gondola',w:'A genuinely nice half-day out for tea and views over the hills, but there’s no half-day to spare on a four-day trip with Taroko in it.',when:''},
+{c:'Taipei',t:'skip',n:'Songshan Cultural Park',w:'A converted tobacco factory with rotating design exhibits — pleasant, but competes directly with Dihua Street for the same kind of afternoon and loses.',when:''},
+/* TAROKO */
+{c:'Taroko',t:'do',n:'The gorge road by scooter',w:'Marble cliffs, a jade-green river, and a single lane blasted into the rock — seen properly only from a scooter seat, timed to the road’s open windows.',when:'Windows, see Fig. 2'},
+{c:'Taroko',t:'do',n:'Dekalun Trail',w:'A steep ninety-minute return hike near the entrance, open and unaffected by the 2024 damage. The easiest way to get above the gorge floor.',when:'~90 min'},
+{c:'Taroko',t:'do',n:'Xiangde Temple, Tianxiang',w:'A short trail up to a pagoda and temple above the river confluence — the payoff for pushing as far as Tianxiang inside a road window.',when:'~1 hour'},
+{c:'Taroko',t:'opt',n:'Qixingtan Beach',w:'A pebble beach north of Hualien, untouched by the earthquake, with Pacific swells and a mountain backdrop. Easy add if you have a spare hour near the station.',when:'Any time'},
+{c:'Taroko',t:'opt',n:'Guided minibus tour',w:'If the IDP endorsement fell through, several Hualien-based operators run exactly this route by van and know the road windows cold.',when:'Book ahead',b:1},
+{c:'Taroko',t:'skip',n:'Shakadang, Zhuilu Old Road, Baiyang',w:'Closed since April 2024 and not reopening on this trip’s timeline. Don’t plan around them, however good the old photos look.',when:''},
+/* JIUFEN & COAST */
+{c:'Jiufen',t:'do',n:'Jiufen Old Street at golden hour',w:'Steep lantern-strung lanes climbing the hillside — busy and a little tour-bussed by midday, genuinely beautiful as the lanterns come on at dusk.',when:'17:00–19:00'},
+{c:'Jiufen',t:'do',n:'A Mei Tea House',w:'The lantern-lit teahouse from every postcard, and the terrace view is worth the price of a pot of tea, however touristed the queue below.',when:'Dusk'},
+{c:'Jiufen',t:'opt',n:'Shifen & the sky lanterns',w:'A branch line from Ruifang, waterfalls and the tradition of writing a wish on a paper lantern before releasing it over the old railway tracks. A second stop on the same line as Jiufen, if the day allows it.',when:'Full detour'},
+{c:'Jiufen',t:'opt',n:'Houtong Cat Village',w:'A former coal town, also on the Ruifang line, now overrun — pleasantly — by resident cats. A quick, odd stop if you’re already changing trains there.',when:'~30 min'},
+{c:'Jiufen',t:'skip',n:'Golden Waterfall & Yin Yang Sea',w:'A worthwhile coastal detour near Jinguashi, but it needs its own half-day and this trip doesn’t have one to spare alongside Taroko.',when:''}
+];
+
+const TIERLBL={do:'Do',opt:'Maybe',skip:'Skip'};
+let FC='all', FT=null, FB=false;
+
+function renderItems(){
+  const list=ITEMS.filter(x=>
+    (FC==='all'||x.c===FC) && (!FT||x.t===FT) && (!FB||x.b));
+  const host=document.getElementById('items');
+  if(!list.length){host.innerHTML='<div class="empty">No entries match those filters.</div>';return}
+  host.innerHTML=list.map(x=>`
+    <div class="item">
+      <span class="tier ${x.t}">${TIERLBL[x.t]}</span>
+      <span class="nm">${x.n}</span>
+      <span class="when${x.b?' book':''}">${x.when||'&nbsp;'}</span>
+      <span class="why">${x.w}</span>
+    </div>`).join('');
+}
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  if(b.dataset.city){FC=b.dataset.city}
+  else if(b.dataset.tier){FT = FT===b.dataset.tier?null:b.dataset.tier}
+  else if(b.dataset.book){FB=!FB}
+  document.querySelectorAll('#filters .fbtn').forEach(x=>{
+    let on=false;
+    if(x.dataset.city) on = x.dataset.city===FC;
+    if(x.dataset.tier) on = x.dataset.tier===FT;
+    if(x.dataset.book) on = FB;
+    x.setAttribute('aria-pressed',on?'true':'false');
+  });
+  renderItems();
+});
+renderItems();
+
+/* ============ FIG 1: TIME AUDIT ============ */
+(function(){
+  const svg=document.getElementById('audit-chart');
+  const W=1400,H=190,pad=40,barY=70,barH=54;
+  const start=new Date(2026,10,1), end=new Date(2026,10,5); // 1st 00:00 to 5th 00:00
+  const totalH=(end-start)/36e5;
+  const x=h=>pad+(h/totalH)*(W-2*pad);
+  const segs=[
+    {a:0,b:13,cls:'p',label:'1 Nov AM — flight from Shanghai'},
+    {a:13,b:24,cls:'p2',label:'1 Nov PM — arrival afternoon/evening'},
+    {a:24,b:48,cls:'f',label:'2 Nov — full day'},
+    {a:48,b:72,cls:'f',label:'3 Nov — full day'},
+    {a:72,b:84,cls:'p2',label:'4 Nov AM — last morning'},
+    {a:84,b:96,cls:'t',label:'4 Nov PM — flight to Bangkok'}
+  ];
+  const colors={t:'var(--magenta)',p:'rgba(231,100,155,.55)',p2:'rgba(242,169,60,.35)',f:'var(--amber)'};
+  let s=`<rect x="0" y="0" width="${W}" height="${H}" fill="none"/>`;
+  segs.forEach(sg=>{
+    const x1=x(sg.a),x2=x(sg.b);
+    s+=`<rect x="${x1}" y="${barY}" width="${x2-x1-1}" height="${barH}" fill="${colors[sg.cls]}"/>`;
+  });
+  for(let d=0;d<=4;d++){
+    const hh=d*24, xx=x(hh);
+    const dt=new Date(start.getTime()+hh*36e5);
+    s+=`<line x1="${xx}" y1="${barY-6}" x2="${xx}" y2="${barY+barH+6}" class="axs"/>`;
+    s+=`<text x="${xx}" y="${barY-14}" class="lbl" text-anchor="${d===0?'start':d===4?'end':'middle'}">${dt.toLocaleDateString('en-CA',{day:'2-digit',month:'short'})}</text>`;
+  }
+  s+=`<line x1="${pad}" y1="${barY+barH+0.5}" x2="${W-pad}" y2="${barY+barH+0.5}" class="ax"/>`;
+  s+=`<text x="${x(24)}" y="${barY+barH+34}" class="lbl-a">2 full days — 2→3 Nov</text>`;
+  s+=`<text x="${x(0)}" y="${barY+barH+34}" class="lbl">↙ zero jet lag, this once</text>`;
+  svg.innerHTML=s;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+})();
+
+/* ============ FIG 2: GORGE ROAD WINDOWS ============ */
+(function(){
+  const svg=document.getElementById('road-chart');
+  const W=1400,H=220,padL=40,padR=40,padT=30,barY=90,barH=60;
+  const totalMin=24*60;
+  const x=m=>padL+(m/totalMin)*(W-padL-padR);
+  const toMin=(h,m)=>h*60+m;
+  const windows=[
+    {a:toMin(6,30),b:toMin(8,0)},
+    {a:toMin(10,0),b:toMin(10,5)},
+    {a:toMin(12,0),b:toMin(13,0)},
+    {a:toMin(15,0),b:toMin(15,5)},
+    {a:toMin(17,0),b:toMin(17,30)}
+  ];
+  let s=`<rect x="${padL}" y="${barY}" width="${W-padL-padR}" height="${barH}" fill="rgba(242,169,60,.10)" stroke="var(--rule)"/>`;
+  windows.forEach(w=>{
+    const x1=x(w.a), x2=x(w.b);
+    const wid=Math.max(x2-x1,3);
+    s+=`<rect x="${x1}" y="${barY}" width="${wid}" height="${barH}" fill="var(--amber)"/>`;
+    const hh=String(Math.floor(w.a/60)).padStart(2,'0'), mm=String(w.a%60).padStart(2,'0');
+    s+=`<text x="${x1}" y="${barY-10}" class="lbl-a" text-anchor="start">${hh}:${mm}</text>`;
+  });
+  for(let h=0;h<=24;h+=3){
+    const xx=x(h*60);
+    s+=`<line x1="${xx}" y1="${barY-4}" x2="${xx}" y2="${barY+barH+4}" class="axs"/>`;
+    s+=`<text x="${xx}" y="${barY+barH+22}" class="lbl" text-anchor="middle">${String(h).padStart(2,'0')}:00</text>`;
+  }
+  s+=`<line x1="${padL}" y1="${barY+barH+0.5}" x2="${W-padR}" y2="${barY+barH+0.5}" class="ax"/>`;
+  svg.innerHTML=s;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+})();
+</script>
+
+</body>
+</html>

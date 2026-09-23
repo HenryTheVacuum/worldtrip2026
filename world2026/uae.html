@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="darkreader-lock">
+<title>UAE</title>
+<link rel="stylesheet" href="fonts.css">
+</head>
+<body>
+<style>
+:root{color-scheme:dark;
+  --ink:#05161D;--ink-2:#0A2029;--ink-3:#0E2A35;
+  --rule:#194150;--rule-soft:rgba(25,65,80,.6);
+  --paper:#E2EEED;--paper-dim:#A6C2C6;--muted:#6C8F98;
+  --amber:#F2A93C;--magenta:#E7649B;--jade:#58C4A3;--red:#E05555;
+  --display:'Big Shoulders Display','Arial Narrow',Impact,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --body:'Inter',system-ui,sans-serif;
+  --gut:clamp(18px,4vw,64px);--maxw:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+.section{padding-block:clamp(34px,4.4vw,58px);border-top:1px solid var(--rule-soft);position:relative}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:14px;margin:0 0 18px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--rule)}
+.eyebrow .n{color:var(--amber)}
+h2.head{font-family:var(--display);font-weight:700;font-size:clamp(34px,5.6vw,66px);line-height:.92;margin:0 0 14px;text-transform:uppercase}
+.lede{max-width:66ch;color:var(--paper-dim);font-size:clamp(15px,1.5vw,17px);margin:0 0 26px}
+.lede b{color:var(--paper);font-weight:600}
+a{color:var(--amber);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+.hint{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+@media (min-width:980px){.hint.wide{display:none}}
+.scroller{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--rule) transparent}
+.scroller::-webkit-scrollbar{height:6px}
+.scroller::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}
+.scroller>svg{display:block;width:100%;height:auto}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(30px,5vw,58px) clamp(24px,4vw,40px);overflow:hidden}
+.gridbg{position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:linear-gradient(to right,var(--rule-soft) 1px,transparent 1px),linear-gradient(to bottom,var(--rule-soft) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%);-webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%)}
+.back{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:inline-block;margin-bottom:20px}
+.back:hover{color:var(--amber)}
+.strip{font-family:var(--mono);font-size:clamp(10px,1.15vw,12px);letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;border-block:1px solid var(--rule);padding-block:11px;margin-bottom:clamp(26px,4vw,44px)}
+.strip .k{color:var(--muted)}.strip .amb{color:var(--amber)}
+.title{font-family:var(--display);text-transform:uppercase;margin:0;line-height:.82;position:relative}
+.title .l1{display:block;font-weight:400;font-size:clamp(34px,7.4vw,96px);color:transparent;-webkit-text-stroke:1.2px var(--paper-dim)}
+.title .l2{display:block;font-weight:800;font-size:clamp(72px,17vw,232px);letter-spacing:-.015em;color:var(--paper)}
+.subline{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:baseline;margin-top:clamp(18px,3vw,30px);font-family:var(--mono);font-size:clamp(11px,1.25vw,13px);letter-spacing:.14em;text-transform:uppercase;color:var(--paper-dim)}
+.subline .sep{color:var(--rule)}
+
+/* instruments */
+.instr{display:grid;grid-template-columns:repeat(auto-fit,minmax(124px,1fr));border:1px solid var(--rule);background:var(--ink-2);margin:clamp(24px,3.4vw,38px) 0 0}
+.instr div{padding:15px 17px;border-right:1px solid var(--rule-soft)}
+.instr div:last-child{border-right:0}
+.instr dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.instr dd{margin:0;font-family:var(--display);font-weight:600;font-size:31px;line-height:1}
+.instr dd span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--paper-dim);margin-left:3px}
+.instr dd.hot{color:var(--amber)}
+.instr dd.warn{color:var(--magenta)}
+
+/* chart frames */
+.figcap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:9px;margin:0 0 8px}
+.figcap b{color:var(--amber);font-weight:500}
+.fignote{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.fignote i{display:inline-block;width:14px;height:9px;margin:0 5px 0 14px;vertical-align:middle;border-radius:1px}
+.fignote i:first-child{margin-left:0}
+.ax{stroke:var(--rule);stroke-width:1}
+.axs{stroke:var(--rule-soft);stroke-width:1}
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.08em;fill:var(--muted)}
+.lbl-p{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;fill:var(--paper)}
+.lbl-a{font-family:var(--mono);font-size:10px;letter-spacing:.12em;fill:var(--amber)}
+
+/* cards */
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin:0 0 6px}
+.card{border:1px solid var(--rule);background:var(--ink-2);padding:18px 20px;position:relative}
+.card.bad{border-color:var(--red)}
+.card.good{border-color:var(--jade)}
+.card h3{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 4px;color:var(--paper)}
+.card .verdict{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:11px}
+.card .verdict.bad{color:var(--red)}
+.card .verdict.ok{color:var(--jade)}
+.card p{margin:0 0 10px;font-size:13.5px;color:var(--paper-dim);line-height:1.62}
+.card p:last-child{margin-bottom:0}
+.card p b{color:var(--paper);font-weight:600}
+.fix{border-left:2px solid var(--amber);padding-left:12px;margin:12px 0 0;font-size:12.8px;color:var(--paper-dim);line-height:1.6}
+.fix b{display:block;color:var(--amber);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px;font-weight:500}
+.fix strong{color:var(--paper);font-weight:600}
+
+/* shape cards */
+.shapes{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+.shape{border:1px solid var(--rule);background:var(--ink-2);padding:0;display:flex;flex-direction:column}
+.shape.pick{border-color:var(--amber);box-shadow:inset 0 0 0 1px rgba(242,169,60,.25)}
+.shape-hd{padding:16px 20px 14px;border-bottom:1px solid var(--rule-soft)}
+.shape-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.shape.pick .shape-tag{color:var(--amber)}
+.shape-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(24px,3vw,32px);line-height:.95;margin:0}
+.chainrow{display:flex;flex-wrap:wrap;align-items:center;gap:5px 7px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--paper);padding:13px 20px;border-bottom:1px solid var(--rule-soft);background:rgba(5,22,29,.5)}
+.chainrow .a{color:var(--rule)}
+.chainrow .n{color:var(--amber);font-size:9.5px}
+.shape-body{padding:15px 20px 18px;flex:1}
+.shape-body p{margin:0 0 10px;font-size:13.3px;color:var(--paper-dim);line-height:1.6}
+.shape-body p:last-child{margin-bottom:0}
+.shape-body p b{color:var(--paper);font-weight:600}
+.shape-meta{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--rule-soft)}
+.shape-meta div{flex:1;min-width:88px;padding:11px 20px;border-right:1px solid var(--rule-soft)}
+.shape-meta div:last-child{border-right:0}
+.shape-meta dt{font-family:var(--mono);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.shape-meta dd{margin:0;font-family:var(--mono);font-size:13px;color:var(--paper)}
+.shape-meta dd.g{color:var(--jade)}
+.shape-meta dd.r{color:var(--red)}
+
+/* day accordion */
+.days{border-top:1px solid var(--rule)}
+.day{border-bottom:1px solid var(--rule)}
+.day-btn{all:unset;box-sizing:border-box;display:grid;width:100%;cursor:pointer;grid-template-columns:76px 1fr auto;gap:0 clamp(14px,2.4vw,30px);align-items:baseline;padding:clamp(13px,1.8vw,18px) 4px;transition:background .18s ease}
+.day-btn:hover{background:rgba(242,169,60,.05)}
+.day-btn:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.day-date{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.1em}
+.day-date small{display:block;color:var(--muted);font-size:9.5px;letter-spacing:.14em;margin-top:3px}
+.day-btn>span:nth-child(2){display:flex;flex-direction:column;gap:6px}
+.day-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(22px,3.2vw,34px);line-height:.95;margin:0}
+.day-sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.day-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--paper-dim);text-align:right;white-space:nowrap}
+.day-meta .chev{display:inline-block;margin-left:12px;color:var(--muted);transition:transform .25s ease}
+.day.open .day-meta .chev{transform:rotate(180deg)}
+@media (max-width:720px){.day-btn{grid-template-columns:64px 1fr;row-gap:8px}.day-meta{grid-column:2;text-align:left}}
+.day-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .34s cubic-bezier(.3,.8,.3,1)}
+.day.open .day-body{grid-template-rows:1fr}
+.day-inner{overflow:hidden}
+.day-pad{padding:2px 4px clamp(22px,3vw,32px)}
+.slots{display:grid;gap:0;border-left:1px solid var(--rule)}
+.slot{padding:0 0 16px 16px;position:relative}
+.slot:last-child{padding-bottom:2px}
+.slot::before{content:"";position:absolute;left:-4px;top:6px;width:7px;height:7px;background:var(--amber);border-radius:50%}
+.slot.move::before{background:var(--magenta)}
+.slot h4{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 5px;font-weight:500}
+.slot.move h4{color:var(--magenta)}
+.slot p{margin:0;font-size:14px;line-height:1.62;color:var(--paper-dim);max-width:72ch}
+.slot p b{color:var(--paper);font-weight:600}
+
+/* worth doing */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.fbtn{all:unset;cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border:1px solid var(--rule);color:var(--paper-dim);border-radius:2px;transition:.15s}
+.fbtn:hover{background:var(--ink-3);color:var(--paper)}
+.fbtn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.fbtn[aria-pressed="true"]{background:var(--amber);color:var(--ink);border-color:var(--amber);font-weight:600}
+.fdiv{width:1px;background:var(--rule);margin:2px 6px}
+.items{display:grid;gap:1px;background:var(--rule-soft);border:1px solid var(--rule)}
+.item{background:var(--ink-2);padding:13px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:baseline}
+.item .tier{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:3px 7px 2px;border-radius:2px;white-space:nowrap;align-self:start;margin-top:2px}
+.tier.do{background:rgba(88,196,163,.14);color:var(--jade);border:1px solid rgba(88,196,163,.35)}
+.tier.opt{background:rgba(242,169,60,.12);color:var(--amber);border:1px solid rgba(242,169,60,.3)}
+.tier.skip{background:rgba(224,85,85,.1);color:var(--red);border:1px solid rgba(224,85,85,.3)}
+.item .nm{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:20px;line-height:1.05;color:var(--paper)}
+.item .why{grid-column:2;font-size:13.3px;color:var(--paper-dim);line-height:1.55;max-width:74ch}
+.item .why b{color:var(--paper);font-weight:600}
+.item .when{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);text-align:right;white-space:nowrap;align-self:start;margin-top:4px}
+.item .when.book{color:var(--magenta)}
+@media (max-width:640px){.item{grid-template-columns:auto 1fr}.item .when{grid-column:2;text-align:left;margin-top:2px}.item .why{grid-column:1/-1}}
+.empty{background:var(--ink-2);padding:22px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* rail calc */
+.calc{border:1px solid var(--rule);background:var(--ink-2)}
+.calc-legs{display:grid}
+.leg-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--rule-soft);cursor:pointer}
+.leg-row:hover{background:rgba(242,169,60,.04)}
+.leg-row input{accent-color:var(--amber);width:15px;height:15px;cursor:pointer}
+.leg-row .lname{font-family:var(--mono);font-size:12.5px;color:var(--paper-dim)}
+.leg-row input:checked+.lname{color:var(--paper)}
+.leg-row .lyen{font-family:var(--mono);font-size:12.5px;color:var(--amber);font-variant-numeric:tabular-nums;white-space:nowrap}
+.leg-row .lnote{grid-column:2/-1;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--muted);margin-top:-4px}
+.calc-out{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule-soft)}
+.calc-out div{background:var(--ink-3);padding:15px 17px}
+.calc-out dt{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.calc-out dd{margin:0;font-family:var(--display);font-weight:700;font-size:27px;line-height:1;font-variant-numeric:tabular-nums}
+.calc-out dd small{font-family:var(--mono);font-size:10px;font-weight:400;color:var(--paper-dim);margin-left:4px;letter-spacing:.06em}
+#verdict{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;line-height:1.5}
+#verdict.win{color:var(--jade)}
+#verdict.lose{color:var(--red)}
+
+/* panels / tables */
+.panel{border:1px solid var(--rule);background:var(--ink-2);padding:clamp(17px,2.4vw,24px);margin-top:22px}
+.panel h3{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 12px;font-weight:500}
+.panel p{margin:0 0 12px;font-size:13.6px;color:var(--paper-dim);line-height:1.62}
+.panel p:last-child{margin-bottom:0}
+.panel p b{color:var(--paper);font-weight:600}
+table.ref{width:100%;border-collapse:collapse;font-size:13.4px}
+table.ref th{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:500;padding:0 14px 10px 0;border-bottom:1px solid var(--rule)}
+table.ref td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule-soft);color:var(--paper-dim);vertical-align:top}
+table.ref td:first-child{font-family:var(--display);font-size:17px;font-weight:600;text-transform:uppercase;color:var(--paper);white-space:nowrap;width:1%}
+table.ref td.t{font-family:var(--mono);font-size:11px;letter-spacing:.06em;white-space:nowrap;color:var(--amber)}
+table.ref tr.flag td.t{color:var(--magenta)}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.cols{display:grid;gap:16px 34px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:20px}
+.cols p{margin:0;font-size:13.6px;color:var(--paper-dim);line-height:1.6}
+.cols p b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:5px;font-weight:500}
+
+footer{border-top:1px solid var(--rule);padding-block:26px 40px;color:var(--muted)}
+.foot-grid{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:flex-end}
+.foot-grid p{margin:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase}
+.foot-mark{font-family:var(--display);font-size:clamp(40px,9vw,110px);font-weight:800;text-transform:uppercase;line-height:.8;color:transparent;-webkit-text-stroke:1px var(--rule);margin:30px 0 0}
+</style>
+
+<header class="hero">
+  <div class="gridbg"></div>
+  <div class="wrap">
+    <a class="back" href="index.html">← Westbound · the dossier</a>
+    <p class="strip">
+      <span><span class="k">Stop</span> <span class="amb">19 of 27</span></span>
+      <span><span class="k">In</span> BOM · Mumbai</span>
+      <span><span class="k">Fly UAE</span> <span class="amb">DXB</span></span>
+      <span><span class="k">Out</span> MCT · Muscat</span>
+      <span><span class="k">Window</span> 3–7 Jan 2027</span>
+      <span><span class="k">Clock</span> UTC+4</span>
+    </p>
+    <h1 class="title">
+      <span class="l1">Nineteenth stop</span>
+      <span class="l2">UAE</span>
+    </h1>
+    <p class="subline">
+      <span>Dubai confirmed</span><span class="sep">/</span>
+      <span>Abu Dhabi: one night or one long day</span><span class="sep">/</span>
+      <span class="amb">New Year: see flag 01</span>
+    </p>
+
+    <dl class="instr">
+      <div><dt>Calendar days</dt><dd>5</dd></div>
+      <div><dt>Full days</dt><dd class="hot">3</dd></div>
+      <div><dt>Nights</dt><dd>4</dd></div>
+      <div><dt>Bases</dt><dd id="bases">2</dd></div>
+      <div><dt>Dubai→AUH rail</dt><dd>57<span>min</span></dd></div>
+      <div><dt>NYE overlap</dt><dd class="warn">0<span>%</span></dd></div>
+    </dl>
+  </div>
+</header>
+
+<section class="section" id="audit">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">01</span> The time audit</p>
+    <h2 class="head">Five days<br>is three days</h2>
+    <p class="lede">Mumbai to Dubai is about <b>3h25 in the air</b> and you gain ninety minutes crossing from UTC+5:30 to UTC+4 — one of the few legs on this trip where the clock works for you. Twelve nonstops a day on five carriers means you can land whenever you like. Even so: arrival day is half a day, departure day is a morning, and what's left is <b>three full days</b> to cover two cities that are ninety minutes apart.</p>
+
+    <div class="figcap">
+      <span>Fig. 1 — What the window really contains</span>
+      <span><b>3–7 Jan 2027</b> · hour by hour</span>
+    </div>
+    <div class="scroller">
+      <svg id="audit-chart" viewBox="0 0 1400 190" role="img" aria-label="Timeline of 3 to 7 January 2027 showing the morning of the 3rd consumed by the flight from Mumbai, three usable full days on the 4th, 5th and 6th, and part-days at either end."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--magenta);opacity:.55"></i>In transit<i style="background:rgba(242,169,60,.35)"></i>Part day<i style="background:var(--amber)"></i>Full day</p>
+
+    <div class="cols">
+      <p><b>No jet lag to spend</b>Unlike Tokyo, this one gives you nothing. An hour and a half is a late lunch, not a reset. You arrive on Mumbai time, which is close enough to Gulf time that you will sleep normally and wake normally — so the dawn trick that carried the Asian legs does not apply here. Build the days around <b>heat and light</b> instead: outdoors early and after dark, indoors and air-conditioned from about eleven to four.</p>
+      <p><b>January is the reason this stop works</b>Highs around <b>24°C</b>, lows near 14°C, a 6% chance of rain on any given day, and humidity that is only oppressive about 2% of the month. Sunrise about 07:05, sunset about 17:45 — short days, so the outdoor hours are genuinely limited. This is the one season the Gulf is walkable, which is exactly why it is also the most expensive.</p>
+      <p><b>DXB is the good airport</b>You land and leave from Dubai International, not Al Maktoum out in the desert. Metro Red Line runs to both DXB terminals 1 and 3 and puts you in Downtown or Deira in about 20–30 minutes for a few dirhams. If a schedule change tries to move the Muscat leg to DWC, push back — it is an hour further from everything.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="flags">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">02</span> Two things that don't move</p>
+    <h2 class="head">Read these<br>before booking</h2>
+    <p class="lede">One of these breaks a line in the trip plan outright. The other is a brand-new piece of infrastructure that will probably be excellent and cannot yet be booked with confidence.</p>
+
+    <div class="cards">
+      <div class="card bad">
+        <h3>Flag 01 — You miss New Year's Eve by three days</h3>
+        <div class="verdict bad">The plan says something impossible</div>
+        <p>The trip note for this stop reads <b>"see: New Year's fireworks off the Burj."</b> You land on <b>3 January</b>. The Burj Khalifa show is a single night — 31 December — and on that night you are in Mumbai, where the plan deliberately put you for New Year. Both things cannot be true.</p>
+        <p>This is not a scheduling near-miss that a different flight fixes. It is a <b>three-day gap</b> and the only lever is the India/UAE boundary itself: India currently runs 29 Dec–3 Jan with Ajanta and Ellora in it, which is a long overland haul from Mumbai that needs its days.</p>
+        <div class="fix"><b>What to do</b><strong>Recommended: let it go and correct the note.</strong> New Year in Mumbai — Marine Drive, the Gateway, the city's own noise — is the better version of that night anyway, and Dubai on 31 December means peak-of-peak room rates, closed roads around Downtown, and crowd control that starts in the afternoon. What you still get on 3–7 January: the <b>Dubai Shopping Festival</b>, which runs <b>13 Dec 2026 – 19 Jan 2027</b> and is squarely inside your window; the Dubai Fountain every 30 minutes from 18:00; and post-New-Year hotel rates, which fall hard from about 2 January.<br><br><strong>If the fireworks genuinely matter</strong>, the swap is to move Dubai earlier and India later — but that costs you New Year in Mumbai <em>and</em> squeezes the Ajanta/Ellora overland days, which are the tightest part of the India stop. It is a bad trade for fifteen minutes of pyrotechnics you can watch on a screen.</div>
+      </div>
+
+      <div class="card">
+        <h3>Flag 02 — Etihad Rail is three months old and both stations are suburban</h3>
+        <div class="verdict">Plan the bus, hope for the train</div>
+        <p>The UAE now has intercity passenger rail. Service opened <b>30 June 2026</b> between Abu Dhabi and Fujairah; the <b>Dubai Al Yalayis station opened 30 September 2026</b>, connected to Jumeirah Golf Estates metro station on the Red Line by a 400-metre footbridge. Dubai to Abu Dhabi is quoted at <b>57 minutes</b>.</p>
+        <p>Two catches. First, as of September 2026 <b>fares and frequency for the Dubai–Abu Dhabi leg had not been published</b> — only the founding Abu Dhabi–Fujairah fares, from AED 55 Comfort and AED 120 Premium. Second, both ends are on the outskirts: Al Yalayis is out by Dubai South, and the Abu Dhabi end is <b>Mohamed bin Zayed City</b>, not the Corniche. That 57 minutes is station to station, with metro and taxi legs at both ends.</p>
+        <div class="fix"><b>The fallback that already works</b>Bus <strong>E101</strong>, Ibn Battuta metro station to Abu Dhabi Central, <strong>AED 25</strong>, about two hours, every 30 minutes. E100 runs the same fare from Al Ghubaiba in old Dubai. <strong>Nol card only — these buses do not take cash.</strong> Buy and load a Nol the hour you arrive.<br><br>Check the Etihad Rail site when you book accommodation. If Dubai–Abu Dhabi fares are published and the timetable suits, take the train; if not, the bus is proven and the whole plan below works either way.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="shapes">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">03</span> The open question</p>
+    <h2 class="head">Abu Dhabi:<br>night or day trip</h2>
+    <p class="lede">Four nights, two cities, one airport. Abu Dhabi used to be a comfortable day trip — mosque, palace, Louvre, home. That stopped being true in December 2026, when the <b>Guggenheim opened on Saadiyat Island</b> and gave the island four major museums inside a ten-minute walk. Both shapes below fit 3–7 January.</p>
+
+    <div class="shapes">
+      <div class="shape pick">
+        <div class="shape-hd">
+          <div class="shape-tag">Recommended</div>
+          <p class="shape-name">One night in Abu Dhabi</p>
+        </div>
+        <div class="chainrow">
+          <span>Dubai <span class="n">×2</span></span><span class="a">→</span>
+          <span>Abu Dhabi <span class="n">×1</span></span><span class="a">→</span>
+          <span>Dubai <span class="n">×1</span></span><span class="a">→</span>
+          <span class="n">DXB</span>
+        </div>
+        <div class="shape-body">
+          <p>You get the two things a day trip cannot buy: the <b>Grand Mosque after dark</b>, when the white marble goes blue-grey under the floodlights and the coach parties have gone, and a whole unhurried morning on Saadiyat for the Guggenheim and the Zayed National Museum.</p>
+          <p>Coming back to Dubai for the last night is not sentiment — it is <b>insurance</b>. Your onward flight leaves DXB, and you do not want a two-hour intercity transfer standing between you and the gate on departure morning.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Bases</dt><dd>2</dd></div>
+          <div><dt>Moves</dt><dd>2</dd></div>
+          <div><dt>AUH hours</dt><dd class="g">≈28</dd></div>
+          <div><dt>Hotel swaps</dt><dd class="r">2</dd></div>
+        </dl>
+      </div>
+
+      <div class="shape">
+        <div class="shape-hd">
+          <div class="shape-tag">If you hate moving hotels</div>
+          <p class="shape-name">Dubai base, one long day out</p>
+        </div>
+        <div class="chainrow">
+          <span>Dubai <span class="n">×4</span></span><span class="a">→</span>
+          <span>AUH day trip</span><span class="a">→</span>
+          <span class="n">DXB</span>
+        </div>
+        <div class="shape-body">
+          <p>One room for four nights, bags never packed, and a 06:30–23:00 day trip on the Tuesday. It genuinely works: mosque at opening, Qasr Al Watan midday, Saadiyat all afternoon, last bus or train back.</p>
+          <p><b>What you lose:</b> the mosque at night, and the ability to slow down. Fourteen hours out and back with a two-hour tail at each end is the single most tiring day of this stop, and it lands in the middle of a five-month trip. <b>Pick this only if unpacking twice is genuinely worse to you than a long day.</b></p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Bases</dt><dd class="g">1</dd></div>
+          <div><dt>Moves</dt><dd class="g">0</dd></div>
+          <div><dt>AUH hours</dt><dd class="r">≈12</dd></div>
+          <div><dt>Hotel swaps</dt><dd class="g">0</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Where to sleep in Dubai, given three full days</h3>
+      <p><b>Deira or Bur Dubai</b> if you want the city that existed before 1990 — the creek, the souks, the abras, cheap excellent food, and metro at the door. Rooms here are a fraction of Downtown prices and the tourism dirham is lower because the hotels are lower-rated. This is the pick.</p>
+      <p><b>Downtown / Business Bay</b> if the Burj and the fountain are the point and you want to walk to them at night. Convenient, expensive, and surrounded by mall rather than city.</p>
+      <p><b>Dubai Marina / JBR</b> is the beach option and the furthest from everything old. On a four-night stop it costs you metro time you do not have. Skip.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="run">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">04</span> Day by day</p>
+    <h2 class="head">Both versions,<br>laid out</h2>
+    <p class="lede">The governing rhythm is heat and light, not jet lag: outdoors before eleven and after four, indoors in between, and the good stuff happens after dark. Sunset is about <b>17:45</b>, which is earlier than it feels — plan the outdoor thing first.</p>
+    <div class="filters" id="dayToggle" style="margin-bottom:6px">
+      <button class="fbtn" data-plan="overnight" aria-pressed="true">One night in Abu Dhabi</button>
+      <button class="fbtn" data-plan="daytrip" aria-pressed="false">Dubai base, day trip</button>
+    </div>
+    <div class="days" id="days"></div>
+    <p class="fignote" style="margin-top:16px">Amber = on foot or local · <span style="color:var(--magenta)">Magenta = an intercity move or a flight</span></p>
+  </div>
+</section>
+
+<section class="section" id="worth">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">05</span> What's actually worth doing</p>
+    <h2 class="head">Do, maybe,<br>don't bother</h2>
+    <p class="lede">The UAE is unusually good at selling you experiences that are expensive, indoor, and identical to something you could do in any large city. The <b>do</b> list below is weighted hard towards the things that are only here: the creek, the desert, the mosque, and an island that has quietly become one of the densest museum districts on earth.</p>
+
+    <div class="filters" id="filters">
+      <button class="fbtn" data-city="all" aria-pressed="true">All</button>
+      <button class="fbtn" data-city="Dubai" aria-pressed="false">Dubai</button>
+      <button class="fbtn" data-city="Desert" aria-pressed="false">The desert</button>
+      <button class="fbtn" data-city="Abu Dhabi" aria-pressed="false">Abu Dhabi</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-tier="do" aria-pressed="false">Do</button>
+      <button class="fbtn" data-tier="opt" aria-pressed="false">Maybe</button>
+      <button class="fbtn" data-tier="skip" aria-pressed="false">Don't bother</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-book="1" aria-pressed="false">Needs booking</button>
+    </div>
+    <div class="items" id="items"></div>
+  </div>
+</section>
+
+<section class="section" id="saadiyat">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">06</span> The luckiest timing on the trip</p>
+    <h2 class="head">Saadiyat,<br>three weeks in</h2>
+    <p class="lede">Abu Dhabi has been building a museum district on Saadiyat Island for twenty years, and almost all of it has landed in the last eighteen months. <b>Guggenheim Abu Dhabi opens on 11 December 2026</b> — Frank Gehry's building, the largest in the Guggenheim network, 30 galleries and 11,600 m² of interior space, focused on art from the 1960s onward from West Asia, North Africa and South Asia. You arrive <b>three weeks and two days later</b>.</p>
+
+    <div class="figcap">
+      <span>Fig. 2 — When Saadiyat's museums opened</span>
+      <span><b>2017 → 2027</b> · your window marked</span>
+    </div>
+    <div class="scroller">
+      <svg id="saadiyat-chart" viewBox="0 0 1400 300" role="img" aria-label="Timeline showing Louvre Abu Dhabi opening in November 2017, teamLab Phenomena in April 2025, Zayed National Museum in December 2025 and Guggenheim Abu Dhabi in December 2026, with the January 2027 travel window falling three weeks after the Guggenheim opening."></svg>
+    </div>
+    <p class="fignote"><i style="background:rgba(242,169,60,.6)"></i>Open<i style="background:rgba(231,100,155,.22);border:1px solid var(--magenta)"></i>Your window · 3–7 Jan 2027</p>
+
+    <div class="panel">
+      <h3>What this actually means for the day</h3>
+      <p>Four serious institutions inside a short walk of each other, and three of them did not exist when most guidebooks on your shelf were written. <b>Louvre Abu Dhabi</b> (AED 70, under-18s free) is still the one to see if you only see one — Jean Nouvel's perforated dome throws a "rain of light" that is worth the ticket on its own, and the galleries stay open to 20:30 Friday to Sunday. <b>Zayed National Museum</b> opened in December 2025. <b>teamLab Phenomena</b> is the digital-art barn, and duplicates a lot of what you will already have seen at teamLab in Tokyo on stop 01 — which is exactly why it is a "maybe" and not a "do".</p>
+      <p><b>The three-week-old caveat.</b> A museum that new will have queues, unfinished wayfinding, timed-entry teething and possibly a gallery or two still dark. Book the Guggenheim the day tickets open rather than the week you fly, and treat the published opening hours as provisional until you are standing there.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="money">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">07</span> The bill</p>
+    <h2 class="head">The room rate<br>is not the room rate</h2>
+    <p class="lede">There is no income tax here and there is no departure tax, but hotels carry a stack of charges that are quoted separately and land at checkout. In Dubai the stack adds roughly <b>25–30%</b> to a headline rate; in Abu Dhabi, roughly <b>18–20%</b>. Over four nights in the first week of January — peak season — that difference is real money. Put your actual quoted rate in below.</p>
+
+    <div class="calc">
+      <div class="calc-legs" id="legs"></div>
+      <dl class="calc-out">
+        <div><dt>Base, 4 nights</dt><dd id="base"></dd></div>
+        <div><dt>Added charges</dt><dd id="addons"></dd></div>
+        <div><dt>Actual total</dt><dd id="total"></dd></div>
+        <div><dt>Uplift</dt><dd><span id="verdict"></span></dd></div>
+      </dl>
+    </div>
+    <p class="fignote">Dubai: 10% municipality fee + 10% service charge + 5% VAT + Tourism Dirham AED 7–20 per room per night by star rating · Abu Dhabi: 4% tourism fee + 4% municipality fee + 10% service charge + 5% VAT, and the old AED 15 per-night charge was abolished in September 2023 · CAD at roughly AED 2.7 to the dollar, which moves</p>
+
+    <div class="figcap" style="margin-top:34px">
+      <span>Fig. 3 — What AED 600 a night actually costs</span>
+      <span><b>Per room, per night</b> · same base rate</span>
+    </div>
+    <div class="scroller">
+      <svg id="bill-chart" viewBox="0 0 1400 320" role="img" aria-label="Stacked bar chart comparing a 600 dirham base room rate in a Dubai five-star, a Dubai four-star and an Abu Dhabi hotel, showing added municipality and tourism fees, service charge, VAT and tourism dirham."></svg>
+    </div>
+    <p class="fignote"><i style="background:rgba(242,169,60,.28)"></i>Base rate<i style="background:var(--jade)"></i>Municipality / tourism fee<i style="background:var(--amber)"></i>Service charge<i style="background:var(--magenta)"></i>VAT<i style="background:var(--paper-dim)"></i>Tourism Dirham</p>
+
+    <div class="cols">
+      <p><b>The service charge is not a tip</b>It goes to the property, not the staff, and it is mandatory. Tipping on top is customary but genuinely optional — 10% in a restaurant that has not already added a service charge, a few dirhams for a porter.</p>
+      <p><b>VAT refunds are real and worth it</b>5% VAT on retail purchases is refundable to tourists at the airport through the Planet system, on minimum spends, with the goods unused and the tag validated before you check the bag. If you buy anything substantial during the Shopping Festival, allow an extra 30 minutes at DXB.</p>
+      <p><b>Cash is barely needed</b>Cards work almost everywhere. The exceptions are the abra (AED 1, cash only), some old-souk stalls, and small change for the mosque abaya deposit. AED 200–300 covers the whole stop.</p>
+      <p><b>Alcohol</b>Legal for non-Muslim tourists in licensed hotels, bars and restaurants, and Dubai dropped its 30% municipality tax on alcohol sales. It is expensive regardless. Drinking in public or being drunk in public remains a criminal offence — this is the rule people actually get caught by.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="admin">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">08</span> Ground rules</p>
+    <h2 class="head">Before you land</h2>
+
+    <div class="tablewrap">
+    <table class="ref">
+      <thead><tr><th>Item</th><th>What to do</th><th>When</th></tr></thead>
+      <tbody>
+        <tr><td>Entry</td><td>Canadians get a <b>free visa on arrival, 90 days within any 180-day period</b>, counted from first entry whether or not you stay continuously. Nothing to apply for in advance.</td><td class="t">Nothing to do</td></tr>
+        <tr><td>Passport</td><td>Must be valid <b>six months beyond entry</b>. Canadian emergency/temporary passports are accepted for exit and transit only — you cannot enter on one. Leave on the same passport you entered on.</td><td class="t">Check now</td></tr>
+        <tr class="flag"><td>Medication</td><td><b>The one that catches Canadians.</b> Codeine, many psychiatric medications, and a long list of ordinary prescriptions are controlled substances here. Bringing them without prior Ministry of Health approval risks confiscation, heavy fines or jail. Get written approval before you fly, and carry prescriptions in original labelled packaging.</td><td class="t">Weeks ahead</td></tr>
+        <tr><td>Nol card</td><td>AED 25 with AED 19 of credit. Metro, trams, city buses <b>and the intercity E100/E101 to Abu Dhabi, which take no cash</b>. Buy one in the DXB arrivals hall.</td><td class="t">On arrival</td></tr>
+        <tr class="flag"><td>Hotel charges</td><td>Dubai adds ~25–30% to a quoted rate, Abu Dhabi ~18–20%. Check whether your booking quotes inclusive or exclusive — the two look very different at checkout. See the calculator above.</td><td class="t">At booking</td></tr>
+        <tr class="flag"><td>Museum of the Future</td><td>AED 159, timed entry, and it <b>routinely sells out days ahead</b> in high season. This is the single most bookable-ahead thing in Dubai.</td><td class="t">Weeks ahead</td></tr>
+        <tr class="flag"><td>Burj Khalifa</td><td>At the Top (124/125) AED 173 non-prime, AED 250 prime (16:00–19:00). SKY (148) AED 400 / 554. In peak season book prime slots <b>48–72 hours ahead minimum</b>; online is cheaper than the gate.</td><td class="t">Days ahead</td></tr>
+        <tr><td>Guggenheim Abu Dhabi</td><td>Opened 11 December 2026 — three weeks before you arrive. Ticketing details were not published as of September 2026. Book the day sales open.</td><td class="t">Watch for tickets</td></tr>
+        <tr><td>Grand Mosque</td><td>Free. Pre-register online up to a month ahead to skip the peak-hour queue. <b>Dress code is enforced:</b> ankles and wrists covered for everyone, headscarf for women; abayas from about AED 40 on site. Free cultural tours Sun–Thu 11:00, 13:00, 17:00 and Fri 11:00, 17:00.</td><td class="t">Register ahead</td></tr>
+        <tr><td>Dubai Shopping Festival</td><td>Runs 13 Dec 2026 – 19 Jan 2027, so your whole window is inside it. Expect discounts, fireworks at various malls, raffles, and busier malls than usual.</td><td class="t">Automatic</td></tr>
+        <tr><td>Ramadan</td><td>Expected to begin around <b>8 February 2027</b> — a month after you leave. Your window is completely clear of it.</td><td class="t">Clear</td></tr>
+        <tr><td>Behaviour</td><td>Zero tolerance on drugs, including residue and trace amounts. Public intoxication, public displays of affection and rude gestures are prosecutable. LGBTQ+ conduct is criminalised. Do not photograph people, military sites, airports or government buildings without permission.</td><td class="t">Throughout</td></tr>
+        <tr><td>Friday</td><td>The UAE works Mon–Fri with a half-day Friday; prayers around midday shift opening hours at mosques and some sites. You have no Friday in this window — 3–7 Jan is Sunday to Thursday.</td><td class="t">Not an issue</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="cols">
+      <p><b>Weather</b>Highs around 24°C, lows near 14°C, sea about 22°C, and rain on roughly 6% of days. Mornings can be foggy in January — genuinely thick, occasionally enough to delay flights. Bring one warm layer for the desert at night, where it drops fast after sunset.</p>
+      <p><b>Getting around Dubai</b>Metro Red and Green lines cover most of what you want and cost AED 3–7.50 a journey. Taxis are metered, cheap by Canadian standards, flag-fall about AED 12 and roughly AED 2.50/km. Careem and Uber both work. Old Dubai is genuinely walkable; new Dubai is not.</p>
+      <p><b>The desert</b>Book an evening safari from a reserve operator rather than the cheapest dune-bashing package — from about AED 150 per person for the shared version. The difference between a convoy of forty 4x4s and a quiet camp on a conservation reserve is the difference between a theme park and the reason you came.</p>
+      <p><b>Onward</b>DXB to Muscat is 1h10, about 35 flights a week across Emirates, flydubai and Oman Air, departures spread from 02:15 to 22:45. This is the easiest connection on the entire westbound leg — verify the exact operated dates rather than trusting a schedule site's day labels.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <p>Westbound · stop 19 · UAE</p>
+      <p>3–7 Jan 2027 · DXB in, MCT out</p>
+      <p>Fares, taxes and schedules verified Sept 2026 — recheck before booking</p>
+    </div>
+    <p class="foot-mark">Creek → Saadiyat</p>
+  </div>
+</footer>
+
+<script>
+/* ============ DAY-BY-DAY ============ */
+const DAYS_OVERNIGHT=[
+{d:'Sun 3',w:'Arrive',name:'Old Dubai',sub:'Land early afternoon',meta:'Night 1 · Dubai',
+ slots:[
+  {m:1,h:'~13:00 · DXB',p:'Mumbai to Dubai is about 3h25 and you gain 90 minutes. Visa on arrival is free and automatic for Canadians. Buy a <b>Nol card</b> in arrivals — AED 25 with AED 19 of credit — then Red Line into town.'},
+  {h:'16:00 · Al Fahidi',p:'The oldest surviving quarter of the city: coral-and-gypsum houses, wind towers, narrow lanes, and almost no cars. Free to walk. The Sheikh Mohammed Centre for Cultural Understanding runs sessions here if you want the long-form explanation of why the country works the way it does.'},
+  {h:'17:15 · Abra across the Creek',p:'A wooden boat, a diesel engine, and <b>AED 1 in cash</b>. Twenty passengers on benches, five minutes, and the best value of the entire 27-country trip. Do it at dusk with the dhows unloading on the Deira side.'},
+  {h:'18:00 · Deira souks',p:'Gold Souk and Spice Souk, back to back, at the hour when the lights come on and the heat has gone. Haggle or do not; the point is the street. Eat here — Deira does Iranian, Afghan, Keralan and Pakistani food better and cheaper than anywhere in the new city.'}
+]},
+{d:'Mon 4',w:'Full',name:'New Dubai',sub:'Towers, glass, air conditioning',meta:'Night 2 · Dubai',
+ slots:[
+  {h:'09:00 · Museum of the Future',p:'AED 159, timed entry, and the thing most worth booking ahead in this city — it sells out days in advance in January. The building itself, a steel torus covered in Arabic calligraphy, is the exhibit; the interior is uneven but the first two floors earn it.'},
+  {h:'12:00 · Alserkal Avenue',p:'Converted marble-cutting warehouses in Al Quoz, now the actual contemporary art district — galleries, an independent cinema, decent coffee. Free, indoors, and the antidote to a day of observation decks. Most galleries close Sunday.'},
+  {h:'16:00 · Burj Khalifa',p:'Book <b>At the Top (124/125)</b> ahead: AED 173 off-peak, AED 250 for the 16:00–19:00 prime window. Prime is the one worth paying for — you go up in daylight and come down in the dark. The SKY deck at 148 is AED 400+ and is not twice the view.'},
+  {h:'18:00 · Dubai Fountain',p:'Free, every 30 minutes from 18:00 to 23:00, and better from the bridge on the far side of the lake than from the mall terrace. It was rebuilt and reopened on 1 October 2025 with new LEDs and choreography.'}
+]},
+{d:'Tue 5',w:'Move',name:'Abu Dhabi',sub:'Dubai → the capital',meta:'Night 3 · Abu Dhabi',
+ slots:[
+  {m:1,h:'08:30 · Dubai → Abu Dhabi',p:'Either <b>Etihad Rail</b> from Al Yalayis (57 minutes, Red Line to Jumeirah Golf Estates then the footbridge) if Dubai–Abu Dhabi fares have been published by then, or bus <b>E101</b> from Ibn Battuta — AED 25, about two hours, every 30 minutes, <b>Nol card only</b>. Travel with the day bag; leave the big one in Dubai if your hotel will hold it.'},
+  {h:'11:30 · Qasr Al Watan',p:'The working presidential palace, open to visitors 09:30–21:30. AED 65. Not a historic building — it opened in 2019 — but a genuinely extraordinary piece of contemporary Islamic architecture, and the Great Hall dome is worth the ticket alone.'},
+  {h:'15:00 · Louvre Abu Dhabi',p:'AED 70, under-18s free, on Saadiyat. Nouvel’s 180-metre perforated dome drops a "rain of light" onto the plaza below, and the galleries are arranged chronologically across civilisations rather than by nation, which is the whole argument of the place. Galleries to 20:30 Fri–Sun, 18:30 Mon–Thu; the dome stays open to 23:00.'},
+  {h:'19:30 · Sheikh Zayed Grand Mosque',p:'<b>The reason you stayed the night.</b> Free, floodlit, and a completely different building after dark — the lighting scheme tracks the phase of the moon. Pre-register online. Ankles and wrists covered, headscarf for women; abayas from about AED 40 at the entrance.'}
+]},
+{d:'Wed 6',w:'Move',name:'Saadiyat',sub:'The new museums, then back',meta:'Night 4 · Dubai',
+ slots:[
+  {h:'09:00 · Guggenheim Abu Dhabi',p:'Opened <b>11 December 2026</b> — three weeks and change before you walk in. Gehry’s building, the largest in the Guggenheim network: 30 galleries, 11,600 m² inside and 23,000 m² of outdoor space, focused on art from the 1960s onward from West Asia, North Africa and South Asia. Book the moment tickets appear.'},
+  {h:'12:00 · Zayed National Museum',p:'Opened December 2025, five minutes’ walk. The national-story museum — Sheikh Zayed, the federation, the falconry and pearling history that everything else here is built on. Do it after the Guggenheim, not before; it makes more sense in that order.'},
+  {m:1,h:'15:30 · Back to Dubai',p:'Same route in reverse. Get back over to Dubai tonight rather than tomorrow — your flight leaves DXB and you do not want a two-hour intercity transfer between you and the gate.'},
+  {h:'19:00 · Desert, or the Marina',p:'Option A: an <b>evening desert safari</b>, from about AED 150 shared — go with a conservation-reserve operator, not the cheapest dune-bashing convoy. Option B: if you would rather not move again, the Marina walk and JBR beach at night, which is the version of Dubai the brochures sell, seen honestly.'}
+]},
+{d:'Thu 7',w:'Depart',name:'To Muscat',sub:'A morning, then out',meta:'Fly out',
+ slots:[
+  {h:'08:00 · One last thing',p:'Either a second run at the creek — Bur Dubai side, textile souk, a karak chai — or the Dubai Frame (AED 50) for the one view that deliberately puts old Dubai on one side of the glass and new Dubai on the other. An hour each.'},
+  {m:1,h:'11:00 · DXB',p:'Red Line to Terminal 1 or 3. If you bought anything substantial during the Shopping Festival, allow an extra 30 minutes for the Planet VAT refund desk before you check the bag.'},
+  {m:1,h:'· Muscat',p:'Stop 20. DXB→MCT non-stop, about 1h10, roughly 35 flights a week on Emirates, flydubai and Oman Air. Verify the operated dates for 7 January rather than trusting a schedule site’s day labels.'}
+]}
+];
+
+const DAYS_DAYTRIP=[
+{d:'Sun 3',w:'Arrive',name:'Old Dubai',sub:'Land early afternoon',meta:'Night 1 · Dubai',
+ slots:[
+  {m:1,h:'~13:00 · DXB',p:'Visa on arrival, free, 90 days. Buy a <b>Nol card</b> in arrivals — you will need it for the E101 on Tuesday, which takes no cash. Red Line into town.'},
+  {h:'16:00 · Al Fahidi & the abra',p:'Coral-and-gypsum houses and wind towers, then a wooden abra across the Creek for AED 1 in cash at dusk. Still the best value on the whole trip.'},
+  {h:'18:00 · Deira souks',p:'Gold and spice, back to back, once the heat has gone. Eat here — Deira does Iranian, Afghan and Keralan food better and cheaper than the new city does anything.'}
+]},
+{d:'Mon 4',w:'Full',name:'New Dubai',sub:'Towers, glass, air conditioning',meta:'Night 2 · Dubai',
+ slots:[
+  {h:'09:00 · Museum of the Future',p:'AED 159, timed entry, sells out days ahead in January. Book it before you book anything else in this city.'},
+  {h:'12:00 · Alserkal Avenue',p:'The actual art district, in converted warehouses in Al Quoz. Free and indoors. Most galleries close Sunday.'},
+  {h:'16:00 · Burj Khalifa',p:'Prime slot 16:00–19:00 at AED 250 is the one worth paying for — up in daylight, down in the dark. Off-peak is AED 173. Book 48–72 hours out minimum.'},
+  {h:'18:00 · Dubai Fountain',p:'Free, every 30 minutes to 23:00. Better from the bridge across the lake than from the mall terrace.'}
+]},
+{d:'Tue 5',w:'Move',name:'Abu Dhabi',sub:'The long day out',meta:'Night 3 · Dubai',
+ slots:[
+  {m:1,h:'06:30 · Out',p:'<b>Start early or this does not work.</b> Etihad Rail from Al Yalayis (57 min) if Dubai–Abu Dhabi fares are published by then, otherwise E101 from Ibn Battuta — AED 25, two hours, Nol card only. Either way you are moving before seven.'},
+  {h:'09:00 · Sheikh Zayed Grand Mosque',p:'At opening, before the coaches. Free, but pre-register online. Ankles and wrists covered, headscarf for women; abayas from about AED 40 on site. You are seeing it in hard daylight rather than floodlit, which is the main thing this shape costs you.'},
+  {h:'11:30 · Qasr Al Watan',p:'AED 65, open 09:30–21:30. The presidential palace, opened 2019 — contemporary rather than historic, and the Great Hall dome justifies the ticket on its own.'},
+  {h:'14:00 · Saadiyat, all of it',p:'<b>Guggenheim Abu Dhabi</b> (opened 11 Dec 2026, Gehry, 30 galleries) then <b>Louvre Abu Dhabi</b> (AED 70, dome open to 23:00). <b>Zayed National Museum</b> only if you are moving fast. Three world-class museums in an afternoon is too many and you will feel it — pick two and do them properly.'},
+  {m:1,h:'20:30 · Back to Dubai',p:'Last comfortable departure. Buses run late but the two-hour ride at the end of a fourteen-hour day is the price of this shape.'}
+]},
+{d:'Wed 6',w:'Full',name:'Dubai or the desert',sub:'The day the overnight shape spends moving',meta:'Night 4 · Dubai',
+ slots:[
+  {h:'10:00 · The slack day',p:'This is what one base buys you: a day with nothing booked in it. Jumeirah Mosque, the Dubai Frame (AED 50), a second pass at the creek, or simply a morning that is not on a schedule for the first time in three weeks of this trip.'},
+  {h:'15:00 · Dubai Shopping Festival',p:'Runs 13 Dec 2026 – 19 Jan 2027, so it is on the whole time you are here. If you need to replace anything worn out from three months on the road, this is the cheapest week of the year to do it — and the VAT is refundable at DXB.'},
+  {h:'16:30 · Into the desert',p:'Evening safari, from about AED 150 per person shared. Go with a conservation-reserve operator rather than the cheapest dune-bashing convoy. Camel, dunes at sunset, dinner under the stars, and a temperature drop that will surprise you — bring a layer.'}
+]},
+{d:'Thu 7',w:'Depart',name:'To Muscat',sub:'A morning, then out',meta:'Fly out',
+ slots:[
+  {h:'08:00 · One last thing',p:'Bur Dubai textile souk and a karak chai, or the Dubai Frame if you skipped it yesterday. An hour.'},
+  {m:1,h:'11:00 · DXB',p:'Red Line to Terminal 1 or 3. Allow 30 extra minutes for the Planet VAT refund desk if you bought anything during the Festival.'},
+  {m:1,h:'· Muscat',p:'Stop 20. DXB→MCT non-stop, about 1h10, roughly 35 flights a week. Verify the operated dates for 7 January.'}
+]}
+];
+
+let CURRENT_PLAN='overnight';
+function renderDays(){
+  const DAYS = CURRENT_PLAN==='overnight' ? DAYS_OVERNIGHT : DAYS_DAYTRIP;
+  document.getElementById('days').innerHTML=DAYS.map((D,i)=>`
+  <div class="day">
+    <button class="day-btn" aria-expanded="false">
+      <span class="day-date">${D.d}<small>${D.w}</small></span>
+      <span><span class="day-name">${D.name}</span><span class="day-sub">${D.sub}</span></span>
+      <span class="day-meta">${D.meta}<span class="chev">▾</span></span>
+    </button>
+    <div class="day-body"><div class="day-inner"><div class="day-pad"><div class="slots">
+      ${D.slots.map(s=>`<div class="slot${s.m?' move':''}"><h4>${s.h}</h4><p>${s.p}</p></div>`).join('')}
+    </div></div></div></div>
+  </div>`).join('');
+
+  document.querySelectorAll('.day-btn').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const d=b.parentElement, open=d.classList.toggle('open');
+      b.setAttribute('aria-expanded',open?'true':'false');
+    });
+  });
+  document.querySelector('.day').classList.add('open');
+  document.querySelector('.day-btn').setAttribute('aria-expanded','true');
+}
+renderDays();
+
+document.getElementById('dayToggle').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  CURRENT_PLAN=b.dataset.plan;
+  document.querySelectorAll('#dayToggle .fbtn').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
+  const bs=document.getElementById('bases');
+  if(bs) bs.textContent = CURRENT_PLAN==='overnight' ? '2' : '1';
+  renderDays();
+});
+
+/* ============ WORTH DOING ============ */
+const ITEMS=[
+/* DUBAI */
+{c:'Dubai',t:'do',n:'The Creek abra',w:'A wooden boat with a diesel engine, twenty people on benches, <b>AED 1 in cash</b>, five minutes across the water. The single best value on this entire trip, and the only bit of Dubai that has not changed in eighty years. CR1 runs 06:00–24:00, CR2 is 24 hours.',when:'At dusk'},
+{c:'Dubai',t:'do',n:'Al Fahidi historical quarter',w:'Coral-and-gypsum courtyard houses and wind towers in the oldest surviving part of the city. Free to walk, best in the hour before sunset, and about five minutes from the abra dock.',when:'Free · 16:00'},
+{c:'Dubai',t:'do',n:'Deira souks',w:'Gold Souk and Spice Souk back to back. Go for the street rather than the shopping, and stay to eat — Deira does Iranian, Afghan, Keralan and Pakistani food better and far cheaper than the new city.',when:'After 17:00'},
+{c:'Dubai',t:'do',n:'Museum of the Future',w:'AED 159, timed entry, and it <b>sells out days ahead in January</b>. The calligraphy-clad steel torus is the real exhibit; the first two floors of the interior earn the ticket, the upper ones are thinner.',when:'Book weeks ahead',b:1},
+{c:'Dubai',t:'do',n:'Burj Khalifa, At the Top',w:'Level 124/125: AED 173 off-peak, AED 250 for the 16:00–19:00 prime slot. Prime is the one — up in daylight, down in the dark. Online beats the gate; book 48–72 hours out in high season.',when:'Book ahead',b:1},
+{c:'Dubai',t:'do',n:'Dubai Fountain',w:'Free, every 30 minutes from 18:00 to 23:00, rebuilt and reopened 1 October 2025 with new LEDs and choreography. Watch from the bridge across the lake, not the mall terrace.',when:'Free · 18:00–23:00'},
+{c:'Dubai',t:'do',n:'Alserkal Avenue',w:'Converted marble warehouses in Al Quoz that became the city’s actual contemporary art district — galleries, an art-house cinema, good coffee. Free, indoors, and nothing like the rest of Dubai. Most galleries shut Sunday.',when:'Free · not Sun'},
+{c:'Dubai',t:'opt',n:'Jumeirah Mosque',w:'One of the few mosques in Dubai open to non-Muslim visitors, through the Sheikh Mohammed Centre for Cultural Understanding’s guided sessions. Worth it if the Abu Dhabi mosque is not already on your list — largely redundant if it is.',when:'Guided only'},
+{c:'Dubai',t:'opt',n:'Dubai Frame',w:'AED 50. A 150-metre gilded picture frame that puts old Dubai on one side of the glass and new Dubai on the other. The concept is better than the execution, but the concept is genuinely good and it takes an hour.',when:'1 hour'},
+{c:'Dubai',t:'opt',n:'Dubai Shopping Festival',w:'13 Dec 2026 – 19 Jan 2027, so your whole window sits inside it. Real discounts, mall fireworks, raffles, and busier malls than usual. Useful if three months on the road has worn out your kit.',when:'Whole window'},
+{c:'Dubai',t:'opt',n:'Global Village',w:'A winter-only park of national pavilions, street food and stage shows, typically mid-October to late April. Cheap, chaotic, genuinely fun, and a long way out by the airport road. Confirm the season dates.',when:'Evenings'},
+{c:'Dubai',t:'opt',n:'Miracle Garden',w:'Fifty million bedding plants arranged into arches, hearts and an Airbus A380. Open November to May only, so your window works. Absurd, photogenic, and about 45 minutes from Downtown.',when:'Winter only'},
+{c:'Dubai',t:'skip',n:'Ain Dubai',w:'The world’s largest observation wheel has been <b>closed since March 2022</b> with no announced reopening date. Still listed as an attraction in most guides and on plenty of tour-operator sites. It is not open.',when:'Closed'},
+{c:'Dubai',t:'skip',n:'Ski Dubai',w:'Indoor snow, in a mall, while you are on a five-month trip that ends in a Canadian February. Read that sentence again.',when:''},
+{c:'Dubai',t:'skip',n:'Atlantis Aquaventure',w:'An excellent waterpark and a whole day plus an entry fee well north of AED 300. On a 27-country trip with three full days in this country, no.',when:''},
+{c:'Dubai',t:'skip',n:'Dubai Marina & JBR by day',w:'Fine at night as a walk after dinner. In daylight it is a canal lined with towers and chain restaurants, forty minutes from everything older than 2005.',when:''},
+/* DESERT */
+{c:'Desert',t:'do',n:'Evening desert safari',w:'From about <b>AED 150</b> per person for the shared version. Dunes at sunset, a camp, dinner, and a temperature drop that catches people out — bring a warm layer. Book a <b>conservation-reserve operator</b>, not the cheapest dune-bashing convoy; the difference is the whole experience.',when:'Book ahead',b:1},
+{c:'Desert',t:'opt',n:'Dawn balloon over the dunes',w:'Sunrise flight over the Dubai Desert Conservation Reserve, usually with a falconry demonstration on landing. Expensive, weather-dependent, and January is one of the more reliable months for it.',when:'Sunrise · pricey',b:1},
+{c:'Desert',t:'skip',n:'Quad bikes and dune bashing',w:'The default add-on, and the reason most safaris are loud, crowded and slightly grim. You are about to spend three days in Oman’s wadis and on Jebel Shams — save the desert appetite for that.',when:''},
+/* ABU DHABI */
+{c:'Abu Dhabi',t:'do',n:'Sheikh Zayed Grand Mosque',w:'<b>Free</b>, and the best single building in the country. Eighty-two domes, the world’s largest hand-knotted carpet, and a night-time lighting scheme that tracks the phase of the moon. Pre-register online; dress code strictly enforced, abayas from about AED 40 on site.',when:'Free · after dark',b:1},
+{c:'Abu Dhabi',t:'do',n:'Guggenheim Abu Dhabi',w:'<b>Opened 11 December 2026 — three weeks before you arrive.</b> Gehry’s building is the largest in the Guggenheim network: 30 galleries, 11,600 m² inside, 23,000 m² outdoors, art from the 1960s onward from West Asia, North Africa and South Asia. Expect teething problems and book the day tickets open.',when:'Brand new',b:1},
+{c:'Abu Dhabi',t:'do',n:'Louvre Abu Dhabi',w:'AED 70, under-18s free. Nouvel’s 180-metre perforated dome throws a "rain of light" across the plaza, and the collection is hung chronologically across civilisations rather than by nation, which is the argument of the whole museum. Galleries to 20:30 Fri–Sun, 18:30 Mon–Thu; dome open to 23:00.',when:'AED 70'},
+{c:'Abu Dhabi',t:'do',n:'Qasr Al Watan',w:'AED 65, open 09:30–21:30. A working presidential palace opened in 2019 — not historic, but an extraordinary piece of contemporary Islamic architecture, and the Great Hall dome alone justifies it. Palace in Motion light show at 20:00, AED 25 extra.',when:'AED 65'},
+{c:'Abu Dhabi',t:'opt',n:'Zayed National Museum',w:'Opened December 2025 on Saadiyat, five minutes from the Louvre. The national-story museum — Zayed, the federation, pearling and falconry. Better after the Guggenheim than before it.',when:'Saadiyat'},
+{c:'Abu Dhabi',t:'opt',n:'teamLab Phenomena',w:'The big digital-art barn, opened April 2025. Genuinely impressive — and heavily overlapping with the teamLab you will already have done in Tokyo on stop 01. That overlap is the only reason this is not a "do".',when:'Book ahead',b:1},
+{c:'Abu Dhabi',t:'opt',n:'The Corniche & Al Mina fish market',w:'Eight kilometres of waterfront promenade, and a working fish market at the port end where you can have your pick grilled on the spot. Free, unpolished, and the most ordinary-life thing on this list.',when:'Free · early'},
+{c:'Abu Dhabi',t:'skip',n:'Ferrari World / Warner Bros World',w:'World-class theme parks on Yas Island, each a full day and an entry fee to match. Wrong trip, wrong stop, wrong three days.',when:''},
+{c:'Abu Dhabi',t:'skip',n:'Emirates Palace gold cappuccino',w:'A hotel lobby, a coffee with edible gold leaf on it, and a queue of people photographing it. The building is impressive from the outside and free to look at.',when:''}
+];
+
+const TIERLBL={do:'Do',opt:'Maybe',skip:'Skip'};
+let FC='all', FT=null, FB=false;
+
+function renderItems(){
+  const list=ITEMS.filter(x=>
+    (FC==='all'||x.c===FC) && (!FT||x.t===FT) && (!FB||x.b));
+  const host=document.getElementById('items');
+  if(!list.length){host.innerHTML='<div class="empty">No entries match those filters.</div>';return}
+  host.innerHTML=list.map(x=>`
+    <div class="item">
+      <span class="tier ${x.t}">${TIERLBL[x.t]}</span>
+      <span class="nm">${x.n}</span>
+      <span class="when${x.b?' book':''}">${x.when||'&nbsp;'}</span>
+      <span class="why">${x.w}</span>
+    </div>`).join('');
+}
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  if(b.dataset.city){FC=b.dataset.city}
+  else if(b.dataset.tier){FT = FT===b.dataset.tier?null:b.dataset.tier}
+  else if(b.dataset.book){FB=!FB}
+  document.querySelectorAll('#filters .fbtn').forEach(x=>{
+    let on=false;
+    if(x.dataset.city) on = x.dataset.city===FC;
+    if(x.dataset.tier) on = x.dataset.tier===FT;
+    if(x.dataset.book) on = FB;
+    x.setAttribute('aria-pressed',on?'true':'false');
+  });
+  renderItems();
+});
+renderItems();
+
+/* ============ FIG 1: TIME AUDIT ============ */
+(function(){
+  const svg=document.getElementById('audit-chart');
+  const W=1400,H=190,pad=40,barY=70,barH=54;
+  const start=new Date(2027,0,3), end=new Date(2027,0,8);
+  const totalH=(end-start)/36e5;
+  const x=h=>pad+(h/totalH)*(W-2*pad);
+  const segs=[
+    {a:0,b:13,cls:'t2'},
+    {a:13,b:24,cls:'p'},
+    {a:24,b:48,cls:'f'},
+    {a:48,b:72,cls:'f'},
+    {a:72,b:96,cls:'f'},
+    {a:96,b:107,cls:'p'},
+    {a:107,b:120,cls:'t'}
+  ];
+  const colors={t:'var(--magenta)',t2:'rgba(231,100,155,.55)',p:'rgba(242,169,60,.35)',f:'var(--amber)'};
+  let s=`<rect x="0" y="0" width="${W}" height="${H}" fill="none"/>`;
+  segs.forEach(sg=>{
+    const x1=x(sg.a),x2=x(sg.b);
+    s+=`<rect x="${x1}" y="${barY}" width="${x2-x1-1}" height="${barH}" fill="${colors[sg.cls]}"/>`;
+  });
+  for(let d=0;d<=5;d++){
+    const hh=d*24, xx=x(hh);
+    const dt=new Date(start.getTime()+hh*36e5);
+    s+=`<line x1="${xx}" y1="${barY-6}" x2="${xx}" y2="${barY+barH+6}" class="axs"/>`;
+    s+=`<text x="${xx}" y="${barY-14}" class="lbl" text-anchor="${d===0?'start':d===5?'end':'middle'}">${dt.toLocaleDateString('en-CA',{day:'2-digit',month:'short'})}</text>`;
+  }
+  s+=`<line x1="${pad}" y1="${barY+barH+0.5}" x2="${W-pad}" y2="${barY+barH+0.5}" class="ax"/>`;
+  s+=`<text x="${x(24)}" y="${barY+barH+34}" class="lbl-a">3 full days — 4→6 Jan</text>`;
+  s+=`<text x="${x(0)}" y="${barY+barH+34}" class="lbl">↙ Mumbai flight</text>`;
+  s+=`<text x="${x(120)}" y="${barY+barH+34}" class="lbl" text-anchor="end">Muscat ↘</text>`;
+  svg.innerHTML=s;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+})();
+
+/* ============ FIG 2: SAADIYAT OPENINGS ============ */
+(function(){
+  const svg=document.getElementById('saadiyat-chart');
+  const W=1400,H=300,padL=290,padR=40,padT=24,rowH=48;
+  const t0=new Date(2017,0,1), t1=new Date(2027,6,1);
+  const x=d=>padL+((d-t0)/(t1-t0))*(W-padL-padR);
+  const PLACES=[
+    {n:'Louvre Abu Dhabi',o:new Date(2017,10,11),note:'Nov 2017'},
+    {n:'teamLab Phenomena',o:new Date(2025,3,18),note:'Apr 2025'},
+    {n:'Zayed National Museum',o:new Date(2025,11,3),note:'Dec 2025'},
+    {n:'Guggenheim Abu Dhabi',o:new Date(2026,11,11),note:'11 Dec 2026'}
+  ];
+  const wA=x(new Date(2027,0,3)), wB=x(new Date(2027,0,7));
+  let s='';
+  s+=`<rect x="${wA-2}" y="${padT}" width="${Math.max(wB-wA,4)}" height="${PLACES.length*rowH+8}" fill="rgba(231,100,155,.12)" stroke="var(--magenta)" stroke-width="1"/>`;
+  s+=`<text x="${(wA+wB)/2}" y="${padT-8}" class="lbl-a" text-anchor="end">You are here: 3–7 Jan 2027 ↓</text>`;
+  for(let yr=2017;yr<=2027;yr++){
+    const xx=x(new Date(yr,0,1));
+    s+=`<line x1="${xx}" y1="${padT}" x2="${xx}" y2="${padT+PLACES.length*rowH+8}" class="axs"/>`;
+    s+=`<text x="${xx}" y="${padT+PLACES.length*rowH+30}" class="lbl" text-anchor="middle">${yr}</text>`;
+  }
+  s+=`<line x1="${padL-2}" y1="${padT}" x2="${x(t1)}" y2="${padT}" class="ax"/>`;
+  PLACES.forEach((p,i)=>{
+    const y=padT+22+i*rowH;
+    s+=`<text x="${padL-16}" y="${y+4}" class="lbl-p" text-anchor="end">${p.n}</text>`;
+    const x1=x(p.o), x2=x(t1);
+    s+=`<rect x="${x1}" y="${y-10}" width="${Math.max(x2-x1,3)}" height="20" rx="2" fill="rgba(242,169,60,.6)"/>`;
+    s+=`<circle cx="${x1}" cy="${y}" r="4.5" fill="var(--amber)"/>`;
+    const lblX = (x2-x1) > 190 ? x1+12 : x1-10;
+    const anch = (x2-x1) > 190 ? 'start' : 'end';
+    s+=`<text x="${lblX}" y="${y+4}" class="lbl" text-anchor="${anch}" fill="${(x2-x1)>190?'var(--ink)':'var(--amber)'}">${p.note}</text>`;
+  });
+  svg.innerHTML=s;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+})();
+
+/* ============ FIG 3: THE HOTEL BILL ============ */
+(function(){
+  const svg=document.getElementById('bill-chart');
+  const W=1400,H=320,padL=60,padR=190,padT=30,padB=52;
+  const BASE=600;
+  const COLS=[
+    {n:'Dubai · 5-star',parts:[{l:'Base',v:BASE,c:'rgba(242,169,60,.28)'},{l:'Municipality 10%',v:60,c:'var(--jade)'},{l:'Service 10%',v:60,c:'var(--amber)'},{l:'VAT 5%',v:36,c:'var(--magenta)'},{l:'Tourism Dirham',v:20,c:'var(--paper-dim)'}]},
+    {n:'Dubai · 4-star',parts:[{l:'Base',v:BASE,c:'rgba(242,169,60,.28)'},{l:'Municipality 10%',v:60,c:'var(--jade)'},{l:'Service 10%',v:60,c:'var(--amber)'},{l:'VAT 5%',v:36,c:'var(--magenta)'},{l:'Tourism Dirham',v:15,c:'var(--paper-dim)'}]},
+    {n:'Abu Dhabi',parts:[{l:'Base',v:BASE,c:'rgba(242,169,60,.28)'},{l:'Tourism + municipality 8%',v:48,c:'var(--jade)'},{l:'Service 10%',v:60,c:'var(--amber)'},{l:'VAT 5%',v:35,c:'var(--magenta)'}]}
+  ];
+  const max=820;
+  const y=v=>padT+(1-v/max)*(H-padT-padB);
+  const bw=(W-padL-padR)/COLS.length;
+  let s='';
+  [0,200,400,600,800].forEach(v=>{
+    s+=`<line x1="${padL}" y1="${y(v)}" x2="${W-padR}" y2="${y(v)}" class="axs"/>`;
+    s+=`<text x="${padL-10}" y="${y(v)+4}" class="lbl" text-anchor="end">${v}</text>`;
+  });
+  COLS.forEach((col,i)=>{
+    const x0=padL+i*bw+bw*0.22, bwid=bw*0.56;
+    let acc=0;
+    col.parts.forEach(p=>{
+      const yTop=y(acc+p.v), hgt=y(acc)-y(acc+p.v);
+      s+=`<rect x="${x0}" y="${yTop}" width="${bwid}" height="${hgt}" fill="${p.c}"/>`;
+      acc+=p.v;
+    });
+    const pct=Math.round((acc/BASE-1)*100);
+    s+=`<text x="${x0+bwid/2}" y="${y(acc)-24}" class="lbl-a" text-anchor="middle">AED ${acc}</text>`;
+    s+=`<text x="${x0+bwid/2}" y="${y(acc)-9}" class="lbl" text-anchor="middle">+${pct}%</text>`;
+    s+=`<text x="${x0+bwid/2}" y="${H-padB+20}" class="lbl-p" text-anchor="middle">${col.n}</text>`;
+  });
+  s+=`<line x1="${padL}" y1="${H-padB}" x2="${W-padR}" y2="${H-padB}" class="ax"/>`;
+  s+=`<line x1="${padL}" y1="${y(BASE)}" x2="${W-padR+150}" y2="${y(BASE)}" stroke="var(--rule)" stroke-dasharray="4 4"/>`;
+  s+=`<text x="${W-padR+10}" y="${y(BASE)-8}" class="lbl">quoted rate</text>`;
+  s+=`<text x="${W-padR+10}" y="${y(BASE)+14}" class="lbl">AED 600</text>`;
+  svg.innerHTML=s;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+})();
+
+/* ============ HOTEL BILL CALCULATOR ============ */
+const AED_PER_CAD=2.7;
+function renderCalc(){
+  document.getElementById('legs').innerHTML=`
+    <label class="leg-row">
+      <input type="radio" name="emirate" value="dubai" checked>
+      <span class="lname">Dubai — 10% municipality + 10% service + 5% VAT + Tourism Dirham</span>
+      <span class="lyen">+25–30%</span>
+      <span class="lnote">Tourism Dirham is flat per room per night, by star rating</span>
+    </label>
+    <label class="leg-row">
+      <input type="radio" name="emirate" value="auh">
+      <span class="lname">Abu Dhabi — 4% tourism + 4% municipality + 10% service + 5% VAT</span>
+      <span class="lyen">+18–20%</span>
+      <span class="lnote">The old AED 15 per-night charge was abolished in September 2023</span>
+    </label>
+    <label class="leg-row">
+      <input type="radio" name="star" value="20" checked>
+      <span class="lname">5-star hotel</span>
+      <span class="lyen">AED 20/night</span>
+      <span class="lnote">Dubai Tourism Dirham — ignored in Abu Dhabi</span>
+    </label>
+    <label class="leg-row">
+      <input type="radio" name="star" value="15">
+      <span class="lname">4-star hotel or deluxe apartment</span>
+      <span class="lyen">AED 15/night</span>
+    </label>
+    <label class="leg-row">
+      <input type="radio" name="star" value="10">
+      <span class="lname">3-star hotel or standard apartment</span>
+      <span class="lyen">AED 10/night</span>
+    </label>
+    <label class="leg-row">
+      <input type="radio" name="star" value="7">
+      <span class="lname">1–2-star hotel or guesthouse</span>
+      <span class="lyen">AED 7/night</span>
+    </label>
+    <label class="leg-row" style="cursor:default">
+      <span style="width:15px"></span>
+      <span class="lname">Quoted room rate, AED per night</span>
+      <span class="lyen"><input id="rate" type="number" min="0" step="25" value="600" style="width:92px;background:var(--ink-3);border:1px solid var(--rule);color:var(--amber);font-family:var(--mono);font-size:12.5px;padding:4px 6px;border-radius:2px"></span>
+      <span class="lnote">Over 4 nights, 3–7 January 2027</span>
+    </label>`;
+}
+function calcBill(){
+  const em=document.querySelector('input[name="emirate"]:checked').value;
+  const star=Number(document.querySelector('input[name="star"]:checked').value);
+  const rate=Math.max(0,Number(document.getElementById('rate').value)||0);
+  const nights=4;
+  let perNight;
+  if(em==='dubai'){
+    const sub=rate*1.20;
+    perNight=sub*1.05+star;
+  } else {
+    const sub=rate*1.18;
+    perNight=sub*1.05;
+  }
+  const base=rate*nights, total=Math.round(perNight*nights), add=total-base;
+  const pct=base>0?Math.round((total/base-1)*100):0;
+  document.getElementById('base').innerHTML=`AED ${base.toLocaleString('en-CA')}<small>quoted</small>`;
+  document.getElementById('addons').innerHTML=`AED ${add.toLocaleString('en-CA')}<small>added</small>`;
+  document.getElementById('total').innerHTML=`AED ${total.toLocaleString('en-CA')}<small>≈ C$${Math.round(total/AED_PER_CAD).toLocaleString('en-CA')}</small>`;
+  const v=document.getElementById('verdict');
+  v.textContent=`+${pct}% over the quoted rate`;
+  v.className=pct>=25?'lose':'win';
+}
+renderCalc();
+document.getElementById('legs').addEventListener('change',calcBill);
+document.getElementById('legs').addEventListener('input',calcBill);
+calcBill();
+</script>
+
+</body>
+</html>

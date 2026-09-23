@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="darkreader-lock">
+<title>Laos</title>
+<link rel="stylesheet" href="fonts.css">
+</head>
+<body>
+<style>
+:root{color-scheme:dark;
+  --ink:#05161D;--ink-2:#0A2029;--ink-3:#0E2A35;
+  --rule:#194150;--rule-soft:rgba(25,65,80,.6);
+  --paper:#E2EEED;--paper-dim:#A6C2C6;--muted:#6C8F98;
+  --amber:#F2A93C;--magenta:#E7649B;--jade:#58C4A3;--red:#E05555;
+  --display:'Big Shoulders Display','Arial Narrow',Impact,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --body:'Inter',system-ui,sans-serif;
+  --gut:clamp(18px,4vw,64px);--maxw:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+.section{padding-block:clamp(34px,4.4vw,58px);border-top:1px solid var(--rule-soft);position:relative}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:14px;margin:0 0 18px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--rule)}
+.eyebrow .n{color:var(--amber)}
+h2.head{font-family:var(--display);font-weight:700;font-size:clamp(34px,5.6vw,66px);line-height:.92;margin:0 0 14px;text-transform:uppercase}
+.lede{max-width:66ch;color:var(--paper-dim);font-size:clamp(15px,1.5vw,17px);margin:0 0 26px}
+.lede b{color:var(--paper);font-weight:600}
+a{color:var(--amber);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+.hint{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+@media (min-width:980px){.hint.wide{display:none}}
+.scroller{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--rule) transparent}
+.scroller::-webkit-scrollbar{height:6px}
+.scroller::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}
+.scroller>svg{display:block;width:100%;height:auto}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(30px,5vw,58px) clamp(24px,4vw,40px);overflow:hidden}
+.gridbg{position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:linear-gradient(to right,var(--rule-soft) 1px,transparent 1px),linear-gradient(to bottom,var(--rule-soft) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%);-webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%)}
+.back{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:inline-block;margin-bottom:20px}
+.back:hover{color:var(--amber)}
+.strip{font-family:var(--mono);font-size:clamp(10px,1.15vw,12px);letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;border-block:1px solid var(--rule);padding-block:11px;margin-bottom:clamp(26px,4vw,44px)}
+.strip .k{color:var(--muted)}.strip .amb{color:var(--amber)}
+.title{font-family:var(--display);text-transform:uppercase;margin:0;line-height:.82;position:relative}
+.title .l1{display:block;font-weight:400;font-size:clamp(34px,7.4vw,96px);color:transparent;-webkit-text-stroke:1.2px var(--paper-dim)}
+.title .l2{display:block;font-weight:800;font-size:clamp(72px,17vw,232px);letter-spacing:-.015em;color:var(--paper)}
+.subline{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:baseline;margin-top:clamp(18px,3vw,30px);font-family:var(--mono);font-size:clamp(11px,1.25vw,13px);letter-spacing:.14em;text-transform:uppercase;color:var(--paper-dim)}
+.subline .sep{color:var(--rule)}
+
+/* instruments */
+.instr{display:grid;grid-template-columns:repeat(auto-fit,minmax(124px,1fr));border:1px solid var(--rule);background:var(--ink-2);margin:clamp(24px,3.4vw,38px) 0 0}
+.instr div{padding:15px 17px;border-right:1px solid var(--rule-soft)}
+.instr div:last-child{border-right:0}
+.instr dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.instr dd{margin:0;font-family:var(--display);font-weight:600;font-size:31px;line-height:1}
+.instr dd span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--paper-dim);margin-left:3px}
+.instr dd.hot{color:var(--amber)}
+.instr dd.warn{color:var(--magenta)}
+
+/* chart frames */
+.figcap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:9px;margin:0 0 8px}
+.figcap b{color:var(--amber);font-weight:500}
+.fignote{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.fignote i{display:inline-block;width:14px;height:9px;margin:0 5px 0 14px;vertical-align:middle;border-radius:1px}
+.fignote i:first-child{margin-left:0}
+.ax{stroke:var(--rule);stroke-width:1}
+.axs{stroke:var(--rule-soft);stroke-width:1}
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.08em;fill:var(--muted)}
+.lbl-p{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;fill:var(--paper)}
+.lbl-a{font-family:var(--mono);font-size:10px;letter-spacing:.12em;fill:var(--amber)}
+
+/* cards */
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin:0 0 6px}
+.card{border:1px solid var(--rule);background:var(--ink-2);padding:18px 20px;position:relative}
+.card.bad{border-color:var(--red)}
+.card.good{border-color:var(--jade)}
+.card h3{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 4px;color:var(--paper)}
+.card .verdict{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:11px}
+.card .verdict.bad{color:var(--red)}
+.card .verdict.ok{color:var(--jade)}
+.card p{margin:0 0 10px;font-size:13.5px;color:var(--paper-dim);line-height:1.62}
+.card p:last-child{margin-bottom:0}
+.card p b{color:var(--paper);font-weight:600}
+.fix{border-left:2px solid var(--amber);padding-left:12px;margin:12px 0 0;font-size:12.8px;color:var(--paper-dim);line-height:1.6}
+.fix b{display:block;color:var(--amber);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px;font-weight:500}
+.fix strong{color:var(--paper);font-weight:600}
+
+/* shape cards */
+.shapes{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+.shape{border:1px solid var(--rule);background:var(--ink-2);padding:0;display:flex;flex-direction:column}
+.shape.pick{border-color:var(--amber);box-shadow:inset 0 0 0 1px rgba(242,169,60,.25)}
+.shape-hd{padding:16px 20px 14px;border-bottom:1px solid var(--rule-soft)}
+.shape-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.shape.pick .shape-tag{color:var(--amber)}
+.shape-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(24px,3vw,32px);line-height:.95;margin:0}
+.chainrow{display:flex;flex-wrap:wrap;align-items:center;gap:5px 7px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--paper);padding:13px 20px;border-bottom:1px solid var(--rule-soft);background:rgba(5,22,29,.5)}
+.chainrow .a{color:var(--rule)}
+.chainrow .n{color:var(--amber);font-size:9.5px}
+.shape-body{padding:15px 20px 18px;flex:1}
+.shape-body p{margin:0 0 10px;font-size:13.3px;color:var(--paper-dim);line-height:1.6}
+.shape-body p:last-child{margin-bottom:0}
+.shape-body p b{color:var(--paper);font-weight:600}
+.shape-meta{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--rule-soft)}
+.shape-meta div{flex:1;min-width:88px;padding:11px 20px;border-right:1px solid var(--rule-soft)}
+.shape-meta div:last-child{border-right:0}
+.shape-meta dt{font-family:var(--mono);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.shape-meta dd{margin:0;font-family:var(--mono);font-size:13px;color:var(--paper)}
+.shape-meta dd.g{color:var(--jade)}
+.shape-meta dd.r{color:var(--red)}
+
+/* day accordion */
+.days{border-top:1px solid var(--rule)}
+.day{border-bottom:1px solid var(--rule)}
+.day-btn{all:unset;box-sizing:border-box;display:grid;width:100%;cursor:pointer;grid-template-columns:76px 1fr auto;gap:0 clamp(14px,2.4vw,30px);align-items:baseline;padding:clamp(13px,1.8vw,18px) 4px;transition:background .18s ease}
+.day-btn:hover{background:rgba(242,169,60,.05)}
+.day-btn:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.day-date{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.1em}
+.day-date small{display:block;color:var(--muted);font-size:9.5px;letter-spacing:.14em;margin-top:3px}
+.day-btn>span:nth-child(2){display:flex;flex-direction:column;gap:6px}
+.day-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(22px,3.2vw,34px);line-height:.95;margin:0}
+.day-sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.day-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--paper-dim);text-align:right;white-space:nowrap}
+.day-meta .chev{display:inline-block;margin-left:12px;color:var(--muted);transition:transform .25s ease}
+.day.open .day-meta .chev{transform:rotate(180deg)}
+@media (max-width:720px){.day-btn{grid-template-columns:64px 1fr;row-gap:8px}.day-meta{grid-column:2;text-align:left}}
+.day-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .34s cubic-bezier(.3,.8,.3,1)}
+.day.open .day-body{grid-template-rows:1fr}
+.day-inner{overflow:hidden}
+.day-pad{padding:2px 4px clamp(22px,3vw,32px)}
+.slots{display:grid;gap:0;border-left:1px solid var(--rule)}
+.slot{padding:0 0 16px 16px;position:relative}
+.slot:last-child{padding-bottom:2px}
+.slot::before{content:"";position:absolute;left:-4px;top:6px;width:7px;height:7px;background:var(--amber);border-radius:50%}
+.slot.move::before{background:var(--magenta)}
+.slot h4{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 5px;font-weight:500}
+.slot.move h4{color:var(--magenta)}
+.slot p{margin:0;font-size:14px;line-height:1.62;color:var(--paper-dim);max-width:72ch}
+.slot p b{color:var(--paper);font-weight:600}
+
+/* worth doing */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.fbtn{all:unset;cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border:1px solid var(--rule);color:var(--paper-dim);border-radius:2px;transition:.15s}
+.fbtn:hover{background:var(--ink-3);color:var(--paper)}
+.fbtn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.fbtn[aria-pressed="true"]{background:var(--amber);color:var(--ink);border-color:var(--amber);font-weight:600}
+.fdiv{width:1px;background:var(--rule);margin:2px 6px}
+.items{display:grid;gap:1px;background:var(--rule-soft);border:1px solid var(--rule)}
+.item{background:var(--ink-2);padding:13px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:baseline}
+.item .tier{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:3px 7px 2px;border-radius:2px;white-space:nowrap;align-self:start;margin-top:2px}
+.tier.do{background:rgba(88,196,163,.14);color:var(--jade);border:1px solid rgba(88,196,163,.35)}
+.tier.opt{background:rgba(242,169,60,.12);color:var(--amber);border:1px solid rgba(242,169,60,.3)}
+.tier.skip{background:rgba(224,85,85,.1);color:var(--red);border:1px solid rgba(224,85,85,.3)}
+.item .nm{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:20px;line-height:1.05;color:var(--paper)}
+.item .why{grid-column:2;font-size:13.3px;color:var(--paper-dim);line-height:1.55;max-width:74ch}
+.item .why b{color:var(--paper);font-weight:600}
+.item .when{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);text-align:right;white-space:nowrap;align-self:start;margin-top:4px}
+.item .when.book{color:var(--magenta)}
+@media (max-width:640px){.item{grid-template-columns:auto 1fr}.item .when{grid-column:2;text-align:left;margin-top:2px}.item .why{grid-column:1/-1}}
+.empty{background:var(--ink-2);padding:22px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* visa picker */
+.calc{border:1px solid var(--rule);background:var(--ink-2)}
+.calc-legs{display:grid}
+.leg-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--rule-soft);cursor:pointer}
+.leg-row:hover{background:rgba(242,169,60,.04)}
+.leg-row input{accent-color:var(--amber);width:15px;height:15px;cursor:pointer}
+.leg-row .lname{font-family:var(--mono);font-size:12.5px;color:var(--paper-dim)}
+.leg-row input:checked+.lname{color:var(--paper)}
+.leg-row .lyen{font-family:var(--mono);font-size:12.5px;color:var(--amber);font-variant-numeric:tabular-nums;white-space:nowrap}
+.leg-row .lnote{grid-column:2/-1;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--muted);margin-top:-4px}
+.calc-out{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule-soft)}
+.calc-out div{background:var(--ink-3);padding:15px 17px}
+.calc-out dt{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.calc-out dd{margin:0;font-family:var(--display);font-weight:700;font-size:27px;line-height:1;font-variant-numeric:tabular-nums}
+.calc-out dd small{font-family:var(--mono);font-size:10px;font-weight:400;color:var(--paper-dim);margin-left:4px;letter-spacing:.06em}
+#verdict{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;line-height:1.5}
+#verdict.win{color:var(--jade)}
+#verdict.lose{color:var(--red)}
+
+/* panels / tables */
+.panel{border:1px solid var(--rule);background:var(--ink-2);padding:clamp(17px,2.4vw,24px);margin-top:22px}
+.panel h3{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 12px;font-weight:500}
+.panel p{margin:0 0 12px;font-size:13.6px;color:var(--paper-dim);line-height:1.62}
+.panel p:last-child{margin-bottom:0}
+.panel p b{color:var(--paper);font-weight:600}
+.panel.alert{border-color:var(--red)}
+.panel.alert h3{color:var(--red)}
+table.ref{width:100%;border-collapse:collapse;font-size:13.4px}
+table.ref th{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:500;padding:0 14px 10px 0;border-bottom:1px solid var(--rule)}
+table.ref td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule-soft);color:var(--paper-dim);vertical-align:top}
+table.ref td:first-child{font-family:var(--display);font-size:17px;font-weight:600;text-transform:uppercase;color:var(--paper);white-space:nowrap;width:1%}
+table.ref td.t{font-family:var(--mono);font-size:11px;letter-spacing:.06em;white-space:nowrap;color:var(--amber)}
+table.ref tr.flag td.t{color:var(--magenta)}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.cols{display:grid;gap:16px 34px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:20px}
+.cols p{margin:0;font-size:13.6px;color:var(--paper-dim);line-height:1.6}
+.cols p b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:5px;font-weight:500}
+
+footer{border-top:1px solid var(--rule);padding-block:26px 40px;color:var(--muted)}
+.foot-grid{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:flex-end}
+.foot-grid p{margin:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase}
+.foot-mark{font-family:var(--display);font-size:clamp(40px,9vw,110px);font-weight:800;text-transform:uppercase;line-height:.8;color:transparent;-webkit-text-stroke:1px var(--rule);margin:30px 0 0}
+</style>
+
+<header class="hero">
+  <div class="gridbg"></div>
+  <div class="wrap">
+    <a class="back" href="index.html">← Westbound · the dossier</a>
+    <p class="strip">
+      <span><span class="k">Stop</span> <span class="amb">13 of 27</span></span>
+      <span><span class="k">In</span> HAN · Hanoi</span>
+      <span><span class="k">Fly Laos</span> <span class="amb">LPQ</span></span>
+      <span><span class="k">Out</span> SAI · Siem Reap</span>
+      <span><span class="k">Window</span> 8–11 Dec 2026</span>
+      <span><span class="k">Clock</span> UTC+7</span>
+    </p>
+    <h1 class="title">
+      <span class="l1">Thirteenth stop</span>
+      <span class="l2">Laos</span>
+    </h1>
+    <p class="subline">
+      <span>One town, three nights</span><span class="sep">/</span>
+      <span>Arrival day has no flight</span><span class="sep">/</span>
+      <span>Siem Reap's airport moved</span>
+    </p>
+
+    <dl class="instr">
+      <div><dt>Nights as booked</dt><dd>3</dd></div>
+      <div><dt>Full days</dt><dd class="warn">2</dd></div>
+      <div><dt>Bases</dt><dd>1</dd></div>
+      <div><dt>Tue HAN–LPQ</dt><dd class="warn">0<span>flights</span></dd></div>
+      <div><dt>Dec rainfall</dt><dd>≈8<span>mm</span></dd></div>
+      <div><dt>Dawn low</dt><dd class="hot">15<span>°C</span></dd></div>
+    </dl>
+  </div>
+</header>
+
+<section class="section" id="flights">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">01</span> Both ends of this leg</p>
+    <h2 class="head">Tuesday has<br>no flight</h2>
+    <p class="lede">This is the one leg of the trip where the airline schedule, not the weather or the sights, decides the shape of the stop. Hanoi–Luang Prabang is a thin route flown by two carriers, and <b>neither of them flies on a Tuesday</b> — which is the day the itinerary currently books. The departure end turned out better than expected, but it has a trap of its own.</p>
+
+    <div class="cards">
+      <div class="card bad">
+        <h3>Hanoi → Luang Prabang, Tue 8 Dec</h3>
+        <div class="verdict bad">The flight does not exist</div>
+        <p>Two carriers serve the route non-stop. <b>Vietnam Airlines VN931</b>, an A321 departing around 13:10, runs Monday, Wednesday and Friday. <b>Lao Airlines QV314</b>, an ATR departing around 19:10, runs Monday, Wednesday, Friday and Sunday.</p>
+        <p>Between them that is seven departures a week spread across only five weekdays — which is exactly why some schedule aggregators report the route as "daily" and get it wrong. <b>Tuesday and Thursday are blank on both airlines.</b></p>
+        <div class="fix"><b>The fix</b>Move the flight to <strong>Monday 7 December</strong> and take the extra night in Luang Prabang. Vietnam is losing a day it can spare; Luang Prabang absorbs the gain without strain — it turns two full days into three, which is the difference between a stopover and a stay.</div>
+      </div>
+
+      <div class="card good">
+        <h3>Luang Prabang → Siem Reap, Fri 11 Dec</h3>
+        <div class="verdict ok">Non-stop exists — with two catches</div>
+        <p>VN931 does not terminate at Luang Prabang. It continues to Cambodia the same afternoon, departing LPQ around 14:45 and landing roughly an hour and a half later. Friday is served. <b>You can fly this leg direct.</b></p>
+        <p><b>Catch one:</b> the through-service is seasonal, running roughly October to May. Check it in September and the trackers show a dead route — it is between seasons, not cancelled. 11 December sits comfortably inside the operating window.</p>
+        <p><b>Catch two, and it matters more:</b> the airport code is <b>SAI</b>, not REP. Siem Reap–Angkor International replaced the old in-town airport in October 2023, and it sits 40–50 km from Angkor rather than a few minutes away. Any itinerary line still saying "REP" is pointing at a closed airport.</p>
+        <div class="fix"><b>Backup</b>Bangkok Airways PG942 LPQ→BKK, daily around 12:45, then the same carrier onward to SAI. There is <strong>no Vientiane–Siem Reap non-stop</strong>, so the obvious-looking via-Vientiane fallback does not work.</div>
+      </div>
+    </div>
+
+    <div class="figcap" style="margin-top:26px">
+      <span>Fig. 1 — Which days the route actually flies</span>
+      <span><b>Dec 2026</b> · non-stops only</span>
+    </div>
+    <div class="scroller">
+      <svg id="days-chart" viewBox="0 0 1400 260" role="img" aria-label="Grid of weekdays against three non-stop flights. Vietnam Airlines VN931 Hanoi to Luang Prabang flies Monday, Wednesday and Friday. Lao Airlines QV314 adds Sunday. The onward VN931 Luang Prabang to Siem Reap leg flies the same days. Tuesday and Thursday have no service at all."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--amber)"></i>Operates<i style="background:var(--ink-3);border:1px solid var(--rule)"></i>No service<i style="background:rgba(231,100,155,.18);border:1px solid var(--magenta)"></i>Your booked arrival day</p>
+
+    <div class="panel alert">
+      <h3>Verify this before you rebook anything else</h3>
+      <p>Day-of-week data for thin regional routes is unreliable across every aggregator — two of the major trackers mislabel weekdays on dates that can be checked independently, so the finding above is built from <b>operated flight dates</b> rather than published timetables. Confirm both legs on Vietnam Airlines' own booking engine for your exact dates before moving the Vietnam window.</p>
+      <p>Three things to check in one sitting: that <b>VN931 HAN–LPQ is loaded for Mon 7 Dec</b>, that the seasonal <b>LPQ–SAI</b> continuation is loaded for Fri 11 Dec, and that whatever Siem Reap arrival transfer you have booked is built around <b>SAI</b> and its longer run into town.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="shapes">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">02</span> The decision that follows</p>
+    <h2 class="head">Three nights,<br>or four</h2>
+    <p class="lede">Luang Prabang is the only base on this leg — nothing else in Laos is reachable and back within the window, so this is not a routing puzzle so much as a question of how much of one town you get. As booked, arriving Tuesday, you get <b>two full days</b>. Fly Monday instead and you get three.</p>
+
+    <div class="shapes">
+      <div class="shape pick">
+        <div class="shape-hd">
+          <div class="shape-tag">Recommended</div>
+          <p class="shape-name">Fly Monday</p>
+        </div>
+        <div class="chainrow">
+          <span class="n">HAN</span><span class="a">→</span>
+          <span>VN931 <span class="n">Mon 7</span></span><span class="a">→</span>
+          <span>Luang Prabang <span class="n">×4</span></span><span class="a">→</span>
+          <span class="n">SAI</span>
+        </div>
+        <div class="shape-body">
+          <p>One flight, an afternoon arrival, and the evening intact. Land around 14:20, clear the visa desk, and you are on the peninsula before the light goes — which means the first sunset over the Mekong is free rather than paid for out of a full day.</p>
+          <p><b>What the extra day actually buys:</b> Kuang Si at opening on its own morning rather than crammed against the dawn alms round, a sunrise on Phousi <i>and</i> a dawn at tak bat on separate mornings, and enough slack to fit the Royal Palace around its Tuesday closure without sacrificing anything.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Nights</dt><dd class="g">4</dd></div>
+          <div><dt>Full days</dt><dd class="g">3</dd></div>
+          <div><dt>Flights</dt><dd class="g">1</dd></div>
+          <div><dt>Cost</dt><dd>1 day off Vietnam</dd></div>
+        </dl>
+      </div>
+
+      <div class="shape">
+        <div class="shape-hd">
+          <div class="shape-tag">If the Vietnam window can't move</div>
+          <p class="shape-name">Tuesday via Vientiane</p>
+        </div>
+        <div class="chainrow">
+          <span class="n">HAN</span><span class="a">→</span>
+          <span>VTE <span class="n">Tue 8</span></span><span class="a">→</span>
+          <span>LPQ</span><span class="a">→</span>
+          <span>Luang Prabang <span class="n">×3</span></span><span class="a">→</span>
+          <span class="n">SAI</span>
+        </div>
+        <div class="shape-body">
+          <p>Hanoi–Vientiane runs roughly fourteen times a week on Vietnam Airlines and Lao Airlines, about an hour. From Vientiane you continue north either on a short Lao Airlines hop or on the <b>Laos–China Railway</b>, which does Vientiane–Luang Prabang in about 1h50 for around US$20 in second class.</p>
+          <p><b>The train is the more interesting option and the riskier one.</b> Luang Prabang's station is 11–13 km out of town, and sources disagree on the booking window — station counters reportedly open three days ahead, agents sell weeks out. Do not connect a same-day international flight to a train you have not already ticketed.</p>
+          <p>Either way this costs most of a day, and it costs it at the start, when you are freshest.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Nights</dt><dd>3</dd></div>
+          <div><dt>Full days</dt><dd class="r">2</dd></div>
+          <div><dt>Flights</dt><dd class="r">2</dd></div>
+          <div><dt>Cost</dt><dd class="r">Most of arrival day</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>What isn't on the table</h3>
+      <p><b>Vang Vieng.</b> An hour south by train and the obvious add-on, and it is the one place in Laos carrying a live safety warning — Canada's advisory still names it explicitly over methanol-adulterated spirits, nearly two years after the November 2024 deaths. It is also a day you do not have.</p>
+      <p><b>Nong Khiaw and Muang Ngoi.</b> The limestone-karst river country north of Luang Prabang, and genuinely the most beautiful part of northern Laos. Three to four hours each way on mountain road; it needs two or three nights of its own to be worth the journey. Not on this leg.</p>
+      <p><b>The Mekong slow boat to Huay Xai.</b> Two full days on the river. A wonderful thing, and a different trip entirely.</p>
+      <p><b>Vientiane.</b> You may pass through it in the Tuesday shape and that is the only reason to go. The COPE Visitor Centre is the one real loss — but Luang Prabang has its own UXO centre, covered below.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="run">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">03</span> Day by day</p>
+    <h2 class="head">Both versions,<br>laid out</h2>
+    <p class="lede">Luang Prabang runs on an early clock and a hard stop: the town is up before six and the bars shut at 23:30 under a UNESCO-zone curfew that is actually enforced. Build the days from dawn and let the evenings be short. Times are indicative — the first slot of each day is the one that matters.</p>
+    <div class="filters" id="dayToggle" style="margin-bottom:6px">
+      <button class="fbtn" data-plan="mon" aria-pressed="true">Fly Monday · 4 nights</button>
+      <button class="fbtn" data-plan="tue" aria-pressed="false">Tuesday via Vientiane · 3 nights</button>
+    </div>
+    <div class="days" id="days"></div>
+    <p class="fignote" style="margin-top:16px">Amber = on foot or nearby · <span style="color:var(--magenta)">Magenta = a flight, a boat or a road trip</span></p>
+  </div>
+</section>
+
+<section class="section" id="takbat">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">04</span> The dawn alms round</p>
+    <h2 class="head">Watch.<br>Don't buy.</h2>
+    <p class="lede">Tak bat is the reason most people come to Luang Prabang and the thing most visitors get wrong. Several hundred monks and novices from the town's thirty-odd monasteries walk out barefoot at first light, single file, oldest first, and receive sticky rice into lidded alms bowls from kneeling donors. Nobody speaks. Nobody makes eye contact. No thanks are given, because it is <b>merit-making, not charity</b> — and it is the monks' main food of the day.</p>
+
+    <div class="cards">
+      <div class="card bad">
+        <h3>The vendor problem</h3>
+        <div class="verdict bad">The one thing to get right</div>
+        <p>Vendors set up along the procession route selling ready-made alms baskets to tourists — around 50,000 kip for badly stored sticky rice plus packaged goods that have no business in an alms bowl: instant noodles, sweets, crisps.</p>
+        <p>Food poisoning among the monks became frequent enough that they now break the silence of the round to quietly tip these offerings into waste baskets. You pay to hand over food that goes straight in the bin, and the town pays to dispose of it.</p>
+        <div class="fix"><b>If you offer at all</b>Buy plain sticky rice at the <strong>morning market</strong> beforehand — you will already be awake, and it is five minutes away. Never from the vendors on the route. Better still: don't offer. Unless this is a genuine religious act for you, watching respectfully from a distance costs the monks nothing and adds nothing you need.</div>
+      </div>
+
+      <div class="card">
+        <h3>Where to stand</h3>
+        <div class="verdict">Not on Sisavangvong Road</div>
+        <p>The main route down Sakkaline and Sisavangvong past Wat Xieng Thong is the bus-fed stretch — plastic stools in rows, phones pushed into monks' faces, flash going off in the dark. Large buses are formally banned inside the World Heritage zone and following the procession by vehicle is prohibited, partly because it puts you physically above the monks, which is a serious offence. Enforcement is patchy.</p>
+        <p><b>Go somewhere else.</b> The same ceremony happens on the side lanes off the peninsula and in the residential streets near Wat Visoun, where local families make the offerings and there is no tourist apparatus at all.</p>
+        <div class="fix"><b>The rules, such as they are</b>Stay <strong>five metres back</strong>. No flash. No contact. Never stand higher than the monks — sit or kneel. Shoulders and knees covered. Walk there; don't arrive by tuk-tuk. One quiet photo from a distance, or none.</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Why the pressure is on</h3>
+      <p>Luang Prabang took around 800,000 visitors in the first nine months of 2023, and the Laos–China Railway has since made its station the busiest passenger hub on the entire line — 4.36 million passengers. Hotel numbers have more than tripled since the railway opened. Residents have raised the possibility with the tourism board of <b>discontinuing the public alms round altogether</b> if behaviour doesn't improve; monks have periodically threatened the same for years.</p>
+      <p><b>To be clear about what is and isn't true:</b> there is no ban, no ordinance and no fine schedule. Official guidance still permits respectful tourist participation. But the ceremony is under real strain, and the honest read is that it survives on visitors choosing restraint that nobody is enforcing.</p>
+    </div>
+
+    <div class="panel">
+      <h3>Timing, in December</h3>
+      <p>The round runs roughly <b>06:00–07:00</b> from November to February. Sunrise in early December is around 06:29, so it begins in near-darkness — which is precisely why flash photography is such an offence here, and why the whole thing looks like a Christmas market when a coach party arrives.</p>
+      <p>It will be <b>cold</b>. Fourteen to sixteen degrees at dawn, damp air off the river, and you will be sitting still. Almost nobody packs for this. Bring a fleece.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="worth">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">05</span> What's actually worth doing</p>
+    <h2 class="head">Do, maybe,<br>don't bother</h2>
+    <p class="lede">Everything below is inside a 30 km radius of one small town, which is the pleasure of this stop after four weeks of moving. Prices are in kip — the currency is closed, so you cannot buy it before you arrive, and almost all of this is <b>cash only</b>. Roughly 22,400 kip to the US dollar as of September 2026.</p>
+
+    <div class="filters" id="filters">
+      <button class="fbtn" data-city="all" aria-pressed="true">All</button>
+      <button class="fbtn" data-city="Town" aria-pressed="false">Old town</button>
+      <button class="fbtn" data-city="Temples" aria-pressed="false">Temples &amp; museums</button>
+      <button class="fbtn" data-city="Out" aria-pressed="false">Out of town</button>
+      <button class="fbtn" data-city="Food" aria-pressed="false">Food &amp; evening</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-tier="do" aria-pressed="false">Do</button>
+      <button class="fbtn" data-tier="opt" aria-pressed="false">Maybe</button>
+      <button class="fbtn" data-tier="skip" aria-pressed="false">Don't bother</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-book="1" aria-pressed="false">Needs booking</button>
+    </div>
+    <div class="items" id="items"></div>
+  </div>
+</section>
+
+<section class="section" id="calendar">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">06</span> The closing-day traps</p>
+    <h2 class="head">Which day<br>for what</h2>
+    <p class="lede">Three of the four things worth going indoors for are shut on a different day of the week, and on a stay this short one careless morning loses you a museum entirely. <b>The Royal Palace is closed on Tuesdays</b> — the day the itinerary currently has you arriving.</p>
+
+    <div class="figcap">
+      <span>Fig. 2 — What's open, day by day</span>
+      <span><b>7–11 Dec 2026</b> · both plans</span>
+    </div>
+    <div class="scroller">
+      <svg id="open-chart" viewBox="0 0 1400 330" role="img" aria-label="Grid showing opening days for Luang Prabang sights across Monday 7 to Friday 11 December. The Royal Palace Museum is closed Tuesday, the ethnology centre TAEC is closed Monday, and the UXO visitor centre opens weekdays only. Kuang Si Falls and both markets are open every day."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--jade);opacity:.7"></i>Open<i style="background:rgba(224,85,85,.25);border:1px solid var(--red)"></i>Closed<i style="background:rgba(242,169,60,.2);border:1px solid var(--amber)"></i>Only in the Monday plan</p>
+
+    <div class="cols">
+      <p><b>Royal Palace Museum</b>08:00–11:30 and 13:30–16:00, <b>closed Tuesdays</b>. 30,000 kip. No photography inside; cameras and bags go into lockers at the door; shoes off, shoulders and knees covered. Built in 1904 for King Sisavang Vong and left much as the monarchy left it in 1975 — throne room in mirrored glass mosaic, the living quarters, and a diplomatic gifts room containing a moon rock.</p>
+      <p><b>TAEC</b>09:00–18:00, <b>closed Mondays</b>. 25,000 kip. The Traditional Arts &amp; Ethnology Centre is the single best hour in town for understanding the country you are standing in — Laos has around fifty official ethnic groups and the tourist track shows you almost none of them. Excellent fair-trade shop attached.</p>
+      <p><b>UXO Lao Visitor Centre</b>08:00–11:30 and 13:00–16:00, <b>weekdays only</b>, free with donations welcome. Small, sober, forty minutes. Laos is the most heavily bombed country per capita in history — roughly two million tonnes between 1964 and 1973, around 30% of it failing to detonate, and still killing people. COPE, the famous one, is in Vientiane; this is the northern equivalent.</p>
+      <p><b>The Prabang itself</b>The 83 cm gold-alloy Buddha the city is named for, and the most sacred object in Laos. Sources disagree on whether it currently sits in the palace museum or in Haw Pha Bang, the tall gilded hall built in the palace grounds specifically to house it. Ask at the ticket desk — they have moved it before.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="window">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">07</span> Why this window</p>
+    <h2 class="head">The best air<br>of the year</h2>
+    <p class="lede">Early December is not a compromise on this leg — it is close to the optimum. The rains ended in October, the burning has not started, the Mekong is still high enough for boats, and the falls are at their bluest. Expect about <b>26°C by day and 15–16°C at dawn</b>, roughly 8 mm of rain across the entire month, and clear or partly cloudy skies about two days in three.</p>
+
+    <div class="figcap">
+      <span>Fig. 3 — The Lao year, in bands</span>
+      <span><b>Your window marked</b> · 8–11 Dec</span>
+    </div>
+    <div class="scroller">
+      <svg id="year-chart" viewBox="0 0 1400 420" role="img" aria-label="Bands across the calendar year showing the wet monsoon from mid-May to mid-October, the cool dry season from November to mid-February, agricultural burning haze building from January and peaking March to April, the hot season March to mid-May, and the windows for river boats, the bamboo bridge and the waterfalls. The early-December travel window falls inside every favourable band and outside the burning season."></svg>
+    </div>
+    <p class="fignote"><i style="background:rgba(88,196,163,.55)"></i>Good<i style="background:rgba(242,169,60,.45)"></i>Mixed<i style="background:rgba(224,85,85,.45)"></i>Avoid<i style="background:rgba(231,100,155,.15);border:1px solid var(--magenta)"></i>Your window</p>
+
+    <div class="cols">
+      <p><b>Morning mist</b>The postcard version of Luang Prabang — mist sitting on the Mekong and the Nam Khan at first light, burning off by around half eight — is a December product: cool nights, warm water, dry air, clear sky. It is the argument for taking Phousi at sunrise rather than sunset.</p>
+      <p><b>Burning season, and where you sit</b>Agricultural burning runs February to May and peaks in March and April; a national burn ban covers January to April. But haze starts building in December as the dry season sets in, and Luang Prabang's bowl-shaped valley traps smoke badly — the town hit an AQI of 152, rated unhealthy, on 17 January 2026. <b>Early December is comfortably clear of it.</b> Mid-January onward is a different trip.</p>
+      <p><b>Cold at dawn, warm by ten</b>Fourteen to sixteen degrees before sunrise and mid-twenties by lunch is a bigger swing than most people pack for after a month in the tropics. One warm layer solves the whole stop.</p>
+      <p><b>Peak season, and it shows</b>December is the busy month, and Luang Prabang is measurably busier than it was — record arrivals, hotels selling out weeks ahead, lanes overflowing in the old town. Book the room now, and book Kuang Si transport and any class or workshop before you land.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="visa">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">08</span> Getting in</p>
+    <h2 class="head">eVisa or<br>the desk</h2>
+    <p class="lede">Canada gets no visa-free entry to Laos. The Visit Laos Year exemptions expired on 31 December 2024 and were not renewed — and Canada was never on that list anyway. So you need a visa, and there are two routes, both of which work at Luang Prabang. <b>Neither is clearly better; pick on temperament.</b></p>
+
+    <div class="shapes">
+      <div class="shape">
+        <div class="shape-hd">
+          <div class="shape-tag">Cheaper, and fine</div>
+          <p class="shape-name">Visa on arrival</p>
+        </div>
+        <div class="chainrow">
+          <span>US$42 <span class="n">Canada tier</span></span><span class="a">·</span>
+          <span>cash only</span><span class="a">·</span>
+          <span>10–60 min</span>
+        </div>
+        <div class="shape-body">
+          <p>Available to Canadians at LPQ and processed routinely. Canada sits in the top fee tier at <b>US$42</b> — for comparison, the US and UK pay $35 and most nationalities $30. Add <b>US$1</b> overtime on weekends, Lao public holidays, and weekdays before 08:00 or after 16:00, plus a small kip entry fee.</p>
+          <p>You need the passport with six months' validity and a blank page, a completed form, <b>two passport photos</b>, and the fee in <b>crisp, undamaged US dollars</b>. Torn or marked notes get refused, and this is not folklore. No photos means paying a couple of dollars for them to scan the one in your passport.</p>
+          <p>Ten to fifteen minutes when it's quiet; up to an hour if several flights land together.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Cost</dt><dd class="g">US$42</dd></div>
+          <div><dt>Prep</dt><dd>Photos + cash</dd></div>
+          <div><dt>Stay</dt><dd>30 days</dd></div>
+          <div><dt>Risk</dt><dd>Cash shortfall</dd></div>
+        </dl>
+      </div>
+
+      <div class="shape pick">
+        <div class="shape-hd">
+          <div class="shape-tag">Slightly dearer, less to go wrong</div>
+          <p class="shape-name">eVisa</p>
+        </div>
+        <div class="chainrow">
+          <span>laoevisa.gov.la</span><span class="a">·</span>
+          <span>3 working days</span><span class="a">·</span>
+          <span class="n">LPQ accepted</span>
+        </div>
+        <div class="shape-body">
+          <p>Apply between 60 and about 5 days before travel. Processing is <b>three working days</b>; the approval letter is valid 60 days from issue and gives a <b>30-day single entry</b>. Luang Prabang International is on the official list of accepted eVisa ports.</p>
+          <p><b>The fee is nationality-dependent and the official calculator wouldn't give up a Canadian number.</b> Independent sources put the all-in total — visa fee plus service fee plus bank charge — somewhere between US$50 and US$60. Check laoevisa.gov.la's own calculator before assuming. Ignore third-party agency sites quoting $130; that is markup, not the government fee.</p>
+          <p><b>Print the approval letter.</b> Black and white is fine as long as the QR code is legible. A phone screen is not guaranteed to be accepted, and without the letter you are refused entry.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Cost</dt><dd>≈US$50–60</dd></div>
+          <div><dt>Prep</dt><dd class="r">Apply 5+ days out</dd></div>
+          <div><dt>Stay</dt><dd>30 days</dd></div>
+          <div><dt>Risk</dt><dd>Non-refundable</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="panel alert">
+      <h3>The form that catches people out — do this one regardless</h3>
+      <p>The <b>Lao Digital Immigration Form (LDIF)</b> launched on 1 September 2025 and replaced the paper arrival and departure cards. It is <b>mandatory for all foreign travellers</b> entering or leaving Laos by air or land, it is <b>free</b>, and it is <b>separate from your visa</b> — having one does not cover the other.</p>
+      <p>Submit it at <b>immigration.gov.la</b> within <b>three days before arrival</b>, and then <b>again within three days before departure</b>. Two submissions, not one. You get a QR code; keep it on your phone and take a screenshot. Paper is reportedly still tolerated as a fallback at the border, but that is a tolerance, not a plan.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="admin">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">09</span> Ground rules</p>
+    <h2 class="head">Before you land</h2>
+
+    <div class="tablewrap">
+    <table class="ref">
+      <thead><tr><th>Item</th><th>What to do</th><th>When</th></tr></thead>
+      <tbody>
+        <tr class="flag"><td>The flight</td><td>Move HAN→LPQ to <b>Monday 7 December</b>. Tuesday is not served by either carrier. Confirm on Vietnam Airlines' own booking engine, not an aggregator.</td><td class="t">Do this first</td></tr>
+        <tr class="flag"><td>Siem Reap</td><td>The onward airport is <b>SAI</b>, not REP — the old in-town airport closed in October 2023. SAI is 40–50 km out. Rebuild the arrival transfer around it.</td><td class="t">Before booking</td></tr>
+        <tr><td>Visa</td><td>eVisa at laoevisa.gov.la (≈US$50–60, 3 working days, print the letter) or visa on arrival at LPQ (US$42 cash, two photos). Both give 30 days.</td><td class="t">5+ days out</td></tr>
+        <tr class="flag"><td>LDIF</td><td>Mandatory digital immigration form since 1 Sept 2025, free, at immigration.gov.la. Submit within 3 days before arrival <b>and</b> again within 3 days before departure.</td><td class="t">Twice</td></tr>
+        <tr><td>Passport</td><td>The eVisa terms require more than 180 days' validity from arrival; Canada's advisory says six months beyond your departure from Laos. Meet the stricter reading, and carry a blank page for the sticker.</td><td class="t">Check now</td></tr>
+        <tr><td>Departure tax</td><td>International departure tax is bundled into the ticket — nothing to pay in cash at LPQ. No official page confirms this, so carry ten dollars in small notes as insurance you almost certainly won't use.</td><td class="t">Automatic</td></tr>
+        <tr class="flag"><td>Cash</td><td>The kip is a <b>closed currency</b> — you cannot buy it at home or sell it after you leave. Spend it down before you fly. ATM withdrawal caps are low, roughly 1–2.5 million kip per transaction, each with its own fee, so withdraw the maximum each time and decline the conversion-to-CAD offer.</td><td class="t">On arrival</td></tr>
+        <tr><td>Cards</td><td>Work at better hotels, upmarket restaurants and larger agencies, usually with a 2–3% surcharge. The night market, street food, tuk-tuks, guesthouses and every temple entry are cash. Plan a cash trip.</td><td class="t">Assume cash</td></tr>
+        <tr class="flag"><td>Drinks</td><td>Canada's advisory still explicitly warns on methanol-adulterated alcohol in Laos after the November 2024 Vang Vieng deaths — charges were only laid in July 2026, and Australia and Denmark have both objected that they are too lenient. <b>Sealed bottles from licensed places only.</b> Beerlao is bottled and reliable. Avoid free or discounted spirits, "happy" shakes and pizzas.</td><td class="t">Whole trip</td></tr>
+        <tr><td>Advisory</td><td>Canada rates Laos <b>Level 2, exercise a high degree of caution</b>, country-wide. Xaisomboun and border areas of Bokeo are Level 3. Neither affects Luang Prabang.</td><td class="t">Reviewed Sept 2026</td></tr>
+        <tr><td>Curfew</td><td>Central bars must close by 23:30 and the town is genuinely quiet by midnight — a World Heritage zone rule, and one of the reasons the place still feels the way it does. Late options exist outside the centre; the bowling alley is the local institution.</td><td class="t">Plan early nights</td></tr>
+        <tr><td>Booking</td><td>December is peak. Rooms sell out weeks ahead. Book the hotel, Kuang Si transport, and any cooking class, Ock Pop Tok workshop or Free the Bears tour before arrival.</td><td class="t">Now</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="cols">
+      <p><b>Getting in from LPQ</b>Four to five kilometres, ten to twenty minutes, single terminal. Transfer quotes vary wildly — tuk-tuks are quoted anywhere from 25,000 to 100,000 kip, while the airport taxi counter asks around 320,000. Budget about 100,000 and negotiate outside the terminal gates.</p>
+      <p><b>Dress</b>Shoulders and knees covered at every temple and at tak bat; sarongs rent for 5,000 kip at the bigger wat if you turn up underdressed. One warm layer for dawn. Shoes you can take off repeatedly without sitting down.</p>
+      <p><b>UNESCO, and the clock on it</b>Inscribed in 1995 for the fusion of Lao vernacular and French colonial townscape. A US$3 billion, 1,460 MW dam on the Mekong mainstream about 25 km upstream is due for completion in 2027; UNESCO demanded assurances in 2023, and a former deputy director of the World Heritage Centre has said publicly that if it is built, Luang Prabang should be delisted. You are seeing this town at a particular moment.</p>
+      <p><b>Language and money on the ground</b>US dollars and Thai baht are widely taken at hotels and agencies; markets, tuk-tuks and small kitchens want kip and will give you a poor rate if you pay otherwise. Inflation was running around 7.6% in mid-2026 and the kip has kept sliding, so treat every price here as approximate and rising.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <p>Westbound · stop 13 · Laos</p>
+      <p>8–11 Dec 2026 · LPQ in, SAI out</p>
+      <p>Fares, fees and schedules verified Sept 2026 — recheck before booking</p>
+    </div>
+    <p class="foot-mark">Luang Prabang</p>
+  </div>
+</footer>
+
+<script>
+/* ============ DAY-BY-DAY ============ */
+const DAYS_MON=[
+{d:'Mon 7',w:'Arrive',name:'Luang Prabang',sub:'Land 14:20 · the free evening',meta:'Night 1',
+ slots:[
+  {m:1,h:'13:10 · HAN',p:'Vietnam Airlines VN931, A321, about an hour and five minutes. The Lao Airlines ATR at 19:10 also runs Mondays, but it costs you the evening — take the afternoon flight.'},
+  {h:'14:45 · Visa desk',p:'US$42 in crisp notes and two photos if you are doing visa on arrival; the printed approval letter if you did the eVisa. LDIF QR code either way. Then 10–20 minutes into town.'},
+  {h:'16:30 · Walk the peninsula',p:'No plan. Sisavangvong Road end to end, the lanes down to the Nam Khan, the wat you happen to pass. Get your bearings while it is still light — the town is small enough to learn in an hour.'},
+  {h:'17:30 · The bamboo bridge',p:'Rebuilt by hand every dry season and dismantled when the river rises in May. 10,000 kip return at the river-mouth crossing, and the best free sunset in town. Keep the ticket for the way back.'},
+  {h:'19:00 · Night market food alley',p:'Off the main market near the tourism office. The fill-your-own vegetarian bowl for a few tens of thousands of kip, grilled Mekong fish in a salt crust, sticky rice. Go early — the buffet is reheated.'}
+]},
+{d:'Tue 8',w:'Full',name:'Dawn, then the falls',sub:'Tak bat · Kuang Si at opening',meta:'Night 2',
+ slots:[
+  {h:'06:00 · Tak bat',p:'A side lane off the peninsula or the residential streets near Wat Visoun — not Sisavangvong Road. Five metres back, no flash, sit rather than stand. Fifteen degrees and damp; wear the fleece.'},
+  {h:'06:45 · Morning market',p:'Behind the tourism centre, running from five. River fish, forest greens, khaiphaen, dried buffalo. This is also where you would buy plain sticky rice if you intend to make a genuine offering tomorrow.'},
+  {m:1,h:'07:30 · Leave for Kuang Si',p:'Roughly 30 km, 45 minutes. Shared minivan about 40,000 kip a head; private tuk-tuk 180,000–200,000 return. Being at the gate for opening at 08:00 is the whole trick.'},
+  {h:'08:15 · The falls, empty',p:'Turquoise travertine pools, ice-cold, and near-silent for the first two hours. The minivans start landing around ten and by midday it is a chain of them. Swim only in the marked pools.'},
+  {h:'09:30 · Bear Rescue Centre',p:'At the entrance and included in your ticket. Twenty-plus Asiatic black bears rescued from the bile-farm and pet trades, in large forested enclosures. Half an hour, and the most legitimate animal attraction in Laos.'},
+  {h:'14:00 · TAEC',p:'Back in town. 25,000 kip, open Tuesdays. An hour on the fifty-odd ethnic groups the tourist track never shows you, and a fair-trade shop worth actually buying from. Note: the Royal Palace is shut today.'},
+  {h:'18:00 · Mekong bank',p:'A riverside terrace on Manthatourath Road for the wide western view, and an early night. The town shuts at 23:30 whether you are ready or not.'}
+]},
+{d:'Wed 9',w:'Full',name:'The old town',sub:'Sunrise, palace, temples',meta:'Night 3',
+ slots:[
+  {h:'06:00 · Mount Phousi at sunrise',p:'20,000 kip, 355 steps from the Nam Khan side — the better climb, past the cave temple and the Buddha footprint. Mist on both rivers, and a fraction of the sunset crowd. This is the shot.'},
+  {h:'08:15 · Royal Palace Museum',p:'30,000 kip, open Wednesdays, morning session ends 11:30. Cameras and bags into lockers, shoes off. Throne room in mirrored glass, the royal quarters as 1975 left them, and a moon rock in the gifts room.'},
+  {h:'10:00 · Wat Xieng Thong',p:'1560, and the finest surviving Lao Buddhist architecture — roofs sweeping almost to the ground, the Tree of Life mosaic on the rear wall, and the 12-metre gilded royal funeral carriage in its own hall. Carry 30,000 kip; sources disagree on the fee.'},
+  {h:'11:15 · Wat Mai and Wat Visoun',p:'Wat Mai for the gilded stucco reliefs along the front veranda; Wat Visoun, the oldest in town, for That Makmo, the watermelon stupa — knocked down by lightning in 1914 and rebuilt in 1932.'},
+  {h:'13:30 · UXO Lao Visitor Centre',p:'Free, weekday afternoons until 16:00. Defused cluster submunitions, survivor testimony, a short film. Two million tonnes dropped between 1964 and 1973, about a third of it still live in the ground. Forty minutes and it recalibrates the whole country.'},
+  {h:'16:00 · Ock Pop Tok',p:'Free pink tuk-tuk from their town shop to the riverside weaving centre, free guided tour, craft demonstrations at half four. Silk Road Kitchen on site if you want to stay for dinner over the Mekong.'}
+]},
+{d:'Thu 10',w:'Full',name:'The river',sub:'Pak Ou by boat',meta:'Night 4',
+ slots:[
+  {m:1,h:'08:00 · Boat from Vat Nong',p:'Around 80,000 kip a head, roughly three and a half hours return upriver to the Pak Ou caves; cave entry about 20,000 kip on top. December water levels are good — October to April is the navigable window.'},
+  {h:'09:30 · The caves',p:'Two limestone chambers stacked in a cliff at the Mekong–Nam Ou confluence, packed with thousands of discarded Buddha images left by pilgrims over centuries. The upper cave needs a torch and is the better one.'},
+  {h:'11:30 · Ban Xang Khong, optional',p:'Sa-paper and weaving village on the way back, and the better of the craft stops. The lao-lao whisky village is a hard sell with scorpions in bottles — worth two minutes as part of a boat trip, never as a destination.'},
+  {h:'14:00 · Cooking class or slack',p:'250,000–400,000 kip for a half-day with Tamarind or Bamboo Tree — market tour, then a garden kitchen. Book ahead. Or do nothing: after four weeks of moving, an afternoon with no plan is a legitimate use of Luang Prabang.'},
+  {h:'19:00 · Last night',p:'Night market for the things actually made here — Hmong appliqué, sa-paper lanterns, and cutlery cast from melted bomb scrap, which after yesterday afternoon lands differently. One drink at Utopia over the Nam Khan; the curfew handles the rest.'}
+]},
+{d:'Fri 11',w:'Depart',name:'To Siem Reap',sub:'One last dawn',meta:'Fly out',
+ slots:[
+  {h:'06:00 · Tak bat again, or sleep',p:'If yesterday morning felt rushed or you want to make a real offering with market rice, this is the morning. Otherwise sleep — you have earned it and Angkor starts early too.'},
+  {h:'09:00 · Whatever you missed',p:'Coffee on the peninsula, the bamboo bridge in daylight, or the second bridge upstream at 7,000 kip. Spend down the kip: it is a closed currency and worthless the moment you leave.'},
+  {m:1,h:'13:15 · Airport',p:'Ten to twenty minutes out. Submit the departure-side LDIF before you go — it is a separate submission from the arrival one and it is easy to forget.'},
+  {m:1,h:'14:45 · Siem Reap',p:'Stop 14. VN931 continues LPQ→SAI, about 1h30. Seasonal, October to May — confirm it is loaded for your date. Land at Siem Reap–Angkor, 40–50 km out, not the old in-town airport.'}
+]}
+];
+
+const DAYS_TUE=[
+{d:'Tue 8',w:'Arrive',name:'Via Vientiane',sub:'Most of a day, gone',meta:'Night 1',
+ slots:[
+  {m:1,h:'· HAN → VTE',p:'About an hour, roughly fourteen flights a week on Vietnam Airlines and Lao Airlines. The only way to reach Laos on a Tuesday, since neither carrier flies Hanoi–Luang Prabang that day.'},
+  {m:1,h:'· VTE → LPQ',p:'Either a short Lao Airlines hop north, or the Laos–China Railway in about 1h50 for around US$20 second class. The train is better and riskier: the station is 11–13 km out of town and the booking window is disputed. Do not connect to an unticketed train.'},
+  {h:'· Evening',p:'Whatever is left of it. Drop the bag, walk to the night market food alley, eat, sleep. This is the day the Tuesday plan costs you.'}
+]},
+{d:'Wed 9',w:'Full',name:'Dawn, then the falls',sub:'Tak bat · Kuang Si at opening',meta:'Night 2',
+ slots:[
+  {h:'06:00 · Tak bat',p:'A side lane off the peninsula, not Sisavangvong Road. Five metres back, no flash, sit rather than stand, shoulders and knees covered. Fifteen degrees at dawn — bring a layer.'},
+  {h:'06:45 · Morning market',p:'Behind the tourism centre from five in the morning. River fish, forest greens, khaiphaen, dried buffalo.'},
+  {m:1,h:'07:30 · Leave for Kuang Si',p:'30 km, 45 minutes, shared minivan about 40,000 kip a head. Be at the gate for 08:00 — the tour minivans arrive from ten and the afternoon is a chain of them.'},
+  {h:'08:15 · Falls and bear centre',p:'The pools at their bluest and near-empty, then twenty-plus rescued Asiatic black bears at the entrance, included in the ticket. Swim only where marked. The old scramble to the upper pools is closed — it is a staircase to a paid treehouse cafe now.'},
+  {h:'15:00 · Royal Palace or TAEC',p:'Back in town with an afternoon left. The palace shuts at 16:00 and reopens Thursday; TAEC runs to 18:00 and is the better late option. In the three-night shape you may not fit both — TAEC is the one I would keep.'},
+  {h:'19:00 · Night market',p:'Hmong appliqué, sa-paper lanterns, cutlery cast from bomb scrap. Then the food alley. Curfew at 23:30.'}
+]},
+{d:'Thu 10',w:'Full',name:'The old town',sub:'Sunrise, palace, temples',meta:'Night 3',
+ slots:[
+  {h:'06:00 · Mount Phousi at sunrise',p:'20,000 kip, 355 steps from the Nam Khan side. Mist on both rivers and a fraction of the sunset crowd. Skip the sunset version entirely — it is hundreds of people on a small summit.'},
+  {h:'08:15 · Royal Palace Museum',p:'30,000 kip, morning session to 11:30, open Thursdays. Cameras and bags into lockers. If you did the palace yesterday afternoon, use this slot for the Pak Ou boat instead and accept it will be rushed.'},
+  {h:'10:00 · Wat Xieng Thong',p:'1560. Roofs sweeping almost to the ground, the Tree of Life mosaic, the gilded royal funeral carriage. Carry 30,000 kip. Wat Mai and Wat Visoun are five minutes away and cost 10,000 and 5,000.'},
+  {h:'13:30 · UXO Lao Visitor Centre',p:'Free, weekdays to 16:00. Two million tonnes of ordnance dropped 1964–73, roughly a third of it unexploded and still in the ground. Forty minutes, and it changes how the rest of the country reads.'},
+  {h:'16:00 · Ock Pop Tok or the bamboo bridge',p:'Free tuk-tuk to the riverside weaving centre and a free tour, or 10,000 kip across the hand-built bamboo bridge for the best free sunset in town. Both, if the afternoon holds.'}
+]},
+{d:'Fri 11',w:'Depart',name:'To Siem Reap',sub:'One last dawn',meta:'Fly out',
+ slots:[
+  {h:'06:00 · Tak bat, second pass',p:'The morning to do it properly if Wednesday felt rushed — with plain sticky rice bought at the market, if you are offering at all. Never from the vendors on the route.'},
+  {h:'09:00 · The river, or coffee',p:'Whatever the short shape squeezed out. Spend down the kip — it is a closed currency and cannot be exchanged once you leave.'},
+  {m:1,h:'13:15 · Airport',p:'Ten to twenty minutes out. Submit the departure-side LDIF first — separate submission, easy to forget, mandatory.'},
+  {m:1,h:'14:45 · Siem Reap',p:'Stop 14. VN931 LPQ→SAI, about 1h30, seasonal October to May. Confirm it is loaded for your date, and remember the airport is SAI, 40–50 km out — the old REP closed in 2023.'}
+]}
+];
+
+let CURRENT_PLAN='mon';
+function renderDays(){
+  const DAYS = CURRENT_PLAN==='mon' ? DAYS_MON : DAYS_TUE;
+  document.getElementById('days').innerHTML=DAYS.map((D)=>`
+  <div class="day">
+    <button class="day-btn" aria-expanded="false">
+      <span class="day-date">${D.d}<small>${D.w}</small></span>
+      <span><span class="day-name">${D.name}</span><span class="day-sub">${D.sub}</span></span>
+      <span class="day-meta">${D.meta}<span class="chev">▾</span></span>
+    </button>
+    <div class="day-body"><div class="day-inner"><div class="day-pad"><div class="slots">
+      ${D.slots.map(s=>`<div class="slot${s.m?' move':''}"><h4>${s.h}</h4><p>${s.p}</p></div>`).join('')}
+    </div></div></div></div>
+  </div>`).join('');
+
+  document.querySelectorAll('.day-btn').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const d=b.parentElement, open=d.classList.toggle('open');
+      b.setAttribute('aria-expanded',open?'true':'false');
+    });
+  });
+  document.querySelector('.day').classList.add('open');
+  document.querySelector('.day-btn').setAttribute('aria-expanded','true');
+}
+renderDays();
+
+document.getElementById('dayToggle').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  CURRENT_PLAN=b.dataset.plan;
+  document.querySelectorAll('#dayToggle .fbtn').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
+  renderDays();
+  drawOpen();
+});
+
+/* ============ WORTH DOING ============ */
+const ITEMS=[
+/* OLD TOWN */
+{c:'Town',t:'do',n:'Tak bat, observed',w:'Several hundred monks, barefoot and silent, at first light. Watch from a side lane, five metres back, no flash, sitting not standing. <b>Don’t buy alms baskets from the route vendors</b> — the rice makes the monks ill and goes straight in the bin.',when:'06:00–07:00'},
+{c:'Town',t:'do',n:'Mount Phousi at sunrise',w:'20,000 kip, 355 steps from the Nam Khan side past the cave temple. Mist on both rivers, Wat Chom Si’s gilded stupa at the top, and a fraction of the evening crowd.',when:'From 05:30'},
+{c:'Town',t:'do',n:'Morning market',w:'From five, behind the tourism centre in the old town. River fish, foraged greens, crisped river weed, dried buffalo. Pairs perfectly with tak bat because you are already awake.',when:'05:00–11:00'},
+{c:'Town',t:'do',n:'The bamboo bridge',w:'Rebuilt by hand each dry season, dismantled when the river rises in May — so it will be standing in December. 10,000 kip return at the river mouth, 7,000 upstream. Best free sunset in town.',when:'Nov–Apr only'},
+{c:'Town',t:'opt',n:'Ock Pop Tok',w:'Riverside weaving and natural-dye centre with a free shuttle from their town shop, a free guided tour, and craft demos late morning and late afternoon. Half-day hands-on workshops from about US$36.',when:'Free tour'},
+{c:'Town',t:'opt',n:'Cooking class',w:'250,000–400,000 kip for a half-day — market tour, then a garden kitchen. Tamarind and Bamboo Tree are the established names. Book ahead in December.',when:'Book ahead',b:1},
+{c:'Town',t:'opt',n:'Big Brother Mouse',w:'Lao-language children’s book publisher running drop-in English conversation sessions with young Lao students. Free to attend; buy books for a village school if you want to leave something behind. Session times aren’t published — ask locally.',when:'Daily'},
+{c:'Town',t:'opt',n:'Living Land rice farm',w:'The fourteen-step rice cycle, hands in the mud, with a water buffalo. About four hours from 08:00 with hotel pickup, community-run. Every price I could find dates from years ago — expect it to have risen a lot.',when:'Book ahead',b:1},
+{c:'Town',t:'skip',n:'Mount Phousi at sunset',w:'A small summit, hundreds of people, and queues for the photo spots. The same hill at sunrise is a different experience for the same 20,000 kip. Take the Mekong bank or the bamboo bridge for sunset instead.',when:''},
+{c:'Town',t:'skip',n:'Any "tak bat tour"',w:'Buses are formally banned inside the heritage zone and following the procession by vehicle is prohibited — it puts you above the monks, which is a serious offence. Walk there yourself and stand somewhere quiet.',when:''},
+/* TEMPLES & MUSEUMS */
+{c:'Temples',t:'do',n:'Wat Xieng Thong',w:'1560, and the finest surviving Lao Buddhist architecture anywhere — roofs sweeping nearly to the ground, the Tree of Life glass mosaic, and a 12-metre gilded royal funeral carriage in its own hall. Royal coronation site.',when:'20–30,000 kip'},
+{c:'Temples',t:'do',n:'TAEC',w:'Traditional Arts &amp; Ethnology Centre. 25,000 kip, <b>closed Mondays</b>. Akha, Hmong, Tai Lue and Kmhmu textiles, jewellery and ritual objects. The best hour in town for understanding a country the tourist track barely shows you.',when:'Closed Mon'},
+{c:'Temples',t:'do',n:'UXO Lao Visitor Centre',w:'Free, donations welcome, <b>weekdays only</b>. Defused cluster submunitions, survivor testimony, a short film. Laos is the most heavily bombed country per capita in history and roughly a third of it never went off. Forty minutes.',when:'Mon–Fri'},
+{c:'Temples',t:'opt',n:'Royal Palace Museum',w:'30,000 kip, <b>closed Tuesdays</b>, 08:00–11:30 and 13:30–16:00. Cameras and bags into lockers. The 1904 palace much as the monarchy left it in 1975, plus the Prabang Buddha — ask whether it is in the museum or next door in Haw Pha Bang.',when:'Closed Tue'},
+{c:'Temples',t:'opt',n:'Wat Mai',w:'10,000 kip. Housed the Prabang for most of a century. The draw is the gilded stucco relief along the front veranda — Ramayana, Jataka tales, and scenes of ordinary Luang Prabang life.',when:'08:00–17:00'},
+{c:'Temples',t:'opt',n:'Wat Visoun &amp; That Makmo',w:'5,000 kip, the oldest temple in town (1512), and the watermelon stupa beside it — the only Singhalese-style stupa in Laos, felled by lightning in 1914 and rebuilt in 1932.',when:'08:00–17:00'},
+{c:'Temples',t:'skip',n:'Wat Sensoukharam as a stop',w:'Free and right on the main road, so you will see it anyway. Pleasant; not a destination when Wat Xieng Thong is ten minutes away.',when:''},
+/* OUT OF TOWN */
+{c:'Out',t:'do',n:'Kuang Si Falls at opening',w:'60–65,000 kip including the mandatory shuttle from the car park and the bear centre. 30 km, 45 minutes. <b>Be at the gate for 08:00</b> — minivans start landing at ten and by midday it is a chain of them.',when:'08:00–17:00'},
+{c:'Out',t:'do',n:'Tat Kuang Si Bear Rescue Centre',w:'At the falls entrance, included in your ticket, no extra charge. Twenty-plus Asiatic black bears rescued from the bile-farming and pet trades, in large forested enclosures. Half an hour, and it is the real thing rather than a photo op.',when:'Included'},
+{c:'Out',t:'opt',n:'Pak Ou Caves by boat',w:'Around 80,000 kip a head, three and a half hours return up the Mekong, cave entry about 20,000 on top. Two chambers in a cliff stacked with thousands of Buddha images left by pilgrims. December water levels are good.',when:'Boats from 08:00'},
+{c:'Out',t:'opt',n:'Free the Bears care tour',w:'Two hours behind the scenes at the rescue centre, minimum US$50 donation plus park entry, no contact with the bears. Email ahead. Worth it if the bears are the thing rather than the waterfall.',when:'Book ahead',b:1},
+{c:'Out',t:'opt',n:'Ban Xang Khong',w:'Sa-paper and weaving village across the Mekong, closer in and better value than the whisky village. A reasonable add-on to the boat trip.',when:'Half day'},
+{c:'Out',t:'skip',n:'Kuang Si upper pools',w:'The old scramble to the "secret pools" above the falls is closed. In its place is a staircase of roughly 550 steps to a treehouse cafe charging 30,000 kip. Don’t go off-trail looking for the old route.',when:'Closed'},
+{c:'Out',t:'skip',n:'Whisky village (Ban Xang Hai)',w:'Rice-whisky village 20 km out, honestly assessed even by sympathetic guides as very touristy — free samples, then a hard sell on bottles with scorpions in them. Fine as a two-minute boat stop, pointless as a trip.',when:''},
+{c:'Out',t:'skip',n:'Kuang Si Butterfly Park',w:'Separate fee and sources disagree wildly on what it is — 40,000 kip in one guide, 100,000 in another. Skip unless butterflies are your thing.',when:''},
+{c:'Out',t:'skip',n:'Nong Khiaw',w:'Three to four hours each way into the karst country up the Nam Ou, and the most beautiful part of northern Laos. It needs two or three nights of its own. Come back for it.',when:''},
+{c:'Out',t:'skip',n:'Vang Vieng',w:'An hour south on the railway, and the one place in Laos carrying a live Canadian travel warning over methanol-adulterated spirits after the November 2024 deaths. Also a day you don’t have.',when:''},
+{c:'Out',t:'skip',n:'Slow boat to Huay Xai',w:'Two full days on the Mekong. One of the great river journeys in Asia and completely incompatible with three nights.',when:''},
+/* FOOD & EVENING */
+{c:'Food',t:'do',n:'Night market food alley',w:'Off the main market near the tourism office. The fill-your-own vegetarian buffet bowl for a few tens of thousands of kip, grilled Mekong fish in a salt crust, tam mak hoong, and Luang Prabang khao soi. Go early — the buffet is reheated.',when:'17:00–22:00'},
+{c:'Food',t:'do',n:'Night market, the real stalls',w:'Around 250 stalls, road closed to traffic. Worth buying: Hmong appliqué, hand-woven silk, sa-paper lanterns, and cutlery and jewellery cast from melted bomb scrap. Much of the rest is imported — apply scepticism.',when:'17:00–22:00'},
+{c:'Food',t:'opt',n:'Utopia',w:'Cushions on a terrace above the Nam Khan, acoustic sets early evening, and it closes with the town at 23:30 like everywhere else. One sundowner, not a night out.',when:'Until 23:30'},
+{c:'Food',t:'opt',n:'Mekong-bank sunset',w:'The riverside terraces along Manthatourath Road get the wide western view and cost nothing but the price of a Beerlao. The unfussy alternative to fighting for space on Phousi.',when:'From 17:00'},
+{c:'Food',t:'skip',n:'Unsealed spirits, "happy" shakes',w:'Canada’s advisory still explicitly warns on methanol-adulterated alcohol in Laos, and charges over the November 2024 Vang Vieng deaths were only laid in July 2026. <b>Sealed bottles from licensed places only</b>; never accept free or discounted spirits. Beerlao is bottled and reliable.',when:''}
+];
+
+const TIERLBL={do:'Do',opt:'Maybe',skip:'Skip'};
+let FC='all', FT=null, FB=false;
+
+function renderItems(){
+  const list=ITEMS.filter(x=>
+    (FC==='all'||x.c===FC) && (!FT||x.t===FT) && (!FB||x.b));
+  const host=document.getElementById('items');
+  if(!list.length){host.innerHTML='<div class="empty">No entries match those filters.</div>';return}
+  host.innerHTML=list.map(x=>`
+    <div class="item">
+      <span class="tier ${x.t}">${TIERLBL[x.t]}</span>
+      <span class="nm">${x.n}</span>
+      <span class="when${x.b?' book':''}">${x.when||'&nbsp;'}</span>
+      <span class="why">${x.w}</span>
+    </div>`).join('');
+}
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  if(b.dataset.city){FC=b.dataset.city}
+  else if(b.dataset.tier){FT = FT===b.dataset.tier?null:b.dataset.tier}
+  else if(b.dataset.book){FB=!FB}
+  document.querySelectorAll('#filters .fbtn').forEach(x=>{
+    let on=false;
+    if(x.dataset.city) on = x.dataset.city===FC;
+    if(x.dataset.tier) on = x.dataset.tier===FT;
+    if(x.dataset.book) on = FB;
+    x.setAttribute('aria-pressed',on?'true':'false');
+  });
+  renderItems();
+});
+renderItems();
+
+/* ============ FIG 1: FLIGHT DAYS ============ */
+(function(){
+  const svg=document.getElementById('days-chart');
+  const W=1400,H=260,padL=330,padR=40,padT=52,rowH=54;
+  const DOW=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+  const ROWS=[
+    {n:'VN931 · HAN → LPQ',s:'Vietnam Airlines A321 · dep 13:10',d:[1,0,1,0,1,0,0]},
+    {n:'QV314 · HAN → LPQ',s:'Lao Airlines ATR · dep 19:10',d:[1,0,1,0,1,0,1]},
+    {n:'VN931 · LPQ → SAI',s:'Through-service · dep 14:45 · seasonal Oct–May',d:[1,0,1,0,1,0,0]}
+  ];
+  const cw=(W-padL-padR)/7;
+  let s='';
+  // Tuesday highlight
+  s+=`<rect x="${padL+cw*1+3}" y="${padT-30}" width="${cw-6}" height="${ROWS.length*rowH+34}" fill="rgba(231,100,155,.10)" stroke="var(--magenta)" stroke-width="1"/>`;
+  s+=`<text x="${padL+cw*1.5}" y="${padT-38}" class="lbl-a" text-anchor="middle" fill="var(--magenta)">Booked arrival</text>`;
+  DOW.forEach((d,i)=>{
+    s+=`<text x="${padL+cw*i+cw/2}" y="${padT-10}" class="lbl" text-anchor="middle" ${i===1?'fill="var(--magenta)"':''}>${d}</text>`;
+  });
+  ROWS.forEach((r,ri)=>{
+    const y=padT+ri*rowH;
+    s+=`<text x="${padL-16}" y="${y+21}" class="lbl-p" text-anchor="end">${r.n}</text>`;
+    s+=`<text x="${padL-16}" y="${y+36}" class="lbl" text-anchor="end">${r.s}</text>`;
+    r.d.forEach((on,i)=>{
+      const x=padL+cw*i+6, w=cw-12, h=32;
+      if(on){
+        s+=`<rect x="${x}" y="${y+6}" width="${w}" height="${h}" rx="2" fill="var(--amber)"/>`;
+        s+=`<text x="${x+w/2}" y="${y+27}" class="lbl" text-anchor="middle" fill="var(--ink)" font-weight="600">FLIES</text>`;
+      } else {
+        s+=`<rect x="${x}" y="${y+6}" width="${w}" height="${h}" rx="2" fill="var(--ink-3)" stroke="var(--rule)" stroke-width="1"/>`;
+        s+=`<text x="${x+w/2}" y="${y+27}" class="lbl" text-anchor="middle">—</text>`;
+      }
+    });
+  });
+  s+=`<line x1="${padL-2}" y1="${padT-2}" x2="${W-padR}" y2="${padT-2}" class="ax"/>`;
+  svg.innerHTML=s;
+})();
+
+/* ============ FIG 2: OPENING DAYS ============ */
+function drawOpen(){
+  const svg=document.getElementById('open-chart');
+  if(!svg) return;
+  const W=1400,H=330,padL=330,padR=40,padT=58,rowH=42;
+  const COLS=[
+    {n:'Mon 7',s:'Dec',monOnly:1},
+    {n:'Tue 8',s:'Dec'},
+    {n:'Wed 9',s:'Dec'},
+    {n:'Thu 10',s:'Dec'},
+    {n:'Fri 11',s:'Dec'}
+  ];
+  /* index 0 = Mon 7 ... 4 = Fri 11 */
+  const ROWS=[
+    {n:'Royal Palace Museum',s:'30,000 kip · 08:00–11:30, 13:30–16:00',d:[1,0,1,1,1]},
+    {n:'TAEC ethnology centre',s:'25,000 kip · 09:00–18:00',d:[0,1,1,1,1]},
+    {n:'UXO Lao Visitor Centre',s:'Free · 08:00–11:30, 13:00–16:00',d:[1,1,1,1,1]},
+    {n:'Kuang Si Falls',s:'60–65,000 kip · 08:00–17:00',d:[1,1,1,1,1]},
+    {n:'Night market',s:'Free · 17:00–22:00',d:[1,1,1,1,1]},
+    {n:'Morning market',s:'Free · 05:00–11:00',d:[1,1,1,1,1]}
+  ];
+  const cw=(W-padL-padR)/COLS.length;
+  const monPlan = (typeof CURRENT_PLAN!=='undefined') && CURRENT_PLAN==='mon';
+  let s='';
+  if(!monPlan){
+    s+=`<rect x="${padL+3}" y="${padT-34}" width="${cw-6}" height="${ROWS.length*rowH+38}" fill="rgba(242,169,60,.08)" stroke="var(--amber)" stroke-width="1" stroke-dasharray="4 3"/>`;
+    s+=`<text x="${padL+cw/2}" y="${padT-42}" class="lbl-a" text-anchor="middle">Not in this plan</text>`;
+  } else {
+    s+=`<text x="${padL+cw/2}" y="${padT-42}" class="lbl-a" text-anchor="middle">Extra day</text>`;
+  }
+  COLS.forEach((c,i)=>{
+    s+=`<text x="${padL+cw*i+cw/2}" y="${padT-12}" class="lbl-p" text-anchor="middle">${c.n}</text>`;
+  });
+  ROWS.forEach((r,ri)=>{
+    const y=padT+ri*rowH;
+    s+=`<text x="${padL-16}" y="${y+17}" class="lbl-p" text-anchor="end">${r.n}</text>`;
+    s+=`<text x="${padL-16}" y="${y+31}" class="lbl" text-anchor="end">${r.s}</text>`;
+    r.d.forEach((on,i)=>{
+      const x=padL+cw*i+6, w=cw-12, h=26;
+      const ghost = (i===0 && !monPlan);
+      if(on){
+        s+=`<rect x="${x}" y="${y+4}" width="${w}" height="${h}" rx="2" fill="${ghost?'rgba(88,196,163,.18)':'rgba(88,196,163,.65)'}" ${ghost?'stroke="var(--rule)"':''}/>`;
+        s+=`<text x="${x+w/2}" y="${y+21}" class="lbl" text-anchor="middle" fill="${ghost?'var(--muted)':'var(--ink)'}" font-weight="600">OPEN</text>`;
+      } else {
+        s+=`<rect x="${x}" y="${y+4}" width="${w}" height="${h}" rx="2" fill="rgba(224,85,85,.22)" stroke="var(--red)" stroke-width="1"/>`;
+        s+=`<text x="${x+w/2}" y="${y+21}" class="lbl" text-anchor="middle" fill="var(--red)" font-weight="600">CLOSED</text>`;
+      }
+    });
+  });
+  s+=`<line x1="${padL-2}" y1="${padT-4}" x2="${W-padR}" y2="${padT-4}" class="ax"/>`;
+  svg.innerHTML=s;
+}
+drawOpen();
+
+/* ============ FIG 3: THE LAO YEAR ============ */
+(function(){
+  const svg=document.getElementById('year-chart');
+  const W=1400,H=420,padL=300,padR=40,padT=30,rowH=44;
+  const x=m=>padL+(m/12)*(W-padL-padR); // m = month index as float, 0 = 1 Jan
+  const BANDS=[
+    {n:'Wet monsoon',s:'heavy afternoon rain',segs:[[4.5,9.5]],k:'bad'},
+    {n:'Cool dry season',s:'the window you are in',segs:[[10,12],[0,1.5]],k:'good'},
+    {n:'Burning haze',s:'builds Jan, peaks Mar–Apr',segs:[[0,4]],k:'bad'},
+    {n:'Hot season',s:'35°C+ in the valley',segs:[[2,4.5]],k:'mid'},
+    {n:'Mekong boats running',s:'Pak Ou, river cruises',segs:[[9,12],[0,4]],k:'good'},
+    {n:'Bamboo bridge standing',s:'rebuilt each dry season',segs:[[10,12],[0,4]],k:'good'},
+    {n:'Kuang Si at its bluest',s:'clear water, full flow',segs:[[10,12],[0,2]],k:'good'},
+    {n:'Peak tourist season',s:'book weeks ahead',segs:[[10,12],[0,2]],k:'mid'}
+  ];
+  const FILL={good:'rgba(88,196,163,.55)',mid:'rgba(242,169,60,.45)',bad:'rgba(224,85,85,.45)'};
+  const MO=['J','F','M','A','M','J','J','A','S','O','N','D'];
+  let s='';
+  // your window: 8-11 Dec => month index 11 + 7/31 .. 11 + 10/31
+  const wx1=x(11+7/31), wx2=x(11+11/31);
+  s+=`<rect x="${wx1-4}" y="${padT}" width="${Math.max(wx2-wx1,10)+8}" height="${BANDS.length*rowH+6}" fill="rgba(231,100,155,.14)" stroke="var(--magenta)" stroke-width="1"/>`;
+  s+=`<text x="${wx1+4}" y="${padT-10}" class="lbl-a" text-anchor="end" fill="var(--magenta)">8–11 Dec ↓</text>`;
+  for(let m=0;m<=12;m++){
+    s+=`<line x1="${x(m)}" y1="${padT}" x2="${x(m)}" y2="${padT+BANDS.length*rowH+6}" class="axs"/>`;
+    if(m<12) s+=`<text x="${x(m+0.5)}" y="${padT+BANDS.length*rowH+26}" class="lbl" text-anchor="middle">${MO[m]}</text>`;
+  }
+  BANDS.forEach((b,i)=>{
+    const y=padT+10+i*rowH;
+    s+=`<text x="${padL-16}" y="${y+14}" class="lbl-p" text-anchor="end">${b.n}</text>`;
+    s+=`<text x="${padL-16}" y="${y+28}" class="lbl" text-anchor="end">${b.s}</text>`;
+    b.segs.forEach(sg=>{
+      const a=Math.min(sg[0],12), bb=Math.min(sg[1],12);
+      s+=`<rect x="${x(a)}" y="${y+2}" width="${x(bb)-x(a)}" height="20" rx="2" fill="${FILL[b.k]}"/>`;
+    });
+  });
+  s+=`<line x1="${padL-2}" y1="${padT}" x2="${x(12)}" y2="${padT}" class="ax"/>`;
+  svg.innerHTML=s;
+})();
+</script>
+
+</body>
+</html>

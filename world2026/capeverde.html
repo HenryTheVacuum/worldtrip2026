@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="darkreader-lock">
+<title>Cape Verde</title>
+<link rel="stylesheet" href="fonts.css">
+</head>
+<body>
+<style>
+:root{color-scheme:dark;
+  --ink:#05161D;--ink-2:#0A2029;--ink-3:#0E2A35;
+  --rule:#194150;--rule-soft:rgba(25,65,80,.6);
+  --paper:#E2EEED;--paper-dim:#A6C2C6;--muted:#6C8F98;
+  --amber:#F2A93C;--magenta:#E7649B;--jade:#58C4A3;--red:#E05555;
+  --display:'Big Shoulders Display','Arial Narrow',Impact,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --body:'Inter',system-ui,sans-serif;
+  --gut:clamp(18px,4vw,64px);--maxw:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+.section{padding-block:clamp(34px,4.4vw,58px);border-top:1px solid var(--rule-soft);position:relative}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:14px;margin:0 0 18px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--rule)}
+.eyebrow .n{color:var(--amber)}
+h2.head{font-family:var(--display);font-weight:700;font-size:clamp(34px,5.6vw,66px);line-height:.92;margin:0 0 14px;text-transform:uppercase}
+.lede{max-width:66ch;color:var(--paper-dim);font-size:clamp(15px,1.5vw,17px);margin:0 0 26px}
+.lede b{color:var(--paper);font-weight:600}
+a{color:var(--amber);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+.hint{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+@media (min-width:980px){.hint.wide{display:none}}
+.scroller{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--rule) transparent}
+.scroller::-webkit-scrollbar{height:6px}
+.scroller::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}
+.scroller>svg{display:block;width:100%;height:auto}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(30px,5vw,58px) clamp(24px,4vw,40px);overflow:hidden}
+.gridbg{position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:linear-gradient(to right,var(--rule-soft) 1px,transparent 1px),linear-gradient(to bottom,var(--rule-soft) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%);-webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%)}
+.back{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:inline-block;margin-bottom:20px}
+.back:hover{color:var(--amber)}
+.strip{font-family:var(--mono);font-size:clamp(10px,1.15vw,12px);letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;border-block:1px solid var(--rule);padding-block:11px;margin-bottom:clamp(26px,4vw,44px)}
+.strip .k{color:var(--muted)}.strip .amb{color:var(--amber)}
+.title{font-family:var(--display);text-transform:uppercase;margin:0;line-height:.82;position:relative}
+.title .l1{display:block;font-weight:400;font-size:clamp(34px,7.4vw,96px);color:transparent;-webkit-text-stroke:1.2px var(--paper-dim)}
+.title .l2{display:block;font-weight:800;font-size:clamp(56px,13.5vw,186px);letter-spacing:-.015em;color:var(--paper)}
+.subline{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:baseline;margin-top:clamp(18px,3vw,30px);font-family:var(--mono);font-size:clamp(11px,1.25vw,13px);letter-spacing:.14em;text-transform:uppercase;color:var(--paper-dim)}
+.subline .sep{color:var(--rule)}
+
+/* instruments */
+.instr{display:grid;grid-template-columns:repeat(auto-fit,minmax(124px,1fr));border:1px solid var(--rule);background:var(--ink-2);margin:clamp(24px,3.4vw,38px) 0 0}
+.instr div{padding:15px 17px;border-right:1px solid var(--rule-soft)}
+.instr div:last-child{border-right:0}
+.instr dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.instr dd{margin:0;font-family:var(--display);font-weight:600;font-size:31px;line-height:1}
+.instr dd span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--paper-dim);margin-left:3px}
+.instr dd.hot{color:var(--amber)}
+.instr dd.warn{color:var(--magenta)}
+
+/* chart frames */
+.figcap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:9px;margin:0 0 8px}
+.figcap b{color:var(--amber);font-weight:500}
+.fignote{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.fignote i{display:inline-block;width:14px;height:9px;margin:0 5px 0 14px;vertical-align:middle;border-radius:1px}
+.fignote i:first-child{margin-left:0}
+.ax{stroke:var(--rule);stroke-width:1}
+.axs{stroke:var(--rule-soft);stroke-width:1}
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.08em;fill:var(--muted)}
+.lbl-p{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;fill:var(--paper)}
+.lbl-a{font-family:var(--mono);font-size:10px;letter-spacing:.12em;fill:var(--amber)}
+
+/* cards */
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin:0 0 6px}
+.card{border:1px solid var(--rule);background:var(--ink-2);padding:18px 20px;position:relative}
+.card.bad{border-color:var(--red)}
+.card.good{border-color:var(--jade)}
+.card h3{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 4px;color:var(--paper)}
+.card .verdict{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:11px}
+.card .verdict.bad{color:var(--red)}
+.card .verdict.ok{color:var(--jade)}
+.card p{margin:0 0 10px;font-size:13.5px;color:var(--paper-dim);line-height:1.62}
+.card p:last-child{margin-bottom:0}
+.card p b{color:var(--paper);font-weight:600}
+.fix{border-left:2px solid var(--amber);padding-left:12px;margin:12px 0 0;font-size:12.8px;color:var(--paper-dim);line-height:1.6}
+.fix b{display:block;color:var(--amber);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px;font-weight:500}
+.fix strong{color:var(--paper);font-weight:600}
+
+/* shape cards */
+.shapes{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+.shape{border:1px solid var(--rule);background:var(--ink-2);padding:0;display:flex;flex-direction:column}
+.shape.pick{border-color:var(--amber);box-shadow:inset 0 0 0 1px rgba(242,169,60,.25)}
+.shape-hd{padding:16px 20px 14px;border-bottom:1px solid var(--rule-soft)}
+.shape-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.shape.pick .shape-tag{color:var(--amber)}
+.shape-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(24px,3vw,32px);line-height:.95;margin:0}
+.chainrow{display:flex;flex-wrap:wrap;align-items:center;gap:5px 7px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--paper);padding:13px 20px;border-bottom:1px solid var(--rule-soft);background:rgba(5,22,29,.5)}
+.chainrow .a{color:var(--rule)}
+.chainrow .n{color:var(--amber);font-size:9.5px}
+.shape-body{padding:15px 20px 18px;flex:1}
+.shape-body p{margin:0 0 10px;font-size:13.3px;color:var(--paper-dim);line-height:1.6}
+.shape-body p:last-child{margin-bottom:0}
+.shape-body p b{color:var(--paper);font-weight:600}
+.shape-meta{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--rule-soft)}
+.shape-meta div{flex:1;min-width:88px;padding:11px 20px;border-right:1px solid var(--rule-soft)}
+.shape-meta div:last-child{border-right:0}
+.shape-meta dt{font-family:var(--mono);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.shape-meta dd{margin:0;font-family:var(--mono);font-size:13px;color:var(--paper)}
+.shape-meta dd.g{color:var(--jade)}
+.shape-meta dd.r{color:var(--red)}
+
+/* day accordion */
+.days{border-top:1px solid var(--rule)}
+.day{border-bottom:1px solid var(--rule)}
+.day-btn{all:unset;box-sizing:border-box;display:grid;width:100%;cursor:pointer;grid-template-columns:76px 1fr auto;gap:0 clamp(14px,2.4vw,30px);align-items:baseline;padding:clamp(13px,1.8vw,18px) 4px;transition:background .18s ease}
+.day-btn:hover{background:rgba(242,169,60,.05)}
+.day-btn:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.day-date{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.1em}
+.day-date small{display:block;color:var(--muted);font-size:9.5px;letter-spacing:.14em;margin-top:3px}
+.day-btn>span:nth-child(2){display:flex;flex-direction:column;gap:6px}
+.day-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(22px,3.2vw,34px);line-height:.95;margin:0}
+.day-sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.day-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--paper-dim);text-align:right;white-space:nowrap}
+.day-meta .chev{display:inline-block;margin-left:12px;color:var(--muted);transition:transform .25s ease}
+.day.open .day-meta .chev{transform:rotate(180deg)}
+@media (max-width:720px){.day-btn{grid-template-columns:64px 1fr;row-gap:8px}.day-meta{grid-column:2;text-align:left}}
+.day-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .34s cubic-bezier(.3,.8,.3,1)}
+.day.open .day-body{grid-template-rows:1fr}
+.day-inner{overflow:hidden}
+.day-pad{padding:2px 4px clamp(22px,3vw,32px)}
+.slots{display:grid;gap:0;border-left:1px solid var(--rule)}
+.slot{padding:0 0 16px 16px;position:relative}
+.slot:last-child{padding-bottom:2px}
+.slot::before{content:"";position:absolute;left:-4px;top:6px;width:7px;height:7px;background:var(--amber);border-radius:50%}
+.slot.move::before{background:var(--magenta)}
+.slot h4{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 5px;font-weight:500}
+.slot.move h4{color:var(--magenta)}
+.slot p{margin:0;font-size:14px;line-height:1.62;color:var(--paper-dim);max-width:72ch}
+.slot p b{color:var(--paper);font-weight:600}
+
+/* worth doing */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.fbtn{all:unset;cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border:1px solid var(--rule);color:var(--paper-dim);border-radius:2px;transition:.15s}
+.fbtn:hover{background:var(--ink-3);color:var(--paper)}
+.fbtn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.fbtn[aria-pressed="true"]{background:var(--amber);color:var(--ink);border-color:var(--amber);font-weight:600}
+.fdiv{width:1px;background:var(--rule);margin:2px 6px}
+.items{display:grid;gap:1px;background:var(--rule-soft);border:1px solid var(--rule)}
+.item{background:var(--ink-2);padding:13px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:baseline}
+.item .tier{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:3px 7px 2px;border-radius:2px;white-space:nowrap;align-self:start;margin-top:2px}
+.tier.do{background:rgba(88,196,163,.14);color:var(--jade);border:1px solid rgba(88,196,163,.35)}
+.tier.opt{background:rgba(242,169,60,.12);color:var(--amber);border:1px solid rgba(242,169,60,.3)}
+.tier.skip{background:rgba(224,85,85,.1);color:var(--red);border:1px solid rgba(224,85,85,.3)}
+.item .nm{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:20px;line-height:1.05;color:var(--paper)}
+.item .why{grid-column:2;font-size:13.3px;color:var(--paper-dim);line-height:1.55;max-width:74ch}
+.item .why b{color:var(--paper);font-weight:600}
+.item .when{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);text-align:right;white-space:nowrap;align-self:start;margin-top:4px}
+.item .when.book{color:var(--magenta)}
+@media (max-width:640px){.item{grid-template-columns:auto 1fr}.item .when{grid-column:2;text-align:left;margin-top:2px}.item .why{grid-column:1/-1}}
+.empty{background:var(--ink-2);padding:22px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* cost calc */
+.calc{border:1px solid var(--rule);background:var(--ink-2)}
+.calc-legs{display:grid}
+.leg-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--rule-soft);cursor:pointer}
+.leg-row:hover{background:rgba(242,169,60,.04)}
+.leg-row input{accent-color:var(--amber);width:15px;height:15px;cursor:pointer}
+.leg-row .lname{font-family:var(--mono);font-size:12.5px;color:var(--paper-dim)}
+.leg-row input:checked+.lname{color:var(--paper)}
+.leg-row .lyen{font-family:var(--mono);font-size:12.5px;color:var(--amber);font-variant-numeric:tabular-nums;white-space:nowrap}
+.leg-row .lnote{grid-column:2/-1;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--muted);margin-top:-4px}
+.leg-row input:disabled{accent-color:var(--muted);cursor:not-allowed}
+.calc-out{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule-soft)}
+.calc-out div{background:var(--ink-3);padding:15px 17px}
+.calc-out dt{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.calc-out dd{margin:0;font-family:var(--display);font-weight:700;font-size:27px;line-height:1;font-variant-numeric:tabular-nums}
+.calc-out dd small{font-family:var(--mono);font-size:10px;font-weight:400;color:var(--paper-dim);margin-left:4px;letter-spacing:.06em}
+#verdict{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;line-height:1.5}
+#verdict.win{color:var(--jade)}
+#verdict.lose{color:var(--red)}
+
+/* panels / tables */
+.panel{border:1px solid var(--rule);background:var(--ink-2);padding:clamp(17px,2.4vw,24px);margin-top:22px}
+.panel h3{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 12px;font-weight:500}
+.panel p{margin:0 0 12px;font-size:13.6px;color:var(--paper-dim);line-height:1.62}
+.panel p:last-child{margin-bottom:0}
+.panel p b{color:var(--paper);font-weight:600}
+table.ref{width:100%;border-collapse:collapse;font-size:13.4px}
+table.ref th{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:500;padding:0 14px 10px 0;border-bottom:1px solid var(--rule)}
+table.ref td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule-soft);color:var(--paper-dim);vertical-align:top}
+table.ref td:first-child{font-family:var(--display);font-size:17px;font-weight:600;text-transform:uppercase;color:var(--paper);white-space:nowrap;width:1%}
+table.ref td.t{font-family:var(--mono);font-size:11px;letter-spacing:.06em;white-space:nowrap;color:var(--amber)}
+table.ref tr.flag td.t{color:var(--magenta)}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.cols{display:grid;gap:16px 34px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:20px}
+.cols p{margin:0;font-size:13.6px;color:var(--paper-dim);line-height:1.6}
+.cols p b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:5px;font-weight:500}
+
+footer{border-top:1px solid var(--rule);padding-block:26px 40px;color:var(--muted)}
+.foot-grid{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:flex-end}
+.foot-grid p{margin:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase}
+.foot-mark{font-family:var(--display);font-size:clamp(34px,8vw,100px);font-weight:800;text-transform:uppercase;line-height:.8;color:transparent;-webkit-text-stroke:1px var(--rule);margin:30px 0 0}
+</style>
+
+<header class="hero">
+  <div class="gridbg"></div>
+  <div class="wrap">
+    <a class="back" href="index.html">← Westbound · the dossier</a>
+    <p class="strip">
+      <span><span class="k">Stop</span> <span class="amb">25 of 27</span></span>
+      <span><span class="k">In</span> CPT · Cape Town</span>
+      <span><span class="k">Fly Cabo Verde</span> <span class="amb">RAI</span></span>
+      <span><span class="k">Out</span> CMN · Casablanca</span>
+      <span><span class="k">Window</span> 4–8 Feb 2027</span>
+      <span><span class="k">Clock</span> UTC−1</span>
+    </p>
+    <h1 class="title">
+      <span class="l1">Third from last</span>
+      <span class="l2">Cape Verde</span>
+    </h1>
+    <p class="subline">
+      <span>Santiago only, no island-hopping</span><span class="sep">/</span>
+      <span>Both ends of this stop are broken</span><span class="sep">/</span>
+      <span>Carnival misses by one day</span>
+    </p>
+
+    <dl class="instr">
+      <div><dt>Calendar days</dt><dd>5</dd></div>
+      <div><dt>Days on the ground</dt><dd class="hot">3</dd></div>
+      <div><dt>Nights</dt><dd>3</dd></div>
+      <div><dt>Transit in</dt><dd class="warn">≈32<span>h</span></dd></div>
+      <div><dt>Bases</dt><dd>2</dd></div>
+      <div><dt>Daylight flights out</dt><dd class="warn">0</dd></div>
+    </dl>
+  </div>
+</header>
+
+<section class="section" id="audit">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">01</span> The time audit</p>
+    <h2 class="head">Five days<br>is three days</h2>
+    <p class="lede">Cape Verde is 1,500 km off the coast of Senegal and, from Cape Town, effectively behind Europe. There is no nonstop and <b>no one-stop either</b> — every routing runs north to Lisbon and back south-west, three flights and about thirty-two hours. Leave Cape Town on the evening of the 4th and you are on the ground in Praia in the small hours of the <b>6th</b>. Two of four nights go to the journey before you have seen anything.</p>
+
+    <div class="figcap">
+      <span>Fig. 1 — What the window really contains</span>
+      <span><b>4–9 Feb</b> · hour by hour</span>
+    </div>
+    <div class="scroller">
+      <svg id="audit-chart" viewBox="0 0 1400 200" role="img" aria-label="Timeline of 4 to 9 February showing the 4th and 5th consumed by the flight from Cape Town via Europe, three usable days from the 6th to the 8th, and a pre-dawn departure on the 9th."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--magenta);opacity:.55"></i>In transit<i style="background:rgba(242,169,60,.35)"></i>Part day<i style="background:var(--amber)"></i>Full day</p>
+
+    <div class="cols">
+      <p><b>No jet lag, for once</b>Cape Town is UTC+2 and Praia is UTC−1 — three hours back, the smallest clock change on the whole westbound run. The damage here is sleep debt from two red-eyes, not time-zone shift. The 6th is a slow day whatever you put on it.</p>
+      <p><b>One island, and that is the right call</b>The stop is Santiago and Tarrafal, both on the same island. On three days, adding Fogo or São Vicente would mean two domestic flights and a lost day each way. Santiago has the UNESCO site, the mountains and the best beach on the island — it is enough.</p>
+      <p><b>The airport is close</b>Nelson Mandela International (RAI) sits about 15 minutes east of the Plateau. Taxi in, roughly 1,000–1,500 CVE. Nothing about this stop is lost to airport transfers, which is just as well given what the flights cost you.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="flags">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">02</span> Three things that don't move</p>
+    <h2 class="head">Both ends<br>are broken</h2>
+    <p class="lede">This is the only stop on the trip where <b>the arrival and the departure are each a separate problem</b>. Read all three before you book anything around it — the fix for the first one fixes the second for free.</p>
+
+    <div class="cards">
+      <div class="card bad">
+        <h3>There is no way to fly Cape Town → Praia</h3>
+        <div class="verdict bad">Breaks the stop · costs 2 of 4 nights</div>
+        <p>No nonstop, and — unusually for a 7,000 km hop — <b>no one-stop either</b>. Praia's only intercontinental gateways are Lisbon, Casablanca, Dakar and Bissau, and Cape Town flies to none of them. TAP's Johannesburg–Lisbon nonstop, the obvious African-side shortcut, was discontinued in March 2025.</p>
+        <p>Every workable routing is three flights: Cape Town overnight to a European hub, on to Lisbon, then TAP's 20:50 Lisbon–Praia. Roughly <b>32 hours door to door</b>, landing about 00:20 on 6 February.</p>
+        <div class="fix"><b>The fix</b><strong>Swap stops 25 and 26.</strong> Do Morocco first, then Cape Verde, then Lisbon. Casablanca–Praia is a nonstop 3h50 on Royal Air Maroc, and Praia–Lisbon is a nonstop 4h20 run one to two times a day — it also deletes the current plan's double backtrack. Both countries are dry and mild across the whole 4–14 Feb span, so nothing is lost seasonally. Full write-up filed at <b>flag-capetown-praia-no-route</b>.</div>
+      </div>
+
+      <div class="card bad">
+        <h3>Nothing leaves Praia in daylight</h3>
+        <div class="verdict bad">And nothing leaves on Monday the 8th</div>
+        <p>Every Royal Air Maroc departure for Casablanca goes in the middle of the night: <b>AT594 at 01:20</b> (Fri, Sun) and <b>AT593 at 03:50</b> (Tue, Thu), both nonstop at 3h35. There is a third, <b>AT591 at 01:20</b> (Mon, Wed, Sat), but it is a one-stop and takes six hours.</p>
+        <p>The itinerary says fly out on <b>Monday 8 February</b>. The only Monday departure is that 01:20 one-stop — which means leaving for the airport on Sunday night and losing the whole of the 8th.</p>
+        <div class="fix"><b>The fix, if you keep the order</b>Take <strong>AT593 at 03:50 on Tuesday 9 Feb</strong> instead. You keep all of Monday, go to the airport around midnight, and land in Casablanca about 09:25 — Morocco starts a few hours later than written, with one night's sleep spent in seat 14A. Filed at <b>flag-praia-casablanca-night-departures</b>.</div>
+      </div>
+
+      <div class="card">
+        <h3>Carnival is one day past the window</h3>
+        <div class="verdict">A near miss, not a disaster</div>
+        <p>Cape Verdean carnival is a serious national event, and 2027's peak — <b>Shrove Tuesday, 9 February</b> — falls the day after this window closes. Mindelo's parades run 7–14 Feb; Praia's own carnival builds over the same weekend at a smaller scale.</p>
+        <p>As written you catch the 7th and 8th: the build-up, the rehearsals, the street sound systems. You miss the day itself by about eighteen hours.</p>
+        <div class="fix"><b>The lever</b>If carnival matters, it argues for the swap <strong>plus</strong> an earlier Cape Verde start — Morocco 4–7 Feb, Cape Verde 8–14 Feb, in Praia for Carnival Monday and Tuesday. That costs Morocco three of its six days, which is a real price. Filed at <b>flag-capeverde-carnival-2027</b>.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="shapes">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">03</span> The reshuffle</p>
+    <h2 class="head">Three ways<br>to hold it</h2>
+    <p class="lede">All three fit inside the same 4–14 February block between Cape Town and Lisbon, and none of them touches a date that is fixed elsewhere. Nothing is booked yet, which makes this cheap to decide now and expensive to decide in December.</p>
+
+    <div class="shapes">
+      <div class="shape">
+        <div class="shape-hd">
+          <div class="shape-tag">As written</div>
+          <p class="shape-name">Cape Verde first</p>
+        </div>
+        <div class="chainrow">
+          <span>CPT</span><span class="a">→</span>
+          <span>Europe <span class="n">×2 stops</span></span><span class="a">→</span>
+          <span>Praia <span class="n">×3 nights</span></span><span class="a">→</span>
+          <span class="n">CMN 03:50</span>
+        </div>
+        <div class="shape-body">
+          <p>Thirty-two hours in, a pre-dawn red-eye out, and three days on the ground — one of them spent recovering. The Cape Town week stays exactly as planned, which is the one thing this shape has going for it.</p>
+          <p><b>It also backtracks twice:</b> north to Lisbon, south-west to Praia, north-east to Casablanca, then north to Lisbon again five days later.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Ground days</dt><dd class="r">3</dd></div>
+          <div><dt>Flights in</dt><dd class="r">3</dd></div>
+          <div><dt>Transit</dt><dd class="r">≈32h</dd></div>
+          <div><dt>Carnival</dt><dd class="r">Missed</dd></div>
+        </dl>
+      </div>
+
+      <div class="shape pick">
+        <div class="shape-hd">
+          <div class="shape-tag">Recommended</div>
+          <p class="shape-name">Swap 25 and 26</p>
+        </div>
+        <div class="chainrow">
+          <span>Morocco <span class="n">4–10 Feb</span></span><span class="a">→</span>
+          <span>CMN–RAI <span class="n">nonstop</span></span><span class="a">→</span>
+          <span>Praia <span class="n">×4 nights</span></span><span class="a">→</span>
+          <span class="n">LIS 12:25</span>
+        </div>
+        <div class="shape-body">
+          <p>Morocco 4–10 Feb, Cape Verde 10–14 Feb, Lisbon from the 14th exactly as written. Casablanca–Praia is a <b>3h50 nonstop</b> departing 22:30 and landing 00:20; four days later TAP's <b>12:25 daily</b> puts you in Lisbon at tea time.</p>
+          <p>Every leg after Cape Town is nonstop or a single connection, the double backtrack is gone, and Cape Verde gains a whole extra day on the ground. <b>Carnival Tuesday still falls on the Morocco side</b> — that is this shape's one cost.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Ground days</dt><dd class="g">4</dd></div>
+          <div><dt>Flights in</dt><dd class="g">1</dd></div>
+          <div><dt>Transit</dt><dd class="g">3h50</dd></div>
+          <div><dt>Carnival</dt><dd class="r">Missed</dd></div>
+        </dl>
+      </div>
+
+      <div class="shape">
+        <div class="shape-hd">
+          <div class="shape-tag">If carnival is the point</div>
+          <p class="shape-name">Swap and shift</p>
+        </div>
+        <div class="chainrow">
+          <span>Morocco <span class="n">4–7 Feb</span></span><span class="a">→</span>
+          <span>AT591 <span class="n">Sun 7th</span></span><span class="a">→</span>
+          <span>Praia <span class="n">×6 nights</span></span><span class="a">→</span>
+          <span class="n">LIS 12:25</span>
+        </div>
+        <div class="shape-body">
+          <p>Casablanca–Praia leaves on Sunday 7 Feb, lands 00:20 Monday, and you are in Praia for <b>Carnival Monday and Shrove Tuesday</b>, then have the rest of the week for Cidade Velha and Tarrafal with the island half-asleep afterwards.</p>
+          <p><b>Morocco pays for all of it</b> — three days instead of six, which is not enough for Marrakech, the Sahara and Fes. Only take this shape if the Sahara leg is already being cut for other reasons.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Ground days</dt><dd class="g">6</dd></div>
+          <div><dt>Flights in</dt><dd class="g">1</dd></div>
+          <div><dt>Transit</dt><dd class="g">3h50</dd></div>
+          <div><dt>Carnival</dt><dd class="g">Both days</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>What to confirm before committing to any of them</h3>
+      <p><b>Royal Air Maroc's actually-operated days.</b> Schedule sites disagree on this route — one lists two Praia–Casablanca departures a week, another lists four across three flight numbers. The pattern above (AT593 Tue/Thu nonstop, AT594 Fri/Sun nonstop, AT591 Mon/Wed/Sat one-stop) is the best reconciliation of the sources, and it has <b>no Monday nonstop</b> in any of them. Pull real operated history for a few weeks around early February before you build a plan on a specific day.</p>
+      <p><b>The Cape Town exit.</b> If you keep the written order, confirm that Cape Town → European hub → Lisbon can be bought on one ticket, and what the minimum connection is after an overnight. If you swap, the same question applies to Cape Town → Casablanca — Air France via Paris is the cleanest candidate, and CDG terminal transfers are slow.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="run">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">04</span> Day by day</p>
+    <h2 class="head">Both versions,<br>laid out</h2>
+    <p class="lede">Santiago is small enough that the plan is really just three decisions: which day goes to Cidade Velha, whether Tarrafal is a day trip or a night, and whether you hike Serra Malagueta. Times are indicative — aluguers leave when they are full, not when the clock says.</p>
+    <div class="filters" id="dayToggle" style="margin-bottom:6px">
+      <button class="fbtn" data-plan="written" aria-pressed="true">As written · 4–8 Feb</button>
+      <button class="fbtn" data-plan="swapped" aria-pressed="false">Swapped · 10–14 Feb</button>
+    </div>
+    <div class="days" id="days"></div>
+    <p class="fignote" style="margin-top:16px">Amber = on foot · <span style="color:var(--magenta)">Magenta = a flight, an aluguer or a base change</span></p>
+  </div>
+</section>
+
+<section class="section" id="worth">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">05</span> What's actually worth doing</p>
+    <h2 class="head">Do, maybe,<br>don't bother</h2>
+    <p class="lede">Santiago is not a sights island — it is a place island. The <b>don't bother</b> entries here are mostly things that are genuinely good and simply live on a different island or need a week you don't have.</p>
+
+    <div class="filters" id="filters">
+      <button class="fbtn" data-city="all" aria-pressed="true">All</button>
+      <button class="fbtn" data-city="Praia" aria-pressed="false">Praia</button>
+      <button class="fbtn" data-city="Cidade Velha" aria-pressed="false">Cidade Velha</button>
+      <button class="fbtn" data-city="Tarrafal" aria-pressed="false">Tarrafal &amp; north</button>
+      <button class="fbtn" data-city="Interior" aria-pressed="false">The interior</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-tier="do" aria-pressed="false">Do</button>
+      <button class="fbtn" data-tier="opt" aria-pressed="false">Maybe</button>
+      <button class="fbtn" data-tier="skip" aria-pressed="false">Don't bother</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-book="1" aria-pressed="false">Needs booking</button>
+    </div>
+    <div class="items" id="items"></div>
+  </div>
+</section>
+
+<section class="section" id="carnival">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">06</span> The carnival question</p>
+    <h2 class="head">Eighteen hours<br>short</h2>
+    <p class="lede">Easter 2027 falls on 28 March, which puts Ash Wednesday on <b>10 February</b> and Shrove Tuesday on <b>9 February</b>. Cape Verde's carnival is not a resort event — Mindelo's is the big one, descended from Portuguese and Brazilian tradition, but every island runs its own, and the country slows down for the week around it.</p>
+
+    <div class="figcap">
+      <span>Fig. 2 — Carnival week against your window</span>
+      <span><b>1–15 Feb 2027</b></span>
+    </div>
+    <div class="scroller">
+      <svg id="carn-chart" viewBox="0 0 1400 330" role="img" aria-label="Calendar strip of 1 to 15 February 2027 showing the itinerary window on the 4th to 8th, the swapped window on the 10th to 14th, Mindelo's parades from the 7th to the 14th, Shrove Tuesday on the 9th and the Mandingas parade on the 14th."></svg>
+    </div>
+    <p class="fignote"><i style="background:rgba(242,169,60,.5)"></i>Carnival activity<i style="background:var(--amber)"></i>Shrove Tuesday, 9 Feb<i style="background:rgba(231,100,155,.22);border:1px solid var(--magenta)"></i>Your window as written<i style="background:rgba(88,196,163,.2);border:1px solid var(--jade)"></i>Swapped window</p>
+
+    <div class="panel">
+      <h3>What you'd actually see in Praia, as opposed to Mindelo</h3>
+      <p>Mindelo, on São Vicente, is the one with the samba-school-scale parades, the costume workshops and the international coverage — and it is <b>two domestic flights away</b> from this itinerary. Praia's carnival is smaller and rougher: neighbourhood groups, sound trucks on the Plateau's avenues, a lot of drinking, and far fewer visitors.</p>
+      <p>For three days on Santiago the honest read is that carnival is a <b>bonus if the dates fall your way and not a reason to restructure the trip</b> — unless you want Mindelo specifically, and Mindelo is a different stop, not a different day.</p>
+      <p><b>The practical cost of being near it:</b> rooms and inter-island flights across the whole archipelago tighten from late January, and prices on Santiago rise for carnival week even though the main event is elsewhere. If any shape puts you in Cape Verde between 6 and 11 February, book the room early.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="weather">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">07</span> Why February works</p>
+    <h2 class="head">Bone dry,<br>and windy</h2>
+    <p class="lede">This is one of the few stops on the trip where the calendar is straightforwardly right. Praia in February runs about <b>23°C by day and 21°C by night</b>, with a 3–6% chance of a wet day and sea temperature around 23°C. The rain here is compressed almost entirely into August, September and October — you are at the opposite pole of the year.</p>
+
+    <div class="figcap">
+      <span>Fig. 3 — Chance of a wet day in Praia, by month</span>
+      <span><b>February</b> marked</span>
+    </div>
+    <div class="scroller">
+      <svg id="rain-chart" viewBox="0 0 1400 300" role="img" aria-label="Bar chart of the approximate chance of a wet day in Praia by month, near zero from February to June, peaking around thirty percent in September, and back to low single digits by December."></svg>
+    </div>
+    <p class="fignote">Indicative monthly averages — Cape Verde's entire rainfall arrives in a short late-summer window</p>
+
+    <div class="cols">
+      <p><b>The wind is the catch</b>The north-east trades blow steadily at around 26 km/h through February, from the north 80-odd percent of the time. It keeps the heat pleasant and it also means the north and east coasts get chop. Tarrafal sits in the lee on the north-west corner, which is exactly why its bay is the calm one.</p>
+      <p><b>Haze, not cloud</b>Late winter brings the tail of the harmattan — Saharan dust carried out over the Atlantic. On a bad day the horizon goes milky and the mountains flatten out. It does not rain on you and it does not ruin anything, but it is the reason distant views here are less sharp than the temperature suggests.</p>
+      <p><b>The light</b>Sunrise around 07:00, sunset around 18:35, eleven and a half hours of daylight. Short days by trip standards — the 6am starts that carried the Asia legs don't buy you anything here. Plan around the afternoon instead.</p>
+      <p><b>Water</b>23°C, which is swimmable without being warm. Tarrafal's bay is the sheltered swim; Praia's Quebra Canela and Gamboa are fine but urban, and the Atlantic on the exposed coasts has real current.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="money">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">08</span> What the ground costs</p>
+    <h2 class="head">Two fees<br>you can't dodge</h2>
+    <p class="lede">The escudo is pegged to the euro at <b>110.265 CVE = €1</b> and has been for decades, so euros are widely accepted and the arithmetic never moves. Two charges are compulsory: the <b>airport security tax</b> of 3,400 CVE per international arrival, paid through the EASE portal before you fly, and the <b>tourist tax</b> of 276 CVE per person per night, collected by your accommodation. Everything else below is a choice.</p>
+
+    <div class="calc">
+      <div class="calc-legs" id="legs"></div>
+      <dl class="calc-out">
+        <div><dt>Total</dt><dd id="ptp"></dd></div>
+        <div><dt>In euros</dt><dd id="eur"></dd></div>
+        <div><dt>Unavoidable share</dt><dd id="fixed">4,228<small>CVE</small></dd></div>
+        <div><dt>Verdict</dt><dd><span id="verdict"></span></dd></div>
+      </dl>
+    </div>
+    <p class="fignote">Excludes accommodation, food and drink · aluguer and taxi fares are typical rather than fixed and are quoted per person unless noted · verify before booking</p>
+
+    <div class="panel">
+      <h3>How money actually works here</h3>
+      <p><b>Cards are patchy outside Praia.</b> The capital's hotels, better restaurants and supermarkets take cards; aluguers, markets, park entries and most of Tarrafal do not. Draw escudos at an ATM in the Plateau on day one and carry a few thousand — Santiago is not an island where you want to be hunting a machine at six in the evening.</p>
+      <p><b>Euros work, change comes in escudos.</b> Paying in euros is normal and the rate you get is the peg, so you lose nothing on the note — you just get change in a currency you can't spend after the 8th. Spend down before the airport.</p>
+      <p><b>The security tax is not collected at the airport.</b> Pay it online with the EASE pre-registration. Arriving without either is the classic Cape Verde mistake and it is resolved slowly, in a queue, at the counter.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="admin">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">09</span> Ground rules</p>
+    <h2 class="head">Before you land</h2>
+
+    <div class="tablewrap">
+    <table class="ref">
+      <thead><tr><th>Item</th><th>What to do</th><th>When</th></tr></thead>
+      <tbody>
+        <tr class="flag"><td>EASE</td><td>Mandatory online pre-registration for every visitor at ease.gov.cv, and the only place to pay the airport security tax. Global Affairs Canada says complete it and pay <b>at least five days before arrival</b>; processing is quoted at up to 48 hours. Not a visa, but it functions like one at the gate.</td><td class="t">5+ days ahead</td></tr>
+        <tr class="flag"><td>Security tax</td><td><b>3,400 CVE (≈€31)</b> per person for an international arrival, 150 CVE for inter-island. Under-2s, residents and Cape Verdean passport holders are exempt. Paid through EASE.</td><td class="t">With EASE</td></tr>
+        <tr><td>Visa</td><td>None for Canadians. Global Affairs Canada states visa-free for tourist stays <b>up to 30 days</b>; some references say 90. Academic for four nights — but if anything shifts, work to the 30-day figure.</td><td class="t">Nothing to do</td></tr>
+        <tr><td>Passport</td><td>Canada's advisory asks only that the passport stay valid through the stay. Several carriers and agents apply a six-month rule regardless — if yours expires before August 2027, expect an argument at check-in.</td><td class="t">Check now</td></tr>
+        <tr class="flag"><td>Yellow fever</td><td>Not required for Cape Verde itself, but a certificate <b>is</b> required from travellers aged 1+ arriving from a country with risk of transmission. You leave Tanzania on 28 January — seven days before this stop, and via South Africa, which should put you outside the window officials check. Carry the certificate anyway; this is a check-in-agent decision, not a legal argument you want to have at 22:00.</td><td class="t">Carry the card</td></tr>
+        <tr><td>Tourist tax</td><td>276 CVE (€2.50) per person per night, capped at 10 nights, collected by the accommodation. Under-16s exempt. Sometimes already inside the booking price — ask, so you don't budget it twice.</td><td class="t">At check-in</td></tr>
+        <tr><td>Safety</td><td>Canada advises <b>a high degree of caution</b>, with Praia specifically named for petty and occasionally violent crime. Practical version: the Plateau is fine by day, don't walk the hillside staircases between neighbourhoods alone, take a taxi after dark, and treat Sucupira market like any big informal market.</td><td class="t">Ongoing</td></tr>
+        <tr><td>Malaria</td><td>The WHO declared Cape Verde malaria-free in 2024, then a small cluster of locally acquired cases appeared in Praia in 2025. Prophylaxis is not standard advice for a short February stay; mosquito avoidance is, and dengue is the more relevant risk here anyway.</td><td class="t">Ask a clinic</td></tr>
+        <tr><td>Language</td><td>Portuguese is official, Cape Verdean Creole is what people actually speak, and English is thin outside hotels. Portuguese gets you a long way; Spanish or French gets you further than nothing.</td><td class="t">Download offline</td></tr>
+        <tr><td>Getting around</td><td>Aluguers — shared Hiace minibuses — are the transport system. Praia–Cidade Velha leaves from near Sucupira, about 100 CVE, 25 minutes. Praia–Tarrafal leaves from the Várzea stadium terminal, about 600 CVE, two hours. They go when full.</td><td class="t">On the day</td></tr>
+        <tr class="flag"><td>Booking window</td><td>Carnival week tightens accommodation across the archipelago from late January. If any version of this stop lands between 6 and 11 February, book the room and the Casablanca or Lisbon leg early.</td><td class="t">Now</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <p>Westbound · stop 25 · Cape Verde</p>
+      <p>4–8 Feb 2027 · RAI in, CMN out</p>
+      <p>Fares, taxes and schedules verified Sept 2026 — recheck before booking</p>
+    </div>
+    <p class="foot-mark">Praia → Tarrafal</p>
+  </div>
+</footer>
+
+<script>
+/* ============ DAY-BY-DAY ============ */
+const DAYS_WRITTEN=[
+{d:'Thu 4',w:'Move',name:'Out of the Cape',sub:'Evening departure, first of three flights',meta:'In the air',
+ slots:[
+  {m:1,h:'Daytime · Cape Town',p:'A last morning on the peninsula, then out to CPT for an evening departure north. Whatever you have not done in Cape Town by lunchtime today is not getting done — there is no slack anywhere after this.'},
+  {m:1,h:'Evening · CPT → Europe',p:'Overnight to London, Paris or Amsterdam. Roughly eleven to twelve hours, and the first of two nights you will spend sitting up.'}
+]},
+{d:'Fri 5',w:'Transit',name:'The long way round',sub:'Europe, then back south-west',meta:'In the air',
+ slots:[
+  {m:1,h:'Morning · Land in Europe',p:'Connect onward to Lisbon. If the layover runs long, this is a shower-and-a-lounge day rather than a city day — you have another five hours of flying tonight.'},
+  {m:1,h:'20:50 · Lisbon → Praia',p:'TAP, about 4h30, over the Atlantic in the dark. Praia is UTC−1 against Lisbon’s UTC, so the clock works slightly in your favour.'},
+  {m:1,h:'00:20 · Land at RAI',p:'Nelson Mandela International, in the small hours of the 6th. EASE done and security tax paid in advance means you walk through. Taxi to the Plateau, about 15 minutes.'}
+]},
+{d:'Sat 6',w:'Part day',name:'Praia',sub:'Sleep in, then the Plateau',meta:'Night 1',
+ slots:[
+  {h:'Late morning · Recover',p:'Two red-eyes and 32 hours. Do not schedule a thing before eleven. The compensation is that there is almost no time-zone shift to fight — this is pure sleep debt and one long night fixes it.'},
+  {h:'13:00 · Sucupira market',p:'The vast informal market below the Plateau — fabric, fruit, electronics, grogue, everything. Not a sight so much as the island’s actual economy. Go with small notes and nothing in your back pocket.'},
+  {h:'16:00 · The Plateau',p:'Praia’s colonial grid sits on a flat-topped bluff above the port. Praça Alexandre Albuquerque with its bandstand and drooping trees, the pastel town hall, the Palácio da Cultura. Everything shuts around six and the square fills up.'},
+  {h:'18:30 · Quebra Canela',p:'Sunset over the beach on the west side — a proper city beach, busy, with bars behind it. The light here goes fast; there is no long dusk this close to the tropics.'},
+  {h:'20:30 · Quintal da Música',p:'The courtyard off the Plateau that has been Praia’s live-music room for decades — morna and coladeira most nights, funaná when the band has the legs for it. Book a table, eat late, stay.'}
+]},
+{d:'Sun 7',w:'Full',name:'Cidade Velha',sub:'The first European town in the tropics',meta:'Night 2',
+ slots:[
+  {m:1,h:'09:00 · Aluguer west',p:'From near Sucupira, about 100 CVE, 25–30 minutes along the coast. They leave when full, so mornings are easy and late afternoons less so.'},
+  {h:'09:45 · Rua Banana & the pelourinho',p:'Founded 1462 as Ribeira Grande, and the oldest European-built settlement in the tropics. Rua Banana is a short lane of low stone-and-thatch houses; the marble pillory in the square is exactly what it looks like, and the town’s whole history runs through it.'},
+  {h:'11:00 · Fortaleza Real de São Filipe',p:'The 1590s fort on the ridge above, built after Francis Drake sacked the place. Steep walk up or a short taxi. Around 200 CVE, and the view down the Ribeira Grande valley to the ocean is the best on the island.'},
+  {h:'13:00 · Lunch by the water',p:'Grilled fish, cachupa if it is still going from breakfast, a beer under an awning. There is no rush — this is the whole afternoon if you want it to be.'},
+  {h:'15:00 · The cathedral ruins',p:'The roofless Sé and the church of Nossa Senhora do Rosário, claimed as the oldest colonial church still standing anywhere. Then the valley walk up through cane and banana if the legs are willing.'},
+  {h:'19:30 · Carnival build-up',p:'Back in Praia, the weekend before Shrove Tuesday: neighbourhood groups rehearsing, sound trucks, the Plateau avenues busier than usual. Not the parade — the week before it.'}
+]},
+{d:'Mon 8',w:'Full',name:'Tarrafal',sub:'North across the mountains and back',meta:'Night 3',
+ slots:[
+  {m:1,h:'07:30 · Aluguer north',p:'From the Várzea stadium terminal, about 600 CVE, two hours. The road climbs into the interior past Assomada and over the Serra Malagueta shoulder — the drive is half the reason to go.'},
+  {h:'10:00 · Tarrafal bay',p:'The one genuinely postcard beach on Santiago: a crescent of pale sand in the lee of the headland, calm water, fishing boats at the far end. Swim, eat grilled fish at the harbour, do not plan anything.'},
+  {h:'13:00 · Campo do Tarrafal',p:'The Salazar-era camp at Chão Bom, twenty minutes back down the road — "the camp of slow death", where Portuguese political prisoners and later African independence leaders were held from 1936. The site is a museum now. It is the serious thing on this island and it deserves a couple of hours.'},
+  {m:1,h:'16:00 · Back to Praia',p:'Two hours south. Alternatively: stop at Serra Malagueta on the way, 200 CVE at the park gate, and walk part of the Principal valley trail — mostly downhill, about four hours for the full thing, so take the short version unless you left at dawn.'},
+  {m:1,h:'23:30 · To the airport',p:'The flight out is AT593 at <b>03:50 on Tuesday the 9th</b>, not on the 8th — there is no Monday nonstop. You keep all of today and pay for it with the night. Land in Casablanca about 09:25.'}
+]}
+];
+
+const DAYS_SWAPPED=[
+{d:'Tue 9',w:'Move',name:'Out of Morocco',sub:'Casablanca, late evening',meta:'In the air',
+ slots:[
+  {m:1,h:'22:30 · CMN → RAI',p:'Royal Air Maroc AT591, nonstop, 3h50. One flight, no backtrack, and a full last day in Morocco before it.'},
+  {m:1,h:'00:20 · Land at RAI',p:'Into Praia in the small hours of Wednesday the 10th. EASE and the security tax already paid; taxi to the Plateau in fifteen minutes.'}
+]},
+{d:'Wed 10',w:'Part day',name:'Praia',sub:'Sleep late, then the city',meta:'Night 1',
+ slots:[
+  {h:'Late morning · Recover',p:'One short night rather than two long ones — you will be functional by lunch, which is the whole argument for this shape.'},
+  {h:'13:00 · Sucupira & the Plateau',p:'The market below, then the colonial grid on the bluff above: Praça Alexandre Albuquerque, the town hall, the Palácio da Cultura. Everything closes around six.'},
+  {h:'18:30 · Quebra Canela',p:'Sunset on the city beach. Ash Wednesday — the country is quiet and slightly hungover, which is its own kind of interesting.'},
+  {h:'20:30 · Quintal da Música',p:'Morna and coladeira in the courtyard. Book a table.'}
+]},
+{d:'Thu 11',w:'Full',name:'Cidade Velha',sub:'UNESCO, and a slow afternoon',meta:'Night 2',
+ slots:[
+  {m:1,h:'09:00 · Aluguer west',p:'Around 100 CVE, 25–30 minutes down the coast from near Sucupira.'},
+  {h:'09:45 · The old town',p:'Rua Banana, the marble pellourinho, the ruined Sé and Nossa Senhora do Rosário. Founded 1462 — the first European town in the tropics, and the hinge of the Atlantic slave trade for a century.'},
+  {h:'11:00 · Fortaleza Real de São Filipe',p:'1590s fort on the ridge, roughly 200 CVE, and the island’s best view down the valley.'},
+  {h:'13:30 · Lunch and the valley',p:'Fish by the water, then up through the cane and banana of the Ribeira Grande if you want the walk.'}
+]},
+{d:'Fri 12',w:'Move',name:'North to Tarrafal',sub:'Over the mountains, and stay',meta:'Night 3',
+ slots:[
+  {m:1,h:'08:00 · Aluguer north',p:'Várzea terminal, about 600 CVE, two hours. The extra day this shape buys you is spent here — Tarrafal as an overnight rather than a round trip.'},
+  {h:'11:00 · The bay',p:'Pale sand, calm water in the lee of the headland, boats at the end. Swim, eat at the harbour.'},
+  {h:'15:00 · Campo do Tarrafal',p:'The Salazar-era camp at Chão Bom, now a museum. Two hours, and not a light two hours.'},
+  {h:'19:00 · Stay the night',p:'Small guesthouses, grilled fish, no resort. The reason to sleep here rather than commute is the morning — the bay before the day boats and the aluguers arrive.'}
+]},
+{d:'Sat 13',w:'Full',name:'Serra Malagueta',sub:'The green spine, then back south',meta:'Night 4',
+ slots:[
+  {h:'07:00 · Tarrafal at dawn',p:'The bay to yourself for an hour. This is what the overnight bought.'},
+  {m:1,h:'09:00 · Ribeira da Prata',p:'Twenty minutes along the coast: natural rock pools and a short gorge walk. Optional, and good.'},
+  {h:'12:00 · Serra Malagueta',p:'The park sits on the ridge between Tarrafal and Assomada, 200 CVE at the gate. The Principal valley trail runs about four hours and is mostly downhill; there are shorter marked loops from the visitor centre if the aluguer timing is tight.'},
+  {m:1,h:'16:00 · Assomada, then Praia',p:'The island’s real market town — biggest on Wednesdays and Saturdays, so today counts. Then the last hour south to Praia.'}
+]},
+{d:'Sun 14',w:'Depart',name:'To Lisbon',sub:'A civilised departure, for once',meta:'Fly out',
+ slots:[
+  {h:'08:00 · Last morning',p:'Breakfast on the Plateau, spend down the escudos, one more look at the harbour. Nothing ambitious.'},
+  {m:1,h:'12:25 · RAI → LIS',p:'TAP TP1542, nonstop, about 4h20, daily. Into Lisbon in the late afternoon — the only daylight departure Praia offers, and it drops you straight into stop 27 on the exact date the plan already says.'},
+  {m:1,h:'· Lisbon',p:'Stop 27. The exit ramp: one time zone of jet lag left, and cheap flights home.'}
+]}
+];
+
+let CURRENT_PLAN='written';
+function renderDays(){
+  const DAYS = CURRENT_PLAN==='written' ? DAYS_WRITTEN : DAYS_SWAPPED;
+  document.getElementById('days').innerHTML=DAYS.map((D,i)=>`
+  <div class="day">
+    <button class="day-btn" aria-expanded="false">
+      <span class="day-date">${D.d}<small>${D.w}</small></span>
+      <span><span class="day-name">${D.name}</span><span class="day-sub">${D.sub}</span></span>
+      <span class="day-meta">${D.meta}<span class="chev">▾</span></span>
+    </button>
+    <div class="day-body"><div class="day-inner"><div class="day-pad"><div class="slots">
+      ${D.slots.map(s=>`<div class="slot${s.m?' move':''}"><h4>${s.h}</h4><p>${s.p}</p></div>`).join('')}
+    </div></div></div></div>
+  </div>`).join('');
+
+  document.querySelectorAll('.day-btn').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const d=b.parentElement, open=d.classList.toggle('open');
+      b.setAttribute('aria-expanded',open?'true':'false');
+    });
+  });
+  document.querySelector('.day').classList.add('open');
+  document.querySelector('.day-btn').setAttribute('aria-expanded','true');
+}
+renderDays();
+
+document.getElementById('dayToggle').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  CURRENT_PLAN=b.dataset.plan;
+  document.querySelectorAll('#dayToggle .fbtn').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
+  renderDays();
+});
+
+/* ============ WORTH DOING ============ */
+const ITEMS=[
+/* PRAIA */
+{c:'Praia',t:'do',n:'Quintal da Música',w:'A walled courtyard off the Plateau that has been the city’s live-music room for decades. Morna, coladeira, funaná, played by people who do it for a living. The single best evening on the island.',when:'Book a table',b:1},
+{c:'Praia',t:'do',n:'The Plateau at six',w:'Praia’s colonial grid on its flat-topped bluff — Praça Alexandre Albuquerque, the bandstand, the pastel town hall. The offices empty into the square and the whole place changes character for an hour.',when:'17:00–19:00'},
+{c:'Praia',t:'do',n:'Sucupira market',w:'Sprawling, informal, and the actual commercial engine of the island. Fabric, fruit, grogue, phone cases, everything. Small notes, nothing in a back pocket, mornings are best.',when:'Mornings'},
+{c:'Praia',t:'do',n:'Quebra Canela at sunset',w:'The city beach on the west side, busy and unpretentious, with bars behind it. Dusk is short this close to the tropics — be there before six.',when:'18:00'},
+{c:'Praia',t:'opt',n:'Gamboa beach & the port',w:'The other city beach, scruffier, right under the Plateau. Worth a walk for the working harbour more than the sand.',when:'Any time'},
+{c:'Praia',t:'opt',n:'Palácio da Cultura Ildo Lobo',w:'Named for the great morna singer. Exhibitions are hit and miss; check what’s on rather than turning up hopefully.',when:'Check listings'},
+{c:'Praia',t:'opt',n:'Terra Kriola & the fish market',w:'Cachupa, grilled wahoo, garoupa. Eat where the catch lands rather than where the menus are translated.',when:'Lunch'},
+{c:'Praia',t:'skip',n:'Whale watching',w:'Humpbacks do arrive in Cape Verdean waters from February, but the boats run off Boa Vista and Sal — different islands, two domestic flights, and the season barely started.',when:''},
+{c:'Praia',t:'skip',n:'A Sal or Boa Vista day trip',w:'The resort islands are a flight each way and exist for a different kind of holiday. On three days on Santiago this is a whole day spent in airports.',when:''},
+/* CIDADE VELHA */
+{c:'Cidade Velha',t:'do',n:'Fortaleza Real de São Filipe',w:'Built in the 1590s after Drake sacked the town, on the ridge above it. Around 200 CVE. The view down the Ribeira Grande valley to the Atlantic is the best on Santiago.',when:'Morning'},
+{c:'Cidade Velha',t:'do',n:'Rua Banana & the pelourinho',w:'A short lane of low stone houses, claimed as the oldest European-built street in the tropics, and a marble pillory in the square that tells you plainly what this town was for.',when:'Any time'},
+{c:'Cidade Velha',t:'do',n:'The Sé and Nossa Senhora do Rosário',w:'A roofless cathedral and a church claimed as the oldest colonial one still standing anywhere. Founded 1462; UNESCO-listed since 2009.',when:'Any time'},
+{c:'Cidade Velha',t:'opt',n:'Lunch on the seafront',w:'Grilled fish under an awning with the bay in front of you. The correct way to spend the middle of that day, and the aluguers keep running.',when:'13:00'},
+{c:'Cidade Velha',t:'opt',n:'The Ribeira Grande valley walk',w:'Up through the cane, banana and coconut behind the town. An hour or two, green in a way the rest of the island is not.',when:'Afternoon'},
+/* TARRAFAL */
+{c:'Tarrafal',t:'do',n:'Tarrafal bay',w:'A crescent of pale sand in the lee of the headland — the calm water on an island whose other coasts take the trade winds full on. The one beach here worth planning around.',when:'All day'},
+{c:'Tarrafal',t:'do',n:'Campo do Tarrafal, Chão Bom',w:'The Portuguese camp built in 1936 — "the camp of slow death" — holding anti-fascist prisoners and later African independence leaders. A museum on the site now. The serious thing on this island.',when:'2 hours'},
+{c:'Tarrafal',t:'do',n:'The road north itself',w:'Two hours from Praia over the island’s spine, past Assomada and the Serra Malagueta shoulder. Sit by a window and count it as sightseeing, not transit.',when:'2 h each way'},
+{c:'Tarrafal',t:'opt',n:'Ribeira da Prata pools',w:'Twenty minutes along the coast: natural rock pools and a short gorge. Good, and easy to bolt onto a Tarrafal morning.',when:'Half day'},
+{c:'Tarrafal',t:'opt',n:'The lighthouse walk',w:'An hour and a half round trip out along the headland. Exposed, windy, and worth it for the coastline.',when:'90 min'},
+{c:'Tarrafal',t:'opt',n:'Grilled fish at the harbour',w:'Whatever came in that morning, over charcoal, at a plastic table. Lobster if the day has gone well.',when:'Lunch'},
+/* INTERIOR */
+{c:'Interior',t:'do',n:'Serra Malagueta',w:'The island’s protected ridge, 200 CVE at the gate, with marked trails. The Principal valley route runs about four hours and is mostly downhill; shorter loops leave from the visitor centre.',when:'Half day'},
+{c:'Interior',t:'opt',n:'Assomada market',w:'The island’s real market town in the central highlands — biggest on Wednesdays and Saturdays. Thirty minutes from Tarrafal, and directly on the road back to Praia.',when:'Wed & Sat'},
+{c:'Interior',t:'opt',n:'São Jorge dos Órgãos & Rui Vaz',w:'The green interior — a botanical research garden, steep valleys, and the best of the island’s mountain scenery within an hour of Praia.',when:'Half day'},
+{c:'Interior',t:'opt',n:'Pico da Antónia',w:'Santiago’s highest point at 1,394 m. A proper walk with a guide and a full day; only in the shapes that give you six days here.',when:'Full day'},
+{c:'Interior',t:'skip',n:'Fogo and Chã das Caldeiras',w:'An active volcano you can climb, with a village inside the caldera and vines growing in the ash. Genuinely one of the great sights in West Africa — and a separate island needing two nights minimum. Come back for it.',when:''},
+{c:'Interior',t:'skip',n:'Mindelo for carnival',w:'The big carnival is on São Vicente, two domestic flights away, and Shrove Tuesday falls outside this window anyway. It is a different stop, not a different day.',when:''}
+];
+
+const TIERLBL={do:'Do',opt:'Maybe',skip:'Skip'};
+let FC='all', FT=null, FB=false;
+
+function renderItems(){
+  const list=ITEMS.filter(x=>
+    (FC==='all'||x.c===FC) && (!FT||x.t===FT) && (!FB||x.b));
+  const host=document.getElementById('items');
+  if(!list.length){host.innerHTML='<div class="empty">No entries match those filters.</div>';return}
+  host.innerHTML=list.map(x=>`
+    <div class="item">
+      <span class="tier ${x.t}">${TIERLBL[x.t]}</span>
+      <span class="nm">${x.n}</span>
+      <span class="when${x.b?' book':''}">${x.when||'&nbsp;'}</span>
+      <span class="why">${x.w}</span>
+    </div>`).join('');
+}
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  if(b.dataset.city){FC=b.dataset.city}
+  else if(b.dataset.tier){FT = FT===b.dataset.tier?null:b.dataset.tier}
+  else if(b.dataset.book){FB=!FB}
+  document.querySelectorAll('#filters .fbtn').forEach(x=>{
+    let on=false;
+    if(x.dataset.city) on = x.dataset.city===FC;
+    if(x.dataset.tier) on = x.dataset.tier===FT;
+    if(x.dataset.book) on = FB;
+    x.setAttribute('aria-pressed',on?'true':'false');
+  });
+  renderItems();
+});
+renderItems();
+
+/* ============ FIG 1: TIME AUDIT ============ */
+(function(){
+  const svg=document.getElementById('audit-chart');
+  const W=1400,H=200,pad=40,barY=74,barH=54;
+  const totalH=6*24; // 4 Feb 00:00 to 10 Feb 00:00
+  const x=h=>pad+(h/totalH)*(W-2*pad);
+  const segs=[
+    {a:0,b:14,cls:'p',label:'4 Feb — last Cape Town morning'},
+    {a:14,b:24,cls:'t',label:'4 Feb PM — CPT out, overnight to Europe'},
+    {a:24,b:48,cls:'t',label:'5 Feb — Europe connection, Lisbon 20:50'},
+    {a:48,b:58,cls:'t2',label:'6 Feb — land 00:20, sleep it off'},
+    {a:58,b:72,cls:'p',label:'6 Feb PM — Praia, half a day'},
+    {a:72,b:96,cls:'f',label:'7 Feb — full day'},
+    {a:96,b:120,cls:'f',label:'8 Feb — full day'},
+    {a:120,b:124,cls:'t',label:'9 Feb — 03:50 out to Casablanca'}
+  ];
+  const fill={t:'rgba(231,100,155,.55)',t2:'rgba(231,100,155,.28)',p:'rgba(242,169,60,.35)',f:'var(--amber)'};
+  let s='';
+  for(let d=0;d<=6;d++){
+    s+=`<line x1="${x(d*24)}" y1="${barY-16}" x2="${x(d*24)}" y2="${barY+barH+12}" class="axs"/>`;
+    if(d<6) s+=`<text x="${x(d*24+12)}" y="${barY-24}" class="lbl" text-anchor="middle">${4+d} Feb</text>`;
+  }
+  segs.forEach(g=>{
+    s+=`<rect x="${x(g.a)}" y="${barY}" width="${x(g.b)-x(g.a)}" height="${barH}" fill="${fill[g.cls]}" rx="1"/>`;
+  });
+  s+=`<rect x="${x(72)}" y="${barY-6}" width="${x(120)-x(72)}" height="${barH+12}" fill="none" stroke="var(--amber)" stroke-width="1.5" rx="2"/>`;
+  s+=`<text x="${x(96)}" y="${barY+barH+34}" class="lbl-a" text-anchor="middle">TWO CLEAR DAYS</text>`;
+  s+=`<text x="${x(24)}" y="${barY+barH+34}" class="lbl" text-anchor="middle">≈32 HOURS IN TRANSIT</text>`;
+  s+=`<text x="${x(60)}" y="${barY+barH+34}" class="lbl" text-anchor="middle">HALF A DAY</text>`;
+  s+=`<line x1="${pad}" y1="${barY+barH+12}" x2="${W-pad}" y2="${barY+barH+12}" class="ax"/>`;
+  svg.innerHTML=s;
+})();
+
+/* ============ FIG 2: CARNIVAL WEEK ============ */
+(function(){
+  const svg=document.getElementById('carn-chart');
+  const W=1400,H=330,padL=210,padR=30,padT=44,rowH=46;
+  const D0=1,D1=15,N=D1-D0+1;
+  const cw=(W-padL-padR)/N;
+  const x=d=>padL+(d-D0)*cw;
+  const NAMES=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+  const rows=[
+    {n:'Window as written',a:4,b:8,fill:'rgba(231,100,155,.22)',stroke:'var(--magenta)'},
+    {n:'Swapped window',a:10,b:14,fill:'rgba(88,196,163,.2)',stroke:'var(--jade)'},
+    {n:'Mindelo parades',a:7,b:14,fill:'rgba(242,169,60,.5)',stroke:'none'},
+    {n:'Praia build-up',a:6,b:9,fill:'rgba(242,169,60,.3)',stroke:'none'}
+  ];
+  let s='';
+  for(let d=D0;d<=D1;d++){
+    const wd=NAMES[(d-1)%7];
+    const hot=(d===9);
+    s+=`<line x1="${x(d)}" y1="${padT-26}" x2="${x(d)}" y2="${padT+rows.length*rowH+8}" class="axs"/>`;
+    s+=`<text x="${x(d)+cw/2}" y="${padT-30}" class="${hot?'lbl-a':'lbl'}" text-anchor="middle">${d}</text>`;
+    s+=`<text x="${x(d)+cw/2}" y="${padT-16}" class="lbl" text-anchor="middle" font-size="8.5">${wd.toUpperCase()}</text>`;
+  }
+  s+=`<rect x="${x(9)}" y="${padT-10}" width="${cw}" height="${rows.length*rowH+14}" fill="rgba(242,169,60,.10)" stroke="var(--amber)" stroke-width="1" rx="2"/>`;
+  rows.forEach((r,i)=>{
+    const y=padT+i*rowH;
+    s+=`<text x="${padL-16}" y="${y+rowH/2+4}" class="lbl-p" text-anchor="end">${r.n}</text>`;
+    s+=`<rect x="${x(r.a)}" y="${y+9}" width="${x(r.b+1)-x(r.a)}" height="${rowH-20}" fill="${r.fill}" ${r.stroke!=='none'?`stroke="${r.stroke}" stroke-width="1"`:''} rx="2"/>`;
+  });
+  const yb=padT+rows.length*rowH+8;
+  s+=`<line x1="${padL}" y1="${yb}" x2="${W-padR}" y2="${yb}" class="ax"/>`;
+  s+=`<text x="${x(9)+cw/2}" y="${yb+24}" class="lbl-a" text-anchor="middle">SHROVE TUESDAY</text>`;
+  s+=`<text x="${x(14)+cw/2}" y="${yb+24}" class="lbl" text-anchor="middle">MANDINGAS</text>`;
+  s+=`<text x="${x(10)+cw/2}" y="${yb+42}" class="lbl" text-anchor="middle">ASH WEDNESDAY</text>`;
+  svg.innerHTML=s;
+})();
+
+/* ============ FIG 3: PRAIA RAIN ============ */
+(function(){
+  const svg=document.getElementById('rain-chart');
+  const W=1400,H=300,padL=50,padR=30,padT=20,padB=50;
+  const MO=[
+    {n:'Jan',v:5},{n:'Feb',v:4},{n:'Mar',v:2},{n:'Apr',v:1},
+    {n:'May',v:1},{n:'Jun',v:2},{n:'Jul',v:9},{n:'Aug',v:26},
+    {n:'Sep',v:31},{n:'Oct',v:17},{n:'Nov',v:8},{n:'Dec',v:6}
+  ];
+  const bw=(W-padL-padR)/MO.length;
+  const y=v=>padT+(1-v/40)*(H-padT-padB);
+  let s='';
+  [0,10,20,30,40].forEach(v=>{
+    s+=`<line x1="${padL}" y1="${y(v)}" x2="${W-padR}" y2="${y(v)}" class="axs"/>`;
+    s+=`<text x="${padL-10}" y="${y(v)+4}" class="lbl" text-anchor="end">${v}%</text>`;
+  });
+  MO.forEach((m,i)=>{
+    const x0=padL+i*bw+bw*0.18, bwid=bw*0.64;
+    const isFeb=m.n==='Feb';
+    s+=`<rect x="${x0}" y="${y(m.v)}" width="${bwid}" height="${H-padB-y(m.v)}" fill="${isFeb?'var(--amber)':'rgba(242,169,60,.32)'}" rx="1"/>`;
+    s+=`<text x="${x0+bwid/2}" y="${H-padB+18}" class="lbl" text-anchor="middle" ${isFeb?'fill="var(--amber)"':''}>${m.n}</text>`;
+    s+=`<text x="${x0+bwid/2}" y="${y(m.v)-8}" class="${isFeb?'lbl-a':'lbl'}" text-anchor="middle">${m.v}%</text>`;
+  });
+  s+=`<line x1="${padL}" y1="${H-padB}" x2="${W-padR}" y2="${H-padB}" class="ax"/>`;
+  svg.innerHTML=s;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+})();
+
+/* ============ COST CALCULATOR ============ */
+const COSTS=[
+  {n:'Airport security tax (TSA), international arrival',v:3400,fixed:true,def:true,note:'Compulsory — paid through EASE before you fly'},
+  {n:'Tourist tax, 3 nights × 276 CVE',v:828,fixed:true,def:true,note:'Compulsory — collected by the accommodation'},
+  {n:'Taxi, RAI airport ↔ Plateau, both ways',v:2400,def:true,note:'Roughly 1,000–1,500 CVE each way'},
+  {n:'Aluguer, Praia ↔ Cidade Velha, return',v:200,def:true,note:'Shared minibus from near Sucupira, 25–30 min'},
+  {n:'Fortaleza Real de São Filipe entry',v:200,def:true,note:'Cidade Velha — the fort on the ridge'},
+  {n:'Aluguer, Praia ↔ Tarrafal, return',v:1200,def:true,note:'Várzea stadium terminal, 2 h each way'},
+  {n:'Serra Malagueta park entry',v:200,note:'Add a guide at roughly 4,000 CVE if you want one'},
+  {n:'Private car and driver, one Tarrafal day',v:8000,note:'The alternative to aluguers — split it if you can'},
+  {n:'Campo do Tarrafal museum',v:200,note:'Approximate — small site fee'}
+];
+function renderLegs(){
+  document.getElementById('legs').innerHTML=COSTS.map((l,i)=>`
+    <label class="leg-row">
+      <input type="checkbox" data-i="${i}" ${l.def?'checked':''} ${l.fixed?'disabled checked':''}>
+      <span class="lname">${l.n}</span>
+      <span class="lyen">${l.v.toLocaleString('en-CA')} CVE</span>
+      ${l.note?`<span class="lnote">${l.note}</span>`:''}
+    </label>`).join('');
+}
+function calcTotals(){
+  let total=0;
+  document.querySelectorAll('#legs input[type="checkbox"]').forEach(cb=>{
+    const l=COSTS[Number(cb.dataset.i)];
+    if(cb.checked||l.fixed) total+=l.v;
+  });
+  const eur=total/110.265;
+  document.getElementById('ptp').innerHTML=`${total.toLocaleString('en-CA')}<small>CVE</small>`;
+  document.getElementById('eur').innerHTML=`€${eur.toFixed(0)}<small>at the peg</small>`;
+  const vEl=document.getElementById('verdict');
+  if(total<=6000){vEl.textContent='A cheap island to be on'; vEl.className='win';}
+  else if(total<=12000){vEl.textContent='Normal three-day total'; vEl.className='';}
+  else {vEl.textContent='You are hiring cars'; vEl.className='lose';}
+}
+renderLegs();
+document.getElementById('legs').addEventListener('change',calcTotals);
+calcTotals();
+</script>
+
+</body>
+</html>

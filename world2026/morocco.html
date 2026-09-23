@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="darkreader-lock">
+<title>Morocco</title>
+<link rel="stylesheet" href="fonts.css">
+</head>
+<body>
+<style>
+:root{color-scheme:dark;
+  --ink:#05161D;--ink-2:#0A2029;--ink-3:#0E2A35;
+  --rule:#194150;--rule-soft:rgba(25,65,80,.6);
+  --paper:#E2EEED;--paper-dim:#A6C2C6;--muted:#6C8F98;
+  --amber:#F2A93C;--magenta:#E7649B;--jade:#58C4A3;--red:#E05555;
+  --display:'Big Shoulders Display','Arial Narrow',Impact,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --body:'Inter',system-ui,sans-serif;
+  --gut:clamp(18px,4vw,64px);--maxw:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+.section{padding-block:clamp(34px,4.4vw,58px);border-top:1px solid var(--rule-soft);position:relative}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:14px;margin:0 0 18px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--rule)}
+.eyebrow .n{color:var(--amber)}
+h2.head{font-family:var(--display);font-weight:700;font-size:clamp(34px,5.6vw,66px);line-height:.92;margin:0 0 14px;text-transform:uppercase}
+.lede{max-width:66ch;color:var(--paper-dim);font-size:clamp(15px,1.5vw,17px);margin:0 0 26px}
+.lede b{color:var(--paper);font-weight:600}
+a{color:var(--amber);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+.hint{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+@media (min-width:980px){.hint.wide{display:none}}
+.scroller{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--rule) transparent}
+.scroller::-webkit-scrollbar{height:6px}
+.scroller::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}
+.scroller>svg{display:block;width:100%;height:auto}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(30px,5vw,58px) clamp(24px,4vw,40px);overflow:hidden}
+.gridbg{position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:linear-gradient(to right,var(--rule-soft) 1px,transparent 1px),linear-gradient(to bottom,var(--rule-soft) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%);-webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%)}
+.back{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:inline-block;margin-bottom:20px}
+.back:hover{color:var(--amber)}
+.strip{font-family:var(--mono);font-size:clamp(10px,1.15vw,12px);letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;border-block:1px solid var(--rule);padding-block:11px;margin-bottom:clamp(26px,4vw,44px)}
+.strip .k{color:var(--muted)}.strip .amb{color:var(--amber)}
+.title{font-family:var(--display);text-transform:uppercase;margin:0;line-height:.82;position:relative}
+.title .l1{display:block;font-weight:400;font-size:clamp(34px,7.4vw,96px);color:transparent;-webkit-text-stroke:1.2px var(--paper-dim)}
+.title .l2{display:block;font-weight:800;font-size:clamp(72px,17vw,232px);letter-spacing:-.015em;color:var(--paper)}
+.subline{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:baseline;margin-top:clamp(18px,3vw,30px);font-family:var(--mono);font-size:clamp(11px,1.25vw,13px);letter-spacing:.14em;text-transform:uppercase;color:var(--paper-dim)}
+.subline .sep{color:var(--rule)}
+
+/* instruments */
+.instr{display:grid;grid-template-columns:repeat(auto-fit,minmax(124px,1fr));border:1px solid var(--rule);background:var(--ink-2);margin:clamp(24px,3.4vw,38px) 0 0}
+.instr div{padding:15px 17px;border-right:1px solid var(--rule-soft)}
+.instr div:last-child{border-right:0}
+.instr dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.instr dd{margin:0;font-family:var(--display);font-weight:600;font-size:31px;line-height:1}
+.instr dd span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--paper-dim);margin-left:3px}
+.instr dd.hot{color:var(--amber)}
+.instr dd.warn{color:var(--magenta)}
+
+/* chart frames */
+.figcap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:9px;margin:0 0 8px}
+.figcap b{color:var(--amber);font-weight:500}
+.fignote{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.fignote i{display:inline-block;width:14px;height:9px;margin:0 5px 0 14px;vertical-align:middle;border-radius:1px}
+.fignote i:first-child{margin-left:0}
+.ax{stroke:var(--rule);stroke-width:1}
+.axs{stroke:var(--rule-soft);stroke-width:1}
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.08em;fill:var(--muted)}
+.lbl-p{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;fill:var(--paper)}
+.lbl-a{font-family:var(--mono);font-size:10px;letter-spacing:.12em;fill:var(--amber)}
+
+/* cards */
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin:0 0 6px}
+.card{border:1px solid var(--rule);background:var(--ink-2);padding:18px 20px;position:relative}
+.card.bad{border-color:var(--red)}
+.card.good{border-color:var(--jade)}
+.card h3{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 4px;color:var(--paper)}
+.card .verdict{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:11px}
+.card .verdict.bad{color:var(--red)}
+.card .verdict.ok{color:var(--jade)}
+.card p{margin:0 0 10px;font-size:13.5px;color:var(--paper-dim);line-height:1.62}
+.card p:last-child{margin-bottom:0}
+.card p b{color:var(--paper);font-weight:600}
+.fix{border-left:2px solid var(--amber);padding-left:12px;margin:12px 0 0;font-size:12.8px;color:var(--paper-dim);line-height:1.6}
+.fix b{display:block;color:var(--amber);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px;font-weight:500}
+.fix strong{color:var(--paper);font-weight:600}
+
+/* shape cards */
+.shapes{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+.shape{border:1px solid var(--rule);background:var(--ink-2);padding:0;display:flex;flex-direction:column}
+.shape.pick{border-color:var(--amber);box-shadow:inset 0 0 0 1px rgba(242,169,60,.25)}
+.shape-hd{padding:16px 20px 14px;border-bottom:1px solid var(--rule-soft)}
+.shape-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.shape.pick .shape-tag{color:var(--amber)}
+.shape-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(24px,3vw,32px);line-height:.95;margin:0}
+.chainrow{display:flex;flex-wrap:wrap;align-items:center;gap:5px 7px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--paper);padding:13px 20px;border-bottom:1px solid var(--rule-soft);background:rgba(5,22,29,.5)}
+.chainrow .a{color:var(--rule)}
+.chainrow .n{color:var(--amber);font-size:9.5px}
+.shape-body{padding:15px 20px 18px;flex:1}
+.shape-body p{margin:0 0 10px;font-size:13.3px;color:var(--paper-dim);line-height:1.6}
+.shape-body p:last-child{margin-bottom:0}
+.shape-body p b{color:var(--paper);font-weight:600}
+.shape-meta{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--rule-soft)}
+.shape-meta div{flex:1;min-width:88px;padding:11px 20px;border-right:1px solid var(--rule-soft)}
+.shape-meta div:last-child{border-right:0}
+.shape-meta dt{font-family:var(--mono);font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.shape-meta dd{margin:0;font-family:var(--mono);font-size:13px;color:var(--paper)}
+.shape-meta dd.g{color:var(--jade)}
+.shape-meta dd.r{color:var(--red)}
+
+/* day accordion */
+.days{border-top:1px solid var(--rule)}
+.day{border-bottom:1px solid var(--rule)}
+.day-btn{all:unset;box-sizing:border-box;display:grid;width:100%;cursor:pointer;grid-template-columns:76px 1fr auto;gap:0 clamp(14px,2.4vw,30px);align-items:baseline;padding:clamp(13px,1.8vw,18px) 4px;transition:background .18s ease}
+.day-btn:hover{background:rgba(242,169,60,.05)}
+.day-btn:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.day-date{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.1em}
+.day-date small{display:block;color:var(--muted);font-size:9.5px;letter-spacing:.14em;margin-top:3px}
+.day-btn>span:nth-child(2){display:flex;flex-direction:column;gap:6px}
+.day-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(22px,3.2vw,34px);line-height:.95;margin:0}
+.day-sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.day-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--paper-dim);text-align:right;white-space:nowrap}
+.day-meta .chev{display:inline-block;margin-left:12px;color:var(--muted);transition:transform .25s ease}
+.day.open .day-meta .chev{transform:rotate(180deg)}
+@media (max-width:720px){.day-btn{grid-template-columns:64px 1fr;row-gap:8px}.day-meta{grid-column:2;text-align:left}}
+.day-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .34s cubic-bezier(.3,.8,.3,1)}
+.day.open .day-body{grid-template-rows:1fr}
+.day-inner{overflow:hidden}
+.day-pad{padding:2px 4px clamp(22px,3vw,32px)}
+.slots{display:grid;gap:0;border-left:1px solid var(--rule)}
+.slot{padding:0 0 16px 16px;position:relative}
+.slot:last-child{padding-bottom:2px}
+.slot::before{content:"";position:absolute;left:-4px;top:6px;width:7px;height:7px;background:var(--amber);border-radius:50%}
+.slot.move::before{background:var(--magenta)}
+.slot.night::before{background:var(--jade)}
+.slot h4{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 5px;font-weight:500}
+.slot.move h4{color:var(--magenta)}
+.slot.night h4{color:var(--jade)}
+.slot p{margin:0;font-size:14px;line-height:1.62;color:var(--paper-dim);max-width:72ch}
+.slot p b{color:var(--paper);font-weight:600}
+
+/* worth doing */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.fbtn{all:unset;cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border:1px solid var(--rule);color:var(--paper-dim);border-radius:2px;transition:.15s}
+.fbtn:hover{background:var(--ink-3);color:var(--paper)}
+.fbtn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.fbtn[aria-pressed="true"]{background:var(--amber);color:var(--ink);border-color:var(--amber);font-weight:600}
+.fdiv{width:1px;background:var(--rule);margin:2px 6px}
+.items{display:grid;gap:1px;background:var(--rule-soft);border:1px solid var(--rule)}
+.item{background:var(--ink-2);padding:13px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:baseline}
+.item .tier{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:3px 7px 2px;border-radius:2px;white-space:nowrap;align-self:start;margin-top:2px}
+.tier.do{background:rgba(88,196,163,.14);color:var(--jade);border:1px solid rgba(88,196,163,.35)}
+.tier.opt{background:rgba(242,169,60,.12);color:var(--amber);border:1px solid rgba(242,169,60,.3)}
+.tier.skip{background:rgba(224,85,85,.1);color:var(--red);border:1px solid rgba(224,85,85,.3)}
+.item .nm{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:20px;line-height:1.05;color:var(--paper)}
+.item .why{grid-column:2;font-size:13.3px;color:var(--paper-dim);line-height:1.55;max-width:74ch}
+.item .why b{color:var(--paper);font-weight:600}
+.item .when{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);text-align:right;white-space:nowrap;align-self:start;margin-top:4px}
+.item .when.book{color:var(--magenta)}
+@media (max-width:640px){.item{grid-template-columns:auto 1fr}.item .when{grid-column:2;text-align:left;margin-top:2px}.item .why{grid-column:1/-1}}
+.empty{background:var(--ink-2);padding:22px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* calculator */
+.calc{border:1px solid var(--rule);background:var(--ink-2)}
+.calc-legs{display:grid}
+.leg-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--rule-soft);cursor:pointer}
+.leg-row:hover{background:rgba(242,169,60,.04)}
+.leg-row input{accent-color:var(--amber);width:15px;height:15px;cursor:pointer}
+.leg-row .lname{font-family:var(--mono);font-size:12.5px;color:var(--paper-dim)}
+.leg-row input:checked+.lname{color:var(--paper)}
+.leg-row .lyen{font-family:var(--mono);font-size:12.5px;color:var(--amber);font-variant-numeric:tabular-nums;white-space:nowrap}
+.leg-row .lnote{grid-column:2/-1;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--muted);margin-top:-4px}
+.calc-out{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule-soft)}
+.calc-out div{background:var(--ink-3);padding:15px 17px}
+.calc-out dt{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.calc-out dd{margin:0;font-family:var(--display);font-weight:700;font-size:27px;line-height:1;font-variant-numeric:tabular-nums}
+.calc-out dd small{font-family:var(--mono);font-size:10px;font-weight:400;color:var(--paper-dim);margin-left:4px;letter-spacing:.06em}
+#verdict{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;line-height:1.5;color:var(--jade)}
+
+/* panels / tables */
+.panel{border:1px solid var(--rule);background:var(--ink-2);padding:clamp(17px,2.4vw,24px);margin-top:22px}
+.panel h3{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 12px;font-weight:500}
+.panel p{margin:0 0 12px;font-size:13.6px;color:var(--paper-dim);line-height:1.62}
+.panel p:last-child{margin-bottom:0}
+.panel p b{color:var(--paper);font-weight:600}
+table.ref{width:100%;border-collapse:collapse;font-size:13.4px}
+table.ref th{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:500;padding:0 14px 10px 0;border-bottom:1px solid var(--rule)}
+table.ref td{padding:9px 14px 9px 0;border-bottom:1px solid var(--rule-soft);color:var(--paper-dim);vertical-align:top}
+table.ref td:first-child{font-family:var(--display);font-size:17px;font-weight:600;text-transform:uppercase;color:var(--paper);white-space:nowrap;width:1%}
+table.ref td.t{font-family:var(--mono);font-size:11px;letter-spacing:.06em;white-space:nowrap;color:var(--amber)}
+table.ref tr.flag td.t{color:var(--magenta)}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.cols{display:grid;gap:16px 34px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:20px}
+.cols p{margin:0;font-size:13.6px;color:var(--paper-dim);line-height:1.6}
+.cols p b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:5px;font-weight:500}
+
+footer{border-top:1px solid var(--rule);padding-block:26px 40px;color:var(--muted)}
+.foot-grid{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:flex-end}
+.foot-grid p{margin:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase}
+.foot-mark{font-family:var(--display);font-size:clamp(40px,9vw,110px);font-weight:800;text-transform:uppercase;line-height:.8;color:transparent;-webkit-text-stroke:1px var(--rule);margin:30px 0 0}
+</style>
+<header class="hero">
+  <div class="gridbg"></div>
+  <div class="wrap">
+    <a class="back" href="index.html">← Westbound · the dossier</a>
+    <p class="strip">
+      <span><span class="k">Stop</span> <span class="amb">26 of 27</span></span>
+      <span><span class="k">In</span> RAI · Praia</span>
+      <span><span class="k">Fly Morocco</span> <span class="amb">CMN</span></span>
+      <span><span class="k">Out</span> LIS · Lisbon</span>
+      <span><span class="k">Window</span> 8–14 Feb 2027</span>
+      <span><span class="k">Clock</span> UTC+0</span>
+    </p>
+    <h1 class="title">
+      <span class="l1">Second to last</span>
+      <span class="l2">Morocco</span>
+    </h1>
+    <p class="subline">
+      <span>Ramadan, all seven days</span><span class="sep">/</span>
+      <span>Arrival date unsettled</span><span class="sep">/</span>
+      <span>Exit airport: change it</span>
+    </p>
+
+    <dl class="instr">
+      <div><dt>Calendar days</dt><dd>7</dd></div>
+      <div><dt>Full days</dt><dd class="hot">4</dd></div>
+      <div><dt>Nights</dt><dd>5</dd></div>
+      <div><dt>Bases</dt><dd>4</dd></div>
+      <div><dt>Desert driving</dt><dd id="drive">≈18<span>hrs</span></dd></div>
+      <div><dt>Iftar, Marrakech</dt><dd class="warn">18:15</dd></div>
+    </dl>
+  </div>
+</header>
+
+<section class="section" id="audit">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">01</span> The time audit</p>
+    <h2 class="head">Seven days<br>is four</h2>
+    <p class="lede">The itinerary says 8–14 February. Cape Verde doesn't cooperate: <b>nothing leaves Praia in daylight</b>, and the only Monday departure is a six-hour one-stop that has you at the airport on Sunday night. The recommendation already filed against stop 25 is to take Tuesday's 03:50 nonstop instead, landing Casablanca around 09:25 on the <b>9th</b>. That costs a night's sleep and the whole of the 8th, and leaves <b>four full days and two fragments</b>. Everything below is built against four.</p>
+
+    <div class="figcap">
+      <span>Fig. 1 — What the week really contains</span>
+      <span><b>8–14 Feb</b> · hour by hour</span>
+    </div>
+    <div class="scroller">
+      <svg id="audit-chart" viewBox="0 0 1400 190" role="img" aria-label="Timeline of 8 to 14 February showing the 8th lost to the overnight departure from Praia, the morning of the 9th in transit, four usable full days from the 10th to the 13th, and a departure morning on the 14th."></svg>
+    </div>
+    <p class="fignote"><i style="background:var(--magenta);opacity:.55"></i>In transit<i style="background:rgba(242,169,60,.35)"></i>Part day<i style="background:var(--amber)"></i>Full day</p>
+
+    <div class="cols">
+      <p><b>No jet lag, for once</b>Praia is UTC−1, Morocco is UTC+0. You move the clock forward one hour and that is the entire adjustment — the smallest time change of the whole trip. After Tokyo and Cape Town this stop asks nothing of your body except that you sleep on a plane at four in the morning.</p>
+      <p><b>Morocco is on GMT now, permanently</b>Morocco abolished its GMT+1 standard and returned to GMT on <b>20 September 2026</b>, dropping the seasonal switching along with it. That also disposes of the old Ramadan clock shuffle, where the country used to fall back an hour for the month. In February 2027 Morocco is UTC+0, the same as Lisbon, and nothing moves while you're there.</p>
+      <p><b>Casablanca is a transit hall</b>CMN is the hub and the Hassan II Mosque is genuinely worth the detour, but Casablanca is not on the see-list and should not get a night. The airport has its own rail station: 45 minutes and 50 MAD to Casa Voyageurs, hourly from 04:00 to 23:00, and every onward train leaves from there.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="flags">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">02</span> Two things that don't move</p>
+    <h2 class="head">Read these<br>before booking</h2>
+    <p class="lede">One reshapes every hour of the stop and cannot be dodged. The other is a routing mistake that is still entirely fixable, and fixing it is worth about four and a half hours of your last day.</p>
+
+    <div class="cards">
+      <div class="card bad">
+        <h3>The whole stop is inside Ramadan</h3>
+        <div class="verdict bad">Unavoidable — and mostly good</div>
+        <p>Ramadan 1448 is expected to begin on <b>Monday 8 February 2027</b> — the day this window opens. All seven days sit in Ramadan days 1–7, the most strictly observed stretch of the month. Morocco's Ministry of Habous confirms the start only after the crescent is sighted, so it may slip to the 9th; either way at least six of your days are inside the fast.</p>
+        <p>What changes: local restaurants shut through daylight, souks close roughly <b>14:00–17:00</b>, monument hours get clipped (Ben Youssef Madrasa runs 09:00–16:30 in Ramadan against 09:00–19:00 normally), <b>alcohol effectively disappears</b>, and taxis vanish from half an hour before iftar to an hour after. Banks and offices work about 09:00–15:00.</p>
+        <p>What doesn't: trains, buses, flights and desert tours all run to schedule. Your guides and drivers simply fast while working.</p>
+        <div class="fix"><b>What to do</b>Rewrite the shape of the day rather than the dates. Sights and souks in the <strong>morning</strong>, the dead 14:00–17:00 window spent driving or on a riad terrace, and the <strong>evening treated as the main event</strong> — Jemaa el-Fna after iftar in Ramadan is the best version of that square there is, and the souks run past midnight. Rooms are reported 10–20% cheaper and the crowds thin out. There is no later window in Westbound that escapes it: Ramadan runs to about 8 March.</div>
+      </div>
+
+      <div class="card bad">
+        <h3>Fes ends up with no daylight at all</h3>
+        <div class="verdict bad">Fixable — reverse the loop</div>
+        <p>Written as Casablanca → Marrakech → Sahara → Fes, the desert crossing drops you in Fes at <b>17:00–18:00 on your second-last day</b>. Departure day then needs Fes → Casa Voyageurs (~4h), a change, and the 45-minute airport shuttle: roughly <b>five hours plus buffer</b>, so you leave Fes around 07:30 for the 15:15 flight. One of the great medinas of this trip gets a dinner and a taxi.</p>
+        <p>There is no escape hatch. <b>Fes–Lisbon has no nonstop</b> — TAP's last was scheduled 5 January 2020, Ryanair's 27 October 2022, and the route sits inactive.</p>
+        <div class="fix"><b>The fix</b>Run it backwards: <strong>Casablanca → Fes → Sahara → Marrakech</strong>, and fly out of <strong>Marrakech Menara (RAK)</strong> instead of Casablanca. RAK–Lisbon has about ten nonstops a week across TAP, Ryanair and easyJet, 1h50. Departure day becomes a 20-minute taxi rather than a five-hour rail relay, Fes gains a full day plus two halves, and the desert crossing ends in the city with the better after-dark life — which is exactly what Ramadan rewards.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="shapes">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">03</span> The open question</p>
+    <h2 class="head">Which way<br>round</h2>
+    <p class="lede">Same four bases, same three-day desert crossing, same total driving. The only variable is direction — and direction decides which city gets a real day and how long the last morning lasts. Both shapes below fit a 9 Feb arrival and a 14 Feb departure.</p>
+
+    <div class="shapes">
+      <div class="shape pick">
+        <div class="shape-hd">
+          <div class="shape-tag">Recommended</div>
+          <p class="shape-name">Backwards</p>
+        </div>
+        <div class="chainrow">
+          <span class="n">CMN</span><span class="a">→</span>
+          <span>Fes <span class="n">×2</span></span><span class="a">→</span>
+          <span>Merzouga <span class="n">×1</span></span><span class="a">→</span>
+          <span>Dades <span class="n">×1</span></span><span class="a">→</span>
+          <span>Marrakech <span class="n">×1</span></span><span class="a">→</span>
+          <span class="n">RAK</span>
+        </div>
+        <div class="shape-body">
+          <p>Land, see the Hassan II Mosque, take the afternoon train to Fes. A <b>full day in the Fes medina</b> — which needs a full day, because it is nine thousand alleys and no cars — then the desert crossing westward, ending in Marrakech on the afternoon of the 13th.</p>
+          <p><b>The last morning is real.</b> Jemaa el-Fna, the souks and Ben Youssef before an afternoon flight out of Menara, twenty minutes away. Against the written order that is about <b>four and a half hours</b> handed back.</p>
+          <p>It also puts the Tizi n'Tichka pass on day 3 <b>inbound</b>. If snow closes it — and it closed twice in January 2026 alone — you lose a detour on the way to a city you're sleeping in, rather than the whole desert trip on day 1.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Bases</dt><dd class="g">4</dd></div>
+          <div><dt>Fes daylight</dt><dd class="g">1 day + 2 halves</dd></div>
+          <div><dt>Last morning</dt><dd class="g">Free</dd></div>
+          <div><dt>Fly out</dt><dd>RAK</dd></div>
+        </dl>
+      </div>
+
+      <div class="shape">
+        <div class="shape-hd">
+          <div class="shape-tag">As the itinerary is written</div>
+          <p class="shape-name">Forwards</p>
+        </div>
+        <div class="chainrow">
+          <span class="n">CMN</span><span class="a">→</span>
+          <span>Marrakech <span class="n">×2</span></span><span class="a">→</span>
+          <span>Dades <span class="n">×1</span></span><span class="a">→</span>
+          <span>Merzouga <span class="n">×1</span></span><span class="a">→</span>
+          <span>Fes <span class="n">×1</span></span><span class="a">→</span>
+          <span class="n">CMN</span>
+        </div>
+        <div class="shape-body">
+          <p>Land, train straight to Marrakech, two nights there, then the classic eastward crossing — Tichka, Ait Ben Haddou, Dades, Todra, Merzouga — arriving Fes on the evening of the 13th.</p>
+          <p><b>Its one genuine advantage:</b> you reach the dunes on the evening of day 2 rather than the end of day 1, so the camel trek and the camp fall in the middle of the trip when you've settled in, and the 8-hour drive is the last leg rather than the first.</p>
+          <p>Everything else costs you. Fes gets an evening. The 14th is a five-hour transfer. And day 1 crosses Tichka at 2,260 m in February with nothing behind it if the road is shut.</p>
+        </div>
+        <dl class="shape-meta">
+          <div><dt>Bases</dt><dd>4</dd></div>
+          <div><dt>Fes daylight</dt><dd class="r">None</dd></div>
+          <div><dt>Last morning</dt><dd class="r">07:30 train</dd></div>
+          <div><dt>Fly out</dt><dd>CMN</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>If the exit has to stay Casablanca</h3>
+      <p>Sometimes the onward ticket is already written that way. If CMN is fixed, you can still run the loop backwards and simply come out of Marrakech by rail: <b>Marrakech → Casa Voyageurs is about 2h40–3h</b>, plus the 45-minute airport shuttle. That is still an hour and a half better than the Fes end, and it keeps Fes's full day.</p>
+      <p>The alternative rescue for the written order is to sleep in Casablanca on the 13th — train out of Fes that evening, 45 minutes to the airport in the morning. It fixes the departure but still leaves Fes with one evening, and spends a night in a city that isn't on the list.</p>
+      <p><b>Or cut Fes.</b> If the desert and Marrakech are the real point, run the crossing as a Marrakech round trip and give Marrakech four days. That removes the transfer problem completely and is a perfectly honest answer on a 27-country trip — Fes is not a place to see badly.</p>
+    </div>
+
+    <div class="panel">
+      <h3>What's cut either way</h3>
+      <p><b>Chefchaouen.</b> The blue town in the Rif, and it photographs better than anywhere else in Morocco. Four hours north of Fes on a road that leads nowhere else. It needs its own two days.</p>
+      <p><b>Essaouira.</b> Three hours west of Marrakech, Atlantic, windy, ramparts and gulls and the best fish on the coast. February is cold and blowing there. It's a day trip you don't have.</p>
+      <p><b>Tangier and Al Boraq.</b> Africa's only high-speed line runs Tangier–Kenitra–Rabat–Casablanca at 320 km/h, and it is entirely on the wrong side of your route. The Marrakech extension is a 2030 project.</p>
+      <p><b>The Atlas villages.</b> Imlil, the Toubkal valley, Ourika. Reachable from Marrakech in ninety minutes and full of snow in February — a real winter mountain day, but only if you drop something else.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="run">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">04</span> Day by day</p>
+    <h2 class="head">Both directions,<br>laid out</h2>
+    <p class="lede">Built for a Tuesday 9 February arrival. Every day is shaped around the Ramadan clock: work the morning hard, let the afternoon go slack, and hold your energy for the two hours after sunset when the whole country switches back on. Times are indicative.</p>
+    <div class="filters" id="dayToggle" style="margin-bottom:6px">
+      <button class="fbtn" data-plan="rev" aria-pressed="true">Backwards · Fes first</button>
+      <button class="fbtn" data-plan="fwd" aria-pressed="false">Forwards · as written</button>
+    </div>
+    <div class="days" id="days"></div>
+    <p class="fignote" style="margin-top:16px">Amber = on foot · <span style="color:var(--magenta)">Magenta = a road or rail move</span> · <span style="color:var(--jade)">Jade = after iftar</span></p>
+  </div>
+</section>
+
+<section class="section" id="ramadan">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">05</span> The Ramadan clock</p>
+    <h2 class="head">A country<br>on night shift</h2>
+    <p class="lede">February is one of the gentlest Ramadans in the 33-year cycle — the fast has drifted into short winter days, so it runs about <b>twelve and a quarter hours</b> rather than the sixteen of a July Ramadan. In Marrakech during your window that means fajr around 05:55 and iftar around 18:15. Fes and Merzouga break fifteen minutes earlier. Learn those two numbers and the whole week makes sense.</p>
+
+    <div class="figcap">
+      <span>Fig. 2 — One Ramadan day, Marrakech</span>
+      <span><b>11 Feb 2027</b> · local time, UTC+0</span>
+    </div>
+    <div class="scroller">
+      <svg id="ram-chart" viewBox="0 0 1400 230" role="img" aria-label="Timeline of a single Ramadan day in Marrakech showing the fast running from 05:55 to 18:15, a productive morning from 9 to 2, a shut afternoon from 2 to 5, the iftar pause around 6pm, and the city reopening from 7pm past midnight."></svg>
+    </div>
+    <p class="fignote"><i style="background:rgba(242,169,60,.85)"></i>Go<i style="background:rgba(25,65,80,.9);border:1px solid var(--rule)"></i>Shut<i style="background:var(--magenta)"></i>Iftar pause<i style="background:var(--jade)"></i>Night city · fajr and sunset computed for 31.6°N, 8.0°W</p>
+
+    <div class="cols">
+      <p><b>The morning is the whole day</b>Monuments open at nine and thin out fast. Ben Youssef, Bahia, the Saadian Tombs, the Fes madrasas — do them between 09:00 and 13:00 and you will have them close to empty, which almost never happens in Marrakech. Ramadan closing is early: Ben Youssef shuts at 16:30 instead of 19:00, and other sites clip the late afternoon the same way.</p>
+      <p><b>The dead hours are a gift, not a loss</b>From two to five the souks half-close and the streets empty. Fighting it is pointless. This is when you drive, when you sit on a terrace, when you sleep off the 03:50 flight. In the two shapes above, the long road legs are deliberately parked here.</p>
+      <p><b>Do not be in a taxi at six</b>Roughly thirty minutes before iftar to an hour after, taxis disappear and traffic knots up as everyone races home. Be wherever you intend to break the fast by 17:45. Missing this once will cost you an hour standing on a kerb.</p>
+      <p><b>Eat what the month is for</b>Iftar opens with dates and <b>harira</b> — the lamb, lentil and tomato soup that only really exists in this form during Ramadan — then chebakia, sticky with honey and sesame, and briouats. Riads and tourist restaurants serve it; so does every stall on the square. It is the best food argument for coming in Ramadan at all.</p>
+      <p><b>Manners</b>Don't eat, drink or smoke in the street during daylight — including in the back of the 4×4 while your driver has had nothing since six. Carry water and use it out of sight. Nobody will confront you; everybody will notice.</p>
+      <p><b>Alcohol, realistically</b>Assume none. Bars, restaurant lists and liquor shops largely stop for the month and supermarkets pause sales. A few international hotels keep serving. If that matters to you, it's a genuine cost of this window — and stop 27 is Lisbon.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="worth">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">06</span> What's actually worth doing</p>
+    <h2 class="head">Do, maybe,<br>don't bother</h2>
+    <p class="lede">Sorted by place, then by whether it earns a slot in a week this short and this specifically shaped. The <b>don't bother</b> entries are mostly fine things — they lose to something better in the same hour, or they fight the Ramadan clock and lose.</p>
+
+    <div class="filters" id="filters">
+      <button class="fbtn" data-city="all" aria-pressed="true">All</button>
+      <button class="fbtn" data-city="Marrakech" aria-pressed="false">Marrakech</button>
+      <button class="fbtn" data-city="Fes" aria-pressed="false">Fes</button>
+      <button class="fbtn" data-city="Sahara" aria-pressed="false">Sahara &amp; Atlas</button>
+      <button class="fbtn" data-city="Casablanca" aria-pressed="false">Casablanca</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-tier="do" aria-pressed="false">Do</button>
+      <button class="fbtn" data-tier="opt" aria-pressed="false">Maybe</button>
+      <button class="fbtn" data-tier="skip" aria-pressed="false">Don't bother</button>
+      <span class="fdiv"></span>
+      <button class="fbtn" data-book="1" aria-pressed="false">Needs booking</button>
+    </div>
+    <div class="items" id="items"></div>
+  </div>
+</section>
+
+<section class="section" id="desert">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">07</span> The crossing</p>
+    <h2 class="head">Eighteen hours<br>in a minibus</h2>
+    <p class="lede">The Sahara on this itinerary is not a place you go to; it is a place you drive to, for three days, one way. The standard Marrakech–Fes crossing runs roughly <b>six hours, four hours and eight hours</b> across its three days, with one hour of camel at either end of one night. Going in knowing that number is the difference between a great trip and a grim one.</p>
+
+    <div class="figcap">
+      <span>Fig. 3 — Driving hours, by day and direction</span>
+      <span><b>3-day crossing</b> · Marrakech ↔ Fes via Merzouga</span>
+    </div>
+    <div class="scroller">
+      <svg id="drive-chart" viewBox="0 0 1400 320" role="img" aria-label="Bar chart comparing driving hours per day for the two directions of the three-day desert crossing: roughly six, four and eight hours forwards, and eight, four and six hours backwards, about eighteen hours either way."></svg>
+    </div>
+    <p class="fignote">Operator-published day lengths, excluding stops · <i style="background:var(--amber)"></i>Backwards · Fes first<i style="background:rgba(242,169,60,.32)"></i>Forwards · as written</p>
+
+    <div class="panel">
+      <h3>What €159 actually buys</h3>
+      <p>The shared three-day Marrakech→Fes tour is widely sold at around <b>€159 per person</b>: air-conditioned minibus, hotel pickup, two nights with dinner — a guesthouse in the Dades valley and a Berber tent at Erg Chebbi — the camel trek at sunset and again at sunrise, and showers at Merzouga. Lunches, drinks and tips are not included. The mirrored Fes→Marrakech product is equally standard, though fewer operators list it, which is the one practical reason the reversed loop takes more booking effort.</p>
+      <p><b>Shared means a minibus of strangers on someone else's schedule.</b> Private 4×4 costs several times more and buys you departure times, stopping when you want, and a driver who talks to you rather than to the group. On a trip with four full days in the country, that upgrade is more defensible than it sounds — but price it yourself; the figures quoted for private tours vary wildly and none of them are worth repeating here as fact.</p>
+      <p>Ramadan does not affect the tour. Operators run as scheduled and guides and drivers fast through it — including that eight-hour day.</p>
+    </div>
+
+    <div class="panel">
+      <h3>The pass that closes</h3>
+      <p><b>Tizi n'Tichka</b>, 2,260 m, is the only road between Marrakech and Ouarzazate, and it "regularly becomes impassable during heavy snowfalls." It was cut twice in January 2026 alone — on the 3rd and again on the 20th. February is squarely in that season.</p>
+      <p>This is why direction matters more than it looks. Running <b>forwards</b>, Tichka is day 1: a closure on the morning you leave Marrakech can kill the desert leg outright, with no slack in a four-day week to rebuild it. Running <b>backwards</b>, Tichka is the last few hours of day 3, arriving into the city where you're already booked — a delay, not a cancellation. The Fes side climbs the Middle Atlas past Ifrane and Midelt, which carries its own winter risk, but it is not a single choke point.</p>
+      <p>Ask your operator, in writing, what happens if the pass is shut. A good answer names the Agadir-side detour or an alternative day. No answer is itself an answer.</p>
+    </div>
+
+    <div class="panel">
+      <h3>February in the dunes</h3>
+      <p>Merzouga in February averages about <b>21°C by day and 8°C at night</b>, with roughly two rainy days and 8 mm across the whole month. Those are averages: clear desert nights run well below the mean, and a tent at Erg Chebbi in February can sit near freezing before dawn. The camps supply heavy blankets. Bring a proper warm layer, a hat and socks to sleep in, and stop thinking of the Sahara as hot.</p>
+      <p>The upside is enormous. February is dry, the light is long and low all day instead of only at the edges, there is no summer haze, and the dunes are not 45°C. This is the right month to be here, and the itinerary's instinct is correct even where its direction isn't.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="money">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">08</span> The dirham maths</p>
+    <h2 class="head">Cheap, but<br>cash-shaped</h2>
+    <p class="lede">Morocco is the best-value stop since Southeast Asia, and almost none of it goes on a card. The dirham is a <b>closed currency</b> — you cannot buy it before arrival and you're expected to convert what's left before you leave. Tick what you'll actually do and see where the week lands.</p>
+
+    <div class="calc">
+      <div class="calc-legs" id="legs"></div>
+      <dl class="calc-out">
+        <div><dt>Ticked total</dt><dd id="ptp"></dd></div>
+        <div><dt>In Canadian dollars</dt><dd id="cad"></dd></div>
+        <div><dt>Per day, 5 nights</dt><dd id="perday"></dd></div>
+        <div><dt>Verdict</dt><dd><span id="verdict"></span></dd></div>
+      </dl>
+    </div>
+    <p class="fignote">Excludes accommodation and food · figures are published or widely quoted rates and move · CAD at roughly 7.4 MAD to the dollar</p>
+
+    <div class="panel">
+      <h3>How to hold the money</h3>
+      <p><b>Get dirhams from an airport ATM on arrival.</b> Foreign-card withdrawals carry roughly €3–5 per transaction on top of your own bank's fees, so take out larger amounts less often. Bureau-de-change receipts are what let you convert back at departure; ATM withdrawals don't need documentation.</p>
+      <p><b>Carry 20s and 50s.</b> Change for a 200 MAD note is frequently unavailable in the medina, and that becomes your problem, not the vendor's. Cards work in hotels, mid-range restaurants and larger shops; they are useless for petit taxis, street food, souks, hammams and tannery terraces — which is most of what you'll be doing.</p>
+      <p><b>Tipping is structural, not optional.</b> Restaurants 10–15%, hotel staff 10–20 MAD a service, taxis rounded to the nearest 5 MAD, and guides <b>50–100 MAD per person per day</b> — which on a three-day desert crossing is a real line item, not a rounding error.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="admin">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">09</span> Ground rules</p>
+    <h2 class="head">Before you land</h2>
+
+    <div class="tablewrap">
+    <table class="ref">
+      <thead><tr><th>Item</th><th>What to do</th><th>When</th></tr></thead>
+      <tbody>
+        <tr><td>Entry</td><td>Visa-free for Canadians, 90 days. No e-visa or travel authorisation. Six months' passport validity is the safe standard airlines and border officers expect.</td><td class="t">Nothing to do</td></tr>
+        <tr><td>Arrival card</td><td>A paper embarkation card, handed out on the plane or at the desk. Have your first night's address written down — they ask.</td><td class="t">On arrival</td></tr>
+        <tr class="flag"><td>Ramadan</td><td>Expected to begin Mon 8 Feb 2027, confirmed only by moon sighting the evening before. Covers your entire stop. See section 05 for what actually changes.</td><td class="t">Plan around it</td></tr>
+        <tr><td>Clock</td><td>Morocco returned to permanent GMT on 20 Sep 2026 and abolished seasonal changes, including the old Ramadan shift. UTC+0 throughout — identical to Lisbon, so stop 27 costs you nothing.</td><td class="t">Set once</td></tr>
+        <tr class="flag"><td>Tourist taxes</td><td>Two of them, both per night and usually collected in cash at checkout. <b>Taxe de séjour</b> per person: up to 30 MAD at five-star (capped at 10% of the room), 7 MAD four-star, 5 MAD three-star. <b>Promotion tax</b> per night: 15 MAD luxury down to 2 MAD one-star.</td><td class="t">Budget for it</td></tr>
+        <tr class="flag"><td>Currency</td><td>The dirham is closed — no buying it abroad, and you're meant to convert the remainder before leaving. Airport ATM on arrival, spend down to nothing, keep exchange receipts.</td><td class="t">On arrival</td></tr>
+        <tr><td>Desert tour</td><td>Book ahead and get the direction you want in writing. Confirm shared vs private, whether dinner is served at iftar time, and what the operator does if Tizi n'Tichka is closed.</td><td class="t">Weeks ahead</td></tr>
+        <tr class="flag"><td>Trains</td><td>ONCF. Fes–Marrakech direct is 6h30 (204–250 MAD second, 290–364 MAD first, ~6 a day); Casablanca–Fes ~4h; Casablanca–Marrakech ~2h40–3h. Book about a week out and pay for first class on anything over three hours.</td><td class="t">A week ahead</td></tr>
+        <tr><td>Airport rail</td><td>Mohammed V has its own station: 45 minutes and 50 MAD to Casa Voyageurs, hourly 04:00–23:00. There is no direct train from Fes to the airport — you change at Casa Voyageurs.</td><td class="t">On the day</td></tr>
+        <tr><td>Fridays</td><td>Friday 12 Feb falls mid-desert in both shapes, which is lucky: Bou Inania in Fes usually closes to visitors on Fridays, and the Hassan II Mosque runs 09:00–15:00 with no midday slot.</td><td class="t">Clear</td></tr>
+        <tr><td>Guides and hustle</td><td>Fes and Marrakech both run the unasked-helper routine — someone walks you somewhere, then wants paying. Say no early and clearly. At the Chouara tannery, terrace access is free and 10–20 MAD is the customary tip if you don't buy leather.</td><td class="t">Every day</td></tr>
+        <tr><td>Weather</td><td>Marrakech averages 20°C by day and 6°C at night in February, with about six rainy days and 209 hours of sun. Merzouga 21°C/8°C. Fes cooler and wetter than both. Pack for a cold night and a warm afternoon, and expect short heavy showers.</td><td class="t">Layers</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="cols">
+      <p><b>Hammam</b>The one thing this stop offers that nothing else on the trip does — after a night in a desert tent and eighteen hours in a minibus, a proper scrub is not a spa treatment, it's maintenance. Riads arrange them. Public hammams are cash-only and gendered by time slot; ask which hours are which before you turn up.</p>
+      <p><b>The medina, honestly</b>Fes el-Bali is the largest car-free urban area in the world and it is genuinely disorienting — that is the point of it, and no map survives contact. Set a loose destination, accept that you'll arrive somewhere else, and keep your phone's offline map for when you actually need out.</p>
+      <p><b>Water and stomachs</b>Tap water is chlorinated and locals drink it; visitors on a seven-day stop generally shouldn't gamble. Bottled is cheap everywhere. Fresh orange juice on Jemaa el-Fna is one of the great cheap pleasures of Morocco and is pressed in front of you.</p>
+      <p><b>Photographs of people</b>Ask first, every time, and expect a request for money on the square — the snake charmers and water sellers on Jemaa el-Fna are working, and a camera pointed at them is a transaction. In Ramadan, add a layer of restraint around anything that looks like someone's private moment at sunset.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <p>Westbound · stop 26 · Morocco</p>
+      <p>8–14 Feb 2027 · CMN in, LIS out</p>
+      <p>Fares, taxes and schedules verified Sept 2026 — recheck before booking</p>
+    </div>
+    <p class="foot-mark">Fes → Erg Chebbi → Marrakech</p>
+  </div>
+</footer>
+<script>
+/* ============ DAY-BY-DAY ============ */
+const DAYS_REV=[
+{d:'Tue 9',w:'Arrive',name:'To Fes',sub:'Land 09:25 · mosque, then east',meta:'Night 1',
+ slots:[
+  {m:1,h:'09:25 · CMN',p:'Off the Praia red-eye. Dirhams from the arrivals ATM — a large withdrawal, not a small one, because the fees are per transaction. Airport train to Casa Voyageurs, 45 minutes, 50 MAD.'},
+  {h:'11:00 · Hassan II Mosque',p:'The one thing Casablanca owes you. A minaret on the Atlantic with a glass floor over the water, and the only working mosque in Morocco non-Muslims can go inside. Guided entry, 140 MAD, roughly 09:00–16:00. Budget two hours door to door and bag-check the luggage at the station first.'},
+  {m:1,h:'14:30 · Train to Fes',p:'About four hours from Casa Voyageurs. First class is worth the few extra dirhams on anything this long. Book a week out. You are crossing the country in the dead Ramadan afternoon on purpose.'},
+  {n:1,h:'19:00 · Fes, after iftar',p:'Arrive into a city that has just eaten and is coming back to life. Harira and dates at the riad, then a short walk into Bab Boujloud while the gates are lit. Do not attempt the medina properly tonight.'}
+]},
+{d:'Wed 10',w:'Full',name:'Fes',sub:'Nine thousand alleys',meta:'Night 2',
+ slots:[
+  {h:'08:30 · Fes el-Bali',p:'The largest car-free urban area on earth, and it does not care about your map. Start at Bab Boujloud and go downhill — the medina drains towards the Kairaouine. Getting lost here is the activity, not a failure of planning.'},
+  {h:'09:30 · Al-Attarine Madrasa',p:'Fourteenth-century, small, and the densest zellige and carved cedar in Morocco. Twenty minutes inside, and go early — this is the hour before the tour groups and after the shops open.'},
+  {h:'10:30 · Chouara tannery',p:'From a leather shop terrace above the dye pits. Access is free and the shop expects you to look at bags afterwards; 10–20 MAD is the customary tip if you don’t buy. Morning light, freshest dyes. Take the sprig of mint they hand you.'},
+  {h:'12:00 · Bou Inania',p:'The other great madrasa and one of the very few religious buildings in Fes open to non-Muslims. Around 20 MAD, roughly 09:00 to 18:00 with a midday break, and usually closed Fridays — which is fine, today is Wednesday. The Dar al-Magana water clock is directly across the lane.'},
+  {h:'14:00 · The slack hours',p:'The souks half-shut until five and so should you. Riad roof, mint tea, an actual nap. You have an eight-hour drive tomorrow that starts early.'},
+  {h:'17:00 · Merenid Tombs',p:'Up out of the medina to the ruined tombs on the north hill for the whole city laid out below, with the tanneries steaming and the call to prayer going up from everywhere at once about twenty minutes before sunset. Best forty minutes in Fes.'},
+  {n:1,h:'18:30 · Iftar, then the souks',p:'Break the fast when the city does — around 17:56 here, fifteen minutes ahead of Marrakech. Then the medina reopens and runs late, which is when you buy anything you want to carry to Lisbon.'}
+]},
+{d:'Thu 11',w:'Move',name:'Into the Sahara',sub:'Fes → Midelt → Ziz → Merzouga',meta:'Night 3',
+ slots:[
+  {m:1,h:'07:30 · The long day first',p:'Eight hours of driving, and the hardest leg of the crossing gets done while you are fresh. Out through Ifrane — an alpine-looking town of pitched roofs the Moroccans call Little Switzerland — then Midelt and the Middle Atlas.'},
+  {h:'13:00 · The Ziz Valley',p:'The road drops into a gorge and a river of date palms runs along the floor of it for fifty kilometres. This is the moment the country changes from mountains to Sahara and it happens over about twenty minutes.'},
+  {h:'16:30 · Erg Chebbi',p:'Swap the minibus for a camel at the dune edge, roughly an hour in to the camp, timed to put the sun behind the dunes. Sunset here is 17:57. Wear the warm layer now, not later.'},
+  {n:1,h:'19:30 · The camp',p:'Berber tent, dinner under the stars, drums afterwards if the group is up for it. February nights at Erg Chebbi can approach freezing — the camps hand out heavy blankets, but sleep in socks and a hat and you will be glad you did.'}
+]},
+{d:'Fri 12',w:'Move',name:'Todra & Dades',sub:'Sunrise on the dunes, then west',meta:'Night 4',
+ slots:[
+  {h:'06:30 · Sunrise camel',p:'Up before seven, back out onto the sand while the dunes are still pink and the ridge lines are sharp. This is the photograph, not last night’s. Then breakfast at the camp and back to the vehicle.'},
+  {m:1,h:'10:00 · Todra Gorge',p:'A 300-metre limestone slot with a road and a stream running through the bottom of it, wide enough for two cars. Walk a kilometre in and look up. Four hours of driving today, the easiest of the three.'},
+  {h:'15:00 · The Dades road',p:'Up the valley past the rock formations the guidebooks call Monkey Fingers, then the switchback road that photographs better than it drives. Guesthouse for the night, dinner included.'},
+  {n:1,h:'18:30 · A quiet one',p:'Dades is a valley, not a town, and there is nothing to do after dark except eat a tagine and go to bed early. After yesterday that is exactly right.'}
+]},
+{d:'Sat 13',w:'Move',name:'Marrakech',sub:'Ait Ben Haddou, Tichka, arrive 17:00',meta:'Night 5',
+ slots:[
+  {m:1,h:'08:30 · Ouarzazate',p:'Through the film-studio town — Atlas Studios is here and is skippable unless sandy plywood Rome is your thing. Six hours of driving today, the last of the crossing.'},
+  {h:'10:30 · Ait Ben Haddou',p:'The fortified earthen village on the hillside that half of Hollywood has used as somewhere else. Cross the riverbed, climb to the granary at the top, and give it ninety minutes. It is the single best-looking thing between here and Marrakech.'},
+  {m:1,h:'13:30 · Tizi n’Tichka',p:'The 2,260-metre pass over the High Atlas, and in February the one genuine risk on this route — it was closed twice in January 2026 by snow. Running the loop this direction, a closure is a delay into a city you are already booked in, not the cancellation of your desert trip.'},
+  {n:1,h:'18:30 · Jemaa el-Fna',p:'Into Marrakech around five, drop bags, and be on the square by half six. In Ramadan the food stalls go up after iftar and the whole thing detonates — smoke, grills, storytellers, gnaoua drums, snail vendors, orange juice. This is what you came for and it happens at night.'}
+]},
+{d:'Sun 14',w:'Depart',name:'To Lisbon',sub:'A real last morning',meta:'Fly out',
+ slots:[
+  {h:'08:30 · Ben Youssef Madrasa',p:'Fifty dirhams, opens at nine, and in Ramadan closes at 16:30 instead of 19:00 — so morning is the only sensible slot anyway. A marble courtyard, 132 student cells, and the best carved cedar and zellige in the country. Restored 2018–22 and worth the first hour of the day.'},
+  {h:'10:00 · Souks and a last look',p:'North from the madrasa into the Souk Semmarine and back down to the square. Spend the last of your dirhams — you are meant to convert the remainder before leaving and the airport rate is not your friend.'},
+  {m:1,h:'12:30 · Menara',p:'Twenty minutes from the medina, around 100 MAD by taxi. The whole point of running the loop backwards: no five-hour rail relay, no 07:30 alarm, a genuine last morning in Morocco.'},
+  {m:1,h:'· Lisbon',p:'Stop 27, the exit ramp. TAP, Ryanair and easyJet all fly RAK→LIS nonstop, about ten a week between them, 1h50, and Lisbon is on the same clock. Verify your date operates — day grids on this trip have been wrong before.'}
+]}
+];
+
+const DAYS_FWD=[
+{d:'Tue 9',w:'Arrive',name:'To Marrakech',sub:'Land 09:25 · straight south',meta:'Night 1',
+ slots:[
+  {m:1,h:'09:25 · CMN',p:'Off the Praia red-eye. Dirhams from the arrivals ATM in one large withdrawal. Airport train to Casa Voyageurs, 45 minutes, 50 MAD.'},
+  {m:1,h:'11:30 · Train to Marrakech',p:'About two hours forty from Casa Voyageurs. You could fit the Hassan II Mosque in first and take a mid-afternoon train instead — it is the one thing in Casablanca worth the stop, 140 MAD, roughly 09:00–16:00.'},
+  {n:1,h:'18:30 · Jemaa el-Fna',p:'Into Marrakech mid-afternoon, sleep off the flight through the dead hours, then the square after iftar. The Ramadan version is the good version: stalls up after sunset, running past midnight.'}
+]},
+{d:'Wed 10',w:'Full',name:'Marrakech',sub:'The one full day it gets',meta:'Night 2',
+ slots:[
+  {h:'09:00 · Ben Youssef Madrasa',p:'At opening, 50 MAD, before anyone else. Marble courtyard, zellige, carved cedar, 132 cells. In Ramadan it closes at 16:30, so this is the hour that matters.'},
+  {h:'10:30 · Bahia Palace',p:'Nineteenth-century, sprawling, painted cedar ceilings and courtyards of orange trees. Shorter Ramadan hours, especially at the late-afternoon end — do it now, not at four.'},
+  {h:'12:00 · Saadian Tombs & the Kasbah',p:'Sealed up for two centuries and only reopened in 1917, which is why the tilework is intact. Small, and the queue is the main cost. Koutoubia is next door — exterior only, non-Muslims don’t go in.'},
+  {h:'14:00 · The slack hours',p:'Souks half-shut until five. Riad roof, or a hammam, which after a long-haul night is the best 90 minutes you can buy in this city.'},
+  {n:1,h:'18:30 · Iftar on the square',p:'Break the fast at 18:15 with everyone else, then the souks reopen and run late. Buy here rather than in Fes — you are carrying it for five days either way, but Marrakech has the better prices for the same things.'}
+]},
+{d:'Thu 11',w:'Move',name:'Over the Atlas',sub:'Marrakech → Tichka → Dades',meta:'Night 3',
+ slots:[
+  {m:1,h:'07:15 · Tizi n’Tichka',p:'Pickup around quarter past seven, then the 2,260-metre pass over the High Atlas. This is the direction’s weak point: a February snow closure here, on day one, can take the whole desert leg with it and there is no slack in the week to rebuild. Confirm the operator’s contingency before you pay.'},
+  {h:'11:00 · Ait Ben Haddou',p:'The earthen ksar on the hill, crossed on foot from the riverbed, climbed to the granary. Ninety minutes, and the best-looking stop of the whole crossing.'},
+  {n:1,h:'17:00 · Dades Valley',p:'Six hours of driving today. Guesthouse with an en-suite, tagine, early night. Nothing else happens in Dades and that is fine.'}
+]},
+{d:'Fri 12',w:'Move',name:'To the dunes',sub:'Todra, then Erg Chebbi',meta:'Night 4',
+ slots:[
+  {h:'09:00 · Todra Gorge',p:'Three hundred metres of limestone either side of a road and a stream. Walk in a kilometre, look straight up. Four hours of driving today, the short one.'},
+  {h:'16:30 · Camel into Erg Chebbi',p:'An hour on a camel from the dune edge to the camp, timed to the sunset at 17:57. Layer up before you mount, not after — the temperature falls the moment the sun goes.'},
+  {n:1,h:'19:30 · The camp',p:'Berber tent, dinner, drums, and a February night that can get close to freezing. Blankets are provided; socks and a hat are on you. The stars are the reason people rate this night the best of the crossing.'}
+]},
+{d:'Sat 13',w:'Move',name:'Fes',sub:'Eight hours, arrive after dark',meta:'Night 5',
+ slots:[
+  {h:'06:30 · Sunrise camel',p:'Back onto the dunes before seven while the ridges still have edges, then breakfast and into the vehicle. It is a long one from here.'},
+  {m:1,h:'09:00 · Ziz Valley and Ifrane',p:'Eight hours north: the palm gorge of the Ziz, then Midelt, then Ifrane with its pitched alpine roofs, then down into Fes. Arrive 17:00–18:00.'},
+  {n:1,h:'19:00 · One evening in Fes',p:'This is all Fes gets. Iftar at the riad, a walk up to Bab Boujloud, maybe an hour in the lit lanes around the Kairaouine. The tanneries, the madrasas and the Merenid Tombs all stay unseen — which is the argument for running the loop the other way.'}
+]},
+{d:'Sun 14',w:'Depart',name:'To Lisbon, the hard way',sub:'07:30 train, five hours of it',meta:'Fly out',
+ slots:[
+  {m:1,h:'07:30 · Fes → Casa Voyageurs',p:'About four hours. There is no direct train from Fes to Mohammed V — you change at Casa Voyageurs for the airport shuttle, another 45 minutes. Roughly five hours plus buffer for a 15:15 departure.'},
+  {m:1,h:'13:00 · CMN',p:'Royal Air Maroc AT982 runs daily at 15:15; TAP has TP1437 at 10:25 and TP1439 at 16:10 on Sundays. Seventeen a week between them, 1h30. Note the 10:25 is unreachable from Fes the same morning.'},
+  {m:1,h:'· Lisbon',p:'Stop 27. Same clock, one short hop, and the last long day of the trip behind you. Verify your date operates before booking.'}
+]}
+];
+
+let CURRENT_PLAN='rev';
+function renderDays(){
+  const DAYS = CURRENT_PLAN==='rev' ? DAYS_REV : DAYS_FWD;
+  document.getElementById('days').innerHTML=DAYS.map(D=>`
+  <div class="day">
+    <button class="day-btn" aria-expanded="false">
+      <span class="day-date">${D.d}<small>${D.w}</small></span>
+      <span><span class="day-name">${D.name}</span><span class="day-sub">${D.sub}</span></span>
+      <span class="day-meta">${D.meta}<span class="chev">▾</span></span>
+    </button>
+    <div class="day-body"><div class="day-inner"><div class="day-pad"><div class="slots">
+      ${D.slots.map(s=>`<div class="slot${s.m?' move':''}${s.n?' night':''}"><h4>${s.h}</h4><p>${s.p}</p></div>`).join('')}
+    </div></div></div></div>
+  </div>`).join('');
+
+  document.querySelectorAll('.day-btn').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const d=b.parentElement, open=d.classList.toggle('open');
+      b.setAttribute('aria-expanded',open?'true':'false');
+    });
+  });
+  document.querySelector('.day').classList.add('open');
+  document.querySelector('.day-btn').setAttribute('aria-expanded','true');
+}
+renderDays();
+
+document.getElementById('dayToggle').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  CURRENT_PLAN=b.dataset.plan;
+  document.querySelectorAll('#dayToggle .fbtn').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
+  renderDays();
+  drawDrive();
+});
+
+/* ============ WORTH DOING ============ */
+const ITEMS=[
+/* MARRAKECH */
+{c:'Marrakech',t:'do',n:'Jemaa el-Fna after iftar',w:'In Ramadan the square is a daytime nothing and a night-time riot — stalls up after sunset, smoke and grills, storytellers, gnaoua drums, snails, orange juice, running past midnight. <b>Go at night or don’t go.</b>',when:'From 18:30'},
+{c:'Marrakech',t:'do',n:'Ben Youssef Madrasa',w:'The best carved cedar and zellige in Morocco, a marble courtyard and 132 student cells, restored 2018–22. 50 MAD for foreign adults. <b>Ramadan hours 09:00–16:30</b> against 09:00–19:00 normally.',when:'09:00 sharp'},
+{c:'Marrakech',t:'do',n:'Bahia Palace',w:'Nineteenth-century sprawl of painted cedar ceilings and orange-tree courtyards. Stays open through Ramadan on clipped hours, with the late afternoon the part that goes.',when:'Morning'},
+{c:'Marrakech',t:'do',n:'Saadian Tombs',w:'Sealed for two centuries and reopened in 1917, which is exactly why the tilework survived. Small, quick, and the queue is the only real cost.',when:'1 hour'},
+{c:'Marrakech',t:'do',n:'The souks, after dark',w:'Ramadan shifts trading into the evening and keeps it going late. Better light, better temperature, and traders who have just eaten. Cash and small notes.',when:'After iftar'},
+{c:'Marrakech',t:'do',n:'A hammam',w:'After a night in a desert tent and eighteen hours in a minibus this is maintenance, not luxury. Riads arrange them; public ones are cash-only and split by time slot, so ask which hours are which.',when:'Slack hours'},
+{c:'Marrakech',t:'opt',n:'Jardin Majorelle & YSL',w:'Cobalt blue, bamboo, a good small Berber museum and a Saint Laurent museum next door. Genuinely lovely and genuinely mobbed — timed tickets, book ahead, go at opening or not at all.',when:'Book ahead',b:1},
+{c:'Marrakech',t:'opt',n:'El Badi Palace',w:'A vast ruined shell with storks nesting on the walls, which is more atmospheric than the intact palaces and takes forty minutes. Good if Bahia left you wanting the other register.',when:'40 min'},
+{c:'Marrakech',t:'opt',n:'Maison de la Photographie roof',w:'Three floors of Moroccan photography from 1870 onward and a terrace café looking over the medina to the Atlas. The reliable place to sit out the dead afternoon.',when:'14:00–17:00'},
+{c:'Marrakech',t:'opt',n:'Koutoubia, from outside',w:'The twelfth-century minaret that every later Moroccan tower copies. Non-Muslims don’t go in, so it is a ten-minute look from the gardens — best at dusk with the swifts going.',when:'Dusk'},
+{c:'Marrakech',t:'skip',n:'Palmeraie camel ride',w:'A forty-minute plod through scrubby palm groves on the city edge, sold hard at every hotel desk. You are getting two real camel treks in the Sahara this week.',when:''},
+{c:'Marrakech',t:'skip',n:'Agafay "desert" day trips',w:'A stony hammada forty minutes from town, marketed as the desert with quad bikes and dinner shows. It exists because most visitors can’t spare three days for the real one. You can.',when:''},
+/* FES */
+{c:'Fes',t:'do',n:'Fes el-Bali, a whole morning',w:'The largest car-free urban area in the world and about nine thousand alleys. No map survives it. Start at Bab Boujloud, go downhill, accept that you will arrive somewhere other than where you aimed.',when:'08:30–13:00'},
+{c:'Fes',t:'do',n:'Al-Attarine Madrasa',w:'Fourteenth-century and the densest zellige, stucco and carved cedar in the country in a courtyard you can cross in six paces. Twenty minutes, early, before the groups.',when:'09:30'},
+{c:'Fes',t:'do',n:'Chouara tannery',w:'Viewed from a leather shop’s terrace above the dye pits; access is free and the shop expects you to browse after. <b>10–20 MAD is the customary tip</b> if you don’t buy. Morning: freshest dyes, best light.',when:'Morning'},
+{c:'Fes',t:'do',n:'Bou Inania Madrasa',w:'One of very few religious buildings in Fes open to non-Muslims, around 20 MAD, roughly 09:00–18:00 with a midday break. <b>Usually closed to visitors on Fridays.</b> The Dar al-Magana water clock faces it across the lane.',when:'Not Fridays'},
+{c:'Fes',t:'do',n:'Merenid Tombs at sunset',w:'Ruined tombs on the north hill with the entire medina below, tanneries steaming, and every minaret in the city calling at once about twenty minutes before iftar. Forty minutes, and the best of them.',when:'17:00'},
+{c:'Fes',t:'opt',n:'Nejjarine Museum',w:'Woodwork in a restored caravanserai, and mostly an excuse for the roof terrace and the fountain in the square outside. Half an hour when the alleys get too much.',when:'30 min'},
+{c:'Fes',t:'opt',n:'Half a day with a guide',w:'The one city on this trip where a licensed guide genuinely earns it — not for the history but for the doors you would otherwise walk past. Around 50–100 MAD per person per day is the tipping norm on top of the fee.',when:'Arrange at riad'},
+{c:'Fes',t:'skip',n:'Volubilis and Meknes',w:'The best Roman ruins in Morocco and an imperial city, an hour away, and a full day you do not have. This is a returning-to-Morocco item.',when:''},
+{c:'Fes',t:'skip',n:'Ville Nouvelle',w:'The French-built new town. Banks, cafés and wide streets. Fine if you live there.',when:''},
+/* SAHARA */
+{c:'Sahara',t:'do',n:'Erg Chebbi at sunset',w:'An hour on a camel from the dune edge into the camp, timed so the sun drops behind the ridge as you arrive. The dunes run to 150 metres and there is nothing else in the frame.',when:'≈17:00'},
+{c:'Sahara',t:'do',n:'The night at the camp',w:'Berber tent, dinner, drums, and February stars with no moisture and no light for 200 km. <b>It can get close to freezing.</b> Blankets are supplied; socks and a hat are on you.',when:'Included'},
+{c:'Sahara',t:'do',n:'Sunrise on the dunes',w:'Up before seven and back onto the sand while the ridge lines are still sharp and pink. This is the photograph, not the sunset one — fewer people, better shadows.',when:'06:30'},
+{c:'Sahara',t:'do',n:'Ait Ben Haddou',w:'The fortified earthen ksar on the hillside, crossed on foot from the riverbed and climbed to the granary at the top. UNESCO-listed, endlessly filmed, and the best-looking ninety minutes of the crossing.',when:'90 min'},
+{c:'Sahara',t:'do',n:'Todra Gorge',w:'A 300-metre limestone slot wide enough for a road and a stream, with climbers on the walls. Walk a kilometre in and look straight up.',when:'1 hour'},
+{c:'Sahara',t:'opt',n:'The Dades switchbacks',w:'The hairpin road up the valley past the rock formations called Monkey Fingers. It photographs considerably better than it drives, and you are passing it either way.',when:'En route'},
+{c:'Sahara',t:'opt',n:'Ifrane',w:'A Middle Atlas town of pitched alpine roofs built by the French, nicknamed Little Switzerland, and startling ten minutes after the Sahara. A coffee stop, not a destination.',when:'20 min'},
+{c:'Sahara',t:'skip',n:'Atlas Studios, Ouarzazate',w:'Standing sets from Gladiator and everything else shot here. Plywood Rome in a dusty lot. Skip it and give the time to Ait Ben Haddou up the road.',when:''},
+{c:'Sahara',t:'skip',n:'Sandboarding and quad bikes',w:'Sold at every camp. The quads churn the dunes everyone else came to photograph, and the boarding is ten minutes of fun for an hour of hauling back up.',when:''},
+/* CASABLANCA */
+{c:'Casablanca',t:'do',n:'Hassan II Mosque',w:'Built out over the Atlantic with a 210-metre minaret and a glass floor above the water, and the only working mosque in Morocco non-Muslims can enter. <b>140 MAD, guided, roughly 09:00–16:00 — Fridays close at 15:00 with no midday slot.</b>',when:'2 hrs door to door'},
+{c:'Casablanca',t:'opt',n:'Rick’s Café',w:'A 2004 recreation of a bar from a film shot entirely on a Burbank soundstage. Knowingly silly, quite good food, and it will not be serving alcohol in Ramadan — which removes most of the point.',when:'Dinner'},
+{c:'Casablanca',t:'skip',n:'A night in Casablanca',w:'A working port city of four million with one great building in it. See the mosque between trains and sleep somewhere on the see-list.',when:''}
+];
+
+const TIERLBL={do:'Do',opt:'Maybe',skip:'Skip'};
+let FC='all', FT=null, FB=false;
+
+function renderItems(){
+  const list=ITEMS.filter(x=>
+    (FC==='all'||x.c===FC) && (!FT||x.t===FT) && (!FB||x.b));
+  const host=document.getElementById('items');
+  if(!list.length){host.innerHTML='<div class="empty">No entries match those filters.</div>';return}
+  host.innerHTML=list.map(x=>`
+    <div class="item">
+      <span class="tier ${x.t}">${TIERLBL[x.t]}</span>
+      <span class="nm">${x.n}</span>
+      <span class="when${x.b?' book':''}">${x.when||'&nbsp;'}</span>
+      <span class="why">${x.w}</span>
+    </div>`).join('');
+}
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn'); if(!b) return;
+  if(b.dataset.city){FC=b.dataset.city}
+  else if(b.dataset.tier){FT = FT===b.dataset.tier?null:b.dataset.tier}
+  else if(b.dataset.book){FB=!FB}
+  document.querySelectorAll('#filters .fbtn').forEach(x=>{
+    let on=false;
+    if(x.dataset.city) on = x.dataset.city===FC;
+    if(x.dataset.tier) on = x.dataset.tier===FT;
+    if(x.dataset.book) on = FB;
+    x.setAttribute('aria-pressed',on?'true':'false');
+  });
+  renderItems();
+});
+renderItems();
+
+/* ============ FIG 1: TIME AUDIT ============ */
+(function(){
+  const svg=document.getElementById('audit-chart');
+  const W=1400,H=190,pad=40,barY=70,barH=54;
+  const start=new Date(2027,1,8), end=new Date(2027,1,15);
+  const totalH=(end-start)/36e5;
+  const x=h=>pad+(h/totalH)*(W-2*pad);
+  const segs=[
+    {a:0,b:24,cls:'t'},
+    {a:24,b:34,cls:'t2'},
+    {a:34,b:48,cls:'p'},
+    {a:48,b:72,cls:'f'},
+    {a:72,b:96,cls:'f'},
+    {a:96,b:120,cls:'f'},
+    {a:120,b:144,cls:'f'},
+    {a:144,b:156,cls:'p'},
+    {a:156,b:168,cls:'t2'}
+  ];
+  const colors={t:'var(--magenta)',t2:'rgba(231,100,155,.55)',p:'rgba(242,169,60,.35)',f:'var(--amber)'};
+  let s='';
+  segs.forEach(sg=>{
+    const x1=x(sg.a),x2=x(sg.b);
+    s+=`<rect x="${x1}" y="${barY}" width="${Math.max(1,x2-x1-1)}" height="${barH}" fill="${colors[sg.cls]}"/>`;
+  });
+  for(let d=0;d<=7;d++){
+    const hh=d*24, xx=x(hh);
+    const dt=new Date(start.getTime()+hh*36e5);
+    s+=`<line x1="${xx}" y1="${barY-6}" x2="${xx}" y2="${barY+barH+6}" class="axs"/>`;
+    s+=`<text x="${xx}" y="${barY-14}" class="lbl" text-anchor="${d===0?'start':d===7?'end':'middle'}">${dt.toLocaleDateString('en-CA',{day:'2-digit',month:'short'})}</text>`;
+  }
+  s+=`<line x1="${pad}" y1="${barY+barH+0.5}" x2="${W-pad}" y2="${barY+barH+0.5}" class="ax"/>`;
+  s+=`<text x="${x(48)}" y="${barY+barH+34}" class="lbl-a">4 full days — 10→13 Feb</text>`;
+  s+=`<text x="${x(0)}" y="${barY+barH+34}" class="lbl">↙ Praia leaves at 03:50</text>`;
+  svg.innerHTML=s;
+})();
+
+/* ============ FIG 2: THE RAMADAN DAY ============ */
+(function(){
+  const svg=document.getElementById('ram-chart');
+  const W=1400,H=230,pad=44,barY=84,barH=46,fastY=barY+barH+16,fastH=12;
+  const x=h=>pad+(h/24)*(W-2*pad);
+  const BANDS=[
+    {a:0,b:1.5,c:'var(--jade)',o:.75},
+    {a:1.5,b:9,c:'rgba(25,65,80,.9)',o:1},
+    {a:9,b:14,c:'rgba(242,169,60,.85)',o:1},
+    {a:14,b:17,c:'rgba(25,65,80,.9)',o:1},
+    {a:17,b:17.75,c:'rgba(242,169,60,.4)',o:1},
+    {a:17.75,b:19,c:'var(--magenta)',o:.85},
+    {a:19,b:24,c:'var(--jade)',o:.75}
+  ];
+  let s='';
+  BANDS.forEach(b=>{s+=`<rect x="${x(b.a)}" y="${barY}" width="${x(b.b)-x(b.a)}" height="${barH}" fill="${b.c}" opacity="${b.o}"/>`});
+  for(let h=0;h<=24;h+=3){
+    s+=`<line x1="${x(h)}" y1="${barY-6}" x2="${x(h)}" y2="${barY+barH+4}" class="axs"/>`;
+    s+=`<text x="${x(h)}" y="${barY-36}" class="lbl" text-anchor="${h===0?'start':h===24?'end':'middle'}">${String(h%24).padStart(2,'0')}:00</text>`;
+  }
+  s+=`<rect x="${x(5.917)}" y="${fastY}" width="${x(18.25)-x(5.917)}" height="${fastH}" fill="none" stroke="var(--paper-dim)" stroke-width="1"/>`;
+  s+=`<text x="${(x(5.917)+x(18.25))/2}" y="${fastY+fastH+16}" class="lbl-p" text-anchor="middle">The fast — 05:55 to 18:15 · 12h 20m</text>`;
+  const MARKS=[
+    {h:5.25,t:'Nothing open'},
+    {h:11.5,t:'Monuments, souks, medina'},
+    {h:15.5,t:'Shut'},
+    {h:18.6,t:'Iftar'},
+    {h:21.5,t:'The night city'}
+  ];
+  const DARKTEXT={'Nothing open':'var(--muted)','Shut':'var(--muted)'};
+  MARKS.forEach(m=>{
+    s+=`<text x="${x(m.h)}" y="${barY+barH/2+4}" class="lbl-p" text-anchor="middle" style="fill:${DARKTEXT[m.t]||'var(--ink)'};font-weight:600">${m.t}</text>`;
+  });
+  [{h:5.917,t:'fajr 05:55'},{h:18.25,t:'sunset 18:15'}].forEach(m=>{
+    s+=`<line x1="${x(m.h)}" y1="${barY-2}" x2="${x(m.h)}" y2="${barY+barH+2}" stroke="var(--paper)" stroke-width="1.5"/>`;
+    s+=`<text x="${x(m.h)}" y="${barY-20}" class="lbl-a" text-anchor="middle">${m.t}</text>`;
+  });
+  svg.innerHTML=s;
+})();
+
+/* ============ FIG 3: DRIVING HOURS ============ */
+function drawDrive(){
+  const svg=document.getElementById('drive-chart');
+  const W=1400,H=320,padL=60,padR=30,padT=24,padB=54;
+  const REV=[8,4,6], FWD=[6,4,8];
+  const active = CURRENT_PLAN==='rev' ? 'rev' : 'fwd';
+  const groups=[0,1,2];
+  const gw=(W-padL-padR)/3;
+  const y=v=>padT+(1-v/10)*(H-padT-padB);
+  let s='';
+  [0,2,4,6,8,10].forEach(v=>{
+    s+=`<line x1="${padL}" y1="${y(v)}" x2="${W-padR}" y2="${y(v)}" class="axs"/>`;
+    s+=`<text x="${padL-10}" y="${y(v)+4}" class="lbl" text-anchor="end">${v}h</text>`;
+  });
+  groups.forEach(i=>{
+    const x0=padL+i*gw;
+    const bw=gw*0.26;
+    const pairs=[{v:REV[i],k:'rev',off:gw*0.18},{v:FWD[i],k:'fwd',off:gw*0.52}];
+    pairs.forEach(p=>{
+      const on = p.k===active;
+      const xx=x0+p.off;
+      s+=`<rect x="${xx}" y="${y(p.v)}" width="${bw}" height="${H-padB-y(p.v)}" fill="${on?'var(--amber)':'rgba(242,169,60,.32)'}" rx="1"/>`;
+      s+=`<text x="${xx+bw/2}" y="${y(p.v)-8}" class="${on?'lbl-a':'lbl'}" text-anchor="middle">${p.v}h</text>`;
+      s+=`<text x="${xx+bw/2}" y="${H-padB+18}" class="lbl" text-anchor="middle">${p.k==='rev'?'Back':'Fwd'}</text>`;
+    });
+    s+=`<text x="${x0+gw/2}" y="${H-padB+38}" class="lbl-p" text-anchor="middle">Day ${i+1}</text>`;
+  });
+  s+=`<line x1="${padL}" y1="${H-padB}" x2="${W-padR}" y2="${H-padB}" class="ax"/>`;
+  s+=`<text x="${W-padR}" y="${padT+12}" class="lbl-a" text-anchor="end">18 hours either way — the order is the only choice</text>`;
+  svg.innerHTML=s;
+}
+drawDrive();
+
+/* ============ THE DIRHAM CALCULATOR ============ */
+const COSTS=[
+  {n:'Airport train, CMN → Casa Voyageurs',d:50,def:true,note:'Hourly 04:00–23:00 · 45 minutes'},
+  {n:'Hassan II Mosque, guided entry',d:140,def:true,note:'Foreign adult rate · guide included'},
+  {n:'Train Casablanca → Fes, 1st class',d:210,def:true,note:'≈4h · approximate, ONCF fares move'},
+  {n:'Desert crossing, 3 days, shared',d:1720,def:true,note:'≈€159 pp · 2 nights, dinners, both camel treks'},
+  {n:'Guide and driver tips, 3 days',d:225,def:true,note:'50–100 MAD per person per day is the norm'},
+  {n:'Ben Youssef Madrasa, Marrakech',d:50,def:true,note:'Ramadan hours 09:00–16:30'},
+  {n:'Bou Inania Madrasa, Fes',d:20,def:true,note:'≈20 MAD · usually closed Fridays'},
+  {n:'Chouara tannery terrace',d:20,def:true,note:'Customary tip if you don’t buy leather'},
+  {n:'Tourist + promotion tax, 5 nights',d:75,def:true,note:'Four-star: 7 MAD stay + 8 MAD promotion, per night'},
+  {n:'Taxi to Menara (RAK)',d:100,def:true,note:'Approximate · the backwards plan’s departure'},
+  {n:'Jardin Majorelle + YSL museum',d:250,note:'Approximate combined · timed tickets, book ahead'},
+  {n:'Rail exit instead: Marrakech → CMN',d:250,note:'Only if the exit has to stay Casablanca'},
+  {n:'Rail exit instead: Fes → CMN',d:260,note:'The forwards plan’s five-hour departure day'}
+];
+function renderLegs(){
+  document.getElementById('legs').innerHTML=COSTS.map((l,i)=>`
+    <label class="leg-row">
+      <input type="checkbox" data-i="${i}" ${l.def?'checked':''}>
+      <span class="lname">${l.n}</span>
+      <span class="lyen">${l.d.toLocaleString('en-CA')} MAD</span>
+      ${l.note?`<span class="lnote">${l.note}</span>`:''}
+    </label>`).join('');
+}
+function calcTotals(){
+  let total=0;
+  document.querySelectorAll('#legs input[type="checkbox"]').forEach(cb=>{
+    if(cb.checked) total+=COSTS[Number(cb.dataset.i)].d;
+  });
+  const cad=total/7.4;
+  document.getElementById('ptp').innerHTML=`${total.toLocaleString('en-CA')}<small>MAD</small>`;
+  document.getElementById('cad').innerHTML=`$${cad.toFixed(0)}<small>CAD</small>`;
+  document.getElementById('perday').innerHTML=`$${(cad/5).toFixed(0)}<small>CAD / day</small>`;
+  const v=document.getElementById('verdict');
+  if(total===0){v.textContent='Tick something above';}
+  else if(cad<250){v.textContent='Absurdly cheap';}
+  else if(cad<450){v.textContent='Cheapest week since Laos';}
+  else {v.textContent='Still good value';}
+}
+renderLegs();
+document.getElementById('legs').addEventListener('change',calcTotals);
+calcTotals();
+</script>
+
+</body>
+</html>
