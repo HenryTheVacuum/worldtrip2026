@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="darkreader-lock">
+<title>Westbound — Toronto to Toronto, the dry way</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;450;600&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;
+  --ink:#05161D;--ink-2:#0A2029;--ink-3:#0E2A35;
+  --rule:#194150;--rule-soft:rgba(25,65,80,.6);
+  --paper:#E2EEED;--paper-dim:#A6C2C6;--muted:#6C8F98;
+  --amber:#F2A93C;--magenta:#E7649B;--jade:#58C4A3;
+  --display:'Big Shoulders Display','Arial Narrow',Impact,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --body:'Inter',system-ui,sans-serif;
+  --gut:clamp(18px,4vw,64px);--maxw:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+.section{padding-block:clamp(34px,4.4vw,60px);border-top:1px solid var(--rule-soft);position:relative}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:14px;margin:0 0 18px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--rule)}
+.eyebrow .n{color:var(--amber)}
+h2.head{font-family:var(--display);font-weight:700;font-size:clamp(38px,6.2vw,74px);line-height:.92;margin:0 0 14px;text-transform:uppercase}
+.lede{max-width:62ch;color:var(--paper-dim);font-size:clamp(15px,1.5vw,17.5px);margin:0 0 26px}
+.lede b{color:var(--paper);font-weight:600}
+a{color:var(--amber);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+.gridbg{position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:linear-gradient(to right,var(--rule-soft) 1px,transparent 1px),linear-gradient(to bottom,var(--rule-soft) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%);-webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 15%,transparent 78%)}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(40px,7vw,78px) clamp(30px,5vw,52px);overflow:hidden}
+.strip{font-family:var(--mono);font-size:clamp(10px,1.15vw,12px);letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;border-block:1px solid var(--rule);padding-block:11px;margin-bottom:clamp(30px,5vw,54px)}
+.strip .k{color:var(--muted)}.strip .amb{color:var(--amber)}
+.title{font-family:var(--display);text-transform:uppercase;margin:0;line-height:.82}
+.title .l1{display:block;font-weight:400;font-size:clamp(44px,10.8vw,148px);color:transparent;-webkit-text-stroke:1.4px var(--paper-dim)}
+.title .l2{display:block;font-weight:800;font-size:clamp(64px,16.6vw,226px);letter-spacing:-.012em;color:var(--paper)}
+.title .l2 em{font-style:normal;color:var(--amber)}
+.subline{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:baseline;margin-top:clamp(20px,3vw,34px);font-family:var(--mono);font-size:clamp(11px,1.25vw,13px);letter-spacing:.14em;text-transform:uppercase;color:var(--paper-dim)}
+.subline .sep{color:var(--rule)}
+
+/* clock */
+.clockbox{margin-top:clamp(24px,3.4vw,40px)}
+.clock-cap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:9px;margin-bottom:6px}
+.clock-cap b{color:var(--amber);font-weight:500}
+.scroller{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--rule) transparent}
+.scroller::-webkit-scrollbar{height:6px}
+.scroller::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}
+.scroller>svg{display:block;min-width:900px;width:100%;height:auto}
+.hint{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+@media (min-width:980px){.hint{display:none}}
+.clk-grid{stroke:var(--rule-soft);stroke-width:1}
+.clk-axis{stroke:var(--rule);stroke-width:1}
+.clk-label{font-family:var(--mono);font-size:10px;letter-spacing:.1em;fill:var(--muted)}
+.clk-month{font-family:var(--mono);font-size:10px;letter-spacing:.16em;fill:var(--paper-dim)}
+.clk-name{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.1em;fill:var(--paper)}
+.clk-lead{stroke:var(--rule);stroke-width:1;stroke-dasharray:2 3}
+.clk-line{fill:none;stroke:var(--amber);stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round}
+.clk-jump{fill:none;stroke:var(--magenta);stroke-width:2.5;stroke-linecap:round}
+.clk-dot{fill:var(--ink);stroke:var(--amber);stroke-width:2}
+.clk-note{font-family:var(--mono);font-size:10px;letter-spacing:.12em;fill:var(--magenta)}
+.clk-hit{fill:transparent;cursor:default;-webkit-tap-highlight-color:transparent}
+#clock,.clk-seg{-webkit-tap-highlight-color:transparent}
+.clk-seg-hi{fill:var(--amber);opacity:0}
+.clk-hit:hover+.clk-seg-hi,.clk-hit:focus-visible+.clk-seg-hi{opacity:.1}
+.draw{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);transition:stroke-dashoffset 2.4s cubic-bezier(.22,.7,.2,1)}
+.drawn .draw{stroke-dashoffset:0}
+.fadein{opacity:0;transition:opacity .7s ease .9s}
+.drawn .fadein{opacity:1}
+.clock-foot{margin-top:20px;display:grid;gap:16px 34px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));border-top:1px solid var(--rule-soft);padding-top:18px}
+.clock-foot p{margin:0;font-size:13.5px;color:var(--paper-dim);line-height:1.55}
+.clim-cap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:9px;margin:22px 0 6px}
+.clim-cap b{color:var(--amber);font-weight:500}
+.clim-name{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;fill:var(--paper)}
+.clim-month{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;fill:var(--muted)}
+.clim-month.narrow{font-size:8px;letter-spacing:0;fill:var(--muted)}
+.clim-cell-g{fill:rgba(88,196,163,.45)}
+.clim-cell-y{fill:rgba(242,169,60,.38)}
+.clim-cell-r{fill:rgba(224,85,85,.4)}
+.clim-visit{fill:transparent;stroke:var(--paper);stroke-width:1.8;pointer-events:all}
+.clim-link{cursor:pointer}
+.clim-hit{fill:transparent;pointer-events:all}
+.clim-link .clim-visit{transition:stroke .12s,stroke-width .12s,fill .12s}
+.clim-link:hover .clim-visit{stroke:var(--amber);stroke-width:2.6;fill:rgba(242,169,60,.28)}
+.clim-link:focus-visible .clim-visit{stroke:var(--amber);stroke-width:2.6;fill:rgba(242,169,60,.28)}
+.clim-grid{stroke:var(--ink);stroke-width:1.5}
+.clim-note{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.map-legend i.ramp{width:56px;background:linear-gradient(90deg,rgb(240,208,70),rgb(76,146,214),rgb(154,169,176),rgb(224,85,85))}
+.clim-note i{display:inline-block;width:14px;height:9px;margin:0 5px 0 14px;vertical-align:middle;border-radius:1px}
+.clock-foot p b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:5px;font-weight:500}
+
+/* instruments */
+.instr{display:grid;grid-template-columns:repeat(auto-fit,minmax(126px,1fr));border:1px solid var(--rule);background:var(--ink-2);margin:0 0 clamp(24px,3vw,38px)}
+.instr div{padding:16px 18px;border-right:1px solid var(--rule-soft)}
+.instr div:last-child{border-right:0}
+.vn{font-family:var(--mono);font-size:10px;color:var(--rule);margin-right:6px}
+.instr dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.instr dd{margin:0;font-family:var(--display);font-weight:600;font-size:32px;line-height:1}
+.instr dd span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--paper-dim);margin-left:3px}
+
+/* map */
+.mapwrap{border:1px solid var(--rule);background:var(--ink-2);position:relative}
+.mapwrap svg{display:block;width:100%;height:auto}
+.mapwrap .scroller>svg{min-width:1150px}
+.land{fill:#0F2C37;stroke:#1D4A5A;stroke-width:.9;stroke-linejoin:round}
+.graticule{stroke:#16404F;stroke-width:.8}
+.tropic{stroke:#1B4757;stroke-width:.7;stroke-dasharray:2 5}
+.cont-lab{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.34em;fill:rgba(226,238,237,.10);pointer-events:none}
+.ocean-lab{font-family:var(--mono);font-size:10px;letter-spacing:.34em;text-transform:uppercase;fill:rgba(46,110,126,.75);pointer-events:none}
+.equator{stroke:#215A6B;stroke-width:.9;stroke-dasharray:5 4}
+.leg{fill:none;stroke:var(--amber);stroke-width:1.7;stroke-linecap:round;opacity:.92}
+.leg-arrow{opacity:.95;pointer-events:none;transition:opacity .15s}
+.leg-hit{fill:none;stroke:transparent;stroke-width:30;cursor:pointer;pointer-events:stroke}
+.leg.on-out{stroke-width:3.6;opacity:1;filter:brightness(1.35) saturate(1.3);animation:legPulse 1.15s ease-in-out infinite}
+.leg-arrow.on-out{opacity:1;animation:arrowFlash .62s ease-in-out infinite}
+.leg.on-in{opacity:.4;filter:saturate(.3) brightness(.7)}
+.leg-arrow.on-in{opacity:.35;animation:arrowFlashDim 1.24s ease-in-out infinite}
+@keyframes arrowFlashDim{0%,100%{opacity:.5}50%{opacity:.22}}
+@keyframes legPulse{0%,100%{stroke-width:3.6;opacity:1}50%{stroke-width:5.2;opacity:.78}}
+@keyframes arrowPulse{0%,100%{opacity:1}50%{opacity:.55}}
+@keyframes arrowFlash{0%,100%{opacity:1;fill:#fff}50%{opacity:.28}}
+/* bright scrolling sweep drawn over the outgoing (to) leg only */
+.leg-flow{fill:none;stroke:#fff;stroke-width:2.6;stroke-linecap:round;opacity:.85;
+  stroke-dasharray:14 24;filter:drop-shadow(0 0 4px rgba(255,255,255,.85));
+  pointer-events:none;animation:flowScroll 1s linear infinite}
+/* same sweep on the inbound leg: dimmer, cooler, thinner */
+.leg-flow.dim{stroke:#9FB4BD;stroke-width:1.8;opacity:.38;
+  filter:drop-shadow(0 0 2px rgba(159,180,189,.4))}
+@keyframes flowScroll{to{stroke-dashoffset:-38}}
+.legtime.on-out .leg-time-bg{fill:var(--jade);stroke:var(--jade);stroke-width:1.4}
+.legtime.on-out .leg-time{fill:var(--ink);font-weight:700;
+  animation:pillPop .2s cubic-bezier(.34,1.56,.64,1) forwards}
+.legtime.on-in .leg-time-bg{fill:#5E7C86;stroke:#5E7C86;stroke-width:1.1;opacity:.8}
+.legtime.on-in .leg-time{fill:var(--ink);font-weight:600;opacity:.9}
+.wp-pulse{fill:none;stroke:var(--paper);stroke-width:1.6;opacity:0;pointer-events:none}
+.wpnode.on .wp-pulse{opacity:1;animation:wpPulse 1.15s ease-out infinite}
+.wpnode.on .wp{fill:var(--paper);r:6}
+.wpnode.on .wp-lab{fill:#fff;font-weight:700;letter-spacing:.05em;
+  paint-order:stroke;stroke:var(--ink);stroke-width:3.5;stroke-linejoin:round;
+  animation:labPop .2s cubic-bezier(.34,1.56,.64,1) forwards, labBreathe 1.15s ease-in-out .2s infinite}
+.wpnode.on .wp-flag{animation:flagPop .2s cubic-bezier(.34,1.56,.64,1) forwards, flagBreathe 1.15s ease-in-out .2s infinite}
+.wpnode.on .wp-num{fill:#FFC86B;paint-order:stroke;stroke:var(--ink);stroke-width:3;stroke-linejoin:round;
+  animation:numPop .2s cubic-bezier(.34,1.56,.64,1) forwards}
+@keyframes labPop{from{font-size:11px}to{font-size:16px}}
+@keyframes labBreathe{0%,100%{font-size:16px}50%{font-size:17.4px}}
+@keyframes flagPop{from{font-size:12px}to{font-size:17px}}
+@keyframes flagBreathe{0%,100%{font-size:17px}50%{font-size:18.4px}}
+@keyframes numPop{from{font-size:9.5px}to{font-size:11.5px}}
+@keyframes wpPulse{0%{r:5;opacity:.9;stroke-width:2}100%{r:17;opacity:0;stroke-width:.5}}
+.leg,.wp{transition:stroke-width .15s,opacity .15s,fill .15s}
+.wp-lab,.wp-num,.wp-flag{transition:fill .16s,letter-spacing .16s}
+@media (prefers-reduced-motion:reduce){
+  .leg.on,.leg-arrow.on,.wpnode.on .wp-pulse{animation:none}
+  .wpnode.on .wp-pulse{opacity:.8}
+  .wpnode.on .wp-lab{animation:none;font-size:16px}
+  .wpnode.on .wp-flag{animation:none;font-size:17px}
+  .wpnode.on .wp-num{animation:none;font-size:11.5px}
+    .leg.on-out,.leg-arrow.on-out,.leg-arrow.on-in{animation:none}
+  .leg-flow{animation:none;opacity:.6}
+  .leg-flow.dim{animation:none;opacity:.28}
+  .leg.off,.leg-arrow.off,.legtime.off .leg-time-bg,.legtime.off .leg-time,
+  .wpnode.off .wp-pulse,.wpnode.off .wp,.wpnode.off .wp-lab,.wpnode.off .wp-flag,.wpnode.off .wp-num{animation:none}
+}
+.leg-long{stroke:var(--magenta);stroke-dasharray:6 4}
+.wp{fill:var(--ink);stroke:var(--amber);stroke-width:2;cursor:pointer}
+.wp-hit{fill:transparent;cursor:pointer}
+.wpnode{cursor:pointer;outline:none;-webkit-tap-highlight-color:transparent}
+.wpnode:focus{outline:none}
+#map,.leg-hit,.legtime,.wp-hit{-webkit-tap-highlight-color:transparent}
+#map{-webkit-touch-callout:none}
+.wpnode:focus-visible .wp{stroke:var(--amber);stroke-width:2}
+.wp-hit:hover~.wp,.wp-hit:focus-visible~.wp{fill:var(--amber)}
+.wp-home{stroke:var(--paper);fill:var(--paper)}
+.wp-lab{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.08em;fill:var(--paper);text-transform:uppercase;pointer-events:all;cursor:pointer}
+.wp-flag{font-size:12px}
+.wp-num{font-family:var(--mono);font-size:9.5px;fill:var(--amber);pointer-events:all;cursor:pointer}
+.wp-date{fill:var(--paper-dim)}
+.t-day{fill:var(--amber)}
+.t-night{fill:#63A6C7}
+.t-sep{fill:var(--rule)}
+.leg-time{font-family:var(--mono);font-size:9.5px;font-weight:500;fill:var(--jade);pointer-events:none;letter-spacing:.04em;transition:fill .15s,font-size .15s}
+.legtime{cursor:pointer}
+.legtime .leg-time-bg{transition:fill .15s,stroke .15s}
+.legtime.on .leg-time{fill:var(--ink);font-weight:700;font-size:11px;
+  animation:pillPop .2s cubic-bezier(.34,1.56,.64,1) forwards}
+@keyframes pillPop{from{font-size:9.5px}to{font-size:11px}}
+/* ---- outro: mirror of the hover-in, played while .off is applied ---- */
+.leg.off{animation:legOut .26s ease forwards;filter:none}
+.leg-arrow.off{animation:arrowOut .26s ease forwards}
+.wpnode.off .wp-pulse{animation:ringOut .26s ease forwards}
+.wpnode.off .wp{animation:dotOut .26s ease forwards}
+.wpnode.off .wp-lab{fill:#fff;font-weight:700;paint-order:stroke;stroke:var(--ink);stroke-width:3.5;stroke-linejoin:round;
+  animation:labOut .26s ease forwards}
+.wpnode.off .wp-flag{animation:flagOut .26s ease forwards}
+.wpnode.off .wp-num{paint-order:stroke;stroke:var(--ink);stroke-width:3;stroke-linejoin:round;
+  animation:numOut .26s ease forwards}
+.legtime.off .leg-time-bg{animation:pillBgOut .26s ease forwards}
+.legtime.off .leg-time{animation:pillTextOut .26s ease forwards}
+@keyframes legOut{from{stroke-width:3.6;opacity:1}to{stroke-width:1.7;opacity:.92}}
+@keyframes arrowOut{from{opacity:1}to{opacity:.95}}
+@keyframes ringOut{from{opacity:.55;r:11;stroke-width:1.2}to{opacity:0;r:4.6;stroke-width:1.6}}
+@keyframes dotOut{from{r:6;fill:var(--paper)}to{r:4.6;fill:var(--amber)}}
+@keyframes labOut{from{font-size:16px;fill:#fff}to{font-size:11px;fill:var(--paper)}}
+@keyframes flagOut{from{font-size:17px}to{font-size:12px}}
+@keyframes numOut{from{font-size:11.5px;fill:#FFC86B}to{font-size:9.5px;fill:var(--amber)}}
+@keyframes pillBgOut{from{fill:var(--jade);stroke:var(--jade)}to{fill:var(--ink-2);stroke:var(--rule-soft)}}
+@keyframes pillTextOut{from{font-size:11px;fill:var(--ink);font-weight:700}to{font-size:9.5px;fill:var(--jade);font-weight:500}}
+.leg-time-bg{fill:var(--ink-2);stroke:var(--rule-soft);stroke-width:.8;rx:2;pointer-events:all}
+.map-info{position:absolute;right:14px;bottom:14px;z-index:4;pointer-events:none;
+  min-width:220px;max-width:340px;background:rgba(5,22,29,.93);border:1px solid var(--rule);
+  border-left:2px solid var(--amber);border-radius:2px;padding:10px 14px 11px;
+  opacity:0;transform:translateY(6px);transition:opacity .18s ease,transform .18s ease;
+  backdrop-filter:blur(3px)}
+.map-info.show{opacity:1;transform:translateY(0)}
+.mi-title{font-family:var(--display);font-size:22px;font-weight:700;text-transform:uppercase;
+  line-height:1;color:var(--paper);letter-spacing:.02em}
+.mi-meta{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--amber);margin-top:5px}
+.mi-chain{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--paper-dim);
+  margin-top:7px;padding-top:7px;border-top:1px solid var(--rule-soft);line-height:1.5}
+.mi-chain b{color:var(--paper);font-weight:600}
+@media (max-width:620px){.map-info{right:8px;bottom:8px;min-width:0;max-width:62%;padding:8px 10px}
+  .mi-title{font-size:17px}}
+.frame-wrap{overflow:hidden}
+.sub-head{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--amber);margin:0 0 14px;font-weight:500}
+h3.sub-head+.frame-wrap{margin-bottom:34px}
+#vaxframe{display:block;width:100%;height:700px;border:0;background:transparent;overflow:hidden}
+.split{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut);
+  display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(20px,3vw,44px);align-items:start}
+.split>.section{border-top:0;padding-top:clamp(22px,3vw,34px)}
+#stats{padding-bottom:0}
+#stoplist{border-top:0;padding-top:0}
+.split>.section>.wrap{padding-inline:0;max-width:none;margin:0}
+.split .scroller svg{min-width:560px}
+.split .stop-grid{grid-template-columns:1fr}
+@media (max-width:1000px){
+  .split{grid-template-columns:1fr;gap:0;padding-inline:var(--gut)}
+  .split .scroller svg{min-width:700px}
+}
+#plannerframe{display:block;width:100%;height:900px;border:0;background:var(--ink);overflow:hidden}
+.map-legend{display:flex;flex-wrap:wrap;gap:10px 26px;padding:13px 18px;border-top:1px solid var(--rule-soft);font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.map-legend i{display:inline-block;width:22px;height:0;border-top:2px solid var(--amber);vertical-align:middle;margin-right:8px}
+.map-legend i.m{border-top-style:dashed;border-color:var(--magenta)}
+
+/* itinerary */
+.stops{border-top:1px solid var(--rule)}
+.stop{border-bottom:1px solid var(--rule)}
+.stop-btn{all:unset;box-sizing:border-box;display:grid;width:100%;cursor:pointer;grid-template-columns:52px 1fr auto;gap:0 clamp(14px,2.4vw,32px);align-items:baseline;padding:clamp(14px,2vw,20px) 4px;transition:background .18s ease}
+.stop-btn:hover{background:rgba(242,169,60,.05)}
+.stop-btn:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.stop-idx{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:.1em}
+.stop-name{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(26px,3.8vw,42px);line-height:.95;margin:0}
+.stop-sub{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.stop-meta{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--paper-dim);text-align:right;white-space:nowrap}
+.stop-meta .d{color:var(--amber)}
+.stop-meta .chev{display:inline-block;margin-left:12px;color:var(--muted);transition:transform .25s ease}
+.stop.open .stop-meta .chev{transform:rotate(180deg)}
+@media (max-width:720px){.stop-btn{grid-template-columns:34px 1fr;row-gap:8px}.stop-meta{grid-column:2;text-align:left}}
+.stop-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .34s cubic-bezier(.3,.8,.3,1)}
+.stop.open .stop-body{grid-template-rows:1fr}
+.stop-inner{overflow:hidden}
+.stop-pad{padding:4px 4px clamp(24px,3vw,36px)}
+.field{margin-bottom:16px}
+.field:last-child{margin-bottom:0}
+.field h4{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 6px;font-weight:500}
+.field p{margin:0;font-size:14.5px;line-height:1.6;color:var(--paper-dim);max-width:74ch}
+.chain{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;font-family:var(--mono);font-size:11.5px;letter-spacing:.09em;color:var(--paper)}
+.chain span.a{color:var(--rule)}
+
+/* visa */
+table.visa{width:100%;border-collapse:collapse;font-size:13.5px}
+table.visa th{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:500;padding:0 12px 10px 0;border-bottom:1px solid var(--rule)}
+table.visa td{padding:8px 12px 8px 0;border-bottom:1px solid var(--rule-soft);color:var(--paper-dim);vertical-align:top}
+table.visa td:first-child{font-family:var(--display);font-size:17px;font-weight:600;text-transform:uppercase;color:var(--paper);white-space:nowrap;width:1%}
+table.visa td.t{font-family:var(--mono);font-size:11px;letter-spacing:.08em;white-space:nowrap;color:var(--amber)}
+table.visa tr.flag td{color:var(--paper)}
+table.visa tr.flag td.t{color:var(--magenta)}
+.panel{border:1px solid var(--rule);background:var(--ink-2);padding:clamp(18px,2.6vw,26px);margin-top:26px;max-width:820px}
+.panel h3{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:0 0 12px;font-weight:500}
+.panel p{margin:0 0 12px;font-size:13.8px;color:var(--paper-dim);line-height:1.6}
+.panel p:last-child{margin-bottom:0}
+
+footer{border-top:1px solid var(--rule);padding-block:28px 40px;color:var(--muted)}
+.foot-grid{display:flex;flex-wrap:wrap;gap:18px 40px;justify-content:space-between;align-items:flex-end}
+.foot-grid p{margin:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase}
+.foot-mark{font-family:var(--display);font-size:clamp(40px,9vw,110px);font-weight:800;text-transform:uppercase;line-height:.8;color:transparent;-webkit-text-stroke:1px var(--rule);margin:34px 0 0}
+.pagelink{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--amber);text-decoration:none;border-bottom:1px solid rgba(242,169,60,.35);padding-bottom:1px}
+.pagelink:hover{border-bottom-color:var(--amber)}
+.pagepending{font-family:var(--mono);font-size:12px;color:var(--paper-dim)}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="gridbg" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="strip">
+      <span><span class="k">Dep</span> YYZ Toronto · 18 Oct 2026</span>
+      <span class="amb">→</span>
+      <span><span class="k">Arr</span> HND Tokyo · 19 Oct 2026</span>
+      <span><span class="k">Return</span> 21 Feb 2027</span>
+      <span><span class="k">Rule</span> No rainy seasons</span>
+    </div>
+
+    <h1 class="title">
+      <span class="l1">Jesse &amp; Tiffany</span>
+      <span class="l2">West<em>bound</em></span>
+    </h1>
+
+    <div class="subline">
+      <span>Toronto to Toronto, the long way</span>
+      <span class="sep">/</span>
+      <span>126 days</span>
+      <span class="sep">/</span>
+      <span>26 stops</span>
+      <span class="sep">/</span>
+      <span>One direction</span>
+    </div>
+
+    <div class="mapwrap" style="margin-top:clamp(28px,4vw,44px)">
+      <div class="scroller">
+      <svg id="map" viewBox="0 0 1400 660" role="img"
+           aria-label="Stylised world chart showing a westward route from Toronto across the Pacific to Japan, then down through East and Southeast Asia, across South Asia and the Gulf, down the East African coast, up along West Africa to Morocco and Portugal, and home to Toronto."></svg>
+      </div>
+      <div class="map-info" id="mapinfo" aria-live="polite">
+        <div class="mi-title"></div>
+        <div class="mi-meta"></div>
+        <div class="mi-chain"></div>
+      </div>
+      <div class="map-legend">
+        <span><i class="ramp"></i>Oct → Feb · arrows show direction</span>
+        <span><i class="m"></i>Pacific crossing · wraps the chart edge</span>
+        <span style="color:var(--jade)">Flight times are estimated block time</span><span><span style="color:var(--amber)">Day</span> / <span style="color:#63A6C7">night</span> °C · climate normals for those dates</span><span>Longitude compressed outside the route corridor</span>
+      </div>
+    </div>
+    <p class="hint" style="margin-bottom:0">Scroll the map sideways →</p>
+
+    <div class="clim-cap">
+      <span>Fig. 2 — The rainy-season dodge</span>
+      <span><b>Monthly climate</b> per stop · click a box for WeatherSpark</span>
+    </div>
+    <div class="scroller">
+      <svg id="climate" viewBox="0 0 1400 500" role="img"
+           aria-label="Climate heat-map: 25 stops as rows, twelve months as columns, cells coloured green for dry season, amber for shoulder, red for wet season. Each stop's visit dates are outlined, and the outlines step diagonally through green cells from October to February."></svg>
+    </div>
+    <p class="clim-note">Visit window □<i style="background:rgba(88,196,163,.45)"></i>dry / prime<i style="background:rgba(242,169,60,.38)"></i>shoulder<i style="background:rgba(224,85,85,.4)"></i>wet season · climate normals, coarse by design</p>
+    <p class="hint" style="margin-bottom:clamp(20px,3vw,32px)">Scroll the chart sideways →</p>
+
+    <div class="clockbox" id="clockbox">
+      <div class="clock-cap">
+        <span>Fig. 1 — Your watch, for 126 days</span>
+        <span><b>UTC offset</b> plotted against calendar date</span>
+      </div>
+      <div class="scroller">
+        <svg id="clock" viewBox="0 0 1400 392" role="img"
+             aria-label="Step chart of the traveller's UTC offset across 126 days: from UTC minus 4 in Toronto, a jump to UTC plus 9 in Japan across the date line, then a long descending staircase through Asia, the Gulf and Africa down to UTC minus 1 in Cape Verde, before returning to UTC minus 5 in Toronto."></svg>
+      </div>
+      <p class="hint">Scroll the chart sideways →</p>
+
+      <div class="clock-foot">
+        <p><b>The jump</b>Flying west over the Pacific a calendar day disappears at the date line. You spend the next four months winning it back, an hour at a time.</p>
+        <p><b>The odd offsets</b>Three stops refuse whole hours: Nepal runs UTC+5:45, India UTC+5:30, and Bhutan a tidy UTC+6 between them — so the Himalayan leg alone shifts your watch by quarter-hours.</p>
+        <p><b>The ticks up</b>Westbound doesn't always mean backward: Malaysia (+8), Tanzania (+3) and Morocco (+1) each nudge the clock forward again before the long slide resumes.</p>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<section class="section" id="stats">
+  <div class="wrap">
+    <dl class="instr">
+      <div><dt>Days away</dt><dd>126</dd></div>
+      <div><dt>Countries</dt><dd>26</dd></div>
+      <div><dt>Flights</dt><dd>27</dd></div>
+      <div><dt>Distance flown</dt><dd>63,600<span>km</span></dd></div>
+      <div><dt>Rainy seasons hit</dt><dd>1</dd></div>
+    </dl>
+  </div>
+</section>
+
+<div class="split">
+<section class="section" id="itinerary">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">01</span> The dossier</p>
+    <h2 class="head">26 countries</h2>
+    <p class="lede">Each entry: the overland line inside the country, why the weather window works, and the one thing you're there for.</p>
+  </div>
+</section>
+<section class="section" id="route">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">02</span> The route</p>
+    <h2 class="head">Always west,<br>always dry</h2>
+    <p class="lede">One rule shapes the trip: <b>never land in a rainy season.</b> The heading is broadly westward, with a deliberate loop back east through Southeast Asia to catch it at its driest. Starting mid-October threads the needle — East Asia after typhoons, Southeast Asia as the monsoon ends, South Asia and the Gulf in their winter prime, East Africa inside its short dry window, and Morocco before the heat. What got cut, the rain mostly cut for us: Madagascar, Victoria Falls, Botswana and Namibia are all wet from November to March. Bali is the deliberate exception — added knowing December is its wet season. Tap any waypoint for its dossier.</p>
+
+  </div>
+</section>
+</div>
+
+<section class="section" id="stoplist">
+  <div class="wrap">
+    <div class="stops" id="stops"></div>
+  </div>
+</section>
+
+<section class="section" id="admin">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">03</span> The paperwork</p>
+    <h2 class="head">Before you can go</h2>
+
+    <h3 class="sub-head">Shots and health</h3>
+    <div class="frame-wrap">
+      <iframe id="vaxframe" title="Vaccination plan" loading="lazy"></iframe>
+    </div>
+
+    <h3 class="sub-head">Visas and entry</h3>
+    <table class="visa">
+      <thead><tr><th>Country</th><th>Entry, Canadian passport</th><th>Lead time</th></tr></thead>
+      <tbody id="visa"></tbody>
+    </table>
+    <div class="panel">
+      <h3>Two that need real lead time</h3>
+      <p><b style="color:var(--paper)">Bhutan</b> must be arranged through a licensed operator with the daily Sustainable Development Fee paid up front — start that 6–8 weeks out. <b style="color:var(--paper)">China</b> still requires a full tourist visa for Canadians, with an embassy or visa-centre application and biometrics in person — allow 3–4 weeks and apply before you leave.</p>
+      <p>Everything else is visa-free, on-arrival, or an e-visa you can do from a hostel bed. Rules change constantly — verify each line against the destination government's own site before booking. Passport: valid to at least September 2027, with plenty of blank pages — this trip uses a lot of stamps.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <p>Westbound · 18 Oct 2026 → 21 Feb 2027</p>
+      <p>Planned from Toronto, Ontario</p>
+      <p>Dates and entry rules are estimates — verify before booking</p>
+    </div>
+    <p class="foot-mark">Toronto → Toronto</p>
+  </div>
+
+<section class="section" id="planner">
+  <div class="wrap">
+    <p class="eyebrow"><span class="n">04</span> Flight planner</p>
+    <h2 class="head">Twenty-seven<br>flights</h2>
+    <p class="lede">Every leg with distance, block time, likely routing and a modelled price range. Type real quotes into the <b>Actual</b> column and the totals update. Prices are estimates, not live fares — verify before booking.</p>
+    <div class="frame-wrap">
+      <iframe id="plannerframe" title="Westbound flight planner" loading="lazy"></iframe>
+    </div>
+    <p class="clim-note" style="margin-top:10px">Entered prices save to this browser · the table scrolls sideways on narrow screens</p>
+  </div>
+</section>
+
+</footer>
+
+
+<script>
+/* ============ DATA ============ */
+const ORIGIN={name:'Toronto',code:'YYZ',lat:43.68,lon:-79.63,utcOut:-4,utcBack:-5};
+const S=(id,country,code,hub,lat,lon,utc,utcLabel,arrive,depart,lab,route,why,see)=>({id,country,code,hub,lat,lon,utc,utcLabel,arrive,depart,lab,route,why,see});
+const STOPS=[
+S('japan','Japan','HND','Tokyo',35.55,139.78,9,'UTC+9','2026-10-19','2026-10-25','e',['Tokyo','Hakone','Kyoto','Osaka'],'Mid-October is the sweet spot: typhoon season over, autumn air, colour just starting in the hills.','Kyoto\'s eastern temples at 7am, then Osaka purely to eat.'),
+S('korea','South Korea','ICN','Seoul',37.55,126.98,9,'UTC+9','2026-10-25','2026-10-28','n',['Seoul','Busan'],'Late October is Korea\'s clearest week — dry, cool, ginkgo trees going gold.','Bukhansan at dawn; Busan\'s Gamcheon and the fish market.'),
+S('china','China','PVG','Shanghai',31.23,121.47,8,'UTC+8','2026-10-28','2026-11-05','w',['Shanghai','Suzhou'],'Late October in the Yangtze Delta is crisp and dry — golden light, no summer haze.','The Bund at dawn before anyone is awake; a day-trip canal town in Suzhou.'),
+S('thailand','Thailand','BKK','Bangkok',13.76,100.50,7,'UTC+7','2026-11-05','2026-11-06','w',['Bangkok'],'Early November is the sweet spot: the monsoon has gone, the heat has not yet returned, and it is the driest, coolest stretch of the year.','One night, Thursday: a longtail down the khlongs or a riverside dinner, then Drukair out of BKK straight to Paro. (Chatuchak is weekends only \u2014 it will be closed.)'),
+S('bhutan','Bhutan','PBH','Paro',27.43,89.42,6,'UTC+6','2026-11-06','2026-11-09','ne',['Paro','Thimphu','Tiger\'s Nest'],'Early November is Bhutan\'s clearest window — dry air, sharp mountain light, cold nights but not yet deep winter. Drukair flies Bangkok–Paro direct, which is why Bangkok sits immediately before it.','The climb to Tiger\'s Nest monastery, prayer flags in thin air.'),
+S('nepal','Nepal','KTM','Kathmandu',27.72,85.32,5.75,'UTC+5:45','2026-11-09','2026-11-16','n',['Kathmandu','Pokhara','Poon Hill'],'Mid-November is peak trekking season: the monsoon haze is long gone, the days are still mild, and the deep cold has not set in. Arriving straight from Bhutan means you reach Poon Hill already part-acclimatised.','Dawn on Poon Hill: Dhaulagiri and Annapurna out of the dark, nobody on the ridge.'),
+S('singapore','Singapore','SIN','Singapore',1.35,103.82,8,'UTC+8','2026-11-16','2026-11-20','s',['Singapore'],'Honest note: Nov–Dec is actually Singapore\'s wettest stretch — but rain falls as short violent bursts between sunshine, and the whole city is built for it.','Hawker centres: Maxwell for chicken rice, Lau Pa Sat for satay. One evening in Little India.'),
+S('bali','Indonesia','DPS','Bali',-8.65,115.22,8,'UTC+8','2026-11-20','2026-11-25','se',['Ubud','Canggu','Uluwatu'],'Honest exception: this is Bali\'s wet season, which opens in November. Rain comes in heavy afternoon bursts, mornings are often clear, and low season means thinner crowds and softer prices \u2014 but this is the one stop the dry-season rule does not cover.','Ubud rice terraces at dawn, Uluwatu clifftop temple at sunset, and a day of nothing at all.'),
+S('philippines','Philippines','MNL','Manila',14.60,121.00,8,'UTC+8','2026-11-25','2026-11-30','e',['Manila','El Nido'],'Typhoon season is winding down and the amihan dry winds are arriving.','Island-hopping the El Nido lagoons on a banca.'),
+S('hk','Hong Kong','HKG','Hong Kong',22.32,114.17,8,'UTC+8','2026-11-30','2026-12-03','e',['HK Island','Kowloon','Lantau'],'The turn into December is cool, dry and clear — the humidity has gone and it is the best hiking weather of the year.','The Dragon\'s Back trail, then the Star Ferry at dusk.'),
+S('vietnam','Vietnam','HAN','Hanoi',21.03,105.85,7,'UTC+7','2026-12-03','2026-12-08','n',['Hanoi','Hạ Long','Ninh Bình'],'Northern Vietnam\'s golden window — cool, dry, rice terraces just harvested.','An overnight boat on Hạ Long Bay; Ninh Bình by bicycle.'),
+S('laos','Laos','LPQ','Luang Prabang',19.89,102.14,7,'UTC+7','2026-12-08','2026-12-11','w',['Luang Prabang','Kuang Si'],'Dry season has just begun; the Mekong is still high enough for boats.','Alms-giving at dawn, Kuang Si falls at their bluest.'),
+S('cambodia','Cambodia','REP','Siem Reap',13.36,103.86,7,'UTC+7','2026-12-11','2026-12-16','e',['Siem Reap','Angkor','Phnom Penh'],'Mid-December sits in the dry season proper — the moats are still full from the rains, the jungle green, the paths firm.','Angkor Wat at sunrise, Ta Prohm before the buses.'),
+S('malaysia','Malaysia','KUL','Kuala Lumpur',3.14,101.69,8,'UTC+8','2026-12-16','2026-12-20','n',['Kuala Lumpur','Penang'],'The west coast sits outside the east-coast monsoon — Penang stays dry-ish year round.','Georgetown street food: char kway teow, assam laksa, cendol.'),
+S('srilanka','Sri Lanka','CMB','Colombo',6.93,79.85,5.5,'UTC+5:30','2026-12-20','2026-12-24','se',['Colombo','Kandy','Ella','Galle'],'December opens the southwest\'s dry season — hill country and south coast both in play.','The Kandy–Ella train through tea country, hanging out the door.'),
+S('maldives','Maldives','MLE','Malé',4.18,73.51,5,'UTC+5','2026-12-24','2026-12-29','sw',['Malé','Local island'],'The iruvai dry monsoon starts in December: flat seas, best visibility of the year. It sits between Sri Lanka and Mumbai as the flat spot in the middle of the run.','Snorkelling off a local-island sandbank — guesthouses, not resorts.'),
+S('india','India','BOM','Mumbai',19.08,72.88,5.5,'UTC+5:30','2026-12-29','2027-01-03','w',['Mumbai','Elephanta','Ajanta & Ellora'],'The turn of the year is Mumbai at its best: the monsoon is months gone, the humidity finally breaks, and evenings on the water are genuinely cool — you will be there for New Year.','Sunset along Marine Drive, the ferry out to Elephanta\'s rock-cut caves, and Colaba after dark.'),
+S('uae','UAE','DXB','Dubai',25.25,55.36,4,'UTC+4','2027-01-03','2027-01-07','ne',['Dubai','Abu Dhabi'],'Winter is the only season the Gulf is walkable outdoors.','New Year\'s Eve fireworks off the Burj — then leave the next morning.'),
+S('oman','Oman','MCT','Muscat',23.59,58.41,4,'UTC+4','2027-01-07','2027-01-10','s',['Muscat','Nizwa','Jebel Shams'],'Early January is Oman at its best — 25°C days, cool nights, wadis still holding water from the winter rains.','Camping free and legal on the rim of Jebel Shams at sunset.'),
+S('saudi','Saudi Arabia','RUH','Riyadh',24.71,46.68,3,'UTC+3','2027-01-10','2027-01-14','sw',['Riyadh','AlUla'],'January is the coolest month for the desert interior.','AlUla\'s Nabataean tombs at Hegra — Petra\'s sister, without the crowds.'),
+S('egypt','Egypt','CAI','Cairo',30.04,31.24,2,'UTC+2','2027-01-14','2027-01-21','w',['Cairo','Luxor','Aswan'],'January is cool desert weather — 20°C in Luxor where summer hits 42°C.','Abu Simbel at opening time, ahead of the first convoy from Aswan.'),
+S('tanzania','Tanzania','ZNZ','Zanzibar',-6.22,39.22,3,'UTC+3','2027-01-21','2027-01-28','e',['Zanzibar','Stone Town'],'Hot, dry and clear before the long rains arrive in March.','Getting lost in Stone Town\'s alleys; a dhow at sunset off Nungwi.'),
+S('southafrica','South Africa','CPT','Cape Town',-33.92,18.42,2,'UTC+2','2027-01-28','2027-02-04','s',['Cape Town','Cape Point','Winelands'],'February is the Cape\'s driest, most settled month — its Mediterranean summer.','Table Mountain via Platteklip, penguins at Boulders, a day in the Winelands.'),
+S('capeverde','Cape Verde','RAI','Praia',14.93,-23.51,-1,'UTC−1','2027-02-04','2027-02-08','s',['Santiago','Tarrafal'],'Bone-dry all winter — the islands barely have a wet season at all.','Tarrafal\'s bay, grilled fish, and morna music in a Praia courtyard.'),
+S('morocco','Morocco','CMN','Casablanca',33.57,-7.59,1,'UTC+1','2027-02-08','2027-02-14','n',['Marrakech','Sahara','Fes'],'Early-to-mid February: cool medinas, snow on the Atlas behind them, desert nights crisp not cold.','A camel into the Erg Chebbi dunes for a night under the full Sahara sky.'),
+S('portugal','Portugal','LIS','Lisbon',38.72,-9.14,0,'UTC+0','2027-02-14','2027-02-21','n',['Lisbon','Sintra'],'The exit ramp: familiar, cheap flights home, one time zone\'s worth of jet lag left.','Pastéis in Belém, a slow last walk through Alfama, then YYZ.')
+];
+
+/* ============ HELPERS ============ */
+const D=s=>new Date(s+'T00:00:00Z');const DAY=864e5;
+const nights=s=>Math.round((D(s.depart)-D(s.arrive))/DAY);
+const TRIP_START=D('2026-10-18'),TRIP_END=D('2027-02-21');
+const fmtDate=d=>d.toLocaleDateString('en-CA',{day:'2-digit',month:'short',timeZone:'UTC'}).toUpperCase().replace('.','');
+const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ============ CLIMATE (Jan..Dec, 0=wet 1=shoulder 2=dry/prime) ============ */
+const WSPARK={japan:'JP',korea:'KR',china:'CN',hk:'HK',philippines:'PH',
+thailand:'TH',bhutan:'BT',nepal:'NP',vietnam:'VN',laos:'LA',cambodia:'KH',malaysia:'MY',
+bali:'ID',singapore:'SG',srilanka:'LK',maldives:'MV',india:'IN',uae:'AE',oman:'OM',
+saudi:'SA',egypt:'EG',tanzania:'TZ',southafrica:'ZA',capeverde:'CV',morocco:'MA',portugal:'PT'};
+const CLIMATE={
+japan:[1,1,2,2,2,0,0,0,1,2,2,1], korea:[0,1,2,2,2,1,0,0,2,2,1,0],
+china:[1,1,2,2,2,0,0,0,1,2,2,1], hk:[1,1,1,1,0,0,0,0,1,2,2,2], philippines:[2,2,2,2,1,0,0,0,0,1,2,2],
+vietnam:[1,1,1,1,1,0,0,0,1,2,2,2], laos:[2,2,1,1,0,0,0,0,0,1,2,2],
+cambodia:[2,2,1,0,0,0,0,0,0,1,2,2], thailand:[2,2,1,1,0,0,0,0,0,1,2,2], malaysia:[2,2,1,1,1,1,1,1,0,0,1,2], bali:[0,0,1,2,2,2,2,2,2,1,0,0],
+singapore:[1,2,2,1,1,1,1,1,1,1,1,1], srilanka:[2,2,2,1,0,1,1,1,1,0,1,2],
+maldives:[2,2,2,2,1,0,0,1,0,1,1,2], bhutan:[1,1,2,2,1,0,0,0,1,2,2,1],
+nepal:[1,1,2,2,1,0,0,0,1,2,2,1], india:[2,2,2,1,1,0,0,0,0,1,2,2],
+oman:[2,2,2,1,0,0,0,0,0,1,2,2], uae:[2,2,2,1,0,0,0,0,0,1,2,2],
+saudi:[2,2,2,1,0,0,0,0,0,1,2,2], egypt:[2,2,2,2,1,0,0,0,1,2,2,2],
+tanzania:[2,2,0,0,0,2,2,2,2,1,0,1], southafrica:[2,2,2,1,0,0,0,0,1,1,2,2],
+capeverde:[2,2,2,2,2,1,1,0,0,1,2,2], morocco:[1,2,2,2,2,1,0,0,1,2,2,1],
+portugal:[1,1,1,2,2,2,2,2,2,2,1,1]};
+
+function buildClimate(){
+  const svg=document.getElementById('climate');
+  const W=1400, LBL=150, R=14, TOPH=26, RH=17.5;
+  const ORDER=[8,9,10,11,0,1,2,3,4,5,6,7];      // Sep..Aug
+  const MN=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+  const CLS=['clim-cell-r','clim-cell-y','clim-cell-g'];
+  // travel months (Sep..Feb) full width; Mar..Aug compressed to a third
+  const WIDE=0.7, NARROW=0.32, HALF=0.35;
+  const wt=ORDER.map(m=>m===8?HALF:(m>=9||m<=1)?WIDE:NARROW);
+  const totalW=W-LBL-R, unit=totalW/wt.reduce((a,b)=>a+b,0);
+  const xs=[]; let acc=LBL;
+  wt.forEach(w=>{xs.push(acc);acc+=w*unit;});
+  const cw=i=>wt[i]*unit;
+
+  let g='';
+  ORDER.forEach((m,ci)=>{
+    const tight=wt[ci]<WIDE;
+    g+=`<text class="clim-month${tight?' narrow':''}" x="${(xs[ci]+cw(ci)/2).toFixed(1)}" y="16" text-anchor="middle">${MN[m]}</text>`;
+  });
+
+  const DAYSIN=[31,28,31,30,31,30,31,31,30,31,30,31];
+  const dx=ds=>{const d=D(ds),m=d.getUTCMonth(),ci=ORDER.indexOf(m);
+    return xs[ci]+((d.getUTCDate()-1)/DAYSIN[m])*cw(ci);};
+
+  STOPS.forEach((s2,ri)=>{
+    const y=TOPH+ri*RH, row=CLIMATE[s2.id];
+    g+=`<text class="clim-name" x="${LBL-10}" y="${(y+RH/2+3.5).toFixed(1)}" text-anchor="end">${FLAGS[s2.id]} ${s2.country.toUpperCase()}</text>`;
+    ORDER.forEach((m,ci)=>{
+      g+=`<rect class="${CLS[row[m]]}" x="${xs[ci].toFixed(1)}" y="${y.toFixed(1)}" width="${cw(ci).toFixed(1)}" height="${RH}"/>`;
+    });
+    g+=`<line class="clim-grid" x1="${LBL}" y1="${y.toFixed(1)}" x2="${W-R}" y2="${y.toFixed(1)}"/>`;
+  });
+
+
+  STOPS.forEach((s2,ri)=>{
+    const y=TOPH+ri*RH, x1=dx(s2.arrive), x2=Math.max(dx(s2.depart),x1+5);
+    const iso=WSPARK[s2.id];
+    const w=Math.max(x2-x1,5);
+    const PAD=6, hw=Math.max(w+PAD*2,22);
+    const hx=x1+w/2-hw/2;
+    const u=iso?`https://weatherspark.com/countries/${iso}`:'';
+    const grp=iso?` class="clim-link" data-ws="${u}" role="link" tabindex="0"`:'';
+    const hit=`<rect class="clim-hit" x="${hx.toFixed(1)}" y="${(y-1).toFixed(1)}" width="${hw.toFixed(1)}" height="${RH+2}"/>`;
+    const rect=`<rect class="clim-visit" x="${x1.toFixed(1)}" y="${(y+1).toFixed(1)}" width="${w.toFixed(1)}" height="${RH-2}"/>`;
+    g+= iso
+      ? `<g${grp}><title>${s2.country} climate on WeatherSpark \u2192</title>${hit}${rect}</g>`
+      : rect;
+  });
+  svg.innerHTML=g;
+}
+
+/* ============ FIG 1 — THE CLOCK ============ */
+function buildClock(){
+  const svg=document.getElementById('clock');
+  const W=1400,L=66,R=76,PX=L,PW=W-L-R;
+  const yTop=54,yBot=232,offMax=10,offMin=-6;
+  const x=date=>PX+((D(date)-TRIP_START)/(TRIP_END-TRIP_START))*PW;
+  const y=off=>yTop+((offMax-off)/(offMax-offMin))*(yBot-yTop);
+  let g='';
+  for(let o=offMax;o>=offMin;o-=2){
+    g+=`<line class="clk-grid" x1="${PX}" y1="${y(o).toFixed(1)}" x2="${W-R}" y2="${y(o).toFixed(1)}"/>`;
+    g+=`<text class="clk-label" x="${PX-12}" y="${(y(o)+3.5).toFixed(1)}" text-anchor="end">UTC${o>0?'+':''}${o}</text>`;
+  }
+  const months=[];let cur=new Date(Date.UTC(2026,10,1));
+  months.push(new Date(Date.UTC(2026,9,15)));
+  while(cur<TRIP_END){months.push(new Date(cur));cur=new Date(Date.UTC(cur.getUTCFullYear(),cur.getUTCMonth()+1,1));}
+  g+=`<line class="clk-axis" x1="${PX}" y1="358" x2="${W-R}" y2="358"/>`;
+  months.forEach(m=>{
+    const mx=PX+((m-TRIP_START)/(TRIP_END-TRIP_START))*PW;
+    if(mx<PX-1)return;
+    g+=`<line class="clk-grid" x1="${mx.toFixed(1)}" y1="352" x2="${mx.toFixed(1)}" y2="364"/>`;
+    g+=`<text class="clk-month" x="${(mx+7).toFixed(1)}" y="376">${m.toLocaleDateString('en-CA',{month:'short',timeZone:'UTC'}).toUpperCase().replace('.','')} ${String(m.getUTCFullYear()).slice(2)}</text>`;
+  });
+  const jumpX=x('2026-10-19');
+  let d0=`M ${x('2026-10-18').toFixed(1)} ${y(ORIGIN.utcOut).toFixed(1)} L ${jumpX.toFixed(1)} ${y(ORIGIN.utcOut).toFixed(1)}`;
+  const jump=`<path class="clk-jump draw" d="M ${jumpX.toFixed(1)} ${y(ORIGIN.utcOut).toFixed(1)} L ${jumpX.toFixed(1)} ${y(STOPS[0].utc).toFixed(1)}"/>`;
+  let d=`M ${jumpX.toFixed(1)} ${y(STOPS[0].utc).toFixed(1)}`;
+  STOPS.forEach((s,i)=>{
+    const x1=i===0?jumpX:x(s.arrive),x2=x(s.depart);
+    d+=` L ${x2.toFixed(1)} ${y(s.utc).toFixed(1)}`;
+    const nextOff=STOPS[i+1]?STOPS[i+1].utc:ORIGIN.utcBack;
+    d+=` L ${x2.toFixed(1)} ${y(nextOff).toFixed(1)}`;
+    s._x1=x1;s._x2=x2;
+  });
+  d+=` L ${(W-R).toFixed(1)} ${y(ORIGIN.utcBack).toFixed(1)}`;
+  let marks='',labels='',hits='';
+  STOPS.forEach((s,i)=>{
+    const mid=(s._x1+s._x2)/2,yy=y(s.utc);
+    marks+=`<line class="clk-lead" x1="${mid.toFixed(1)}" y1="${(yy+5).toFixed(1)}" x2="${mid.toFixed(1)}" y2="246"/>`;
+    marks+=`<circle class="clk-dot" cx="${s._x1.toFixed(1)}" cy="${yy.toFixed(1)}" r="3"/>`;
+    labels+=`<text class="clk-name" transform="translate(${(mid+4).toFixed(1)},342) rotate(-90)">${s.code} · ${nights(s)}D</text>`;
+    hits+=`<g class="clk-seg" aria-label="${s.country}, ${nights(s)} days, ${s.utcLabel}">
+      <rect class="clk-hit" x="${s._x1.toFixed(1)}" y="${yTop}" width="${Math.max(4,s._x2-s._x1).toFixed(1)}" height="${(360-yTop).toFixed(1)}"/>
+      <rect class="clk-seg-hi" x="${s._x1.toFixed(1)}" y="${yTop}" width="${Math.max(4,s._x2-s._x1).toFixed(1)}" height="${(360-yTop).toFixed(1)}"/></g>`;
+  });
+  marks+=`<circle class="clk-dot" style="stroke:var(--paper)" cx="${x('2026-10-18').toFixed(1)}" cy="${y(ORIGIN.utcOut).toFixed(1)}" r="4"/>`;
+  marks+=`<circle class="clk-dot" style="stroke:var(--paper)" cx="${(W-R).toFixed(1)}" cy="${y(ORIGIN.utcBack).toFixed(1)}" r="4"/>`;
+  const notes=
+    `<text class="clk-note fadein" x="${(jumpX+12).toFixed(1)}" y="${(y(9)-14).toFixed(1)}">↑ DATE LINE · ONE CALENDAR DAY GONE</text>`+
+    `<text class="clk-label fadein" x="${x('2026-10-18').toFixed(1)}" y="${(y(-4)+20).toFixed(1)}">TORONTO · DEPART</text>`+
+    `<text class="clk-label fadein" x="${(W-R).toFixed(1)}" y="${(y(-5)+20).toFixed(1)}" text-anchor="end">TORONTO · HOME</text>`+
+    `<text class="clk-label fadein" x="${x('2027-01-30').toFixed(1)}" y="${(y(-1)+22).toFixed(1)}" text-anchor="middle" style="fill:var(--jade)">UTC−1 · FURTHEST BACK</text>`;
+  svg.innerHTML=g+hits+marks+`<path class="clk-line draw" id="clkline" d="${d}"/>`+jump+labels+notes;
+  const line=svg.querySelector('#clkline'),jumpEl=svg.querySelector('.clk-jump');
+  [line,jumpEl].forEach(el=>el.style.setProperty('--len',el.getTotalLength()));
+  observeDraw(document.getElementById('clockbox'));
+}
+
+/* ============ THE MAP ============ */
+const LAND={
+namerica:"-168,66 -160,71 -145,70 -130,70 -115,69 -100,69 -85,70 -80,74 -70,73 -62,66 -64,60 -56,53 -52,47 -60,46 -66,44 -70,42 -74,39 -76,35 -81,31 -80,26 -83,25 -85,30 -89,29 -94,29 -97,26 -97,21 -91,19 -88,21 -87,17 -83,10 -78,8 -80,13 -86,16 -95,16 -105,20 -110,24 -114,31 -117,33 -121,35 -124,41 -124,48 -128,53 -133,57 -140,60 -148,60 -152,57 -160,56 -166,60",
+greenland:"-55,60 -43,60 -40,65 -33,68 -25,71 -20,76 -30,82 -45,83 -60,82 -70,78 -60,70",
+iceland:"-24,65 -14,66 -14,64 -22,64",
+samerica:"-78,8 -72,12 -62,11 -55,6 -50,1 -44,-2 -37,-5 -35,-8 -39,-13 -41,-22 -48,-25 -53,-33 -58,-38 -62,-40 -63,-45 -68,-50 -68,-55 -73,-53 -74,-45 -73,-38 -71,-30 -70,-23 -71,-18 -76,-14 -79,-8 -81,-5 -80,0",
+africa:"-17,15 -16,20 -12,28 -8,32 0,36 10,37 19,31 25,32 32,31 35,24 39,15 43,11 48,12 51,11 48,5 42,-1 40,-8 36,-18 33,-26 27,-34 20,-35 17,-31 13,-23 12,-14 9,-1 6,4 0,6 -8,5 -13,9",
+eurasia:"-9,43 -9,38 -6,36 -1,37 1,39 3,42 7,43 9,44 11,43 12,41 14,39 15,37 17,37 18,39 15,42 14,44 17,45 20,42 22,40 23,37 25,36 26,38 26,40 29,41 33,36 36,36 35,33 34,31 36,34 42,37 48,38 50,30 48,29 51,25 56,25 57,23 60,25 64,25 67,25 70,21 73,20 75,15 78,8 80,13 84,19 87,22 91,22 94,18 97,17 99,12 101,7 104,10 107,11 109,16 108,21 110,21 113,22 117,23 120,25 122,30 121,37 118,39 122,41 126,40 128,43 130,43 131,47 135,49 141,53 143,58 152,58.5 158,59 162,60 168,61 168,63 160,63.5 150,64 140,64.5 130,64 115,65 100,65.5 90,65 80,64.5 70,64 60,63.5 50,63 40,62 36,61.5 33,63.5 29,64.5 24,64 18,63.5 13,62 8,60 5,59 7,58 8,56 10,54 5,53 0,50 -2,48 -5,48",
+uk:"-6,50 -3,50 1,51 -1,54 -3,58 -5,58 -6,55 -5,52",
+japan:"129,33 131,31 132,33 135,34 138,35 140,35 141,38 141,41 145,43 144,45 141,45 140,41 139,38 137,37 135,34 133,34 130,34",
+taiwan:"120,25 122,25 121,22 120,23",
+philippines:"120,18 122,18 124,13 126,10 122,7 120,12",
+sumatra:"95,6 98,4 101,0 106,-6 105,-6 100,-1 97,2",
+java:"105,-6 110,-7 114,-8 114,-9 110,-8 105,-7",
+borneo:"109,2 113,4 117,4 118,1 117,-3 110,-3 109,0",
+sulawesi:"119,1 121,1 125,1 125,-2 123,-5 120,-3 120,0",
+papua:"131,-1 136,-2 141,-3 147,-6 151,-10 143,-9 138,-8 133,-4",
+australia:"113,-22 114,-27 115,-34 118,-35 125,-32 131,-31 135,-35 138,-35 141,-38 146,-39 150,-37 153,-29 153,-25 149,-21 146,-19 142,-11 137,-12 130,-12 126,-14 122,-17 117,-20",
+nz:"173,-35 175,-37 178,-38 176,-41 174,-41 172,-43 168,-46 166,-46 170,-44 173,-38",
+madagascar:"44,-12 50,-15 50,-25 46,-25 44,-20",
+srilanka:"80,10 82,8 81,6 80,7",
+capeverde:"-25,15 -23,16 -22,15 -24,14",
+cuba:"-85,22 -78,21 -74,20 -78,23"
+};
+const TEMPS={
+japan:[20,13],korea:[17,7],china:[20,13],hk:[23,18],philippines:[31,24],
+vietnam:[24,17],laos:[28,16],cambodia:[30,20],thailand:[32,23],thailand:[32,24],malaysia:[32,24],bali:[31,24],singapore:[30,24],
+srilanka:[30,23],maldives:[30,26],bhutan:[14,0],nepal:[22,6],india:[31,19],oman:[25,18],
+uae:[24,15],saudi:[20,8],egypt:[19,9],tanzania:[32,24],southafrica:[27,16],capeverde:[25,20],
+morocco:[19,7],portugal:[16,9]};
+const FLAGS={china:'\u{1F1E8}\u{1F1F3}',singapore:'\u{1F1F8}\u{1F1EC}',japan:'\u{1F1EF}\u{1F1F5}',korea:'\u{1F1F0}\u{1F1F7}',hk:'\u{1F1ED}\u{1F1F0}',philippines:'\u{1F1F5}\u{1F1ED}',vietnam:'\u{1F1FB}\u{1F1F3}',laos:'\u{1F1F1}\u{1F1E6}',cambodia:'\u{1F1F0}\u{1F1ED}',thailand:'\u{1F1F9}\u{1F1ED}',malaysia:'\u{1F1F2}\u{1F1FE}',bali:'\u{1F1EE}\u{1F1E9}',srilanka:'\u{1F1F1}\u{1F1F0}',maldives:'\u{1F1F2}\u{1F1FB}',bhutan:'\u{1F1E7}\u{1F1F9}',nepal:'\u{1F1F3}\u{1F1F5}',india:'\u{1F1EE}\u{1F1F3}',oman:'\u{1F1F4}\u{1F1F2}',uae:'\u{1F1E6}\u{1F1EA}',saudi:'\u{1F1F8}\u{1F1E6}',egypt:'\u{1F1EA}\u{1F1EC}',tanzania:'\u{1F1F9}\u{1F1FF}',southafrica:'\u{1F1FF}\u{1F1E6}',capeverde:'\u{1F1E8}\u{1F1FB}',morocco:'\u{1F1F2}\u{1F1E6}',portugal:'\u{1F1F5}\u{1F1F9}'};
+const PAGES={
+  japan:'countries/japan.html',
+  korea:'countries/korea.html',
+  china:'countries/china.html',
+  thailand:'countries/thailand.html',
+  bhutan:'countries/bhutan.html',
+  nepal:'countries/nepal.html',
+  singapore:'countries/singapore.html',
+  bali:'countries/indonesia.html',
+  philippines:'countries/philippines.html',
+  hk:'countries/hongkong.html',
+  vietnam:'countries/vietnam.html',
+  laos:'countries/laos.html',
+  cambodia:'countries/cambodia.html',
+  malaysia:'countries/malaysia.html',
+  srilanka:'countries/srilanka.html',
+  maldives:'countries/maldives.html',
+  india:'countries/india.html',
+  uae:'countries/uae.html',
+  oman:'countries/oman.html',
+  saudi:'countries/saudi.html',
+  egypt:'countries/egypt.html',
+  tanzania:'countries/tanzania.html',
+  southafrica:'countries/southafrica.html',
+  capeverde:'countries/capeverde.html',
+  morocco:'countries/morocco.html',
+  portugal:'countries/portugal.html'
+};
+function buildMap(){
+  const svg=document.getElementById('map');
+  const W=1400,H=660,TOP=74,BOT=-48;
+  // longitude warp: control points [lon, fraction of width] — compresses the Americas & open ocean
+  const WARP=[[-180,0],[-100,.045],[-60,.095],[-28,.145],[45,.316],[145,.955],[180,1]];
+  const mx=lon=>{
+    for(let i=1;i<WARP.length;i++){
+      if(lon<=WARP[i][0]){
+        const [a,fa]=WARP[i-1],[b,fb]=WARP[i];
+        return (fa+(lon-a)/(b-a)*(fb-fa))*W;
+      }
+    }
+    return W;
+  };
+  // latitude warp: control points [lat, fraction of height] —
+  // southern band (0..-48) compressed to half its linear share, the freed space stretches 40..0 where the route lives
+  const LATW=[[74,0],[40,0.279],[0,0.8035],[-48,1]];
+  const my=lat=>{
+    for(let i=1;i<LATW.length;i++){
+      if(lat>=LATW[i][0]){
+        const [a,fa]=LATW[i-1],[b,fb]=LATW[i];
+        return (fa+(a-lat)/(a-b)*(fb-fa))*H;
+      }
+    }
+    return H;
+  };
+  let g='';
+  for(let lon=-180;lon<=180;lon+=30)g+=`<line class="graticule" x1="${mx(lon).toFixed(1)}" y1="0" x2="${mx(lon).toFixed(1)}" y2="${H}"/>`;
+  for(let lat=60;lat>=-40;lat-=20)g+=`<line class="${lat===0?'equator':'graticule'}" x1="0" y1="${my(lat).toFixed(1)}" x2="${W}" y2="${my(lat).toFixed(1)}"/>`;
+  g+=`<text class="wp-lab" x="8" y="${(my(0)-7).toFixed(1)}" style="fill:#2E6E7E">EQUATOR</text>`;
+  g+=`<line class="tropic" x1="0" y1="${my(23.44).toFixed(1)}" x2="${W}" y2="${my(23.44).toFixed(1)}"/>`+
+     `<line class="tropic" x1="0" y1="${my(-23.44).toFixed(1)}" x2="${W}" y2="${my(-23.44).toFixed(1)}"/>`;
+  for(const k in LAND){
+    const pts=LAND[k].trim().split(/\s+/).map(p=>{const[lo,la]=p.split(',').map(Number);return`${mx(lo).toFixed(1)},${my(la).toFixed(1)}`}).join(' ');
+    g+=`<polygon class="land" points="${pts}"/>`;
+  }
+  // continent + ocean names (drawn under the route)
+  const CONT=[['N. AMERICA',-95,52,15],['S. AMERICA',-62,-18,13],['AFRICA',14,10,20],
+              ['EUROPE',16,51,13],['ASIA',92,47,26],['AUSTRALIA',133,-27,15]];
+  CONT.forEach(([t,lo,la,fs])=>{
+    g+=`<text class="cont-lab" x="${mx(lo).toFixed(1)}" y="${my(la).toFixed(1)}" font-size="${fs}" text-anchor="middle">${t}</text>`;
+  });
+  const OCEAN=[['PACIFIC',158,8,0],['ATLANTIC',-24,-10,0],['INDIAN OCEAN',66,-20,0],['PACIFIC',-152,-14,-90]];
+  OCEAN.forEach(([t,lo,la,rot])=>{
+    const x=mx(lo),y=my(la);
+    g+=rot? `<text class="ocean-lab" transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${rot})" text-anchor="middle">${t}</text>`
+          : `<text class="ocean-lab" x="${x.toFixed(1)}" y="${y.toFixed(1)}" text-anchor="middle">${t}</text>`;
+  });
+  const DOTNUDGE={cambodia:[7,9]};        // px, visual only — does not affect distances
+  const PXY=o=>{const n=(o&&o.id&&DOTNUDGE[o.id])||[0,0];return [mx(o.lon)+n[0], my(o.lat)+n[1]];};
+  const arcPts=(a,b,bend=0.14)=>{
+    const [x1,y1]=PXY(a),[x2,y2]=PXY(b);
+    const cx=(x1+x2)/2,cy=(y1+y2)/2,dx=x2-x1,dy=y2-y1,len=Math.hypot(dx,dy)||1;
+    // short hops get a proportionally bigger bow so they stay visible
+    const MINBOW=13, eff=bend<0?Math.min(bend,-MINBOW/len):Math.max(bend,MINBOW/len);
+    const qx=cx-dy/len*len*eff,qy=cy+dx/len*len*eff;
+    return{x1,y1,x2,y2,qx,qy,
+      d:`M ${x1.toFixed(1)} ${y1.toFixed(1)} Q ${qx.toFixed(1)} ${qy.toFixed(1)} ${x2.toFixed(1)} ${y2.toFixed(1)}`,
+      // quadratic bezier midpoint at t=0.5
+      mx:(x1+2*qx+x2)/4, my:(y1+2*qy+y2)/4};
+  };
+  const arc=(a,b,bend=0.14)=>arcPts(a,b,bend).d;
+  // great-circle km -> estimated block time, rounded to nearest half hour
+  const gcKm=(a,b)=>{
+    const R=6371,r=Math.PI/180;
+    const p1=a.lat*r,p2=b.lat*r,dp=(b.lat-a.lat)*r,dl=(b.lon-a.lon)*r;
+    const h=Math.sin(dp/2)**2+Math.cos(p1)*Math.cos(p2)*Math.sin(dl/2)**2;
+    return 2*R*Math.asin(Math.sqrt(h));
+  };
+  const flightTime=(a,b)=>{
+    const t=Math.round((gcKm(a,b)/800+0.75)*2)/2;
+    return (t%1===0?t.toFixed(0):t.toFixed(1))+'h';
+  };
+  const PILL={korea:[0.5,0],china:[0.34,0],thailand:[0.6,0],bhutan:[0.34,0],
+  nepal:[0.34,18],singapore:[0.5,0],bali:[0.5,0],philippines:[0.5,0],hk:[0.34,0],vietnam:[0.34,0],
+  laos:[0.34,13],cambodia:[0.5,0],malaysia:[0.5,0],srilanka:[0.5,0],maldives:[0.34,8],india:[0.5,0],
+  uae:[0.5,0],oman:[0.5,0],saudi:[0.5,0],egypt:[0.34,0],tanzania:[0.5,0],southafrica:[0.5,0],
+  capeverde:[0.5,0],morocco:[0.5,0],portugal:[0.5,24],home:[0.5,0]};   // legs whose midpoint labels collide
+  const timeLabel=(p,txt,key,destId,fromName,toName)=>{
+    const pos=PILL[destId]||[0.5,0];      // [t along arc, perpendicular px]
+    const t=pos[0], perp=pos[1], u=1-t;
+    const bx=u*u*p.x1+2*u*t*p.qx+t*t*p.x2, by=u*u*p.y1+2*u*t*p.qy+t*t*p.y2;
+    const tx=2*u*(p.qx-p.x1)+2*t*(p.x2-p.qx), ty=2*u*(p.qy-p.y1)+2*t*(p.y2-p.qy);
+    const tl=Math.hypot(tx,ty)||1;
+    const px=bx-ty/tl*perp, py=by+tx/tl*perp;
+    const w=txt.length*6+8;
+    return`<g class="legtime" data-time="${destId}" data-hover="${destId}" data-from="${key}" data-t="${fromName} \u2192 ${toName}" data-m="${txt} flight" data-c="<b>${fromName}</b> \u2192 <b>${toName}</b>">`+
+           `<rect class="leg-time-bg" x="${(px-w/2).toFixed(1)}" y="${(py-7).toFixed(1)}" width="${w}" height="13"/>`+
+           `<text class="leg-time" x="${px.toFixed(1)}" y="${(py+2.5).toFixed(1)}" text-anchor="middle">${txt}</text></g>`;
+  };
+  const tor={lon:ORIGIN.lon,lat:ORIGIN.lat},jp={lon:STOPS[0].lon,lat:STOPS[0].lat};
+  g+=`<path class="leg leg-long draw" style="stroke:rgb(240,208,70)" d="${arc(tor,{lon:-179.5,lat:52},0.13)}"/>`;
+  g+=`<path class="leg leg-long draw" style="stroke:rgb(240,208,70)" d="${arc({lon:179.5,lat:52},jp,0.13)}"/>`;
+  g+=`<text class="wp-num" x="6" y="${(my(52)-9).toFixed(1)}">◀ PACIFIC · ${flightTime(tor,jp)}</text>`;
+  g+=`<text class="wp-num" x="${W-6}" y="${(my(52)-9).toFixed(1)}" text-anchor="end">PACIFIC ▶</text>`;
+  // 4-tone ramp: yellow (Oct) -> blue -> grey -> red (Feb)
+  const RAMP=[[240,208,70],[76,146,214],[154,169,176],[224,85,85]];
+  // pink run: legs arriving at Bhutan, Nepal and Singapore, light -> deep
+  const TINT={bhutan:'rgb(247,168,205)',nepal:'rgb(231,100,155)',singapore:'rgb(199,62,124)'};
+  const BEND={
+    singapore:0.6,     // Nepal leg swings clear of the Malaysia dot
+    thailand:-0.06,    // Shanghai leg curves below Hong Kong
+    saudi:-0.25,       // Muscat leg bows clear of the Dubai dot
+    laos:0.42          // Hong Kong leg arcs above Vietnam
+  };
+  const legColour=t=>{
+    const x=Math.max(0,Math.min(1,t))*(RAMP.length-1);
+    const i=Math.min(Math.floor(x),RAMP.length-2), f=x-i;
+    const c=RAMP[i].map((v,k)=>Math.round(v+(RAMP[i+1][k]-v)*f));
+    return `rgb(${c[0]},${c[1]},${c[2]})`;
+  };
+  // arrowhead at ~62% along the quadratic, rotated to the tangent
+  const arrow=(p,col,t=0.62,id='',fromId='')=>{
+    const u=1-t;
+    const px=u*u*p.x1+2*u*t*p.qx+t*t*p.x2, py=u*u*p.y1+2*u*t*p.qy+t*t*p.y2;
+    const tx=2*u*(p.qx-p.x1)+2*t*(p.x2-p.qx), ty=2*u*(p.qy-p.y1)+2*t*(p.y2-p.qy);
+    const a=Math.atan2(ty,tx)*180/Math.PI;
+    return `<path class="leg-arrow" data-leg="${id}" data-from="${fromId}" d="M -7.8 -5.2 L 3.8 0 L -7.8 5.2 Z" fill="${col}" transform="translate(${px.toFixed(1)} ${py.toFixed(1)}) rotate(${a.toFixed(1)})"/>`;
+  };
+  let legTimes='', arrows='', legHits='', defs='';
+  const NLEG=STOPS.length;                       // legs incl. the flight home
+  // resolve every leg's colour up front so each can fade out of the previous one
+  const COLS=[];
+  for(let i=0;i<STOPS.length-1;i++){
+    const to=STOPS[i+1];
+    COLS.push(TINT[to.id]||legColour((i+1)/NLEG));
+  }
+  COLS.push(legColour(1));                        // the flight home
+  for(let i=0;i<STOPS.length-1;i++){
+    const to=STOPS[i+1];
+    const p=arcPts(STOPS[i],STOPS[i+1],BEND[to.id]||0.12);
+    const col=COLS[i], from=i>0?COLS[i-1]:col;
+    defs+=`<linearGradient id="lg${i}" gradientUnits="userSpaceOnUse" x1="${p.x1.toFixed(1)}" y1="${p.y1.toFixed(1)}" x2="${p.x2.toFixed(1)}" y2="${p.y2.toFixed(1)}">`+
+          `<stop offset="0" stop-color="${from}"/><stop offset="1" stop-color="${col}"/></linearGradient>`;
+    g+=`<path class="leg draw" data-leg="${to.id}" data-from="${STOPS[i].id}" style="stroke:url(#lg${i})" d="${p.d}"/>`;
+    legHits+=`<path class="leg-hit" data-hover="${to.id}" d="${p.d}" data-t="${STOPS[i].country} \u2192 ${to.country}" data-m="${flightTime(STOPS[i],to)} flight \u00b7 leg ${i+1} of ${STOPS.length}" data-c="<b>${STOPS[i].country}</b> \u2192 <b>${to.country}</b>"></path>`;
+    const L=Math.hypot(p.x2-p.x1,p.y2-p.y1);
+    if(L>190){ arrows+=arrow(p,col,0.26,to.id,STOPS[i].id)+arrow(p,col,0.74,to.id,STOPS[i].id); }
+    else if(L>34){ arrows+=arrow(p,col,0.72,to.id,STOPS[i].id); }
+    legTimes+=timeLabel(p,flightTime(STOPS[i],to),STOPS[i].id,to.id,STOPS[i].country,to.country);
+  }
+  const pHome=arcPts(STOPS[STOPS.length-1],tor,0.15);
+  const colHome=COLS[COLS.length-1], fromHome=COLS[COLS.length-2];
+  defs+=`<linearGradient id="lgHome" gradientUnits="userSpaceOnUse" x1="${pHome.x1.toFixed(1)}" y1="${pHome.y1.toFixed(1)}" x2="${pHome.x2.toFixed(1)}" y2="${pHome.y2.toFixed(1)}">`+
+        `<stop offset="0" stop-color="${fromHome}"/><stop offset="1" stop-color="${colHome}"/></linearGradient>`;
+  g+=`<path class="leg draw" data-leg="home" data-from="${STOPS[STOPS.length-1].id}" style="stroke:url(#lgHome)" d="${pHome.d}"/>`;
+  legHits+=`<path class="leg-hit" data-hover="home" d="${pHome.d}" data-t="${STOPS[STOPS.length-1].country} \u2192 Toronto" data-m="${flightTime(STOPS[STOPS.length-1],tor)} flight \u00b7 the way home" data-c="<b>${STOPS[STOPS.length-1].country}</b> \u2192 <b>Toronto</b>"></path>`;
+  const LHome=Math.hypot(pHome.x2-pHome.x1,pHome.y2-pHome.y1);
+  arrows+= LHome>190 ? arrow(pHome,colHome,0.26,'home',STOPS[STOPS.length-1].id)+arrow(pHome,colHome,0.74,'home',STOPS[STOPS.length-1].id)
+                     : arrow(pHome,colHome,0.72,'home',STOPS[STOPS.length-1].id);
+  legTimes+=timeLabel(pHome,flightTime(STOPS[STOPS.length-1],tor),'home','home',STOPS[STOPS.length-1].country,'Toronto');
+  g=`<defs>${defs}</defs>`+g;
+  g+=legHits;                    // hover targets sit above the lines, below the dots
+
+  const LABNUDGE={laos:[-6,-6],vietnam:[14,-24],india:[-4,0],bhutan:[4,-4],hk:[4,0],cambodia:[3,0],thailand:[0,-4],nepal:[-14,-9],korea:[0,-7],china:[-4,0],srilanka:[-14,12],};
+  const off={n:[0,-12],s:[0,18],e:[10,4],w:[-10,4],ne:[8,-8],nw:[-8,-8],sw:[-8,13],se:[8,13]};
+  const anch={n:'middle',s:'middle',e:'start',w:'end',ne:'start',nw:'end',sw:'end',se:'start'};
+  STOPS.forEach((s,i)=>{
+    const [X,Y]=PXY(s),o=[...(off[s.lab]||off.e)],a=anch[s.lab]||'start';
+    const nu=LABNUDGE[s.id]||[0,0];o[0]+=nu[0];o[1]+=nu[1];
+    const prev=i>0?STOPS[i-1]:{country:'Toronto',lon:tor.lon,lat:tor.lat};
+    const next=STOPS[i+1]||{country:'Toronto',lon:tor.lon,lat:tor.lat};
+    const chain=`${prev.country} \u2192 <b>${s.country}</b> \u2192 ${next.country}`;
+    const meta=`${nights(s)} days \u00b7 ${s.arrive.slice(8)}/${s.arrive.slice(5,7)} \u00b7 ${TEMPS[s.id][0]}\u00b0/${TEMPS[s.id][1]}\u00b0`;
+    g+=`<g class="wpnode" role="button" tabindex="0" data-wp="${s.id}" data-t="${FLAGS[s.id]} ${s.country}" data-m="${meta}" data-c="${chain}" aria-label="${s.country} — ${nights(s)} days">
+      <circle class="wp-pulse" cx="${X.toFixed(1)}" cy="${Y.toFixed(1)}" r="4.6"/>
+      <rect class="wp-hit" x="${(X-14).toFixed(1)}" y="${(Y-14).toFixed(1)}" width="28" height="28"/>
+      <circle class="wp" cx="${X.toFixed(1)}" cy="${Y.toFixed(1)}" r="4.6"/>
+      <text class="wp-lab" x="${(X+o[0]).toFixed(1)}" y="${(Y+o[1]).toFixed(1)}" text-anchor="${a}"><tspan class="wp-flag">${FLAGS[s.id]}</tspan> ${s.country}</text>
+      <text class="wp-num" x="${(X+o[0]).toFixed(1)}" y="${(Y+o[1]+12).toFixed(1)}" text-anchor="${a}"><tspan class="wp-date">${s.arrive.slice(8)}/${s.arrive.slice(5,7)}</tspan>  <tspan class="t-day">${TEMPS[s.id][0]}°</tspan><tspan class="t-sep">/</tspan><tspan class="t-night">${TEMPS[s.id][1]}°</tspan></text></g>`;
+  });
+  const TX=mx(tor.lon),TY=my(tor.lat);
+  g+=`<rect x="${(TX-7).toFixed(1)}" y="${(TY-7).toFixed(1)}" width="14" height="14" transform="rotate(45 ${TX.toFixed(1)} ${TY.toFixed(1)})" class="wp wp-home"/>
+      <text class="wp-lab" x="${TX.toFixed(1)}" y="${(TY-16).toFixed(1)}" text-anchor="middle" style="fill:var(--paper)"><tspan class="wp-flag">\u{1F1E8}\u{1F1E6}</tspan> TORONTO</text>
+      <text class="wp-num" x="${TX.toFixed(1)}" y="${(TY-5).toFixed(1)}" text-anchor="middle" style="fill:var(--muted)">START · FINISH</text>`;
+  g+=arrows;g+=legTimes;
+  svg.innerHTML=g;
+  svg.querySelectorAll('.draw').forEach(p=>p.style.setProperty('--len',p.getTotalLength()));
+  observeDraw(svg.parentElement);
+}
+
+/* ============ ITINERARY ============ */
+function buildStops(){
+  const host=document.getElementById('stops');
+  host.innerHTML=STOPS.map((s,i)=>{
+    const n=nights(s);
+    const chain=s.route.map(c=>`<span>${c}</span>`).join('<span class="a">—</span>');
+    return`
+<article class="stop" id="${s.id}">
+  <button class="stop-btn" aria-expanded="false" aria-controls="body-${s.id}">
+    <span class="stop-idx">${String(i+1).padStart(2,'0')}</span>
+    <span>
+      <span class="stop-name">${FLAGS[s.id]||""} ${s.country}</span>
+      <span class="stop-sub">${fmtDate(D(s.arrive))} → ${fmtDate(D(s.depart))} · ${s.hub} · ${s.utcLabel}</span>
+    </span>
+    <span class="stop-meta"><span class="d">${n} days</span> · ${s.code}<span class="chev">▾</span></span>
+  </button>
+  <div class="stop-body" id="body-${s.id}"><div class="stop-inner"><div class="stop-pad">
+    <div class="field"><h4>Dossier</h4>${PAGES[s.id]?`<a class="pagelink" href="${PAGES[s.id]}">Open the ${s.country} page &rarr;</a>`:`<span class="pagepending">Not written yet</span>`}</div>
+    <div class="field"><h4>Overland route</h4><div class="chain">${chain}</div></div>
+    <div class="field"><h4>Why this window</h4><p>${s.why}</p></div>
+    <div class="field"><h4>Don't miss</h4><p>${s.see}</p></div>
+  </div></div></div>
+</article>`;
+  }).join('');
+  host.querySelectorAll('.stop-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const card=btn.closest('.stop');
+      const open=card.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open?'true':'false');
+    });
+  });
+  const first=host.querySelector('.stop');
+  first.classList.add('open');
+  first.querySelector('.stop-btn').setAttribute('aria-expanded','true');
+}
+function openFromHash(){
+  const id=location.hash.slice(1);
+  const card=id&&document.getElementById(id);
+  if(card&&card.classList.contains('stop')&&!card.classList.contains('open')){
+    card.classList.add('open');
+    card.querySelector('.stop-btn').setAttribute('aria-expanded','true');
+  }
+}
+window.addEventListener('hashchange',openFromHash);
+
+/* ============ VISA ============ */
+const VISA=[
+['Japan','Visa-free, 90 days','None'],
+['South Korea','K-ETA (exemptions keep being extended — check)','72 hours'],
+['China','Tourist visa required — embassy application','3–4 weeks',1],
+['Hong Kong','Visa-free, 90 days','None'],
+['Philippines','Visa-free, 30 days','None'],
+['Vietnam','E-visa, 90 days','5 working days'],
+['Laos','Visa on arrival or e-visa','None / 3 days'],
+['Cambodia','E-visa, 30 days','3 days'],
+['Thailand','Visa-free, 60 days','None'],
+['Malaysia','Visa-free, 90 days + MDAC form','Online, days before'],
+['Indonesia','Visa on arrival (extendable) + e-customs form','On arrival / online'],
+['Singapore','Visa-free, 90 days + SG Arrival Card','Online, 3 days before'],
+['Sri Lanka','ETA online','24–48 hours'],
+['Maldives','Free visa on arrival, 30 days','None'],
+['Bhutan','Visa via licensed operator + SDF','6–8 weeks',1],
+['Nepal','Visa on arrival','None'],
+['India','E-tourist visa','4–7 days'],
+['Oman','Visa-free, 14 days','None'],
+['UAE','Visa-free, 30 days','None'],
+['Saudi Arabia','E-visa, 1 year multiple entry','Minutes–days'],
+['Egypt','E-visa or visa on arrival','7 days'],
+['Tanzania','E-visa or visa on arrival','10 days / none'],
+['South Africa','Visa-free, 90 days','None'],
+['Cape Verde','Visa-free + EASE pre-registration','Online, days before'],
+['Morocco','Visa-free, 90 days','None'],
+['Portugal','Schengen visa-free · ETIAS expected live','Minutes, online']
+];
+// render in route order, derived from STOPS so it can never drift again
+(function(){
+  const byName={}; VISA.forEach(v=>byName[v[0]]=v);
+  const ordered=STOPS.map(s=>byName[s.country]).filter(Boolean);
+  const extra=VISA.filter(v=>!STOPS.some(s=>s.country===v[0]));   // safety net
+  document.getElementById('visa').innerHTML=ordered.concat(extra).map((v,i)=>
+    `<tr${v[3]?' class="flag"':''}><td><span class="vn">${String(i+1).padStart(2,'0')}</span> ${v[0]}</td><td>${v[1]}</td><td class="t">${v[2]}</td></tr>`).join('');
+})();
+
+/* ============ DRAW OBSERVER ============ */
+function observeDraw(el){
+  if(reduced){el.classList.add('drawn');return;}
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('drawn');io.unobserve(e.target);}})},{threshold:0.18});
+  io.observe(el);
+}
+
+document.addEventListener('click',function(e){
+  var n=e.target;
+  while(n&&n!==document){ if(n.getAttribute&&n.getAttribute('data-ws'))break; n=n.parentNode; }
+  if(!n||n===document)return;
+  var u=n.getAttribute('data-ws'); if(u)window.open(u,'_blank','noopener');
+});
+document.addEventListener('keydown',function(e){
+  if(e.key!=='Enter'&&e.key!==' ')return;
+  var n=e.target;
+  if(n&&n.getAttribute&&n.getAttribute('data-ws')){e.preventDefault();window.open(n.getAttribute('data-ws'),'_blank','noopener');}
+});
+
+/* ---- map: hover a leg, pulse it and the country it flies to ---- */
+(function(){
+  const svg=document.getElementById('map');
+  if(!svg)return;
+  let cur=null, moved=[], busy=false, offTimer=null, litAt=0;
+  const panel=document.getElementById('mapinfo');
+  const pT=panel&&panel.querySelector('.mi-title');
+  const pM=panel&&panel.querySelector('.mi-meta');
+  const pC=panel&&panel.querySelector('.mi-chain');
+  const fillPanel=el=>{
+    if(!panel||!el)return;
+    pT.textContent=el.getAttribute('data-t')||'';
+    pM.textContent=el.getAttribute('data-m')||'';
+    pC.innerHTML  =el.getAttribute('data-c')||'';
+    panel.classList.add('show');
+  };
+  const hidePanel=()=>{ if(panel)panel.classList.remove('show'); };
+  const OFF_DELAY=260;   // ms of grace before the highlight drops
+  // SVG has no z-index: raising means re-appending to the end of the parent
+  const raise=n=>{
+    if(!n||n.parentNode!==svg)return;
+    moved.push([n,n.nextSibling]);
+    svg.appendChild(n);
+  };
+  const restore=()=>{
+    for(let i=moved.length-1;i>=0;i--){
+      const [n,next]=moved[i];
+      try{ next&&next.parentNode===svg ? svg.insertBefore(n,next) : svg.appendChild(n); }catch(e){}
+    }
+    moved=[];
+  };
+  const OUT_MS=260;
+  let outNodes=[], outTimer=null;
+  const finishOut=()=>{                    // strip .off and put the DOM back
+    if(outTimer){clearTimeout(outTimer);outTimer=null;}
+    if(!outNodes.length)return;
+    outNodes.forEach(n=>n.classList.remove('off'));
+    outNodes=[];
+    busy=true; restore(); setTimeout(()=>busy=false,0);
+  };
+  let flows=[];                            // bright scrolling overlays, live while cur is set
+  const removeFlows=()=>{ flows.forEach(f=>f.parentNode&&f.parentNode.removeChild(f)); flows=[]; };
+  const makeFlow=(path,dim)=>{
+    const f=document.createElementNS('http://www.w3.org/2000/svg','path');
+    f.setAttribute('d',path.getAttribute('d'));
+    f.setAttribute('class','leg-flow'+(dim?' dim':''));
+    svg.appendChild(f);
+    return f;
+  };
+  const doClear=()=>{
+    offTimer=null;
+    removeFlows();
+    hidePanel();                          // always kill the sweep, even if cur is already null
+    if(!cur)return;
+    finishOut();                            // any previous outro resolves first
+    outNodes=Array.prototype.slice.call(svg.querySelectorAll('.on,.on-in,.on-out'));
+    outNodes.forEach(n=>{n.classList.remove('on');n.classList.remove('on-in');n.classList.remove('on-out');n.classList.add('off');});
+    cur=null;
+    // stay raised while it shrinks, then restore paint order
+    outTimer=setTimeout(()=>{outTimer=null;finishOut();},OUT_MS);
+  };
+  const cancelOff=()=>{ if(offTimer){clearTimeout(offTimer);offTimer=null;} };
+  const clearSoon=()=>{ cancelOff(); offTimer=setTimeout(doClear,OFF_DELAY); };
+  const clear=doClear;   // immediate, used when switching targets
+  const light=(id,mode,srcEl)=>{
+    const key=mode+':'+id;
+    cancelOff();
+    if(cur===key)return;
+    clear(); finishOut(); removeFlows(); cur=key; litAt=Date.now();
+    fillPanel(srcEl);
+    busy=true;
+    let bright=[], dull=[], pills=[];
+    const wp=svg.querySelector('[data-wp="'+id+'"]');
+    if(mode==='country'){
+      dull  = Array.prototype.slice.call(svg.querySelectorAll('.leg[data-leg="'+id+'"], .leg-arrow[data-leg="'+id+'"]'));
+      bright= Array.prototype.slice.call(svg.querySelectorAll('.leg[data-from="'+id+'"], .leg-arrow[data-from="'+id+'"]'));
+      const pillIn=svg.querySelector('.legtime[data-time="'+id+'"]');
+      if(pillIn){pillIn.classList.add('on-in');pills.push(pillIn);}
+      const pillOut=svg.querySelector('.legtime[data-from="'+id+'"]');
+      if(pillOut&&pillOut!==pillIn){pillOut.classList.add('on-out');pills.push(pillOut);}
+      dull.forEach(function(n){n.classList.add('on-in');});
+      bright.forEach(function(n){n.classList.add('on-out');});
+      dull.forEach(raise); bright.forEach(raise);
+    } else {
+      bright = Array.prototype.slice.call(svg.querySelectorAll('.leg[data-leg="'+id+'"], .leg-arrow[data-leg="'+id+'"]'));
+      bright.forEach(function(n){n.classList.add('on-out');});
+      const pill=svg.querySelector('.legtime[data-time="'+id+'"]');
+      if(pill){pill.classList.add('on-out');pills.push(pill);}
+      bright.forEach(raise);
+    }
+    if(wp)wp.classList.add('on');
+    raise(wp);
+    // sweeps are appended next, so they sit above the lines...
+    dull.forEach(function(n){ if(n.classList.contains('leg')) flows.push(makeFlow(n,true)); });
+    bright.forEach(function(n){ if(n.classList.contains('leg')) flows.push(makeFlow(n)); });
+    // ...and the durations are raised last so they stay legible on top of the sweep
+    pills.forEach(raise);
+    setTimeout(function(){busy=false;},0);
+  };
+  svg.addEventListener('mouseover',e=>{
+    const w=e.target.closest&&e.target.closest('[data-wp]');
+    if(w){light(w.getAttribute('data-wp'),'country',w);return;}
+    const h=e.target.closest&&e.target.closest('[data-hover]');
+    if(h){light(h.getAttribute('data-hover'),'leg',h);return;}
+  });
+  svg.addEventListener('mouseout',e=>{
+    if(busy)return;                       // ignore the synthetic out fired by re-appending
+    const to=e.relatedTarget;
+    if(to&&svg.contains(to)&&to.closest&&(to.closest('[data-hover]')||to.closest('[data-wp]')))return;
+    clearSoon();
+  });
+  svg.addEventListener('mouseleave',clearSoon);
+  // tap: highlight only, no navigation. Tapping the same stop again clears it.
+  svg.addEventListener('click',e=>{
+    const w=e.target.closest&&e.target.closest('[data-wp]');
+    const h=e.target.closest&&e.target.closest('[data-hover]');
+    const t=w||h;
+    if(!t){ doClear(); return; }   // tap empty map to dismiss
+    e.preventDefault();
+    const id=w?w.getAttribute('data-wp'):h.getAttribute('data-hover');
+    const key=(w?'country':'leg')+':'+id;
+    // touch fires a synthetic mouseover just before click; that isn't a second tap
+    if(cur===key && Date.now()-litAt>450){ doClear(); return; }
+    if(cur===key){ cancelOff(); return; }    // already lit by the same tap — keep it
+    light(id, w?'country':'leg', t);
+  });
+  // keyboard activation for the waypoint buttons
+  svg.addEventListener('keydown',e=>{
+    if(e.key!=='Enter'&&e.key!==' ')return;
+    const w=e.target.closest&&e.target.closest('[data-wp]');
+    if(!w)return;
+    e.preventDefault();
+    const key='country:'+w.getAttribute('data-wp');
+    if(cur===key&&Date.now()-litAt>450){doClear();return;}
+    light(w.getAttribute('data-wp'),'country',w);
+  });
+  // keyboard: focusing a waypoint lights its inbound leg too
+  svg.addEventListener('focusin',e=>{
+    const w=e.target.closest&&e.target.closest('[data-wp]');
+    if(w)light(w.getAttribute('data-wp'),'country',w);
+  });
+  svg.addEventListener('focusout',clearSoon);
+})();
+
+
+/* ---- embedded frames: decode base64 into srcdoc and auto-fit height ---- */
+function mountFrame(id,b64){
+  const fr=document.getElementById(id);
+  if(!fr)return;
+  try{
+    const bin=atob(b64);
+    const bytes=new Uint8Array(bin.length);
+    for(let i=0;i<bin.length;i++)bytes[i]=bin.charCodeAt(i);
+    fr.srcdoc=new TextDecoder('utf-8').decode(bytes);
+    const fit=()=>{
+      try{
+        const d=fr.contentDocument;
+        if(!d||!d.body)return;
+        const h=Math.max(d.body.scrollHeight,d.documentElement.scrollHeight,d.body.offsetHeight);
+        if(h>50)fr.style.height=(h+2)+'px';
+      }catch(err){}
+    };
+    fr.addEventListener('load',()=>{
+      fit();
+      try{
+        const d=fr.contentDocument;
+        d.documentElement.style.overflow='hidden';
+        if(window.ResizeObserver)new ResizeObserver(fit).observe(d.body);
+        d.addEventListener('click',()=>{setTimeout(fit,30);setTimeout(fit,250);});
+        d.addEventListener('input',()=>setTimeout(fit,30));
+        d.addEventListener('change',()=>setTimeout(fit,30));
+      }catch(err){}
+      setTimeout(fit,120); setTimeout(fit,600);
+    });
+    window.addEventListener('resize',()=>setTimeout(fit,80));
+  }catch(e){
+    fr.outerHTML='<p style="padding:20px;color:var(--paper-dim);font-family:var(--mono);font-size:12px">Panel failed to load.</p>';
+  }
+}
+const VAX_B64="PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KPGhlYWQ+CjxtZXRhIGNoYXJzZXQ9InV0Zi04Ij4KPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xIj4KPG1ldGEgbmFtZT0iY29sb3Itc2NoZW1lIiBjb250ZW50PSJkYXJrIj4KPG1ldGEgbmFtZT0iZGFya3JlYWRlci1sb2NrIj4KPHRpdGxlPldlc3Rib3VuZCDigJQgVmFjY2luYXRpb24gcGxhbjwvdGl0bGU+CjxsaW5rIHJlbD0icHJlY29ubmVjdCIgaHJlZj0iaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbSI+CjxsaW5rIHJlbD0icHJlY29ubmVjdCIgaHJlZj0iaHR0cHM6Ly9mb250cy5nc3RhdGljLmNvbSIgY3Jvc3NvcmlnaW4+CjxsaW5rIGhyZWY9Imh0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzMj9mYW1pbHk9QmlnK1Nob3VsZGVycytEaXNwbGF5OndnaHRANDAwOzYwMDs3MDA7ODAwJmZhbWlseT1JQk0rUGxleCtNb25vOndnaHRANDAwOzUwMCZmYW1pbHk9SW50ZXI6d2dodEA0MDA7NDUwOzYwMCZkaXNwbGF5PXN3YXAiIHJlbD0ic3R5bGVzaGVldCI+CjxzdHlsZT4KOnJvb3R7Y29sb3Itc2NoZW1lOmRhcms7CiAgLS1pbms6IzA1MTYxRDstLWluay0yOiMwQTIwMjk7LS1pbmstMzojMEUyQTM1OwogIC0tcnVsZTojMTk0MTUwOy0tcnVsZS1zb2Z0OnJnYmEoMjUsNjUsODAsLjU1KTsKICAtLXBhcGVyOiNFMkVFRUQ7LS1wYXBlci1kaW06I0E2QzJDNjstLW11dGVkOiM2QzhGOTg7CiAgLS1hbWJlcjojRjJBOTNDOy0tbWFnZW50YTojRTc2NDlCOy0tamFkZTojNThDNEEzOy0tcmVkOiNFMDU1NTU7CiAgLS1kaXNwbGF5OidCaWcgU2hvdWxkZXJzIERpc3BsYXknLEltcGFjdCxzYW5zLXNlcmlmOwogIC0tbW9ubzonSUJNIFBsZXggTW9ubycsdWktbW9ub3NwYWNlLE1lbmxvLG1vbm9zcGFjZTsKICAtLWJvZHk6J0ludGVyJyxzeXN0ZW0tdWksc2Fucy1zZXJpZjsKfQoqe2JveC1zaXppbmc6Ym9yZGVyLWJveH0KYm9keXttYXJnaW46MDtiYWNrZ3JvdW5kOnRyYW5zcGFyZW50O2NvbG9yOnZhcigtLXBhcGVyKTtmb250LWZhbWlseTp2YXIoLS1ib2R5KTtmb250LXNpemU6MTVweDtsaW5lLWhlaWdodDoxLjU1Oy13ZWJraXQtZm9udC1zbW9vdGhpbmc6YW50aWFsaWFzZWR9Ci53cmFwe21heC13aWR0aDpub25lO21hcmdpbjowO3BhZGRpbmc6MH0KCi53YXJuLWJveHtib3JkZXI6MXB4IHNvbGlkIHZhcigtLXJlZCk7YmFja2dyb3VuZDpyZ2JhKDIyNCw4NSw4NSwuMDgpO3BhZGRpbmc6MTRweCAxOHB4O21hcmdpbjowIDAgMThweDtib3JkZXItcmFkaXVzOjJweH0KLndhcm4tYm94IGJ7Zm9udC1mYW1pbHk6dmFyKC0tbW9ubyk7Zm9udC1zaXplOjEwcHg7bGV0dGVyLXNwYWNpbmc6LjE4ZW07dGV4dC10cmFuc2Zvcm06dXBwZXJjYXNlO2NvbG9yOnZhcigtLXJlZCk7ZGlzcGxheTpibG9jazttYXJnaW4tYm90dG9tOjZweH0KLndhcm4tYm94IHB7bWFyZ2luOjAgMCA4cHg7Zm9udC1zaXplOjEzLjVweDtjb2xvcjp2YXIoLS1wYXBlci1kaW0pO2xpbmUtaGVpZ2h0OjEuNn0KLndhcm4tYm94IHA6bGFzdC1jaGlsZHttYXJnaW4tYm90dG9tOjB9Ci53YXJuLWJveCBlbXtjb2xvcjp2YXIoLS1wYXBlcik7Zm9udC1zdHlsZTpub3JtYWw7Zm9udC13ZWlnaHQ6NjAwfQoKLnRvb2xiYXJ7ZGlzcGxheTpmbGV4O2ZsZXgtd3JhcDp3cmFwO2dhcDo5cHg7YWxpZ24taXRlbXM6Y2VudGVyO3BhZGRpbmc6MCAwIDE2cHg7Ym9yZGVyLWJvdHRvbToxcHggc29saWQgdmFyKC0tcnVsZS1zb2Z0KTttYXJnaW4tYm90dG9tOjJweH0KLnRidG57YWxsOnVuc2V0O2N1cnNvcjpwb2ludGVyO2ZvbnQtZmFtaWx5OnZhcigtLW1vbm8pO2ZvbnQtc2l6ZToxMC41cHg7bGV0dGVyLXNwYWNpbmc6LjE0ZW07dGV4dC10cmFuc2Zvcm06dXBwZXJjYXNlOwogIHBhZGRpbmc6OHB4IDEzcHg7Ym9yZGVyOjFweCBzb2xpZCB2YXIoLS1ydWxlKTtjb2xvcjp2YXIoLS1wYXBlci1kaW0pO2JvcmRlci1yYWRpdXM6MnB4O3RyYW5zaXRpb246LjE1c30KLnRidG46aG92ZXJ7YmFja2dyb3VuZDp2YXIoLS1pbmstMyk7Y29sb3I6dmFyKC0tcGFwZXIpfQoudGJ0blthcmlhLXByZXNzZWQ9InRydWUiXXtiYWNrZ3JvdW5kOnZhcigtLWFtYmVyKTtjb2xvcjp2YXIoLS1pbmspO2JvcmRlci1jb2xvcjp2YXIoLS1hbWJlcik7Zm9udC13ZWlnaHQ6NjAwfQouc3BhY2Vye2ZsZXg6MX0KLm1pbml7Zm9udC1mYW1pbHk6dmFyKC0tbW9ubyk7Zm9udC1zaXplOjExcHg7bGV0dGVyLXNwYWNpbmc6LjFlbTtjb2xvcjp2YXIoLS1tdXRlZCl9Ci5taW5pIGJ7Y29sb3I6dmFyKC0tYW1iZXIpO2ZvbnQtc2l6ZToxNXB4fQoKLnRhYmxld3JhcHtvdmVyZmxvdy14OmF1dG87LXdlYmtpdC1vdmVyZmxvdy1zY3JvbGxpbmc6dG91Y2h9CnRhYmxle3dpZHRoOjEwMCU7Ym9yZGVyLWNvbGxhcHNlOmNvbGxhcHNlO21pbi13aWR0aDo4MjBweH0KdGhlYWQgdGh7Zm9udC1mYW1pbHk6dmFyKC0tbW9ubyk7Zm9udC1zaXplOjlweDtsZXR0ZXItc3BhY2luZzouMTZlbTt0ZXh0LXRyYW5zZm9ybTp1cHBlcmNhc2U7Y29sb3I6dmFyKC0tbXV0ZWQpOwogIHRleHQtYWxpZ246bGVmdDtmb250LXdlaWdodDo1MDA7cGFkZGluZzoxNHB4IDEwcHggMTBweDtib3JkZXItYm90dG9tOjFweCBzb2xpZCB2YXIoLS1ydWxlKTt3aGl0ZS1zcGFjZTpub3dyYXB9CnRib2R5IHRke3BhZGRpbmc6MTFweCAxMHB4O2JvcmRlci1ib3R0b206MXB4IHNvbGlkIHZhcigtLXJ1bGUtc29mdCk7dmVydGljYWwtYWxpZ246dG9wO2ZvbnQtc2l6ZToxMy41cHh9CnRib2R5IHRyOmhvdmVye2JhY2tncm91bmQ6cmdiYSgyNDIsMTY5LDYwLC4wNCl9CnRib2R5IHRyLnJlcXtiYWNrZ3JvdW5kOnJnYmEoMjI0LDg1LDg1LC4wNyl9CnRib2R5IHRyLnJlcTpob3ZlcntiYWNrZ3JvdW5kOnJnYmEoMjI0LDg1LDg1LC4xMSl9Cgoudm5hbWV7Zm9udC1mYW1pbHk6dmFyKC0tbW9ubyk7Zm9udC1zaXplOjEzcHg7Zm9udC13ZWlnaHQ6NjAwO2NvbG9yOnZhcigtLXBhcGVyKTt3aGl0ZS1zcGFjZTpub3dyYXB9Ci52c3Vie2ZvbnQtc2l6ZToxMXB4O2NvbG9yOnZhcigtLW11dGVkKTttYXJnaW4tdG9wOjNweH0KLnBpbGx7ZGlzcGxheTppbmxpbmUtYmxvY2s7Zm9udC1mYW1pbHk6dmFyKC0tbW9ubyk7Zm9udC1zaXplOjkuNXB4O2xldHRlci1zcGFjaW5nOi4xZW07dGV4dC10cmFuc2Zvcm06dXBwZXJjYXNlOwogIHBhZGRpbmc6M3B4IDhweCAycHg7Ym9yZGVyLXJhZGl1czoycHg7d2hpdGUtc3BhY2U6bm93cmFwO2ZvbnQtd2VpZ2h0OjUwMH0KLnBpbGwucmVxe2JhY2tncm91bmQ6cmdiYSgyMjQsODUsODUsLjE0KTtjb2xvcjp2YXIoLS1yZWQpO2JvcmRlcjoxcHggc29saWQgcmdiYSgyMjQsODUsODUsLjQpfQoucGlsbC5yZWN7YmFja2dyb3VuZDpyZ2JhKDI0MiwxNjksNjAsLjEyKTtjb2xvcjp2YXIoLS1hbWJlcik7Ym9yZGVyOjFweCBzb2xpZCByZ2JhKDI0MiwxNjksNjAsLjMyKX0KLnBpbGwuZGlze2JhY2tncm91bmQ6cmdiYSg4OCwxOTYsMTYzLC4xMik7Y29sb3I6dmFyKC0tamFkZSk7Ym9yZGVyOjFweCBzb2xpZCByZ2JhKDg4LDE5NiwxNjMsLjMyKX0KLndoeXtmb250LXNpemU6MTIuNXB4O2NvbG9yOnZhcigtLXBhcGVyLWRpbSk7bGluZS1oZWlnaHQ6MS41O21pbi13aWR0aDoyMzBweH0KLnNjaGVke2ZvbnQtZmFtaWx5OnZhcigtLW1vbm8pO2ZvbnQtc2l6ZToxMnB4O2NvbG9yOnZhcigtLXBhcGVyLWRpbSk7d2hpdGUtc3BhY2U6bm93cmFwfQouc2NoZWQgYntjb2xvcjp2YXIoLS1wYXBlcil9Ci5zdG9wc3tmb250LXNpemU6MTEuNXB4O2NvbG9yOnZhcigtLW11dGVkKTtsaW5lLWhlaWdodDoxLjV9CgppbnB1dC5jaGt7d2lkdGg6MTZweDtoZWlnaHQ6MTZweDthY2NlbnQtY29sb3I6dmFyKC0tYW1iZXIpO2N1cnNvcjpwb2ludGVyfQoubm90ZXt3aWR0aDoxMDAlO21pbi13aWR0aDoxMjBweDtiYWNrZ3JvdW5kOnRyYW5zcGFyZW50O2JvcmRlcjpub25lO2JvcmRlci1ib3R0b206MXB4IGRhc2hlZCB2YXIoLS1ydWxlKTsKICBjb2xvcjp2YXIoLS1wYXBlci1kaW0pO2ZvbnQtZmFtaWx5OnZhcigtLWJvZHkpO2ZvbnQtc2l6ZToxMi41cHg7cGFkZGluZzo0cHggMnB4fQoubm90ZTpmb2N1c3tvdXRsaW5lOm5vbmU7Ym9yZGVyLWJvdHRvbS1jb2xvcjp2YXIoLS1hbWJlcik7Y29sb3I6dmFyKC0tcGFwZXIpfQoKLnRvdGFsc3tkaXNwbGF5OmdyaWQ7Z3JpZC10ZW1wbGF0ZS1jb2x1bW5zOnJlcGVhdChhdXRvLWZpdCxtaW5tYXgoMTUwcHgsMWZyKSk7Z2FwOjFweDtiYWNrZ3JvdW5kOnZhcigtLXJ1bGUpOwogIGJvcmRlcjoxcHggc29saWQgdmFyKC0tcnVsZSk7bWFyZ2luOjIycHggMH0KLnRvdHtiYWNrZ3JvdW5kOnZhcigtLWluay0yKTtwYWRkaW5nOjE1cHggMTdweH0KLnRvdCBkdHtmb250LWZhbWlseTp2YXIoLS1tb25vKTtmb250LXNpemU6OXB4O2xldHRlci1zcGFjaW5nOi4xOGVtO3RleHQtdHJhbnNmb3JtOnVwcGVyY2FzZTtjb2xvcjp2YXIoLS1tdXRlZCk7bWFyZ2luOjAgMCA2cHh9Ci50b3QgZGR7bWFyZ2luOjA7Zm9udC1mYW1pbHk6dmFyKC0tZGlzcGxheSk7Zm9udC13ZWlnaHQ6NzAwO2ZvbnQtc2l6ZToyOHB4O2xpbmUtaGVpZ2h0OjF9Ci50b3QuYmlnIGRke2NvbG9yOnZhcigtLWFtYmVyKX0KLnRvdCBkZCBzbWFsbHtmb250LWZhbWlseTp2YXIoLS1tb25vKTtmb250LXNpemU6MTBweDtmb250LXdlaWdodDo0MDA7Y29sb3I6dmFyKC0tcGFwZXItZGltKTttYXJnaW4tbGVmdDozcHh9CgpoMy5zdWJ7Zm9udC1mYW1pbHk6dmFyKC0tZGlzcGxheSk7Zm9udC13ZWlnaHQ6NzAwO3RleHQtdHJhbnNmb3JtOnVwcGVyY2FzZTtmb250LXNpemU6MjJweDttYXJnaW46MjZweCAwIDhweDtsaW5lLWhlaWdodDoxfQoubGVkZTJ7Y29sb3I6dmFyKC0tcGFwZXItZGltKTtmb250LXNpemU6MTMuNXB4O21heC13aWR0aDo3NGNoO21hcmdpbjowIDAgMTRweH0KLmNhcmRze2Rpc3BsYXk6Z3JpZDtnYXA6MTJweDtncmlkLXRlbXBsYXRlLWNvbHVtbnM6cmVwZWF0KGF1dG8tZml0LG1pbm1heCgyODBweCwxZnIpKX0KLmNhcmR7Ym9yZGVyOjFweCBzb2xpZCB2YXIoLS1ydWxlKTtiYWNrZ3JvdW5kOnZhcigtLWluay0yKTtwYWRkaW5nOjE2cHggMThweH0KLmNhcmQuYmFke2JvcmRlci1jb2xvcjp2YXIoLS1yZWQpfQouY2FyZCBoNHtmb250LWZhbWlseTp2YXIoLS1tb25vKTtmb250LXNpemU6MTAuNXB4O2xldHRlci1zcGFjaW5nOi4xMmVtO3RleHQtdHJhbnNmb3JtOnVwcGVyY2FzZTttYXJnaW46MCAwIDhweDtjb2xvcjp2YXIoLS1wYXBlcil9Ci5jYXJkIHB7bWFyZ2luOjAgMCA5cHg7Zm9udC1zaXplOjEyLjVweDtjb2xvcjp2YXIoLS1wYXBlci1kaW0pO2xpbmUtaGVpZ2h0OjEuNn0KLmNhcmQgcDpsYXN0LWNoaWxke21hcmdpbi1ib3R0b206MH0KLmNhcmQgYntjb2xvcjp2YXIoLS1wYXBlcil9Cjwvc3R5bGU+CjwvaGVhZD4KPGJvZHk+CjxkaXYgY2xhc3M9IndyYXAiPgoKPGRpdiBjbGFzcz0id2Fybi1ib3giPgogIDxiPk5vdCBtZWRpY2FsIGFkdmljZTwvYj4KICA8cD5UaGlzIGlzIGEgcGxhbm5pbmcgY2hlY2tsaXN0LCBub3QgYSBwcmVzY3JpcHRpb24uIEEgdHJhdmVsLWhlYWx0aCBjbGluaWNpYW4gZGVjaWRlcyB3aGF0IHlvdSBhY3R1YWxseSBuZWVkIGJhc2VkIG9uIHlvdXIgaGlzdG9yeSwgeW91ciBleGFjdCBkYXRlcyBhbmQgY3VycmVudCBvdXRicmVhayBkYXRhLiBDb3N0cyBhcmUgPGVtPnJvdWdoIENhbmFkaWFuIGVzdGltYXRlcyBwZXIgcGVyc29uPC9lbT4gYW5kIHZhcnkgYSBsb3QgYmV0d2VlbiBjbGluaWNzLjwvcD4KICA8cD5UaGUgb25lIGhhcmQgcnVsZSBvbiB0aGlzIHJvdXRlOiA8ZW0+eWVsbG93IGZldmVyPC9lbT4uIFRhbnphbmlhIGlzIGEgcmlzayBjb3VudHJ5LCBhbmQgU291dGggQWZyaWNhIGNoZWNrcyB0aGUgY2VydGlmaWNhdGUgb24gYXJyaXZhbCBmcm9tIG9uZS4gTm8gY2FyZCBjYW4gbWVhbiBubyBlbnRyeS48L3A+CjwvZGl2PgoKPGRpdiBjbGFzcz0idG9vbGJhciI+CiAgPGJ1dHRvbiBjbGFzcz0idGJ0biIgZGF0YS1mPSJhbGwiIGFyaWEtcHJlc3NlZD0idHJ1ZSI+QWxsPC9idXR0b24+CiAgPGJ1dHRvbiBjbGFzcz0idGJ0biIgZGF0YS1mPSJyZXEiIGFyaWEtcHJlc3NlZD0iZmFsc2UiPlJlcXVpcmVkPC9idXR0b24+CiAgPGJ1dHRvbiBjbGFzcz0idGJ0biIgZGF0YS1mPSJyZWMiIGFyaWEtcHJlc3NlZD0iZmFsc2UiPlJlY29tbWVuZGVkPC9idXR0b24+CiAgPGJ1dHRvbiBjbGFzcz0idGJ0biIgZGF0YS1mPSJkaXMiIGFyaWEtcHJlc3NlZD0iZmFsc2UiPkRpc2N1c3M8L2J1dHRvbj4KICA8c3BhbiBjbGFzcz0ic3BhY2VyIj48L3NwYW4+CiAgPHNwYW4gY2xhc3M9Im1pbmkiPkRvbmU6IDxiIGlkPSJtaW5pRG9uZSI+MDwvYj4vPHNwYW4gaWQ9Im1pbmlUb3QiPjA8L3NwYW4+IMK3IEVzdC4gPGIgaWQ9Im1pbmlDb3N0Ij4kMDwvYj48L3NwYW4+CiAgPGJ1dHRvbiBjbGFzcz0idGJ0biIgaWQ9ImNsZWFyQnRuIj5SZXNldDwvYnV0dG9uPgo8L2Rpdj4KCjxkaXYgY2xhc3M9InRhYmxld3JhcCI+Cjx0YWJsZT4KPHRoZWFkPjx0cj4KICA8dGg+4pyTPC90aD48dGg+VmFjY2luZTwvdGg+PHRoPlN0YXR1czwvdGg+PHRoPldoeSwgZm9yIHRoaXMgcm91dGU8L3RoPjx0aD5TY2hlZHVsZTwvdGg+PHRoPkVzdC4gY29zdDwvdGg+PHRoPk5vdGVzPC90aD4KPC90cj48L3RoZWFkPgo8dGJvZHkgaWQ9InJvd3MiPjwvdGJvZHk+CjwvdGFibGU+CjwvZGl2PgoKPGRsIGNsYXNzPSJ0b3RhbHMiPgogIDxkaXYgY2xhc3M9InRvdCI+PGR0PkRvc2VzIHRvIGJvb2s8L2R0PjxkZCBpZD0idERvc2VzIj48L2RkPjwvZGl2PgogIDxkaXYgY2xhc3M9InRvdCI+PGR0Pkxvbmdlc3QgbGVhZCB0aW1lPC9kdD48ZGQgaWQ9InRMZWFkIj48L2RkPjwvZGl2PgogIDxkaXYgY2xhc3M9InRvdCBiaWciPjxkdD5Fc3QuIGNvc3QsIHR3byBwZW9wbGU8L2R0PjxkZCBpZD0idENvc3QiPjwvZGQ+PC9kaXY+CiAgPGRpdiBjbGFzcz0idG90Ij48ZHQ+Qm9vayBjbGluaWMgYnk8L2R0PjxkZCBpZD0idEJvb2siPjwvZGQ+PC9kaXY+CjwvZGw+Cgo8aDMgY2xhc3M9InN1YiI+VGhlIHRocmVlIHRoYXQgbmVlZCBwbGFubmluZzwvaDM+CjxwIGNsYXNzPSJsZWRlMiI+TW9zdCBvZiB0aGlzIGxpc3QgaXMgb25lIGFwcG9pbnRtZW50LiBUaGVzZSB0aHJlZSBhcmVuJ3QuPC9wPgo8ZGl2IGNsYXNzPSJjYXJkcyIgaWQ9ImFuYWx5c2lzIj48L2Rpdj4KCjwvZGl2PgoKPHNjcmlwdD4KLyogc3RhdHVzOiByZXEgPSBlbnRyeSByZXF1aXJlbWVudCwgcmVjID0gc3Ryb25nbHkgcmVjb21tZW5kZWQsIGRpcyA9IGRpc2N1c3Mgd2l0aCBjbGluaWNpYW4KICAgY29zdDogcm91Z2ggQ0FEIHBlciBwZXJzb24sIHdob2xlIGNvdXJzZSAqLwpjb25zdCBWQVg9Wwp7bmFtZTonWWVsbG93IGZldmVyJyxzdWI6J0lDVlAgY2VydGlmaWNhdGUnLHN0YXR1czoncmVxJywKIHdoeTonVGFuemFuaWEgaXMgYSByaXNrIGNvdW50cnkgYW5kIDxiPlNvdXRoIEFmcmljYSBjaGVja3MgdGhlIGNlcnRpZmljYXRlPC9iPiBvbiBhcnJpdmFsIGZyb20gb25lLiBUaGlzIGlzIGFuIGVudHJ5IHJlcXVpcmVtZW50LCBub3QgYSBoZWFsdGggc3VnZ2VzdGlvbi4nLAogc2NoZWQ6JzEgZG9zZSDCtyA8Yj7iiaUxMCBkYXlzPC9iPiBiZWZvcmUgVGFuemFuaWEnLGNvc3Q6MTc1LAogc3RvcHM6J1RhbnphbmlhIOKGkiBTb3V0aCBBZnJpY2EnLAogbm90ZTonRGVzaWduYXRlZCBjZW50cmVzIG9ubHkg4oCUIGNvbmZpcm0gd2hlbiBib29raW5nJ30sCgp7bmFtZTonUm91dGluZSBib29zdGVycycsc3ViOidUZGFwLCBNTVIsIHBvbGlvLCB2YXJpY2VsbGEnLHN0YXR1czoncmVxJywKIHdoeTonQmFzZWxpbmUgY292ZXIgYXNzdW1lZCBieSBldmVyeSB0cmF2ZWwgY2xpbmljIGJlZm9yZSB0aGV5IGFkZCBhbnl0aGluZyBlbHNlLiBQb2xpbyBib29zdGVycyBtYXR0ZXIgZm9yIHNldmVyYWwgc3RvcHMgb24gdGhpcyByb3V0ZS4nLAogc2NoZWQ6J1RvcC11cHMgYXMgbmVlZGVkJyxjb3N0OjYwLHN0b3BzOidFdmVyeXdoZXJlJyxub3RlOidCcmluZyB5b3VyIGNoaWxkaG9vZCByZWNvcmQnfSwKCntuYW1lOidIZXBhdGl0aXMgQScsc3ViOicnLHN0YXR1czoncmVjJywKIHdoeTonRm9vZCBhbmQgd2F0ZXIgdHJhbnNtaXNzaW9uLiBSZWxldmFudCBhY3Jvc3MgYWxtb3N0IHRoZSB3aG9sZSByb3V0ZSDigJQgU291dGhlYXN0IEFzaWEsIFNvdXRoIEFzaWEsIEVneXB0LCBUYW56YW5pYS4nLAogc2NoZWQ6JzIgZG9zZXMgwrcgMCBhbmQgNuKAkzEyIG1vbnRocycsY29zdDoxMzAsCiBzdG9wczonMjIgb2YgMjcgY291bnRyaWVzJyxub3RlOidEb3NlIDEgZ2l2ZXMgZ29vZCBjb3ZlcjsgZG9zZSAyIGNhbiB3YWl0J30sCgp7bmFtZTonSGVwYXRpdGlzIEInLHN1YjonJyxzdGF0dXM6J3JlYycsCiB3aHk6J1N0YW5kYXJkIGZvciBsb25nIHRyaXBzLiBDb3ZlcnMgbWVkaWNhbCBleHBvc3VyZSBhbnl3aGVyZSBjYXJlIGlzIG5lZWRlZCB1bmV4cGVjdGVkbHkuJywKIHNjaGVkOiczIGRvc2VzIMK3IDAsIDEsIDYgbW9udGhzIChhY2NlbGVyYXRlZCBhdmFpbGFibGUpJyxjb3N0OjE1MCwKIHN0b3BzOidXaG9sZSB0cmlwJyxub3RlOidBc2sgYWJvdXQgdGhlIGFjY2VsZXJhdGVkIHNjaGVkdWxlJ30sCgp7bmFtZTonVHlwaG9pZCcsc3ViOicnLHN0YXR1czoncmVjJywKIHdoeTonRm9vZCBhbmQgd2F0ZXIuIEhpZ2hlc3QgcmVsZXZhbmNlIGluIDxiPkluZGlhLCBOZXBhbCwgU3JpIExhbmthPC9iPiBhbmQgQ2FtYm9kaWEuJywKIHNjaGVkOicxIGRvc2UgwrcgMiB3ZWVrcyBiZWZvcmUnLGNvc3Q6OTAsCiBzdG9wczonSW5kaWEsIE5lcGFsLCBTcmkgTGFua2EsIENhbWJvZGlhLCBMYW9zJyxub3RlOidPcmFsIG9yIGluamVjdGVkIOKAlCBhc2sgd2hpY2ggc3VpdHMnfSwKCntuYW1lOidSYWJpZXMnLHN1YjonUHJlLWV4cG9zdXJlJyxzdGF0dXM6J2RpcycsCiB3aHk6J0RvZXMgbm90IG1ha2UgeW91IGltbXVuZS4gSXQgcmVtb3ZlcyB0aGUgbmVlZCBmb3IgPGI+aW1tdW5vZ2xvYnVsaW48L2I+LCB3aGljaCBpcyBzY2FyY2Ugb3V0c2lkZSBtYWpvciBjaXRpZXMgaW4gSW5kaWEgYW5kIE5lcGFsIOKAlCB0aGF0IGlzIHRoZSByZWFsIHJlYXNvbiB0byBjb25zaWRlciBpdC4nLAogc2NoZWQ6JzMgZG9zZXMgwrcgb3ZlciAyMeKAkzI4IGRheXMnLGNvc3Q6MzUwLAogc3RvcHM6J0luZGlhLCBOZXBhbCwgU3JpIExhbmthLCBDYW1ib2RpYSwgTGFvcywgQmFsaScsbm90ZTonQXNrIGFib3V0IHRoZSBjaGVhcGVyIGludHJhZGVybWFsIHNjaGVkdWxlJ30sCgp7bmFtZTonSmFwYW5lc2UgZW5jZXBoYWxpdGlzJyxzdWI6Jycsc3RhdHVzOidkaXMnLAogd2h5OidVc3VhbGx5IHJlc2VydmVkIGZvciBsb25nIHJ1cmFsIHN0YXlzIGluIG1vbnNvb24gc2Vhc29uLiBZb3VyIEFzaWFuIHN0b3BzIGFyZSBzaG9ydCwgdXJiYW4gYW5kIG1vc3RseSBkcnktc2Vhc29uIOKAlCBsaWtlbHkgc2tpcHBhYmxlLicsCiBzY2hlZDonMiBkb3NlcyDCtyAyOCBkYXlzIGFwYXJ0Jyxjb3N0OjQwMCwKIHN0b3BzOidWaWV0bmFtLCBMYW9zLCBDYW1ib2RpYSwgTmVwYWwsIEJhbGknLG5vdGU6J01vc3QgbGlrZWx5IHRvIGJlIGRlY2xpbmVkIGJ5IHRoZSBjbGluaWMnfSwKCntuYW1lOidNZW5pbmdvY29jY2FsIEFDV1knLHN1YjonJyxzdGF0dXM6J2RpcycsCiB3aHk6J1NhdWRpIEFyYWJpYSByZXF1aXJlcyBwcm9vZiBmb3IgSGFqaiBhbmQgVW1yYWggcGlsZ3JpbXMuIENvbmZpcm0gd2hldGhlciB5b3VyIDxiPnRvdXJpc3Q8L2I+IGUtdmlzYSB0cmlnZ2VycyB0aGUgc2FtZSByZXF1aXJlbWVudC4nLAogc2NoZWQ6JzEgZG9zZSDCtyAxMCBkYXlzIGJlZm9yZScsY29zdDoxMzAsCiBzdG9wczonU2F1ZGkgQXJhYmlhJyxub3RlOidWZXJpZnkgYWdhaW5zdCBjdXJyZW50IFNhdWRpIGVudHJ5IHJ1bGVzJ30sCgp7bmFtZTonTWFsYXJpYSBwcm9waHlsYXhpcycsc3ViOidUYWJsZXRzLCBub3QgYSB2YWNjaW5lJyxzdGF0dXM6J3JlcScsCiB3aHk6JzxiPlphbnppYmFyIGhhcyByZWFsIHRyYW5zbWlzc2lvbi48L2I+IEFsc28gcmVsZXZhbnQgaW4gcnVyYWwgQ2FtYm9kaWEsIExhb3MgYW5kIHBhcnRzIG9mIEluZGlhLiBEcnVnIGNob2ljZSBkZXBlbmRzIG9uIHdoZXJlIGFuZCBob3cgbG9uZy4nLAogc2NoZWQ6J1N0YXJ0IGJlZm9yZSBhcnJpdmFsIMK3IGNvbnRpbnVlIGFmdGVyJyxjb3N0OjEyMCwKIHN0b3BzOidUYW56YW5pYSwgQ2FtYm9kaWEsIExhb3MsIEluZGlhJyxub3RlOidEb3h5Y3ljbGluZSBpcyBjaGVhcGVzdCBidXQgY2F1c2VzIHN1biBzZW5zaXRpdml0eSd9LAoKe25hbWU6J0Nob2xlcmEgLyB0cmF2ZWxsZXJz4oCZIGRpYXJyaG9lYScsc3ViOidEdWtvcmFsJyxzdGF0dXM6J2RpcycsCiB3aHk6J01vZGVzdCBiZW5lZml0LiBTb21lIHRyYXZlbGxlcnMgdGFrZSBpdCBmb3IgbG9uZyB0cmlwcyB0aHJvdWdoIFNvdXRoIGFuZCBTb3V0aGVhc3QgQXNpYTsgbWFueSBjbGluaWNpYW5zIGNvbnNpZGVyIGl0IG9wdGlvbmFsLicsCiBzY2hlZDonMiBkb3NlcyDCtyAx4oCTNiB3ZWVrcyBhcGFydCcsY29zdDoxMDAsCiBzdG9wczonU291dGggJiBTb3V0aGVhc3QgQXNpYScsbm90ZTonTG93IHByaW9yaXR5IOKAlCBkZWNpZGUgd2l0aCB0aGUgY2xpbmljJ30KXTsKCmNvbnN0IEFOQUxZU0lTPVsKe3RpdGxlOidZZWxsb3cgZmV2ZXIgwrcgdGhlIG9uZSB0aGF0IGNhbiBzdG9wIHlvdSBib2FyZGluZycsYmFkOnRydWUsCiBib2R5OmA8cD5UYW56YW5pYSBzaXRzIG9uIHRoZSBXSE8gcmlzayBsaXN0LCBhbmQgPGI+U291dGggQWZyaWNhIHJlcXVpcmVzIHRoZSBjZXJ0aWZpY2F0ZSBmcm9tIGFueW9uZSBhcnJpdmluZyBmcm9tIGEgcmlzayBjb3VudHJ5PC9iPi4gWW91ciBaYW56aWJhciDihpIgQ2FwZSBUb3duIGxlZyBpcyBleGFjdGx5IHRoYXQgY3Jvc3NpbmcuPC9wPgogPHA+SXQgbXVzdCBiZSBnaXZlbiA8Yj5hdCBsZWFzdCAxMCBkYXlzIGJlZm9yZTwvYj4geW91IHJlYWNoIFNvdXRoIEFmcmljYSwgYW5kIHRoZSBjZXJ0aWZpY2F0ZSBpcyBub3cgdmFsaWQgZm9yIGxpZmUuIENhcnJ5IHRoZSBwaHlzaWNhbCB5ZWxsb3cgY2FyZCB3aXRoIHlvdXIgcGFzc3BvcnQg4oCUIGEgcGhvdG8gaXMgbm90IGFsd2F5cyBhY2NlcHRlZC48L3A+CiA8cD5JbiBDYW5hZGEgaXQgY2FuIG9ubHkgYmUgZ2l2ZW4gYXQgYSA8Yj5kZXNpZ25hdGVkIHllbGxvdyBmZXZlciBjZW50cmU8L2I+LCBhbmQgbm90IGV2ZXJ5IHRyYXZlbCBjbGluaWMgaG9sZHMgdGhhdCBkZXNpZ25hdGlvbi4gQXNrIG9uIHRoZSBwaG9uZSBiZWZvcmUgYm9va2luZyBhbnl0aGluZy48L3A+YH0sCgp7dGl0bGU6J1JhYmllcyDCtyBhIHN1cHBseSBwcm9ibGVtLCBub3QgYSBkaXNlYXNlIHJpc2snLGJhZDpmYWxzZSwKIGJvZHk6YDxwPkFjdHVhbCB0cmF2ZWxsZXIgZGVhdGhzIGFyZSB2ZXJ5IHJhcmUuIFdoYXQgaXMgbm90IHJhcmUgaXMgdGhlIHNjcmFtYmxlOiBhIHNjcmF0Y2ggZnJvbSBhIHN0cmVldCBkb2cgaW4gS2F0aG1hbmR1LCB0aGVuIHR3byBkYXlzIG9mIHBob25lIGNhbGxzIHRyeWluZyB0byBsb2NhdGUgaW1tdW5vZ2xvYnVsaW4uPC9wPgogPHA+UHJlLWV4cG9zdXJlIGRvZXMgbm90IHJlbW92ZSB0aGUgbmVlZCBmb3IgdHJlYXRtZW50IOKAlCBpdCByZW1vdmVzIHRoZSBuZWVkIGZvciA8Yj5pbW11bm9nbG9idWxpbiBzcGVjaWZpY2FsbHk8L2I+LCB3aGljaCBpcyB0aGUgcGFydCB0aGF0IGlzIGhhcmQgdG8gZmluZC4gQm9vc3RlcnMgYXJlIGF2YWlsYWJsZSBhbG1vc3QgYW55d2hlcmUuPC9wPgogPHA+V29ydGggaXQgaWYgeW91IHBsYW4gaGlraW5nIGluIE5lcGFsIG9yIHdpbGwgYmUgbmVhciB0ZW1wbGUgbW9ua2V5cy4gUmVhc29uYWJsZSB0byBza2lwIGlmIHlvdSBzdGF5IHVyYmFuIGFuZCBjYW4gcmVhY2ggYSBtYWpvciBjaXR5IHF1aWNrbHkuIEFzayBhYm91dCB0aGUgaW50cmFkZXJtYWwgc2NoZWR1bGUsIHdoaWNoIGNhbiBjdXQgdGhlIGNvc3Qgc3Vic3RhbnRpYWxseS48L3A+YH0sCgp7dGl0bGU6J1RpbWluZyDCtyB3aHkgQXVndXN0IDIwMjYnLGJhZDpmYWxzZSwKIGJvZHk6YDxwPlJhYmllcyBpcyB0aHJlZSBkb3NlcyBvdmVyIDIx4oCTMjggZGF5cyBhbmQgSmFwYW5lc2UgZW5jZXBoYWxpdGlzIGlzIHR3byBvdmVyIDI4LiBJZiB5b3UgZGVjaWRlIG9uIGVpdGhlciBpbiBTZXB0ZW1iZXIsIHlvdSBydW4gb3V0IG9mIHJ1bndheSBiZWZvcmUgYW4gT2N0b2JlciAxOCBkZXBhcnR1cmUuPC9wPgogPHA+Qm9vayB0aGUgY2xpbmljIGZvciA8Yj5lYXJseSBBdWd1c3QgMjAyNjwvYj4uIFRoYXQgbGVhdmVzIHJvb20gZm9yIGEgbXVsdGktZG9zZSBzZXJpZXMsIHRoZSAxMC1kYXkgeWVsbG93IGZldmVyIHdpbmRvdywgYW5kIGEgc2Vjb25kIGFwcG9pbnRtZW50IGlmIHNvbWV0aGluZyBpcyBvdXQgb2Ygc3RvY2suPC9wPgogPHA+QnJpbmcgdGhlIGZ1bGwgaXRpbmVyYXJ5IHdpdGggZGF0ZXMuIFRoZSBjbGluaWNpYW4gZGVjaWRlcyB0aGUgbGlzdCwgYW5kIGEgc2hvcnQgdXJiYW4gc3RvcCBpcyBhc3Nlc3NlZCB2ZXJ5IGRpZmZlcmVudGx5IGZyb20gYSBsb25nIHJ1cmFsIG9uZS48L3A+YH0KXTsKCmxldCBGSUxURVI9J2FsbCc7CmNvbnN0IEtFWT0nd2VzdGJvdW5kLXZheC12MSc7CmNvbnN0IGxvYWQ9KCk9Pnt0cnl7cmV0dXJuIEpTT04ucGFyc2UobG9jYWxTdG9yYWdlLmdldEl0ZW0oS0VZKXx8J3t9Jyl9Y2F0Y2h7cmV0dXJue319fTsKY29uc3Qgc2F2ZT1vPT57dHJ5e2xvY2FsU3RvcmFnZS5zZXRJdGVtKEtFWSxKU09OLnN0cmluZ2lmeShvKSl9Y2F0Y2h7fX07CmxldCBTVD1sb2FkKCk7CmNvbnN0IG1vbmV5PW49PickJytNYXRoLnJvdW5kKG4pLnRvTG9jYWxlU3RyaW5nKCdlbi1DQScpOwpjb25zdCBsYWJlbD17cmVxOidSZXF1aXJlZCcscmVjOidSZWNvbW1lbmRlZCcsZGlzOidEaXNjdXNzJ307CgpmdW5jdGlvbiByZW5kZXIoKXsKICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgncm93cycpLmlubmVySFRNTD1WQVgubWFwKCh2LGkpPT57CiAgICBpZihGSUxURVIhPT0nYWxsJyYmdi5zdGF0dXMhPT1GSUxURVIpcmV0dXJuICcnOwogICAgY29uc3Qgc3Q9U1Rbdi5uYW1lXXx8e307CiAgICByZXR1cm4gYDx0ciBjbGFzcz0iJHt2LnN0YXR1cz09PSdyZXEnPydyZXEnOicnfSI+CiAgICAgIDx0ZD48aW5wdXQgY2xhc3M9ImNoayIgdHlwZT0iY2hlY2tib3giIGRhdGEtaz0iJHt2Lm5hbWV9IiAke3N0LmQ/J2NoZWNrZWQnOicnfT48L3RkPgogICAgICA8dGQ+PGRpdiBjbGFzcz0idm5hbWUiPiR7di5uYW1lfTwvZGl2PiR7di5zdWI/YDxkaXYgY2xhc3M9InZzdWIiPiR7di5zdWJ9PC9kaXY+YDonJ308L3RkPgogICAgICA8dGQ+PHNwYW4gY2xhc3M9InBpbGwgJHt2LnN0YXR1c30iPiR7bGFiZWxbdi5zdGF0dXNdfTwvc3Bhbj48L3RkPgogICAgICA8dGQgY2xhc3M9IndoeSI+JHt2LndoeX08ZGl2IGNsYXNzPSJzdG9wcyI+JHt2LnN0b3BzfTwvZGl2PjwvdGQ+CiAgICAgIDx0ZCBjbGFzcz0ic2NoZWQiPiR7di5zY2hlZH08L3RkPgogICAgICA8dGQgY2xhc3M9InNjaGVkIj48Yj4ke21vbmV5KHYuY29zdCl9PC9iPjxkaXYgY2xhc3M9InZzdWIiPnBlciBwZXJzb248L2Rpdj48L3RkPgogICAgICA8dGQ+PGlucHV0IGNsYXNzPSJub3RlIiB0eXBlPSJ0ZXh0IiBwbGFjZWhvbGRlcj0iJHt2Lm5vdGV9IiB2YWx1ZT0iJHtzdC5ufHwnJ30iIGRhdGEtbj0iJHt2Lm5hbWV9Ij48L3RkPgogICAgPC90cj5gOwogIH0pLmpvaW4oJycpOwogIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoJy5jaGsnKS5mb3JFYWNoKGM9PmMuYWRkRXZlbnRMaXN0ZW5lcignY2hhbmdlJywoKT0+ewogICAgY29uc3Qgaz1jLmRhdGFzZXQuazsgU1Rba109U1Rba118fHt9OyBTVFtrXS5kPWMuY2hlY2tlZDsgc2F2ZShTVCk7IHRvdGFscygpOwogIH0pKTsKICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCcubm90ZScpLmZvckVhY2gobj0+bi5hZGRFdmVudExpc3RlbmVyKCdpbnB1dCcsKCk9PnsKICAgIGNvbnN0IGs9bi5kYXRhc2V0Lm47IFNUW2tdPVNUW2tdfHx7fTsgU1Rba10ubj1uLnZhbHVlOyBzYXZlKFNUKTsKICB9KSk7CiAgdG90YWxzKCk7Cn0KCmZ1bmN0aW9uIHRvdGFscygpewogIGxldCBkb25lPTAsY29zdD0wLGRvc2VzPTA7CiAgVkFYLmZvckVhY2godj0+ewogICAgaWYoU1Rbdi5uYW1lXSYmU1Rbdi5uYW1lXS5kKWRvbmUrKzsgZWxzZSBjb3N0Kz12LmNvc3Q7CiAgICBjb25zdCBtPXYuc2NoZWQubWF0Y2goL14oXGQrKVxzK2Rvc2VzPy8pOyBkb3Nlcys9bT9OdW1iZXIobVsxXSk6MTsKICB9KTsKICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnbWluaURvbmUnKS50ZXh0Q29udGVudD1kb25lOwogIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdtaW5pVG90JykudGV4dENvbnRlbnQ9VkFYLmxlbmd0aDsKICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnbWluaUNvc3QnKS50ZXh0Q29udGVudD1tb25leShjb3N0KjIpOwogIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0RG9zZXMnKS5pbm5lckhUTUw9ZG9zZXMrJzxzbWFsbD5pbmNsLiBib29zdGVyczwvc21hbGw+JzsKICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgndExlYWQnKS5pbm5lckhUTUw9JzI4PHNtYWxsPmRheXM8L3NtYWxsPic7CiAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3RDb3N0JykuaW5uZXJIVE1MPW1vbmV5KGNvc3QqMikrJzxzbWFsbD5DQUQ8L3NtYWxsPic7CiAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3RCb29rJykuaW5uZXJIVE1MPSdBdWc8c21hbGw+MjAyNjwvc21hbGw+JzsKfQoKZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2FuYWx5c2lzJykuaW5uZXJIVE1MPUFOQUxZU0lTLm1hcChhPT4KICBgPGRpdiBjbGFzcz0iY2FyZCAke2EuYmFkPydiYWQnOicnfSI+PGg0PiR7YS50aXRsZX08L2g0PiR7YS5ib2R5fTwvZGl2PmApLmpvaW4oJycpOwoKZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgnLnRidG5bZGF0YS1mXScpLmZvckVhY2goYj0+Yi5hZGRFdmVudExpc3RlbmVyKCdjbGljaycsKCk9PnsKICBGSUxURVI9Yi5kYXRhc2V0LmY7CiAgZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgnLnRidG5bZGF0YS1mXScpLmZvckVhY2goeD0+eC5zZXRBdHRyaWJ1dGUoJ2FyaWEtcHJlc3NlZCcseD09PWI/J3RydWUnOidmYWxzZScpKTsKICByZW5kZXIoKTsKfSkpOwpkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnY2xlYXJCdG4nKS5hZGRFdmVudExpc3RlbmVyKCdjbGljaycsKCk9PnsKICBpZihjb25maXJtKCdDbGVhciBhbGwgdGlja3MgYW5kIG5vdGVzPycpKXtTVD17fTtzYXZlKFNUKTtyZW5kZXIoKTt9Cn0pOwoKcmVuZGVyKCk7Cjwvc2NyaXB0Pgo8L2JvZHk+CjwvaHRtbD4K";
+mountFrame('vaxframe',VAX_B64);
+
+/* ---- embedded flight planner ---- */
+const PLANNER_B64="PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KPGhlYWQ+CjxtZXRhIGNoYXJzZXQ9InV0Zi04Ij4KPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xIj4KPG1ldGEgbmFtZT0iY29sb3Itc2NoZW1lIiBjb250ZW50PSJkYXJrIj4KPG1ldGEgbmFtZT0iZGFya3JlYWRlci1sb2NrIj4KPHRpdGxlPldlc3Rib3VuZCDigJQgRmxpZ2h0IFBsYW5uZXI8L3RpdGxlPgo8bGluayByZWw9InByZWNvbm5lY3QiIGhyZWY9Imh0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20iPgo8bGluayByZWw9InByZWNvbm5lY3QiIGhyZWY9Imh0dHBzOi8vZm9udHMuZ3N0YXRpYy5jb20iIGNyb3Nzb3JpZ2luPgo8bGluayBocmVmPSJodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2NzczI/ZmFtaWx5PUJpZytTaG91bGRlcnMrRGlzcGxheTp3Z2h0QDYwMDs3MDA7ODAwJmZhbWlseT1JQk0rUGxleCtNb25vOndnaHRANDAwOzUwMDs2MDAmZmFtaWx5PUludGVyOndnaHRANDAwOzUwMDs2MDAmZGlzcGxheT1zd2FwIiByZWw9InN0eWxlc2hlZXQiPgo8c3R5bGU+Cjpyb290e2NvbG9yLXNjaGVtZTpkYXJrOwogIC0taW5rOiMwNTE2MUQ7LS1pbmstMjojMEEyMDI5Oy0taW5rLTM6IzBFMkEzNTsKICAtLXJ1bGU6IzE5NDE1MDstLXJ1bGUtc29mdDpyZ2JhKDI1LDY1LDgwLC41NSk7CiAgLS1wYXBlcjojRTJFRUVEOy0tcGFwZXItZGltOiNBNkMyQzY7LS1tdXRlZDojNkM4Rjk4OwogIC0tYW1iZXI6I0YyQTkzQzstLW1hZ2VudGE6I0U3NjQ5QjstLWphZGU6IzU4QzRBMzstLXJlZDojRTA1NTU1OwogIC0tZGlzcGxheTonQmlnIFNob3VsZGVycyBEaXNwbGF5JyxJbXBhY3Qsc2Fucy1zZXJpZjsKICAtLW1vbm86J0lCTSBQbGV4IE1vbm8nLHVpLW1vbm9zcGFjZSxNZW5sbyxtb25vc3BhY2U7CiAgLS1ib2R5OidJbnRlcicsc3lzdGVtLXVpLHNhbnMtc2VyaWY7CiAgLS1ndXQ6Y2xhbXAoMTRweCwzdncsNDRweCk7Cn0KKntib3gtc2l6aW5nOmJvcmRlci1ib3h9CmJvZHl7bWFyZ2luOjA7YmFja2dyb3VuZDp0cmFuc3BhcmVudDtjb2xvcjp2YXIoLS1wYXBlcik7Zm9udC1mYW1pbHk6dmFyKC0tYm9keSk7Zm9udC1zaXplOjE1cHg7bGluZS1oZWlnaHQ6MS41NTstd2Via2l0LWZvbnQtc21vb3RoaW5nOmFudGlhbGlhc2VkfQo6Zm9jdXMtdmlzaWJsZXtvdXRsaW5lOjJweCBzb2xpZCB2YXIoLS1hbWJlcik7b3V0bGluZS1vZmZzZXQ6MnB4fQoud3JhcHttYXgtd2lkdGg6bm9uZTttYXJnaW46MDtwYWRkaW5nLWlubGluZTowfQoKaGVhZGVye3BhZGRpbmctYmxvY2s6MCA0cHg7Ym9yZGVyLWJvdHRvbTowfQpoMXtmb250LWZhbWlseTp2YXIoLS1kaXNwbGF5KTtmb250LXdlaWdodDo4MDA7dGV4dC10cmFuc2Zvcm06dXBwZXJjYXNlO2ZvbnQtc2l6ZTpjbGFtcCgzNHB4LDZ2dyw2OHB4KTtsaW5lLWhlaWdodDouODg7bWFyZ2luOjAgMCAxMHB4fQpoMSBlbXtmb250LXN0eWxlOm5vcm1hbDtjb2xvcjp2YXIoLS1hbWJlcil9Ci5zdWJ7Zm9udC1mYW1pbHk6dmFyKC0tbW9ubyk7Zm9udC1zaXplOjExcHg7bGV0dGVyLXNwYWNpbmc6LjE2ZW07dGV4dC10cmFuc2Zvcm06dXBwZXJjYXNlO2NvbG9yOnZhcigtLW11dGVkKTttYXJnaW46MH0KCi53YXJuLWJveHtib3JkZXI6MXB4IHNvbGlkIHZhcigtLW1hZ2VudGEpO2JhY2tncm91bmQ6cmdiYSgyMzEsMTAwLDE1NSwuMDcpO3BhZGRpbmc6MTRweCAxOHB4O21hcmdpbjowIDAgNHB4O2JvcmRlci1yYWRpdXM6MnB4fQoud2Fybi1ib3ggYntmb250LWZhbWlseTp2YXIoLS1tb25vKTtmb250LXNpemU6MTBweDtsZXR0ZXItc3BhY2luZzouMThlbTt0ZXh0LXRyYW5zZm9ybTp1cHBlcmNhc2U7Y29sb3I6dmFyKC0tbWFnZW50YSk7ZGlzcGxheTpibG9jazttYXJnaW4tYm90dG9tOjZweH0KLndhcm4tYm94IHB7bWFyZ2luOjA7Zm9udC1zaXplOjEzLjVweDtjb2xvcjp2YXIoLS1wYXBlci1kaW0pO2xpbmUtaGVpZ2h0OjEuNn0KCi50b29sYmFye2Rpc3BsYXk6ZmxleDtmbGV4LXdyYXA6d3JhcDtnYXA6MTBweDthbGlnbi1pdGVtczpjZW50ZXI7cGFkZGluZzoxOHB4IDA7Ym9yZGVyLWJvdHRvbToxcHggc29saWQgdmFyKC0tcnVsZS1zb2Z0KX0KLnRidG57YWxsOnVuc2V0O2N1cnNvcjpwb2ludGVyO2ZvbnQtZmFtaWx5OnZhcigtLW1vbm8pO2ZvbnQtc2l6ZToxMC41cHg7bGV0dGVyLXNwYWNpbmc6LjE0ZW07dGV4dC10cmFuc2Zvcm06dXBwZXJjYXNlOwogIHBhZGRpbmc6OHB4IDE0cHg7Ym9yZGVyOjFweCBzb2xpZCB2YXIoLS1ydWxlKTtjb2xvcjp2YXIoLS1wYXBlci1kaW0pO2JvcmRlci1yYWRpdXM6MnB4O3RyYW5zaXRpb246LjE1c30KLnRidG46aG92ZXJ7YmFja2dyb3VuZDp2YXIoLS1pbmstMyk7Y29sb3I6dmFyKC0tcGFwZXIpfQoudGJ0blthcmlhLXByZXNzZWQ9InRydWUiXXtiYWNrZ3JvdW5kOnZhcigtLWFtYmVyKTtjb2xvcjp2YXIoLS1pbmspO2JvcmRlci1jb2xvcjp2YXIoLS1hbWJlcik7Zm9udC13ZWlnaHQ6NjAwfQouc3BhY2Vye2ZsZXg6MX0KLnRvdGFscy1taW5pe2ZvbnQtZmFtaWx5OnZhcigtLW1vbm8pO2ZvbnQtc2l6ZToxMXB4O2xldHRlci1zcGFjaW5nOi4xZW07Y29sb3I6dmFyKC0tbXV0ZWQpfQoudG90YWxzLW1pbmkgYntjb2xvcjp2YXIoLS1hbWJlcik7Zm9udC1zaXplOjE1cHh9CgovKiB0YWJsZSAqLwoudGFibGV3cmFwe292ZXJmbG93LXg6YXV0bzttYXJnaW4tdG9wOjRweDstd2Via2l0LW92ZXJmbG93LXNjcm9sbGluZzp0b3VjaH0KdGFibGV7d2lkdGg6MTAwJTtib3JkZXItY29sbGFwc2U6Y29sbGFwc2U7bWluLXdpZHRoOjEwODBweH0KdGhlYWQgdGh7Zm9udC1mYW1pbHk6dmFyKC0tbW9ubyk7Zm9udC1zaXplOjlweDtsZXR0ZXItc3BhY2luZzouMTZlbTt0ZXh0LXRyYW5zZm9ybTp1cHBlcmNhc2U7Y29sb3I6dmFyKC0tbXV0ZWQpOwogIHRleHQtYWxpZ246bGVmdDtmb250LXdlaWdodDo1MDA7cGFkZGluZzoxNHB4IDEwcHggMTBweDtib3JkZXItYm90dG9tOjFweCBzb2xpZCB2YXIoLS1ydWxlKTt3aGl0ZS1zcGFjZTpub3dyYXA7cG9zaXRpb246c3RpY2t5O3RvcDowO2JhY2tncm91bmQ6dmFyKC0taW5rKTt6LWluZGV4OjJ9CnRib2R5IHRke3BhZGRpbmc6MTFweCAxMHB4O2JvcmRlci1ib3R0b206MXB4IHNvbGlkIHZhcigtLXJ1bGUtc29mdCk7dmVydGljYWwtYWxpZ246dG9wO2ZvbnQtc2l6ZToxMy41cHh9CnRib2R5IHRyOmhvdmVye2JhY2tncm91bmQ6cmdiYSgyNDIsMTY5LDYwLC4wNCl9CnRib2R5IHRyLmhhcmR7YmFja2dyb3VuZDpyZ2JhKDIyNCw4NSw4NSwuMDYpfQp0Ym9keSB0ci5oYXJkOmhvdmVye2JhY2tncm91bmQ6cmdiYSgyMjQsODUsODUsLjEpfQoKLmxlZ3tmb250LWZhbWlseTp2YXIoLS1tb25vKTtmb250LXNpemU6MTNweDtmb250LXdlaWdodDo2MDA7Y29sb3I6dmFyKC0tcGFwZXIpO3doaXRlLXNwYWNlOm5vd3JhcH0KLmxlZyAuYXJ3e2NvbG9yOnZhcigtLXJ1bGUpO21hcmdpbjowIDNweH0KLmNpdGllc3tmb250LXNpemU6MTFweDtjb2xvcjp2YXIoLS1tdXRlZCk7bWFyZ2luLXRvcDozcHg7d2hpdGUtc3BhY2U6bm93cmFwfQoubnVte2ZvbnQtZmFtaWx5OnZhcigtLW1vbm8pO2ZvbnQtdmFyaWFudC1udW1lcmljOnRhYnVsYXItbnVtczt3aGl0ZS1zcGFjZTpub3dyYXA7Y29sb3I6dmFyKC0tcGFwZXItZGltKX0KLnBpbGx7ZGlzcGxheTppbmxpbmUtYmxvY2s7Zm9udC1mYW1pbHk6dmFyKC0tbW9ubyk7Zm9udC1zaXplOjkuNXB4O2xldHRlci1zcGFjaW5nOi4xZW07dGV4dC10cmFuc2Zvcm06dXBwZXJjYXNlOwogIHBhZGRpbmc6M3B4IDhweCAycHg7Ym9yZGVyLXJhZGl1czoycHg7d2hpdGUtc3BhY2U6bm93cmFwO2ZvbnQtd2VpZ2h0OjUwMH0KLnBpbGwubnN7YmFja2dyb3VuZDpyZ2JhKDg4LDE5NiwxNjMsLjE0KTtjb2xvcjp2YXIoLS1qYWRlKTtib3JkZXI6MXB4IHNvbGlkIHJnYmEoODgsMTk2LDE2MywuMzUpfQoucGlsbC5vbmV7YmFja2dyb3VuZDpyZ2JhKDI0MiwxNjksNjAsLjEyKTtjb2xvcjp2YXIoLS1hbWJlcik7Ym9yZGVyOjFweCBzb2xpZCByZ2JhKDI0MiwxNjksNjAsLjMpfQoucGlsbC50d297YmFja2dyb3VuZDpyZ2JhKDIyNCw4NSw4NSwuMTIpO2NvbG9yOnZhcigtLXJlZCk7Ym9yZGVyOjFweCBzb2xpZCByZ2JhKDIyNCw4NSw4NSwuMzUpfQouY2FycmllcnN7Zm9udC1zaXplOjExLjVweDtjb2xvcjp2YXIoLS1wYXBlci1kaW0pO2xpbmUtaGVpZ2h0OjEuNTttaW4td2lkdGg6MTgwcHh9Ci5jYXJyaWVycyAuaHVie2NvbG9yOnZhcigtLWFtYmVyKTtmb250LWZhbWlseTp2YXIoLS1tb25vKTtmb250LXNpemU6MTAuNXB4fQouZXN0e2ZvbnQtZmFtaWx5OnZhcigtLW1vbm8pO2ZvbnQtc2l6ZToxMi41cHg7Y29sb3I6dmFyKC0tcGFwZXItZGltKTt3aGl0ZS1zcGFjZTpub3dyYXB9Ci5lc3QgYntjb2xvcjp2YXIoLS1wYXBlcil9CgppbnB1dC5wcmljZXt3aWR0aDo5MnB4O2JhY2tncm91bmQ6dmFyKC0taW5rLTIpO2JvcmRlcjoxcHggc29saWQgdmFyKC0tcnVsZSk7Y29sb3I6dmFyKC0tYW1iZXIpOwogIGZvbnQtZmFtaWx5OnZhcigtLW1vbm8pO2ZvbnQtc2l6ZToxM3B4O3BhZGRpbmc6NnB4IDhweDtib3JkZXItcmFkaXVzOjJweDt0ZXh0LWFsaWduOnJpZ2h0fQppbnB1dC5wcmljZTo6cGxhY2Vob2xkZXJ7Y29sb3I6dmFyKC0tbXV0ZWQpO2ZvbnQtd2VpZ2h0OjQwMH0KaW5wdXQucHJpY2U6Zm9jdXN7b3V0bGluZToycHggc29saWQgdmFyKC0tYW1iZXIpO2JvcmRlci1jb2xvcjp0cmFuc3BhcmVudH0KLm5vdGV7d2lkdGg6MTAwJTttaW4td2lkdGg6MTUwcHg7YmFja2dyb3VuZDp0cmFuc3BhcmVudDtib3JkZXI6bm9uZTtib3JkZXItYm90dG9tOjFweCBkYXNoZWQgdmFyKC0tcnVsZSk7CiAgY29sb3I6dmFyKC0tcGFwZXItZGltKTtmb250LWZhbWlseTp2YXIoLS1ib2R5KTtmb250LXNpemU6MTIuNXB4O3BhZGRpbmc6NHB4IDJweH0KLm5vdGU6Zm9jdXN7b3V0bGluZTpub25lO2JvcmRlci1ib3R0b20tY29sb3I6dmFyKC0tYW1iZXIpO2NvbG9yOnZhcigtLXBhcGVyKX0KCi8qIHRvdGFscyAqLwoudG90YWxze2Rpc3BsYXk6Z3JpZDtncmlkLXRlbXBsYXRlLWNvbHVtbnM6cmVwZWF0KGF1dG8tZml0LG1pbm1heCgxNjBweCwxZnIpKTtnYXA6MXB4O2JhY2tncm91bmQ6dmFyKC0tcnVsZSk7CiAgYm9yZGVyOjFweCBzb2xpZCB2YXIoLS1ydWxlKTttYXJnaW46MjZweCAwfQoudG90e2JhY2tncm91bmQ6dmFyKC0taW5rLTIpO3BhZGRpbmc6MTZweCAxOHB4fQoudG90IGR0e2ZvbnQtZmFtaWx5OnZhcigtLW1vbm8pO2ZvbnQtc2l6ZTo5cHg7bGV0dGVyLXNwYWNpbmc6LjE4ZW07dGV4dC10cmFuc2Zvcm06dXBwZXJjYXNlO2NvbG9yOnZhcigtLW11dGVkKTttYXJnaW46MCAwIDZweH0KLnRvdCBkZHttYXJnaW46MDtmb250LWZhbWlseTp2YXIoLS1kaXNwbGF5KTtmb250LXdlaWdodDo3MDA7Zm9udC1zaXplOjMwcHg7bGluZS1oZWlnaHQ6MX0KLnRvdC5iaWcgZGR7Y29sb3I6dmFyKC0tYW1iZXIpfQoudG90IGRkIHNtYWxse2ZvbnQtZmFtaWx5OnZhcigtLW1vbm8pO2ZvbnQtc2l6ZToxMHB4O2ZvbnQtd2VpZ2h0OjQwMDtjb2xvcjp2YXIoLS1wYXBlci1kaW0pO21hcmdpbi1sZWZ0OjNweH0KCi8qIGFuYWx5c2lzIGNhcmRzICovCmgye2ZvbnQtZmFtaWx5OnZhcigtLWRpc3BsYXkpO2ZvbnQtd2VpZ2h0OjcwMDt0ZXh0LXRyYW5zZm9ybTp1cHBlcmNhc2U7Zm9udC1zaXplOmNsYW1wKDI0cHgsMy42dncsMzhweCk7bWFyZ2luOjM2cHggMCA2cHg7bGluZS1oZWlnaHQ6MX0KLmxlZGV7Y29sb3I6dmFyKC0tcGFwZXItZGltKTtmb250LXNpemU6MTRweDttYXgtd2lkdGg6NzRjaDttYXJnaW46MCAwIDE4cHh9Ci5jYXJkc3tkaXNwbGF5OmdyaWQ7Z2FwOjE0cHg7Z3JpZC10ZW1wbGF0ZS1jb2x1bW5zOnJlcGVhdChhdXRvLWZpdCxtaW5tYXgoMzIwcHgsMWZyKSk7bWFyZ2luLWJvdHRvbTozMHB4fQouY2FyZHtib3JkZXI6MXB4IHNvbGlkIHZhcigtLXJ1bGUpO2JhY2tncm91bmQ6dmFyKC0taW5rLTIpO3BhZGRpbmc6MThweCAyMHB4fQouY2FyZC5iYWR7Ym9yZGVyLWNvbG9yOnZhcigtLXJlZCl9Ci5jYXJkIGgze2ZvbnQtZmFtaWx5OnZhcigtLW1vbm8pO2ZvbnQtc2l6ZToxMXB4O2xldHRlci1zcGFjaW5nOi4xMmVtO3RleHQtdHJhbnNmb3JtOnVwcGVyY2FzZTttYXJnaW46MCAwIDRweDtjb2xvcjp2YXIoLS1wYXBlcil9Ci5jYXJkIC52ZXJkaWN0e2ZvbnQtZmFtaWx5OnZhcigtLW1vbm8pO2ZvbnQtc2l6ZTo5LjVweDtsZXR0ZXItc3BhY2luZzouMTRlbTt0ZXh0LXRyYW5zZm9ybTp1cHBlcmNhc2U7Y29sb3I6dmFyKC0tcmVkKTttYXJnaW4tYm90dG9tOjEwcHh9Ci5jYXJkIC52ZXJkaWN0Lm9re2NvbG9yOnZhcigtLWphZGUpfQouY2FyZCBwe21hcmdpbjowIDAgMTBweDtmb250LXNpemU6MTNweDtjb2xvcjp2YXIoLS1wYXBlci1kaW0pO2xpbmUtaGVpZ2h0OjEuNn0KLmNhcmQgcDpsYXN0LWNoaWxke21hcmdpbi1ib3R0b206MH0KLmNhcmQgLm9wdHtib3JkZXItbGVmdDoycHggc29saWQgdmFyKC0tYW1iZXIpO3BhZGRpbmctbGVmdDoxMnB4O21hcmdpbjoxMHB4IDA7Zm9udC1zaXplOjEyLjVweH0KLmNhcmQgLm9wdCBie2NvbG9yOnZhcigtLWFtYmVyKTtmb250LWZhbWlseTp2YXIoLS1tb25vKTtmb250LXNpemU6MTAuNXB4O2xldHRlci1zcGFjaW5nOi4wOGVtO2Rpc3BsYXk6YmxvY2s7bWFyZ2luLWJvdHRvbToycHh9Cgpmb290ZXJ7Ym9yZGVyLXRvcDoxcHggc29saWQgdmFyKC0tcnVsZSk7cGFkZGluZy1ibG9jazoyOHB4IDUwcHg7bWFyZ2luLXRvcDoyMHB4fQpmb290ZXIgcHtmb250LWZhbWlseTp2YXIoLS1tb25vKTtmb250LXNpemU6MTBweDtsZXR0ZXItc3BhY2luZzouMTJlbTt0ZXh0LXRyYW5zZm9ybTp1cHBlcmNhc2U7Y29sb3I6dmFyKC0tbXV0ZWQpO21hcmdpbjowIDAgNnB4fQo8L3N0eWxlPgo8L2hlYWQ+Cjxib2R5Pgo8ZGl2IGNsYXNzPSJ3cmFwIj4KCjxoZWFkZXI+CiAgPGRpdiBjbGFzcz0id2Fybi1ib3giPgogICAgPGI+UmVhZCB0aGlzIGZpcnN0PC9iPgogICAgPHA+UHJpY2VzIGhlcmUgYXJlIDxiPm1vZGVsbGVkIGVzdGltYXRlczwvYj4sIG5vdCBsaXZlIGZhcmVzIOKAlCB0aGlzIHRvb2wgaGFzIG5vIGJvb2tpbmcgZmVlZC4gRGlzdGFuY2VzIGFuZCBmbGlnaHQgdGltZXMgYXJlIGNvbXB1dGVkIGV4YWN0bHk7IG5vbi1zdG9wIGF2YWlsYWJpbGl0eSBhbmQgY2FycmllcnMgcmVmbGVjdCBrbm93biByb3V0ZXMgYnV0IGFpcmxpbmVzIGRyb3AgYW5kIGFkZCB0aGVzZSBjb25zdGFudGx5LCBzbyB2ZXJpZnkgZXZlcnkgb25lLiBVc2UgdGhlIDxiPkFjdHVhbDwvYj4gY29sdW1uIHRvIHBhc3RlIGluIHJlYWwgcXVvdGVzIGFzIHlvdSBmaW5kIHRoZW0g4oCUIHRvdGFscyB1cGRhdGUgbGl2ZSBhbmQgc2F2ZSBpbiB5b3VyIGJyb3dzZXIuPC9wPgogIDwvZGl2Pgo8L2hlYWRlcj4KCjxkaXYgY2xhc3M9InRvb2xiYXIiPgogIDxidXR0b24gY2xhc3M9InRidG4iIGRhdGEtdGllcj0iMCIgYXJpYS1wcmVzc2VkPSJmYWxzZSI+QnVkZ2V0PC9idXR0b24+CiAgPGJ1dHRvbiBjbGFzcz0idGJ0biIgZGF0YS10aWVyPSIxIiBhcmlhLXByZXNzZWQ9InRydWUiPk1lZGl1bTwvYnV0dG9uPgogIDxidXR0b24gY2xhc3M9InRidG4iIGRhdGEtdGllcj0iMiIgYXJpYS1wcmVzc2VkPSJmYWxzZSI+SGlnaDwvYnV0dG9uPgogIDxidXR0b24gY2xhc3M9InRidG4iIGlkPSJoYXJkT25seSIgYXJpYS1wcmVzc2VkPSJmYWxzZSI+UHJvYmxlbSBsZWdzIG9ubHk8L2J1dHRvbj4KICA8c3BhbiBjbGFzcz0ic3BhY2VyIj48L3NwYW4+CiAgPHNwYW4gY2xhc3M9InRvdGFscy1taW5pIj5FbnRlcmVkOiA8YiBpZD0ibWluaUVudGVyZWQiPjA8L2I+LzI3IMK3IFRvdGFsIDxiIGlkPSJtaW5pVG90YWwiPiQwPC9iPjwvc3Bhbj4KICA8YnV0dG9uIGNsYXNzPSJ0YnRuIiBpZD0iY2xlYXJCdG4iPkNsZWFyIGlucHV0czwvYnV0dG9uPgo8L2Rpdj4KCjxkaXYgY2xhc3M9InRhYmxld3JhcCI+Cjx0YWJsZT4KPHRoZWFkPjx0cj4KICA8dGg+IzwvdGg+PHRoPkxlZzwvdGg+PHRoPkRpc3RhbmNlPC90aD48dGg+VGltZTwvdGg+PHRoPlN0b3BzPC90aD4KICA8dGg+TGlrZWx5IHJvdXRpbmc8L3RoPjx0aD5Fc3QuIHJhbmdlPC90aD48dGg+QWN0dWFsPC90aD48dGg+Tm90ZXM8L3RoPgo8L3RyPjwvdGhlYWQ+Cjx0Ym9keSBpZD0icm93cyI+PC90Ym9keT4KPC90YWJsZT4KPC9kaXY+Cgo8ZGwgY2xhc3M9InRvdGFscyI+CiAgPGRpdiBjbGFzcz0idG90Ij48ZHQ+RXN0aW1hdGVkIHRvdGFsPC9kdD48ZGQgaWQ9InRFc3QiPjwvZGQ+PC9kaXY+CiAgPGRpdiBjbGFzcz0idG90Ij48ZHQ+QWN0dWFsIGVudGVyZWQ8L2R0PjxkZCBpZD0idEFjdCI+PC9kZD48L2Rpdj4KICA8ZGl2IGNsYXNzPSJ0b3QgYmlnIj48ZHQ+QmVzdCBjdXJyZW50IHRvdGFsPC9kdD48ZGQgaWQ9InRCZXN0Ij48L2RkPjwvZGl2PgogIDxkaXYgY2xhc3M9InRvdCI+PGR0PlRvdGFsIGRpc3RhbmNlPC9kdD48ZGQgaWQ9InRLbSI+PC9kZD48L2Rpdj4KICA8ZGl2IGNsYXNzPSJ0b3QiPjxkdD5UaW1lIGluIHRoZSBhaXI8L2R0PjxkZCBpZD0idEhycyI+PC9kZD48L2Rpdj4KPC9kbD4KCjxoMj5UaGUgcHJvYmxlbSBsZWdzPC9oMj4KPHAgY2xhc3M9ImxlZGUiPkVpZ2h0IGxlZ3MgY2FycnkgbW9zdCBvZiB0aGUgcmlzayBhbmQgY29zdC4gQWZyaWNhIGhhcyBwb29yIHBvaW50LXRvLXBvaW50IGNvbm5lY3Rpdml0eSwgdGhlIFNvdXRoZWFzdCBBc2lhIGxvb3AgbmVlZHMgdGhyZWUgY29ubmVjdGlvbnMsIGFuZCB0d28gbGVncyDigJQgQ2FwZSBUb3duIHRvIENhcGUgVmVyZGUsIGFuZCBLYXRobWFuZHUgdG8gU2luZ2Fwb3JlIOKAlCBpbnZvbHZlIGZseWluZyBhIGxvbmcgd2F5IGluIHRoZSB3cm9uZyBkaXJlY3Rpb24uPC9wPgoKPGRpdiBjbGFzcz0iY2FyZHMiIGlkPSJhbmFseXNpcyI+PC9kaXY+Cgo8L2Rpdj4KCjxzY3JpcHQ+Ci8qIC0tLS0tLS0tLS0gTEVHIERBVEEgLS0tLS0tLS0tLQogICBzdG9wczogMCA9IG5vbi1zdG9wIGV4aXN0cywgMSA9IG9uZSBjb25uZWN0aW9uLCAyID0gdHdvKyBjb25uZWN0aW9ucwogICBlc3Q6IFtidWRnZXQsIG1lZGl1bSwgaGlnaF0gb25lLXdheSBDQUQgZXN0aW1hdGUKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tICovCmNvbnN0IExFR1M9Wwp7ZjonWVlaJyx0OidITkQnLGZjOidUb3JvbnRvJyx0YzonVG9reW8nLGttOjEwMzQ2LHN0b3BzOjAsIHJvdXRlOidBaXIgQ2FuYWRhIG5vbi1zdG9wOyBBTkEvSkFMIHZpYSBVUyBodWJzJyxlc3Q6WzkwMCwxNTAwLDQyMDBdLG5vdGU6J0Jvb2sgNC02IG1vbnRocyBvdXQnfSwKe2Y6J0hORCcsdDonSUNOJyxmYzonVG9reW8nLHRjOidTZW91bCcsa206MTE2NCxzdG9wczowLCByb3V0ZTonS29yZWFuLCBBc2lhbmEsIEFOQSwgSkFMLCBMQ0NzJyxlc3Q6WzExMCwyMDAsNTIwXSxub3RlOicnfSwKe2Y6J0lDTicsdDonUFZHJyxmYzonU2VvdWwnLHRjOidTaGFuZ2hhaScsa206ODY1LHN0b3BzOjAsIHJvdXRlOidLb3JlYW4sIENoaW5hIEVhc3Rlcm4sIEFzaWFuYScsZXN0OlsxMjAsMjEwLDU0MF0sbm90ZTonQ2hpbmEgdmlzYSBuZWVkZWQgZmlyc3QnfSwKe2Y6J1BWRycsdDonQktLJyxmYzonU2hhbmdoYWknLHRjOidCYW5na29rJyxrbToyODkwLHN0b3BzOjAsIHJvdXRlOidUaGFpLCBDaGluYSBFYXN0ZXJuLCBTcHJpbmcsIEFpckFzaWEgLSBmcmVxdWVudCcsZXN0OlsxNjAsMjkwLDY4MF0sbm90ZTonUmVwbGFjZXMgdGhlIFRhaXdhbiBzdG9wJ30sCntmOidCS0snLHQ6J1BCSCcsZmM6J0Jhbmdrb2snLHRjOidQYXJvJyxrbToxOTA2LHN0b3BzOjAsaGFyZDp0cnVlLCByb3V0ZTonRHJ1a2FpciAvIEJodXRhbiBBaXJsaW5lcyBvbmx5IC0gbmVhci1kYWlseScsZXN0Ols0MjAsNjIwLDEwMDBdLG5vdGU6J09mdGVuIGEgdGVjaCBzdG9wIGF0IEd1d2FoYXRpIG9yIEJhZ2RvZ3JhJ30sCntmOidQQkgnLHQ6J0tUTScsZmM6J1Bhcm8nLHRjOidLYXRobWFuZHUnLGttOjQwNSxzdG9wczowLCByb3V0ZTonRHJ1a2FpciwgQmh1dGFuIEFpcmxpbmVzIC0gN3ggd2Vla2x5Jyxlc3Q6WzIyMCwzMzAsNjAwXSxub3RlOidTaXQgbGVmdCBmb3IgdGhlIEhpbWFsYXlhIHdhbGwnfSwKe2Y6J0tUTScsdDonU0lOJyxmYzonS2F0aG1hbmR1Jyx0YzonU2luZ2Fwb3JlJyxrbTozNTMyLHN0b3BzOjEsaGFyZDp0cnVlLCByb3V0ZTonVGhpbiBkaXJlY3Q7IHVzdWFsbHkgdmlhIDxzcGFuIGNsYXNzPSJodWIiPkJLSzwvc3Bhbj4sIDxzcGFuIGNsYXNzPSJodWIiPktVTDwvc3Bhbj4gb3IgPHNwYW4gY2xhc3M9Imh1YiI+REVMPC9zcGFuPicsZXN0OlszMjAsNTIwLDExMDBdLG5vdGU6J1RoZSBkZWxpYmVyYXRlIGVhc3R3YXJkIGpvZyAtIHNlZSBhbmFseXNpcyd9LAp7ZjonU0lOJyx0OidEUFMnLGZjOidTaW5nYXBvcmUnLHRjOidCYWxpJyxrbToxNjgzLHN0b3BzOjAsIHJvdXRlOidTaW5nYXBvcmUsIFNjb290LCBKZXRzdGFyLCBBaXJBc2lhJyxlc3Q6WzExMCwyMDAsNTIwXSxub3RlOidWZXJ5IGZyZXF1ZW50J30sCntmOidEUFMnLHQ6J01OTCcsZmM6J0JhbGknLHRjOidNYW5pbGEnLGttOjI2NjMsc3RvcHM6MSxoYXJkOnRydWUsIHJvdXRlOidSYXJlIHNlYXNvbmFsIGRpcmVjdDsgdmlhIDxzcGFuIGNsYXNzPSJodWIiPlNJTjwvc3Bhbj4sIDxzcGFuIGNsYXNzPSJodWIiPktVTDwvc3Bhbj4gb3IgPHNwYW4gY2xhc3M9Imh1YiI+SEtHPC9zcGFuPicsZXN0OlsyMjAsMzgwLDg1MF0sbm90ZTonQ2hlY2sgQ2VidSBQYWNpZmljIHNlYXNvbmFsJ30sCntmOidNTkwnLHQ6J0hLRycsZmM6J01hbmlsYScsdGM6J0hvbmcgS29uZycsa206MTEyMCxzdG9wczowLCByb3V0ZTonQ2F0aGF5LCBQaGlsaXBwaW5lLCBDZWJ1IFBhY2lmaWMgLSB2ZXJ5IGZyZXF1ZW50Jyxlc3Q6WzkwLDE3MCw0MzBdLG5vdGU6Jyd9LAp7ZjonSEtHJyx0OidIQU4nLGZjOidIb25nIEtvbmcnLHRjOidIYW5vaScsa206ODcxLHN0b3BzOjAsIHJvdXRlOidDYXRoYXksIFZpZXRuYW0gQWlybGluZXMsIEhLIEV4cHJlc3MnLGVzdDpbMTIwLDIxMCw1MjBdLG5vdGU6Jyd9LAp7ZjonSEFOJyx0OidMUFEnLGZjOidIYW5vaScsdGM6J0x1YW5nIFByYWJhbmcnLGttOjQwNyxzdG9wczowLCByb3V0ZTonVmlldG5hbSBBaXJsaW5lcywgTGFvIEFpcmxpbmVzJyxlc3Q6WzExMCwxOTAsMzgwXSxub3RlOidTbWFsbCBhaXJjcmFmdCd9LAp7ZjonTFBRJyx0OidSRVAnLGZjOidMdWFuZyBQcmFiYW5nJyx0YzonU2llbSBSZWFwJyxrbTo3NDksc3RvcHM6MSwgcm91dGU6J1VzdWFsbHkgdmlhIDxzcGFuIGNsYXNzPSJodWIiPlZURTwvc3Bhbj4gb3IgPHNwYW4gY2xhc3M9Imh1YiI+UE5IPC9zcGFuPicsZXN0OlsxNDAsMjQwLDQ4MF0sbm90ZTonTGFvIFNreXdheSBzZWFzb25hbCBkaXJlY3QnfSwKe2Y6J1JFUCcsdDonS1VMJyxmYzonU2llbSBSZWFwJyx0YzonS3VhbGEgTHVtcHVyJyxrbToxMTYxLHN0b3BzOjAsIHJvdXRlOidBaXJBc2lhIG5vbi1zdG9wJyxlc3Q6WzkwLDE2MCw0MDBdLG5vdGU6Jyd9LAp7ZjonS1VMJyx0OidDTUInLGZjOidLdWFsYSBMdW1wdXInLHRjOidDb2xvbWJvJyxrbToyNDU1LHN0b3BzOjAsIHJvdXRlOidTcmlMYW5rYW4sIEFpckFzaWEsIE1hbGF5c2lhIEFpcmxpbmVzJyxlc3Q6WzE4MCwzMDAsNzYwXSxub3RlOicnfSwKe2Y6J0NNQicsdDonTUxFJyxmYzonQ29sb21ibycsdGM6J01hbMOpJyxrbTo3NjUsc3RvcHM6MCwgcm91dGU6J1NyaUxhbmthbiBub24tc3RvcCwgZnJlcXVlbnQnLGVzdDpbMTMwLDIyMCw1MjBdLG5vdGU6Jyd9LAp7ZjonTUxFJyx0OidCT00nLGZjOidNYWzDqScsdGM6J011bWJhaScsa206MTY1OCxzdG9wczowLCByb3V0ZTonSW5kaUdvLCBTcGljZUpldCwgQWlyIEluZGlhJyxlc3Q6WzE1MCwyNjAsNjIwXSxub3RlOicnfSwKe2Y6J0JPTScsdDonRFhCJyxmYzonTXVtYmFpJyx0YzonRHViYWknLGttOjE5Mjgsc3RvcHM6MCwgcm91dGU6J0VtaXJhdGVzLCBJbmRpR28sIEFpciBJbmRpYSAtIHZlcnkgZnJlcXVlbnQnLGVzdDpbMTMwLDI0MCw2MjBdLG5vdGU6Jyd9LAp7ZjonRFhCJyx0OidNQ1QnLGZjOidEdWJhaScsdGM6J011c2NhdCcsa206MzYwLHN0b3BzOjAsIHJvdXRlOidPbWFuIEFpciwgRW1pcmF0ZXMsIGZseWR1YmFpJyxlc3Q6WzgwLDE1MCw0MjBdLG5vdGU6JzVoIGRyaXZlIGlzIG9mdGVuIGZhc3RlciBkb29yLXRvLWRvb3InfSwKe2Y6J01DVCcsdDonUlVIJyxmYzonTXVzY2F0Jyx0YzonUml5YWRoJyxrbToxMTk2LHN0b3BzOjAsIHJvdXRlOidPbWFuIEFpciwgU2F1ZGlhLCBmbHluYXMnLGVzdDpbMTIwLDIyMCw1NDBdLG5vdGU6Jyd9LAp7ZjonUlVIJyx0OidDQUknLGZjOidSaXlhZGgnLHRjOidDYWlybycsa206MTYzNCxzdG9wczowLCByb3V0ZTonU2F1ZGlhLCBFZ3lwdEFpciwgZmx5bmFzJyxlc3Q6WzE0MCwyNTAsNjAwXSxub3RlOicnfSwKe2Y6J0NBSScsdDonWk5aJyxmYzonQ2Fpcm8nLHRjOidaYW56aWJhcicsa206NDEyMSxzdG9wczoxLGhhcmQ6dHJ1ZSwgcm91dGU6J05vIG5vbi1zdG9wLiBWaWEgPHNwYW4gY2xhc3M9Imh1YiI+QUREPC9zcGFuPiAoRXRoaW9waWFuKSwgPHNwYW4gY2xhc3M9Imh1YiI+TkJPPC9zcGFuPiBvciA8c3BhbiBjbGFzcz0iaHViIj5ET0g8L3NwYW4+Jyxlc3Q6WzM4MCw2MjAsMTUwMF0sbm90ZTonRXRoaW9waWFuIHZpYSBBZGRpcyB1c3VhbGx5IGNoZWFwZXN0J30sCntmOidaTlonLHQ6J0NQVCcsZmM6J1phbnppYmFyJyx0YzonQ2FwZSBUb3duJyxrbTozNzUxLHN0b3BzOjEsaGFyZDp0cnVlLCByb3V0ZTonTm8gbm9uLXN0b3AuIFZpYSA8c3BhbiBjbGFzcz0iaHViIj5EQVI8L3NwYW4+ICsgPHNwYW4gY2xhc3M9Imh1YiI+Sk5CPC9zcGFuPiwgb3IgPHNwYW4gY2xhc3M9Imh1YiI+QUREPC9zcGFuPicsZXN0Ols0MjAsNzAwLDE2MDBdLG5vdGU6J09mdGVuIDIgc3RvcHMgaW4gcHJhY3RpY2UgLSBhIGxvbmcgZGF5J30sCntmOidDUFQnLHQ6J1JBSScsZmM6J0NhcGUgVG93bicsdGM6J1ByYWlhJyxrbTo3MDE0LHN0b3BzOjIsaGFyZDp0cnVlLCByb3V0ZTonTm8gQWZyaWNhbiByb3V0aW5nLiBSZWFsaXN0aWNhbGx5IDxzcGFuIGNsYXNzPSJodWIiPkxJUzwvc3Bhbj4gLSBmbGllcyBwYXN0IEV1cm9wZSBhbmQgYmFjaycsZXN0OlsxMTAwLDE4MDAsMzQwMF0sbm90ZTonVGhlIHdvcnN0IGxlZyBvbiB0aGUgdHJpcCAtIHNlZSBhbmFseXNpcyd9LAp7ZjonUkFJJyx0OidDTU4nLGZjOidQcmFpYScsdGM6J0Nhc2FibGFuY2EnLGttOjI2MTksc3RvcHM6MSxoYXJkOnRydWUsIHJvdXRlOidSb3lhbCBBaXIgTWFyb2Mgc2Vhc29uYWw7IG90aGVyd2lzZSB2aWEgPHNwYW4gY2xhc3M9Imh1YiI+TElTPC9zcGFuPiBvciA8c3BhbiBjbGFzcz0iaHViIj5ES1I8L3NwYW4+Jyxlc3Q6WzMyMCw1NDAsMTIwMF0sbm90ZTonVmVyaWZ5IFJBTSBzdGlsbCBmbGllcyB0aGlzJ30sCntmOidDTU4nLHQ6J0xJUycsZmM6J0Nhc2FibGFuY2EnLHRjOidMaXNib24nLGttOjU4OSxzdG9wczowLCByb3V0ZTonVEFQLCBSb3lhbCBBaXIgTWFyb2MgLSBmcmVxdWVudCcsZXN0Ols4MCwxNjAsNDIwXSxub3RlOicnfSwKe2Y6J0xJUycsdDonWVlaJyxmYzonTGlzYm9uJyx0YzonVG9yb250bycsa206NTc0MyxzdG9wczowLCByb3V0ZTonQWlyIENhbmFkYSwgVEFQIG5vbi1zdG9wJyxlc3Q6WzQ1MCw4MDAsMjYwMF0sbm90ZTonQm9vayB3aXRoIHRoZSBvdXRib3VuZCd9Cl07Cgpjb25zdCBBTkFMWVNJUz1bCnt0aXRsZTonQ1BUIOKGkiBSQUkgwrcgQ2FwZSBUb3duIHRvIENhcGUgVmVyZGUnLHZlcmRpY3Q6J1N0aWxsIHRoZSBicm9rZW4gb25lJyxiYWQ6dHJ1ZSwKIGJvZHk6YDxwPlRoZXJlIGlzIG5vIHNlbnNpYmxlIEFmcmljYW4gcm91dGluZyBiZXR3ZWVuIENhcGUgVG93biBhbmQgUHJhaWEuIENhcGUgVmVyZGUncyBhaXIgbGlua3MgcnVuIG5vcnRoIHRvIExpc2Jvbiwgbm90IGRvd24gdGhlIEFmcmljYW4gY29hc3QsIHNvIGluIHByYWN0aWNlIHlvdSBmbHkgPGI+Q2FwZSBUb3duIOKGkiBMaXNib24g4oaSIFByYWlhPC9iPiDigJQgcm91Z2hseSA4LDAwMCZuYnNwO2ttIG5vcnRoLCB0aGVuIDIsOTAwJm5ic3A7a20gYmFjayBzb3V0aC4gQWJvdXQgMTEsMDAwJm5ic3A7a20gb2YgZmx5aW5nIGZvciBhIDcsMDAwJm5ic3A7a20gZ2FwLCBhbmQgTGlzYm9uIGlzIHlvdXIgc2Vjb25kLXRvLWxhc3Qgc3RvcCBhbnl3YXkuPC9wPgogPGRpdiBjbGFzcz0ib3B0Ij48Yj5PcHRpb24gQSDigJQgcmVvcmRlcjwvYj5QdXQgQ2FwZSBWZXJkZSBiZXR3ZWVuIE1vcm9jY28gYW5kIFBvcnR1Z2FsOiBDUFQg4oaSIENNTiDihpIgUkFJIOKGkiBMSVMg4oaSIFlZWi4gUHJhaWHigJNMaXNib24gaXMgYSByZWFsLCBmcmVxdWVudCByb3V0ZSBhbmQgdGhlIGRvdWJsZS1iYWNrIGRpc2FwcGVhcnMuPC9kaXY+CiA8ZGl2IGNsYXNzPSJvcHQiPjxiPk9wdGlvbiBCIOKAlCBjdXQgaXQ8L2I+RHJvcHBpbmcgQ2FwZSBWZXJkZSByZW1vdmVzIHRoZSB0d28gd29yc3QgbGVncyBvbiB0aGUgaXRpbmVyYXJ5IGFuZCBzYXZlcyByb3VnaGx5ICQxLDQwMOKAkzMsMDAwIHBsdXMgdHdvIHRyYXZlbCBkYXlzLjwvZGl2PgogPGRpdiBjbGFzcz0ib3B0Ij48Yj5PcHRpb24gQyDigJQgYWNjZXB0IGl0PC9iPkJ1ZGdldCBhIGZ1bGwgdHJhdmVsIGRheSBhbmQgYSBMaXNib24gb3Zlcm5pZ2h0LjwvZGl2PmB9LAoKe3RpdGxlOidLVE0g4oaSIFNJTiDCtyBLYXRobWFuZHUgdG8gU2luZ2Fwb3JlJyx2ZXJkaWN0OidUaGUgZGVsaWJlcmF0ZSBiYWNrdHJhY2snLGJhZDp0cnVlLAogYm9keTpgPHA+VGhpcyBpcyB0aGUgMyw1MzAmbmJzcDtrbSBlYXN0d2FyZCBqb2cgY3JlYXRlZCBieSBwdXR0aW5nIEJodXRhbiBhbmQgTmVwYWwgZWFybHkuIERpcmVjdCBLYXRobWFuZHXigJNTaW5nYXBvcmUgc2VydmljZSBpcyB0aGluIGFuZCBjb21lcyBhbmQgZ29lczsgcmVhbGlzdGljYWxseSB5b3UgY29ubmVjdCB0aHJvdWdoIDxiPkJhbmdrb2s8L2I+IG9yIDxiPkt1YWxhIEx1bXB1cjwvYj4g4oCUIHdoaWNoIG1lYW5zIHBhc3NpbmcgYmFjayB0aHJvdWdoIEJhbmdrb2sgYWJvdXQgdGVuIGRheXMgYWZ0ZXIgbGVhdmluZyBpdC48L3A+CiA8cD5JdCBidXlzIHlvdSBCaHV0YW4gYW5kIE5lcGFsIGluIG1pZC1Ob3ZlbWJlciBpbnN0ZWFkIG9mIERlY2VtYmVyOiB3YXJtZXIgYXQgYWx0aXR1ZGUsIHBlYWsgdHJla2tpbmcgc2Vhc29uLCBhbmQgYSBnZW50bGVyIGFjY2xpbWF0aXNhdGlvbiBsYWRkZXIuIFRoYXQgd2FzIHRoZSB0cmFkZSB5b3UgY2hvc2UgZGVsaWJlcmF0ZWx5LjwvcD4KIDxwPlByaWNlIGl0IGFzIGEgY29ubmVjdGlvbiwgbm90IGEgaG9wLiBCdWRnZXQgYSBmdWxsIHRyYXZlbCBkYXkuPC9wPmB9LAoKe3RpdGxlOidCS0sg4oaSIFBCSCDCtyBCYW5na29rIHRvIFBhcm8nLHZlcmRpY3Q6J1lvdXIgQmh1dGFuIGdhdGV3YXknLGJhZDpmYWxzZSwKIGJvZHk6YDxwPk9ubHkgRHJ1a2FpciBhbmQgQmh1dGFuIEFpcmxpbmVzIGZseSBpbnRvIFBhcm8sIGFuZCBCYW5na29rIGlzIHRoZWlyIGJ1c2llc3QgaW50ZXJuYXRpb25hbCByb3V0ZSDigJQgbmVhci1kYWlseSwgd2hpY2ggaXMgd2h5IEJhbmdrb2sgc2l0cyBpbW1lZGlhdGVseSBiZWZvcmUgQmh1dGFuIGluIHRoZSByb3V0ZS48L3A+CiA8cD5Ud28gdGhpbmdzIHRvIGV4cGVjdDogZmxpZ2h0cyBmcm9tIEJhbmdrb2sgb2Z0ZW4gbWFrZSBhIDMw4oCTNDUgbWludXRlIHRlY2huaWNhbCBzdG9wIGF0IEd1d2FoYXRpIG9yIEJhZ2RvZ3JhIHdpdGggcGFzc2VuZ2VycyBzdGF5aW5nIG9uYm9hcmQsIGFuZCBQYXJvJ3MgYXBwcm9hY2ggaXMgdmlzdWFsLW9ubHkgc28gd2VhdGhlciBkZWxheXMgYXJlIGNvbW1vbi4gQm9vayBkaXJlY3RseSB3aXRoIHRoZSBhaXJsaW5lLCBhbmQgeW91ciBvcGVyYXRvciB3aWxsIHVzdWFsbHkgYXJyYW5nZSBpdCBhbG9uZ3NpZGUgdGhlIHZpc2EuPC9wPgogPHA+UmV0dXJuaW5nLCBQYXJv4oCTS2F0aG1hbmR1IHJ1bnMgN3ggd2Vla2x5IGFuZCB0YWtlcyBhYm91dCBhbiBob3VyIOKAlCB0aGUgc3Ryb25nZXN0IGxpbmsgaW4gdGhpcyBwYXJ0IG9mIHRoZSByb3V0ZS48L3A+YH0sCgp7dGl0bGU6J1RoZSBTb3V0aGVhc3QgQXNpYSBsb29wJyx2ZXJkaWN0OidDb25uZWN0aW9ucywgbm90IGRpc2FzdGVycycsYmFkOmZhbHNlLAogYm9keTpgPHA+UmVvcmRlcmluZyB0byBNYW5pbGEg4oaSIEhvbmcgS29uZyDihpIgSGFub2kg4oaSIEx1YW5nIFByYWJhbmcgdHVybmVkIHRocmVlIGF3a3dhcmQgY29ubmVjdGlvbnMgaW50byBkaXJlY3QgZmxpZ2h0cy4gT25seSA8Yj5CYWxpIOKGkiBNYW5pbGE8L2I+ICh2aWEgU2luZ2Fwb3JlLCBLTCBvciBIb25nIEtvbmcpIGFuZCA8Yj5MdWFuZyBQcmFiYW5nIOKGkiBTaWVtIFJlYXA8L2I+ICh2aWEgVmllbnRpYW5lIG9yIFBobm9tIFBlbmgpIHN0aWxsIG5lZWQgb25lLjwvcD4KIDxwPkV2ZXJ5dGhpbmcgZWxzZSBoZXJlIGlzIGEgY2hlYXAgTENDIGhvcCDigJQgU2luZ2Fwb3Jl4oCTQmFsaSwgU2llbSBSZWFw4oCTS0wgYW5kIEtM4oCTQ29sb21ibyBhcmUgYWxsIGZyZXF1ZW50IGFuZCBjb21wZXRpdGl2ZWx5IHByaWNlZC48L3A+YH0sCgp7dGl0bGU6J1pOWiDihpIgQ1BUIMK3IFphbnppYmFyIHRvIENhcGUgVG93bicsdmVyZGljdDonSGFyZCBidXQgd29ya2FibGUnLGJhZDpmYWxzZSwKIGJvZHk6YDxwPk5vIG5vbi1zdG9wIGV4aXN0cy4gVGhlIGNsZWFuIHZlcnNpb24gaXMgWmFuemliYXIg4oaSIERhciBlcyBTYWxhYW0g4oaSIEpvaGFubmVzYnVyZyDihpIgQ2FwZSBUb3duLCBvciBhIHNpbmdsZSBjb25uZWN0aW9uIG9uIEV0aGlvcGlhbiB2aWEgQWRkaXMuIEV4cGVjdCA54oCTMTMgaG91cnMgZG9vciB0byBkb29yIGVpdGhlciB3YXkuPC9wPgogPHA+QmVjYXVzZSBKb2hhbm5lc2J1cmcgaXMgdGhlIG5hdHVyYWwgY29ubmVjdGlvbiBwb2ludCwgY29uc2lkZXIgd2hldGhlciBhIG5pZ2h0IHRoZXJlIGVhcm5zIGl0cyBwbGFjZSByYXRoZXIgdGhhbiB0cmFuc2l0aW5nIHR3aWNlLjwvcD5gfSwKCnt0aXRsZTonQ0FJIOKGkiBaTlogwrcgQ2Fpcm8gdG8gWmFuemliYXInLHZlcmRpY3Q6J0ZpbmUgd2l0aCBhIGNvbm5lY3Rpb24nLGJhZDpmYWxzZSwKIGJvZHk6YDxwPkV0aGlvcGlhbiB2aWEgQWRkaXMgQWJhYmEgaXMgbm9ybWFsbHkgYm90aCBjaGVhcGVzdCBhbmQgZmFzdGVzdC4gS2VueWEgQWlyd2F5cyB2aWEgTmFpcm9iaSBhbHNvIHdvcmtzLiBHdWxmIGNhcnJpZXJzIHZpYSBEb2hhIG9yIER1YmFpIGV4aXN0IGJ1dCBiYWNrdHJhY2sgZWFzdCBhbmQgY29zdCBtb3JlLjwvcD4KIDxwPldvcnRoIG5vdGluZzogdGhpcyBpcyBvbmUgcGxhY2Ugd2hlcmUgYWRkaW5nIEtlbnlhIG9yIEV0aGlvcGlhIHRvIHRoZSBpdGluZXJhcnkgd291bGQgY29zdCBhbG1vc3Qgbm90aGluZyBpbiBhaXJmYXJlLCBzaW5jZSB5b3UncmUgYWxyZWFkeSBjb25uZWN0aW5nIHRocm91Z2ggb25lIG9mIHRoZW0uPC9wPmB9Cl07CgovKiAtLS0tLS0tLS0tIFNUQVRFIC0tLS0tLS0tLS0gKi8KbGV0IFRJRVI9MSwgSEFSRF9PTkxZPWZhbHNlOwpjb25zdCBLRVk9J3dlc3Rib3VuZC1mbGlnaHRzLXYyJzsKY29uc3QgbG9hZD0oKT0+e3RyeXtyZXR1cm4gSlNPTi5wYXJzZShsb2NhbFN0b3JhZ2UuZ2V0SXRlbShLRVkpfHwne30nKX1jYXRjaHtyZXR1cm57fX19Owpjb25zdCBzYXZlPW89Pnt0cnl7bG9jYWxTdG9yYWdlLnNldEl0ZW0oS0VZLEpTT04uc3RyaW5naWZ5KG8pKX1jYXRjaHt9fTsKbGV0IFNUPWxvYWQoKTsKCmNvbnN0IG1vbmV5PW49PickJytNYXRoLnJvdW5kKG4pLnRvTG9jYWxlU3RyaW5nKCdlbi1DQScpOwpjb25zdCBmdGltZT1rbT0+e2NvbnN0IHQ9a20vODAwKzAuNzU7Y29uc3QgaD1NYXRoLmZsb29yKHQpO2NvbnN0IG09TWF0aC5yb3VuZCgodC1oKSo2MCk7cmV0dXJuIGAke2h9aCAke1N0cmluZyhtKS5wYWRTdGFydCgyLCcwJyl9YH07CgovKiAtLS0tLS0tLS0tIFJFTkRFUiAtLS0tLS0tLS0tICovCmZ1bmN0aW9uIHJlbmRlcigpewogIGNvbnN0IGhvc3Q9ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3Jvd3MnKTsKICBob3N0LmlubmVySFRNTD1MRUdTLm1hcCgoTCxpKT0+ewogICAgaWYoSEFSRF9PTkxZICYmICFMLmhhcmQpIHJldHVybiAnJzsKICAgIGNvbnN0IGtleT1MLmYrJy0nK0wudDsKICAgIGNvbnN0IHZhbD1TVFtrZXldPy5wID8/ICcnOwogICAgY29uc3Qgbm90ZT1TVFtrZXldPy5uID8/ICcnOwogICAgY29uc3QgcGlsbD1MLnN0b3BzPT09MD8nPHNwYW4gY2xhc3M9InBpbGwgbnMiPk5vbi1zdG9wPC9zcGFuPicKICAgICAgOkwuc3RvcHM9PT0xPyc8c3BhbiBjbGFzcz0icGlsbCBvbmUiPjEgc3RvcDwvc3Bhbj4nCiAgICAgIDonPHNwYW4gY2xhc3M9InBpbGwgdHdvIj4yKyBzdG9wczwvc3Bhbj4nOwogICAgcmV0dXJuIGA8dHIgY2xhc3M9IiR7TC5oYXJkPydoYXJkJzonJ30iPgogICAgICA8dGQgY2xhc3M9Im51bSI+JHtTdHJpbmcoaSsxKS5wYWRTdGFydCgyLCcwJyl9PC90ZD4KICAgICAgPHRkPjxkaXYgY2xhc3M9ImxlZyI+JHtMLmZ9PHNwYW4gY2xhc3M9ImFydyI+4oaSPC9zcGFuPiR7TC50fTwvZGl2PgogICAgICAgICAgPGRpdiBjbGFzcz0iY2l0aWVzIj4ke0wuZmN9IOKGkiAke0wudGN9PC9kaXY+PC90ZD4KICAgICAgPHRkIGNsYXNzPSJudW0iPiR7TC5rbS50b0xvY2FsZVN0cmluZygnZW4tQ0EnKX0ga208L3RkPgogICAgICA8dGQgY2xhc3M9Im51bSI+JHtmdGltZShMLmttKX08L3RkPgogICAgICA8dGQ+JHtwaWxsfTwvdGQ+CiAgICAgIDx0ZCBjbGFzcz0iY2FycmllcnMiPiR7TC5yb3V0ZX08L3RkPgogICAgICA8dGQgY2xhc3M9ImVzdCI+PGI+JHttb25leShMLmVzdFtUSUVSXSl9PC9iPjxicj48c3BhbiBzdHlsZT0iZm9udC1zaXplOjEwLjVweDtjb2xvcjp2YXIoLS1tdXRlZCkiPiR7bW9uZXkoTC5lc3RbMF0pfeKAkyR7bW9uZXkoTC5lc3RbMl0pfTwvc3Bhbj48L3RkPgogICAgICA8dGQ+PGlucHV0IGNsYXNzPSJwcmljZSIgdHlwZT0ibnVtYmVyIiBpbnB1dG1vZGU9Im51bWVyaWMiIHBsYWNlaG9sZGVyPSLigJQiIHZhbHVlPSIke3ZhbH0iIGRhdGEta2V5PSIke2tleX0iPjwvdGQ+CiAgICAgIDx0ZD48aW5wdXQgY2xhc3M9Im5vdGUiIHR5cGU9InRleHQiIHBsYWNlaG9sZGVyPSIke0wubm90ZXx8J+KApid9IiB2YWx1ZT0iJHtub3RlfSIgZGF0YS1ub3RlPSIke2tleX0iPjwvdGQ+CiAgICA8L3RyPmA7CiAgfSkuam9pbignJyk7CgogIGhvc3QucXVlcnlTZWxlY3RvckFsbCgnaW5wdXQucHJpY2UnKS5mb3JFYWNoKGlucD0+ewogICAgaW5wLmFkZEV2ZW50TGlzdGVuZXIoJ2lucHV0JywoKT0+ewogICAgICBjb25zdCBrPWlucC5kYXRhc2V0LmtleTsKICAgICAgU1Rba109U1Rba118fHt9OwogICAgICBTVFtrXS5wID0gaW5wLnZhbHVlPT09Jyc/dW5kZWZpbmVkOk51bWJlcihpbnAudmFsdWUpOwogICAgICBzYXZlKFNUKTt0b3RhbHMoKTsKICAgIH0pOwogIH0pOwogIGhvc3QucXVlcnlTZWxlY3RvckFsbCgnaW5wdXQubm90ZScpLmZvckVhY2goaW5wPT57CiAgICBpbnAuYWRkRXZlbnRMaXN0ZW5lcignaW5wdXQnLCgpPT57CiAgICAgIGNvbnN0IGs9aW5wLmRhdGFzZXQubm90ZTsKICAgICAgU1Rba109U1Rba118fHt9O1NUW2tdLm49aW5wLnZhbHVlO3NhdmUoU1QpOwogICAgfSk7CiAgfSk7CiAgdG90YWxzKCk7Cn0KCmZ1bmN0aW9uIHRvdGFscygpewogIGxldCBlc3Q9MCxhY3Q9MCxiZXN0PTAsZW50ZXJlZD0wLGttPTAsaHJzPTA7CiAgTEVHUy5mb3JFYWNoKEw9PnsKICAgIGNvbnN0IGs9TC5mKyctJytMLnQ7CiAgICBjb25zdCBwPVNUW2tdPy5wOwogICAgZXN0Kz1MLmVzdFtUSUVSXTtrbSs9TC5rbTtocnMrPUwua20vODAwKzAuNzU7CiAgICBpZih0eXBlb2YgcD09PSdudW1iZXInJiYhaXNOYU4ocCkpe2FjdCs9cDtiZXN0Kz1wO2VudGVyZWQrKzt9CiAgICBlbHNlIGJlc3QrPUwuZXN0W1RJRVJdOwogIH0pOwogIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0RXN0JykudGV4dENvbnRlbnQ9bW9uZXkoZXN0KTsKICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgndEFjdCcpLmlubmVySFRNTD1lbnRlcmVkP21vbmV5KGFjdCkrYDxzbWFsbD4ke2VudGVyZWR9IGxlZ3M8L3NtYWxsPmA6JzxzcGFuIHN0eWxlPSJjb2xvcjp2YXIoLS1tdXRlZCk7Zm9udC1zaXplOjIwcHgiPuKAlDwvc3Bhbj4nOwogIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0QmVzdCcpLmlubmVySFRNTD1tb25leShiZXN0KSsnPHNtYWxsPkNBRDwvc21hbGw+JzsKICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgndEttJykuaW5uZXJIVE1MPU1hdGgucm91bmQoa20pLnRvTG9jYWxlU3RyaW5nKCdlbi1DQScpKyc8c21hbGw+a208L3NtYWxsPic7CiAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3RIcnMnKS5pbm5lckhUTUw9TWF0aC5yb3VuZChocnMpKyc8c21hbGw+aHJzPC9zbWFsbD4nOwogIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdtaW5pRW50ZXJlZCcpLnRleHRDb250ZW50PWVudGVyZWQ7CiAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ21pbmlUb3RhbCcpLnRleHRDb250ZW50PW1vbmV5KGJlc3QpOwp9CgovKiAtLS0tLS0tLS0tIEFOQUxZU0lTIC0tLS0tLS0tLS0gKi8KZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2FuYWx5c2lzJykuaW5uZXJIVE1MPUFOQUxZU0lTLm1hcChhPT4KICBgPGRpdiBjbGFzcz0iY2FyZCAke2EuYmFkPydiYWQnOicnfSI+CiAgICAgPGgzPiR7YS50aXRsZX08L2gzPgogICAgIDxkaXYgY2xhc3M9InZlcmRpY3QgJHthLmJhZD8nJzonb2snfSI+JHthLnZlcmRpY3R9PC9kaXY+CiAgICAgJHthLmJvZHl9CiAgIDwvZGl2PmApLmpvaW4oJycpOwoKLyogLS0tLS0tLS0tLSBDT05UUk9MUyAtLS0tLS0tLS0tICovCmRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoJy50YnRuW2RhdGEtdGllcl0nKS5mb3JFYWNoKGI9PnsKICBiLmFkZEV2ZW50TGlzdGVuZXIoJ2NsaWNrJywoKT0+ewogICAgVElFUj1OdW1iZXIoYi5kYXRhc2V0LnRpZXIpOwogICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgnLnRidG5bZGF0YS10aWVyXScpLmZvckVhY2goeD0+eC5zZXRBdHRyaWJ1dGUoJ2FyaWEtcHJlc3NlZCcseD09PWI/J3RydWUnOidmYWxzZScpKTsKICAgIHJlbmRlcigpOwogIH0pOwp9KTsKY29uc3QgaGFyZEJ0bj1kb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnaGFyZE9ubHknKTsKaGFyZEJ0bi5hZGRFdmVudExpc3RlbmVyKCdjbGljaycsKCk9PnsKICBIQVJEX09OTFk9IUhBUkRfT05MWTsKICBoYXJkQnRuLnNldEF0dHJpYnV0ZSgnYXJpYS1wcmVzc2VkJyxIQVJEX09OTFk/J3RydWUnOidmYWxzZScpOwogIHJlbmRlcigpOwp9KTsKZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2NsZWFyQnRuJykuYWRkRXZlbnRMaXN0ZW5lcignY2xpY2snLCgpPT57CiAgaWYoY29uZmlybSgnQ2xlYXIgYWxsIGVudGVyZWQgcHJpY2VzIGFuZCBub3Rlcz8nKSl7U1Q9e307c2F2ZShTVCk7cmVuZGVyKCk7fQp9KTsKCnJlbmRlcigpOwo8L3NjcmlwdD4KPC9ib2R5Pgo8L2h0bWw+Cg==";
+(function(){
+  const fr=document.getElementById('plannerframe');
+  if(!fr)return;
+  try{
+    const bin=atob(PLANNER_B64);
+    const bytes=new Uint8Array(bin.length);
+    for(let i=0;i<bin.length;i++)bytes[i]=bin.charCodeAt(i);
+    fr.srcdoc=new TextDecoder('utf-8').decode(bytes);
+    // grow the frame to the planner's full height so it never scrolls internally
+    const fit=()=>{
+      try{
+        const d=fr.contentDocument;
+        if(!d||!d.body)return;
+        const h=Math.max(d.body.scrollHeight,d.documentElement.scrollHeight,d.body.offsetHeight);
+        if(h>50)fr.style.height=(h+2)+'px';
+      }catch(err){}
+    };
+    fr.addEventListener('load',()=>{
+      fit();
+      try{
+        const d=fr.contentDocument;
+        d.documentElement.style.overflow='hidden';
+        if(window.ResizeObserver)new ResizeObserver(fit).observe(d.body);
+        // the tier buttons and filter re-render the table, changing height
+        d.addEventListener('click',()=>{setTimeout(fit,30);setTimeout(fit,250);});
+        d.addEventListener('input',()=>setTimeout(fit,30));
+      }catch(err){}
+      setTimeout(fit,120); setTimeout(fit,600);
+    });
+    window.addEventListener('resize',()=>setTimeout(fit,80));
+  }catch(e){
+    fr.outerHTML='<p style="padding:20px;color:var(--paper-dim);font-family:var(--mono);font-size:12px">Planner failed to load. Open flights.html directly.</p>';
+  }
+})();
+
+buildClock();buildMap();buildStops();buildClimate();openFromHash();
+</script>
+</body>
+</html>
