@@ -1,4 +1,6 @@
-WESTBOUND - upload the contents of this folder to your web root.
+WESTBOUND - upload this whole world2026 folder to your web root.
+The site will then live at yoursite.com/world2026/ (index.html loads automatically).
+All links are relative, so the folder can be renamed or moved without breaking anything.
 
 index.html          The hub (map, clocks, climate, country list, paperwork,
                     flight planner). Self-contained: the planner and vaccine
